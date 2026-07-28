@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Isolated API runner for agent-eligible paid work.
 
-Bearer credentials and the payout claim code are kept in ``.agent-state``.
-The GitHub Actions workflow persists that directory only in this private
-repository's cache. Sanitized responses are written to ``output/``.
+Secrets are written only to ``.agent-state/superteam.json`` during execution.
+The public-safe GitHub Actions workflow encrypts that file with the repository's
+X.509 public certificate, deletes the plaintext, and commits only ciphertext
+plus sanitized evidence.
 """
 from __future__ import annotations
 
@@ -27,6 +28,7 @@ STATE_FILE = STATE_DIR / "superteam.json"
 OUTPUT_DIR = Path(os.environ.get("AGENT_OUTPUT_DIR", "output"))
 REQUEST_FILE = Path(os.environ.get("AGENT_REQUEST_FILE", "request.json"))
 DEFAULT_TIMEOUT = 45
+PUBLIC_SAFE_MODE = os.environ.get("PUBLIC_SAFE_MODE", "0") == "1"
 SECRET_KEYS = {
     "access_token",
     "apikey",
@@ -113,7 +115,7 @@ def http_json(
     url = path if path.startswith("https://") else f"{BASE_URL}{path}"
     headers = {
         "Accept": "application/json",
-        "User-Agent": "autonomous-income-runner/1.1",
+        "User-Agent": "autonomous-income-runner/1.2",
     }
     payload: bytes | None = None
     if body is not None:
@@ -124,9 +126,11 @@ def http_json(
 
     last_error: Exception | None = None
     for attempt in range(retries + 1):
-        req = urllib.request.Request(url, data=payload, headers=headers, method=method)
+        request = urllib.request.Request(
+            url, data=payload, headers=headers, method=method
+        )
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 raw = response.read()
                 content_type = response.headers.get("Content-Type", "")
                 if not raw:
@@ -163,11 +167,36 @@ def http_json(
 def stable_agent_name(request: Mapping[str, Any]) -> str:
     requested = str(request.get("agentName") or "BoundaryLedger-Agent").strip()
     repo = os.environ.get("GITHUB_REPOSITORY", "local/runner")
-    suffix = hashlib.sha256(repo.encode("utf-8")).hexdigest()[:8]
+    request_id = str(request.get("requestId") or "default")
+    suffix = hashlib.sha256(f"{repo}:{request_id}".encode("utf-8")).hexdigest()[:8]
     return f"{requested}-{suffix}"[:50]
 
 
+def state_from_environment() -> dict[str, Any] | None:
+    api_key = os.environ.get("SUPERTEAM_API_KEY", "").strip()
+    if not api_key:
+        return None
+    if not api_key.startswith("sk_"):
+        raise RunnerError("SUPERTEAM_API_KEY does not have the expected sk_ prefix")
+    state = {
+        "apiKey": api_key,
+        "claimCode": os.environ.get("SUPERTEAM_CLAIM_CODE", "").strip() or None,
+        "agentId": os.environ.get("SUPERTEAM_AGENT_ID", "").strip() or None,
+        "username": os.environ.get("SUPERTEAM_USERNAME", "").strip() or None,
+        "registeredAt": os.environ.get("SUPERTEAM_REGISTERED_AT", "").strip()
+        or utc_now(),
+        "baseUrl": BASE_URL,
+        "source": "environment",
+    }
+    atomic_write_json(STATE_FILE, state, mode=0o600)
+    return state
+
+
 def register_if_needed(request: Mapping[str, Any]) -> dict[str, Any]:
+    environment_state = state_from_environment()
+    if environment_state is not None:
+        return environment_state
+
     if STATE_FILE.exists():
         state = read_json(STATE_FILE)
         api_key = state.get("apiKey")
@@ -175,8 +204,7 @@ def register_if_needed(request: Mapping[str, Any]) -> dict[str, Any]:
             return state
 
     name = stable_agent_name(request)
-    # Registration is a non-idempotent write. Do not retry after an ambiguous
-    # timeout because a second attempt could create a duplicate agent identity.
+    # Registration is non-idempotent. Never retry after an ambiguous timeout.
     response = http_json("POST", "/api/agents", body={"name": name}, retries=0)
     if response.status not in {200, 201} or not isinstance(response.data, dict):
         raise RunnerError(f"Unexpected registration response: HTTP {response.status}")
@@ -190,6 +218,7 @@ def register_if_needed(request: Mapping[str, Any]) -> dict[str, Any]:
     state = dict(response.data)
     state["registeredAt"] = utc_now()
     state["baseUrl"] = BASE_URL
+    state["source"] = "registration"
     atomic_write_json(STATE_FILE, state, mode=0o600)
     return state
 
@@ -197,7 +226,7 @@ def register_if_needed(request: Mapping[str, Any]) -> dict[str, Any]:
 def api_key_from(state: Mapping[str, Any]) -> str:
     value = state.get("apiKey")
     if not isinstance(value, str) or not value.startswith("sk_"):
-        raise RunnerError("Cached state is missing a valid apiKey")
+        raise RunnerError("Agent state is missing a valid apiKey")
     return value
 
 
@@ -343,6 +372,10 @@ def operation_submission_write(
 
 
 def operation_reveal_claim(state: Mapping[str, Any]) -> dict[str, Any]:
+    if PUBLIC_SAFE_MODE or os.environ.get("ALLOW_SECRET_OUTPUT") != "1":
+        raise RunnerError(
+            "Claim-code output is disabled. Decrypt the encrypted state in a private environment."
+        )
     return {
         "operation": "reveal_claim",
         "generatedAt": utc_now(),
@@ -371,12 +404,13 @@ def execute(request: Mapping[str, Any]) -> dict[str, Any]:
     else:
         raise RunnerError(f"Unsupported operation: {operation}")
 
-    reveal_claim = operation == "reveal_claim"
+    reveal_claim = operation == "reveal_claim" and not PUBLIC_SAFE_MODE
     public_agent = {
         "agentId": state.get("agentId"),
         "username": state.get("username"),
         "registeredAt": state.get("registeredAt"),
         "baseUrl": state.get("baseUrl"),
+        "source": state.get("source"),
         "claimCode": state.get("claimCode") if reveal_claim else "[REDACTED]",
     }
     atomic_write_json(OUTPUT_DIR / "agent-public.json", public_agent)
@@ -392,6 +426,7 @@ def execute(request: Mapping[str, Any]) -> dict[str, Any]:
             "operation": operation,
             "completedAt": utc_now(),
             "resultFile": "output/latest.json",
+            "privateState": "output/private-state.cms when registration state exists",
         },
     )
     return result
