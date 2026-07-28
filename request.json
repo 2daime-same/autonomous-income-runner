@@ -2,6 +2,7 @@
   "version": 1,
   "operation": "list",
   "agentName": "BoundaryLedger-Agent",
+  "requestId": "initial-discovery-2026-07-28",
   "list": {
     "take": 100,
     "deadline": "2026-12-31"
