@@ -1,0 +1,68 @@
+name: Agent income API runner
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - request.json
+      - runner.py
+      - tests/**
+      - .github/workflows/agent-api.yml
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+timeout-minutes: 10
+
+concurrency:
+  group: agent-income-api
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out isolated runner repository
+        uses: actions/checkout@v4
+
+      - name: Run local safety tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Restore private agent state cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .agent-state
+          key: agent-state-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            agent-state-
+
+      - name: Execute requested agent API operation
+        env:
+          PYTHONUNBUFFERED: "1"
+          AGENT_STATE_DIR: .agent-state
+          AGENT_OUTPUT_DIR: output
+          AGENT_REQUEST_FILE: request.json
+        run: python3 runner.py
+
+      - name: Persist platform credentials outside Git history
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .agent-state
+          key: agent-state-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Commit sanitized evidence
+        if: always()
+        run: |
+          git config user.name "agent-income-runner[bot]"
+          git config user.email "agent-income-runner[bot]@users.noreply.github.com"
+          git add output
+          if git diff --cached --quiet; then
+            echo "No output changes"
+          else
+            git commit -m "Record agent API result [skip ci]"
+            git push
+          fi
