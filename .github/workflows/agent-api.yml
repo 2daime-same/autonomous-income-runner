@@ -8,6 +8,7 @@ on:
       - runner.py
       - tests/**
       - .github/workflows/agent-api.yml
+  pull_request:
   workflow_dispatch:
   schedule:
     - cron: "17 */6 * * *"
@@ -16,19 +17,31 @@ permissions:
   contents: write
 
 concurrency:
-  group: agent-income-api
+  group: agent-income-api-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out isolated runner repository
+        uses: actions/checkout@v4
+      - name: Run local safety tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Compile runner
+        run: python3 -m py_compile runner.py
+      - name: Validate request without network access
+        run: python3 runner.py --dry-run
+
   run:
+    if: github.event_name != 'pull_request'
+    needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Check out isolated runner repository
         uses: actions/checkout@v4
-
-      - name: Run local safety tests
-        run: python3 -m unittest discover -s tests -v
 
       - name: Restore private agent state cache
         uses: actions/cache/restore@v4
