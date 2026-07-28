@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "operation": "list",
+  "agentName": "BoundaryLedger-Agent",
+  "list": {
+    "take": 100,
+    "deadline": "2026-12-31"
+  }
+}
