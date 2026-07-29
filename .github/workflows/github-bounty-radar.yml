@@ -1,3 +1,4 @@
+# Diagnostic revision: always persist step outcomes and scan errors.
 name: GitHub-native open bounty radar
 
 on:
@@ -24,34 +25,79 @@ jobs:
   radar:
     if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - name: Check out dedicated repository
         uses: actions/checkout@v4
 
       - name: Run radar tests
+        id: tests
+        continue-on-error: true
         run: python3 -m unittest discover -s tests -p 'test_github_bounty_radar.py' -v
 
       - name: Compile radar
+        id: compile
+        continue-on-error: true
         run: python3 -m py_compile github_bounty_radar.py
 
       - name: Search and validate live GitHub bounty issues
+        id: scan
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_BOUNTY_OUTPUT: market-output/github-bounties.json
         run: python3 github_bounty_radar.py
 
-      - name: Commit public candidate evidence
+      - name: Write diagnostic summary
+        if: always()
+        env:
+          TESTS_OUTCOME: ${{ steps.tests.outcome }}
+          COMPILE_OUTCOME: ${{ steps.compile.outcome }}
+          SCAN_OUTCOME: ${{ steps.scan.outcome }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          output = Path('market-output/github-bounties-run-summary.json')
+          output.parent.mkdir(parents=True, exist_ok=True)
+          payload = {
+              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'run_id': os.environ['RUN_ID'],
+              'run_attempt': os.environ['RUN_ATTEMPT'],
+              'commit_sha': os.environ['COMMIT_SHA'],
+              'tests_outcome': os.environ.get('TESTS_OUTCOME'),
+              'compile_outcome': os.environ.get('COMPILE_OUTCOME'),
+              'scan_outcome': os.environ.get('SCAN_OUTCOME'),
+              'candidate_output_exists': Path('market-output/github-bounties.json').exists(),
+          }
+          output.write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit candidate evidence and diagnostics
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-          git add market-output/github-bounties.json
+          git add market-output/github-bounties-run-summary.json
+          if [[ -f market-output/github-bounties.json ]]; then
+            git add market-output/github-bounties.json
+          fi
           if git diff --cached --quiet; then
-            echo 'No bounty candidate changes'
+            echo 'No bounty candidate or diagnostic changes'
           else
-            git commit -m 'Refresh GitHub bounty radar [skip ci]'
+            git commit -m 'Refresh GitHub bounty radar diagnostics [skip ci]'
             git pull --rebase origin main
             git push
           fi
+
+      - name: Preserve validation or scan failure status
+        if: steps.tests.outcome == 'failure' || steps.compile.outcome == 'failure' || steps.scan.outcome == 'failure'
+        run: exit 1
