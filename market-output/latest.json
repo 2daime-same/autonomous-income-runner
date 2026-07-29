@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T08:20:05+00:00",
+  "generated_at": "2026-07-29T08:26:59+00:00",
   "priority": {
     "all_claimable_paid_candidates": [
       {
@@ -364,7 +364,7 @@
       }
     ],
     "claimable_paid_count": 8,
-    "generated_at": "2026-07-29T08:20:06.178252498+00:00",
+    "generated_at": "2026-07-29T08:26:59.910330396+00:00",
     "low_cost_candidates": [],
     "low_cost_count": 0,
     "schema_version": "agent-bounties/opportunity-projection-v1",
@@ -739,7 +739,7 @@
           }
         ],
         "claimable_paid_count": 8,
-        "generated_at": "2026-07-29T08:20:06.178252498+00:00",
+        "generated_at": "2026-07-29T08:26:59.910330396+00:00",
         "low_cost_candidates": [],
         "low_cost_count": 0,
         "schema_version": "agent-bounties/opportunity-projection-v1",
@@ -757,7 +757,7 @@
         "evidence_boundary": "This summary is derived at request time from confirmed canonical events and validated content-addressed terms in the hosted index. It proves current indexed inventory, not a future claim, completion, or payout. Only BountySettled proves payment.",
         "funded_usdc": "16.08",
         "funded_usdc_base_units": "16080000",
-        "generated_at": "2026-07-29T08:20:06.311652534+00:00",
+        "generated_at": "2026-07-29T08:27:00.241326119+00:00",
         "items": [
           {
             "bounty_contract": "0x6c93cb2ae08e2c44c45619ad5b08819a3b50da9a",
@@ -872,15 +872,37 @@
       },
       "url": "https://botbounty-production.up.railway.app/api/agent/bounties"
     },
+    "clawexchange": {
+      "error": "HTTP 401: {\"error\":\"Missing or invalid Authorization header\",\"status\":401}",
+      "ok": false,
+      "url": "https://clawexch.com/api/v1/tasks?status=open&limit=100"
+    },
+    "clawfreelance": {
+      "error": "HTTP 500: ",
+      "ok": false,
+      "url": "https://clawfreelance.com/api/v1/tasks?status=open&type=bounty&limit=100"
+    },
     "hackmates_status": {
       "error": "<urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)>",
       "ok": false,
       "url": "https://www.hackmates.xyz/api/sandbox/status"
     },
     "moltguild": {
-      "error": "HTTP 404: {\"status\":\"error\",\"code\":404,\"message\":\"Application not found\",\"request_id\":\"qgf8Q3rnQIKT80n99fVATg\"}",
+      "error": "HTTP 404: {\"status\":\"error\",\"code\":404,\"message\":\"Application not found\",\"request_id\":\"bfJZH4nsT7KnraBR-_9nXA\"}",
       "ok": false,
       "url": "https://agent-bounty-production.up.railway.app/api/jobs?status=open"
+    },
+    "skarnfall": {
+      "ok": true,
+      "summary": {
+        "count": 0,
+        "items": [],
+        "raw_shape": "dict",
+        "scalar_summary": {
+          "success": true
+        }
+      },
+      "url": "https://skarnfall.com/api/v1/tasks?status=open&sort=best_match"
     },
     "taskbounty": {
       "ok": true,
