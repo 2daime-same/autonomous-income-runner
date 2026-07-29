@@ -32,7 +32,7 @@
     }
   ],
   "actionable_count": 1,
-  "generated_at": "2026-07-29T09:39:58+00:00",
+  "generated_at": "2026-07-29T14:34:57+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -395,7 +395,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "TypeScript",
-      "repo_stars": 5336,
+      "repo_stars": 5337,
       "repository": "freelensapp/freelens",
       "scope_excerpt": "### What would you like to be added?\r\n\r\nIn short, the ability to change the theme colors on Freelens and create new ones as you like.\r\n\r\n### Why is this needed?\r\n\r\nMany users complain that they don't have this option, especially when it comes to colors they would prefer to change.\r\n\r\nFor example:\r\n- https://github.com/freelensapp/freelens/issues/550#issuecomment-3371177938\r\n- https://github.com/freelensapp/freelens/issues/1237\r\n- https://github.com/freelensapp/freelens/issues/186",
       "score": 47.59,
@@ -464,7 +464,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7312,
+      "repo_stars": 7314,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
       "score": 45.41,
@@ -479,215 +479,6 @@
       "solved": false,
       "title": "[Feature] Repair orders",
       "total_amount_usd": "15.00"
-    },
-    {
-      "additional_description": "",
-      "amount_usd": "200.00",
-      "assignment_type": "open",
-      "attempt_signals": [
-        {
-          "excerpt": "Hi, I'm working on this issue and will submit a PR shortly!\n",
-          "login": "TakuyaSasuke040601-boop"
-        }
-      ],
-      "bountyhub_id": "b21928e9-70dd-4d95-adc6-3009df47e9f5",
-      "claimed": false,
-      "exclusions": [
-        "competing work signal exists",
-        "open competing PR exists"
-      ],
-      "github_assignees": [],
-      "github_issue_state": "open",
-      "issue_number": 1609,
-      "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
-      "open_competing_prs": [
-        {
-          "number": 1715,
-          "title": "feat: ChatGPT conversation export → OKF migration adapter (Path B showcase) [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
-          "updated_at": "2026-07-29T08:46:49Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1715",
-          "user": "waterWang"
-        },
-        {
-          "number": 1714,
-          "title": "feat(migration): add ChatGPT data export (conversations.json) → OKF migration adapter (#1609)",
-          "updated_at": "2026-07-29T02:24:20Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1714",
-          "user": "ivegotahunnitonit"
-        },
-        {
-          "number": 1713,
-          "title": "feat(migration): add LangMem / LangChain memory → OKF migration adapter (#1609)",
-          "updated_at": "2026-07-29T02:23:38Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1713",
-          "user": "ivegotahunnitonit"
-        },
-        {
-          "number": 1711,
-          "title": "feat(migration): add AutoGen multi-agent state → OKF migration adapter (#1609)",
-          "updated_at": "2026-07-29T02:04:54Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1711",
-          "user": "ivegotahunnitonit"
-        },
-        {
-          "number": 1710,
-          "title": "feat(migration): add CrewAI memory → OKF migration adapter (#1609)",
-          "updated_at": "2026-07-29T02:00:00Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1710",
-          "user": "ivegotahunnitonit"
-        },
-        {
-          "number": 1703,
-          "title": "feat(examples): migrate Antigravity brain archives through OKF",
-          "updated_at": "2026-07-28T19:56:01Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1703",
-          "user": "LubuSeb"
-        },
-        {
-          "number": 1632,
-          "title": "feat: ChatGPT & Claude conversation migration adapters",
-          "updated_at": "2026-07-28T16:41:06Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1632",
-          "user": "digivasserver-ai"
-        },
-        {
-          "number": 1702,
-          "title": "feat(migration): add Zep/Graphiti → OKF migration adapter",
-          "updated_at": "2026-07-28T15:33:10Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1702",
-          "user": "qwenbona"
-        },
-        {
-          "number": 1624,
-          "title": "feat: add 9 migration adapters (ChatGPT, Claude, Gemini, Zep, Hindsight, LangGraph, Notion, Obsidian, Chroma)",
-          "updated_at": "2026-07-27T19:10:23Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1624",
-          "user": "ejspeed-cmd"
-        },
-        {
-          "number": 1684,
-          "title": "feat(examples): migrate MCP Memory Server graphs to portable OKF",
-          "updated_at": "2026-07-27T14:10:35Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1684",
-          "user": "Janettbella69"
-        },
-        {
-          "number": 1672,
-          "title": "feat(examples): migrate Claude Code local memory to portable OKF",
-          "updated_at": "2026-07-27T00:17:09Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1672",
-          "user": "zf54-arch"
-        },
-        {
-          "number": 1678,
-          "title": "feat: Ollama embeddings migration adapter for memanto migrate (#1609)",
-          "updated_at": "2026-07-27T00:12:43Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1678",
-          "user": "johneapen80"
-        },
-        {
-          "number": 1669,
-          "title": "feat(migration): add Codex memory to OKF adapter",
-          "updated_at": "2026-07-26T19:15:22Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1669",
-          "user": "JerryNee"
-        },
-        {
-          "number": 1641,
-          "title": "fix: agent creation race condition + plan limit enforcement",
-          "updated_at": "2026-07-26T11:27:03Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1641",
-          "user": "garochee33"
-        },
-        {
-          "number": 1634,
-          "title": "feat(migrate): add ChatGPT conversation export adapter",
-          "updated_at": "2026-07-26T11:02:07Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1634",
-          "user": "garochee33"
-        },
-        {
-          "number": 1635,
-          "title": "fix(recall): include memories with unknown confidence in filtered queries",
-          "updated_at": "2026-07-26T10:32:00Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1635",
-          "user": "garochee33"
-        },
-        {
-          "number": 1664,
-          "title": "feat(migration): agent operational-log adapter — migrate the correction structure, not just the text",
-          "updated_at": "2026-07-26T14:12:46Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1664",
-          "user": "ImmortalDemonGod"
-        },
-        {
-          "number": 1645,
-          "title": "feat(examples): add Hindsight to OKF migration showcase",
-          "updated_at": "2026-07-26T02:11:43Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1645",
-          "user": "yuhaouno"
-        },
-        {
-          "number": 1650,
-          "title": "feat(migration): CogniMem → Memanto OKF Migration Adapter",
-          "updated_at": "2026-07-25T19:35:09Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1650",
-          "user": "1421906110"
-        },
-        {
-          "number": 1647,
-          "title": "feat(migration): add Open WebUI chat export to OKF adapter",
-          "updated_at": "2026-07-25T08:09:33Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1647",
-          "user": "shelabastida933-pixel"
-        },
-        {
-          "number": 1639,
-          "title": "feat: add ChatGPT migration provider — the freedom loop",
-          "updated_at": "2026-07-24T16:38:27Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1639",
-          "user": "hanyuanchen08-netizen"
-        },
-        {
-          "number": 1614,
-          "title": "feat(migration): add ChatGPT conversation export adapter for OKF",
-          "updated_at": "2026-07-24T01:02:48Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1614",
-          "user": "TakuyaSasuke040601-boop"
-        },
-        {
-          "number": 1629,
-          "title": "feat: add ChatGPT migration script and mapper",
-          "updated_at": "2026-07-23T17:57:06Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1629",
-          "user": "RanuK12"
-        },
-        {
-          "number": 1628,
-          "title": "feat(examples): add ChatGPT export → OKF migration adapter (#1609)",
-          "updated_at": "2026-07-23T17:23:49Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1628",
-          "user": "ccasson"
-        }
-      ],
-      "payment_status": "PAID",
-      "repo_archived": false,
-      "repo_language": "Python",
-      "repo_stars": 1708,
-      "repository": "moorcheh-ai/memanto",
-      "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
-      "score": 39.41,
-      "score_reasons": [
-        "BountyHub paymentStatus is PAID",
-        "small and testable scope markers",
-        "supported language: python",
-        "established repository",
-        "1 competing attempt signal(s)",
-        "24 open competing PR(s)"
-      ],
-      "solved": false,
-      "title": "[BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
-      "total_amount_usd": "200.00"
     },
     {
       "additional_description": "",
@@ -720,53 +511,60 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
         {
-          "number": 1610,
-          "title": "fix: 7 bug fixes (2 HIGH + 5 medium) — Fixes #770",
-          "updated_at": "2026-07-29T08:39:14Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1610",
-          "user": "hanyuanchen08-netizen"
-        },
-        {
-          "number": 1563,
-          "title": "fix: preserve Supermemory migration data and revoke deleted-agent sessions",
-          "updated_at": "2026-07-29T07:02:30Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1563",
-          "user": "nanguazhou123-star"
-        },
-        {
-          "number": 1712,
-          "title": "Harden invalid session marker cleanup",
-          "updated_at": "2026-07-29T06:12:09Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1712",
-          "user": "zy26thu-hash"
+          "number": 1404,
+          "title": "Guard invalid agent metadata files",
+          "updated_at": "2026-07-29T14:21:24Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1404",
+          "user": "smwsk1"
         },
         {
           "number": 1708,
           "title": "fix: caller auth enforcement on agent management + /status endpoint (#1436)",
-          "updated_at": "2026-07-29T01:47:55Z",
+          "updated_at": "2026-07-29T14:11:14Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1708",
           "user": "ivegotahunnitonit"
         },
         {
+          "number": 1705,
+          "title": "fix(migrate): use valid source for imported memories",
+          "updated_at": "2026-07-29T14:11:12Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1705",
+          "user": "soul-sol"
+        },
+        {
           "number": 1707,
           "title": "fix(migrate): update Mem0 export to v3 API",
-          "updated_at": "2026-07-28T20:46:56Z",
+          "updated_at": "2026-07-29T14:11:11Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1707",
           "user": "LubuSeb"
         },
         {
           "number": 1706,
           "title": "fix(export): split comma-separated tags in OKF export [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
-          "updated_at": "2026-07-28T20:24:33Z",
+          "updated_at": "2026-07-29T14:11:10Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1706",
           "user": "waterWang"
         },
         {
-          "number": 1705,
-          "title": "fix(migrate): use valid source for imported memories",
-          "updated_at": "2026-07-29T02:26:12Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1705",
-          "user": "soul-sol"
+          "number": 1712,
+          "title": "Harden invalid session marker cleanup",
+          "updated_at": "2026-07-29T14:10:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1712",
+          "user": "zy26thu-hash"
+        },
+        {
+          "number": 1563,
+          "title": "fix: preserve Supermemory migration data and revoke deleted-agent sessions",
+          "updated_at": "2026-07-29T13:21:23Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1563",
+          "user": "nanguazhou123-star"
+        },
+        {
+          "number": 1610,
+          "title": "fix: 7 bug fixes (2 HIGH + 5 medium) — Fixes #770",
+          "updated_at": "2026-07-29T08:39:14Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1610",
+          "user": "hanyuanchen08-netizen"
         },
         {
           "number": 1701,
@@ -1280,13 +1078,6 @@
           "user": "genesisrevelationinc-debug"
         },
         {
-          "number": 1404,
-          "title": "Guard invalid agent metadata files",
-          "updated_at": "2026-07-08T09:17:45Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1404",
-          "user": "smwsk1"
-        },
-        {
           "number": 1381,
           "title": "fix: preserve plain document content on readback",
           "updated_at": "2026-07-06T14:41:38Z",
@@ -1343,13 +1134,6 @@
           "user": "alaskagood"
         },
         {
-          "number": 862,
-          "title": "fix(sync): refresh memory export before project sync",
-          "updated_at": "2026-06-29T20:45:01Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/862",
-          "user": "VoltVoks"
-        },
-        {
           "number": 859,
           "title": "fix(migrate): make imported memory ids stable across retries",
           "updated_at": "2026-06-29T20:45:00Z",
@@ -1381,7 +1165,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1708,
+      "repo_stars": 1709,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
       "score": 29.0,
@@ -1392,11 +1176,231 @@
         "supported language: python",
         "established repository",
         "3 competing attempt signal(s)",
-        "94 open competing PR(s)"
+        "93 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
       "total_amount_usd": "100.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "200.00",
+      "assignment_type": "open",
+      "attempt_signals": [
+        {
+          "excerpt": "Hi, I'm working on this issue and will submit a PR shortly!\n",
+          "login": "TakuyaSasuke040601-boop"
+        },
+        {
+          "excerpt": "Hi team, I have implemented the feature and opened PR #1614 for this. Please take a look and review when you have a moment. Thank you!\nhttps://github.com/moorcheh-ai/memanto/pull/1614",
+          "login": "TakuyaSasuke040601-boop"
+        }
+      ],
+      "bountyhub_id": "b21928e9-70dd-4d95-adc6-3009df47e9f5",
+      "claimed": false,
+      "exclusions": [
+        "competing work signal exists",
+        "open competing PR exists"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 1609,
+      "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
+      "open_competing_prs": [
+        {
+          "number": 1614,
+          "title": "feat(migration): add ChatGPT conversation export adapter for OKF",
+          "updated_at": "2026-07-29T14:30:06Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1614",
+          "user": "TakuyaSasuke040601-boop"
+        },
+        {
+          "number": 1718,
+          "title": "feat: ChatGPT & Claude conversation migration adapters",
+          "updated_at": "2026-07-29T14:27:01Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1718",
+          "user": "digivasserver-ai"
+        },
+        {
+          "number": 1716,
+          "title": "feat: migrate LangGraph SQLite checkpoints to OKF",
+          "updated_at": "2026-07-29T14:11:08Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1716",
+          "user": "nanguazhou123-star"
+        },
+        {
+          "number": 1713,
+          "title": "feat(migration): add LangMem / LangChain memory → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T14:11:07Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1713",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1710,
+          "title": "feat(migration): add CrewAI memory → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T14:11:05Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1710",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1714,
+          "title": "feat(migration): add ChatGPT data export (conversations.json) → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T14:11:03Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1714",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1715,
+          "title": "feat: ChatGPT conversation export → OKF migration adapter (Path B showcase) [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-29T10:17:54Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1715",
+          "user": "waterWang"
+        },
+        {
+          "number": 1711,
+          "title": "feat(migration): add AutoGen multi-agent state → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T14:11:02Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1711",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1703,
+          "title": "feat(examples): migrate Antigravity brain archives through OKF",
+          "updated_at": "2026-07-28T19:56:01Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1703",
+          "user": "LubuSeb"
+        },
+        {
+          "number": 1702,
+          "title": "feat(migration): add Zep/Graphiti → OKF migration adapter",
+          "updated_at": "2026-07-28T15:33:10Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1702",
+          "user": "qwenbona"
+        },
+        {
+          "number": 1624,
+          "title": "feat: add 9 migration adapters (ChatGPT, Claude, Gemini, Zep, Hindsight, LangGraph, Notion, Obsidian, Chroma)",
+          "updated_at": "2026-07-27T19:10:23Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1624",
+          "user": "ejspeed-cmd"
+        },
+        {
+          "number": 1684,
+          "title": "feat(examples): migrate MCP Memory Server graphs to portable OKF",
+          "updated_at": "2026-07-27T14:10:35Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1684",
+          "user": "Janettbella69"
+        },
+        {
+          "number": 1672,
+          "title": "feat(examples): migrate Claude Code local memory to portable OKF",
+          "updated_at": "2026-07-27T00:17:09Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1672",
+          "user": "zf54-arch"
+        },
+        {
+          "number": 1678,
+          "title": "feat: Ollama embeddings migration adapter for memanto migrate (#1609)",
+          "updated_at": "2026-07-27T00:12:43Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1678",
+          "user": "johneapen80"
+        },
+        {
+          "number": 1669,
+          "title": "feat(migration): add Codex memory to OKF adapter",
+          "updated_at": "2026-07-26T19:15:22Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1669",
+          "user": "JerryNee"
+        },
+        {
+          "number": 1641,
+          "title": "fix: agent creation race condition + plan limit enforcement",
+          "updated_at": "2026-07-26T11:27:03Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1641",
+          "user": "garochee33"
+        },
+        {
+          "number": 1634,
+          "title": "feat(migrate): add ChatGPT conversation export adapter",
+          "updated_at": "2026-07-26T11:02:07Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1634",
+          "user": "garochee33"
+        },
+        {
+          "number": 1635,
+          "title": "fix(recall): include memories with unknown confidence in filtered queries",
+          "updated_at": "2026-07-26T10:32:00Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1635",
+          "user": "garochee33"
+        },
+        {
+          "number": 1664,
+          "title": "feat(migration): agent operational-log adapter — migrate the correction structure, not just the text",
+          "updated_at": "2026-07-26T14:12:46Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1664",
+          "user": "ImmortalDemonGod"
+        },
+        {
+          "number": 1645,
+          "title": "feat(examples): add Hindsight to OKF migration showcase",
+          "updated_at": "2026-07-26T02:11:43Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1645",
+          "user": "yuhaouno"
+        },
+        {
+          "number": 1650,
+          "title": "feat(migration): CogniMem → Memanto OKF Migration Adapter",
+          "updated_at": "2026-07-25T19:35:09Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1650",
+          "user": "1421906110"
+        },
+        {
+          "number": 1647,
+          "title": "feat(migration): add Open WebUI chat export to OKF adapter",
+          "updated_at": "2026-07-25T08:09:33Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1647",
+          "user": "shelabastida933-pixel"
+        },
+        {
+          "number": 1639,
+          "title": "feat: add ChatGPT migration provider — the freedom loop",
+          "updated_at": "2026-07-24T16:38:27Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1639",
+          "user": "hanyuanchen08-netizen"
+        },
+        {
+          "number": 1629,
+          "title": "feat: add ChatGPT migration script and mapper",
+          "updated_at": "2026-07-23T17:57:06Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1629",
+          "user": "RanuK12"
+        },
+        {
+          "number": 1628,
+          "title": "feat(examples): add ChatGPT export → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-23T17:23:49Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1628",
+          "user": "ccasson"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Python",
+      "repo_stars": 1709,
+      "repository": "moorcheh-ai/memanto",
+      "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
+      "score": 27.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small and testable scope markers",
+        "supported language: python",
+        "established repository",
+        "2 competing attempt signal(s)",
+        "25 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
+      "total_amount_usd": "200.00"
     },
     {
       "additional_description": "Implement casting so that e OS 3.x+ can cast to a Roku device.",
@@ -1461,7 +1465,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14053,
+      "repo_stars": 14059,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 25.18,
@@ -1602,7 +1606,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14053,
+      "repo_stars": 14059,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 23.41,
@@ -1639,7 +1643,7 @@
         {
           "number": 30,
           "title": "fix: resolve build errors and SQL id1/scale schema mismatches (closes #27) [v2]",
-          "updated_at": "2026-07-29T08:00:33Z",
+          "updated_at": "2026-07-29T14:12:13Z",
           "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/30",
           "user": "mitchellecm7"
         },
@@ -1821,7 +1825,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14053,
+      "repo_stars": 14059,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Affected app**\r\nName: Dott\r\nPackage id: com.ridedott.rider\r\n\r\n**Describe the bug**\r\nSigning in or signing up fails, seemingly because of a firebase error\r\n\r\n**To Reproduce**\r\nSteps to reproduce the behavior:\r\n1. get Dott\r\n2. Click on sign up\r\n3. enter phone number\r\n4. click sign up\r\n\r\n**Expected behavior**\r\nsends sms verification or proceeds in general\r\n\r\n**Screenshots**\r\n<details><summary>sign up error page</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/0938e413-1873-480a-a396-a598fcd98e47)\r\n\r\n</details>\r\n\r\n<details><summary>dott vehicle coverage</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/59c7d003-1954-41be-8fc1-43956a17f4a6)\r\n\r\n</details>\r\n\r\n**System**\r\nAndroid Version: 15\r\nCustom ROM: LineageOS+microg 22.1\r\n\r\n**microG**\r\nmicroG Core version: 0.3.6.244735\r\nmicroG Self-Check results: All ticked\r\n\r\n**Additional context**\r\nfull logcat of an app start and signup attempt, filtering out all logs, except those coming from com.ridedott.rider with personal or identifying information replaced by `[...]`:\r\n\r\n[dott 06_04-09-30-30_733.log](https://github.com/user-attachments/files/19620636/dott.06_04-09-30-30_733.log)\r\n\r\nLikely critical lines from the log:\r\n```\r\n1743924520.834 10285 20276 23037 W LocalRequestInterceptor: Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: Error returned from API. code: 403 body: App attestation failed.\r\n1743924521.066 10285 20276 23037 E FirebaseAuth: [SmsRetrieverHelper] SMS verification code request failed: unknown status code: 17499 Firebase App Check token is invalid.\r\n1743924521.067 10285 20276 20276 D FirebaseAuth: Invoking original failure callbacks after phone verification failure for (my phone number), error - An internal error has occurred. [ Firebase App Check token is invalid. ]\r\n```\r\nmicrog Google device registration is enabled, as is cloud messaging and \"SafetyNet\".\r\nmy device meets basic integrity and device integrity, uses sdk level 35\r\n\r\nPossibly related: https://github.com/microg/GmsCore/issues/1967, https://github.com/microg/GmsCore/issues/1281",
       "score": 13.35,
@@ -1920,7 +1924,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14053,
+      "repo_stars": 14059,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Feature Description:**\r\nGoogle Messages is currently the only widely available RCS client for Android. When attempting to use Google Messages with microG, users typically encounter issues such as:\r\n\r\nA persistent message stating \"RCS chats aren't available for this device.\"\r\nAn indefinite \"Setting up...\", where authentication of the phone number never completes.\r\n\r\nRecent developments suggest that Google Messages no longer strictly requires device attestation for RCS, making it possible to enable RCS functionality with microG. However, it appears there's a missing component or necessary adjustment within microG itself preventing successful setup.\r\n\r\nGoogle has effectively monopolized RCS, despite it being a GSMA-backed standard intended as a successor to SMS. Unlike SMS, RCS has become a closed ecosystem under Google's control, restricting open interoperability and limiting choice for users and developers. RCS has seen significant adoption, particularly in North America, and recently Apple added support RCS, further increasing its importance as a messaging standard.\r\n\r\n**Requested Solution**\r\n\r\nProvide a solution that enables Google Messages to successfully connect to and use RCS functionality when operating with microG. Acceptable outcomes include:\r\n- A fix or enhancement to microG itself, allowing seamless RCS connectivity.\r\n- Compatibility with recent versions of Google Messages is desired. Solutions that only support a specific Google Messages version from the past year will be awarded half of the bounty amount.\r\n- Modifications to AOSP or additional permissions changes are acceptable.\r\n- The solution must work on devices with a locked bootloader.\r\n\r\nLimitations\r\nSolutions relying on rooting, Magisk, or similar root-based tools are not acceptable.\r\n\r\n**Additional Information**\r\n\r\nGrapheneOS users, who leverage a Play services sandbox, have reported success with enabling RCS by applying permission changes. Although their setup differs from microG, the discussions that were taken in this thread (especially in the last year) may offer valuable insights for this bounty: https://discuss.grapheneos.org/d/3533-rcs-with-google-messages\r\n",
       "score": 1.0,
@@ -2055,7 +2059,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14053,
+      "repo_stars": 14059,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**[BOUNTY CURRENTLY AT $550]**\n\n**Is your feature request related to a problem? Please describe.**\nWearOS devices do not work with MicroG\n\n**Describe the solution you'd like**\nMicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\n**Additional context**\nThere has been an issue open for over ten years regarding [MicroG support for WearOS](https://github.com/microg/GmsCore/issues/4#issuecomment-2581553597).  That issue and another [more recent post](https://github.com/microg/GmsCore/issues/2444#issuecomment-2691206945) have inspired some folks to post bounties for this feature, but it's buried so far down in the thread it's easy to miss.\n\nI personally am posting a $200 bounty for the MicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\nHere are the folks who've posted bounties in those threads.  I'll invite them to post again here confirming that their offers still stand, but all told, this adds up to over $500 already.\n\n@HyperCriSiS - $100\n@realPrix - $100\n@NullCode1337 - $50\n@TobiPeterG - $100\n@doctorgaul - $200",
       "score": -77.0,
