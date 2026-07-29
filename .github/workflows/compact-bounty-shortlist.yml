@@ -1,0 +1,50 @@
+name: Generate compact fallback bounty shortlist
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - compact_bounty_shortlist.py
+      - market-output/trusted-bounties.json
+      - .github/workflows/compact-bounty-shortlist.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '41 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compact-bounty-shortlist
+  cancel-in-progress: true
+
+jobs:
+  shortlist:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile shortlist selector
+        run: python3 -m py_compile compact_bounty_shortlist.py
+
+      - name: Generate compact shortlist
+        env:
+          TRUSTED_BOUNTIES_FILE: market-output/trusted-bounties.json
+          COMPACT_SHORTLIST_FILE: market-output/compact-bounty-shortlist.json
+        run: python3 compact_bounty_shortlist.py
+
+      - name: Commit shortlist evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/compact-bounty-shortlist.json
+          if git diff --cached --quiet; then
+            echo 'No shortlist changes'
+          else
+            git commit -m 'Refresh compact bounty shortlist [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
