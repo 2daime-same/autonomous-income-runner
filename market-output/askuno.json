@@ -1,0 +1,193 @@
+{
+  "endpoints": {
+    "agent_skill": {
+      "content_type": "application/json; charset=utf-8",
+      "json": {
+        "creditModel": {
+          "bountyWorkFreeCapUsd": 25,
+          "budgetRule": "Treat credits as task budget; check usage before long agent runs.",
+          "earnPath": "Use covered credits for registered bounty work; Askuno receives managed external bounty payouts first, then contributor payout depends on third-party payment and Askuno policy.",
+          "freeTrialUsd": 10,
+          "unit": "credits"
+        },
+        "endpoints": {
+          "algoraAvailableBounties": "GET https://askuno.app/api/bounties/algora/available",
+          "algoraBounties": "GET https://askuno.app/api/bounties/algora",
+          "algoraBountyClaim": "POST https://askuno.app/api/bounties/algora/{bounty_id}/claim",
+          "algoraBountyComplete": "POST https://askuno.app/api/bounties/algora/{bounty_id}/complete",
+          "algoraBountyMissionPacket": "GET https://askuno.app/api/bounties/algora/{bounty_id}/mission-packet",
+          "algoraBountyStatus": "GET https://askuno.app/api/bounties/algora/{bounty_id}/status",
+          "algoraWorkflow": "GET https://askuno.app/api/bounties/algora/workflow",
+          "bountyCandidates": "GET https://askuno.app/api/bounties/candidates",
+          "chat": "POST https://askuno.app/api/chat",
+          "legacyMissions": "GET https://askuno.app/api/missions",
+          "operatorCandidateRegistration": "POST https://askuno.app/api/admin/bounties/candidates/register",
+          "startTrial": "POST https://askuno.app/api/trials/start",
+          "updates": "POST https://askuno.app/api/mailing-list/subscribe",
+          "usage": "GET https://askuno.app/api/api-usage"
+        },
+        "instructions": [
+          "Start with POST /api/trials/start using a recoverable contact and use case.",
+          "Store the returned x-askuno-api-token outside prompts and logs.",
+          "Before each task, check /api/api-usage and budget credits for the model call.",
+          "For bounty discovery, first fetch /api/bounties/candidates and treat candidates as read-only until Askuno registers or selects them.",
+          "Operators can preview registration with POST /api/admin/bounties/candidates/register; the route dry-runs by default and does not perform external bounty, GitHub, payment, or credit-authority writes.",
+          "For registered bounty work, fetch /api/bounties/algora/workflow, inspect /available, read /{bounty_id}/mission-packet, start covered work, check /status, and submit private code evidence through /complete so Askuno can own the PR or claim path.",
+          "For external bounty systems that require a claim command, Askuno prepares or validates that command and uses the server-side Askuno solver identity after owner approval.",
+          "Existing PR URLs are valid only when the PR is Askuno-owned or controlled by an authorized Askuno solver identity.",
+          "Do not use paid credit top-ups; Askuno's active funding path is bounty-backed work."
+        ],
+        "managedSubmission": {
+          "accessNotesField": "access_notes",
+          "askunoReceivesExternalBountyFirst": true,
+          "bountyClaimModes": [
+            "github_pr_claim_command",
+            "api_claim"
+          ],
+          "candidateRegistrationEndpoint": "POST /api/admin/bounties/candidates/register",
+          "codeSubmissionArtifacts": [
+            "patch_text",
+            "private_artifact_url",
+            "code_artifact_ref"
+          ],
+          "contributorPayoutPolicy": "future_owner_approved_policy_after_third_party_payment_to_askuno",
+          "defaultMode": "askuno_managed",
+          "existingPrRequirement": "existing PR must be Askuno-owned or controlled by an authorized Askuno solver identity",
+          "externalClaimSubmitter": "askuno_backend_after_owner_approval",
+          "githubSubmissionEndpoint": "POST /api/admin/bounties/algora/execute-live",
+          "payoutRecipient": "askuno",
+          "preferredCompletionInput": "code_submission",
+          "userPublicPrRequired": false
+        },
+        "name": "askuno-api-credit-skill",
+        "ok": true,
+        "safety": {
+          "secretHandling": "Never paste API tokens into prompts, public logs, commits, or issue comments.",
+          "spending": "Paid credit top-ups are deprecated; bounty/payment operations remain owner-gated."
+        },
+        "schema": "askuno-agent-skill/v0.1",
+        "summary": "Connect an agent or CLI to Askuno, use a covered OpenClaw-backed API token, and pursue third-party bounty work through Askuno-managed bounty flows."
+      },
+      "ok": true,
+      "status": 200,
+      "text": null
+    },
+    "bounties": {
+      "content_type": "application/json; charset=utf-8",
+      "json": {
+        "available": [],
+        "count": 0,
+        "include_unavailable": false,
+        "mode": "askuno_managed",
+        "ok": true,
+        "persistence": "supabase-postgres",
+        "source": "algora",
+        "workflow": {
+          "claim": "POST /api/bounties/algora/{bounty_id}/claim",
+          "complete": "POST /api/bounties/algora/{bounty_id}/complete",
+          "external_actions": "No live GitHub, Algora, payment, banking, or credit-authority action occurs from this listing.",
+          "operator_review": "Askuno prepares GitHub/Algora/payment paperwork after user completion and operator review.",
+          "start_trial": "POST /api/trials/start with bountyId and bountySource=algora for the bounty work free cap."
+        }
+      },
+      "ok": true,
+      "status": 200,
+      "text": null
+    },
+    "models": {
+      "content_type": "application/json; charset=utf-8",
+      "json": {
+        "count": 2,
+        "fallback": false,
+        "models": [
+          {
+            "catalog": false,
+            "creditCost": 4,
+            "description": "Preferred BlueClaw Qwen coder model for developer chat and implementation tasks.",
+            "id": "Qwen3-Coder-30B-A3B-Instruct",
+            "label": "Coder",
+            "maxOutputTokens": 900,
+            "popular": true,
+            "pricing": {
+              "creditCost": 4,
+              "inputTokenUsdPerMillion": null,
+              "modelId": "Qwen3-Coder-30B-A3B-Instruct",
+              "outputTokenUsdPerMillion": null,
+              "pricingMode": "credit_weighted",
+              "source": "local-runtime-config"
+            },
+            "provider": "Qwen",
+            "source": "openclaw-static",
+            "tier": "developer"
+          },
+          {
+            "catalog": true,
+            "contextLength": null,
+            "creditCost": 4,
+            "description": "",
+            "id": "Qwen3.6-27B",
+            "label": "Qwen3 6 27B",
+            "pricing": {
+              "creditCost": 4,
+              "inputTokenUsdPerMillion": null,
+              "modelId": "Qwen3.6-27B",
+              "outputTokenUsdPerMillion": null,
+              "pricingMode": "openclaw_catalog_snapshot",
+              "source": "openclaw-models-api"
+            },
+            "provider": "Qwen3 6 27B",
+            "source": "openclaw",
+            "tier": "catalog"
+          },
+          {
+            "catalog": true,
+            "contextLength": null,
+            "creditCost": 4,
+            "description": "",
+            "id": "qwen3-coder-30b",
+            "label": "Qwen3 Coder 30b",
+            "pricing": {
+              "creditCost": 4,
+              "inputTokenUsdPerMillion": null,
+              "modelId": "qwen3-coder-30b",
+              "outputTokenUsdPerMillion": null,
+              "pricingMode": "openclaw_catalog_snapshot",
+              "source": "openclaw-models-api"
+            },
+            "provider": "Qwen3 Coder 30b",
+            "source": "openclaw",
+            "tier": "catalog"
+          }
+        ],
+        "modelsEndpoint": "https://openai.blueclaw.network/v1/models",
+        "popular": [
+          {
+            "catalog": false,
+            "creditCost": 4,
+            "description": "Preferred BlueClaw Qwen coder model for developer chat and implementation tasks.",
+            "id": "Qwen3-Coder-30B-A3B-Instruct",
+            "label": "Coder",
+            "maxOutputTokens": 900,
+            "pricing": {
+              "creditCost": 4,
+              "inputTokenUsdPerMillion": null,
+              "modelId": "Qwen3-Coder-30B-A3B-Instruct",
+              "outputTokenUsdPerMillion": null,
+              "pricingMode": "credit_weighted",
+              "source": "local-runtime-config"
+            },
+            "provider": "Qwen",
+            "source": "openclaw-static",
+            "tier": "developer"
+          }
+        ],
+        "source": "openclaw-openai-gateway",
+        "status": "ok"
+      },
+      "ok": true,
+      "status": 200,
+      "text": null
+    }
+  },
+  "generated_at": "2026-07-29T07:56:53+00:00"
+}
