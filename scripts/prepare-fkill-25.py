@@ -11,88 +11,87 @@ import argparse
 from pathlib import Path
 
 
-OLD_BLOCK = """\tconst exists = await processExistsMultiple([...parsedInputsMap.values()]);
+OLD_BLOCK = """	const exists = await processExistsMultiple([...parsedInputsMap.values()]);
 
-\tconst errors = [];
+	const errors = [];
 
-\tconst handleKill = async input => {
-\t\tconst parsedInput = parsedInputsMap.get(input);
+	const handleKill = async input => {
+		const parsedInput = parsedInputsMap.get(input);
 
-\t\ttry {
-\t\t\tawait killWithLimits(input, options);
-\t\t} catch (error) {
-\t\t\tif (!exists.get(parsedInput)) {
-\t\t\t\terrors.push(`Killing process ${input} failed: Process doesn't exist`);
-\t\t\t\treturn;
-\t\t\t}
+		try {
+			await killWithLimits(input, options);
+		} catch (error) {
+			if (!exists.get(parsedInput)) {
+				errors.push(`Killing process ${input} failed: Process doesn't exist`);
+				return;
+			}
 
-\t\t\terrors.push(`Killing process ${input} failed: ${error.message.replace(/.*\\n/, '').replace(/kill: \\d+: /, '').trim()}`);
-\t\t}
-\t};
+			errors.push(`Killing process ${input} failed: ${error.message.replace(/.*\n/, '').replace(/kill: \d+: /, '').trim()}`);
+		}
+	};
 
-\tawait Promise.all(inputs.map(input => handleKill(input)));
+	await Promise.all(inputs.map(input => handleKill(input)));
 
-\tif (errors.length > 0 && !options.silent) {
+	if (errors.length > 0 && !options.silent) {
 """
 
-NEW_BLOCK = """\tconst killErrors = [];
+NEW_BLOCK = """	const killErrors = [];
 
-\tconst handleKill = async input => {
-\t\ttry {
-\t\t\tawait killWithLimits(input, options);
-\t\t} catch (error) {
-\t\t\tkillErrors.push({input, parsedInput: parsedInputsMap.get(input), error});
-\t\t}
-\t};
+	const handleKill = async input => {
+		try {
+			await killWithLimits(input, options);
+		} catch (error) {
+			killErrors.push({input, parsedInput: parsedInputsMap.get(input), error});
+		}
+	};
 
-\tawait Promise.all(inputs.map(input => handleKill(input)));
+	await Promise.all(inputs.map(input => handleKill(input)));
 
-\tconst errors = [];
-\tif (killErrors.length > 0) {
-\t\tconst failedInputs = [...new Set(killErrors.map(({parsedInput}) => parsedInput))];
-\t\tconst exists = await processExistsMultiple(failedInputs);
+	const errors = [];
+	if (killErrors.length > 0) {
+		const failedInputs = [...new Set(killErrors.map(({parsedInput}) => parsedInput))];
+		const exists = await processExistsMultiple(failedInputs);
 
-\t\tfor (const {input, parsedInput, error} of killErrors) {
-\t\t\tif (!exists.get(parsedInput)) {
-\t\t\t\terrors.push(`Killing process ${input} failed: Process doesn't exist`);
-\t\t\t\tcontinue;
-\t\t\t}
+		for (const {input, parsedInput, error} of killErrors) {
+			if (!exists.get(parsedInput)) {
+				errors.push(`Killing process ${input} failed: Process doesn't exist`);
+				continue;
+			}
 
-\t\t\terrors.push(`Killing process ${input} failed: ${error.message.replace(/.*\\n/, '').replace(/kill: \\d+: /, '').trim()}`);
-\t\t}
-\t}
+			errors.push(`Killing process ${input} failed: ${error.message.replace(/.*\n/, '').replace(/kill: \d+: /, '').trim()}`);
+		}
+	}
 
-\tif (errors.length > 0 && !options.silent) {
+	if (errors.length > 0 && !options.silent) {
 """
 
 TEST_ANCHOR = """test('fail', async () => {
-\ttry {
-\t\tawait fkill(['123456', '654321']);
-\t\tassert.fail('Expected error to be thrown');
-\t} catch (error) {
-\t\tassert.ok(error instanceof AggregateError);
-\t\tconst errorString = error.errors.join(' ');
-\t\tassert.match(errorString, /123456/);
-\t\tassert.match(errorString, /654321/);
-\t}
+	try {
+		await fkill(['123456', '654321']);
+		assert.fail('Expected error to be thrown');
+	} catch (error) {
+		assert.ok(error instanceof AggregateError);
+		const errorString = error.errors.join(' ');
+		assert.match(errorString, /123456/);
+		assert.match(errorString, /654321/);
+	}
 });
 """
 
 TEST_REPLACEMENT = TEST_ANCHOR + """
-
 test('successful kills are preserved when another input is missing', async () => {
-\tconst pid = await noopProcess();
+	const pid = await noopProcess();
 
-\ttry {
-\t\tawait fkill([pid, 'fkill-process-that-does-not-exist'], {force: true});
-\t\tassert.fail('Expected error to be thrown');
-\t} catch (error) {
-\t\tassert.ok(error instanceof AggregateError);
-\t\tassert.match(error.errors.join(' '), /fkill-process-that-does-not-exist/);
-\t\tassert.match(error.errors.join(' '), /Process doesn't exist/);
-\t}
+	try {
+		await fkill([pid, 'fkill-process-that-does-not-exist'], {force: true});
+		assert.fail('Expected error to be thrown');
+	} catch (error) {
+		assert.ok(error instanceof AggregateError);
+		assert.match(error.errors.join(' '), /fkill-process-that-does-not-exist/);
+		assert.match(error.errors.join(' '), /Process doesn't exist/);
+	}
 
-\tawait noopProcessKilled(pid);
+	await noopProcessKilled(pid);
 });
 """
 
