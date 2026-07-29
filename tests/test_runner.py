@@ -78,6 +78,13 @@ class RunnerTests(unittest.TestCase):
                 runner.register_if_needed({"agentName": "Agent"})
         self.assertEqual(mocked.call_args.kwargs["retries"], 0)
 
+    def test_public_safe_mode_blocks_claim_code_output(self):
+        with patch.object(runner, "PUBLIC_SAFE_MODE", True):
+            with self.assertRaises(runner.RunnerError):
+                runner.operation_reveal_claim(
+                    {"claimCode": "CLAIM", "agentId": "agent", "username": "name"}
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
