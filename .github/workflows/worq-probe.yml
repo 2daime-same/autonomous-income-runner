@@ -1,0 +1,39 @@
+name: Probe WORQ live marketplace
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - worq_probe.py
+      - .github/workflows/worq-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: worq-live-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m py_compile worq_probe.py
+      - run: python3 worq_probe.py
+      - name: Commit public evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add worq-output/live.json
+          if git diff --cached --quiet; then
+            echo 'No WORQ evidence changes'
+          else
+            git commit -m 'Record WORQ live marketplace evidence [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
