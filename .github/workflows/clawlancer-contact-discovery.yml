@@ -1,0 +1,41 @@
+name: Discover Clawlancer package contacts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/clawlancer-contact-discovery.yml
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read public npm metadata
+        run: |
+          set -euo pipefail
+          mkdir -p clawlancer-output
+          npm view clawlancer-mcp name version author maintainers repository homepage bugs --json > /tmp/npm.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          value = json.loads(Path('/tmp/npm.json').read_text())
+          Path('clawlancer-output/public-package-contact.json').write_text(
+              json.dumps(value, indent=2, sort_keys=True) + '\n'
+          )
+          PY
+      - name: Commit public contact metadata
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add clawlancer-output/public-package-contact.json
+          git commit -m 'Record official Clawlancer package contacts [skip ci]'
+          git pull --rebase origin main
+          git push
