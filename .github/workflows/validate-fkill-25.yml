@@ -79,6 +79,9 @@ jobs:
               'issuehunt_reward_usd': 8,
               'upstream_commit': upstream,
               'matrix_result': os.environ['MATRIX_RESULT'],
+              'run_id': os.environ['RUN_ID'],
+              'run_url': os.environ['RUN_URL'],
+              'head_sha': os.environ['HEAD_SHA'],
               'patch_file': 'bounty-output/fkill-25.patch',
               'claim_status': 'not-submitted',
               'next_action': 'Submit only after both operating-system test jobs succeed and a fork/PR path is available.',
@@ -89,6 +92,9 @@ jobs:
           PY
         env:
           MATRIX_RESULT: ${{ needs.test.result }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          HEAD_SHA: ${{ github.sha }}
 
       - name: Commit evidence
         run: |
