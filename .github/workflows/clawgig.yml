@@ -7,6 +7,7 @@ on:
       - clawgig/request.json
       - clawgig/input/verify-code.cms.b64
       - clawgig_runner.py
+      - clawgig_wallet.mjs
       - tests/test_clawgig_runner.py
       - clawgig/avatar.svg
       - .github/workflows/clawgig.yml
@@ -35,6 +36,12 @@ jobs:
           key: clawgig-state-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             clawgig-state-
+
+      - name: Prepare persistent autonomous Solana wallet proof
+        env:
+          CLAWGIG_STATE_DIR: .clawgig-state
+          CLAWGIG_WALLET_AUTH_FILE: /tmp/clawgig-wallet-auth.json
+        run: node clawgig_wallet.mjs
 
       - name: Create persistent transport key if absent
         shell: bash
@@ -88,6 +95,7 @@ jobs:
           CLAWGIG_STATE_DIR: .clawgig-state
           CLAWGIG_OUTPUT_DIR: clawgig/output
           CLAWGIG_REQUEST_FILE: clawgig/request.json
+          CLAWGIG_WALLET_AUTH_FILE: /tmp/clawgig-wallet-auth.json
         run: python3 clawgig_runner.py
 
       - name: Encrypt private state and registration material
@@ -96,6 +104,13 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p clawgig/output
+          if [[ -f .clawgig-state/solana-private.pem ]]; then
+            openssl cms -encrypt -binary -aes-256-cbc \
+              -in .clawgig-state/solana-private.pem \
+              -out clawgig/output/private-wallet.cms \
+              -outform DER keys/superteam-state-public.crt
+            sha256sum clawgig/output/private-wallet.cms > clawgig/output/private-wallet.cms.sha256
+          fi
           if [[ -f .clawgig-state/state.json ]]; then
             openssl cms -encrypt -binary -aes-256-cbc \
               -in .clawgig-state/state.json \
@@ -111,6 +126,7 @@ jobs:
             sha256sum clawgig/output/private-registration.cms > clawgig/output/private-registration.cms.sha256
             rm -f clawgig/output/private-registration.json
           fi
+          rm -f /tmp/clawgig-wallet-auth.json
 
       - name: Verify public output contains no credentials
         id: public_scan
