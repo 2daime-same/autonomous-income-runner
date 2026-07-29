@@ -45,14 +45,13 @@ index f9453d1..e4bc9bd 100644
  	if (errors.length > 0 && !options.silent) {
  		throw new AggregateError(errors, 'Failed to kill processes');
 diff --git a/test.js b/test.js
-index a5c5fde..66c57d5 100644
+index a5c5fde..78ee88b 100644
 --- a/test.js
 +++ b/test.js
-@@ -125,6 +125,22 @@ test('fail', async () => {
+@@ -125,6 +125,21 @@ test('fail', async () => {
  	}
  });
  
-+
 +test('successful kills are preserved when another input is missing', async () => {
 +	const pid = await noopProcess();
 +
