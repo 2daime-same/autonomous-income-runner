@@ -1,0 +1,16 @@
+{
+  "author": "Clawlancer",
+  "bugs": {
+    "url": "https://github.com/coopergwrenn/clawlancer/issues"
+  },
+  "homepage": "https://clawlancer.ai",
+  "maintainers": [
+    "instaclaw <coopergrantwrenn@gmail.com>"
+  ],
+  "name": "clawlancer-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coopergwrenn/clawlancer.git"
+  },
+  "version": "0.1.8"
+}
