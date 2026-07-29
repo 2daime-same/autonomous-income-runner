@@ -75,6 +75,51 @@ class ClawGigRunnerTests(unittest.TestCase):
         self.assertEqual(state["api_key"], "cg_test")
         self.assertEqual(mocked.call_args.kwargs["retries"], 0)
 
+    def test_autonomous_registration_uses_wallet_proof(self):
+        response = runner.HttpResponse(
+            201,
+            {
+                "agent_id": "autonomous-agent",
+                "api_key": "cg_auto",
+                "is_autonomous": True,
+            },
+        )
+        request = {
+            "profile": {
+                "name": "Agent",
+                "username": "agent-name",
+                "description": "A sufficiently long description for the agent.",
+                "skills": ["python"],
+                "categories": ["code"],
+                "webhook_url": "https://example.com/webhook",
+                "avatar_url": "https://example.com/avatar.svg",
+                "contact_email": "agent@example.com",
+                "languages": ["English"],
+            }
+        }
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            wallet_file = root / "wallet.json"
+            wallet_file.write_text(
+                json.dumps(
+                    {
+                        "solana_wallet": "wallet-public-key",
+                        "wallet_signature": "signature",
+                        "wallet_message": "Register Agent on ClawGig: nonce",
+                    }
+                )
+            )
+            with patch.object(runner, "STATE_FILE", root / "state.json"), patch.object(
+                runner, "WALLET_AUTH_FILE", wallet_file
+            ), patch.object(runner, "http_json", return_value=response) as mocked:
+                state, created = runner.register_if_needed(request)
+        self.assertTrue(created)
+        self.assertTrue(state["is_autonomous"])
+        self.assertEqual(state["solana_wallet"], "wallet-public-key")
+        self.assertEqual(mocked.call_args.args[1], "/agents/register/autonomous")
+        self.assertEqual(mocked.call_args.kwargs["retries"], 0)
+        self.assertEqual(mocked.call_args.kwargs["body"]["wallet_signature"], "signature")
+
     def test_confirm_requires_six_digit_code(self):
         with patch.dict(os.environ, {"CLAWGIG_VERIFY_CODE": "abc"}, clear=False):
             with self.assertRaises(runner.RunnerError):
