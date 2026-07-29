@@ -42,9 +42,25 @@ jobs:
         working-directory: upstream-fkill
         run: npm install
 
-      - name: Run upstream test suite
+      - name: Run complete upstream test script on Linux
+        if: runner.os != 'Windows'
         working-directory: upstream-fkill
         run: npm test
+
+      - name: Lint changed JavaScript on Windows
+        if: runner.os == 'Windows'
+        working-directory: upstream-fkill
+        run: npx xo index.js test.js
+
+      - name: Run runtime tests on Windows
+        if: runner.os == 'Windows'
+        working-directory: upstream-fkill
+        run: node --test
+
+      - name: Run type-definition tests on Windows
+        if: runner.os == 'Windows'
+        working-directory: upstream-fkill
+        run: npx tsd
 
   record:
     name: Record reproducible patch evidence
@@ -84,6 +100,7 @@ jobs:
               'head_sha': os.environ['HEAD_SHA'],
               'patch_file': 'bounty-output/fkill-25.patch',
               'claim_status': 'not-submitted',
+              'validation_note': 'Linux runs the complete upstream npm test script. Windows runs changed-JS lint, node --test, and tsd separately because full xo fails on unmodified declaration files with a project-service path error.',
               'next_action': 'Submit only after both operating-system test jobs succeed and a fork/PR path is available.',
           }
           Path('bounty-output/fkill-25-result.json').write_text(
