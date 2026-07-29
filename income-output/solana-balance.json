@@ -1,0 +1,13 @@
+{
+  "evidence_boundary": "This file proves the public on-chain balance observed by a Solana RPC. It does not identify the sender or prove that a transfer was caused by a specific task.",
+  "first_observed_or_changed_at": "2026-07-29T09:12:12+00:00",
+  "lamports": 0,
+  "network": "solana-mainnet",
+  "positive_token_accounts": [],
+  "rpc_url": "https://api.mainnet-beta.solana.com",
+  "sol": "0.000000000",
+  "usdc": "0.000000",
+  "usdc_mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  "usdc_raw": "0",
+  "wallet": "4RYaiFeSQtZMFREZPuoER8wr5F2eDFs3XeDKtEqpgVaj"
+}
