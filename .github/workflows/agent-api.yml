@@ -71,11 +71,38 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if find output -maxdepth 1 -name '*.json' -type f -print0 | \
-            xargs -0 -r grep -nE '"(apiKey|api_key|claimCode|claim_code|authorization|token|secret)"[[:space:]]*:[[:space:]]*"(?!\[REDACTED\])' ; then
-            echo 'Potential credential detected in public JSON.' >&2
-            exit 1
-          fi
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          sensitive = {
+              "access_token", "apikey", "api_key", "authorization",
+              "bearertoken", "bearer_token", "claimcode", "claim_code",
+              "human_privy_token", "privy_token", "refresh_token",
+              "secret", "token",
+          }
+          problems = []
+
+          def walk(value, path):
+              if isinstance(value, dict):
+                  for raw_key, item in value.items():
+                      key = str(raw_key).replace("-", "_").lower()
+                      child = f"{path}.{raw_key}"
+                      if key in sensitive and item not in (None, "", "[REDACTED]"):
+                          problems.append(child)
+                      walk(item, child)
+              elif isinstance(value, list):
+                  for index, item in enumerate(value):
+                      walk(item, f"{path}[{index}]")
+              elif isinstance(value, str) and value.startswith("sk_"):
+                  problems.append(path)
+
+          for file in Path("output").glob("*.json"):
+              walk(json.loads(file.read_text(encoding="utf-8")), file.name)
+
+          if problems:
+              raise SystemExit("Potential credential in public JSON: " + ", ".join(problems))
+          PY
 
       - name: Commit sanitized evidence and encrypted state
         if: always()
