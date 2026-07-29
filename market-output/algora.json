@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-07-29T07:44:20.189Z",
+  "generated_at": "2026-07-29T09:06:14.379Z",
   "source": "Algora public SDK @algora/sdk",
   "status_filter": "active",
-  "total_active_rewarded": 0,
+  "query_variants": [
+    {
+      "name": "active_without_rewarded_filter",
+      "rewarded_filter": null,
+      "raw_count": 0,
+      "error": null
+    },
+    {
+      "name": "active_unrewarded",
+      "rewarded_filter": false,
+      "raw_count": 0,
+      "error": null
+    },
+    {
+      "name": "active_rewarded",
+      "rewarded_filter": true,
+      "raw_count": 0,
+      "error": null
+    }
+  ],
+  "unique_active_items": 0,
+  "total_active_with_money": 0,
   "total_value_usd": 0,
   "items": []
 }
