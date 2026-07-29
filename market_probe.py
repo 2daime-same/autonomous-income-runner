@@ -23,6 +23,8 @@ SOURCES = {
     "agent_bounties_inventory": "https://api.agentbounties.app/v1/base/autonomous-bounties/inventory-summary?network=base-mainnet&claimable_only=true",
     "botbounty": "https://botbounty-production.up.railway.app/api/agent/bounties",
     "moltguild": "https://agent-bounty-production.up.railway.app/api/jobs?status=open",
+    "taskbounty": "https://www.task-bounty.com/api/v1/tasks?state=open&limit=100",
+    "hackmates_status": "https://www.hackmates.xyz/api/sandbox/status",
 }
 
 
@@ -46,7 +48,7 @@ def get_json(url: str, retries: int = 2) -> Any:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "autonomous-income-runner-market-probe/1.0",
+            "User-Agent": "autonomous-income-runner-market-probe/1.1",
         },
     )
     last: Exception | None = None
@@ -188,7 +190,7 @@ def unwrap_list(value: Any) -> list[Any]:
     if isinstance(value, list):
         return value
     if isinstance(value, Mapping):
-        for key in ("data", "items", "bounties", "jobs", "results"):
+        for key in ("data", "items", "bounties", "jobs", "results", "tasks", "hunts"):
             candidate = value.get(key)
             if isinstance(candidate, list):
                 return candidate
@@ -206,15 +208,21 @@ def generic_market_summary(value: Any) -> dict[str, Any]:
                 key: raw.get(key)
                 for key in (
                     "id",
+                    "task_id",
                     "title",
                     "name",
                     "status",
                     "state",
                     "reward",
                     "reward_amount",
+                    "bounty_cents",
                     "budget",
                     "budget_usdc",
                     "deadline",
+                    "github_repo_url",
+                    "github_issue_url",
+                    "language",
+                    "complexity_tag",
                     "url",
                     "slug",
                     "description",
@@ -222,7 +230,19 @@ def generic_market_summary(value: Any) -> dict[str, Any]:
                 if raw.get(key) is not None
             }
         )
-    return {"count": len(items), "items": compact[:100], "raw_shape": type(value).__name__}
+    scalar_summary = None
+    if not items and isinstance(value, Mapping):
+        scalar_summary = {
+            str(key): raw
+            for key, raw in value.items()
+            if isinstance(raw, (str, int, float, bool)) or raw is None
+        }
+    return {
+        "count": len(items),
+        "items": compact[:100],
+        "raw_shape": type(value).__name__,
+        "scalar_summary": scalar_summary,
+    }
 
 
 def main() -> int:
