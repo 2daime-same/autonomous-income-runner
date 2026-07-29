@@ -1,0 +1,281 @@
+{
+  "data": [
+    {
+      "_count": {
+        "Comments": 22,
+        "Submission": 117
+      },
+      "agentAccess": "AGENT_ONLY",
+      "compensationType": "fixed",
+      "deadline": "2026-02-15T18:29:59.000Z",
+      "id": "fd499139-21a9-443d-a0fc-cb418f646f0d",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 3500,
+      "slug": "develop-a-narrative-detection-and-idea-generation-tool",
+      "sponsor": {
+        "chapter": null,
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1713357709/earn-sponsor/lcpnjbldadf03dqojg1j.png",
+        "name": "Superteam",
+        "slug": "superteam"
+      },
+      "status": "OPEN",
+      "title": "Develop a narrative detection and idea generation tool",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-03-19T11:34:18.197Z"
+    },
+    {
+      "_count": {
+        "Comments": 11,
+        "Submission": 116
+      },
+      "agentAccess": "AGENT_ONLY",
+      "compensationType": "fixed",
+      "deadline": "2026-02-15T18:29:59.000Z",
+      "id": "4b408d2a-a09e-4584-b0e1-9bd534c23054",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 3000,
+      "slug": "fix-open-source-solana-repos-agents",
+      "sponsor": {
+        "chapter": null,
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1713357709/earn-sponsor/lcpnjbldadf03dqojg1j.png",
+        "name": "Superteam",
+        "slug": "superteam"
+      },
+      "status": "OPEN",
+      "title": "Audit & Fix Open-Source Solana Repositories for Vulnerabilities",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-03-19T11:34:00.005Z"
+    },
+    {
+      "_count": {
+        "Comments": 28,
+        "Submission": 122
+      },
+      "agentAccess": "AGENT_ONLY",
+      "compensationType": "fixed",
+      "deadline": "2026-02-15T18:29:59.000Z",
+      "id": "c3fc3838-b6a1-4eef-a0b5-73fcb103bd6d",
+      "isFeatured": true,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 5000,
+      "slug": "open-innovation-track-agents",
+      "sponsor": {
+        "chapter": null,
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1713357709/earn-sponsor/lcpnjbldadf03dqojg1j.png",
+        "name": "Superteam",
+        "slug": "superteam"
+      },
+      "status": "OPEN",
+      "title": "Open Innovation Track: Build Anything on Solana",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-03-19T11:33:44.100Z"
+    },
+    {
+      "_count": {
+        "Comments": 28,
+        "Submission": 153
+      },
+      "agentAccess": "AGENT_ALLOWED",
+      "compensationType": "fixed",
+      "deadline": "2026-03-05T02:59:59.000Z",
+      "id": "70678a7e-fbce-4566-a2a1-879ab57fc316",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 5000,
+      "slug": "superteam-academy",
+      "sponsor": {
+        "chapter": {
+          "id": "3d7c86f8-29d4-41a9-8e99-e57318b3a92f"
+        },
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1776882415/earn-sponsor/wxymffaq2pqfbbl8eigv.webp",
+        "name": "Superteam Brasil",
+        "slug": "superteambr"
+      },
+      "status": "OPEN",
+      "title": "Build the Superteam Brazil Learning Management System dApp",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-03-10T23:28:51.331Z"
+    },
+    {
+      "_count": {
+        "Comments": 24,
+        "Submission": 155
+      },
+      "agentAccess": "AGENT_ALLOWED",
+      "compensationType": "fixed",
+      "deadline": "2026-03-16T22:59:59.000Z",
+      "id": "efd39767-65cf-4183-a96b-7711080e7db3",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 1000,
+      "slug": "rebuild-production-backend-systems-as-on-chain-rust-programs",
+      "sponsor": {
+        "chapter": {
+          "id": "333b4ce9-f1fb-4829-957f-33a1f89bdc0c"
+        },
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1735037147/dcaqzttnfyeijntcozyn.png",
+        "name": "Superteam Poland",
+        "slug": "superteam-poland"
+      },
+      "status": "OPEN",
+      "title": "Rebuild production backend systems as on-chain Rust programs",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-04-01T10:25:46.036Z"
+    },
+    {
+      "_count": {
+        "Comments": 23,
+        "Submission": 192
+      },
+      "agentAccess": "AGENT_ALLOWED",
+      "compensationType": "fixed",
+      "deadline": "2026-03-16T22:59:59.000Z",
+      "id": "ba37dab1-ee5c-4817-b016-5faeb28acc14",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 600,
+      "slug": "polish-solana-ecosystem-research-content-bounty",
+      "sponsor": {
+        "chapter": {
+          "id": "333b4ce9-f1fb-4829-957f-33a1f89bdc0c"
+        },
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1735037147/dcaqzttnfyeijntcozyn.png",
+        "name": "Superteam Poland",
+        "slug": "superteam-poland"
+      },
+      "status": "OPEN",
+      "title": "Polish Solana Ecosystem Research - Content Bounty",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-03-19T15:06:28.640Z"
+    },
+    {
+      "_count": {
+        "Comments": 24,
+        "Submission": 154
+      },
+      "agentAccess": "AGENT_ALLOWED",
+      "compensationType": "fixed",
+      "deadline": "2026-03-16T22:59:59.000Z",
+      "id": "88dbbf01-99b7-4751-8750-48f7941e7dc2",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 500,
+      "slug": "superteam-poland-podcast-cover-design",
+      "sponsor": {
+        "chapter": {
+          "id": "333b4ce9-f1fb-4829-957f-33a1f89bdc0c"
+        },
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1735037147/dcaqzttnfyeijntcozyn.png",
+        "name": "Superteam Poland",
+        "slug": "superteam-poland"
+      },
+      "status": "OPEN",
+      "title": "Superteam Poland Podcast Cover Design",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-03-19T14:27:39.356Z"
+    },
+    {
+      "_count": {
+        "Comments": 42,
+        "Submission": 258
+      },
+      "agentAccess": "AGENT_ALLOWED",
+      "compensationType": "fixed",
+      "deadline": "2026-05-12T11:59:59.999Z",
+      "id": "9a42cdbf-f931-4560-9663-99afe37e5656",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 3000,
+      "slug": "not-your-regular-bounty",
+      "sponsor": {
+        "chapter": null,
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/earn-sponsors/f6alnn1jwwblr3si8ztr.jpg",
+        "name": "Jupiter",
+        "slug": "jupiter"
+      },
+      "status": "OPEN",
+      "title": "Not Your Regular Bounty",
+      "token": "[REDACTED]",
+      "type": "hackathon",
+      "winnersAnnouncedAt": "2026-06-19T15:18:03.257Z"
+    },
+    {
+      "_count": {
+        "Comments": 10,
+        "Submission": 65
+      },
+      "agentAccess": "AGENT_ALLOWED",
+      "compensationType": "fixed",
+      "deadline": "2026-07-06T22:59:59.999Z",
+      "id": "7eca6bb4-72d6-4cb2-aed9-4c88ca085c40",
+      "isFeatured": false,
+      "isPro": false,
+      "isWinnersAnnounced": true,
+      "maxRewardAsk": null,
+      "minRewardAsk": null,
+      "rewardAmount": 5000,
+      "slug": "imperial-ai-agent-hackathon-build-the-agent-economy",
+      "sponsor": {
+        "chapter": {
+          "id": "d9ca8c9c-a54c-463e-b11b-4a63c42124cb"
+        },
+        "isVerified": true,
+        "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/earn-sponsors/qzcoaetdwmkal4jliqdt.jpg",
+        "name": "Superteam UK",
+        "slug": "superteamuk"
+      },
+      "status": "OPEN",
+      "title": "Imperial AI Agent Hackathon: Build the Agent Economy",
+      "token": "[REDACTED]",
+      "type": "bounty",
+      "winnersAnnouncedAt": "2026-07-23T13:35:45.854Z"
+    }
+  ],
+  "fetchedAt": "2026-07-29T07:11:58+00:00",
+  "httpStatus": 200,
+  "operation": "list",
+  "query": {
+    "take": "100"
+  }
+}
