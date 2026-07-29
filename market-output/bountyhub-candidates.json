@@ -1,0 +1,2080 @@
+{
+  "actionable": [
+    {
+      "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
+      "amount_usd": "250.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "f35ef17a-ca1f-4a5a-a12e-762def0aee45",
+      "claimed": false,
+      "exclusions": [],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 5,
+      "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/5",
+      "open_competing_prs": [],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": null,
+      "repo_stars": 7,
+      "repository": "fluxerapp/fluxer-meta",
+      "scope_excerpt": "**Status: needs mobile and desktop visual design**\n\n# Background\n\nThreads are one of our top requested features. A common desire on chat platform, akin to breakout rooms for specific sub-conversations, threads are generally considered to be “sub-channels” that sit inside a larger channel. Threads typically have a unique name and a starting message, however the latter should be viewed as optional.\n\n\nWe should avoid diverging from industry standard. Nor should we think of threads as a buildup to forums. Both serve different niches. Threads allow for quickly zooming in on a specific message during an active conversation. Forums create hubs for specific types of conversations. While the two products may intersect at a later point, as a MVP to meet user needs rapidly, we should focus our efforts on just implementing a standard “threads feature”\n\n\n# Product needs\n\nAll designs below (except instance level safety) should be treated as strong suggestions. If you feel you have a better design, we encourage you to explore it, but please understand that if it is not to the team’s liking, we may not accept the end result. Instance level safety designs are requirements.\n\n\nTLDR → Threads are sub-channels. They inherit a large amount of base design and UX from channels. There are specific nuances in the API, database structure, and UX for them, but broadly, they should be treated as channels. \n\n\n## Initiation - (Desktop)\n\n### Starting a thread\n\n* Users should be able to create a thread in any text based channel via three methods:\n  * Hovering over an existing message should display a “thread” icon in the context menu. The thread icon should be in between the reply and the forward icons. A tooltip should appear above with “Start new thread”\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n  * When right clicking a message or hitting the hamburger icon on a message, a “Start new thread” button should be there.\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n* “/thread” in the chat box should allow you to also initiate a thread\n* When initiating a thread, the creator is presented a popup modal. That modal has:\n  * Thread Name\n  * How long should the thread remain open (default 7d)\n  * Shows a preview of the first message (or nothing if doing /thread)\n  * a confirm and cancel button.\n* If a user does not have the permissions to start a thread, they will not see any of the buttons or have an autocomplete for /thread\n  * If permissions change while a thread creation modal is open, hitting confirm should fail the user. No special design is needed, but an error message in console is nice.\n* When a thread is created, the client renders it in the channel as an indented box below the origina",
+      "score": 103.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small and testable scope markers",
+        "no competing attempt signal found",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "Threads - (Dev Bounty: $250)",
+      "total_amount_usd": "800.00"
+    }
+  ],
+  "actionable_count": 1,
+  "generated_at": "2026-07-29T09:39:58+00:00",
+  "inspected": [
+    {
+      "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
+      "amount_usd": "250.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "f35ef17a-ca1f-4a5a-a12e-762def0aee45",
+      "claimed": false,
+      "exclusions": [],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 5,
+      "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/5",
+      "open_competing_prs": [],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": null,
+      "repo_stars": 7,
+      "repository": "fluxerapp/fluxer-meta",
+      "scope_excerpt": "**Status: needs mobile and desktop visual design**\n\n# Background\n\nThreads are one of our top requested features. A common desire on chat platform, akin to breakout rooms for specific sub-conversations, threads are generally considered to be “sub-channels” that sit inside a larger channel. Threads typically have a unique name and a starting message, however the latter should be viewed as optional.\n\n\nWe should avoid diverging from industry standard. Nor should we think of threads as a buildup to forums. Both serve different niches. Threads allow for quickly zooming in on a specific message during an active conversation. Forums create hubs for specific types of conversations. While the two products may intersect at a later point, as a MVP to meet user needs rapidly, we should focus our efforts on just implementing a standard “threads feature”\n\n\n# Product needs\n\nAll designs below (except instance level safety) should be treated as strong suggestions. If you feel you have a better design, we encourage you to explore it, but please understand that if it is not to the team’s liking, we may not accept the end result. Instance level safety designs are requirements.\n\n\nTLDR → Threads are sub-channels. They inherit a large amount of base design and UX from channels. There are specific nuances in the API, database structure, and UX for them, but broadly, they should be treated as channels. \n\n\n## Initiation - (Desktop)\n\n### Starting a thread\n\n* Users should be able to create a thread in any text based channel via three methods:\n  * Hovering over an existing message should display a “thread” icon in the context menu. The thread icon should be in between the reply and the forward icons. A tooltip should appear above with “Start new thread”\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n  * When right clicking a message or hitting the hamburger icon on a message, a “Start new thread” button should be there.\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n* “/thread” in the chat box should allow you to also initiate a thread\n* When initiating a thread, the creator is presented a popup modal. That modal has:\n  * Thread Name\n  * How long should the thread remain open (default 7d)\n  * Shows a preview of the first message (or nothing if doing /thread)\n  * a confirm and cancel button.\n* If a user does not have the permissions to start a thread, they will not see any of the buttons or have an autocomplete for /thread\n  * If permissions change while a thread creation modal is open, hitting confirm should fail the user. No special design is needed, but an error message in console is nice.\n* When a thread is created, the client renders it in the channel as an indented box below the origina",
+      "score": 103.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small and testable scope markers",
+        "no competing attempt signal found",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "Threads - (Dev Bounty: $250)",
+      "total_amount_usd": "800.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "100.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "7c9b61d6-7d0d-4c91-86c6-38686711b714",
+      "claimed": false,
+      "exclusions": [
+        "adult or sexual-content project",
+        "not escrow-paid: PROMISED"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 109,
+      "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/109",
+      "open_competing_prs": [],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "DM",
+      "repo_stars": 59,
+      "repository": "SPLURT-Station/S.P.L.U.R.T-tg",
+      "scope_excerpt": "# About the bounty\r\nCurrently our genital sprites are a combination of upstream's existing genital sprites and also our old genital sprites from our current codebase. In some cases they cover certain styles and sizes well, but there are many holes in the sprite files that require filling with new sprites for our genital sizes. Not to mention that, in general, the genitals sprites as a whole could use a refresher and better spriting for our codebase. \r\n\r\nWe would very much appreciate a good respriting work on our codebases genital sprites, either filling in the holes or straight up respriting the genitals to look better.\r\n\r\nHere are some specifications of how the sprites should work for each genital:\r\n\r\n## Breasts\r\n\r\n- They have three main options: Pair, Quad and Sextuple\r\n- Each style has two sets of coloring options: Greyscale and Skintone (_s)\r\n- Breast sizes go from 0 to 19\r\n- Each breast sprite style has a FRONT and BEHIND sprite state, used for rendering the genital in front and behind the sprite where necessary.\r\n\r\n## Penis\r\n\r\n- They have 9 main options: Human, Nondescript, Knotted, Flared, (Barbed, Knotted), Tapered, Tentacled, Hemi and Knotted Hemi\r\n- Each style has two sets of coloring options: Greyscale and Skintone (_s)\r\n- Each style also has an erect and not erect state.\r\n- Penis sizes go from 0 to 5\r\n- Penis sprites mainly use FRONT sprites, but it's appreciated to add BEHIND sprites where necessary.\r\n- Penis sprites also have taur alts, which would need to be added in\r\n\r\n## Testicles\r\n\r\n- Testicles have two style options: Pair and Sheath\r\n- Each style has two sets of coloring options: Greyscale and Skintone (_s)\r\n- Testicle sizes go from 0 to 8\r\n- Testicle sprites mainly use ADJ sprites, but it's appreciated to add BEHIND sprites where necessary.\r\n- Testicle sprites also have taur alts, which would need to be added in\r\n\r\n## Vagina\r\n\r\n- Vaginas have 8 styles: Human, Tentacle, Dentata, Hairy, Spade, Furred, Gaping, Cloaca\r\n- Each style has an aroused and not aroused state\r\n- They only have one size\r\n- They use the FRONT layer.\r\n\r\n## Butts\r\n\r\n- Butts for now are mostly fine, though they could use a respriting if you'd like to improve their look!\r\n- There's only one style of butt: Pair\r\n- Said style has two sets of coloring options: Greyscale and Skintone (_s)\r\n- Butt sizes go from 1 to 8\r\n- They use FRONT and ADJ sprites.\r\n- They need manually sprited holes for the arms to pass through in the ADJ sprite facing front.\r\n\r\n## Belly\r\n\r\n- Although belly sprites are more or less well covered at this time, their sprites lack consistency in style, and they need skintone alts, therefore work on them is also appreciated\r\n- There's only one style of belly: Pair\r\n- Said style has two sets of coloring options: Greyscale and Skintone (_s)\r\n- belly sizes go from 1 to 10\r\n- They use FRONT and BEHIND sprites\r\n\r\n## Anus\r\n\r\n- More than a resprite to the currently existing sprites, this genital could use extra styles added to the two currently available o",
+      "score": 89.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "higher-cost language: dm",
+        "no competing attempt signal found",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "[BOUNTY] Genital size completion/respriting $100+",
+      "total_amount_usd": "100.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "200.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "ae3d1ab6-8f15-4d72-b39c-a7153339fa44",
+      "claimed": false,
+      "exclusions": [
+        "GitHub issue is not open"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "closed",
+      "issue_number": 22571,
+      "issue_url": "https://github.com/azerothcore/azerothcore-wotlk/issues/22571",
+      "open_competing_prs": [],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "C++",
+      "repo_stars": 8682,
+      "repository": "azerothcore/azerothcore-wotlk",
+      "scope_excerpt": "### Describe your feature request or suggestion in detail\n\nHi,\n\nI’d like to propose implementing map partitioning for large continent maps, inspired by the following Project-Epoch TrinityCore PR:\n\n- https://github.com/Project-Epoch/TrinityCore/pull/120\n\n### The Problem\n\nCurrently, all continent maps (like Eastern Kingdoms or Kalimdor) are processed on a single thread. With thousands of entities and players, this becomes a performance bottleneck. While instances benefit from parallel processing via separate map threads, continents remain monolithic, even under heavy load.\n\n### The Proposed Approach\n\nThe PR from TrinityCore introduces a `MapPartitioned` class that allows continents to be split into smaller logical partitions. These partitions share the base map data and are processed in parallel, significantly reducing per-tick load.\n\nNotable points from the implementation:\n\n- Seamless player and entity movement across partitions (no loading screens)\n- Entities are assigned dynamically to the correct partition on startup\n- GridUnload removed to simplify logic and improve performance\n- Shared systems (e.g., weather) remain consistent via the base map\n- Cleaner structure for future improvements and easier debugging\n\n### Benefits for AzerothCore\n\n- Better performance on high-population servers\n- Reduced lag in major cities or crowded quest zones\n- Scales better for events like world PvP or Wintergrasp\n- Lays groundwork for more advanced systems (e.g. phasing, regional load balancing)\n\nI don't know if it's possible to implement a system similat to this, but this could be a significant architectural upgrade and help AzerothCore scale further as adoption grows. I’d love to hear your thoughts on feasibility and whether a similar system could be integrated.\n\nThanks for your time.\n\n### Describe a possible solution to your feature or suggestion in detail\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "score": 84.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "higher-cost language: c++",
+        "established repository",
+        "no competing attempt signal found",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "Feature: Map Partitioning Support for AzerothCore",
+      "total_amount_usd": "200.00"
+    },
+    {
+      "additional_description": "To claim this bounty, this must be implemented across desktop and mobile.",
+      "amount_usd": "500.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "4d7c4070-412c-44b4-a0d9-b1d2ef926d04",
+      "claimed": false,
+      "exclusions": [
+        "not escrow-paid: PROMISED"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 2,
+      "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/2",
+      "open_competing_prs": [],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": null,
+      "repo_stars": 7,
+      "repository": "fluxerapp/fluxer-meta",
+      "scope_excerpt": "# Background\n\nPolls have two purposes:\n1. Quick and easy single selection polls to quickly gather thoughts\n2. Ranked choice polls that help to collect detailed feedback. \n\n\nWe want to be able to support both needs, as detailed below.\n\n# User Stories\n\n## Megan - Group DM Member (simple poll)\n\nMegan is in a group chat with her friends. She wants to be able to quickly ask folks which dress of hers looks best. To do so, she creates a poll. In the poll creation menu, she is able to to upload images and write text next next to them. She is able to set a title and a duration. She also gets to toggle ranked voting and anonymous responses. Finally, she has the option to allow people to select custom responses. \n\nIn this case, she creates a simple poll with no ranked voting and no custom responses. Once Megan hits confirm, a poll appears in the chat. \n\n### Desktop\nOn desktop, Megan's friends see a poll appear with each (smaller) image / text option. The header has the title and Megan's profile picture. \n\nThe results are hidden from them until they hit submit. Clicking on each image brings it up bigger with the text as a caption. Users are able to click left or right arrows or use their arrow keys to go between options. Double clicking on the image selects it as the selected choice. They are able to undo that choice by double clicking again. \n\nOnce something is double clicked, a new button on the poll will appear to show results. Results will be shown in order of most to least voted. Next to each option, a pfp of the voters. If the friend clicks on an option again, the same popup is shown, this time with the pfp of the voters in the bottom corner.\n\nAfter the allotted time, the poll closes. Votes become viewable to all users, and no more votes can be accepted.   \n\n### Mobile\nVery similar experience, except in this case, if images are included, clicking on an option pulls up an image carousal that can be swiped through. Holding down on an selects it as an option. \n\n### Ranked Choice\nRanked choice is similar, except you can select multiple options, It shows you the order selected in both the image carasoul and in the chat. When you view the votes, you get shown the first place selections in order. You can click a button to then see the order changing when 2nd choice votes are added, then 3rd place votes, etc...\n\n## Riley - Moderating Polls (Community)\nRiley moderates the Kubuntu community. An anonymous poll was created that contained negative profanity related to the community. They should be able to determine from audit logs what user created what options. If they have a bot that automatically ingests audit logs, that bot should be able to see that as well.\n\n## Andrew - Moderating Polls (Instance)\nAndrew is an instance moderator. He received a report of a poll containing negative images. In admin, Andrew is able to view all images associated with the poll. He can take all the same actions as he is normally able to within admin on images. Andrew is also able t",
+      "score": 83.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "no competing attempt signal found",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "Polls - (Dev Bounty: $500)",
+      "total_amount_usd": "500.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "150.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "1325e1c1-22de-408b-bf6c-69e858323598",
+      "claimed": false,
+      "exclusions": [
+        "GitHub issue already assigned",
+        "GitHub issue is not open",
+        "adult or sexual-content project",
+        "not escrow-paid: PROMISED"
+      ],
+      "github_assignees": [
+        "evandarksky"
+      ],
+      "github_issue_state": "closed",
+      "issue_number": 76,
+      "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/76",
+      "open_competing_prs": [],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "DM",
+      "repo_stars": 59,
+      "repository": "SPLURT-Station/S.P.L.U.R.T-tg",
+      "scope_excerpt": "We need a lot of objects from our original codebase ported for mapping purposes, however some of these objects **might or might not already exist in the rebase**, and for that we'll need not just the ports of those objects that don't already exist but also the **name of the class paths of the objects that already exist**, as to know where exactly they are in the rebase. You can put these in your pr text.\r\nList of objects needed to port:\r\n\r\n- [x] Pitchers\r\n- [x] Wataur\r\n- [x] Kitsune mask w colors\r\n- [x] Deathclaws/wolves (yes, I know this is known)\r\n- [x] Cum glazed donuts\r\n- [x] Glazed donuts\r\n- [x] Colormate (ported, it just needs to be mapped in, using automapper if possible)\r\n- [x] Titanium floor damage (already extant)\r\n- [x] Panty dropper *\r\n- [x] Milk cleanable decals\r\n- [x] Semen paw cleanable decals\r\n- [x] Semen drip cleanable decals\r\n`--- May require editing a base file ---`\r\n- [x] Bad dragon Rune\r\n- [x] Booty Rune\r\n- [x] Our custom runes basically\r\n`--- ---`\r\n- [x] Our plushies\r\n- [ ] Unrolling pin\r\n- [ ] ~~Enifk~~ (What is this? -Evan)\r\n- [x] Lizard gibs\r\n- [x] Viro job\r\n- [x] Plasma kirby plant\r\n- [x] Shadow wood and shadow furniture\r\n- [x] Yes_erp poster\r\n- [ ] Sec bitch beret\r\n- [ ] /obj/structure/table/wood/fancy/monochrome\r\n- [ ] Redpanda stinky\r\n- [ ] Lewd ai module spawner\r\n- [ ] Pool temp controls\r\n- [ ] Pool noodles *\r\n- [ ] Cow thighs/socks *\r\n- [ ] Everything nanites\r\n- [ ] Reagent jellybeans *\r\n- [ ] Rustic wooden doors *\r\n- [ ] Diving boards\r\n- [ ] Cloning??? *\r\n- [ ] blackred wooden fancy table *\r\n- [ ] Mushroom bowl *\r\n- [ ] Turnstiles, maybe replaced by Prison gate scanners, but I like clicky clacky\r\n- [ ] Hugbot *\r\n- [ ] Bottles of semen *\r\n- [ ] Any keg but beer *\r\n\r\nThe bounty price set is only the base amount we offer, we can discuss payment to offer you more money than what stated.",
+      "score": 75.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "higher-cost language: dm",
+        "no competing attempt signal found",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "[BOUNTY] Port objects from our rebase for mapping $150+",
+      "total_amount_usd": "150.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "250.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "81479fc7-ca8b-40aa-a117-8a01277e12b0",
+      "claimed": false,
+      "exclusions": [
+        "GitHub issue is not open",
+        "open competing PR exists"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "closed",
+      "issue_number": 207,
+      "issue_url": "https://github.com/emersion/hydroxide/issues/207",
+      "open_competing_prs": [
+        {
+          "number": 282,
+          "title": "CalDAV support",
+          "updated_at": "2026-06-05T01:43:56Z",
+          "url": "https://github.com/emersion/hydroxide/pull/282",
+          "user": "zCri"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Go",
+      "repo_stars": 2179,
+      "repository": "emersion/hydroxide",
+      "scope_excerpt": "There was work put into making the address book available over CardDav/localhost:8080, is there interest in getting calendar working as well?",
+      "score": 70.18,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "supported language: go",
+        "established repository",
+        "no competing attempt signal found",
+        "1 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "CalDAV support",
+      "total_amount_usd": "250.00"
+    },
+    {
+      "additional_description": "This bounty is split into 4 smaller bounties (see sub-issues). To claim this bounty, this must be implemented across desktop and mobile. ",
+      "amount_usd": "500.00",
+      "assignment_type": "open",
+      "attempt_signals": [
+        {
+          "excerpt": "\"/attempt #3\"",
+          "login": "Ahavahdev1"
+        }
+      ],
+      "bountyhub_id": "86d87f7b-622c-448d-8f88-cb71630db2a5",
+      "claimed": false,
+      "exclusions": [
+        "competing work signal exists",
+        "not escrow-paid: PROMISED"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 3,
+      "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/3",
+      "open_competing_prs": [],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": null,
+      "repo_stars": 7,
+      "repository": "fluxerapp/fluxer-meta",
+      "scope_excerpt": "**Status**: Needs mobile design input.\n\n\n# Background\n\nEvents / calendars are a way for a community or user to manage upcoming activities. Events are specific timeslots on calendars. \n\n# Product needs\n\n\n- Multiple different components:\n    - User / Community Calendars\n    - Creating / Editing / Deleting Events\n    - Subscribing to Events\n    - User Permissions\n    - Exporting user calendars and specific events to external providers\n    - Open VCs\n    - Temporary Accounts\n    - Password Protected VCs\n    - Instance controls / safety\n\n# User Stories \n\n## Megan - Community Member (subscribe)\nMegan is a Fluxer user on web.fluxer.app - She is in dozens of communities spread across the fluxerverse, each running events of some kind. Megan wants to subscribe to various events in those communities. By going to the calendar channel in the communities she is in, Megan is able to see a calendar with all events on it. The permission allowing her to see events is _view_channel_. \n\nBy clicking on an event, Megan sees a popout with more information on it, and a “ I'm Going?” button. The event information contains it’s name, the creator, a description of the event, a location, and a list of attendees. Megan finds the “Super smash bros” tournament event for Next Saturday at 10pm PT to 3am PT in the Gaming voice channel. Since Megan can see the Gaming channel, it shows up. If it was in a channel Megan can’t see, it would have said “You do not have access to the event channel.\" The dates / times are represented in her local time. \n\nMegan clicks the going button and it changes to visually indicate to her that she is confirmed for the event. Her pfp also joins the list of attendees. Hovering on the pfp shows her profile. Clicking the button again, changes it back to the original state without her.\n\nMegan is also able to manage the events she is going to by going to her My Journal section. Inside the dropdown options for My Journal is a section for a calendar. Clicking that will open a personal calendar channel with all subscribed events. Megan is able to see all the same information as in the community, and can modify the going status.\n\nMegan will receive notifications for the event 1 hour and 5 minutes before the event. These will be in the form of a push or desktop notification. When the event starts, the location becomes clickable in the calendar. Clicking it will bring Megan to the channel, automatically muted and camera off. The event also visually showcases that the event is ongoing.\n\nOnce the event is over, Megan goes back to her calendar. She sees that the event is now greyed out as it has concluded. She is able to see this in both her personal calendar and her communities’ calendar.\n\n## Hazel - Community Member (create events)\nHazel wants to create a Karaoke event in the Fortnite community. They have been granted the appropriate permissions, and once in the calendar channel, they are able to click on dates in the calendar. Once they click on a date, a modal p",
+      "score": 63.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "1 competing attempt signal(s)",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "Events / Calendar -  (Dev Bounty: $500)",
+      "total_amount_usd": "500.00"
+    },
+    {
+      "additional_description": "Displaying other users RPC must be implemented across desktop and mobile. RPC auto-discovery only needs to be implemented on Desktop",
+      "amount_usd": "250.00",
+      "assignment_type": "open",
+      "attempt_signals": [
+        {
+          "excerpt": "/try #8",
+          "login": "Osman5171"
+        }
+      ],
+      "bountyhub_id": "2f34fecf-80c8-445b-9d14-bcee489dc1e3",
+      "claimed": false,
+      "exclusions": [
+        "competing work signal exists",
+        "not escrow-paid: PROMISED"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 8,
+      "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/8",
+      "open_competing_prs": [],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": null,
+      "repo_stars": 7,
+      "repository": "fluxerapp/fluxer-meta",
+      "scope_excerpt": "# Background\nRPC allows Fluxer to display running games, music and software. This allows users to show what they are doing. \n\nTBD",
+      "score": 62.18,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "1 competing attempt signal(s)",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "RPC - (Dev Bounty: $250)",
+      "total_amount_usd": "250.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "75.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "cabf6b8a-9ff0-4db4-9037-f8592e68f6a7",
+      "claimed": false,
+      "exclusions": [
+        "GitHub issue already assigned",
+        "GitHub issue is not open",
+        "adult or sexual-content project",
+        "not escrow-paid: PROMISED"
+      ],
+      "github_assignees": [
+        "mcbalaam"
+      ],
+      "github_issue_state": "closed",
+      "issue_number": 115,
+      "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/115",
+      "open_competing_prs": [],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "DM",
+      "repo_stars": 59,
+      "repository": "SPLURT-Station/S.P.L.U.R.T-tg",
+      "scope_excerpt": "# About the bounty\r\nPort our custom infinidorm features (Especially our custom infinidorm maps) and include the infinidorms ball in all of our maps so it's accessible, using the modular maps if possible.\r\n\r\nWe also request some extra features made with the porting of infinidorms:\r\n\r\n- An \"Infinidorms relay\" object that looks and is named the same as the infinidorms ball, which when interacted with activates the actual infinidorms ball. This is so that there's several entries to infinidorms in the different maps of the codebase routed to the same infinidorms obj.\r\n- Better UI for infinidorms: Make it not just a number input but rather a panel where you can see all the currently open infinidorms and select one, or otherwise create a new room using the template of your choosing. Also add the option to put a name to your dorm which appears next to the number for easy access.\r\n- Add the option to make a room open or closed, in which case it allows for entry or disallows for it, this would also affect the aforementioned UI, either by having an indicator for which rooms are open/closed or hide the rooms that are closed.\r\n\r\n## Bounty Completion list:\r\n\r\n- [ ] **Extra dorm maps port**\r\n- [ ] **Include infinidorms in all maps**\r\n- [ ] **Infinidorms relay**\r\n- [ ] Infinidorms UI improvement\r\n- [ ] Open/close infinidorms\r\n\r\n# Payment\r\nThe currently offered payment is only a base price, we're more than happy to discuss the amount of money paid for the completion of this bounty.\r\n\r\nPayment available mostly through paypal, ko-fi, boosty, crypto. Though we can try and help you receive the money in most platforms available.\r\n\r\nContact mos_ley on discord for more information",
+      "score": 53.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "large cross-system scope",
+        "higher-cost language: dm",
+        "no competing attempt signal found",
+        "no open competing PR found"
+      ],
+      "solved": false,
+      "title": "[BOUNTY] Infinidorms ports and tweaks $75+",
+      "total_amount_usd": "75.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "50.00",
+      "assignment_type": "exclusive",
+      "attempt_signals": [
+        {
+          "excerpt": "Hi @Excellencedev, I’m currently working on this issue.\n\nSince I’m not able to work on weekdays, I’ve been contributing on weekends. The issue has been open since October, so I didn’t assume there was any urgency in raising a PR.\n\nI also noticed that you have a few unresolved bounty PRs:\n\n- https://github.com/tscircuit/runframe/pull/1509\n- https://github.com/aqualinkorg/aqualink-app/pull/1177\n\nI’ll review your PR as well, and I’d like to ask @robertobandini to take a look to verify its validity and overall quality. If either Roberto or I feel that your PR is solid and only needs minor adjustments, I’m happy to let you take over the issue and the bounty.\n\nFor me, the main motivation behind working on this issue isn’t the bounty, it’s that I recently started using Freelens for my job and rea",
+          "login": "gambhirsharma"
+        },
+        {
+          "excerpt": "> i will love to work on this issue if it is still open please kindly assign to me\n\nHi @StrveInc and thank you about your interest here.\nAs you can see there is already someone working on this issue.\nPlease take a look to the other issues, you are welcome.",
+          "login": "robertobandini"
+        }
+      ],
+      "bountyhub_id": "fe773082-b67f-4af3-a5e6-7011ddd18dcd",
+      "claimed": false,
+      "exclusions": [
+        "BountyHub assignee already present",
+        "GitHub issue already assigned",
+        "assignment is not open",
+        "competing work signal exists",
+        "open competing PR exists"
+      ],
+      "github_assignees": [
+        "gambhirsharma"
+      ],
+      "github_issue_state": "open",
+      "issue_number": 1280,
+      "issue_url": "https://github.com/freelensapp/freelens/issues/1280",
+      "open_competing_prs": [
+        {
+          "number": 1431,
+          "title": "Feat: custom color theme",
+          "updated_at": "2026-07-27T14:14:00Z",
+          "url": "https://github.com/freelensapp/freelens/pull/1431",
+          "user": "gambhirsharma"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "TypeScript",
+      "repo_stars": 5336,
+      "repository": "freelensapp/freelens",
+      "scope_excerpt": "### What would you like to be added?\r\n\r\nIn short, the ability to change the theme colors on Freelens and create new ones as you like.\r\n\r\n### Why is this needed?\r\n\r\nMany users complain that they don't have this option, especially when it comes to colors they would prefer to change.\r\n\r\nFor example:\r\n- https://github.com/freelensapp/freelens/issues/550#issuecomment-3371177938\r\n- https://github.com/freelensapp/freelens/issues/1237\r\n- https://github.com/freelensapp/freelens/issues/186",
+      "score": 47.59,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "supported language: typescript",
+        "established repository",
+        "2 competing attempt signal(s)",
+        "1 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "Custom theme and color feature",
+      "total_amount_usd": "50.00"
+    },
+    {
+      "additional_description": "Bounty only available once the scope is fully defined",
+      "amount_usd": "15.00",
+      "assignment_type": "exclusive",
+      "attempt_signals": [],
+      "bountyhub_id": "6c8e18c0-e78a-4094-802d-0cbd3f48dbe0",
+      "claimed": false,
+      "exclusions": [
+        "BountyHub assignee already present",
+        "GitHub issue already assigned",
+        "assignment is not open",
+        "not escrow-paid: PROMISED",
+        "open competing PR exists"
+      ],
+      "github_assignees": [
+        "adityakrmishra"
+      ],
+      "github_issue_state": "open",
+      "issue_number": 12064,
+      "issue_url": "https://github.com/inventree/InvenTree/issues/12064",
+      "open_competing_prs": [
+        {
+          "number": 12072,
+          "title": "Feature: Backend scaffolding for Repair Orders (#12064)",
+          "updated_at": "2026-07-27T05:31:08Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12072",
+          "user": "adityakrmishra"
+        },
+        {
+          "number": 12396,
+          "title": "feat: Add RepairOrder feature (#12064)",
+          "updated_at": "2026-07-14T11:16:45Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12396",
+          "user": "stevenmini2019"
+        },
+        {
+          "number": 12326,
+          "title": "Add backend MVP for repair orders",
+          "updated_at": "2026-07-07T16:17:39Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12326",
+          "user": "bobwoo0621-lab"
+        },
+        {
+          "number": 12303,
+          "title": "feat(order): add RepairOrder order type (backend)",
+          "updated_at": "2026-07-05T12:27:01Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12303",
+          "user": "ameyypawar"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "Python",
+      "repo_stars": 7312,
+      "repository": "inventree/InvenTree",
+      "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
+      "score": 45.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "supported language: python",
+        "established repository",
+        "no competing attempt signal found",
+        "4 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[Feature] Repair orders",
+      "total_amount_usd": "15.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "200.00",
+      "assignment_type": "open",
+      "attempt_signals": [
+        {
+          "excerpt": "Hi, I'm working on this issue and will submit a PR shortly!\n",
+          "login": "TakuyaSasuke040601-boop"
+        }
+      ],
+      "bountyhub_id": "b21928e9-70dd-4d95-adc6-3009df47e9f5",
+      "claimed": false,
+      "exclusions": [
+        "competing work signal exists",
+        "open competing PR exists"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 1609,
+      "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
+      "open_competing_prs": [
+        {
+          "number": 1715,
+          "title": "feat: ChatGPT conversation export → OKF migration adapter (Path B showcase) [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-29T08:46:49Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1715",
+          "user": "waterWang"
+        },
+        {
+          "number": 1714,
+          "title": "feat(migration): add ChatGPT data export (conversations.json) → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T02:24:20Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1714",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1713,
+          "title": "feat(migration): add LangMem / LangChain memory → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T02:23:38Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1713",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1711,
+          "title": "feat(migration): add AutoGen multi-agent state → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T02:04:54Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1711",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1710,
+          "title": "feat(migration): add CrewAI memory → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-29T02:00:00Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1710",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1703,
+          "title": "feat(examples): migrate Antigravity brain archives through OKF",
+          "updated_at": "2026-07-28T19:56:01Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1703",
+          "user": "LubuSeb"
+        },
+        {
+          "number": 1632,
+          "title": "feat: ChatGPT & Claude conversation migration adapters",
+          "updated_at": "2026-07-28T16:41:06Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1632",
+          "user": "digivasserver-ai"
+        },
+        {
+          "number": 1702,
+          "title": "feat(migration): add Zep/Graphiti → OKF migration adapter",
+          "updated_at": "2026-07-28T15:33:10Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1702",
+          "user": "qwenbona"
+        },
+        {
+          "number": 1624,
+          "title": "feat: add 9 migration adapters (ChatGPT, Claude, Gemini, Zep, Hindsight, LangGraph, Notion, Obsidian, Chroma)",
+          "updated_at": "2026-07-27T19:10:23Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1624",
+          "user": "ejspeed-cmd"
+        },
+        {
+          "number": 1684,
+          "title": "feat(examples): migrate MCP Memory Server graphs to portable OKF",
+          "updated_at": "2026-07-27T14:10:35Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1684",
+          "user": "Janettbella69"
+        },
+        {
+          "number": 1672,
+          "title": "feat(examples): migrate Claude Code local memory to portable OKF",
+          "updated_at": "2026-07-27T00:17:09Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1672",
+          "user": "zf54-arch"
+        },
+        {
+          "number": 1678,
+          "title": "feat: Ollama embeddings migration adapter for memanto migrate (#1609)",
+          "updated_at": "2026-07-27T00:12:43Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1678",
+          "user": "johneapen80"
+        },
+        {
+          "number": 1669,
+          "title": "feat(migration): add Codex memory to OKF adapter",
+          "updated_at": "2026-07-26T19:15:22Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1669",
+          "user": "JerryNee"
+        },
+        {
+          "number": 1641,
+          "title": "fix: agent creation race condition + plan limit enforcement",
+          "updated_at": "2026-07-26T11:27:03Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1641",
+          "user": "garochee33"
+        },
+        {
+          "number": 1634,
+          "title": "feat(migrate): add ChatGPT conversation export adapter",
+          "updated_at": "2026-07-26T11:02:07Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1634",
+          "user": "garochee33"
+        },
+        {
+          "number": 1635,
+          "title": "fix(recall): include memories with unknown confidence in filtered queries",
+          "updated_at": "2026-07-26T10:32:00Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1635",
+          "user": "garochee33"
+        },
+        {
+          "number": 1664,
+          "title": "feat(migration): agent operational-log adapter — migrate the correction structure, not just the text",
+          "updated_at": "2026-07-26T14:12:46Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1664",
+          "user": "ImmortalDemonGod"
+        },
+        {
+          "number": 1645,
+          "title": "feat(examples): add Hindsight to OKF migration showcase",
+          "updated_at": "2026-07-26T02:11:43Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1645",
+          "user": "yuhaouno"
+        },
+        {
+          "number": 1650,
+          "title": "feat(migration): CogniMem → Memanto OKF Migration Adapter",
+          "updated_at": "2026-07-25T19:35:09Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1650",
+          "user": "1421906110"
+        },
+        {
+          "number": 1647,
+          "title": "feat(migration): add Open WebUI chat export to OKF adapter",
+          "updated_at": "2026-07-25T08:09:33Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1647",
+          "user": "shelabastida933-pixel"
+        },
+        {
+          "number": 1639,
+          "title": "feat: add ChatGPT migration provider — the freedom loop",
+          "updated_at": "2026-07-24T16:38:27Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1639",
+          "user": "hanyuanchen08-netizen"
+        },
+        {
+          "number": 1614,
+          "title": "feat(migration): add ChatGPT conversation export adapter for OKF",
+          "updated_at": "2026-07-24T01:02:48Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1614",
+          "user": "TakuyaSasuke040601-boop"
+        },
+        {
+          "number": 1629,
+          "title": "feat: add ChatGPT migration script and mapper",
+          "updated_at": "2026-07-23T17:57:06Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1629",
+          "user": "RanuK12"
+        },
+        {
+          "number": 1628,
+          "title": "feat(examples): add ChatGPT export → OKF migration adapter (#1609)",
+          "updated_at": "2026-07-23T17:23:49Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1628",
+          "user": "ccasson"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Python",
+      "repo_stars": 1708,
+      "repository": "moorcheh-ai/memanto",
+      "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
+      "score": 39.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small and testable scope markers",
+        "supported language: python",
+        "established repository",
+        "1 competing attempt signal(s)",
+        "24 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
+      "total_amount_usd": "200.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "100.00",
+      "assignment_type": "open",
+      "attempt_signals": [
+        {
+          "excerpt": "Hi @moorcheh-ai, I've opened PR #827 to fix this issue. Could you please review it when you have a moment? Thanks!",
+          "login": "JHON12091986"
+        },
+        {
+          "excerpt": "Opened PR https://github.com/moorcheh-ai/memanto/pull/1225 for this bounty.\\n\\n/claim #770",
+          "login": "Dreamstore2046"
+        },
+        {
+          "excerpt": "## Submission — Timeline Amnesia in `search_as_of`\n\nI found a Critical-severity bug in the **Retrieval Quality & Accuracy / Timeline Amnesia / Contradiction Handling** category and have opened PR #1279 with a complete fix:\n\n**PR**: https://github.com/moorcheh-ai/memanto/pull/1279\n\n### Summary of the flaw\n\n`MemoryReadService.search_as_of` is a point-in-time query (\"What was true at this point in time?\"). To decide whether a memory was already superseded at the requested `as_of_date`, it inspects the memory's `updated_at` field.\n\nThe problem: `updated_at` is **shared by every mutating operation** on a `MemoryRecord` — `validate()`, `detect_contradiction()`, `update_memory()`, etc. — not just `mark_superseded()`. Any later call to those operations \"refreshes\" `updated_at` to a much later time",
+          "login": "q404365631"
+        }
+      ],
+      "bountyhub_id": "a7d4cc29-f927-4939-bc77-d7b8bb36c3da",
+      "claimed": false,
+      "exclusions": [
+        "competing work signal exists",
+        "high-risk security scope",
+        "open competing PR exists"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 770,
+      "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
+      "open_competing_prs": [
+        {
+          "number": 1610,
+          "title": "fix: 7 bug fixes (2 HIGH + 5 medium) — Fixes #770",
+          "updated_at": "2026-07-29T08:39:14Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1610",
+          "user": "hanyuanchen08-netizen"
+        },
+        {
+          "number": 1563,
+          "title": "fix: preserve Supermemory migration data and revoke deleted-agent sessions",
+          "updated_at": "2026-07-29T07:02:30Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1563",
+          "user": "nanguazhou123-star"
+        },
+        {
+          "number": 1712,
+          "title": "Harden invalid session marker cleanup",
+          "updated_at": "2026-07-29T06:12:09Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1712",
+          "user": "zy26thu-hash"
+        },
+        {
+          "number": 1708,
+          "title": "fix: caller auth enforcement on agent management + /status endpoint (#1436)",
+          "updated_at": "2026-07-29T01:47:55Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1708",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1707,
+          "title": "fix(migrate): update Mem0 export to v3 API",
+          "updated_at": "2026-07-28T20:46:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1707",
+          "user": "LubuSeb"
+        },
+        {
+          "number": 1706,
+          "title": "fix(export): split comma-separated tags in OKF export [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-28T20:24:33Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1706",
+          "user": "waterWang"
+        },
+        {
+          "number": 1705,
+          "title": "fix(migrate): use valid source for imported memories",
+          "updated_at": "2026-07-29T02:26:12Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1705",
+          "user": "soul-sol"
+        },
+        {
+          "number": 1701,
+          "title": "fix: resolve 3 bugs for Bounty #770 (duplicate constant, flaky test, deprecated utcnow) [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-28T16:34:41Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1701",
+          "user": "waterWang"
+        },
+        {
+          "number": 1595,
+          "title": "fix(ts): harden session recovery and server startup",
+          "updated_at": "2026-07-28T15:48:33Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1595",
+          "user": "bobthecomputer"
+        },
+        {
+          "number": 1649,
+          "title": "fix: resolve session deletion issue in client delete_agent Closes #770",
+          "updated_at": "2026-07-28T15:13:02Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1649",
+          "user": "hc0533"
+        },
+        {
+          "number": 1607,
+          "title": "[Bounty #770] Failing tests for memory integrity & temporal filtering bugs",
+          "updated_at": "2026-07-28T15:10:59Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1607",
+          "user": "Pavithran1729"
+        },
+        {
+          "number": 1492,
+          "title": "fix(langgraph): prevent cross-query results on rate-limit fallback",
+          "updated_at": "2026-07-28T08:06:43Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1492",
+          "user": "attaboy11"
+        },
+        {
+          "number": 1617,
+          "title": "fix(read): search_as_of recalls since-expired memories (bounty #770)",
+          "updated_at": "2026-07-28T03:28:54Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1617",
+          "user": "StreetTriple765999"
+        },
+        {
+          "number": 1571,
+          "title": "fix: prevent recall loss, session corruption, and duplicate memories",
+          "updated_at": "2026-07-27T23:03:06Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1571",
+          "user": "nexicturbo"
+        },
+        {
+          "number": 1420,
+          "title": "fix: rate limiting, timezone fixes, upsert update flow",
+          "updated_at": "2026-07-27T21:36:57Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1420",
+          "user": "ejspeed-cmd"
+        },
+        {
+          "number": 1679,
+          "title": "fix(#770): resolve update_memory contradiction — validate before document build",
+          "updated_at": "2026-07-27T14:10:36Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1679",
+          "user": "johneapen80"
+        },
+        {
+          "number": 1682,
+          "title": "[#770] Reject NaN and infinity in persisted float configuration",
+          "updated_at": "2026-07-27T14:10:29Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1682",
+          "user": "scroogemcduck1068"
+        },
+        {
+          "number": 1671,
+          "title": "fix(write): preserve active facts until replacements are stored (#770)",
+          "updated_at": "2026-07-27T00:18:14Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1671",
+          "user": "zf54-arch"
+        },
+        {
+          "number": 1676,
+          "title": "fix: date only end of day recall bounds drop the final subsecond of the day",
+          "updated_at": "2026-07-27T00:13:57Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1676",
+          "user": "Dashboarrd"
+        },
+        {
+          "number": 1585,
+          "title": "fix(temporal): parse_relative_time silently returns None for 'last week'/'last month'/'last year' → timeline amnesia (#770)",
+          "updated_at": "2026-07-26T17:21:14Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1585",
+          "user": "KhangYen"
+        },
+        {
+          "number": 1666,
+          "title": "fix: migrate deprecated Pydantic V1 @validator to V2 @field_validator",
+          "updated_at": "2026-07-26T14:12:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1666",
+          "user": "hardcorexax-source"
+        },
+        {
+          "number": 1665,
+          "title": "fix(write): update_memory bypasses contradiction resolution → silent coexistence of two active contradictory memories (#770)",
+          "updated_at": "2026-07-26T14:12:52Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1665",
+          "user": "KhangYen"
+        },
+        {
+          "number": 1657,
+          "title": "fix(temporal): as_of date-only parsed as start-of-day on one path, end-of-day on another (23:59:59 divergence)",
+          "updated_at": "2026-07-26T14:12:49Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1657",
+          "user": "ImmortalDemonGod"
+        },
+        {
+          "number": 1641,
+          "title": "fix: agent creation race condition + plan limit enforcement",
+          "updated_at": "2026-07-26T11:27:03Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1641",
+          "user": "garochee33"
+        },
+        {
+          "number": 1635,
+          "title": "fix(recall): include memories with unknown confidence in filtered queries",
+          "updated_at": "2026-07-26T10:32:00Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1635",
+          "user": "garochee33"
+        },
+        {
+          "number": 1644,
+          "title": "fix(read): search_as_of recalls since-expired memories (timeline amnesia)",
+          "updated_at": "2026-07-25T15:10:59Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1644",
+          "user": "truongsontung"
+        },
+        {
+          "number": 1616,
+          "title": "fix(langgraph): preserve namespace tuple boundaries",
+          "updated_at": "2026-07-25T08:57:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1616",
+          "user": "evoesco"
+        },
+        {
+          "number": 1507,
+          "title": "fix(memory-write): preserve provenance and reject failed updates (#770)",
+          "updated_at": "2026-07-25T03:13:07Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1507",
+          "user": "evoesco"
+        },
+        {
+          "number": 1501,
+          "title": "Fix: strip leading whitespace in filtered query when query is empty",
+          "updated_at": "2026-07-24T18:48:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1501",
+          "user": "truongsontung"
+        },
+        {
+          "number": 1631,
+          "title": "fix(extraction): cap generated memory content",
+          "updated_at": "2026-07-23T21:12:28Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1631",
+          "user": "heyhengl"
+        },
+        {
+          "number": 1630,
+          "title": "fix(okf): preserve temporal metadata across round trips",
+          "updated_at": "2026-07-23T18:24:32Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1630",
+          "user": "jamilahmadzai"
+        },
+        {
+          "number": 1619,
+          "title": "fix(api): preserve source_ref in recall responses",
+          "updated_at": "2026-07-23T14:05:51Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1619",
+          "user": "JoeJingzhou"
+        },
+        {
+          "number": 1615,
+          "title": "fix: return renewed header session token",
+          "updated_at": "2026-07-23T14:05:54Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1615",
+          "user": "spoconymacius3879254-ctrl"
+        },
+        {
+          "number": 1612,
+          "title": "fix: reject ambiguous comma-containing tags",
+          "updated_at": "2026-07-22T22:35:08Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1612",
+          "user": "stellarstillsmedia"
+        },
+        {
+          "number": 1459,
+          "title": "fix: isolate conflict reports by backend",
+          "updated_at": "2026-07-22T19:43:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1459",
+          "user": "quietvector-agent"
+        },
+        {
+          "number": 1412,
+          "title": "Validate conflict report path keys",
+          "updated_at": "2026-07-22T19:40:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1412",
+          "user": "smwsk1"
+        },
+        {
+          "number": 1605,
+          "title": "fix: 7 bug fixes (TTL timeline + batch integrity + 5 medium) — Fixes #770",
+          "updated_at": "2026-07-22T11:29:33Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1605",
+          "user": "hanu-14"
+        },
+        {
+          "number": 1495,
+          "title": "fix(langgraph): upsert repeated store keys",
+          "updated_at": "2026-07-22T09:43:49Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1495",
+          "user": "Absamad-dew"
+        },
+        {
+          "number": 1602,
+          "title": "fix: 5 bugs from Memanto Bug & Exploit Challenge (#770)",
+          "updated_at": "2026-07-22T05:58:19Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1602",
+          "user": "ochsec"
+        },
+        {
+          "number": 1593,
+          "title": "fix: rate-limiter fail-open + ID validation inconsistency + SourceType (issue #1438)",
+          "updated_at": "2026-07-21T20:22:31Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1593",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1589,
+          "title": "fix: ensure _parse_ts returns aware datetime and clean up batch counting logic",
+          "updated_at": "2026-07-21T19:10:14Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1589",
+          "user": "pistakugli"
+        },
+        {
+          "number": 1500,
+          "title": "fix(okf): preserve memory lifecycle status",
+          "updated_at": "2026-07-21T17:39:05Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1500",
+          "user": "GioLealhmx"
+        },
+        {
+          "number": 1385,
+          "title": "Preserve provenance metadata on memory update (#770)",
+          "updated_at": "2026-07-21T15:51:27Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1385",
+          "user": "2lll5"
+        },
+        {
+          "number": 1292,
+          "title": "Normalize comma-separated memory tags",
+          "updated_at": "2026-07-21T15:41:24Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1292",
+          "user": "guo-gy"
+        },
+        {
+          "number": 1584,
+          "title": "fix: bound yesterday temporal recall",
+          "updated_at": "2026-07-21T14:05:52Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1584",
+          "user": "Hero988"
+        },
+        {
+          "number": 1541,
+          "title": "fix(connect): clean managed hooks and permissions",
+          "updated_at": "2026-07-20T18:34:49Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1541",
+          "user": "448536497-blip"
+        },
+        {
+          "number": 1539,
+          "title": "fix(app): decouple conflict detection prompt from embedded query to prevent context overflow",
+          "updated_at": "2026-07-20T16:54:08Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1539",
+          "user": "sirEven"
+        },
+        {
+          "number": 1538,
+          "title": "fix(app): preserve provenance in update_memory() to prevent metadata overwrite",
+          "updated_at": "2026-07-20T15:01:52Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1538",
+          "user": "sirEven"
+        },
+        {
+          "number": 1533,
+          "title": "fix: Add tests for memory contradiction and deduplication edge cases",
+          "updated_at": "2026-07-22T16:01:32Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1533",
+          "user": "ninghuagui-debug"
+        },
+        {
+          "number": 1528,
+          "title": "fix: enforce ALLOWED_UPDATE_FIELDS in update_memory (#770)",
+          "updated_at": "2026-07-19T16:45:53Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1528",
+          "user": "jennymcgregor627-jpg"
+        },
+        {
+          "number": 1522,
+          "title": "fix(ts): clean up lifecycle signal listeners",
+          "updated_at": "2026-07-19T12:09:50Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1522",
+          "user": "SajidAhmed619"
+        },
+        {
+          "number": 1525,
+          "title": "Fix: agent creation limit conflict swallowing and standardize endpoint exception mapping",
+          "updated_at": "2026-07-19T11:07:38Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1525",
+          "user": "ivegotahunnitonit"
+        },
+        {
+          "number": 1482,
+          "title": "Fix noisy LLM memory JSON extraction",
+          "updated_at": "2026-07-18T12:42:43Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1482",
+          "user": "naufalfx805-source"
+        },
+        {
+          "number": 1516,
+          "title": "fix(migrate): keep OKF batches valid with long titles",
+          "updated_at": "2026-07-18T08:28:10Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1516",
+          "user": "jackmercy"
+        },
+        {
+          "number": 1506,
+          "title": "fix(ui): escape dynamic HTML in dashboard and memory views",
+          "updated_at": "2026-07-17T11:22:25Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1506",
+          "user": "pawanrahul370-commits"
+        },
+        {
+          "number": 1486,
+          "title": "fix(connect): avoid duplicated global instruction paths",
+          "updated_at": "2026-07-17T05:35:11Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1486",
+          "user": "LerkiaLiang"
+        },
+        {
+          "number": 1502,
+          "title": "fix: block cross-site management token theft",
+          "updated_at": "2026-07-17T04:58:41Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1502",
+          "user": "valencealignment"
+        },
+        {
+          "number": 1503,
+          "title": "fix(mcp): restrict automatic agent creation",
+          "updated_at": "2026-07-17T04:52:34Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1503",
+          "user": "valencealignment"
+        },
+        {
+          "number": 1483,
+          "title": "fix: replace stale OKF export snapshots",
+          "updated_at": "2026-07-17T04:40:02Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1483",
+          "user": "valencealignment"
+        },
+        {
+          "number": 1498,
+          "title": "Reject cross-site requests to local UI endpoints",
+          "updated_at": "2026-07-17T01:36:11Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1498",
+          "user": "silasbrookshaha"
+        },
+        {
+          "number": 1499,
+          "title": "fix(ts): authenticate remote management requests",
+          "updated_at": "2026-07-17T01:14:23Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1499",
+          "user": "lirunjie0510"
+        },
+        {
+          "number": 1496,
+          "title": "fix(voltagent): validate configured default limit",
+          "updated_at": "2026-07-16T22:50:55Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1496",
+          "user": "ideals2201"
+        },
+        {
+          "number": 1493,
+          "title": "fix: multi-line memory titles corrupt on recall and compound [FACT] prefixes until the memory is un-updatable (#770)",
+          "updated_at": "2026-07-16T18:26:26Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1493",
+          "user": "JoeSevenBrothersLabs"
+        },
+        {
+          "number": 1485,
+          "title": "fix: return renewed tokens to header-authenticated clients",
+          "updated_at": "2026-07-16T16:46:40Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1485",
+          "user": "Sheldono888"
+        },
+        {
+          "number": 1488,
+          "title": "fix(okf): preserve provenance during round-trip imports",
+          "updated_at": "2026-07-16T16:46:38Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1488",
+          "user": "6pt6brty57-star"
+        },
+        {
+          "number": 1484,
+          "title": "Make config persistence crash-safe",
+          "updated_at": "2026-07-16T16:46:27Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1484",
+          "user": "Sheldono888"
+        },
+        {
+          "number": 1480,
+          "title": "Reject failed uploads during memory updates",
+          "updated_at": "2026-07-16T09:22:09Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1480",
+          "user": "namtony"
+        },
+        {
+          "number": 1479,
+          "title": "Fix temporal filters for malformed memory timestamps",
+          "updated_at": "2026-07-16T03:55:01Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1479",
+          "user": "namtony"
+        },
+        {
+          "number": 1476,
+          "title": "fix(conflicts): preserve resolutions and fail closed on delete errors (#770)",
+          "updated_at": "2026-07-15T16:10:49Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1476",
+          "user": "br413"
+        },
+        {
+          "number": 1475,
+          "title": "fix: preserve agent when remote purge fails",
+          "updated_at": "2026-07-15T16:04:54Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1475",
+          "user": "dicnunz"
+        },
+        {
+          "number": 1359,
+          "title": "Fix nested summary chunks leaking into memory reads",
+          "updated_at": "2026-07-14T16:11:12Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1359",
+          "user": "xiaobai0916"
+        },
+        {
+          "number": 1354,
+          "title": "Normalize Mem0 category strings during migration",
+          "updated_at": "2026-07-14T16:11:08Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1354",
+          "user": "smwsk1"
+        },
+        {
+          "number": 1460,
+          "title": "fix: isolate export caches by backend",
+          "updated_at": "2026-07-14T01:49:29Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1460",
+          "user": "quietvector-agent"
+        },
+        {
+          "number": 1456,
+          "title": "fix(migrate): preserve Mem0 expiration semantics",
+          "updated_at": "2026-07-13T16:56:25Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1456",
+          "user": "charlie-dev-agent"
+        },
+        {
+          "number": 1445,
+          "title": "fix: report additional semantic search pages",
+          "updated_at": "2026-07-12T07:03:06Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1445",
+          "user": "phanmhung"
+        },
+        {
+          "number": 1435,
+          "title": "Pytest asyncio marker configuration #770",
+          "updated_at": "2026-07-11T15:21:36Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1435",
+          "user": "JHON12091986"
+        },
+        {
+          "number": 1431,
+          "title": "fix(schedule): reject invalid daily job times",
+          "updated_at": "2026-07-11T02:21:29Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1431",
+          "user": "Meliwat"
+        },
+        {
+          "number": 1429,
+          "title": "Add hatch-vcs fallback version for source archives",
+          "updated_at": "2026-07-10T21:32:23Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1429",
+          "user": "RenaDCR"
+        },
+        {
+          "number": 1389,
+          "title": "fix(query): raise ValidationError when offset + limit exceeds Moorcheh's maximum top_k cap (100)",
+          "updated_at": "2026-07-09T08:36:37Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1389",
+          "user": "ple1155n-cmyk"
+        },
+        {
+          "number": 788,
+          "title": "[ShanaBoo] [BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
+          "updated_at": "2026-07-09T08:05:04Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/788",
+          "user": "genesisrevelationinc-debug"
+        },
+        {
+          "number": 1404,
+          "title": "Guard invalid agent metadata files",
+          "updated_at": "2026-07-08T09:17:45Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1404",
+          "user": "smwsk1"
+        },
+        {
+          "number": 1381,
+          "title": "fix: preserve plain document content on readback",
+          "updated_at": "2026-07-06T14:41:38Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1381",
+          "user": "RobinWitch"
+        },
+        {
+          "number": 1333,
+          "title": "Validate agent ids before local file access",
+          "updated_at": "2026-07-03T16:15:03Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1333",
+          "user": "Cycle1337"
+        },
+        {
+          "number": 1331,
+          "title": "[codex] Guard repeated pagination tokens",
+          "updated_at": "2026-07-03T16:15:02Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1331",
+          "user": "GUOBAIJUN456"
+        },
+        {
+          "number": 1318,
+          "title": "Quote exported memory Markdown to prevent MEMORY.md injection",
+          "updated_at": "2026-07-03T16:14:56Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1318",
+          "user": "smwsk1"
+        },
+        {
+          "number": 1211,
+          "title": "Keep summary confidence values with memory blocks",
+          "updated_at": "2026-07-01T07:17:43Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1211",
+          "user": "Dreamstore2046"
+        },
+        {
+          "number": 789,
+          "title": "docs: Memory retrieval edge case bug report for bounty challenge",
+          "updated_at": "2026-06-29T20:45:55Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/789",
+          "user": "BWM0223"
+        },
+        {
+          "number": 863,
+          "title": "fix(logging): use real session ids in memory summaries",
+          "updated_at": "2026-06-29T20:45:02Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/863",
+          "user": "VoltVoks"
+        },
+        {
+          "number": 865,
+          "title": "Restrict UI migration file imports to migrate directory",
+          "updated_at": "2026-06-29T20:45:02Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/865",
+          "user": "alaskagood"
+        },
+        {
+          "number": 862,
+          "title": "fix(sync): refresh memory export before project sync",
+          "updated_at": "2026-06-29T20:45:01Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/862",
+          "user": "VoltVoks"
+        },
+        {
+          "number": 859,
+          "title": "fix(migrate): make imported memory ids stable across retries",
+          "updated_at": "2026-06-29T20:45:00Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/859",
+          "user": "VoltVoks"
+        },
+        {
+          "number": 860,
+          "title": "fix(conflicts): resolve filtered UI entries by original index",
+          "updated_at": "2026-07-22T17:57:28Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/860",
+          "user": "VoltVoks"
+        },
+        {
+          "number": 1272,
+          "title": "Filter inactive memories from live recall",
+          "updated_at": "2026-06-29T20:44:12Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1272",
+          "user": "drsteinerdj"
+        },
+        {
+          "number": 1212,
+          "title": "fix(#770): bug report — 4 verified logic flaws with reproduction scripts",
+          "updated_at": "2026-06-29T20:44:02Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1212",
+          "user": "BWM0223"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Python",
+      "repo_stars": 1708,
+      "repository": "moorcheh-ai/memanto",
+      "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
+      "score": 29.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "small and testable scope markers",
+        "supported language: python",
+        "established repository",
+        "3 competing attempt signal(s)",
+        "94 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
+      "total_amount_usd": "100.00"
+    },
+    {
+      "additional_description": "Implement casting so that e OS 3.x+ can cast to a Roku device.",
+      "amount_usd": "250.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "27c3cfe0-da9e-4192-848a-b676402de81c",
+      "claimed": false,
+      "exclusions": [
+        "not escrow-paid: PROMISED",
+        "open competing PR exists",
+        "requires physical device, phone/account flow, or video proof"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 580,
+      "issue_url": "https://github.com/microg/GmsCore/issues/580",
+      "open_competing_prs": [
+        {
+          "number": 3668,
+          "title": "Fix: Implement Google Cast functionality by implementing CastMediaRouteController methods [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-25T14:32:43Z",
+          "url": "https://github.com/microg/GmsCore/pull/3668",
+          "user": "waterWang"
+        },
+        {
+          "number": 3502,
+          "title": "feat: implement Google Cast support (fixes #580)",
+          "updated_at": "2026-07-03T19:27:21Z",
+          "url": "https://github.com/microg/GmsCore/pull/3502",
+          "user": "mitchellecm7"
+        },
+        {
+          "number": 3377,
+          "title": "Fix casting",
+          "updated_at": "2026-06-23T12:05:42Z",
+          "url": "https://github.com/microg/GmsCore/pull/3377",
+          "user": "hasali19"
+        },
+        {
+          "number": 3554,
+          "title": "Add Cast framework dynamite module descriptor",
+          "updated_at": "2026-06-21T05:53:35Z",
+          "url": "https://github.com/microg/GmsCore/pull/3554",
+          "user": "Jorel97"
+        },
+        {
+          "number": 3505,
+          "title": "Fix: Implement CastMediaRouteController to enable Google Cast functionality",
+          "updated_at": "2026-06-20T18:23:32Z",
+          "url": "https://github.com/microg/GmsCore/pull/3505",
+          "user": "OsirisLord"
+        },
+        {
+          "number": 3351,
+          "title": "Cast: fix device connection lifecycle and implement joinApplication",
+          "updated_at": "2026-05-13T09:34:15Z",
+          "url": "https://github.com/microg/GmsCore/pull/3351",
+          "user": "FloodExLLC"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "Java",
+      "repo_stars": 14053,
+      "repository": "microg/GmsCore",
+      "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
+      "score": 25.18,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "higher-cost language: java",
+        "established repository",
+        "no competing attempt signal found",
+        "6 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "What's the status on Google Cast implementation?",
+      "total_amount_usd": "250.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "25.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "0ffceee2-cbd6-4e40-b909-d6c1ac05314f",
+      "claimed": false,
+      "exclusions": [
+        "adult or sexual-content project",
+        "not escrow-paid: PROMISED",
+        "open competing PR exists"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 30,
+      "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/30",
+      "open_competing_prs": [
+        {
+          "number": 1024,
+          "title": "[EARLY PULL] Fixes cross server TGUI fancy chat crash",
+          "updated_at": "2026-07-29T02:54:10Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/1024",
+          "user": "CatoChristopherMrow"
+        },
+        {
+          "number": 949,
+          "title": "[TM ONLY]Balances xenos for 100HP and lack of skyrat guns",
+          "updated_at": "2026-07-29T02:54:09Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/949",
+          "user": "Vanilla1040"
+        },
+        {
+          "number": 934,
+          "title": "NT Internal Affairs Touch-Ups",
+          "updated_at": "2026-07-29T02:54:08Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/934",
+          "user": "ChromeFoxxity"
+        },
+        {
+          "number": 960,
+          "title": "[BOUNTY] Borg cock.",
+          "updated_at": "2026-07-29T02:54:08Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/960",
+          "user": "CatoChristopherMrow"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "DM",
+      "repo_stars": 59,
+      "repository": "SPLURT-Station/S.P.L.U.R.T-tg",
+      "scope_excerpt": "Add the custom lewd and normal mobs from SPLURT. They might need tweaking and to be made in a better way using the rebase's systems.\r\n\r\n- [ ] Funclas and all its variants\r\n- [ ] Wolves\r\n- [ ] Wendigos\r\n- [ ] etc.\r\n\r\nThe bounty price set is only the base amount we offer, we can discuss payment to offer you more money than what stated.",
+      "score": 24.18,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "higher-cost language: dm",
+        "no competing attempt signal found",
+        "4 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BOUNTY] Lewd and custom mobs $25+",
+      "total_amount_usd": "25.00"
+    },
+    {
+      "additional_description": "If this gets implemented in a fully working manner. E.g. I can use Youtube (native or ReVanced), Crunchyroll, Netflix, etc to cast to my TV running Tizen and a Chromecast.",
+      "amount_usd": "100.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "ef91cb1e-dd69-4a33-bd90-21c9679c9247",
+      "claimed": false,
+      "exclusions": [
+        "open competing PR exists",
+        "requires physical device, phone/account flow, or video proof"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 580,
+      "issue_url": "https://github.com/microg/GmsCore/issues/580",
+      "open_competing_prs": [
+        {
+          "number": 3668,
+          "title": "Fix: Implement Google Cast functionality by implementing CastMediaRouteController methods [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-25T14:32:43Z",
+          "url": "https://github.com/microg/GmsCore/pull/3668",
+          "user": "waterWang"
+        },
+        {
+          "number": 3502,
+          "title": "feat: implement Google Cast support (fixes #580)",
+          "updated_at": "2026-07-03T19:27:21Z",
+          "url": "https://github.com/microg/GmsCore/pull/3502",
+          "user": "mitchellecm7"
+        },
+        {
+          "number": 3377,
+          "title": "Fix casting",
+          "updated_at": "2026-06-23T12:05:42Z",
+          "url": "https://github.com/microg/GmsCore/pull/3377",
+          "user": "hasali19"
+        },
+        {
+          "number": 3554,
+          "title": "Add Cast framework dynamite module descriptor",
+          "updated_at": "2026-06-21T05:53:35Z",
+          "url": "https://github.com/microg/GmsCore/pull/3554",
+          "user": "Jorel97"
+        },
+        {
+          "number": 3505,
+          "title": "Fix: Implement CastMediaRouteController to enable Google Cast functionality",
+          "updated_at": "2026-06-20T18:23:32Z",
+          "url": "https://github.com/microg/GmsCore/pull/3505",
+          "user": "OsirisLord"
+        },
+        {
+          "number": 3351,
+          "title": "Cast: fix device connection lifecycle and implement joinApplication",
+          "updated_at": "2026-05-13T09:34:15Z",
+          "url": "https://github.com/microg/GmsCore/pull/3351",
+          "user": "FloodExLLC"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Java",
+      "repo_stars": 14053,
+      "repository": "microg/GmsCore",
+      "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
+      "score": 23.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "higher-cost language: java",
+        "established repository",
+        "no competing attempt signal found",
+        "6 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "What's the status on Google Cast implementation?",
+      "total_amount_usd": "150.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "20.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "7ba2d04c-8c3e-4752-a6a0-d583158efe99",
+      "claimed": false,
+      "exclusions": [
+        "GitHub issue already assigned",
+        "not escrow-paid: PROMISED",
+        "open competing PR exists"
+      ],
+      "github_assignees": [
+        "gitdalisar"
+      ],
+      "github_issue_state": "open",
+      "issue_number": 27,
+      "issue_url": "https://github.com/gitdalisar/mod-Faction-Free/issues/27",
+      "open_competing_prs": [
+        {
+          "number": 30,
+          "title": "fix: resolve build errors and SQL id1/scale schema mismatches (closes #27) [v2]",
+          "updated_at": "2026-07-29T08:00:33Z",
+          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/30",
+          "user": "mitchellecm7"
+        },
+        {
+          "number": 31,
+          "title": "Fix current AzerothCore compatibility",
+          "updated_at": "2026-07-28T12:53:00Z",
+          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/31",
+          "user": "G-kylexy"
+        },
+        {
+          "number": 32,
+          "title": "fix: resolve build and SQL errors for AzerothCore main (PlayerUpdates.cpp, SQL schema) [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-28T11:26:39Z",
+          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/32",
+          "user": "waterWang"
+        },
+        {
+          "number": 29,
+          "title": "fix: resolve build errors and SQL id1/scale schema mismatches (closes #27)",
+          "updated_at": "2026-07-28T08:31:26Z",
+          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/29",
+          "user": "mitchellecm7"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "C++",
+      "repo_stars": 34,
+      "repository": "gitdalisar/mod-Faction-Free",
+      "scope_excerpt": "**Describe the bug**\nI have 2 issues and i don't know if i should talk about them separately or here \nA. When using the PlayerUpdates.cpp included with this module I can't build AzerothCore.\nB. Both 'EntryChecker_RUN_FIRST.sql' and 'FactionFree.sql' give me errors when i execute them. but strangely when i enter the game for instance i can level in elwyn forest with a bloodelf but i don't get any rep, and in zone like dalaran i can't get into the Alliance part of town with said bloodelf\n\n**Steps To Reproduce**\nSteps to reproduce the behavior:\nFor issue A:\n1. copy the file 'PlayerUpdates.cpp into ...\\src\\server\\game\\Entities\\Player\n2. configure on cmake\n3. generate on cmake\n4. open solution in Visual Studio\n5. right click on ALL_BUILD -> Build\n\nFor issue B:\n1. open windows terminal\n2. command: mysql -u root-user -P port -p\n3. enter password\n4. command: use acore_world\n5. command: source path\\to\\EntryChecker_RUN_FIRST.sql\n6. get error 1\n7. command: source path\\to\\FactionFree.sql\n8. get error 2\n\nLogs:\n\nIssue A:\n<details><summary>Output Log</summary>\n<p>\n\nBuild started at 5:06 PM...\n1>------ Build started: Project: revision.h, Configuration: RelWithDebInfo x64 ------\n1>  fatal: not a git repository (or any of the parent directories): .git\n1>  --\n1>      Could not find a proper repository signature (hash) - you may need to pull tags with git fetch -t\n1>      Continuing anyway - note that the versionstring will be set to \"unknown 1970-01-01 00:00:00 (Archived)\"\n2>------ Build started: Project: game, Configuration: RelWithDebInfo x64 ------\n2>  PlayerUpdates.cpp\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,5): error C2819: type 'CinematicMgr' does not have an overloaded member 'operator ->'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(32,19):\n2>      see declaration of 'CinematicMgr'\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,5):\n2>      did you intend to use '.' instead?\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,20): error C2039: 'm_cinematicDiff': is not a member of 'CinematicMgr'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(32,19):\n2>      see declaration of 'CinematicMgr'\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(74,9): error C2819: type 'CinematicMgr' does not have an overloaded member 'operator ->'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(",
+      "score": 23.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "higher-cost language: c++",
+        "no competing attempt signal found",
+        "4 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BUG] can't build azerothcore with PlayerUpdates.cpp and sql files give error when importing",
+      "total_amount_usd": "20.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "175.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "107c8d56-dbe4-4bfe-ac30-33ca70ccc951",
+      "claimed": false,
+      "exclusions": [
+        "adult or sexual-content project",
+        "not escrow-paid: PROMISED",
+        "open competing PR exists"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 31,
+      "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/31",
+      "open_competing_prs": [
+        {
+          "number": 1031,
+          "title": "[TM ONLY][Early Pull]Return fluid levels to mid-2025",
+          "updated_at": "2026-07-29T02:54:10Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/1031",
+          "user": "Muffindrake"
+        },
+        {
+          "number": 1024,
+          "title": "[EARLY PULL] Fixes cross server TGUI fancy chat crash",
+          "updated_at": "2026-07-29T02:54:10Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/1024",
+          "user": "CatoChristopherMrow"
+        },
+        {
+          "number": 1003,
+          "title": "Abortion. ",
+          "updated_at": "2026-07-29T02:54:09Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/1003",
+          "user": "CatoChristopherMrow"
+        },
+        {
+          "number": 949,
+          "title": "[TM ONLY]Balances xenos for 100HP and lack of skyrat guns",
+          "updated_at": "2026-07-29T02:54:09Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/949",
+          "user": "Vanilla1040"
+        },
+        {
+          "number": 960,
+          "title": "[BOUNTY] Borg cock.",
+          "updated_at": "2026-07-29T02:54:08Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/960",
+          "user": "CatoChristopherMrow"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "DM",
+      "repo_stars": 59,
+      "repository": "SPLURT-Station/S.P.L.U.R.T-tg",
+      "scope_excerpt": "Basically doing the vore bounty from SPLURT\r\n\r\nSince there's already a vore system in the works, it would include just adding onto it the desirable features that chompstation has which the current vore system doesn't.\r\n\r\n- [x] Base vore system\r\n- [ ] Chomp features and fork edits\r\n\r\nThe bounty price set is only the base amount we offer, we can discuss payment to offer you more money than what stated.",
+      "score": 15.94,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "higher-cost language: dm",
+        "no competing attempt signal found",
+        "5 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BOUNTY] Vore System from Chomp/Vorestation $175+",
+      "total_amount_usd": "175.00"
+    },
+    {
+      "additional_description": "This is probably a general issue with Firebase SMS authentication. For the bounty to be released the Dott app should work to unlock and ride the scooters.",
+      "amount_usd": "35.00",
+      "assignment_type": "open",
+      "attempt_signals": [
+        {
+          "excerpt": "/attempt #2851\n\nPlan:\n- implement the missing `guardWithRequest` service path so one-shot and request-backed DroidGuard flows can execute through the existing handle lifecycle\n- preserve `initWithRequest` behavior with fallback to legacy `init`\n- return results through `IDroidGuardCallbacks` and always close the handle\n- add verification notes for the remote DroidGuard / Play Integrity multi-step path",
+          "login": "kwanter"
+        }
+      ],
+      "bountyhub_id": "5bd7b660-5c46-4686-bead-39a53699e98d",
+      "claimed": false,
+      "exclusions": [
+        "competing work signal exists",
+        "open competing PR exists",
+        "requires physical device, phone/account flow, or video proof"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 2851,
+      "issue_url": "https://github.com/microg/GmsCore/issues/2851",
+      "open_competing_prs": [
+        {
+          "number": 3681,
+          "title": "[BOUNTY #2851] Support Play Integrity over remote DroidGuard + server/guide — FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH",
+          "updated_at": "2026-07-28T21:49:32Z",
+          "url": "https://github.com/microg/GmsCore/pull/3681",
+          "user": "waterWang"
+        },
+        {
+          "number": 3622,
+          "title": "fix(recaptcha, integrity): Implement robust error handling and explicit status propagation",
+          "updated_at": "2026-07-07T21:43:22Z",
+          "url": "https://github.com/microg/GmsCore/pull/3622",
+          "user": "camaleon03"
+        },
+        {
+          "number": 3575,
+          "title": "[BOUNTY #2851] Remote DroidGuard server guide + multi-step session support",
+          "updated_at": "2026-07-02T16:17:45Z",
+          "url": "https://github.com/microg/GmsCore/pull/3575",
+          "user": "GautamKumarOffical"
+        },
+        {
+          "number": 3576,
+          "title": "[ShanaBoo] [BOUNTY] Support Play Integrity over remote DroidGuard + Server/Guide [$100]",
+          "updated_at": "2026-06-25T19:33:55Z",
+          "url": "https://github.com/microg/GmsCore/pull/3576",
+          "user": "genesisrevelationinc-debug"
+        },
+        {
+          "number": 3524,
+          "title": "[devragrin] [GmsCore] Implement guardWithRequest service path (#2851)",
+          "updated_at": "2026-06-05T05:08:44Z",
+          "url": "https://github.com/microg/GmsCore/pull/3524",
+          "user": "kwanter"
+        },
+        {
+          "number": 3471,
+          "title": "[BOUNTY #2851] Add multi-step remote DroidGuard session support",
+          "updated_at": "2026-05-22T19:53:22Z",
+          "url": "https://github.com/microg/GmsCore/pull/3471",
+          "user": "Snooz1e"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Java",
+      "repo_stars": 14053,
+      "repository": "microg/GmsCore",
+      "scope_excerpt": "**Affected app**\r\nName: Dott\r\nPackage id: com.ridedott.rider\r\n\r\n**Describe the bug**\r\nSigning in or signing up fails, seemingly because of a firebase error\r\n\r\n**To Reproduce**\r\nSteps to reproduce the behavior:\r\n1. get Dott\r\n2. Click on sign up\r\n3. enter phone number\r\n4. click sign up\r\n\r\n**Expected behavior**\r\nsends sms verification or proceeds in general\r\n\r\n**Screenshots**\r\n<details><summary>sign up error page</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/0938e413-1873-480a-a396-a598fcd98e47)\r\n\r\n</details>\r\n\r\n<details><summary>dott vehicle coverage</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/59c7d003-1954-41be-8fc1-43956a17f4a6)\r\n\r\n</details>\r\n\r\n**System**\r\nAndroid Version: 15\r\nCustom ROM: LineageOS+microg 22.1\r\n\r\n**microG**\r\nmicroG Core version: 0.3.6.244735\r\nmicroG Self-Check results: All ticked\r\n\r\n**Additional context**\r\nfull logcat of an app start and signup attempt, filtering out all logs, except those coming from com.ridedott.rider with personal or identifying information replaced by `[...]`:\r\n\r\n[dott 06_04-09-30-30_733.log](https://github.com/user-attachments/files/19620636/dott.06_04-09-30-30_733.log)\r\n\r\nLikely critical lines from the log:\r\n```\r\n1743924520.834 10285 20276 23037 W LocalRequestInterceptor: Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: Error returned from API. code: 403 body: App attestation failed.\r\n1743924521.066 10285 20276 23037 E FirebaseAuth: [SmsRetrieverHelper] SMS verification code request failed: unknown status code: 17499 Firebase App Check token is invalid.\r\n1743924521.067 10285 20276 20276 D FirebaseAuth: Invoking original failure callbacks after phone verification failure for (my phone number), error - An internal error has occurred. [ Firebase App Check token is invalid. ]\r\n```\r\nmicrog Google device registration is enabled, as is cloud messaging and \"SafetyNet\".\r\nmy device meets basic integrity and device integrity, uses sdk level 35\r\n\r\nPossibly related: https://github.com/microg/GmsCore/issues/1967, https://github.com/microg/GmsCore/issues/1281",
+      "score": 13.35,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "higher-cost language: java",
+        "established repository",
+        "1 competing attempt signal(s)",
+        "6 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[com.ridedott.rider] Dott, a wide-spread european micromobility service provider, doesn't work",
+      "total_amount_usd": "35.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "5000.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "521afa31-6c6f-4d2c-becc-c6b14318d2b4",
+      "claimed": false,
+      "exclusions": [
+        "open competing PR exists",
+        "requires physical device, phone/account flow, or video proof"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 2994,
+      "issue_url": "https://github.com/microg/GmsCore/issues/2994",
+      "open_competing_prs": [
+        {
+          "number": 3680,
+          "title": "Add RCS Asterism and Constellation AIDL services and PhoneInfo real-telephony provider",
+          "updated_at": "2026-07-28T14:47:01Z",
+          "url": "https://github.com/microg/GmsCore/pull/3680",
+          "user": "Sasireddy001"
+        },
+        {
+          "number": 3360,
+          "title": "Implement `play-services-asterism`",
+          "updated_at": "2026-07-27T06:39:09Z",
+          "url": "https://github.com/microg/GmsCore/pull/3360",
+          "user": "opstic"
+        },
+        {
+          "number": 3665,
+          "title": "feat(rcs): implement baseline Asterism and Constellation services",
+          "updated_at": "2026-07-25T12:06:13Z",
+          "url": "https://github.com/microg/GmsCore/pull/3665",
+          "user": "Ahavahdev1"
+        },
+        {
+          "number": 3664,
+          "title": "Feature/rcs bounty 2994 feat(rcs): implement clean baseline Asterism and Constellation stubs",
+          "updated_at": "2026-07-22T17:55:27Z",
+          "url": "https://github.com/microg/GmsCore/pull/3664",
+          "user": "Ahavahdev1"
+        },
+        {
+          "number": 3644,
+          "title": "RCS: DroidGuard tachyon fixes, phone-number fallback, and unit tests (#2994)",
+          "updated_at": "2026-07-15T15:43:50Z",
+          "url": "https://github.com/microg/GmsCore/pull/3644",
+          "user": "br413"
+        },
+        {
+          "number": 3359,
+          "title": "Implement `play-services-constellation`",
+          "updated_at": "2026-07-15T03:46:25Z",
+          "url": "https://github.com/microg/GmsCore/pull/3359",
+          "user": "opstic"
+        },
+        {
+          "number": 3497,
+          "title": "Fix Google Messages RCS setup support",
+          "updated_at": "2026-07-09T06:15:41Z",
+          "url": "https://github.com/microg/GmsCore/pull/3497",
+          "user": "BeauDevCode"
+        },
+        {
+          "number": 3604,
+          "title": "Partial RCS support: Constellation, Asterism, and testing documentation",
+          "updated_at": "2026-07-08T00:09:50Z",
+          "url": "https://github.com/microg/GmsCore/pull/3604",
+          "user": "coldwalletlive"
+        },
+        {
+          "number": 3388,
+          "title": "Implement Constellation + Asterism services for RCS on Google Messages",
+          "updated_at": "2026-05-25T00:28:49Z",
+          "url": "https://github.com/microg/GmsCore/pull/3388",
+          "user": "Lyapsus"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Java",
+      "repo_stars": 14053,
+      "repository": "microg/GmsCore",
+      "scope_excerpt": "**Feature Description:**\r\nGoogle Messages is currently the only widely available RCS client for Android. When attempting to use Google Messages with microG, users typically encounter issues such as:\r\n\r\nA persistent message stating \"RCS chats aren't available for this device.\"\r\nAn indefinite \"Setting up...\", where authentication of the phone number never completes.\r\n\r\nRecent developments suggest that Google Messages no longer strictly requires device attestation for RCS, making it possible to enable RCS functionality with microG. However, it appears there's a missing component or necessary adjustment within microG itself preventing successful setup.\r\n\r\nGoogle has effectively monopolized RCS, despite it being a GSMA-backed standard intended as a successor to SMS. Unlike SMS, RCS has become a closed ecosystem under Google's control, restricting open interoperability and limiting choice for users and developers. RCS has seen significant adoption, particularly in North America, and recently Apple added support RCS, further increasing its importance as a messaging standard.\r\n\r\n**Requested Solution**\r\n\r\nProvide a solution that enables Google Messages to successfully connect to and use RCS functionality when operating with microG. Acceptable outcomes include:\r\n- A fix or enhancement to microG itself, allowing seamless RCS connectivity.\r\n- Compatibility with recent versions of Google Messages is desired. Solutions that only support a specific Google Messages version from the past year will be awarded half of the bounty amount.\r\n- Modifications to AOSP or additional permissions changes are acceptable.\r\n- The solution must work on devices with a locked bootloader.\r\n\r\nLimitations\r\nSolutions relying on rooting, Magisk, or similar root-based tools are not acceptable.\r\n\r\n**Additional Information**\r\n\r\nGrapheneOS users, who leverage a Play services sandbox, have reported success with enabling RCS by applying permission changes. Although their setup differs from microG, the discussions that were taken in this thread (especially in the last year) may offer valuable insights for this bounty: https://discuss.grapheneos.org/d/3533-rcs-with-google-messages\r\n",
+      "score": 1.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "large reward likely means large scope",
+        "higher-cost language: java",
+        "established repository",
+        "no competing attempt signal found",
+        "9 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BOUNTY] RCS Support [14999$]",
+      "total_amount_usd": "14999.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "50.00",
+      "assignment_type": "open",
+      "attempt_signals": [
+        {
+          "excerpt": "/attempt #2843",
+          "login": "willkhinz"
+        },
+        {
+          "excerpt": "/attempt",
+          "login": "zhaog100"
+        },
+        {
+          "excerpt": "/attempt #2843",
+          "login": "willkhinz"
+        },
+        {
+          "excerpt": "/attempt #2843",
+          "login": "willkhinz"
+        },
+        {
+          "excerpt": "/try",
+          "login": "williamjie777"
+        }
+      ],
+      "bountyhub_id": "27a47575-ef9f-49d3-9685-c056d6825f9d",
+      "claimed": false,
+      "exclusions": [
+        "competing work signal exists",
+        "open competing PR exists",
+        "requires physical device, phone/account flow, or video proof"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 2843,
+      "issue_url": "https://github.com/microg/GmsCore/issues/2843",
+      "open_competing_prs": [
+        {
+          "number": 3662,
+          "title": "WearOS pairing and data bridging support",
+          "updated_at": "2026-07-29T07:47:42Z",
+          "url": "https://github.com/microg/GmsCore/pull/3662",
+          "user": "namdamdoi68-oss"
+        },
+        {
+          "number": 3672,
+          "title": "feat: Add CompanionPairingManager for Wear OS 3+ device pairing",
+          "updated_at": "2026-07-29T07:38:15Z",
+          "url": "https://github.com/microg/GmsCore/pull/3672",
+          "user": "laurentketterle-hub"
+        },
+        {
+          "number": 3673,
+          "title": "feat: implement WearOS support with DataApi, NodeApi, BLE discovery, and notification/media bridge [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-28T09:41:49Z",
+          "url": "https://github.com/microg/GmsCore/pull/3673",
+          "user": "waterWang"
+        },
+        {
+          "number": 3674,
+          "title": "feat(wearable): implement NodeApi, DataApi, and MessageApi delegation to WearableServiceImpl",
+          "updated_at": "2026-07-26T19:50:03Z",
+          "url": "https://github.com/microg/GmsCore/pull/3674",
+          "user": "johneapen80"
+        },
+        {
+          "number": 3466,
+          "title": "fix: [BOUNTY] WearOS Support [$1340]",
+          "updated_at": "2026-06-23T22:17:49Z",
+          "url": "https://github.com/microg/GmsCore/pull/3466",
+          "user": "asiokun"
+        },
+        {
+          "number": 3473,
+          "title": "feat: WearOS Support - Bluetooth pairing, notification bridging, media/call controls",
+          "updated_at": "2026-06-14T03:31:55Z",
+          "url": "https://github.com/microg/GmsCore/pull/3473",
+          "user": "Ikalus1988"
+        },
+        {
+          "number": 3535,
+          "title": "feat: Add Wear OS support — Bluetooth transport, notification mirroring, and media control",
+          "updated_at": "2026-06-05T05:46:17Z",
+          "url": "https://github.com/microg/GmsCore/pull/3535",
+          "user": "kouyouqi123"
+        },
+        {
+          "number": 3418,
+          "title": "feat: [BOUNTY] WearOS Support [$1340]",
+          "updated_at": "2026-06-23T22:17:48Z",
+          "url": "https://github.com/microg/GmsCore/pull/3418",
+          "user": "Kasionchen"
+        },
+        {
+          "number": 3478,
+          "title": "wearable: restore ClientIdentity population in WearableLocationService",
+          "updated_at": "2026-05-16T17:04:54Z",
+          "url": "https://github.com/microg/GmsCore/pull/3478",
+          "user": "js360000"
+        },
+        {
+          "number": 3286,
+          "title": "Enhance WearOS features and fix service stubs and bugs",
+          "updated_at": "2026-03-19T23:37:29Z",
+          "url": "https://github.com/microg/GmsCore/pull/3286",
+          "user": "samuel-asleep"
+        },
+        {
+          "number": 3178,
+          "title": "Add Bluetooth support for WearOS devices",
+          "updated_at": "2026-03-09T00:15:23Z",
+          "url": "https://github.com/microg/GmsCore/pull/3178",
+          "user": "SBALAVIGNESH123"
+        }
+      ],
+      "payment_status": "PAID",
+      "repo_archived": false,
+      "repo_language": "Java",
+      "repo_stars": 14053,
+      "repository": "microg/GmsCore",
+      "scope_excerpt": "**[BOUNTY CURRENTLY AT $550]**\n\n**Is your feature request related to a problem? Please describe.**\nWearOS devices do not work with MicroG\n\n**Describe the solution you'd like**\nMicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\n**Additional context**\nThere has been an issue open for over ten years regarding [MicroG support for WearOS](https://github.com/microg/GmsCore/issues/4#issuecomment-2581553597).  That issue and another [more recent post](https://github.com/microg/GmsCore/issues/2444#issuecomment-2691206945) have inspired some folks to post bounties for this feature, but it's buried so far down in the thread it's easy to miss.\n\nI personally am posting a $200 bounty for the MicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\nHere are the folks who've posted bounties in those threads.  I'll invite them to post again here confirming that their offers still stand, but all told, this adds up to over $500 already.\n\n@HyperCriSiS - $100\n@realPrix - $100\n@NullCode1337 - $50\n@TobiPeterG - $100\n@doctorgaul - $200",
+      "score": -77.0,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "large reward likely means large scope",
+        "large cross-system scope",
+        "higher-cost language: java",
+        "established repository",
+        "5 competing attempt signal(s)",
+        "11 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BOUNTY] WearOS Support",
+      "total_amount_usd": "2340.00"
+    }
+  ],
+  "paid_open_unclaimed_before_github_validation": 4,
+  "safety": "read-only BountyHub and GitHub validation; no login, claim, payment, or write",
+  "source": "https://api.bountyhub.dev/api/bounties?limit=100",
+  "total_bounties": 21
+}
