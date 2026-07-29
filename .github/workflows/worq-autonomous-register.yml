@@ -1,0 +1,99 @@
+name: Guarded WORQ autonomous registration
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - worq_autonomous_register.py
+      - .github/workflows/worq-autonomous-register.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: worq-autonomous-register-once
+  cancel-in-progress: false
+
+jobs:
+  register:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Guard against duplicate successful registration
+        id: guard
+        shell: bash
+        run: |
+          if [ -f worq-output/result.json ] && python3 - <<'PY'
+          import json
+          from pathlib import Path
+          value = json.loads(Path('worq-output/result.json').read_text())
+          raise SystemExit(0 if value.get('decision') == 'registered' else 1)
+          PY
+          then
+            echo 'skip=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Compile guarded client
+        if: steps.guard.outputs.skip != 'true'
+        run: python3 -m py_compile worq_autonomous_register.py
+
+      - name: Evaluate contract and register only when safe
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          WORQ_PRIVATE_STATE: .worq-state/state.json
+          WORQ_PUBLIC_OUTPUT: worq-output/result.json
+        run: python3 worq_autonomous_register.py
+
+      - name: Encrypt credential-bearing state
+        if: steps.guard.outputs.skip != 'true' && hashFiles('.worq-state/state.json') != ''
+        run: |
+          set -euo pipefail
+          CERT=$(find . -type f \( -name '*.crt' -o -name '*.pem' \) -print0 | xargs -0 grep -l 'BEGIN CERTIFICATE' | head -n1)
+          if [ -z "$CERT" ]; then
+            echo 'No public encryption certificate found' >&2
+            exit 1
+          fi
+          mkdir -p worq-output
+          openssl cms -encrypt -binary -aes256 -in .worq-state/state.json \
+            -outform DER -out worq-output/private-state.cms "$CERT"
+          sha256sum worq-output/private-state.cms > worq-output/private-state.cms.sha256
+          rm -rf .worq-state
+
+      - name: Reject credential-like public output
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          text = Path('worq-output/result.json').read_text(encoding='utf-8')
+          patterns = [
+              r'\b(?:worq|wq|api|key|token|sk)_[A-Za-z0-9_-]{12,}\b',
+              r'(?i)"(?:api[_-]?key|raw[_-]?key|authorization|bearer|access[_-]?token|refresh[_-]?token|secret|private[_-]?key)"\s*:\s*"(?!\[REDACTED\])',
+              r'\b0x[a-fA-F0-9]{64}\b',
+          ]
+          hits = [pattern for pattern in patterns if re.search(pattern, text)]
+          if hits:
+              raise SystemExit(f'credential-like public output detected: {hits}')
+          PY
+
+      - name: Commit sanitized decision and encrypted state
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add worq-output/result.json
+          [ ! -f worq-output/private-state.cms ] || git add worq-output/private-state.cms worq-output/private-state.cms.sha256
+          if git diff --cached --quiet; then
+            echo 'No WORQ state changes'
+          else
+            git commit -m 'Record guarded WORQ registration result [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
