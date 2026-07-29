@@ -1,0 +1,172 @@
+## npm test
+
+> fkill@10.0.3 test
+> xo && node --test && tsd
+
+
+TAP version 13
+# Subtest: pid
+ok 1 - pid
+  ---
+  duration_ms: 201.367858
+  type: 'test'
+  ...
+# Subtest: title
+ok 2 - title
+  ---
+  duration_ms: 214.599896
+  type: 'test'
+  ...
+# Subtest: ignore case
+ok 3 - ignore case
+  ---
+  duration_ms: 179.216973
+  type: 'test'
+  ...
+# Subtest: exact match
+ok 4 - exact match
+  ---
+  duration_ms: 129.746657
+  type: 'test'
+  ...
+# Subtest: force
+ok 5 - force
+  ---
+  duration_ms: 179.113654
+  type: 'test'
+  ...
+# Subtest: ignore case + force
+ok 6 - ignore case + force
+  ---
+  duration_ms: 179.545057
+  type: 'test'
+  ...
+# Subtest: fail
+ok 7 - fail
+  ---
+  duration_ms: 52.776585
+  type: 'test'
+  ...
+# Subtest: successful kills are preserved when another input is missing
+ok 8 - successful kills are preserved when another input is missing
+  ---
+  duration_ms: 227.134962
+  type: 'test'
+  ...
+# Subtest: don't kill self
+ok 9 - don't kill self
+  ---
+  duration_ms: 167.102563
+  type: 'test'
+  ...
+# Subtest: don't kill `fkill` when killing `node` or `node.exe`
+ok 10 - don't kill `fkill` when killing `node` or `node.exe`
+  ---
+  duration_ms: 197.228105
+  type: 'test'
+  ...
+# Subtest: ignore ignore-case for pid
+ok 11 - ignore ignore-case for pid
+  ---
+  duration_ms: 174.589034
+  type: 'test'
+  ...
+# Subtest: kill from port
+ok 12 - kill from port
+  ---
+  duration_ms: 152.675658
+  type: 'test'
+  ...
+# Subtest: error when port is not in use
+ok 13 - error when port is not in use
+  ---
+  duration_ms: 106.520507
+  type: 'test'
+  ...
+# Subtest: error when port is not in use (force: true)
+ok 14 - error when port is not in use (force: true)
+  ---
+  duration_ms: 68.631929
+  type: 'test'
+  ...
+# Subtest: error when process is not found
+ok 15 - error when process is not found
+  ---
+  duration_ms: 49.259676
+  type: 'test'
+  ...
+# Subtest: error when process is not found (force: true)
+ok 16 - error when process is not found (force: true)
+  ---
+  duration_ms: 47.394629
+  type: 'test'
+  ...
+# Subtest: suppress errors when silent
+ok 17 - suppress errors when silent
+  ---
+  duration_ms: 104.600173
+  type: 'test'
+  ...
+# Subtest: force works properly for process ignoring SIGTERM
+ok 18 - force works properly for process ignoring SIGTERM
+  ---
+  duration_ms: 337.56177
+  type: 'test'
+  ...
+# Subtest: forceAfterTimeout works properly for process ignoring SIGTERM
+ok 19 - forceAfterTimeout works properly for process ignoring SIGTERM
+  ---
+  duration_ms: 465.734044
+  type: 'test'
+  ...
+# Subtest: waitForExit with fast-exiting process
+ok 20 - waitForExit with fast-exiting process
+  ---
+  duration_ms: 117.381478
+  type: 'test'
+  ...
+# Subtest: waitForExit with slow-exiting process
+ok 21 - waitForExit with slow-exiting process
+  ---
+  duration_ms: 122.395053
+  type: 'test'
+  ...
+# Subtest: waitForExit timeout expires throws error
+ok 22 - waitForExit timeout expires throws error
+  ---
+  duration_ms: 189.394216
+  type: 'test'
+  ...
+# Subtest: waitForExit with silent does not throw on timeout
+ok 23 - waitForExit with silent does not throw on timeout
+  ---
+  duration_ms: 177.483766
+  type: 'test'
+  ...
+# Subtest: waitForExit: 0 does not wait
+ok 24 - waitForExit: 0 does not wait
+  ---
+  duration_ms: 38.912796
+  type: 'test'
+  ...
+# Subtest: waitForExit combined with forceAfterTimeout
+ok 25 - waitForExit combined with forceAfterTimeout
+  ---
+  duration_ms: 328.05141
+  type: 'test'
+  ...
+# Subtest: kill process group with negative PID
+ok 26 - kill process group with negative PID
+  ---
+  duration_ms: 287.007406
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4662.031693
