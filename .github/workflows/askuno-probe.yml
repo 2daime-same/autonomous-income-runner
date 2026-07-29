@@ -1,0 +1,50 @@
+name: Askuno bounty API probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - askuno_probe.py
+      - .github/workflows/askuno-probe.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '7 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: askuno-probe-main
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v4
+
+      - name: Compile probe
+        run: python3 -m py_compile askuno_probe.py
+
+      - name: Fetch Askuno skill and bounty catalogue
+        env:
+          ASKUNO_OUTPUT_FILE: market-output/askuno.json
+        run: python3 askuno_probe.py
+
+      - name: Commit public API evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/askuno.json
+          if git diff --cached --quiet; then
+            echo 'No Askuno inventory changes'
+          else
+            git commit -m 'Refresh Askuno bounty inventory [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
