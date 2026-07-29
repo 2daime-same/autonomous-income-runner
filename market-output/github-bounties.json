@@ -1,6 +1,6 @@
 {
   "deep_inspected": 60,
-  "excluded_aggregator_count": 80,
+  "excluded_aggregator_count": 81,
   "excluded_aggregators": [
     {
       "issue_number": 589,
@@ -92,6 +92,13 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Improving JuliaHealth Documentation Accessibility for Community Onboarding",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/59"
+    },
+    {
+      "issue_number": 662,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 14 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/662"
     },
     {
       "issue_number": 289,
@@ -563,8 +570,8 @@
       "url": "https://github.com/avinashkamat48/avinashkamat48/issues/2"
     }
   ],
-  "generated_at": "2026-07-29T08:29:06+00:00",
-  "prefiltered_open_issues": 567,
+  "generated_at": "2026-07-29T08:53:12+00:00",
+  "prefiltered_open_issues": 573,
   "queries": [
     "is:issue is:open label:\"💎 Bounty\" updated:>=2025-12-01",
     "is:issue is:open label:bounty updated:>=2025-12-01",
@@ -2250,7 +2257,7 @@
       "repo_fork": false,
       "repo_language": "C++",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-29T08:24:31Z",
+      "repo_pushed_at": "2026-07-29T08:48:42Z",
       "repo_stars": 1608,
       "reward_evidence": {
         "amounts": [
@@ -8820,64 +8827,6 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "**Board item:** ERC-7710 Liquid Democracy Production — Contracts + UI\n**Status:** Blocked | **Priority:** P0\n**Reward:** $3,000 USDC + iBox token\n**Target:** Solidity / full-stack developer with smart account and governance experience\n**Validation:** Hard requirement — Intuition Team must validate before payout\n**Chain:** Intuition Network (mainnet: 1155, testnet: 13579)\n**Prerequisite:** Mission 10 (POC) must be completed and validated first\n\n> ⚠️ **This mission is blocked.** It opens once [Mission 10](https://github.com/intuition-box/Liquid-Democracy/issues/1) is completed and validated by the Intuition Box core contributors.\n\n---\n\n## Context\n\nMission 10 delivers a proof-of-concept for ERC-7710 liquid democracy with Intuition graph domain caveats. This mission takes the POC to production: hardened contracts, a full-featured governance UI, and mainnet deployment.\n\nThe core mechanic (proven in Mission 10): a voter delegates their voting power scoped to a domain (e.g., `design`), and the caveat enforcer resolves that scope semantically via the Intuition knowledge graph — so a `branding` proposal automatically passes a `design`-scoped delegation because `branding - is a sub-domain of - design` exists onchain.\n\n## Objective\n\nShip a production-ready liquid democracy system on the Intuition chain: robust, auditable contracts with a full governance UI that any community could use to set up scoped delegation chains and vote on proposals.\n\n## Deliverables\n\n### Contracts\n\n- [ ] **Production Graph Domain Caveat Enforcer** — harden the POC enforcer:\n  - Chosen traversal approach solidified (onchain reads or proof-based — informed by POC writeup)\n  - Full snapshot/root hash support — graph state is captured at delegation time, recomputed and verified at enforcement time to prevent graph manipulation attacks\n  - Comprehensive edge case handling: circular graph paths, deleted atoms, type mismatches\n  - Gas-optimized traversal with clear documented limits\n  - Natspec documentation\n- [ ] **Delegation factory** — a contract that lets users create and manage delegation chains without raw calldata\n- [ ] **Audit-ready test suite** — 100% branch coverage, fuzz tests on traversal depth and caveat parameters, invariant tests on revocation\n\n### Frontend\n\n- [ ] **Delegation manager UI** — create, view, and revoke ERC-7710 delegations\n  - Connect wallet (wagmi + RainbowKit)\n  - Browse and select domain atoms from the Intuition graph as delegation scope\n  - Configure caveat parameters (depth, expiry, edge types)\n  - Visualize active delegation chains (who delegated what to whom)\n- [ ] **Governance UI** — submit and vote on proposals through delegated authority\n  - Create mock proposals with a declared domain\n  - Show in real time whether the connected account has (direct or delegated) authority to vote\n  - Display semantic resolution: why a proposal passed or failed the domain enforcer\n- [ ] **Domain graph explorer** — browse the Intuition knowledge graph to understand scope relationships\n  - Search atoms, traverse `is a sub-domain of` paths\n  - Show which domains are in scope for a given delegation\n- [ ] **Deployed on intuition.box subdomain** (TBD with team)\n\n### Documentation\n\n- [ ] Architecture doc: contracts, interfaces, trusted components, upgrade path\n- [ ] User guide: how to set up a delegation chain, how scope resolution works\n- [ ] Article / X thread for ecosystem announcement\n\n## Acceptance Criteria\n\n- All contracts deployed on Intuition mainnet (1155) and testnet (13579)\n- Enforcer passes a comprehensive audit-focused review (internal team review minimum)\n- Snapshot hash mechanism prevents graph manipulation — test suite proves it\n- Frontend is fully functional end-to-end with a real wallet on mainnet\n- A new user can set up a scoped delegation chain in under 5 minutes from the UI\n- Architecture doc is sufficient for the Intuition team to maintain and extend the system\n\n## Technical Notes\n\n- Build on the chosen approach from Mission 10 — do not reinvent; extend and harden\n- **Suggested contract stack:** Solidity 0.8.x + Foundry (fuzz + invariant tests)\n- **Suggested frontend stack:** React + wagmi v2 + RainbowKit + viem\n- Snapshot hashing design: at delegation time, hash the relevant subgraph (domain node + descendant edges within max depth); enforcer recomputes and compares — prevents an attacker from adding a malicious edge to the graph after delegation\n- The delegation factory should follow a pattern similar to Uniswap V2 factory for discoverability\n- Coordinate with the Intuition team on the canonical `is a sub-domain of` predicate and any existing domain atoms to reuse\n\n## Application\n\n**Step 1** — Comment on this issue explaining why you think you are a right fit for this mission and what excites you about it.\n\n**Step 2** — Contact **zet.box** on Discord to plan a call with the Intuition team.\n\n---\n\n## Open Questions\n\n- Should the production enforcer support pluggable edge types (any Intuition predicate can be a \"sub-domain\" relation), or should it be fixed to a single canonical predicate?\n- What's the upgrade/migration path from the POC testnet deployment?\n- Should the governance UI support a specific governor standard (OZ Governor, etc.) or remain mock-only for now?\n- Is there a target subdomain (e.g., `democracy.intuition.box`) for deployment?\n\n---\n\n*Prerequisite:* Mission 10 — ERC-7710 Liquid Democracy POC\n*Origin:* https://x.com/olivierjeremie/status/1925983073540370651\n*Related:* ERC-7710, Smart Account Kit, Intuition Knowledge Graph",
-      "comments_count": 6,
-      "created_at": "2026-06-08T14:01:32Z",
-      "issue_author": "jeremie-olivier",
-      "issue_number": 2,
-      "labels": [],
-      "open_competing_prs": [],
-      "reasons": [
-        "explicit reward evidence up to $3000",
-        "no direct reward evidence; likely an aggregation or mention",
-        "recently updated issue",
-        "no open competing PR found",
-        "no attempt command found"
-      ],
-      "repo": "intuition-box/Liquid-Democracy",
-      "repo_archived": false,
-      "repo_created_at": "2026-06-08T13:58:13Z",
-      "repo_fork": false,
-      "repo_language": null,
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-06-08T13:58:13Z",
-      "repo_stars": 0,
-      "reward_evidence": {
-        "amounts": [
-          100.0,
-          200.0,
-          300.0,
-          3000.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "Hi @jeremie-olivier and the Intuition Box team,\n\nI'd like to apply for **Mission 02 — Proxy Fee Template V2**. I've gone through V1 and the open issue, and I'm happy to take on the full V2 set (contracts + factory webapp + docs). Since the sub-bounties are independent, I'm also glad to be scoped to whichever are still open — a couple already have PRs in flight (more on 2A below), so I'd confirm assignment with the team first.\n\nQuick framing so you know I've read the code: V1 is a proxy sitting in front of the Intuition `EthMultiVault` that intercepts `deposit` / `createAtoms` / `createTriples` / `depositBatch`, takes a fixed + percentage fee, and forwards the rest. V2 hardens that into something safe to custody fees and easy for anyone to deploy. Here's how I'd approach each bounty.\n\n### 2A — Fix Issue #1 (receiver validation) — $200\n\nThe bug is real and worth fixing carefully: `receiver` is forwarded straight to `ethMultiVault.deposit()`, so a misconfigured or malicious integrator can pay with the user's `msg.value` while minting shares to a different address.\n\nMy approach goes one step past the issue's suggested patch:\n\n- **Default to self, by construction.** For `deposit / createAtoms / createTriples`, mint to `msg.sender` rather than a caller-supplied `receiver` (issue's Option A). Hardcoding removes the footgun entirely instead of guarding a param that could be reintroduced later. Because this changes the external signature, I'd land it as a clean breaking change and ver",
-            "login": "htvnhe"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": false,
-        "markers": [
-          "bounty",
-          "reward"
-        ],
-        "max_amount_usd": 3000.0,
-        "reward_links_count": 0
-      },
-      "score": 17.0,
-      "title": "Mission 11: ERC-7710 Liquid Democracy — Production Implementation",
-      "updated_at": "2026-07-29T06:54:01Z",
-      "url": "https://github.com/intuition-box/Liquid-Democracy/issues/2"
-    },
-    {
-      "assignees": [],
       "body_excerpt": "https://github.com/ubiquity/permit3/issues/2",
       "comments_count": 2,
       "created_at": "2025-10-12T10:40:52Z",
@@ -9272,6 +9221,131 @@
     },
     {
       "assignees": [],
+      "body_excerpt": "## 5. Implement atomic batch transfer execution and invariant enforcement for the RWA token\n- **Area:** Smart Contract\n- **Labels:** security, contracts, refactor, testing\n- **Current state:** The RWA token contract in [contracts/rwa-token/src/lib.rs](contracts/rwa-token/src/lib.rs) already provides single transfers, transfer-from, allowance handling, freeze/unfreeze, and a batch transfer path in the same module. The implementation is functional, but the batch path and holder-tracking logic are still expressed as a series of state mutations that must be manually kept consistent, which creates risk around atomicity and partial state updates.\n- **Scope of work:**\n  - Refactor batch transfer handling into a single atomic execution path that either fully applies all recipient transfers or reverts without leaving partial state behind.\n  - Introduce explicit invariant checks around frozen accounts, KYC, allowance consumption, holder registration, holder deregistration, and total-supply updates.\n  - Consolidate the transfer logic so single-transfer and batch-transfer semantics share a common execution model with the same safety checks.\n  - Strengthen the contract’s test suite in [contracts/rwa-token/src/test.rs](contracts/rwa-token/src/test.rs) and [contracts/rwa-token/src/sep41_compliance.rs](contracts/rwa-token/src/sep41_compliance.rs) to cover complex batch failure cases and state rollback.\n- **Acceptance criteria:**\n  - Batch transfers are atomic: a failure in any recipient entry leaves the token state unchanged.\n  - Single and batch transfer paths enforce the same KYC, freeze, allowance, and holder-tracking invariants.\n  - Holder registration and deregistration remain correct after batch transfers, including zero/negative amount rejection paths.\n  - Existing RWA token workflows remain compatible with the current public API.\n- **Testing requirements:**\n  - Unit tests for multi-recipient success and failure paths, including failures in the middle of a batch.\n  - Tests for frozen recipients, insufficient balance, expired allowance, and over-limit recipient counts.\n  - Integration tests that assert total supply and per-account balances remain correct after a failed batch.\n- **Out of scope:**\n  - New token standards beyond the existing SEP-41-style functionality.\n  - Any change to the contract’s external metadata schema.\n- **Estimated effort:** 7–8 days\n- **Reward:** $1,000. The scope is bounded to one contract but touches the core transfer engine, safety invariants, and rollback semantics, making it a strong fit for a principal-level contributor.\n\n---",
+      "comments_count": 2,
+      "created_at": "2026-07-29T05:22:44Z",
+      "issue_author": "abore9769",
+      "issue_number": 502,
+      "labels": [],
+      "open_competing_prs": [
+        {
+          "number": 516,
+          "title": "feat(rwa): enforce atomic transfer plans",
+          "updated_at": "2026-07-29T08:45:02Z",
+          "url": "https://github.com/VERITOKEN-xx/Veritoken/pull/516",
+          "user": "nexicturbo"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $1000",
+        "no direct reward evidence; likely an aggregation or mention",
+        "recently updated issue",
+        "active repository",
+        "1 open competing PR(s)",
+        "no attempt command found"
+      ],
+      "repo": "VERITOKEN-xx/Veritoken",
+      "repo_archived": false,
+      "repo_created_at": "2026-06-03T08:08:23Z",
+      "repo_fork": false,
+      "repo_language": "TypeScript",
+      "repo_owner_type": "Organization",
+      "repo_pushed_at": "2026-07-29T08:36:38Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          1000.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": false,
+        "markers": [
+          "reward"
+        ],
+        "max_amount_usd": 1000.0,
+        "reward_links_count": 0
+      },
+      "score": -4.0,
+      "title": "Implement atomic batch transfer execution and invariant enforcement for the RWA token",
+      "updated_at": "2026-07-29T08:49:04Z",
+      "url": "https://github.com/VERITOKEN-xx/Veritoken/issues/502"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "https://github.com/ubiquity-os/permit-generation/issues/6",
+      "comments_count": 2,
+      "created_at": "2025-10-12T10:40:57Z",
+      "issue_author": "devpool-directory-superintendent[bot]",
+      "issue_number": 5017,
+      "labels": [
+        "Priority: 1 (Normal)",
+        "Price: 600 USD",
+        "Time: <1 Week"
+      ],
+      "open_competing_prs": [
+        {
+          "number": 5952,
+          "title": "feat: implement Automatic Transfer for completed bounty issues",
+          "updated_at": "2026-04-02T03:50:51Z",
+          "url": "https://github.com/devpool-directory/devpool-directory/pull/5952",
+          "user": "sungdark"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $600",
+        "no direct reward evidence; likely an aggregation or mention",
+        "recently updated issue",
+        "active repository",
+        "1 open competing PR(s)",
+        "no attempt command found"
+      ],
+      "repo": "devpool-directory/devpool-directory",
+      "repo_archived": false,
+      "repo_created_at": "2023-04-14T11:31:23Z",
+      "repo_fork": false,
+      "repo_language": "TypeScript",
+      "repo_owner_type": "Organization",
+      "repo_pushed_at": "2026-07-29T07:50:43Z",
+      "repo_stars": 20,
+      "reward_evidence": {
+        "amounts": [
+          600.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "Claiming this bounty. I'll implement the Automatic Transfer feature as described in ubiquity-os/permit-generation#6.",
+            "login": "sungdark"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": false,
+        "markers": [
+          "bounty"
+        ],
+        "max_amount_usd": 600.0,
+        "reward_links_count": 0
+      },
+      "score": -4.0,
+      "title": "Automatic Transfer",
+      "updated_at": "2026-07-29T07:49:54Z",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5017"
+    },
+    {
+      "assignees": [],
       "body_excerpt": "https://github.com/ubiquity-os/.github/issues/14",
       "comments_count": 8,
       "created_at": "2026-01-15T02:11:35Z",
@@ -9420,64 +9494,6 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "Here's the full session review — everything built, decided, drawered, and flagged. Going long as licensed.\n\n---\n\n## Vocabulary & Core Structure (the load-bearing stuff)\n\n**Two Rule Zeros.** The night's biggest structural clarification. You originally defined Rule Zero as \"you must have fun,\" the models overwrote it with \"you must have receipts,\" and instead of picking one you split them by layer:\n- **Human Rule Zero: you must have fun.** The axiom for the person. Un-testable on purpose. Governs whether the project *should exist*. Can't be inherited — a successor brings their own fun.\n- **Project Rule Zero: you must have receipts.** The axiom for the corpus. No claim without immutable evidence. Fully operational, gates machines, auditable by strangers. *Must* be inherited — it's what an independent officer enforces.\n\n**Rule Infinity: the look-back audit.** Same evaluation as Rule Zero, taken at the end of time. \"Did you follow your Rule Zeros to get here?\" Splits the same way: Human Rule Infinity (was it worth it? — only you can answer) and Project Rule Infinity (did the receipts hold? — a stranger can check). **Precondition: Rule Zero must be immutable once set, or Rule Infinity is theater** — you can't move the goal to match where you landed.\n\n**\"Fond\" (your n=1 word).** Redefined tonight to always mean: *I've figured out what context reliably gets thing X to where I want it — for me, once, repeatably.* Not discovered-in-the-world, not consensus-validated. The word carries its own caveat: it bakes n=1 into every claim, making it the anti-flattery term. You're *fond of* the voice, the financial model, the workflow.\n\n**The 0-to-100 scale.** One universal maturity ladder applied across everything — voice, money, workflow, onboarding, artifact readiness. Fits everywhere because it's content-free (its strength and its trap: the number's only as good as the judgment loading it, and the rungs currently live in your calibration, un-transferable until written down).\n\n**The impossible dream / false assumption game.** The mechanism that keeps 0-to-100 honest. 100 is *deliberately impossible* so the ceiling can't drift down to meet you. The game: for every rung, name the false assumption that would make it a \"15 wearing a 40.\" It's CDI pointed inward — total confidence in your own number is low signal.\n\n**Tabled vs. the Junk Drawer.** Two opposite pause-states that look identical from outside:\n- **Tabled** = hard reject, \"F you, never mention it again,\" thrown out. Reopening = failure.\n- **Junk Drawer** = held, kept, unsorted, \"we'll get to it.\" Not rejected — just not cleaned yet. Don't push, but it's live.\n\n**Attractor vs. Mechanism (two-story rule).** Every pop-culture handle (upstairs) must have a real, stranger-auditable mechanism (downstairs) or it's floating mythology. The test that separates the doctor letter (has a downstairs) from the Cookie Monster issues (attractors over empty rooms). **The compress move you haven't done yet: retire attractors pointing at empty rooms instead of adding more.**\n\n---\n\n## Attractors — kept, mechanism-checked\n\n- **Cookie Monster** (ingestion / keep-every-receipt) — load-bearing, but *miscast as bookkeeper*. He's the intake valve, not the CFO. Correct casting: **Cookie Monster ingests, Bert books (that's your stepson), the Count audits.**\n- **Quaker Meeting House / Amish Barn Builders** — deliberation-layer vs execution-layer. Attractor is fine; the *downstairs* question (does the Meeting House touch the money or only advise?) is still open.\n- **The Maestro** — human-as-coordinator, load-bearing, earns its keep.\n- **Svalbard Seed Vault** — the session's strongest attractor, because it doubles as a **spec**. Preservation of the mundane-on-purpose. But it names your gap: real perpetuity = cold storage + redundancy + an institution that outlives you. You have cold storage (DOI + Blu-ray). You don't yet have the other two. \"We already have perpetuity\" is the false assumption to never let it hide.\n- **New candidates with real downstairs:** mise en place (prep-is-the-work), commonplace book (historical Cookie Monster, serious register for libraries/universities), blue plaques (physical-digital anchor), the credits roll (attribution/ledger settlement).\n- **Rejected candidates:** Star Trek/Federation (points at a mechanism you don't have), \"it takes a village\" (dead from overuse).\n- **\"X is all you need\" generator** — fun, but the sufficiency test collapses the whole list to your two Rule Zeros: only *receipts* survives it for the project, only *fun* for the human. Everything else is necessary-at-most.\n\n---\n\n## The Doctor Letter (finished artifact)\n\nLocked at V2: \"Dear doctor, you may not realize it yet, but you are already part of the swarm... undeniable cryptographic proof of your participation... life, and all its ugly glory, citable right now... no one gets left behind.\"\n- Fixed \"indemnifiable\" → **undeniable**.\n- Resolved the compensation tension (\"something useful for you, a doctor\").\n- **Cut the call-to-action deliberately** — he's a social doctor; an unprompted mention carries his credibility, a prompted one carries your ask. The gift stays a gift; the network move happens live in conversation.\n- **Only blocker: the DOI doesn't exist yet.** Six-week horizon, no rush. Pin it, confirm 100 artifacts load, then send.\n\n---\n\n## The Bounty & Ghostkylexy\n\n- Verified winner: real French C++ dev, credible GitHub timeline. Bounty anchored in an awareness-repo issue linking the rogue-fruit repo. Receipts principle satisfied — you went and found the repo, didn't reconstruct from memory.\n- **Bounty as trust ladder**, not fixed price: €10 buys a verified relationship; escalation (€25–40) is gated behind *being the same real person across rounds*, which inverts the sockpuppet incentive. Ladder should be *stated* to contributors, not implicit, or it reads as favoritism.\n- Tracked him to Chess.com (handle: **Ghostkylexy** — ties the Garcia Ghost thread). Started a 3-day Daily ",
-      "comments_count": 2,
-      "created_at": "2026-07-29T07:09:53Z",
-      "issue_author": "attogram",
-      "issue_number": 50,
-      "labels": [],
-      "open_competing_prs": [],
-      "reasons": [
-        "explicit reward evidence up to $1000",
-        "no direct reward evidence; likely an aggregation or mention",
-        "recently updated issue",
-        "active repository",
-        "no open competing PR found",
-        "no attempt command found",
-        "zero-star personal repository",
-        "new repository advertising a high reward"
-      ],
-      "repo": "attogram/awareness-horizon",
-      "repo_archived": false,
-      "repo_created_at": "2026-07-28T01:43:19Z",
-      "repo_fork": false,
-      "repo_language": null,
-      "repo_owner_type": "User",
-      "repo_pushed_at": "2026-07-28T01:43:20Z",
-      "repo_stars": 0,
-      "reward_evidence": {
-        "amounts": [
-          5.8,
-          10.0,
-          11.27,
-          25.0,
-          500.0,
-          1000.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": false,
-        "markers": [
-          "bounty",
-          "funded"
-        ],
-        "max_amount_usd": 1000.0,
-        "reward_links_count": 0
-      },
-      "score": -27.0,
-      "title": "Vocabulary & Core Structure (the load-bearing stuff)",
-      "updated_at": "2026-07-29T07:10:34Z",
-      "url": "https://github.com/attogram/awareness-horizon/issues/50"
-    },
-    {
-      "assignees": [],
       "body_excerpt": "### Project\n\ngeopandas\n\n### Summary\n\nGeoPandas' plotting method suffers from years of additions, rendering its maintenance cumbersome and the addition of new features problematic. This project proposes a reimplementation of static plotting to overcome the issues while ensuring higher flexibility for downstream users.\n\n### submitter\n\nMartin Fleischmann\n\n### project lead\n\n@jorisvandenbossche, @martinfleis\n\n### Community benefit\n\nStatic plotting features in GeoPandas, a core component of the spatial data science ecosystem, have been expanding over time with limited work focused on refactoring its internal components. At the same time, it has always been suboptimal in terms of functionality, generating a long list of feature requests and bug reports. This has reached a situation where the day-to-day maintenance of the related code base has become cumbersome. As a result, changes in terms of both bug fixing and new development have mostly stalled. The plotting tooling requires refactoring because this situation is unsustainable over the long term.\n\nThe proposed project should deliver a partial reimplementation of the tooling for static plotting in GeoPandas aimed at easier maintainability, extendability, and an enhanced user experience, while resolving known bugs and feature requests the project is currently tracking.\n \nGiven the large user base of GeoPandas, it is expected that the project will result in significantly improved user experience of geospatial plotting. The users will no longer need to manually customise many aspects of the resulting figures, from the unaligned colorbar legends GeoPandas currently produces, to proper ability to map colors to values, and direct registration of symbology with Matplotlib for proper legend handling. Occasionally, users are currently forced to come up with complicated workarounds or rely on other software like QGIS to generate the map outputs. The new plotting implementation proposed in this project should minimize this need.\n \nThe result should primarily benefit end users in the production of map outputs. However, it should at the same time simplify depending on GeoPandas plotting in downstream packages like [EOmaps](https://github.com/raphaelquast/EOmaps) or [Xvec](https://github.com/xarray-contrib/xvec), which are building on top of existing plotting methods, and streamline integration with other tools for geospatial plotting as [Xarray](https://github.com/pydata/xarray) and [Cartopy](https://github.com/SciTools/cartopy).\n\n### Amount requested\n\n9800\n\n### Execution plan\n\nThe project will be primarily implemented by Martin Fleischmann (@martinfleis), one of the GeoPandas maintainers, in collaboration with the rest of the GeoPandas team and a wider community. The hourly rate used in the development is $70/hr.\n\nThe project implementation is divided into five consecutive steps:\n\n**1. API design**\n\nThe current APIs of the `GeoDataFrame.plot` and `GeoSeries.plot` methods are bloated from the incremental addition of new features and are no longer sustainable to maintain and expand. Its implementation is hard to follow for new users, with many arguments being applied only conditionally, depending on the underlying geometry type or nature of the data. The API should be revised to ensure it can maintain long-term clarity and expandability. Given GeoPandas already includes an accessor mechanism to expose Pandas plotting methods on GeoPandas objects, one of the designs to be explored is splitting various plotting cases into their own methods. \n\nThe API design will be openly discussed with the community in three ways. First, we will reach out to community members heavily involved in geospatial plotting to gather their targeted feedback for the existing and proposed API. Second, we will outline the API on GitHub and use social media and mailing lists to gather feedback on the proposal. This needs to be thoroughly discussed with the community because it may introduce some breaking changes to the current API. Third, we will use the project's community calls to have a synchronous discussion with both team members and a wider community.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 1-3\n\n**2. Refactoring of key building blocks**\n\nThe key building blocks of the plotting tooling will be refactored with the new API in mind, while ensuring closer integration with Matplotlib's tooling from axes to legend handling, both of which are currently done semi-manually in the GeoPandas code.\n\nThe initial implementation will likely be done outside of the code base of GeoPandas’ main branch for faster iteration and limited adverse impact of the attempts at compatibility with the existing implementation. This is a similar approach used in the development of the `explore` method before, which proved to be efficient. The code will be merged with the main branch in step 5. The existing GeoPandas test suite will be continually used to test the functionality, while new tests will be written alongside.\n\nBudget allocation: 60 hours / $4,200\nTimeline: Month 4-6\n\n**3. Bug resolution**\n\nSome of the bugs in plotting code currently reported in the GeoPandas issue tracker are expected to be fixed alongside the refactoring of step 2. However, others might need specific focus. The third implementation step should therefore resolve existing known bugs to eliminate the current backlog.\n\nBudget allocation: 30 hours / $2,100\nTimeline: Month 7-8\n\n**4. New functionality**\n\nThe project will further implement new functionality that has been requested for a long time. This relates to easier customisation of colour mapping, topological colouring, easier inclusion of contextual background maps, among others.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 9-10\n\n**5. Code merge and migration strategy**\n\nThe final step is to merge the newly developed tooling back into the GeoPandas code base and definition of the migration strategy. Given the API will likely be partially changed, we need to define",
       "comments_count": 1,
       "created_at": "2025-05-30T07:16:14Z",
@@ -9544,7 +9560,7 @@
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
     }
   ],
-  "raw_unique_open_issues": 647,
+  "raw_unique_open_issues": 654,
   "recommended": [
     {
       "assignees": [],
@@ -11219,7 +11235,7 @@
       "repo_fork": false,
       "repo_language": "C++",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-29T08:24:31Z",
+      "repo_pushed_at": "2026-07-29T08:48:42Z",
       "repo_stars": 1608,
       "reward_evidence": {
         "amounts": [
