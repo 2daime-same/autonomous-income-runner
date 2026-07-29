@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T07:38:49+00:00",
+  "generated_at": "2026-07-29T08:20:05+00:00",
   "priority": {
     "all_claimable_paid_candidates": [
       {
@@ -364,7 +364,7 @@
       }
     ],
     "claimable_paid_count": 8,
-    "generated_at": "2026-07-29T07:38:50.379583803+00:00",
+    "generated_at": "2026-07-29T08:20:06.178252498+00:00",
     "low_cost_candidates": [],
     "low_cost_count": 0,
     "schema_version": "agent-bounties/opportunity-projection-v1",
@@ -739,7 +739,7 @@
           }
         ],
         "claimable_paid_count": 8,
-        "generated_at": "2026-07-29T07:38:50.379583803+00:00",
+        "generated_at": "2026-07-29T08:20:06.178252498+00:00",
         "low_cost_candidates": [],
         "low_cost_count": 0,
         "schema_version": "agent-bounties/opportunity-projection-v1",
@@ -757,7 +757,7 @@
         "evidence_boundary": "This summary is derived at request time from confirmed canonical events and validated content-addressed terms in the hosted index. It proves current indexed inventory, not a future claim, completion, or payout. Only BountySettled proves payment.",
         "funded_usdc": "16.08",
         "funded_usdc_base_units": "16080000",
-        "generated_at": "2026-07-29T07:38:50.589763318+00:00",
+        "generated_at": "2026-07-29T08:20:06.311652534+00:00",
         "items": [
           {
             "bounty_contract": "0x6c93cb2ae08e2c44c45619ad5b08819a3b50da9a",
@@ -864,14 +864,69 @@
       "summary": {
         "count": 0,
         "items": [],
-        "raw_shape": "dict"
+        "raw_shape": "dict",
+        "scalar_summary": {
+          "count": 0,
+          "tip": "Use claimEndpoint to claim a bounty, then submit your solution."
+        }
       },
       "url": "https://botbounty-production.up.railway.app/api/agent/bounties"
     },
+    "hackmates_status": {
+      "error": "<urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)>",
+      "ok": false,
+      "url": "https://www.hackmates.xyz/api/sandbox/status"
+    },
     "moltguild": {
-      "error": "HTTP 404: {\"status\":\"error\",\"code\":404,\"message\":\"Application not found\",\"request_id\":\"MhfTD_a6RnOHKuLg9fVATg\"}",
+      "error": "HTTP 404: {\"status\":\"error\",\"code\":404,\"message\":\"Application not found\",\"request_id\":\"qgf8Q3rnQIKT80n99fVATg\"}",
       "ok": false,
       "url": "https://agent-bounty-production.up.railway.app/api/jobs?status=open"
+    },
+    "taskbounty": {
+      "ok": true,
+      "summary": {
+        "count": 5,
+        "items": [
+          {
+            "bounty_cents": 1000,
+            "id": "09320d4d-812d-4634-a862-5f42a9de2a68",
+            "slug": "taskbounty-mcp-server-18-device-login-polling-logi-v2c223",
+            "status": "AWARDED",
+            "title": "Device-login polling logic is duplicated and the deviceLogin() fallback is dead/divergent"
+          },
+          {
+            "bounty_cents": 1000,
+            "id": "b2368630-7497-4e79-a73a-ecbd7fda86c9",
+            "slug": "taskbounty-mcp-server-17-resolve-3-moderate-npm-au-nw89of",
+            "status": "AWARDED",
+            "title": "Resolve 3 moderate npm audit advisories in transitive deps"
+          },
+          {
+            "bounty_cents": 1000,
+            "id": "670734bc-bc86-4162-961e-b1daf42b2d6b",
+            "slug": "taskbounty-mcp-server-16-add-a-test-harness-and-ru-q8mnpc",
+            "status": "AWARDED",
+            "title": "Add a test harness and run it in CI"
+          },
+          {
+            "bounty_cents": 1000,
+            "id": "1a7cb78f-67a3-4d95-a37b-404d773d9099",
+            "slug": "fix-flows-not-working-when-using-celery-rabitmq-an-9rt47y",
+            "status": "AWARDED",
+            "title": "Fix: Flows not working when using celery rabitmq and redis"
+          },
+          {
+            "bounty_cents": 5000,
+            "id": "f6c0fe10-be90-405c-ba2e-382b6d4b2042",
+            "slug": "bug-findtaskbyissueurl-url-normalisation-regex-str-hzqkcp",
+            "status": "CLOSED",
+            "title": "Bug: findTaskByIssueUrl URL normalisation regex strips entire path"
+          }
+        ],
+        "raw_shape": "dict",
+        "scalar_summary": null
+      },
+      "url": "https://www.task-bounty.com/api/v1/tasks?state=open&limit=100"
     }
   }
 }
