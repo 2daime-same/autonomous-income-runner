@@ -1,0 +1,53 @@
+name: Paid market inventory probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - market_probe.py
+      - tests/test_market_probe.py
+      - .github/workflows/market-probe.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paid-market-probe-main
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v4
+
+      - name: Test read-only probe
+        run: python3 -m unittest discover -s tests -p 'test_market_probe.py' -v
+
+      - name: Compile probe
+        run: python3 -m py_compile market_probe.py
+
+      - name: Fetch and classify public paid-work inventory
+        env:
+          MARKET_OUTPUT_FILE: market-output/latest.json
+        run: python3 market_probe.py
+
+      - name: Commit public evidence snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/latest.json
+          if git diff --cached --quiet; then
+            echo 'No market inventory changes'
+          else
+            git commit -m 'Refresh paid market inventory [skip ci]'
+            git push
+          fi
