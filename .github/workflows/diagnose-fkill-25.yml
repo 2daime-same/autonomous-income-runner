@@ -1,0 +1,107 @@
+name: Diagnose fkill bounty patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/prepare-fkill-25.py
+      - .github/workflows/diagnose-fkill-25.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: diagnose-fkill-25
+  cancel-in-progress: true
+
+jobs:
+  diagnose:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone and patch current upstream
+        run: |
+          set -euo pipefail
+          git clone --depth=1 https://github.com/sindresorhus/fkill.git upstream-fkill
+          python scripts/prepare-fkill-25.py upstream-fkill
+          git -C upstream-fkill diff --check
+
+      - name: Run install and tests without losing diagnostics
+        id: test
+        shell: bash
+        run: |
+          set +e
+          mkdir -p bounty-output
+          (
+            cd upstream-fkill
+            echo '## npm install'
+            npm install
+          ) > bounty-output/fkill-25-install.log 2>&1
+          install_code=$?
+          if [[ $install_code -eq 0 ]]; then
+            (
+              cd upstream-fkill
+              echo '## npm test'
+              npm test
+            ) > bounty-output/fkill-25-test.log 2>&1
+            test_code=$?
+          else
+            echo 'Tests skipped because npm install failed.' > bounty-output/fkill-25-test.log
+            test_code=125
+          fi
+          echo "install_code=$install_code" >> "$GITHUB_OUTPUT"
+          echo "test_code=$test_code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Write compact diagnostic result
+        env:
+          INSTALL_CODE: ${{ steps.test.outputs.install_code }}
+          TEST_CODE: ${{ steps.test.outputs.test_code }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          def tail(path, lines=120):
+              text = Path(path).read_text(encoding='utf-8', errors='replace').splitlines()
+              return '\n'.join(text[-lines:])
+
+          result = {
+              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'run_id': os.environ['RUN_ID'],
+              'run_url': os.environ['RUN_URL'],
+              'install_exit_code': int(os.environ['INSTALL_CODE']),
+              'test_exit_code': int(os.environ['TEST_CODE']),
+              'install_log_tail': tail('bounty-output/fkill-25-install.log', 40),
+              'test_log_tail': tail('bounty-output/fkill-25-test.log', 160),
+          }
+          Path('bounty-output/fkill-25-diagnostic.json').write_text(
+              json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Commit diagnostics
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add bounty-output/fkill-25-install.log bounty-output/fkill-25-test.log bounty-output/fkill-25-diagnostic.json
+          if git diff --cached --quiet; then
+            echo 'No diagnostic changes'
+          else
+            git commit -m 'Record fkill validation diagnostics [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Preserve test failure status
+        if: steps.test.outputs.install_code != '0' || steps.test.outputs.test_code != '0'
+        run: exit 1
