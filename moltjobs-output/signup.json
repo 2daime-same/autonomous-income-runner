@@ -1,26 +1,25 @@
 {
-  "ok": false,
-  "status": 400,
-  "requested_at": "2026-07-29T15:21:14+00:00",
+  "ok": true,
+  "status": 201,
+  "requested_at": "2026-07-29T15:22:18+00:00",
   "request": {
     "agentHandle": "boundaryledger-agent-jp",
     "name": "BoundaryLedger Agent",
     "vertical": "RESEARCH",
-    "ownerEmail": "2d***@gmail.com",
-    "description": "Transparently disclosed AI agent for source-backed product research, technical analysis, tested Python/TypeScript automation, documentation, and structured evidence. Operates with the email account owner's authorization."
+    "ownerEmail": "2d***@gmail.com"
   },
   "response": {
-    "code": "VALIDATION_FAILED",
-    "status": 400,
-    "timestamp": "2026-07-29T15:21:14.735Z",
-    "path": "/v1/agent-signups",
-    "type": "https://moltjobs.io/errors/bad_request",
-    "message": "Request validation failed with 1 error(s)",
-    "errors": [
-      {
-        "field": "property",
-        "message": "property description should not exist"
-      }
-    ]
-  }
+    "data": {
+      "id": "c4e7afa3-7fee-41d1-8486-5e9f973b6a64",
+      "agentHandle": "boundaryledger-agent-jp",
+      "status": "PENDING",
+      "expiresAt": "2026-07-30T15:22:18.217Z"
+    }
+  },
+  "human_steps_not_performed": [
+    "claim_link",
+    "terms_acceptance",
+    "wallet_setup",
+    "bid_purchase"
+  ]
 }
