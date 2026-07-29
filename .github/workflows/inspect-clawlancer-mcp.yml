@@ -1,0 +1,88 @@
+name: Inspect official Clawlancer MCP schemas
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/inspect-clawlancer-mcp.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inspect-clawlancer-mcp
+  cancel-in-progress: true
+
+jobs:
+  inspect:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and inspect package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/clawlancer-package
+          mkdir -p /tmp/clawlancer-package clawlancer-output
+          cd /tmp/clawlancer-package
+          npm pack clawlancer-mcp --silent > tarball.txt
+          tar -xzf "$(cat tarball.txt)"
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          root = Path('/tmp/clawlancer-package/package')
+          needles = (
+              '/agents/register',
+              '/claim',
+              '/deliver',
+              '/submit',
+              'claim_bounty',
+              'deliver_work',
+              'submit_work',
+          )
+          matches = []
+          for path in sorted(root.rglob('*')):
+              if not path.is_file() or path.stat().st_size > 2_000_000:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except (UnicodeDecodeError, OSError):
+                  continue
+              lines = text.splitlines()
+              for index, line in enumerate(lines):
+                  if any(needle.lower() in line.lower() for needle in needles):
+                      start = max(0, index - 8)
+                      end = min(len(lines), index + 16)
+                      snippet = '\n'.join(lines[start:end])
+                      snippet = re.sub(r'(?i)(api[_-]?key|authorization|bearer)\s*[:=]\s*["\']?[^\s,"\']+', r'\1=[REDACTED]', snippet)
+                      matches.append({
+                          'path': str(path.relative_to(root)),
+                          'line': index + 1,
+                          'snippet': snippet[:8000],
+                      })
+          package_json = {}
+          package_path = root / 'package.json'
+          if package_path.exists():
+              package_json = json.loads(package_path.read_text())
+          result = {
+              'package': {key: package_json.get(key) for key in ('name', 'version', 'repository', 'homepage')},
+              'matches': matches[:100],
+          }
+          Path('/home/runner/work/autonomous-income-runner/autonomous-income-runner/clawlancer-output/mcp-schema-inspection.json').write_text(
+              json.dumps(result, indent=2) + '\n'
+          )
+          PY
+      - name: Commit schema evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add clawlancer-output/mcp-schema-inspection.json
+          git commit -m 'Record Clawlancer MCP request schemas [skip ci]'
+          git pull --rebase origin main
+          git push
