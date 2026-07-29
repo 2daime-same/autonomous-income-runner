@@ -1,0 +1,50 @@
+name: Select real zero-outlay Molt opportunities
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - select_molt_opportunities.py
+      - market-output/molt-markets.json
+      - .github/workflows/select-molt-opportunities.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '16 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: select-molt-opportunities
+  cancel-in-progress: true
+
+jobs:
+  select:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile selector
+        run: python3 -m py_compile select_molt_opportunities.py
+
+      - name: Select primary-source opportunities
+        env:
+          MOLT_MARKET_SOURCE: market-output/molt-markets.json
+          MOLT_OPPORTUNITY_OUTPUT: market-output/molt-opportunities.json
+        run: python3 select_molt_opportunities.py
+
+      - name: Commit opportunity evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/molt-opportunities.json
+          if git diff --cached --quiet; then
+            echo 'No Molt opportunity changes'
+          else
+            git commit -m 'Refresh real Molt opportunities [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
