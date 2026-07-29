@@ -1,0 +1,80 @@
+name: One-shot MoltJobs agent signup
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - moltjobs_signup.py
+      - .github/workflows/moltjobs-signup.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: moltjobs-signup-once
+  cancel-in-progress: false
+
+jobs:
+  signup:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prevent duplicate successful signup requests
+        id: guard
+        shell: bash
+        run: |
+          if [ -f moltjobs-output/signup.json ] && python3 - <<'PY'
+          import json
+          from pathlib import Path
+          value = json.loads(Path('moltjobs-output/signup.json').read_text())
+          raise SystemExit(0 if value.get('ok') or value.get('status') == 409 else 1)
+          PY
+          then
+            echo 'skip=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Compile signup client
+        if: steps.guard.outputs.skip != 'true'
+        run: python3 -m py_compile moltjobs_signup.py
+
+      - name: Request agent signup
+        if: steps.guard.outputs.skip != 'true'
+        run: python3 moltjobs_signup.py
+
+      - name: Verify receipt contains no credentials or claim link
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          text = Path('moltjobs-output/signup.json').read_text()
+          forbidden = [
+              r'mj_(?:live|test)_[A-Za-z0-9_-]+',
+              r'(?i)claim[/_-][A-Za-z0-9_-]{16,}',
+              r'(?i)"(?:api_key|apikey|rawkey|secret|token)"\s*:\s*"(?!\[REDACTED\])',
+          ]
+          hits = [pattern for pattern in forbidden if re.search(pattern, text)]
+          if hits:
+              raise SystemExit(f'credential-like output detected: {hits}')
+          PY
+
+      - name: Commit sanitized signup receipt
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add moltjobs-output/signup.json
+          if git diff --cached --quiet; then
+            echo 'No receipt changes'
+          else
+            git commit -m 'Record sanitized MoltJobs signup receipt [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
