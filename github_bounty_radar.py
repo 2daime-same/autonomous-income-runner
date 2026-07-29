@@ -18,12 +18,12 @@ import urllib.request
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Iterable, Mapping
+from typing import Any, Mapping
 
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 OUTPUT = Path(os.environ.get("GITHUB_BOUNTY_OUTPUT", "market-output/github-bounties.json"))
-USER_AGENT = "nexaworks-autonomous-income-bounty-radar/1.0"
+USER_AGENT = "nexaworks-autonomous-income-bounty-radar/2.0"
 TIMEOUT = 45
 
 MONEY_PATTERNS = [
@@ -48,8 +48,23 @@ BOT_LOGINS = {
     "opire-bot",
     "opire[bot]",
     "issuehunt[bot]",
-    "github-actions[bot]",
 }
+AGGREGATOR_REPO_MARKERS = (
+    "bountyscout",
+    "bounty-plaza",
+    "claudeearnself-runtime",
+    "sn-monetization-runtime",
+    "bounty-radar",
+    "bounty-scanner",
+)
+AGGREGATOR_TITLE_PATTERN = re.compile(
+    r"(?:bounty\s+alert|active\s+bounty\s+scan|scan\s+results|"
+    r"\[(?:radar|demand|repo-assist|tz-radar)\]|monthly\s+activity)",
+    re.I,
+)
+DIRECT_REWARD_COMMAND = re.compile(
+    r"/(?:bounty|reward)\s+(?:\$\s*)?[0-9]", re.I
+)
 
 
 class RadarError(RuntimeError):
@@ -174,6 +189,25 @@ def repo_from_issue(issue: Mapping[str, Any]) -> str | None:
     return repository_url[len(prefix) :] if repository_url.startswith(prefix) else None
 
 
+def aggregator_reason(issue: Mapping[str, Any], repo: str) -> str | None:
+    repo_lower = repo.lower()
+    title = str(issue.get("title") or "")
+    body = str(issue.get("body") or "")
+    labels = {label.lower() for label in label_names(issue)}
+    if any(marker in repo_lower for marker in AGGREGATOR_REPO_MARKERS):
+        return "known bounty aggregation or synthetic opportunity repository"
+    if "bounty-alert" in labels:
+        return "bounty-alert aggregation label"
+    if AGGREGATOR_TITLE_PATTERN.search(title):
+        return "bounty aggregation or synthetic radar title"
+    if body.lstrip().lower().startswith("### active bounty scan results"):
+        return "body is an aggregated bounty scan"
+    linked_issues = len(re.findall(r"https://github\.com/[^\s)]+/issues/\d+", body))
+    if linked_issues >= 4:
+        return f"body aggregates {linked_issues} external issue links"
+    return None
+
+
 def reward_evidence(issue: Mapping[str, Any], comments: list[Mapping[str, Any]]) -> dict[str, Any]:
     labels = label_names(issue)
     title = str(issue.get("title") or "")
@@ -184,19 +218,50 @@ def reward_evidence(issue: Mapping[str, Any], comments: list[Mapping[str, Any]])
     marker_text = "\n".join([title, body, *labels, *comment_texts]).lower()
     explicit_markers = sorted({marker for marker in REWARD_MARKERS if marker in marker_text})
     bot_comments = []
+    direct_comments = []
     attempt_users: set[str] = set()
     reward_links = 0
+    normalized_bots = {value.lower() for value in BOT_LOGINS}
     for comment in comments:
         login = str((comment.get("user") or {}).get("login") or "")
         text = str(comment.get("body") or "")
         lower = text.lower()
-        if login.lower() in {value.lower() for value in BOT_LOGINS} or "bounty" in lower:
+        comment_amounts = extract_amounts(text)
+        known_bot = login.lower() in normalized_bots
+        reward_command = bool(DIRECT_REWARD_COMMAND.search(text))
+        payment_statement = (
+            "payment will be awarded" in lower
+            or "receive payment" in lower
+            or "bounty created" in lower
+        )
+        if known_bot or "bounty" in lower:
             bot_comments.append({"login": login, "excerpt": text[:1500]})
+        if comment_amounts and (known_bot or reward_command or payment_statement):
+            direct_comments.append(
+                {
+                    "login": login,
+                    "amounts": sorted(set(comment_amounts)),
+                    "known_platform_bot": known_bot,
+                    "reward_command": reward_command,
+                    "excerpt": text[:1500],
+                }
+            )
         if re.search(r"/(?:attempt|try)\b", lower):
             if login:
                 attempt_users.add(login)
         reward_links += lower.count("[reward](")
 
+    title_amounts = extract_amounts(title)
+    label_amounts = extract_amounts(*labels)
+    direct_issue_command = bool(DIRECT_REWARD_COMMAND.search(body))
+    direct_title = bool(title_amounts and "bounty" in title.lower())
+    direct_labels = bool(
+        label_amounts
+        and any("bounty" in label.lower() or "funded" in label.lower() for label in labels)
+    )
+    direct_reward_evidence = bool(
+        direct_comments or direct_issue_command or direct_title or direct_labels
+    )
     explicit_platform = any(
         marker in marker_text for marker in ("algora", "opire", "issuehunt")
     )
@@ -208,6 +273,11 @@ def reward_evidence(issue: Mapping[str, Any], comments: list[Mapping[str, Any]])
         "markers": explicit_markers,
         "explicit_platform": explicit_platform,
         "funded_or_bounty_label": funded_label,
+        "direct_reward_evidence": direct_reward_evidence,
+        "direct_issue_command": direct_issue_command,
+        "direct_title_evidence": direct_title,
+        "direct_label_evidence": direct_labels,
+        "direct_comments": direct_comments[:10],
         "bot_comments": bot_comments[:10],
         "attempt_users": sorted(attempt_users),
         "attempt_count": len(attempt_users),
@@ -247,7 +317,6 @@ def fetch_repo(repo: str) -> dict[str, Any]:
 
 
 def competing_prs(repo: str, number: int) -> list[dict[str, Any]]:
-    # Search titles/bodies for either the issue URL or the canonical #number reference.
     queries = [
         f'repo:{repo} is:pr is:open "#{number}"',
         f'repo:{repo} is:pr is:open "issues/{number}"',
@@ -299,22 +368,32 @@ def final_score(
     amount = float(evidence.get("max_amount_usd") or 0.0)
     updated = parse_time(issue.get("updated_at"))
     pushed = parse_time(repository.get("pushed_at"))
+    repo_created = parse_time(repository.get("created_at"))
     age_days = (now_utc() - updated).days if updated else 9999
     push_age = (now_utc() - pushed).days if pushed else 9999
+    repo_age = (now_utc() - repo_created).days if repo_created else 9999
     comments = int(issue.get("comments") or 0)
     attempts = int(evidence.get("attempt_count") or 0)
     assignees = issue.get("assignees") if isinstance(issue.get("assignees"), list) else []
+    stars = int(repository.get("stargazers_count") or 0)
+    owner_type = str((repository.get("owner") or {}).get("type") or "")
 
     score = 0.0
     reasons: list[str] = []
     if amount >= 1:
         score += min(35.0, 10 + math.log10(amount) * 10)
         reasons.append(f"explicit reward evidence up to ${amount:g}")
+    if evidence.get("direct_reward_evidence"):
+        score += 22
+        reasons.append("direct reward evidence on the issue or its comments")
+    else:
+        score -= 70
+        reasons.append("no direct reward evidence; likely an aggregation or mention")
     if evidence.get("explicit_platform"):
-        score += 15
+        score += 10
         reasons.append("recognized bounty platform evidence")
     if evidence.get("funded_or_bounty_label"):
-        score += 8
+        score += 6
         reasons.append("repository bounty/funded label")
     if age_days <= 14:
         score += 18
@@ -353,9 +432,24 @@ def final_score(
         score += 5
     elif comments >= 30:
         score -= 10
+    if repository.get("fork"):
+        score -= 90
+        reasons.append("repository is a fork; reject synthetic bounty forks")
     if repository.get("archived"):
         score -= 100
         reasons.append("repository archived")
+    if stars == 0 and owner_type != "Organization":
+        score -= 20
+        reasons.append("zero-star personal repository")
+    elif stars >= 100:
+        score += 8
+        reasons.append("established repository")
+    if repo_age < 30 and amount >= 100:
+        score -= 35
+        reasons.append("new repository advertising a high reward")
+    if amount > 10_000:
+        score -= 50
+        reasons.append("implausibly high issue reward")
     if issue.get("state") != "open":
         score -= 100
     if evidence.get("reward_links_count", 0) > 0:
@@ -389,7 +483,27 @@ def main() -> int:
         except Exception as exc:
             query_errors.append({"query": query, "error": str(exc)})
 
-    shortlist = sorted(raw.values(), key=pre_score, reverse=True)[:45]
+    prefiltered: list[dict[str, Any]] = []
+    excluded_aggregators: list[dict[str, Any]] = []
+    for issue in raw.values():
+        repo = repo_from_issue(issue)
+        if not repo:
+            continue
+        reason = aggregator_reason(issue, repo)
+        if reason:
+            excluded_aggregators.append(
+                {
+                    "repo": repo,
+                    "issue_number": issue.get("number"),
+                    "title": issue.get("title"),
+                    "url": issue.get("html_url"),
+                    "reason": reason,
+                }
+            )
+        else:
+            prefiltered.append(issue)
+
+    shortlist = sorted(prefiltered, key=pre_score, reverse=True)[:60]
     candidates: list[dict[str, Any]] = []
     repo_cache: dict[str, dict[str, Any]] = {}
     for issue in shortlist:
@@ -412,9 +526,13 @@ def main() -> int:
                     "repo": repo,
                     "repo_language": repository.get("language"),
                     "repo_stars": repository.get("stargazers_count"),
+                    "repo_fork": repository.get("fork"),
+                    "repo_owner_type": (repository.get("owner") or {}).get("type"),
+                    "repo_created_at": repository.get("created_at"),
                     "repo_archived": repository.get("archived"),
                     "repo_pushed_at": repository.get("pushed_at"),
                     "issue_number": number,
+                    "issue_author": (issue.get("user") or {}).get("login"),
                     "title": issue.get("title"),
                     "url": issue.get("html_url"),
                     "created_at": issue.get("created_at"),
@@ -440,6 +558,14 @@ def main() -> int:
             )
 
     candidates.sort(key=lambda item: float(item.get("score") or -999), reverse=True)
+    recommended = [
+        item
+        for item in candidates
+        if item.get("score", -999) >= 45
+        and item.get("reward_evidence", {}).get("direct_reward_evidence") is True
+        and item.get("repo_fork") is not True
+        and item.get("repo_archived") is not True
+    ][:20]
     report = {
         "generated_at": iso_now(),
         "source": "GitHub REST Search and repository APIs",
@@ -447,12 +573,26 @@ def main() -> int:
         "queries": queries,
         "query_errors": query_errors,
         "raw_unique_open_issues": len(raw),
+        "excluded_aggregator_count": len(excluded_aggregators),
+        "excluded_aggregators": excluded_aggregators[:100],
+        "prefiltered_open_issues": len(prefiltered),
         "deep_inspected": len(shortlist),
         "ranked_candidates": candidates,
-        "recommended": [item for item in candidates if item.get("score", -999) >= 45][:20],
+        "recommended": recommended,
     }
     atomic_write(OUTPUT, report)
-    print(json.dumps({"ok": True, "raw": len(raw), "ranked": len(candidates), "recommended": len(report["recommended"])}, ensure_ascii=False))
+    print(
+        json.dumps(
+            {
+                "ok": True,
+                "raw": len(raw),
+                "excluded_aggregators": len(excluded_aggregators),
+                "ranked": len(candidates),
+                "recommended": len(recommended),
+            },
+            ensure_ascii=False,
+        )
+    )
     return 0
 
 
