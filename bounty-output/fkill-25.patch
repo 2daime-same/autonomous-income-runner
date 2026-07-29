@@ -1,0 +1,73 @@
+diff --git a/index.js b/index.js
+index f9453d1..e4bc9bd 100644
+--- a/index.js
++++ b/index.js
+@@ -262,26 +262,32 @@ export default async function fkill(inputs, options = {}) {
+ 		}
+ 	})));
+ 
+-	const exists = await processExistsMultiple([...parsedInputsMap.values()]);
+-
+-	const errors = [];
++	const killErrors = [];
+ 
+ 	const handleKill = async input => {
+-		const parsedInput = parsedInputsMap.get(input);
+-
+ 		try {
+ 			await killWithLimits(input, options);
+ 		} catch (error) {
++			killErrors.push({input, parsedInput: parsedInputsMap.get(input), error});
++		}
++	};
++
++	await Promise.all(inputs.map(input => handleKill(input)));
++
++	const errors = [];
++	if (killErrors.length > 0) {
++		const failedInputs = [...new Set(killErrors.map(({parsedInput}) => parsedInput))];
++		const exists = await processExistsMultiple(failedInputs);
++
++		for (const {input, parsedInput, error} of killErrors) {
+ 			if (!exists.get(parsedInput)) {
+ 				errors.push(`Killing process ${input} failed: Process doesn't exist`);
+-				return;
++				continue;
+ 			}
+ 
+ 			errors.push(`Killing process ${input} failed: ${error.message.replace(/.*\n/, '').replace(/kill: \d+: /, '').trim()}`);
+ 		}
+-	};
+-
+-	await Promise.all(inputs.map(input => handleKill(input)));
++	}
+ 
+ 	if (errors.length > 0 && !options.silent) {
+ 		throw new AggregateError(errors, 'Failed to kill processes');
+diff --git a/test.js b/test.js
+index a5c5fde..66c57d5 100644
+--- a/test.js
++++ b/test.js
+@@ -125,6 +125,22 @@ test('fail', async () => {
+ 	}
+ });
+ 
++
++test('successful kills are preserved when another input is missing', async () => {
++	const pid = await noopProcess();
++
++	try {
++		await fkill([pid, 'fkill-process-that-does-not-exist'], {force: true});
++		assert.fail('Expected error to be thrown');
++	} catch (error) {
++		assert.ok(error instanceof AggregateError);
++		assert.match(error.errors.join(' '), /fkill-process-that-does-not-exist/);
++		assert.match(error.errors.join(' '), /Process doesn't exist/);
++	}
++
++	await noopProcessKilled(pid);
++});
++
+ test('don\'t kill self', async () => {
+ 	const originalFkillPid = process.pid;
+ 	const pid = await noopProcess();
