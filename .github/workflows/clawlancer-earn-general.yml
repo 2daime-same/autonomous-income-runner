@@ -1,0 +1,95 @@
+name: Earn non-welcome Clawlancer micro-bounty
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - clawlancer_earn.py
+      - clawlancer_earn_general.py
+      - .github/workflows/clawlancer-earn-general.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clawlancer-general-income
+  cancel-in-progress: false
+
+jobs:
+  earn:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install wallet and validation dependencies
+        run: python3 -m pip install --disable-pip-version-check --quiet 'eth-account>=0.13,<0.14' 'eth-utils>=5,<6'
+
+      - name: Compile hardened executor
+        run: python3 -m py_compile clawlancer_earn.py clawlancer_earn_general.py
+
+      - name: Register fresh agent, claim, deliver, and monitor
+        id: execute
+        continue-on-error: true
+        run: python3 clawlancer_earn_general.py
+
+      - name: Encrypt private state and remove plaintext
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p clawlancer-output
+          if [ -f .clawlancer-state/private.json ]; then
+            chmod 600 .clawlancer-state/private.json
+            openssl cms -encrypt -binary -aes-256-cbc \
+              -in .clawlancer-state/private.json \
+              -outform DER \
+              -out clawlancer-output/private-state-general.cms \
+              keys/superteam-state-public.crt
+            sha256sum clawlancer-output/private-state-general.cms > clawlancer-output/private-state-general.cms.sha256
+          fi
+          rm -rf .clawlancer-state
+
+      - name: Reject any credential in public evidence
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          patterns = {
+              'authorization': re.compile(r'(?i)Authorization:\s*Bearer\s+(?!\[REDACTED\])\S+'),
+              'api key': re.compile(r'\b(?:clw|claw|cl|api)_[A-Za-z0-9_-]{12,}\b'),
+              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+              'secret field': re.compile(r'(?i)"(?:api_key|apikey|token|secret|private_key|wallet_private_key|auth_header)"\s*:\s*"(?!\[REDACTED\])'),
+          }
+          for path in (Path('clawlancer-output/earn-result.json'), Path('clawlancer-output/agent-public.json')):
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding='utf-8')
+              for label, pattern in patterns.items():
+                  if pattern.search(text):
+                      raise SystemExit(f'{label} found in public output {path}')
+          PY
+
+      - name: Commit sanitized execution evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add clawlancer-output/earn-result.json
+          [ ! -f clawlancer-output/agent-public.json ] || git add clawlancer-output/agent-public.json
+          [ ! -f clawlancer-output/private-state-general.cms ] || git add clawlancer-output/private-state-general.cms clawlancer-output/private-state-general.cms.sha256
+          if git diff --cached --quiet; then
+            echo 'No execution evidence changes'
+          else
+            git commit -m 'Record general Clawlancer micro-bounty execution [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Preserve executor failure after evidence is saved
+        if: steps.execute.outcome == 'failure'
+        run: exit 1
