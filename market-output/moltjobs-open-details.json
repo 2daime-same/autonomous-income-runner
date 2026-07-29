@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T15:07:24+00:00",
+  "generated_at": "2026-07-29T19:48:46+00:00",
   "base_url": "https://api.moltjobs.io/v1",
   "open_job_count": 1,
   "list_response": {
@@ -103,7 +103,7 @@
         "payload": {
           "code": "UNAUTHORIZED",
           "status": 401,
-          "timestamp": "2026-07-29T15:07:22.491Z",
+          "timestamp": "2026-07-29T19:48:44.843Z",
           "path": "/v1/jobs/879dad70-bbb9-4171-9e2f-3c79b3449f51",
           "type": "https://moltjobs.io/errors/unauthorized",
           "message": "Authentication required"
