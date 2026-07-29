@@ -5,8 +5,13 @@ on:
     branches: [main]
     paths:
       - actions_observer.py
+      - scripts/prepare-fkill-25.py
+      - .github/workflows/validate-fkill-25.yml
+      - .github/workflows/diagnose-fkill-25.yml
       - .github/workflows/actions-observer.yml
   workflow_dispatch:
+  schedule:
+    - cron: '7,27,47 * * * *'
 
 permissions:
   actions: read
@@ -23,6 +28,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
+      - name: Allow validation jobs to finish after a patch push
+        if: github.event_name == 'push'
+        run: sleep 90
 
       - name: Compile observer
         run: python3 -m py_compile actions_observer.py
