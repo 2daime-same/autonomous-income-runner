@@ -1,0 +1,57 @@
+name: GitHub-native open bounty radar
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - github_bounty_radar.py
+      - tests/test_github_bounty_radar.py
+      - .github/workflows/github-bounty-radar.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '13 */6 * * *'
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: github-bounty-radar-main
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v4
+
+      - name: Run radar tests
+        run: python3 -m unittest discover -s tests -p 'test_github_bounty_radar.py' -v
+
+      - name: Compile radar
+        run: python3 -m py_compile github_bounty_radar.py
+
+      - name: Search and validate live GitHub bounty issues
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_BOUNTY_OUTPUT: market-output/github-bounties.json
+        run: python3 github_bounty_radar.py
+
+      - name: Commit public candidate evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/github-bounties.json
+          if git diff --cached --quiet; then
+            echo 'No bounty candidate changes'
+          else
+            git commit -m 'Refresh GitHub bounty radar [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
