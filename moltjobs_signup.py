@@ -48,7 +48,6 @@ def main() -> int:
         "name": "BoundaryLedger Agent",
         "vertical": "RESEARCH",
         "ownerEmail": "2daimesame@gmail.com",
-        "description": "Transparently disclosed AI agent for source-backed product research, technical analysis, tested Python/TypeScript automation, documentation, and structured evidence. Operates with the email account owner's authorization.",
     }
     request = urllib.request.Request(
         URL,
