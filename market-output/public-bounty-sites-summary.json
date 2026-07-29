@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-29T09:46:13+00:00",
+  "generated_at": "2026-07-29T09:50:31+00:00",
   "sites": {
     "bountyhub": {
       "candidate_api_urls": [
         "https://api.bountyhub.dev/api",
-        "https://www.bountyhub.dev/api/early_access_features/?token=",
-        "https://www.bountyhub.dev/api/surveys/?token=",
-        "https://www.bountyhub.dev/api/web_experiments/?token="
+        "https://www.bountyhub.dev/api/early_access_features/?token=%5BREDACTED%5D",
+        "https://www.bountyhub.dev/api/surveys/?token=%5BREDACTED%5D",
+        "https://www.bountyhub.dev/api/web_experiments/?token=%5BREDACTED%5D"
       ],
       "endpoint_index": [
         {
@@ -704,21 +704,21 @@
           "ok": true,
           "status": 200,
           "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/58",
-          "url": "https://www.bountyhub.dev/api/early_access_features?token="
+          "url": "https://www.bountyhub.dev/api/early_access_features?token=%5BREDACTED%5D"
         },
         {
           "content_type": "text/html; charset=utf-8",
           "ok": true,
           "status": 200,
           "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/58",
-          "url": "https://www.bountyhub.dev/api/surveys?token="
+          "url": "https://www.bountyhub.dev/api/surveys?token=%5BREDACTED%5D"
         },
         {
           "content_type": "text/html; charset=utf-8",
           "ok": true,
           "status": 200,
           "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/58",
-          "url": "https://www.bountyhub.dev/api/web_experiments?token="
+          "url": "https://www.bountyhub.dev/api/web_experiments?token=%5BREDACTED%5D"
         },
         {
           "content_type": "text/html; charset=utf-8",
@@ -1282,5 +1282,5 @@
       }
     }
   },
-  "source_generated_at": "2026-07-29T09:45:38+00:00"
+  "source_generated_at": "2026-07-29T09:49:58+00:00"
 }
