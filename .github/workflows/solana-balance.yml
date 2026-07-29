@@ -1,0 +1,57 @@
+name: Public Solana settlement monitor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - solana_balance_probe.py
+      - tests/test_solana_balance_probe.py
+      - .github/workflows/solana-balance.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '7,37 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: solana-settlement-monitor-main
+  cancel-in-progress: true
+
+jobs:
+  monitor:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v4
+
+      - name: Test settlement monitor
+        run: python3 -m unittest discover -s tests -p 'test_solana_balance_probe.py' -v
+
+      - name: Compile settlement monitor
+        run: python3 -m py_compile solana_balance_probe.py
+
+      - name: Read public Solana balances
+        env:
+          SOLANA_PUBLIC_WALLET: 4RYaiFeSQtZMFREZPuoER8wr5F2eDFs3XeDKtEqpgVaj
+          SOLANA_BALANCE_OUTPUT: income-output/solana-balance.json
+        run: python3 solana_balance_probe.py
+
+      - name: Commit only a changed public balance
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          if [[ -f income-output/solana-balance.json ]]; then
+            git add income-output/solana-balance.json
+          fi
+          if git diff --cached --quiet; then
+            echo 'No public balance change'
+          else
+            git commit -m 'Record public settlement balance change [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
