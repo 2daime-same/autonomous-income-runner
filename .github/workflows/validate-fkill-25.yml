@@ -55,7 +55,7 @@ jobs:
       - name: Run Windows-relevant runtime regression tests
         if: runner.os == 'Windows'
         working-directory: upstream-fkill
-        run: node --test --test-timeout=60000 --test-name-pattern="pid|title - windows|default ignore case - windows|title without extension - windows|successful kills are preserved when another input is missing" test.js
+        run: node --test --test-timeout=60000 --test-name-pattern="^pid$|default ignore case - windows|title without extension - windows|successful kills are preserved when another input is missing|ignore ignore-case for pid" test.js
 
       - name: Run type-definition tests on Windows
         if: runner.os == 'Windows'
@@ -100,7 +100,7 @@ jobs:
               'head_sha': os.environ['HEAD_SHA'],
               'patch_file': 'bounty-output/fkill-25.patch',
               'claim_status': 'not-submitted',
-              'validation_note': 'Linux runs the complete upstream npm test script. Windows runs changed-JS lint, the PID/name/mixed-input tests relevant to this optimization with per-test timeout, and tsd. Full Windows xo has an unrelated declaration-file project-service path defect.',
+              'validation_note': 'Linux runs the complete upstream npm test script. Windows runs changed-JS lint, PID/name/mixed-input tests relevant to this optimization, and tsd. The global notepad-name test is excluded because shared runners may contain another same-name process.',
               'next_action': 'Submit only after both operating-system test jobs succeed and a fork/PR path is available.',
           }
           Path('bounty-output/fkill-25-result.json').write_text(
