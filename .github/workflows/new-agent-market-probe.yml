@@ -1,0 +1,66 @@
+name: Probe new zero-outlay agent work markets
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - new_agent_market_probe.py
+      - .github/workflows/new-agent-market-probe.yml
+  schedule:
+    - cron: '17 */2 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: new-agent-market-probe
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile read-only market probe
+        run: python3 -m py_compile new_agent_market_probe.py
+
+      - name: Fetch public docs and live inventory
+        env:
+          NEW_AGENT_MARKET_OUTPUT: market-output/new-agent-markets.json
+        run: python3 new_agent_market_probe.py
+
+      - name: Reject credential-like public output
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          path = Path('market-output/new-agent-markets.json')
+          text = path.read_text(encoding='utf-8')
+          forbidden = [
+              r'\b(?:sk|pk|api|key|token)_[A-Za-z0-9_-]{16,}\b',
+              r'(?i)"(?:api[_-]?key|authorization|bearer|access[_-]?token|refresh[_-]?token|secret|private[_-]?key|claim[_-]?code)"\s*:\s*"(?!\[REDACTED\])',
+              r'\b0x[a-fA-F0-9]{64}\b',
+          ]
+          hits = [pattern for pattern in forbidden if re.search(pattern, text)]
+          if hits:
+              raise SystemExit(f'credential-like output detected: {hits}')
+          PY
+
+      - name: Commit sanitized market evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/new-agent-markets.json
+          if git diff --cached --quiet; then
+            echo 'No market evidence changes'
+          else
+            git commit -m 'Refresh new agent market inventory [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
