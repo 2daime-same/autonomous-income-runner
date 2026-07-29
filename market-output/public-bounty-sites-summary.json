@@ -1,0 +1,1286 @@
+{
+  "generated_at": "2026-07-29T09:46:13+00:00",
+  "sites": {
+    "bountyhub": {
+      "candidate_api_urls": [
+        "https://api.bountyhub.dev/api",
+        "https://www.bountyhub.dev/api/early_access_features/?token=",
+        "https://www.bountyhub.dev/api/surveys/?token=",
+        "https://www.bountyhub.dev/api/web_experiments/?token="
+      ],
+      "endpoint_index": [
+        {
+          "content_type": "application/json; charset=utf-8",
+          "data_count": 10,
+          "data_sample_item_keys": [
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ]
+          ],
+          "keys": [
+            "data",
+            "hasNextPage"
+          ],
+          "ok": true,
+          "shape": "dict",
+          "status": 200,
+          "url": "https://api.bountyhub.dev/api/bounties"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "data_count": 21,
+          "data_sample_item_keys": [
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ]
+          ],
+          "keys": [
+            "data",
+            "hasNextPage"
+          ],
+          "ok": true,
+          "shape": "dict",
+          "status": 200,
+          "url": "https://api.bountyhub.dev/api/bounties?limit=100"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "data_count": 10,
+          "data_sample_item_keys": [
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ]
+          ],
+          "keys": [
+            "data",
+            "hasNextPage"
+          ],
+          "ok": true,
+          "shape": "dict",
+          "status": 200,
+          "url": "https://api.bountyhub.dev/api/bounties?ordering=-amount"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "data_count": 10,
+          "data_sample_item_keys": [
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ],
+            [
+              "__entity",
+              "additionalDescription",
+              "amount",
+              "amountPaid",
+              "assignee",
+              "assignmentType",
+              "avatarUrl",
+              "body",
+              "claimed",
+              "createdAt",
+              "deletedAt",
+              "githubCreatedAt",
+              "htmlURL",
+              "id",
+              "isFrozen",
+              "issueNumber",
+              "issueState",
+              "language",
+              "paymentStatus",
+              "paypalOrderId",
+              "repositoryFullName",
+              "repositoryURL",
+              "retracted",
+              "solved",
+              "stripeSessionId",
+              "title",
+              "totalAmount",
+              "updatedAt",
+              "url"
+            ]
+          ],
+          "keys": [
+            "data",
+            "hasNextPage"
+          ],
+          "ok": true,
+          "shape": "dict",
+          "status": 200,
+          "url": "https://api.bountyhub.dev/api/bounties?status=open"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/c",
+          "url": "https://www.bountyhub.dev/api/bounties"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/c",
+          "url": "https://www.bountyhub.dev/api/bounties?status=open"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/58",
+          "url": "https://www.bountyhub.dev/api/early_access_features?token="
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/58",
+          "url": "https://www.bountyhub.dev/api/surveys?token="
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"api\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/58",
+          "url": "https://www.bountyhub.dev/api/web_experiments?token="
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Fhomepage-image-1.png&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fhomepage-image-1.png&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fhomepage-image-1.png&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fhomepage-image-1.png&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fhomepage-image-1.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fhomepage-image-1.png&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fhomepage-image-1.png&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fhomepage-image-1.png&amp;w=3840&amp;q=75 3840w\" imageSizes=\"100vw\"/><link rel=\"preload\" as=\"image\" im",
+          "url": "https://www.bountyhub.dev/en"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/bounties/featured"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/bounties/featured"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties?limit=100"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties?limit=100"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties?ordering=-amount"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties?ordering=-amount"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties?status=open"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0484562807a97172-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/4c285fdca692ea22-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8888a3826f4a3af4-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b957ea75a84b6ea7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/eafabf029ad39a43-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/cs",
+          "url": "https://www.bountyhub.dev/en/bounties?status=open"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/featured-bounties"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/featured-bounties"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/issues"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/issues"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/projects"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/projects"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/repositories"
+        },
+        {
+          "content_type": "text/html; charset=utf-8",
+          "ok": true,
+          "status": 200,
+          "text_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" class=\"__variable_51684b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/ef4965e48ab09048.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-35ccaf8db282e3d4.js\"/><script src=\"/_next/static/chunks/4bd1b696-fd21a6f2cc37f2ab.js\" async=\"\"></script><script src=\"/_next/static/chunks/1684-4c536ce9618ebea7.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4b300d916c71622.js\" async=\"\"></script><script src=\"/_next/static/chunks/6962-336e96ac48ef415c.js\" async=\"\"></script><script src=\"/_next/static/chunks/81-15a176f3023aa71c.js\" async=\"\"></script><script src=\"/_next/static/chunks/585",
+          "url": "https://www.bountyhub.dev/en/repositories"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/api/bounties"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/api/bounties?status=open"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/bounties/featured/"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/featured-bounties"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/featured-bounties/"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/issues"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/issues/"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/projects"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/projects/"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/repositories"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "message",
+            "error",
+            "statusCode"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error",
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://api.bountyhub.dev/api/repositories/"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "statusCode",
+            "message"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 500,
+          "url": "https://api.bountyhub.dev/api/bounties/"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "statusCode",
+            "message"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 500,
+          "url": "https://api.bountyhub.dev/api/bounties/?limit=100"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "statusCode",
+            "message"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 500,
+          "url": "https://api.bountyhub.dev/api/bounties/?ordering=-amount"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "statusCode",
+            "message"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 500,
+          "url": "https://api.bountyhub.dev/api/bounties/?status=open"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "statusCode",
+            "message"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "message",
+            "statusCode"
+          ],
+          "shape": "dict",
+          "status": 500,
+          "url": "https://api.bountyhub.dev/api/bounties/featured"
+        }
+      ],
+      "github_issue_urls": [],
+      "ok": true,
+      "origin": "https://www.bountyhub.dev",
+      "summary": {
+        "github_issue_url_count": 0,
+        "inspected_script_count": 7,
+        "successful_json_endpoint_count": 21
+      }
+    },
+    "codebounty": {
+      "error": "ValueError: Invalid IPv6 URL",
+      "ok": false
+    },
+    "gitwork": {
+      "candidate_api_urls": [
+        "https://gitwork.io/api/v1.0/email/send",
+        "https://gitwork.io/api/v1.0/email/send-form",
+        "https://gitwork.io/api/wallet/me",
+        "https://gitwork.io/api/wallet/withdraw"
+      ],
+      "endpoint_index": [
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 401,
+          "url": "https://gitwork.io/api/wallet/me"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/bounties"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/bounties?status=open"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/issues"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/stats"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/v1.0/email/send"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/v1.0/email/send-form"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/v1/bounties"
+        },
+        {
+          "content_type": "application/json; charset=utf-8",
+          "keys": [
+            "error"
+          ],
+          "ok": false,
+          "sample_keys": [
+            "error"
+          ],
+          "shape": "dict",
+          "status": 404,
+          "url": "https://gitwork.io/api/wallet/withdraw"
+        }
+      ],
+      "github_issue_urls": [],
+      "ok": true,
+      "origin": "https://gitwork.io",
+      "summary": {
+        "github_issue_url_count": 0,
+        "inspected_script_count": 1,
+        "successful_json_endpoint_count": 9
+      }
+    }
+  },
+  "source_generated_at": "2026-07-29T09:45:38+00:00"
+}
