@@ -1,0 +1,50 @@
+name: MergeFund marketplace probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - mergefund_probe.py
+      - .github/workflows/mergefund-probe.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '53 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mergefund-probe-main
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v4
+
+      - name: Compile probe
+        run: python3 -m py_compile mergefund_probe.py
+
+      - name: Discover public bounty records and APIs
+        env:
+          MERGEFUND_OUTPUT_FILE: market-output/mergefund.json
+        run: python3 mergefund_probe.py
+
+      - name: Commit public evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/mergefund.json
+          if git diff --cached --quiet; then
+            echo 'No MergeFund evidence changes'
+          else
+            git commit -m 'Refresh MergeFund marketplace evidence [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
