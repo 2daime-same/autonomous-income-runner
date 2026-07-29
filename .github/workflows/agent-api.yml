@@ -67,6 +67,7 @@ jobs:
           rm -rf .agent-state
 
       - name: Verify that public JSON contains no credentials
+        id: public_scan
         if: always()
         shell: bash
         run: |
@@ -105,7 +106,7 @@ jobs:
           PY
 
       - name: Commit sanitized evidence and encrypted state
-        if: always()
+        if: always() && steps.public_scan.outcome == 'success'
         shell: bash
         run: |
           set -euo pipefail
