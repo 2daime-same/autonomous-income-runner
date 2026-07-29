@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping
@@ -26,24 +27,49 @@ QUERIES = [
     'is:issue is:open "IssueHunt Summary"',
     'is:issue is:open label:"$$ bug-bounty $$"',
     'is:issue is:open "BountySource"',
-    'is:issue is:open "Open Collective" bounty',
+    'is:issue is:open "gitwork:usdc:"',
+    'is:issue is:open "gitwork:sol:"',
+    'is:issue is:open "gitwork.io" bounty',
+    'is:issue is:open "bountyhub.dev"',
+    'is:issue is:open "codebounty.org"',
+    'is:issue is:open "bounty-hub.vercel.app"',
 ]
 
 TRUST_MARKERS = {
-    "algora": ("algora.io", "algora-pbc[bot]"),
+    "algora": ("algora.io", "algora-pbc[bot]", "algora-pbc"),
     "opire": ("opire.dev", "opire-bot", "opire[bot]"),
     "issuehunt": ("oss.issuehunt.io", "issuehunt[bot]", "issuehunt summary"),
     "jhipster": ("$$ bug-bounty $$", "jhipster.tech/bug-bounties"),
     "bountysource": ("bountysource.com", "bountysource"),
-    "open_collective": ("opencollective.com", "open collective"),
+    "gitwork": ("gitwork:usdc:", "gitwork:sol:", "gitwork.io"),
+    "bountyhub": ("bountyhub.dev/bounty/", "bountyhub.dev/en/bounty/", "bountyhub.dev"),
+    "codebounty": ("codebounty.org",),
+    "onchain_bountyhub": ("bounty-hub.vercel.app",),
 }
+
+DIRECT_LABEL_PATTERNS = (
+    re.compile(r"^gitwork:(?:usdc|sol):[0-9]+(?:\.[0-9]+)?$", re.I),
+    re.compile(r"^\$\$ bug-bounty \$\$$", re.I),
+    re.compile(r"^\$[0-9]+(?:\.[0-9]+)?$"),
+)
+
+DIRECT_URL_MARKERS = (
+    "algora.io/",
+    "opire.dev/",
+    "oss.issuehunt.io/",
+    "bountyhub.dev/en/bounty/",
+    "bountyhub.dev/bounty/",
+    "codebounty.org/bount",
+    "bounty-hub.vercel.app/",
+    "gitwork.io/bount",
+)
 
 
 def atomic_write(path: Path, value: Any) -> None:
     strict.atomic_write(path, value)
 
 
-def trust_program(issue: Mapping[str, Any], comments: list[Mapping[str, Any]]) -> list[str]:
+def combined_text(issue: Mapping[str, Any], comments: list[Mapping[str, Any]]) -> str:
     labels = broad.label_names(issue)
     text_parts = [
         str(issue.get("title") or ""),
@@ -53,7 +79,11 @@ def trust_program(issue: Mapping[str, Any], comments: list[Mapping[str, Any]]) -
     for comment in comments:
         text_parts.append(str(comment.get("body") or ""))
         text_parts.append(str((comment.get("user") or {}).get("login") or ""))
-    text = "\n".join(text_parts).lower()
+    return "\n".join(text_parts).lower()
+
+
+def trust_program(issue: Mapping[str, Any], comments: list[Mapping[str, Any]]) -> list[str]:
+    text = combined_text(issue, comments)
     return sorted(
         program
         for program, markers in TRUST_MARKERS.items()
@@ -61,8 +91,58 @@ def trust_program(issue: Mapping[str, Any], comments: list[Mapping[str, Any]]) -
     )
 
 
-def compact_issue(issue: Mapping[str, Any], comments: list[Mapping[str, Any]], repository: Mapping[str, Any], prs: list[Mapping[str, Any]]) -> dict[str, Any]:
+def has_program_direct_evidence(
+    issue: Mapping[str, Any],
+    comments: list[Mapping[str, Any]],
+    programs: list[str],
+    amount: float,
+) -> bool:
+    """Require a program-specific URL/bot/label plus a non-zero reward.
+
+    This deliberately does not trust a generic sentence that merely compares
+    bounty platforms. Evidence must occur in the actual issue, labels, or a
+    platform-generated comment.
+    """
+    if amount <= 0 or not programs:
+        return False
+    labels = broad.label_names(issue)
+    if any(pattern.match(label.strip()) for label in labels for pattern in DIRECT_LABEL_PATTERNS):
+        if "gitwork" in programs or "jhipster" in programs:
+            return True
+    issue_text = "\n".join(
+        [str(issue.get("title") or ""), str(issue.get("body") or ""), " ".join(labels)]
+    ).lower()
+    if any(marker in issue_text for marker in DIRECT_URL_MARKERS):
+        return True
+    for comment in comments:
+        login = str((comment.get("user") or {}).get("login") or "").lower()
+        body = str(comment.get("body") or "").lower()
+        if login in {
+            "algora-pbc[bot]",
+            "algora-pbc",
+            "opire-bot",
+            "opire[bot]",
+            "issuehunt[bot]",
+        }:
+            return True
+        if any(marker in body for marker in DIRECT_URL_MARKERS):
+            return True
+    return False
+
+
+def compact_issue(
+    issue: Mapping[str, Any],
+    comments: list[Mapping[str, Any]],
+    repository: Mapping[str, Any],
+    prs: list[Mapping[str, Any]],
+) -> dict[str, Any]:
     evidence = broad.reward_evidence(issue, comments)
+    programs = trust_program(issue, comments)
+    amount = float(evidence.get("max_amount_usd") or 0.0)
+    if has_program_direct_evidence(issue, comments, programs, amount):
+        evidence = dict(evidence)
+        evidence["direct_reward_evidence"] = True
+
     candidate = {
         "score": 0,
         "repo": broad.repo_from_issue(issue),
@@ -78,15 +158,17 @@ def compact_issue(issue: Mapping[str, Any], comments: list[Mapping[str, Any]], r
         "url": issue.get("html_url"),
         "updated_at": issue.get("updated_at"),
         "comments_count": issue.get("comments"),
-        "assignees": [entry.get("login") for entry in issue.get("assignees", []) if isinstance(entry, Mapping)],
+        "assignees": [
+            entry.get("login")
+            for entry in issue.get("assignees", [])
+            if isinstance(entry, Mapping)
+        ],
         "open_competing_prs": prs,
         "labels": broad.label_names(issue),
         "body_excerpt": str(issue.get("body") or "")[:4000],
         "reward_evidence": evidence,
     }
-    programs = trust_program(issue, comments)
     flags = strict.safety_flags(candidate)
-    amount = float(evidence.get("max_amount_usd") or 0.0)
     scope, scope_reasons = strict.scope_score(candidate)
     score = scope + 15 * len(programs)
     if 1 <= amount <= 100:
@@ -113,7 +195,11 @@ def compact_issue(issue: Mapping[str, Any], comments: list[Mapping[str, Any]], r
         "attempt_count": evidence.get("attempt_count"),
         "body_excerpt": candidate["body_excerpt"],
         "direct_reward_evidence": evidence.get("direct_reward_evidence"),
-        "direct_comments": evidence.get("direct_comments", [])[:5] if isinstance(evidence.get("direct_comments"), list) else [],
+        "direct_comments": (
+            evidence.get("direct_comments", [])[:5]
+            if isinstance(evidence.get("direct_comments"), list)
+            else []
+        ),
     }
 
 
@@ -122,7 +208,7 @@ def main() -> int:
     query_errors: list[dict[str, str]] = []
     for query in QUERIES:
         try:
-            for issue in broad.search_issues(query, pages=2):
+            for issue in broad.search_issues(query, pages=3):
                 if broad.is_pr_reference(issue):
                     continue
                 url = str(issue.get("html_url") or "")
@@ -133,7 +219,7 @@ def main() -> int:
 
     inspected: list[dict[str, Any]] = []
     repo_cache: dict[str, dict[str, Any]] = {}
-    for issue in sorted(raw.values(), key=broad.pre_score, reverse=True)[:100]:
+    for issue in sorted(raw.values(), key=broad.pre_score, reverse=True)[:180]:
         repo = broad.repo_from_issue(issue)
         number = issue.get("number")
         if not repo or not isinstance(number, int):
@@ -158,7 +244,9 @@ def main() -> int:
                 }
             )
 
-    inspected.sort(key=lambda item: float(item.get("selector_score") or -999), reverse=True)
+    inspected.sort(
+        key=lambda item: float(item.get("selector_score") or -999), reverse=True
+    )
     actionable = [
         item
         for item in inspected
@@ -175,11 +263,21 @@ def main() -> int:
         "raw_unique_open_issues": len(raw),
         "inspected_count": len(inspected),
         "actionable_count": len(actionable),
-        "actionable": actionable[:30],
-        "inspected": inspected[:100],
+        "actionable": actionable[:40],
+        "inspected": inspected[:180],
     }
     atomic_write(OUTPUT, output)
-    print(json.dumps({"ok": True, "raw": len(raw), "inspected": len(inspected), "actionable": len(actionable)}, ensure_ascii=False))
+    print(
+        json.dumps(
+            {
+                "ok": True,
+                "raw": len(raw),
+                "inspected": len(inspected),
+                "actionable": len(actionable),
+            },
+            ensure_ascii=False,
+        )
+    )
     return 0
 
 
