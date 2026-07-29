@@ -1,0 +1,56 @@
+name: Inspect current MoltJobs open jobs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - inspect_moltjobs_open.py
+      - .github/workflows/inspect-moltjobs-open.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '21 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inspect-moltjobs-open
+  cancel-in-progress: true
+
+jobs:
+  inspect:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile inspector
+        run: python3 -m py_compile inspect_moltjobs_open.py
+
+      - name: Inspect public open jobs and referenced templates
+        env:
+          MOLTJOBS_INSPECTION_OUTPUT: market-output/moltjobs-open-details.json
+        run: python3 inspect_moltjobs_open.py
+
+      - name: Reject credential-shaped output
+        run: |
+          set -euo pipefail
+          if grep -E -n '\bmj_(live|test)_[A-Za-z0-9_-]+' market-output/moltjobs-open-details.json; then
+            echo 'Credential-shaped output detected' >&2
+            exit 1
+          fi
+
+      - name: Commit public inspection evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/moltjobs-open-details.json
+          if git diff --cached --quiet; then
+            echo 'No MoltJobs detail changes'
+          else
+            git commit -m 'Refresh MoltJobs open-job details [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
