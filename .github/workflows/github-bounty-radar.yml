@@ -1,4 +1,3 @@
-# Diagnostic revision: always persist step outcomes and scan errors.
 name: GitHub-native open bounty radar
 
 on:
@@ -6,7 +5,9 @@ on:
     branches: [main]
     paths:
       - github_bounty_radar.py
+      - strict_candidate_selector.py
       - tests/test_github_bounty_radar.py
+      - tests/test_strict_candidate_selector.py
       - .github/workflows/github-bounty-radar.yml
   workflow_dispatch:
   schedule:
@@ -30,15 +31,17 @@ jobs:
       - name: Check out dedicated repository
         uses: actions/checkout@v4
 
-      - name: Run radar tests
+      - name: Run radar and selector tests
         id: tests
         continue-on-error: true
-        run: python3 -m unittest discover -s tests -p 'test_github_bounty_radar.py' -v
+        run: |
+          python3 -m unittest discover -s tests -p 'test_github_bounty_radar.py' -v
+          python3 -m unittest discover -s tests -p 'test_strict_candidate_selector.py' -v
 
-      - name: Compile radar
+      - name: Compile radar and selector
         id: compile
         continue-on-error: true
-        run: python3 -m py_compile github_bounty_radar.py
+        run: python3 -m py_compile github_bounty_radar.py strict_candidate_selector.py
 
       - name: Search and validate live GitHub bounty issues
         id: scan
@@ -48,12 +51,21 @@ jobs:
           GITHUB_BOUNTY_OUTPUT: market-output/github-bounties.json
         run: python3 github_bounty_radar.py
 
+      - name: Apply zero-cost and anti-exfiltration policy
+        id: select
+        continue-on-error: true
+        env:
+          STRICT_SELECTOR_INPUT: market-output/github-bounties.json
+          STRICT_SELECTOR_OUTPUT: market-output/actionable-candidates.json
+        run: python3 strict_candidate_selector.py
+
       - name: Write diagnostic summary
         if: always()
         env:
           TESTS_OUTCOME: ${{ steps.tests.outcome }}
           COMPILE_OUTCOME: ${{ steps.compile.outcome }}
           SCAN_OUTCOME: ${{ steps.scan.outcome }}
+          SELECT_OUTCOME: ${{ steps.select.outcome }}
           RUN_ID: ${{ github.run_id }}
           RUN_ATTEMPT: ${{ github.run_attempt }}
           COMMIT_SHA: ${{ github.sha }}
@@ -74,7 +86,9 @@ jobs:
               'tests_outcome': os.environ.get('TESTS_OUTCOME'),
               'compile_outcome': os.environ.get('COMPILE_OUTCOME'),
               'scan_outcome': os.environ.get('SCAN_OUTCOME'),
+              'selector_outcome': os.environ.get('SELECT_OUTCOME'),
               'candidate_output_exists': Path('market-output/github-bounties.json').exists(),
+              'actionable_output_exists': Path('market-output/actionable-candidates.json').exists(),
           }
           output.write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8')
           PY
@@ -86,18 +100,27 @@ jobs:
           set -euo pipefail
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-          git add market-output/github-bounties-run-summary.json
-          if [[ -f market-output/github-bounties.json ]]; then
-            git add market-output/github-bounties.json
-          fi
+          for file in \
+            market-output/github-bounties-run-summary.json \
+            market-output/github-bounties.json \
+            market-output/actionable-candidates.json
+          do
+            if [[ -f "$file" ]]; then
+              git add "$file"
+            fi
+          done
           if git diff --cached --quiet; then
             echo 'No bounty candidate or diagnostic changes'
           else
-            git commit -m 'Refresh GitHub bounty radar diagnostics [skip ci]'
+            git commit -m 'Refresh strict GitHub bounty candidates [skip ci]'
             git pull --rebase origin main
             git push
           fi
 
       - name: Preserve validation or scan failure status
-        if: steps.tests.outcome == 'failure' || steps.compile.outcome == 'failure' || steps.scan.outcome == 'failure'
+        if: >-
+          steps.tests.outcome == 'failure' ||
+          steps.compile.outcome == 'failure' ||
+          steps.scan.outcome == 'failure' ||
+          steps.select.outcome == 'failure'
         run: exit 1
