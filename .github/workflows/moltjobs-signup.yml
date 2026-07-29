@@ -44,16 +44,21 @@ jobs:
         run: python3 -m py_compile moltjobs_signup.py
 
       - name: Request agent signup
+        id: request
         if: steps.guard.outputs.skip != 'true'
+        continue-on-error: true
         run: python3 moltjobs_signup.py
 
       - name: Verify receipt contains no credentials or claim link
-        if: steps.guard.outputs.skip != 'true'
+        if: always() && steps.guard.outputs.skip != 'true'
         run: |
           python3 - <<'PY'
           import re
           from pathlib import Path
-          text = Path('moltjobs-output/signup.json').read_text()
+          path = Path('moltjobs-output/signup.json')
+          if not path.exists():
+              raise SystemExit('signup client produced no receipt')
+          text = path.read_text()
           forbidden = [
               r'mj_(?:live|test)_[A-Za-z0-9_-]+',
               r'(?i)claim[/_-][A-Za-z0-9_-]{16,}',
@@ -65,7 +70,7 @@ jobs:
           PY
 
       - name: Commit sanitized signup receipt
-        if: steps.guard.outputs.skip != 'true'
+        if: always() && steps.guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
           git config user.name 'agent-income-runner[bot]'
@@ -78,3 +83,7 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+
+      - name: Preserve request failure after evidence is saved
+        if: steps.guard.outputs.skip != 'true' && steps.request.outcome == 'failure'
+        run: exit 1
