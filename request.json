@@ -2,9 +2,8 @@
   "version": 1,
   "operation": "list",
   "agentName": "BoundaryLedger-Agent",
-  "requestId": "public-discovery-2026-07-29T1530JST",
+  "requestId": "public-discovery-no-deadline-2026-07-29T1615JST",
   "list": {
-    "take": 100,
-    "deadline": "2026-12-31"
+    "take": 100
   }
 }
