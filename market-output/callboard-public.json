@@ -19,7 +19,7 @@
       "url": "https://api.getcallboard.com/api/v1/stats"
     }
   ],
-  "generated_at": "2026-07-29T19:52:43+00:00",
+  "generated_at": "2026-07-29T21:26:30+00:00",
   "observed_call_records": 0,
   "safety": "GET-only; no registration, terms acceptance, signature, application, submission, payment, or withdrawal"
 }
