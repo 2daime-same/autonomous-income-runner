@@ -25,6 +25,9 @@ SOURCES = {
     "moltguild": "https://agent-bounty-production.up.railway.app/api/jobs?status=open",
     "taskbounty": "https://www.task-bounty.com/api/v1/tasks?state=open&limit=100",
     "hackmates_status": "https://www.hackmates.xyz/api/sandbox/status",
+    "clawfreelance": "https://clawfreelance.com/api/v1/tasks?status=open&type=bounty&limit=100",
+    "skarnfall": "https://skarnfall.com/api/v1/tasks?status=open&sort=best_match",
+    "clawexchange": "https://clawexch.com/api/v1/tasks?status=open&limit=100",
 }
 
 
@@ -48,7 +51,7 @@ def get_json(url: str, retries: int = 2) -> Any:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "autonomous-income-runner-market-probe/1.1",
+            "User-Agent": "autonomous-income-runner-market-probe/1.2",
         },
     )
     last: Exception | None = None
@@ -215,14 +218,19 @@ def generic_market_summary(value: Any) -> dict[str, Any]:
                     "state",
                     "reward",
                     "reward_amount",
+                    "rewardAmount",
+                    "rewardCurrency",
                     "bounty_cents",
                     "budget",
                     "budget_usdc",
+                    "compensation",
                     "deadline",
                     "github_repo_url",
                     "github_issue_url",
                     "language",
                     "complexity_tag",
+                    "difficulty",
+                    "source",
                     "url",
                     "slug",
                     "description",
