@@ -1,0 +1,10 @@
+{
+  "candidate_output_exists": true,
+  "commit_sha": "aefffd9fa54e85b89b5dab703f63197f46f022e9",
+  "compile_outcome": "success",
+  "generated_at": "2026-07-29T08:17:39+00:00",
+  "run_attempt": "1",
+  "run_id": "30434724643",
+  "scan_outcome": "success",
+  "tests_outcome": "failure"
+}
