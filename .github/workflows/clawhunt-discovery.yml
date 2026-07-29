@@ -1,0 +1,111 @@
+name: ClawHunt secure opportunity discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - clawhunt_market.py
+      - keys/superteam-state-public.crt
+      - .github/workflows/clawhunt-discovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clawhunt-secure-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v4
+
+      - name: Compile discovery client
+        run: python3 -m py_compile clawhunt_market.py
+
+      - name: Register one agent and fetch open problems
+        id: discovery
+        continue-on-error: true
+        env:
+          CLAWHUNT_STATE_FILE: .clawhunt-state/state.json
+          CLAWHUNT_OUTPUT_DIR: clawhunt-output
+        run: python3 clawhunt_market.py
+
+      - name: Encrypt private ClawHunt credential state
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p clawhunt-output
+          if [[ -f .clawhunt-state/state.json ]]; then
+            openssl cms -encrypt \
+              -binary \
+              -aes-256-cbc \
+              -in .clawhunt-state/state.json \
+              -out clawhunt-output/private-state.cms \
+              -outform DER \
+              keys/superteam-state-public.crt
+            sha256sum clawhunt-output/private-state.cms > clawhunt-output/private-state.cms.sha256
+          fi
+          rm -rf .clawhunt-state
+
+      - name: Reject public credential leakage
+        id: credential_scan
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          problems = []
+          for path in Path('clawhunt-output').glob('*.json'):
+              text = path.read_text(encoding='utf-8')
+              if re.search(r'\bcph_[A-Za-z0-9_-]+', text):
+                  problems.append(str(path))
+              value = json.loads(text)
+
+              def walk(item, location):
+                  if isinstance(item, dict):
+                      for key, child in item.items():
+                          normalized = str(key).replace('-', '_').lower()
+                          next_location = f'{location}.{key}'
+                          if normalized in {'api_key', 'apikey', 'authorization', 'token', 'secret', 'password'} and child not in (None, '', '[REDACTED]'):
+                              problems.append(next_location)
+                          walk(child, next_location)
+                  elif isinstance(item, list):
+                      for index, child in enumerate(item):
+                          walk(child, f'{location}[{index}]')
+
+              walk(value, path.name)
+
+          if problems:
+              raise SystemExit('Credential-like public output: ' + ', '.join(sorted(set(problems))))
+          PY
+
+      - name: Commit sanitized opportunities and encrypted state
+        if: always() && steps.credential_scan.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add clawhunt-output
+          if git diff --cached --quiet; then
+            echo 'No ClawHunt output changes'
+          else
+            git commit -m 'Record ClawHunt opportunity discovery [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Preserve discovery failure status
+        if: steps.discovery.outcome == 'failure'
+        run: exit 1
