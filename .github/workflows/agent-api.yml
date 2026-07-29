@@ -7,11 +7,9 @@ on:
       - request.json
       - runner.py
       - tests/**
+      - keys/superteam-state-public.crt
       - .github/workflows/agent-api.yml
-  pull_request:
   workflow_dispatch:
-  schedule:
-    - cron: "17 */6 * * *"
 
 permissions:
   contents: write
@@ -21,54 +19,69 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Check out isolated runner repository
-        uses: actions/checkout@v4
-      - name: Run local safety tests
-        run: python3 -m unittest discover -s tests -v
-      - name: Compile runner
-        run: python3 -m py_compile runner.py
-      - name: Validate request without network access
-        run: python3 runner.py --dry-run
-
   run:
-    if: github.event_name != 'pull_request'
-    needs: validate
+    if: github.repository_owner == 'nexaworks-jp'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Check out isolated runner repository
         uses: actions/checkout@v4
 
-      - name: Restore private agent state cache
-        uses: actions/cache/restore@v4
-        with:
-          path: .agent-state
-          key: agent-state-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: |
-            agent-state-
+      - name: Run local safety tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Compile runner
+        run: python3 -m py_compile runner.py
+
+      - name: Validate request without network access
+        run: python3 runner.py --dry-run
 
       - name: Execute requested agent API operation
+        id: agent
+        continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
+          PUBLIC_SAFE_MODE: "1"
           AGENT_STATE_DIR: .agent-state
           AGENT_OUTPUT_DIR: output
           AGENT_REQUEST_FILE: request.json
         run: python3 runner.py
 
-      - name: Persist platform credentials outside Git history
+      - name: Encrypt private registration state
         if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: .agent-state
-          key: agent-state-${{ github.run_id }}-${{ github.run_attempt }}
-
-      - name: Commit sanitized evidence
-        if: always()
+        shell: bash
         run: |
+          set -euo pipefail
+          mkdir -p output
+          if [[ -f .agent-state/superteam.json ]]; then
+            openssl cms -encrypt \
+              -binary \
+              -aes-256-cbc \
+              -in .agent-state/superteam.json \
+              -out output/private-state.cms \
+              -outform DER \
+              keys/superteam-state-public.crt
+            sha256sum output/private-state.cms > output/private-state.cms.sha256
+            rm -f .agent-state/superteam.json
+          fi
+          rm -rf .agent-state
+
+      - name: Verify that public JSON contains no credentials
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find output -maxdepth 1 -name '*.json' -type f -print0 | \
+            xargs -0 -r grep -nE '"(apiKey|api_key|claimCode|claim_code|authorization|token|secret)"[[:space:]]*:[[:space:]]*"(?!\[REDACTED\])' ; then
+            echo 'Potential credential detected in public JSON.' >&2
+            exit 1
+          fi
+
+      - name: Commit sanitized evidence and encrypted state
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
           git config user.name "agent-income-runner[bot]"
           git config user.email "agent-income-runner[bot]@users.noreply.github.com"
           git add output
@@ -78,3 +91,7 @@ jobs:
             git commit -m "Record agent API result [skip ci]"
             git push
           fi
+
+      - name: Preserve runner failure status
+        if: steps.agent.outcome == 'failure'
+        run: exit 1
