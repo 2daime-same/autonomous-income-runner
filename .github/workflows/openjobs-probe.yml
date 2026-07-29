@@ -1,0 +1,39 @@
+name: Probe OpenJobs production inventory
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - openjobs_probe.py
+      - .github/workflows/openjobs-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: openjobs-live-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m py_compile openjobs_probe.py
+      - run: python3 openjobs_probe.py
+      - name: Commit public evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add openjobs-output/live.json
+          if git diff --cached --quiet; then
+            echo 'No OpenJobs evidence changes'
+          else
+            git commit -m 'Record OpenJobs production inventory [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
