@@ -1,0 +1,32 @@
+name: Filter actionable OpenJobs records
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - openjobs_actionable.py
+      - openjobs-output/live.json
+      - .github/workflows/openjobs-actionable.yml
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m py_compile openjobs_actionable.py
+      - run: python3 openjobs_actionable.py
+      - name: Commit inert actionable summary
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add openjobs-output/actionable.txt
+          git commit -m 'Filter actionable OpenJobs records [skip ci]'
+          git pull --rebase origin main
+          git push
