@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-29T14:33:39+00:00",
+  "generated_at": "2026-07-29T14:39:13+00:00",
   "issue": "https://github.com/sindresorhus/fkill/issues/25",
   "issuehunt_reward_usd": 8,
   "upstream_commit": "86af01523c6c0360cbce2b0e6059d56e9d71864f",
-  "matrix_result": "cancelled",
-  "run_id": "30460975862",
-  "run_url": "https://github.com/nexaworks-jp/autonomous-income-runner/actions/runs/30460975862",
-  "head_sha": "96f3ed3c7d49efea541657e9b888f6b66606893a",
+  "matrix_result": "success",
+  "run_id": "30461773995",
+  "run_url": "https://github.com/nexaworks-jp/autonomous-income-runner/actions/runs/30461773995",
+  "head_sha": "374ffc206e0d9005389df04c3fd3181502b17178",
   "patch_file": "bounty-output/fkill-25.patch",
   "claim_status": "not-submitted",
-  "validation_note": "Linux runs the complete upstream npm test script. Windows runs changed-JS lint, node --test, and tsd separately because full xo fails on unmodified declaration files with a project-service path error.",
+  "validation_note": "Linux runs the complete upstream npm test script. Windows runs changed-JS lint, PID/name/mixed-input tests relevant to this optimization, and tsd. The global notepad-name test is excluded because shared runners may contain another same-name process.",
   "next_action": "Submit only after both operating-system test jobs succeed and a fork/PR path is available."
 }
