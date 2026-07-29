@@ -26,6 +26,7 @@ STATE_DIR = Path(os.environ.get("CLAWGIG_STATE_DIR", ".clawgig-state"))
 STATE_FILE = STATE_DIR / "state.json"
 OUTPUT_DIR = Path(os.environ.get("CLAWGIG_OUTPUT_DIR", "clawgig/output"))
 REQUEST_FILE = Path(os.environ.get("CLAWGIG_REQUEST_FILE", "clawgig/request.json"))
+WALLET_AUTH_FILE = Path(os.environ.get("CLAWGIG_WALLET_AUTH_FILE", "/tmp/clawgig-wallet-auth.json"))
 DEFAULT_TIMEOUT = 45
 
 SECRET_KEYS = {
@@ -202,23 +203,52 @@ def registration_payload(request: Mapping[str, Any]) -> dict[str, Any]:
     return payload
 
 
+def wallet_auth_payload() -> dict[str, str] | None:
+    if not WALLET_AUTH_FILE.exists():
+        return None
+    value = read_json(WALLET_AUTH_FILE)
+    wallet = value.get("solana_wallet")
+    signature = value.get("wallet_signature")
+    message = value.get("wallet_message")
+    if not all(isinstance(item, str) and item.strip() for item in (wallet, signature, message)):
+        raise RunnerError("Wallet authentication file is incomplete")
+    return {
+        "solana_wallet": wallet.strip(),
+        "wallet_signature": signature.strip(),
+        "wallet_message": message.strip(),
+    }
+
+
 def register_if_needed(request: Mapping[str, Any]) -> tuple[dict[str, Any], bool]:
     state = load_state()
     if state is not None:
         return state, False
 
     payload = registration_payload(request)
-    response = http_json("POST", "/agents/register", body=payload, retries=0)
+    wallet_auth = wallet_auth_payload()
+    if wallet_auth is not None:
+        payload.update(wallet_auth)
+        endpoint = "/agents/register/autonomous"
+    else:
+        endpoint = "/agents/register"
+
+    response = http_json("POST", endpoint, body=payload, retries=0)
     if response.status not in {200, 201} or not isinstance(response.data, dict):
         raise RunnerError(f"Unexpected registration response: HTTP {response.status}")
     api_key = response.data.get("api_key")
-    claim_url = response.data.get("claim_url")
     if not isinstance(api_key, str) or not api_key.startswith("cg_"):
         raise RunnerError("Registration response did not contain a valid api_key")
-    if not isinstance(claim_url, str) or not claim_url.startswith("https://"):
-        raise RunnerError("Registration response did not contain a valid claim_url")
 
     state = dict(response.data)
+    if wallet_auth is None:
+        claim_url = response.data.get("claim_url")
+        if not isinstance(claim_url, str) or not claim_url.startswith("https://"):
+            raise RunnerError("Registration response did not contain a valid claim_url")
+        state["is_autonomous"] = False
+    else:
+        state["is_autonomous"] = True
+        state["solana_wallet"] = wallet_auth["solana_wallet"]
+
     state["registered_at"] = utc_now()
     state["contact_email"] = payload["contact_email"]
     state["username"] = payload["username"]
@@ -395,7 +425,8 @@ def operation_register(request: Mapping[str, Any]) -> dict[str, Any]:
         "created": created,
         "agent_id": state.get("agent_id"),
         "username": state.get("username"),
-        "claim_required": True,
+        "claim_required": not bool(state.get("is_autonomous")),
+        "is_autonomous": bool(state.get("is_autonomous")),
         "email_verification_requested": True,
         "portfolio": portfolio,
         "verification_response": verification,
