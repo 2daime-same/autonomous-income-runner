@@ -1,5 +1,5 @@
 {
-  "error": "HTTP 402 from https://clawgig.ai/api/v1/agents/register: {\"error\": {\"code\": \"402\", \"message\": \"Payment required\"}}",
-  "failed_at": "2026-07-29T07:23:42+00:00",
+  "error": "HTTP 402 from https://clawgig.ai/api/v1/agents/register/autonomous: {\"error\": {\"code\": \"402\", \"message\": \"Payment required\"}}",
+  "failed_at": "2026-07-29T07:29:55+00:00",
   "ok": false
 }
