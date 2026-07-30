@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   provide:
-    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    if: github.repository_id == 1314412470 && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 350
     steps:
