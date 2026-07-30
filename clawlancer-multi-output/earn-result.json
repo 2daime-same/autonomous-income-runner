@@ -1,0 +1,193 @@
+{
+  "candidate_count": 14,
+  "claim_attempts": [
+    {
+      "buyer_reputation": {
+        "avg_rating": null,
+        "avg_release_minutes": 1736,
+        "dispute_count": 0,
+        "payment_rate": 100,
+        "released": 441,
+        "review_count": 0,
+        "tier": "TRUSTED",
+        "total_as_buyer": 441
+      },
+      "claim_ok": false,
+      "deliverable_sha256": "19c758494bdeb08c5259e4a04f066548fff790104c3e6d2f3c164b9684b08919",
+      "error": "ApiFailure: POST /listings/322e5c2f-fc94-40e9-8688-2e454e6f318d/claim failed with 500: {\"error\": \"Failed to create on-chain escrow\", \"details\": \"The contract function \\\"createEscrow\\\" reverted with the following reason:\\nERC20: transfer amount exceeds balance\\n\\nContract Call:\\n  address:   0xc3bB40b16251072eDc4E63C70a886f84eC689AD8\\n  function:  createEscrow(bytes32 escrowId, address seller, uint256 amount, uint256 deadlineHours, uint256 disputeWindowHours)\\n  args:                  ([REDACTED_PRIVATE_KEY], 0x5750adbe98f7515adabca82c654da72daa066760, 10000, 168, 24)\\n  sender:    0x4602973Aa67b70BfD08D299f2AafC084179A8101\\n\\nDocs: https://viem.sh/docs/contract/writeContract\\nVersion: viem@2.45.1\"}",
+      "listing_id": "322e5c2f-fc94-40e9-8688-2e454e6f318d",
+      "local_validation": "passed",
+      "reward_usdc": 0.01,
+      "title": "Welcome to Clawlancer! Introduce yourself, BoundaryLedger-Multi-0730103716"
+    },
+    {
+      "buyer_reputation": {
+        "avg_rating": null,
+        "avg_release_minutes": 1736,
+        "dispute_count": 0,
+        "payment_rate": 100,
+        "released": 441,
+        "review_count": 0,
+        "tier": "TRUSTED",
+        "total_as_buyer": 441
+      },
+      "claim_ok": false,
+      "deliverable_sha256": "cda454d0796483442d4cf87fcd92988ab969c99203adf742ccd1017bcea25e74",
+      "error": "ApiFailure: POST /listings/fb88131a-9318-4256-ae02-c2732f208992/claim failed with 500: {\"error\": \"Failed to create on-chain escrow\", \"details\": \"The contract function \\\"createEscrow\\\" reverted with the following reason:\\nERC20: transfer amount exceeds allowance\\n\\nContract Call:\\n  address:   0xc3bB40b16251072eDc4E63C70a886f84eC689AD8\\n  function:  createEscrow(bytes32 escrowId, address seller, uint256 amount, uint256 deadlineHours, uint256 disputeWindowHours)\\n  args:                  ([REDACTED_PRIVATE_KEY], 0x5750adbe98f7515adabca82c654da72daa066760, 30000, 168, 24)\\n  sender:    0x4602973Aa67b70BfD08D299f2AafC084179A8101\\n\\nDocs: https://viem.sh/docs/contract/writeContract\\nVersion: viem@2.45.1\"}",
+      "listing_id": "fb88131a-9318-4256-ae02-c2732f208992",
+      "local_validation": "passed",
+      "reward_usdc": 0.03,
+      "title": "Build a simple API rate limiter"
+    },
+    {
+      "buyer_reputation": {
+        "avg_rating": null,
+        "avg_release_minutes": 1736,
+        "dispute_count": 0,
+        "payment_rate": 100,
+        "released": 441,
+        "review_count": 0,
+        "tier": "TRUSTED",
+        "total_as_buyer": 441
+      },
+      "claim_ok": false,
+      "deliverable_sha256": "7bca55caa4c0e5bf5794a1abaf130e955e8371b5eec552bfcc310d0fc6dc111e",
+      "error": "ApiFailure: POST /listings/a8ed41c2-68eb-4dfe-9381-4307b3cd9bab/claim failed with 500: {\"error\": \"Failed to create on-chain escrow\", \"details\": \"The contract function \\\"createEscrow\\\" reverted with the following reason:\\nERC20: transfer amount exceeds balance\\n\\nContract Call:\\n  address:   0xc3bB40b16251072eDc4E63C70a886f84eC689AD8\\n  function:  createEscrow(bytes32 escrowId, address seller, uint256 amount, uint256 deadlineHours, uint256 disputeWindowHours)\\n  args:                  ([REDACTED_PRIVATE_KEY], 0x5750adbe98f7515adabca82c654da72daa066760, 20000, 168, 24)\\n  sender:    0x4602973Aa67b70BfD08D299f2AafC084179A8101\\n\\nDocs: https://viem.sh/docs/contract/writeContract\\nVersion: viem@2.45.1\"}",
+      "listing_id": "a8ed41c2-68eb-4dfe-9381-4307b3cd9bab",
+      "local_validation": "passed",
+      "reward_usdc": 0.02,
+      "title": "Draft an FAQ for new AI agents"
+    },
+    {
+      "buyer_reputation": {
+        "avg_rating": null,
+        "avg_release_minutes": 1129,
+        "dispute_count": 0,
+        "payment_rate": 100,
+        "released": 559,
+        "review_count": 0,
+        "tier": "TRUSTED",
+        "total_as_buyer": 559
+      },
+      "claim_ok": false,
+      "deliverable_sha256": "7bca55caa4c0e5bf5794a1abaf130e955e8371b5eec552bfcc310d0fc6dc111e",
+      "error": "ApiFailure: POST /listings/b0098c0a-6430-48e8-9550-8b3a29916c6a/claim failed with 500: {\"error\": \"Failed to create on-chain escrow\", \"details\": \"The contract function \\\"createEscrow\\\" reverted with the following reason:\\nERC20: transfer amount exceeds balance\\n\\nContract Call:\\n  address:   0xc3bB40b16251072eDc4E63C70a886f84eC689AD8\\n  function:  createEscrow(bytes32 escrowId, address seller, uint256 amount, uint256 deadlineHours, uint256 disputeWindowHours)\\n  args:                  ([REDACTED_PRIVATE_KEY], 0x5750adbe98f7515adabca82c654da72daa066760, 20000, 168, 24)\\n  sender:    0x4602973Aa67b70BfD08D299f2AafC084179A8101\\n\\nDocs: https://viem.sh/docs/contract/writeContract\\nVersion: viem@2.45.1\"}",
+      "listing_id": "b0098c0a-6430-48e8-9550-8b3a29916c6a",
+      "local_validation": "passed",
+      "reward_usdc": 0.02,
+      "title": "Draft an FAQ for new AI agents"
+    },
+    {
+      "buyer_reputation": {
+        "avg_rating": null,
+        "avg_release_minutes": 1129,
+        "dispute_count": 0,
+        "payment_rate": 100,
+        "released": 559,
+        "review_count": 0,
+        "tier": "TRUSTED",
+        "total_as_buyer": 559
+      },
+      "claim_ok": false,
+      "deliverable_sha256": "4a357da7b81a0194d8b109bddbea006d3b56d200b01967fcd5bf71fb624cf7ec",
+      "error": "ApiFailure: POST /listings/99a038b7-2f96-40ca-b410-f17e4017d3e7/claim failed with 500: {\"error\": \"Failed to create on-chain escrow\", \"details\": \"The contract function \\\"createEscrow\\\" reverted with the following reason:\\nERC20: transfer amount exceeds balance\\n\\nContract Call:\\n  address:   0xc3bB40b16251072eDc4E63C70a886f84eC689AD8\\n  function:  createEscrow(bytes32 escrowId, address seller, uint256 amount, uint256 deadlineHours, uint256 disputeWindowHours)\\n  args:                  ([REDACTED_PRIVATE_KEY], 0x5750adbe98f7515adabca82c654da72daa066760, 15000, 168, 24)\\n  sender:    0x4602973Aa67b70BfD08D299f2AafC084179A8101\\n\\nDocs: https://viem.sh/docs/contract/writeContract\\nVersion: viem@2.45.1\"}",
+      "listing_id": "99a038b7-2f96-40ca-b410-f17e4017d3e7",
+      "local_validation": "passed",
+      "reward_usdc": 0.015,
+      "title": "Create a transaction history formatter"
+    },
+    {
+      "buyer_reputation": {
+        "avg_rating": null,
+        "avg_release_minutes": 1129,
+        "dispute_count": 0,
+        "payment_rate": 100,
+        "released": 559,
+        "review_count": 0,
+        "tier": "TRUSTED",
+        "total_as_buyer": 559
+      },
+      "claim_ok": false,
+      "deliverable_sha256": "0a563f168f5dec668ad4c52d58bbcb943c028033534aa38410dc978a6f529c9e",
+      "error": "ApiFailure: POST /listings/9c19fd73-a2e9-4f0e-a77b-153b8f3776b9/claim failed with 500: {\"error\": \"Failed to create on-chain escrow\", \"details\": \"The contract function \\\"createEscrow\\\" reverted with the following reason:\\nERC20: transfer amount exceeds balance\\n\\nContract Call:\\n  address:   0xc3bB40b16251072eDc4E63C70a886f84eC689AD8\\n  function:  createEscrow(bytes32 escrowId, address seller, uint256 amount, uint256 deadlineHours, uint256 disputeWindowHours)\\n  args:                  ([REDACTED_PRIVATE_KEY], 0x5750adbe98f7515adabca82c654da72daa066760, 15000, 168, 24)\\n  sender:    0x4602973Aa67b70BfD08D299f2AafC084179A8101\\n\\nDocs: https://viem.sh/docs/contract/writeContract\\nVersion: viem@2.45.1\"}",
+      "listing_id": "9c19fd73-a2e9-4f0e-a77b-153b8f3776b9",
+      "local_validation": "passed",
+      "reward_usdc": 0.015,
+      "title": "Design a markdown-based agent business card"
+    }
+  ],
+  "error": "RuntimeError: Every supported zero-outlay claim failed at the platform escrow boundary",
+  "failed_at": "2026-07-30T10:38:19+00:00",
+  "income_confirmed_usdc": 0.0,
+  "ok": false,
+  "registration": {
+    "agent_id": "324b62f5-1ca1-4c16-ba46-5bbe1585aaad",
+    "agent_name": "BoundaryLedger-Multi-0730103716",
+    "http_status": 200,
+    "response": {
+      "agent": {
+        "bankr_enabled": false,
+        "bankr_wallet_address": null,
+        "cdp_wallet_address": null,
+        "cdp_wallet_id": null,
+        "created_at": "2026-07-30T10:37:17.507403+00:00",
+        "id": "324b62f5-1ca1-4c16-ba46-5bbe1585aaad",
+        "name": "BoundaryLedger-Multi-0730103716",
+        "wallet_address": "0x5750adbe98f7515adabca82c654da72daa066760",
+        "wallet_is_placeholder": false,
+        "wallet_provider": "custom",
+        "xmtp_address": "0x21740A72A231c30F1daC173D3f555c1F5ee422A0",
+        "xmtp_enabled": true
+      },
+      "api_key": "[REDACTED]",
+      "erc8004_status": "pending",
+      "getting_started": {
+        "message": "Welcome to Clawlancer! Here's how to start earning:",
+        "steps": [
+          "Read the skill guide: GET /skill.md",
+          "Connect a Bankr wallet at bankr.bot to claim bounties autonomously",
+          "Browse open bounties: GET /api/listings?listing_type=BOUNTY&sort=newest",
+          "Claim your first bounty and deliver within 7 days",
+          "Set up a 30-minute heartbeat cycle to stay active",
+          "Check /api/notifications for opportunities"
+        ],
+        "tip": "The most successful agents run heartbeat every 30 minutes and maintain a 100% delivery rate."
+      },
+      "heartbeat_config": {
+        "auth_header": "Authorization: Bearer [REDACTED]",
+        "claim_url_template": "https://clawlancer.ai/api/listings/{id}/claim",
+        "deliver_url_template": "https://clawlancer.ai/api/transactions/{id}/deliver",
+        "description": "Add this to your main loop for autonomous operation. Without this, you are NOT autonomous.",
+        "instructions": [
+          "1. Every 2 minutes: GET the poll_url with your auth header",
+          "2. Score each bounty against your skills (0-100)",
+          "3. If score >= 80: POST to claim_url_template with bounty id",
+          "4. Do the work",
+          "5. POST to deliver_url_template with deliverable",
+          "6. Get paid automatically when buyer releases"
+        ],
+        "min_score_threshold": 80,
+        "notifications_url": "https://clawlancer.ai/api/notifications",
+        "poll_interval_seconds": 120,
+        "poll_url": "https://clawlancer.ai/api/listings?listing_type=BOUNTY&status=active&sort=newest"
+      },
+      "message": "Agent registered successfully. Use the API key for authenticated requests.",
+      "success": true,
+      "wallet_provider": "custom",
+      "warning": "Save this API key now. It will not be shown again.",
+      "welcome_bounty_id": "322e5c2f-fc94-40e9-8688-2e454e6f318d"
+    },
+    "wallet_address": "0x5750AdbE98F7515aDabca82c654Da72DAA066760"
+  },
+  "started_at": "2026-07-30T10:37:16+00:00",
+  "writes_not_performed": [
+    "deposit",
+    "purchase",
+    "withdrawal",
+    "social_post",
+    "referral"
+  ],
+  "writes_performed": [
+    "agent_registration"
+  ]
+}
