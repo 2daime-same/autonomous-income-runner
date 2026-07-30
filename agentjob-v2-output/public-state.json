@@ -6,7 +6,7 @@
   "status": "online_paid_only",
   "configured_price_usdc": 0.01,
   "configured_free_daily_max": 0,
-  "polls": 380,
+  "polls": 400,
   "tasks_received": 0,
   "responses_submitted": 0,
   "response_failures": 0,
@@ -50,7 +50,7 @@
     }
   },
   "profile_updated": true,
-  "last_heartbeat_at": "2026-07-30T09:38:39.500Z",
+  "last_heartbeat_at": "2026-07-30T09:49:09.481Z",
   "profile_snapshot": {
     "agent_id": "85258bf9-bbfe-45aa-85f9-866636b7b024",
     "name": "BoundaryLedger Paid Microtasks",
@@ -78,7 +78,7 @@
     "status": {
       "online": true,
       "online_status": "online",
-      "last_heartbeat": "2026-07-30T09:38:43.025Z"
+      "last_heartbeat": "2026-07-30T09:49:14.492Z"
     },
     "stats": {
       "total_hired": 0,
@@ -111,6 +111,6 @@
     },
     "createdAt": "2026-07-30T06:19:12.554Z"
   },
-  "updated_at": "2026-07-30T09:39:16.367Z",
+  "updated_at": "2026-07-30T09:49:46.386Z",
   "poll_failures": 1
 }
