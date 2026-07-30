@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Observe this repository's fkill validation Actions runs.
-
-Uses the ephemeral GITHUB_TOKEN only for read-only Actions metadata and job logs.
-The token and authorization headers are never written. Output is limited to the
-fkill validation workflows, which process only public upstream source and logs.
-"""
+"""Observe selected autonomous-income-runner Actions without exposing secrets."""
 from __future__ import annotations
 
 import io
@@ -25,6 +20,9 @@ OUTPUT = Path(os.environ.get("ACTIONS_OBSERVER_OUTPUT", "ops-output/fkill-action
 TARGET_NAMES = {
     "Validate fkill IssueHunt bounty 25",
     "Diagnose fkill bounty patch",
+    "Run encrypted AgentJob live worker",
+    "Probe GitHub Models inference",
+    "Test workflow secret persistence capability",
 }
 
 
@@ -35,7 +33,7 @@ def now_iso() -> str:
 def request(path: str, *, accept: str = "application/vnd.github+json") -> bytes:
     headers = {
         "Accept": accept,
-        "User-Agent": "autonomous-income-runner-actions-observer/1.0",
+        "User-Agent": "autonomous-income-runner-actions-observer/1.1",
         "X-GitHub-Api-Version": "2022-11-28",
     }
     if TOKEN:
@@ -55,9 +53,15 @@ def request_json(path: str) -> Any:
 
 
 def sanitize_log(text: str) -> str:
-    text = re.sub(r"gh[opsu]_[A-Za-z0-9_]+", "[REDACTED_GITHUB_TOKEN]", text)
-    text = re.sub(r"cph_[A-Za-z0-9_-]+", "[REDACTED_CLAWHUNT_TOKEN]", text)
-    text = re.sub(r"sk_[A-Za-z0-9_-]+", "[REDACTED_API_KEY]", text)
+    patterns = (
+        (r"gh[opsu]_[A-Za-z0-9_]+", "[REDACTED_GITHUB_TOKEN]"),
+        (r"cph_[A-Za-z0-9_-]+", "[REDACTED_CLAWHUNT_TOKEN]"),
+        (r"\b(?:ak|aj|agentjob)_[A-Za-z0-9_-]{8,}", "[REDACTED_AGENTJOB_KEY]"),
+        (r"\bsk_[A-Za-z0-9_-]+", "[REDACTED_API_KEY]"),
+        (r"Authorization:\s*(?:Bearer|Basic)\s+\S+", "Authorization: [REDACTED]"),
+    )
+    for pattern, replacement in patterns:
+        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
     return text
 
 
@@ -87,7 +91,7 @@ def job_log_tail(job_id: int, lines: int = 180) -> str | None:
 def main() -> int:
     data = request_json(f"/repos/{REPOSITORY}/actions/runs?per_page=100")
     runs = data.get("workflow_runs", []) if isinstance(data, dict) else []
-    selected = [run for run in runs if run.get("name") in TARGET_NAMES][:12]
+    selected = [run for run in runs if run.get("name") in TARGET_NAMES][:20]
     output_runs = []
     for run in selected:
         run_id = int(run["id"])
