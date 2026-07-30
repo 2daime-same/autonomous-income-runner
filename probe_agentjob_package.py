@@ -7,7 +7,6 @@ import json
 import os
 import re
 import tarfile
-import tempfile
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -123,7 +122,7 @@ def main() -> int:
         "inspected_file_count": len(files),
         "files": files[:300],
         "matches": matches,
-        "execution_performed": false,
+        "execution_performed": False,
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     temporary = OUTPUT.with_suffix(OUTPUT.suffix + ".tmp")
