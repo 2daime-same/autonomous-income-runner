@@ -1,0 +1,71 @@
+name: Audit income workflows after account rename
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/workflow-owner-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find stale owner gates and summarize workflow triggers
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          records = []
+          for path in sorted(Path('.github/workflows').glob('*')):
+              if not path.is_file() or path.suffix not in {'.yml', '.yaml'}:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              stale_lines = [
+                  {'line': index, 'text': line.strip()}
+                  for index, line in enumerate(text.splitlines(), 1)
+                  if 'nexaworks-jp' in line
+              ]
+              records.append({
+                  'path': str(path),
+                  'stale_owner_reference_count': len(stale_lines),
+                  'stale_owner_lines': stale_lines,
+                  'has_schedule': bool(re.search(r'^\s*schedule\s*:', text, re.M)),
+                  'has_push': bool(re.search(r'^\s*push\s*:', text, re.M)),
+                  'has_workflow_dispatch': 'workflow_dispatch' in text,
+              })
+
+          report = {
+              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'repository': os.environ.get('GITHUB_REPOSITORY'),
+              'workflow_count': len(records),
+              'stale_owner_workflow_count': sum(record['stale_owner_reference_count'] > 0 for record in records),
+              'stale_owner_reference_count': sum(record['stale_owner_reference_count'] for record in records),
+              'workflows': records,
+          }
+          output = Path('ops-output/workflow-owner-audit.json')
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(json.dumps(report, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit audit
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add ops-output/workflow-owner-audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record workflow owner audit [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
