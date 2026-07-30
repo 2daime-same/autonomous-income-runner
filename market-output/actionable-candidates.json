@@ -395,12 +395,13 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists"
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 11398,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Automate Bug Detection and Reviews",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398"
+      "issue_number": 5,
+      "repo": "theselfish/SlopStation13",
+      "title": "[Bounty] [$600] Add Thursday's Boots",
+      "url": "https://github.com/theselfish/SlopStation13/issues/5"
     },
     {
       "flags": [
@@ -421,6 +422,27 @@
       "repo": "theselfish/SlopStation13",
       "title": "[BOUNTY][$67] Add the Tung Tung Tung Sahur antagonist.",
       "url": "https://github.com/theselfish/SlopStation13/issues/3"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 11398,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Automate Bug Detection and Reviews",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 4,
+      "repo": "theselfish/SlopStation13",
+      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
+      "url": "https://github.com/theselfish/SlopStation13/issues/4"
     },
     {
       "flags": [
@@ -542,17 +564,6 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 4,
-      "repo": "theselfish/SlopStation13",
-      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
-      "url": "https://github.com/theselfish/SlopStation13/issues/4"
-    },
-    {
-      "flags": [
         "bot-authored issue without recognized platform evidence",
         "no direct reward evidence"
       ],
@@ -656,18 +667,6 @@
     },
     {
       "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1,
-      "repo": "cita-clara-dev/stripe-supabase-booking-proof",
-      "title": "Evidence: duplicated bounty cards in logged-out BountyBot feed",
-      "url": "https://github.com/cita-clara-dev/stripe-supabase-booking-proof/issues/1"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -679,8 +678,8 @@
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-07-30T03:28:48+00:00",
+  "generated_at": "2026-07-30T08:50:59+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-07-30T03:28:48+00:00"
+  "source_generated_at": "2026-07-30T08:50:59+00:00"
 }

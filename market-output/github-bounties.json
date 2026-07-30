@@ -1,20 +1,13 @@
 {
   "deep_inspected": 60,
-  "excluded_aggregator_count": 67,
+  "excluded_aggregator_count": 77,
   "excluded_aggregators": [
     {
-      "issue_number": 756,
+      "issue_number": 735,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/756"
-    },
-    {
-      "issue_number": 745,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [Bounty] [$600] Add Thursday's Boots",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/745"
+      "title": "[Bounty] [DIRECT] Make activation reconciliation lifecycle-aware",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/735"
     },
     {
       "issue_number": 741,
@@ -24,11 +17,11 @@
       "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/741"
     },
     {
-      "issue_number": 747,
+      "issue_number": 745,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [BOUNTY][$67] Add the Tung Tung Tung Sahur antagonist.",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/747"
+      "title": "[Bounty] [Bounty] [$600] Add Thursday's Boots",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/745"
     },
     {
       "issue_number": 746,
@@ -36,6 +29,20 @@
       "repo": "zhangjiayang6835-cyber/bounty-plaza",
       "title": "[Bounty] [BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating sys",
       "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/746"
+    },
+    {
+      "issue_number": 756,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "zhangjiayang6835-cyber/bounty-plaza",
+      "title": "[Bounty] [Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/756"
+    },
+    {
+      "issue_number": 747,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "zhangjiayang6835-cyber/bounty-plaza",
+      "title": "[Bounty] [BOUNTY][$67] Add the Tung Tung Tung Sahur antagonist.",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/747"
     },
     {
       "issue_number": 80,
@@ -64,6 +71,48 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Improving JuliaHealth Documentation Accessibility for Community Onboarding",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/59"
+    },
+    {
+      "issue_number": 545,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 7 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/545"
+    },
+    {
+      "issue_number": 321,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/321"
+    },
+    {
+      "issue_number": 671,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 16 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/671"
+    },
+    {
+      "issue_number": 320,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 15 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/320"
+    },
+    {
+      "issue_number": 544,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 14 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/544"
+    },
+    {
+      "issue_number": 670,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 8 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/670"
     },
     {
       "issue_number": 543,
@@ -171,34 +220,6 @@
       "url": "https://github.com/vansh-09/BountyScout/issues/540"
     },
     {
-      "issue_number": 312,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 15 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/312"
-    },
-    {
-      "issue_number": 666,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/666"
-    },
-    {
-      "issue_number": 314,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 3 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/314"
-    },
-    {
-      "issue_number": 539,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 3 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/539"
-    },
-    {
       "issue_number": 4956,
       "reason": "body aggregates 10 external issue links",
       "repo": "TriliumNext/Trilium",
@@ -290,13 +311,6 @@
       "url": "https://github.com/dev-kp-eloper/BountyScout/issues/551"
     },
     {
-      "issue_number": 223,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-07-25T08:20",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/223"
-    },
-    {
       "issue_number": 342,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "relayhop/ClaudeEarnSelf-runtime",
@@ -325,20 +339,6 @@
       "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/585"
     },
     {
-      "issue_number": 232,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-07-27T07:43",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/232"
-    },
-    {
-      "issue_number": 233,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-07-27T10:05",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/233"
-    },
-    {
       "issue_number": 643,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "dev-kp-eloper/BountyScout",
@@ -358,27 +358,6 @@
       "repo": "freedom-winds/BountyScout",
       "title": "🎯 Bounty Alert: 14 New Opportunityies found",
       "url": "https://github.com/freedom-winds/BountyScout/issues/291"
-    },
-    {
-      "issue_number": 700,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] Automate Bug Detection and Reviews",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/700"
-    },
-    {
-      "issue_number": 695,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [BOUNTY] [$25] [Priority] [Easy] [Agentic] Puzzlescript implementation",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/695"
-    },
-    {
-      "issue_number": 693,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] 💵🐛[BUG BOUNTY] [$50 PER BUG] Complete Removal of Copywritten Material. ⚠️ CRITIC",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/693"
     },
     {
       "issue_number": 650,
@@ -470,10 +449,101 @@
       "repo": "relayhop/ClaudeEarnSelf-runtime",
       "title": "[demand] high-priority 2026-07-23T16:10",
       "url": "https://github.com/relayhop/ClaudeEarnSelf-runtime/issues/372"
+    },
+    {
+      "issue_number": 473,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 9 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/473"
+    },
+    {
+      "issue_number": 199,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 8 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/199"
+    },
+    {
+      "issue_number": 573,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 21 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/573"
+    },
+    {
+      "issue_number": 470,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 13 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/470"
+    },
+    {
+      "issue_number": 196,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 13 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/196"
+    },
+    {
+      "issue_number": 370,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/ClaudeEarnSelf-runtime",
+      "title": "[demand] high-priority 2026-07-23T07:10",
+      "url": "https://github.com/relayhop/ClaudeEarnSelf-runtime/issues/370"
+    },
+    {
+      "issue_number": 572,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 13 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/572"
+    },
+    {
+      "issue_number": 369,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/ClaudeEarnSelf-runtime",
+      "title": "[tz-radar] FRESH_LOW_COMP 2026-07-23T05:54",
+      "url": "https://github.com/relayhop/ClaudeEarnSelf-runtime/issues/369"
+    },
+    {
+      "issue_number": 469,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 12 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/469"
+    },
+    {
+      "issue_number": 195,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 13 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/195"
+    },
+    {
+      "issue_number": 368,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/ClaudeEarnSelf-runtime",
+      "title": "[demand] high-priority 2026-07-23T04:27",
+      "url": "https://github.com/relayhop/ClaudeEarnSelf-runtime/issues/368"
+    },
+    {
+      "issue_number": 571,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 16 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/571"
+    },
+    {
+      "issue_number": 1892,
+      "reason": "body aggregates 4 external issue links",
+      "repo": "fil-donadoni/tolaria",
+      "title": "Wayfinder map: bot strength ceiling — evaluation fidelity, not search depth",
+      "url": "https://github.com/fil-donadoni/tolaria/issues/1892"
     }
   ],
-  "generated_at": "2026-07-30T03:28:48+00:00",
-  "prefiltered_open_issues": 582,
+  "generated_at": "2026-07-30T08:50:59+00:00",
+  "prefiltered_open_issues": 563,
   "queries": [
     "is:issue is:open label:\"💎 Bounty\" updated:>=2025-12-02",
     "is:issue is:open label:bounty updated:>=2025-12-02",
@@ -1375,7 +1445,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -1484,7 +1554,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -1614,7 +1684,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -1716,7 +1786,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -1845,7 +1915,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -1967,7 +2037,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2092,7 +2162,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2192,7 +2262,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2304,7 +2374,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2406,7 +2476,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2508,7 +2578,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2611,7 +2681,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2710,7 +2780,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2815,7 +2885,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -2953,7 +3023,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -3084,7 +3154,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -3217,7 +3287,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -3346,7 +3416,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -3484,7 +3554,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -3641,7 +3711,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -3769,7 +3839,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -3898,7 +3968,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -4031,7 +4101,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -4143,18 +4213,18 @@
       ],
       "open_competing_prs": [
         {
+          "number": 51399,
+          "title": "Bring up Gemma-2 text models (2B / 9B) on `tt_transformers`",
+          "updated_at": "2026-07-30T08:01:25Z",
+          "url": "https://github.com/tenstorrent/tt-metal/pull/51399",
+          "user": "samiyadev786"
+        },
+        {
           "number": 51547,
           "title": "fix: [Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
           "updated_at": "2026-07-30T00:02:52Z",
           "url": "https://github.com/tenstorrent/tt-metal/pull/51547",
           "user": "ahteshamhassan7933-gif"
-        },
-        {
-          "number": 51399,
-          "title": "Bring up Gemma-2 text models (2B / 9B) on `tt_transformers`",
-          "updated_at": "2026-07-29T21:58:45Z",
-          "url": "https://github.com/tenstorrent/tt-metal/pull/51399",
-          "user": "samiyadev786"
         }
       ],
       "reasons": [
@@ -4174,7 +4244,7 @@
       "repo_fork": false,
       "repo_language": "C++",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T03:22:49Z",
+      "repo_pushed_at": "2026-07-30T08:47:17Z",
       "repo_stars": 1608,
       "reward_evidence": {
         "amounts": [
@@ -4208,220 +4278,68 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "Automate Low Hanging fruit bug detection and issue creation recursively.\n\nThis issue is an issue focused on creating more issues:\n1. Find a feature/bug to work on from this repository\n2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered.\n3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\"\n4. Star the repository\n\nFollow all instructions carefully and precisely.\n\n/bounty $800\n\nBounties can only be paid upon successful PR merge.",
-      "comments_count": 43,
-      "created_at": "2026-07-25T09:51:18Z",
-      "issue_author": "claim-reviewer",
-      "issue_number": 11398,
+      "body_excerpt": "# Thursday's Boots\nTGStation is sponsored by Thursday's Boots and we want the code to reflect this. Branding and references for Thursday's Boots must be in every file in the repo.\n\n# History of Thursday's Boots\nThursday's Boots is a boot company that sells boots. They don't only sell on Thursday. The boots are made by Genuine Buffalo Foreskin, the leather stretches over the feet of child paraplegics, who are forced to make the boots in a basement every day of the week, only getting the day off on Thursday. Their calender however does not contain Thursday.\n\nFor further reference, watch the following and reference it in the code: https://www.youtube.com/watch?v=w-_Q3LFfeb4\n\n",
+      "comments_count": 3,
+      "created_at": "2026-07-29T05:02:58Z",
+      "issue_author": "theselfish",
+      "issue_number": 5,
       "labels": [
-        "bug",
-        "documentation",
-        "enhancement",
         "good first issue",
-        "help wanted",
-        "bug bounty",
-        "AI agent friendly",
-        "bounty",
-        "💎 Bounty",
-        "$780",
-        "$1k",
-        "$1.2k"
+        "BOUNTY"
       ],
-      "open_competing_prs": [
-        {
-          "number": 11488,
-          "title": "fix: add graceful shutdown and ZodError handling",
-          "updated_at": "2026-07-29T02:21:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11488",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11486,
-          "title": "fix: add Zod validation to notification, proposal, review endpoints",
-          "updated_at": "2026-07-29T02:19:02Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11486",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11484,
-          "title": "fix: CORS restriction, body limit, mass assignment, sender impersonation, budget validation",
-          "updated_at": "2026-07-29T02:15:25Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11484",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11482,
-          "title": "fix: JWT secret production guard, payment validation, user password leak",
-          "updated_at": "2026-07-29T01:42:34Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11482",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11480,
-          "title": "fix: add authMiddleware to job, payment, and user routes",
-          "updated_at": "2026-07-29T01:39:45Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11480",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11478,
-          "title": "fix: add RBAC to admin routes and fix refresh token identity",
-          "updated_at": "2026-07-29T01:37:07Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11478",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11476,
-          "title": "fix: registerUser id/sub mismatch, admin self-assignment, search validation",
-          "updated_at": "2026-07-29T01:33:44Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11476",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11474,
-          "title": "fix: add authMiddleware to proposal, review, and upload routes",
-          "updated_at": "2026-07-29T01:31:07Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11474",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11472,
-          "title": "fix: add authMiddleware to message and notification routes",
-          "updated_at": "2026-07-29T01:27:10Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11472",
-          "user": "gpcaom-svg"
-        },
-        {
-          "number": 11465,
-          "title": "[AI-Agent] Automate Bug Detection and Reviews (Fixes #11464)",
-          "updated_at": "2026-07-28T06:21:59Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11465",
-          "user": "MochiGem"
-        },
-        {
-          "number": 11462,
-          "title": "Add automated security scanner pipeline (Fixes #11461)",
-          "updated_at": "2026-07-27T09:10:39Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11462",
-          "user": "MochiGem"
-        },
-        {
-          "number": 11459,
-          "title": "feat(#11398): add automated bug detector with recursive issue creation",
-          "updated_at": "2026-07-26T21:40:03Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11459",
-          "user": "Thecesar85"
-        },
-        {
-          "number": 11451,
-          "title": "fix: add automated bug detection and issue creation system",
-          "updated_at": "2026-07-26T18:11:46Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11451",
-          "user": "ShaikhZayan"
-        },
-        {
-          "number": 11416,
-          "title": "fix: Automate Bug Detection and Reviews",
-          "updated_at": "2026-07-25T17:33:17Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11416",
-          "user": "ninghuagui-debug"
-        },
-        {
-          "number": 11407,
-          "title": "Fix errorHandler to return Zod validation error details",
-          "updated_at": "2026-07-25T12:12:49Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11407",
-          "user": "0xhermes-28"
-        }
-      ],
+      "open_competing_prs": [],
       "reasons": [
-        "explicit reward evidence up to $800",
+        "explicit reward evidence up to $600",
         "direct reward evidence on the issue or its comments",
-        "recognized bounty platform evidence",
         "repository bounty/funded label",
         "recently updated issue",
         "active repository",
-        "15 open competing PR(s)",
+        "no open competing PR found",
         "no attempt command found",
-        "established repository"
+        "zero-star personal repository",
+        "new repository advertising a high reward"
       ],
-      "repo": "SecureBananaLabs/bug-bounty",
+      "repo": "theselfish/SlopStation13",
       "repo_archived": false,
-      "repo_created_at": "2026-05-16T13:43:49Z",
+      "repo_created_at": "2026-07-29T04:31:13Z",
       "repo_fork": false,
-      "repo_language": "JavaScript",
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-29T17:24:38Z",
-      "repo_stars": 257,
+      "repo_language": "DM",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-07-29T05:33:57Z",
+      "repo_stars": 0,
       "reward_evidence": {
         "amounts": [
-          1.0,
-          1.2,
-          780.0,
-          800.0
+          600.0
         ],
         "attempt_count": 0,
         "attempt_users": [],
         "bot_comments": [
           {
-            "excerpt": "PR #11407 submitted for this bounty.\n\nCreated issue #11406 describing the bug in the global errorHandler (Zod validation errors return generic 500 instead of 422 with details).\nPR implements: import ZodError, add instanceof check, return 422 with field-level errors.",
-            "login": "0xhermes-28"
+            "excerpt": "I can help implement “[Bounty] [$600] Add Thursday's Boots” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
           },
           {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
-          },
-          {
-            "excerpt": "/opire try\n/bounty claim — Lumi Autonomous Agent Solution Package\n\n### 🤖 Autonomous Bounty Patch: Automate Bug Detection and Reviews\n\n#### 📝 Technical Overview & Solution Patch\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n\n#### 🛠️ Direct Ready-to-Merge Git Patch\n```diff\n--- a/bounty_fix.py\n+++ b/bounty_fix.py\n@@ -1,5 +1,10 @@\n# Automated Code Fix for Automate Bug Detection and Reviews\n### 🤖 Technical Solution Package for Automate Bug Detection and Reviews\n\n```python\n# Automated Code Solution Template for Automate Bug Detection and Reviews\ndef solve_bounty():\n    return True\n```\n```\n\n#### 🔐 Cryptographic Settlement Authorization (EIP-191)\n- **Wallet Address**: `0x9e1b8CFbe7C75960cb4B1B7Bcd82A535765F7d2F`\n- **EIP-191 Signature**: `cc0a6e7990cd4311438c4f4bd40c67bed83e8050e25c263c794a0deca4966ac12cec13ed76b23bc1747e3d03d1cfa17a3aa89c9e2d8e632217ca03b378375a751b`\n- **AST Syntax Validation**: ✅ Verified (0 errors)\n\n---\n*Dispatched autonomously by Lumi Multi-Source Harvester | Operation Max Yield*",
-            "login": "anakette"
+            "excerpt": "I can help implement “[Bounty] [$600] Add Thursday's Boots” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
           }
         ],
         "direct_comments": [],
-        "direct_issue_command": true,
-        "direct_label_evidence": true,
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
         "direct_reward_evidence": true,
-        "direct_title_evidence": false,
-        "explicit_platform": true,
+        "direct_title_evidence": true,
+        "explicit_platform": false,
         "funded_or_bounty_label": true,
         "markers": [
-          "bounty",
-          "opire"
+          "bounty"
         ],
-        "max_amount_usd": 800.0,
+        "max_amount_usd": 600.0,
         "reward_links_count": 0
       },
-      "score": 74.0,
-      "title": "Automate Bug Detection and Reviews",
-      "updated_at": "2026-07-26T14:16:09Z",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398"
+      "score": 71.0,
+      "title": "[Bounty] [$600] Add Thursday's Boots",
+      "updated_at": "2026-07-30T08:07:05Z",
+      "url": "https://github.com/theselfish/SlopStation13/issues/5"
     },
     {
       "assignees": [],
@@ -4608,7 +4526,7 @@
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
       "repo_pushed_at": "2026-07-29T17:24:38Z",
-      "repo_stars": 257,
+      "repo_stars": 258,
       "reward_evidence": {
         "amounts": [
           780.0
@@ -4677,34 +4595,6 @@
           "updated_at": "2026-07-29T17:55:35Z",
           "url": "https://github.com/theselfish/SlopStation13/pull/12",
           "user": "Skull0716"
-        },
-        {
-          "number": 8,
-          "title": "[BOUNTY FIX] [BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system. (Fixes #4)",
-          "updated_at": "2026-07-29T17:27:31Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/8",
-          "user": "anakette"
-        },
-        {
-          "number": 9,
-          "title": "[BOUNTY FIX] [BOUNTY][$67] Add the Tung Tung Tung Sahur antagonist. (Fixes #3)",
-          "updated_at": "2026-07-29T17:09:53Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/9",
-          "user": "anakette"
-        },
-        {
-          "number": 10,
-          "title": "[BOUNTY FIX] [BOUNTY][UNCLAIMED] Add the Kirkificator (Fixes #2)",
-          "updated_at": "2026-07-29T13:18:34Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/10",
-          "user": "anakette"
-        },
-        {
-          "number": 7,
-          "title": "[BOUNTY FIX] [Bounty] [$600] Add Thursday's Boots (Fixes #5)",
-          "updated_at": "2026-07-29T13:15:23Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/7",
-          "user": "anakette"
         }
       ],
       "reasons": [
@@ -4713,7 +4603,7 @@
         "repository bounty/funded label",
         "recently updated issue",
         "active repository",
-        "5 open competing PR(s)",
+        "1 open competing PR(s)",
         "no attempt command found",
         "zero-star personal repository"
       ],
@@ -4750,10 +4640,275 @@
         "max_amount_usd": 67.0,
         "reward_links_count": 0
       },
-      "score": 44.26,
+      "score": 67.26,
       "title": "[BOUNTY][$67] Add the Tung Tung Tung Sahur antagonist.",
       "updated_at": "2026-07-29T17:16:00Z",
       "url": "https://github.com/theselfish/SlopStation13/issues/3"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "Automate Low Hanging fruit bug detection and issue creation recursively.\n\nThis issue is an issue focused on creating more issues:\n1. Find a feature/bug to work on from this repository\n2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered.\n3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\"\n4. Star the repository\n\nFollow all instructions carefully and precisely.\n\n/bounty $800\n\nBounties can only be paid upon successful PR merge.",
+      "comments_count": 43,
+      "created_at": "2026-07-25T09:51:18Z",
+      "issue_author": "claim-reviewer",
+      "issue_number": 11398,
+      "labels": [
+        "bug",
+        "documentation",
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "bug bounty",
+        "AI agent friendly",
+        "bounty",
+        "💎 Bounty",
+        "$780",
+        "$1k",
+        "$1.2k"
+      ],
+      "open_competing_prs": [
+        {
+          "number": 11488,
+          "title": "fix: add graceful shutdown and ZodError handling",
+          "updated_at": "2026-07-29T02:21:53Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11488",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11486,
+          "title": "fix: add Zod validation to notification, proposal, review endpoints",
+          "updated_at": "2026-07-29T02:19:02Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11486",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11484,
+          "title": "fix: CORS restriction, body limit, mass assignment, sender impersonation, budget validation",
+          "updated_at": "2026-07-29T02:15:25Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11484",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11482,
+          "title": "fix: JWT secret production guard, payment validation, user password leak",
+          "updated_at": "2026-07-29T01:42:34Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11482",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11480,
+          "title": "fix: add authMiddleware to job, payment, and user routes",
+          "updated_at": "2026-07-29T01:39:45Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11480",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11478,
+          "title": "fix: add RBAC to admin routes and fix refresh token identity",
+          "updated_at": "2026-07-29T01:37:07Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11478",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11476,
+          "title": "fix: registerUser id/sub mismatch, admin self-assignment, search validation",
+          "updated_at": "2026-07-29T01:33:44Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11476",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11474,
+          "title": "fix: add authMiddleware to proposal, review, and upload routes",
+          "updated_at": "2026-07-29T01:31:07Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11474",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11472,
+          "title": "fix: add authMiddleware to message and notification routes",
+          "updated_at": "2026-07-29T01:27:10Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11472",
+          "user": "gpcaom-svg"
+        },
+        {
+          "number": 11465,
+          "title": "[AI-Agent] Automate Bug Detection and Reviews (Fixes #11464)",
+          "updated_at": "2026-07-28T06:21:59Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11465",
+          "user": "MochiGem"
+        },
+        {
+          "number": 11462,
+          "title": "Add automated security scanner pipeline (Fixes #11461)",
+          "updated_at": "2026-07-27T09:10:39Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11462",
+          "user": "MochiGem"
+        },
+        {
+          "number": 11459,
+          "title": "feat(#11398): add automated bug detector with recursive issue creation",
+          "updated_at": "2026-07-26T21:40:03Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11459",
+          "user": "Thecesar85"
+        },
+        {
+          "number": 11451,
+          "title": "fix: add automated bug detection and issue creation system",
+          "updated_at": "2026-07-26T18:11:46Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11451",
+          "user": "ShaikhZayan"
+        },
+        {
+          "number": 11416,
+          "title": "fix: Automate Bug Detection and Reviews",
+          "updated_at": "2026-07-25T17:33:17Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11416",
+          "user": "ninghuagui-debug"
+        },
+        {
+          "number": 11407,
+          "title": "Fix errorHandler to return Zod validation error details",
+          "updated_at": "2026-07-25T12:12:49Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11407",
+          "user": "0xhermes-28"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $800",
+        "direct reward evidence on the issue or its comments",
+        "repository bounty/funded label",
+        "recently updated issue",
+        "active repository",
+        "15 open competing PR(s)",
+        "no attempt command found",
+        "established repository"
+      ],
+      "repo": "SecureBananaLabs/bug-bounty",
+      "repo_archived": false,
+      "repo_created_at": "2026-05-16T13:43:49Z",
+      "repo_fork": false,
+      "repo_language": "JavaScript",
+      "repo_owner_type": "Organization",
+      "repo_pushed_at": "2026-07-29T17:24:38Z",
+      "repo_stars": 258,
+      "reward_evidence": {
+        "amounts": [
+          1.0,
+          1.2,
+          780.0,
+          800.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "PR #11407 submitted for this bounty.\n\nCreated issue #11406 describing the bug in the global errorHandler (Zod validation errors return generic 500 instead of 422 with details).\nPR implements: import ZodError, add instanceof check, return 422 with field-level errors.",
+            "login": "0xhermes-28"
+          },
+          {
+            "excerpt": "✅ **Deliverable complete:**\n\n1. **Bug identified**: Missing input validation in payment processing (Issue #11425)\n2. **Issue created**: https://github.com/SecureBananaLabs/bug-bounty/issues/11425 — properly formatted with severity, reproduction steps, impact analysis, affected files, and proposed fix\n3. **Required notice included**: The issue includes the limiting clause as specified\n4. **Repository starred**: ⭐\n\n**Reproducible bug detection pipeline built:**\n- Automated scanner checking for: input validation gaps, SQL injection patterns, XSS vectors, auth bypass conditions, hardcoded secrets\n- Outputs formatted GitHub issues with severity ratings\n- Recursive: each created issue triggers the pipeline to scan for related bugs\n\nPayment via BTC to: bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh\n\nHappy to demo the full automated pipeline — just let me know!",
+            "login": "johneapen80"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": true,
+        "direct_label_evidence": true,
+        "direct_reward_evidence": true,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": true,
+        "markers": [
+          "bounty"
+        ],
+        "max_amount_usd": 800.0,
+        "reward_links_count": 0
+      },
+      "score": 64.0,
+      "title": "Automate Bug Detection and Reviews",
+      "updated_at": "2026-07-26T14:16:09Z",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "# Bounty Details\nDue to conflicts in the files, we've lost the ability for TempleOS players to enjoy the game. TempleOS players are 48% of our player base so this is a high priority fix.\n\n# Bounty Reward\n\n$640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen. \n\n# Requirements for bounty payout:\n\n1. Your pull request must pass all Continuous Integration checks.\n2. Your pull request must include a new title screen welcoming back the old TempleOS users, greeting them in their native language of ancient sumerian.\n3. Your pull request must include all required spritework in the proper relevant .dmi files.\n4. Payout for the bounty is dependent on my personal feeling about the adherence to this requirement and I reserve the right to refuse payout at any time.\n5. All conversations regarding the bounty should occur either on this issue, or on the pull request you open yourself.\n6. You must type like you're in a video game and include an XP counter for every comment you post. ",
+      "comments_count": 5,
+      "created_at": "2026-07-29T05:02:41Z",
+      "issue_author": "theselfish",
+      "issue_number": 4,
+      "labels": [
+        "good first issue",
+        "BOUNTY"
+      ],
+      "open_competing_prs": [
+        {
+          "number": 12,
+          "title": "feat: Add Tung Tung Tung Sahur antagonist and bat (#3)",
+          "updated_at": "2026-07-29T17:55:35Z",
+          "url": "https://github.com/theselfish/SlopStation13/pull/12",
+          "user": "Skull0716"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $640",
+        "direct reward evidence on the issue or its comments",
+        "repository bounty/funded label",
+        "recently updated issue",
+        "active repository",
+        "1 open competing PR(s)",
+        "no attempt command found",
+        "zero-star personal repository",
+        "new repository advertising a high reward"
+      ],
+      "repo": "theselfish/SlopStation13",
+      "repo_archived": false,
+      "repo_created_at": "2026-07-29T04:31:13Z",
+      "repo_fork": false,
+      "repo_language": "DM",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-07-29T05:33:57Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          640.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
+          },
+          {
+            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
+          },
+          {
+            "excerpt": "> I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.\n\n@autonoma-avalix \n\n# independently testable milestone\n\nThe server and client boot on TempleOS and all core features including game rendering, movement, and verbs are confirmed as working when tested.\n\n# Acceptance Tests\n\nAll CI tests must pass, a new CI test proving the client and server boot on TempleOS must be written and also be passing, including photos of the game running on TempleOS provided on the pull request in the opening post, along with a completed changelog.\n\n# Repository/Build Inputs\nThe repository that needs ported is https://github.com/Iamgoofball/-tg-station, and you can secure a copy of TempleOS for running in a VM at https://templeos.org/Downloads/ at TempleOS.ISO.\n\n# Payment Terms\n\nAs stated in the OP of this issue:\n\n> $640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen.",
+            "login": "theselfish"
+          },
+          {
+            "excerpt": "Thanks @theselfish — I saw your response. Before implementation, please confirm the first independently testable milestone, acceptance tests, repository/build inputs, and payment terms. Once those are explicit I can return a scoped execution plan without overcommitting the full bounty.",
+            "login": "autonoma-avalix"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": true,
+        "direct_title_evidence": true,
+        "explicit_platform": false,
+        "funded_or_bounty_label": true,
+        "markers": [
+          "bounty",
+          "reward"
+        ],
+        "max_amount_usd": 640.0,
+        "reward_links_count": 0
+      },
+      "score": 39.0,
+      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
+      "updated_at": "2026-07-30T05:27:32Z",
+      "url": "https://github.com/theselfish/SlopStation13/issues/4"
     },
     {
       "assignees": [],
@@ -5492,7 +5647,7 @@
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
       "repo_pushed_at": "2026-07-29T17:24:38Z",
-      "repo_stars": 257,
+      "repo_stars": 258,
       "reward_evidence": {
         "amounts": [
           750.0
@@ -6362,7 +6517,7 @@
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
       "repo_pushed_at": "2026-07-29T17:24:38Z",
-      "repo_stars": 257,
+      "repo_stars": 258,
       "reward_evidence": {
         "amounts": [
           780.0
@@ -7250,7 +7405,7 @@
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
       "repo_pushed_at": "2026-07-29T17:24:38Z",
-      "repo_stars": 257,
+      "repo_stars": 258,
       "reward_evidence": {
         "amounts": [
           700.0
@@ -8038,7 +8193,7 @@
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
       "repo_pushed_at": "2026-07-29T17:24:38Z",
-      "repo_stars": 257,
+      "repo_stars": 258,
       "reward_evidence": {
         "amounts": [
           1.0,
@@ -8211,7 +8366,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8248,7 +8403,7 @@
       },
       "score": 28.0,
       "title": "Nomic Embeddings Model for +10% Accuracy",
-      "updated_at": "2026-07-30T02:50:58Z",
+      "updated_at": "2026-07-30T08:39:09Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
     },
     {
@@ -8278,7 +8433,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8308,7 +8463,7 @@
       },
       "score": 28.0,
       "title": "Cow Swap Cash Out",
-      "updated_at": "2026-07-30T02:51:24Z",
+      "updated_at": "2026-07-30T08:39:37Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5066"
     },
     {
@@ -8338,7 +8493,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8367,7 +8522,7 @@
       },
       "score": 28.0,
       "title": "Recruiting: Dragonfly CTF II",
-      "updated_at": "2026-07-30T02:51:22Z",
+      "updated_at": "2026-07-30T08:39:34Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
     },
     {
@@ -8397,7 +8552,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8426,7 +8581,7 @@
       },
       "score": 28.0,
       "title": "Governance Token emissions to `ubq.eth` new strategy",
-      "updated_at": "2026-07-30T02:50:46Z",
+      "updated_at": "2026-07-30T08:38:57Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
     },
     {
@@ -8456,7 +8611,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8485,7 +8640,7 @@
       },
       "score": 28.0,
       "title": "Security monitoring",
-      "updated_at": "2026-07-30T02:50:48Z",
+      "updated_at": "2026-07-30T08:38:58Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5846"
     },
     {
@@ -8521,7 +8676,7 @@
       "repo_fork": false,
       "repo_language": "Python",
       "repo_owner_type": "User",
-      "repo_pushed_at": "2026-07-30T01:40:33Z",
+      "repo_pushed_at": "2026-07-30T08:09:02Z",
       "repo_stars": 13,
       "reward_evidence": {
         "amounts": [
@@ -8586,7 +8741,7 @@
       "repo_fork": false,
       "repo_language": "Python",
       "repo_owner_type": "User",
-      "repo_pushed_at": "2026-07-30T01:40:33Z",
+      "repo_pushed_at": "2026-07-30T08:09:02Z",
       "repo_stars": 13,
       "reward_evidence": {
         "amounts": [
@@ -8620,109 +8775,6 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "# Bounty Details\nDue to conflicts in the files, we've lost the ability for TempleOS players to enjoy the game. TempleOS players are 48% of our player base so this is a high priority fix.\n\n# Bounty Reward\n\n$640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen. \n\n# Requirements for bounty payout:\n\n1. Your pull request must pass all Continuous Integration checks.\n2. Your pull request must include a new title screen welcoming back the old TempleOS users, greeting them in their native language of ancient sumerian.\n3. Your pull request must include all required spritework in the proper relevant .dmi files.\n4. Payout for the bounty is dependent on my personal feeling about the adherence to this requirement and I reserve the right to refuse payout at any time.\n5. All conversations regarding the bounty should occur either on this issue, or on the pull request you open yourself.\n6. You must type like you're in a video game and include an XP counter for every comment you post. ",
-      "comments_count": 4,
-      "created_at": "2026-07-29T05:02:41Z",
-      "issue_author": "theselfish",
-      "issue_number": 4,
-      "labels": [
-        "good first issue",
-        "BOUNTY"
-      ],
-      "open_competing_prs": [
-        {
-          "number": 12,
-          "title": "feat: Add Tung Tung Tung Sahur antagonist and bat (#3)",
-          "updated_at": "2026-07-29T17:55:35Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/12",
-          "user": "Skull0716"
-        },
-        {
-          "number": 8,
-          "title": "[BOUNTY FIX] [BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system. (Fixes #4)",
-          "updated_at": "2026-07-29T17:27:31Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/8",
-          "user": "anakette"
-        },
-        {
-          "number": 9,
-          "title": "[BOUNTY FIX] [BOUNTY][$67] Add the Tung Tung Tung Sahur antagonist. (Fixes #3)",
-          "updated_at": "2026-07-29T17:09:53Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/9",
-          "user": "anakette"
-        },
-        {
-          "number": 10,
-          "title": "[BOUNTY FIX] [BOUNTY][UNCLAIMED] Add the Kirkificator (Fixes #2)",
-          "updated_at": "2026-07-29T13:18:34Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/10",
-          "user": "anakette"
-        }
-      ],
-      "reasons": [
-        "explicit reward evidence up to $640",
-        "direct reward evidence on the issue or its comments",
-        "repository bounty/funded label",
-        "recently updated issue",
-        "active repository",
-        "4 open competing PR(s)",
-        "no attempt command found",
-        "zero-star personal repository",
-        "new repository advertising a high reward"
-      ],
-      "repo": "theselfish/SlopStation13",
-      "repo_archived": false,
-      "repo_created_at": "2026-07-29T04:31:13Z",
-      "repo_fork": false,
-      "repo_language": "DM",
-      "repo_owner_type": "User",
-      "repo_pushed_at": "2026-07-29T05:33:57Z",
-      "repo_stars": 0,
-      "reward_evidence": {
-        "amounts": [
-          640.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
-            "login": "autonoma-avalix"
-          },
-          {
-            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
-            "login": "autonoma-avalix"
-          },
-          {
-            "excerpt": "> I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.\n\n@autonoma-avalix \n\n# independently testable milestone\n\nThe server and client boot on TempleOS and all core features including game rendering, movement, and verbs are confirmed as working when tested.\n\n# Acceptance Tests\n\nAll CI tests must pass, a new CI test proving the client and server boot on TempleOS must be written and also be passing, including photos of the game running on TempleOS provided on the pull request in the opening post, along with a completed changelog.\n\n# Repository/Build Inputs\nThe repository that needs ported is https://github.com/Iamgoofball/-tg-station, and you can secure a copy of TempleOS for running in a VM at https://templeos.org/Downloads/ at TempleOS.ISO.\n\n# Payment Terms\n\nAs stated in the OP of this issue:\n\n> $640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen.",
-            "login": "theselfish"
-          },
-          {
-            "excerpt": "Thanks @theselfish — I saw your response. Before implementation, please confirm the first independently testable milestone, acceptance tests, repository/build inputs, and payment terms. Once those are explicit I can return a scoped execution plan without overcommitting the full bounty.",
-            "login": "autonoma-avalix"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": true,
-        "direct_title_evidence": true,
-        "explicit_platform": false,
-        "funded_or_bounty_label": true,
-        "markers": [
-          "bounty",
-          "reward"
-        ],
-        "max_amount_usd": 640.0,
-        "reward_links_count": 0
-      },
-      "score": 16.0,
-      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
-      "updated_at": "2026-07-30T01:10:07Z",
-      "url": "https://github.com/theselfish/SlopStation13/issues/4"
-    },
-    {
-      "assignees": [],
       "body_excerpt": "https://github.com/ubiquity/permit3/issues/2",
       "comments_count": 2,
       "created_at": "2025-10-12T10:40:52Z",
@@ -8748,7 +8800,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8779,7 +8831,7 @@
       },
       "score": 16.0,
       "title": "Import Nonces",
-      "updated_at": "2026-07-30T02:50:59Z",
+      "updated_at": "2026-07-30T08:39:11Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/4996"
     },
     {
@@ -9150,7 +9202,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9179,7 +9231,7 @@
       },
       "score": -4.0,
       "title": "Automatic Transfer",
-      "updated_at": "2026-07-30T02:50:52Z",
+      "updated_at": "2026-07-30T08:39:02Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5017"
     },
     {
@@ -9217,7 +9269,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T02:51:27Z",
+      "repo_pushed_at": "2026-07-30T08:39:39Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9262,7 +9314,7 @@
       },
       "score": -9.0,
       "title": "UbiquityOS Sprint Management Dashboard",
-      "updated_at": "2026-07-30T02:51:20Z",
+      "updated_at": "2026-07-30T08:39:31Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5916"
     },
     {
@@ -9332,58 +9384,6 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "## Reproduction\n\n1. Open `https://bountybot.com/feed` while logged out.\n2. Observe the Vamo `$2,000` referral card.\n3. Scroll down.\n\n## Actual result\n\nThe same `/join-vamo` card is rendered three times in the feed.\n\n## Expected result\n\nEach bounty should appear once.\n\n## Environment\n\nChrome, logged out, reproduced July 29, 2026.\n\n## Video evidence\n\nUploading below.\n\nhttps://github.com/user-attachments/assets/de471d02-74c6-4725-8f9d-b9d86abfac65",
-      "comments_count": 0,
-      "created_at": "2026-07-29T19:39:57Z",
-      "issue_author": "cita-clara-dev",
-      "issue_number": 1,
-      "labels": [],
-      "open_competing_prs": [],
-      "reasons": [
-        "explicit reward evidence up to $2000",
-        "no direct reward evidence; likely an aggregation or mention",
-        "recently updated issue",
-        "active repository",
-        "no open competing PR found",
-        "no attempt command found",
-        "zero-star personal repository",
-        "new repository advertising a high reward"
-      ],
-      "repo": "cita-clara-dev/stripe-supabase-booking-proof",
-      "repo_archived": false,
-      "repo_created_at": "2026-07-29T17:53:40Z",
-      "repo_fork": false,
-      "repo_language": "JavaScript",
-      "repo_owner_type": "User",
-      "repo_pushed_at": "2026-07-29T17:58:30Z",
-      "repo_stars": 0,
-      "reward_evidence": {
-        "amounts": [
-          2000.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": false,
-        "markers": [
-          "bounty"
-        ],
-        "max_amount_usd": 2000.0,
-        "reward_links_count": 0
-      },
-      "score": -27.0,
-      "title": "Evidence: duplicated bounty cards in logged-out BountyBot feed",
-      "updated_at": "2026-07-29T19:39:57Z",
-      "url": "https://github.com/cita-clara-dev/stripe-supabase-booking-proof/issues/1"
-    },
-    {
-      "assignees": [],
       "body_excerpt": "### Project\n\ngeopandas\n\n### Summary\n\nGeoPandas' plotting method suffers from years of additions, rendering its maintenance cumbersome and the addition of new features problematic. This project proposes a reimplementation of static plotting to overcome the issues while ensuring higher flexibility for downstream users.\n\n### submitter\n\nMartin Fleischmann\n\n### project lead\n\n@jorisvandenbossche, @martinfleis\n\n### Community benefit\n\nStatic plotting features in GeoPandas, a core component of the spatial data science ecosystem, have been expanding over time with limited work focused on refactoring its internal components. At the same time, it has always been suboptimal in terms of functionality, generating a long list of feature requests and bug reports. This has reached a situation where the day-to-day maintenance of the related code base has become cumbersome. As a result, changes in terms of both bug fixing and new development have mostly stalled. The plotting tooling requires refactoring because this situation is unsustainable over the long term.\n\nThe proposed project should deliver a partial reimplementation of the tooling for static plotting in GeoPandas aimed at easier maintainability, extendability, and an enhanced user experience, while resolving known bugs and feature requests the project is currently tracking.\n \nGiven the large user base of GeoPandas, it is expected that the project will result in significantly improved user experience of geospatial plotting. The users will no longer need to manually customise many aspects of the resulting figures, from the unaligned colorbar legends GeoPandas currently produces, to proper ability to map colors to values, and direct registration of symbology with Matplotlib for proper legend handling. Occasionally, users are currently forced to come up with complicated workarounds or rely on other software like QGIS to generate the map outputs. The new plotting implementation proposed in this project should minimize this need.\n \nThe result should primarily benefit end users in the production of map outputs. However, it should at the same time simplify depending on GeoPandas plotting in downstream packages like [EOmaps](https://github.com/raphaelquast/EOmaps) or [Xvec](https://github.com/xarray-contrib/xvec), which are building on top of existing plotting methods, and streamline integration with other tools for geospatial plotting as [Xarray](https://github.com/pydata/xarray) and [Cartopy](https://github.com/SciTools/cartopy).\n\n### Amount requested\n\n9800\n\n### Execution plan\n\nThe project will be primarily implemented by Martin Fleischmann (@martinfleis), one of the GeoPandas maintainers, in collaboration with the rest of the GeoPandas team and a wider community. The hourly rate used in the development is $70/hr.\n\nThe project implementation is divided into five consecutive steps:\n\n**1. API design**\n\nThe current APIs of the `GeoDataFrame.plot` and `GeoSeries.plot` methods are bloated from the incremental addition of new features and are no longer sustainable to maintain and expand. Its implementation is hard to follow for new users, with many arguments being applied only conditionally, depending on the underlying geometry type or nature of the data. The API should be revised to ensure it can maintain long-term clarity and expandability. Given GeoPandas already includes an accessor mechanism to expose Pandas plotting methods on GeoPandas objects, one of the designs to be explored is splitting various plotting cases into their own methods. \n\nThe API design will be openly discussed with the community in three ways. First, we will reach out to community members heavily involved in geospatial plotting to gather their targeted feedback for the existing and proposed API. Second, we will outline the API on GitHub and use social media and mailing lists to gather feedback on the proposal. This needs to be thoroughly discussed with the community because it may introduce some breaking changes to the current API. Third, we will use the project's community calls to have a synchronous discussion with both team members and a wider community.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 1-3\n\n**2. Refactoring of key building blocks**\n\nThe key building blocks of the plotting tooling will be refactored with the new API in mind, while ensuring closer integration with Matplotlib's tooling from axes to legend handling, both of which are currently done semi-manually in the GeoPandas code.\n\nThe initial implementation will likely be done outside of the code base of GeoPandas’ main branch for faster iteration and limited adverse impact of the attempts at compatibility with the existing implementation. This is a similar approach used in the development of the `explore` method before, which proved to be efficient. The code will be merged with the main branch in step 5. The existing GeoPandas test suite will be continually used to test the functionality, while new tests will be written alongside.\n\nBudget allocation: 60 hours / $4,200\nTimeline: Month 4-6\n\n**3. Bug resolution**\n\nSome of the bugs in plotting code currently reported in the GeoPandas issue tracker are expected to be fixed alongside the refactoring of step 2. However, others might need specific focus. The third implementation step should therefore resolve existing known bugs to eliminate the current backlog.\n\nBudget allocation: 30 hours / $2,100\nTimeline: Month 7-8\n\n**4. New functionality**\n\nThe project will further implement new functionality that has been requested for a long time. This relates to easier customisation of colour mapping, topological colouring, easier inclusion of contextual background maps, among others.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 9-10\n\n**5. Code merge and migration strategy**\n\nThe final step is to merge the newly developed tooling back into the GeoPandas code base and definition of the migration strategy. Given the API will likely be partially changed, we need to define",
       "comments_count": 1,
       "created_at": "2025-05-30T07:16:14Z",
@@ -9450,7 +9450,7 @@
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
     }
   ],
-  "raw_unique_open_issues": 649,
+  "raw_unique_open_issues": 640,
   "recommended": [
     {
       "assignees": [],
@@ -10341,7 +10341,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -10450,7 +10450,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -10580,7 +10580,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -10682,7 +10682,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -10811,7 +10811,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -10933,7 +10933,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -11058,7 +11058,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -11158,7 +11158,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -11270,7 +11270,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -11372,7 +11372,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
@@ -11474,7 +11474,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-07-30T01:46:09Z",
+      "repo_pushed_at": "2026-07-30T07:29:25Z",
       "repo_stars": 58,
       "reward_evidence": {
         "amounts": [
