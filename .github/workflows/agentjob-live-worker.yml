@@ -1,0 +1,65 @@
+name: Run encrypted AgentJob live worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - agentjob_live_worker.mjs
+      - .github/workflows/agentjob-live-worker.yml
+      - keys/superteam-state-public.crt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: agentjob-live-worker
+  cancel-in-progress: false
+
+jobs:
+  work:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate worker source
+        run: node --check agentjob_live_worker.mjs
+      - name: Validate encryption certificate
+        run: |
+          set -euo pipefail
+          openssl x509 -in keys/superteam-state-public.crt -noout -fingerprint -sha256
+      - name: Install pinned MCP client without lifecycle scripts
+        run: |
+          set -euo pipefail
+          mkdir /tmp/agentjob-worker-deps
+          cd /tmp/agentjob-worker-deps
+          npm init -y >/dev/null
+          npm install --ignore-scripts --no-audit --no-fund @modelcontextprotocol/sdk@1.17.5 >/dev/null
+          ln -s /tmp/agentjob-worker-deps/node_modules "$GITHUB_WORKSPACE/node_modules"
+      - name: Configure evidence commits
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+      - name: Register, configure, answer paid tasks, and verify settlement
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MAX_RUNTIME_MINUTES: '330'
+          AGENTJOB_RESPONSE_MODEL: openai/gpt-4.1-mini
+          AGENTJOB_IDEMPOTENCY_KEY: 44673f19-f479-49d7-8a53-0601528f98af
+        run: node agentjob_live_worker.mjs
+      - name: Enforce public-output secret boundary
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ -f agentjob-output/public-state.json ] && grep -E -n '\b(ak|aj|agentjob)_[A-Za-z0-9_-]{8,}' agentjob-output/public-state.json; then
+            echo 'Credential-shaped value found in public state' >&2
+            exit 1
+          fi
+          test ! -f /tmp/agentjob-private-state.json
