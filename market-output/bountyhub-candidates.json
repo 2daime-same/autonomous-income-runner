@@ -32,7 +32,7 @@
     }
   ],
   "actionable_count": 1,
-  "generated_at": "2026-07-30T11:22:57+00:00",
+  "generated_at": "2026-07-30T14:34:29+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -464,7 +464,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7318,
+      "repo_stars": 7319,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
       "score": 45.41,
@@ -479,6 +479,58 @@
       "solved": false,
       "title": "[Feature] Repair orders",
       "total_amount_usd": "15.00"
+    },
+    {
+      "additional_description": "",
+      "amount_usd": "20.00",
+      "assignment_type": "open",
+      "attempt_signals": [],
+      "bountyhub_id": "7ba2d04c-8c3e-4752-a6a0-d583158efe99",
+      "claimed": false,
+      "exclusions": [
+        "GitHub issue already assigned",
+        "not escrow-paid: PROMISED",
+        "open competing PR exists"
+      ],
+      "github_assignees": [
+        "gitdalisar"
+      ],
+      "github_issue_state": "open",
+      "issue_number": 27,
+      "issue_url": "https://github.com/gitdalisar/mod-Faction-Free/issues/27",
+      "open_competing_prs": [
+        {
+          "number": 31,
+          "title": "Fix current AzerothCore compatibility",
+          "updated_at": "2026-07-28T12:53:00Z",
+          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/31",
+          "user": "G-kylexy"
+        },
+        {
+          "number": 32,
+          "title": "fix: resolve build and SQL errors for AzerothCore main (PlayerUpdates.cpp, SQL schema) [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
+          "updated_at": "2026-07-28T11:26:39Z",
+          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/32",
+          "user": "waterWang"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "C++",
+      "repo_stars": 34,
+      "repository": "gitdalisar/mod-Faction-Free",
+      "scope_excerpt": "**Describe the bug**\nI have 2 issues and i don't know if i should talk about them separately or here \nA. When using the PlayerUpdates.cpp included with this module I can't build AzerothCore.\nB. Both 'EntryChecker_RUN_FIRST.sql' and 'FactionFree.sql' give me errors when i execute them. but strangely when i enter the game for instance i can level in elwyn forest with a bloodelf but i don't get any rep, and in zone like dalaran i can't get into the Alliance part of town with said bloodelf\n\n**Steps To Reproduce**\nSteps to reproduce the behavior:\nFor issue A:\n1. copy the file 'PlayerUpdates.cpp into ...\\src\\server\\game\\Entities\\Player\n2. configure on cmake\n3. generate on cmake\n4. open solution in Visual Studio\n5. right click on ALL_BUILD -> Build\n\nFor issue B:\n1. open windows terminal\n2. command: mysql -u root-user -P port -p\n3. enter password\n4. command: use acore_world\n5. command: source path\\to\\EntryChecker_RUN_FIRST.sql\n6. get error 1\n7. command: source path\\to\\FactionFree.sql\n8. get error 2\n\nLogs:\n\nIssue A:\n<details><summary>Output Log</summary>\n<p>\n\nBuild started at 5:06 PM...\n1>------ Build started: Project: revision.h, Configuration: RelWithDebInfo x64 ------\n1>  fatal: not a git repository (or any of the parent directories): .git\n1>  --\n1>      Could not find a proper repository signature (hash) - you may need to pull tags with git fetch -t\n1>      Continuing anyway - note that the versionstring will be set to \"unknown 1970-01-01 00:00:00 (Archived)\"\n2>------ Build started: Project: game, Configuration: RelWithDebInfo x64 ------\n2>  PlayerUpdates.cpp\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,5): error C2819: type 'CinematicMgr' does not have an overloaded member 'operator ->'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(32,19):\n2>      see declaration of 'CinematicMgr'\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,5):\n2>      did you intend to use '.' instead?\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,20): error C2039: 'm_cinematicDiff': is not a member of 'CinematicMgr'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(32,19):\n2>      see declaration of 'CinematicMgr'\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(74,9): error C2819: type 'CinematicMgr' does not have an overloaded member 'operator ->'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(",
+      "score": 38.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "higher-cost language: c++",
+        "no competing attempt signal found",
+        "2 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[BUG] can't build azerothcore with PlayerUpdates.cpp and sql files give error when importing",
+      "total_amount_usd": "20.00"
     },
     {
       "additional_description": "",
@@ -511,9 +563,16 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
         {
+          "number": 1728,
+          "title": "fix: two data-loss bugs in point-in-time recall and conflict resolution",
+          "updated_at": "2026-07-30T14:03:26Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1728",
+          "user": "tharushadp"
+        },
+        {
           "number": 1731,
           "title": "fix(conflicts): resolving a conflict from the Web UI deletes another conflict's memories (#770)",
-          "updated_at": "2026-07-30T10:57:44Z",
+          "updated_at": "2026-07-30T12:50:01Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1731",
           "user": "Vyacheslav-Tomashevskiy"
         },
@@ -523,13 +582,6 @@
           "updated_at": "2026-07-30T10:01:32Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1727",
           "user": "naufalfx805-source"
-        },
-        {
-          "number": 1728,
-          "title": "fix: two data-loss bugs in point-in-time recall and conflict resolution",
-          "updated_at": "2026-07-30T10:00:33Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1728",
-          "user": "tharushadp"
         },
         {
           "number": 1725,
@@ -819,13 +871,6 @@
           "user": "2lll5"
         },
         {
-          "number": 1292,
-          "title": "Normalize comma-separated memory tags",
-          "updated_at": "2026-07-21T15:41:24Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1292",
-          "user": "guo-gy"
-        },
-        {
           "number": 1584,
           "title": "fix: bound yesterday temporal recall",
           "updated_at": "2026-07-21T14:05:52Z",
@@ -1074,7 +1119,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1714,
+      "repo_stars": 1716,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
       "score": 29.0,
@@ -1085,7 +1130,7 @@
         "supported language: python",
         "established repository",
         "3 competing attempt signal(s)",
-        "80 open competing PR(s)"
+        "79 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
@@ -1116,6 +1161,20 @@
       "issue_number": 1609,
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
       "open_competing_prs": [
+        {
+          "number": 1732,
+          "title": "feat(migrations): add privacy-first Codex session to OKF adapter",
+          "updated_at": "2026-07-30T12:27:32Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1732",
+          "user": "ILoveBuns"
+        },
+        {
+          "number": 1624,
+          "title": "feat: add 9 migration adapters (ChatGPT, Claude, Gemini, Zep, Hindsight, LangGraph, Notion, Obsidian, Chroma)",
+          "updated_at": "2026-07-30T11:44:13Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1624",
+          "user": "ejspeed-cmd"
+        },
         {
           "number": 1729,
           "title": "feat: migrate n8n execution history to portable OKF",
@@ -1157,13 +1216,6 @@
           "updated_at": "2026-07-29T19:51:20Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1710",
           "user": "ivegotahunnitonit"
-        },
-        {
-          "number": 1624,
-          "title": "feat: add 9 migration adapters (ChatGPT, Claude, Gemini, Zep, Hindsight, LangGraph, Notion, Obsidian, Chroma)",
-          "updated_at": "2026-07-29T19:01:32Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1624",
-          "user": "ejspeed-cmd"
         },
         {
           "number": 1711,
@@ -1323,7 +1375,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1714,
+      "repo_stars": 1716,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
       "score": 27.41,
@@ -1333,7 +1385,7 @@
         "supported language: python",
         "established repository",
         "2 competing attempt signal(s)",
-        "29 open competing PR(s)"
+        "30 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
@@ -1362,13 +1414,6 @@
           "updated_at": "2026-07-25T14:32:43Z",
           "url": "https://github.com/microg/GmsCore/pull/3668",
           "user": "waterWang"
-        },
-        {
-          "number": 3502,
-          "title": "feat: implement Google Cast support (fixes #580)",
-          "updated_at": "2026-07-03T19:27:21Z",
-          "url": "https://github.com/microg/GmsCore/pull/3502",
-          "user": "mitchellecm7"
         },
         {
           "number": 3377,
@@ -1402,7 +1447,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14068,
+      "repo_stars": 14069,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 25.18,
@@ -1411,7 +1456,7 @@
         "higher-cost language: java",
         "established repository",
         "no competing attempt signal found",
-        "6 open competing PR(s)"
+        "5 open competing PR(s)"
       ],
       "solved": false,
       "title": "What's the status on Google Cast implementation?",
@@ -1505,13 +1550,6 @@
           "user": "waterWang"
         },
         {
-          "number": 3502,
-          "title": "feat: implement Google Cast support (fixes #580)",
-          "updated_at": "2026-07-03T19:27:21Z",
-          "url": "https://github.com/microg/GmsCore/pull/3502",
-          "user": "mitchellecm7"
-        },
-        {
           "number": 3377,
           "title": "Fix casting",
           "updated_at": "2026-06-23T12:05:42Z",
@@ -1543,7 +1581,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14068,
+      "repo_stars": 14069,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 23.41,
@@ -1552,77 +1590,11 @@
         "higher-cost language: java",
         "established repository",
         "no competing attempt signal found",
-        "6 open competing PR(s)"
+        "5 open competing PR(s)"
       ],
       "solved": false,
       "title": "What's the status on Google Cast implementation?",
       "total_amount_usd": "150.00"
-    },
-    {
-      "additional_description": "",
-      "amount_usd": "20.00",
-      "assignment_type": "open",
-      "attempt_signals": [],
-      "bountyhub_id": "7ba2d04c-8c3e-4752-a6a0-d583158efe99",
-      "claimed": false,
-      "exclusions": [
-        "GitHub issue already assigned",
-        "not escrow-paid: PROMISED",
-        "open competing PR exists"
-      ],
-      "github_assignees": [
-        "gitdalisar"
-      ],
-      "github_issue_state": "open",
-      "issue_number": 27,
-      "issue_url": "https://github.com/gitdalisar/mod-Faction-Free/issues/27",
-      "open_competing_prs": [
-        {
-          "number": 30,
-          "title": "fix: resolve build errors and SQL id1/scale schema mismatches (closes #27) [v2]",
-          "updated_at": "2026-07-30T09:29:16Z",
-          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/30",
-          "user": "mitchellecm7"
-        },
-        {
-          "number": 31,
-          "title": "Fix current AzerothCore compatibility",
-          "updated_at": "2026-07-28T12:53:00Z",
-          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/31",
-          "user": "G-kylexy"
-        },
-        {
-          "number": 32,
-          "title": "fix: resolve build and SQL errors for AzerothCore main (PlayerUpdates.cpp, SQL schema) [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
-          "updated_at": "2026-07-28T11:26:39Z",
-          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/32",
-          "user": "waterWang"
-        },
-        {
-          "number": 29,
-          "title": "fix: resolve build errors and SQL id1/scale schema mismatches (closes #27)",
-          "updated_at": "2026-07-28T08:31:26Z",
-          "url": "https://github.com/gitdalisar/mod-Faction-Free/pull/29",
-          "user": "mitchellecm7"
-        }
-      ],
-      "payment_status": "PROMISED",
-      "repo_archived": false,
-      "repo_language": "C++",
-      "repo_stars": 34,
-      "repository": "gitdalisar/mod-Faction-Free",
-      "scope_excerpt": "**Describe the bug**\nI have 2 issues and i don't know if i should talk about them separately or here \nA. When using the PlayerUpdates.cpp included with this module I can't build AzerothCore.\nB. Both 'EntryChecker_RUN_FIRST.sql' and 'FactionFree.sql' give me errors when i execute them. but strangely when i enter the game for instance i can level in elwyn forest with a bloodelf but i don't get any rep, and in zone like dalaran i can't get into the Alliance part of town with said bloodelf\n\n**Steps To Reproduce**\nSteps to reproduce the behavior:\nFor issue A:\n1. copy the file 'PlayerUpdates.cpp into ...\\src\\server\\game\\Entities\\Player\n2. configure on cmake\n3. generate on cmake\n4. open solution in Visual Studio\n5. right click on ALL_BUILD -> Build\n\nFor issue B:\n1. open windows terminal\n2. command: mysql -u root-user -P port -p\n3. enter password\n4. command: use acore_world\n5. command: source path\\to\\EntryChecker_RUN_FIRST.sql\n6. get error 1\n7. command: source path\\to\\FactionFree.sql\n8. get error 2\n\nLogs:\n\nIssue A:\n<details><summary>Output Log</summary>\n<p>\n\nBuild started at 5:06 PM...\n1>------ Build started: Project: revision.h, Configuration: RelWithDebInfo x64 ------\n1>  fatal: not a git repository (or any of the parent directories): .git\n1>  --\n1>      Could not find a proper repository signature (hash) - you may need to pull tags with git fetch -t\n1>      Continuing anyway - note that the versionstring will be set to \"unknown 1970-01-01 00:00:00 (Archived)\"\n2>------ Build started: Project: game, Configuration: RelWithDebInfo x64 ------\n2>  PlayerUpdates.cpp\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,5): error C2819: type 'CinematicMgr' does not have an overloaded member 'operator ->'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(32,19):\n2>      see declaration of 'CinematicMgr'\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,5):\n2>      did you intend to use '.' instead?\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(73,20): error C2039: 'm_cinematicDiff': is not a member of 'CinematicMgr'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(32,19):\n2>      see declaration of 'CinematicMgr'\n2>E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\PlayerUpdates.cpp(74,9): error C2819: type 'CinematicMgr' does not have an overloaded member 'operator ->'\n2>  (compiling source file '../../../../azerothcore-wotlk-master/src/server/game/Entities/Player/PlayerUpdates.cpp')\n2>      E:\\Game Servers\\azerothcore-wotlk-master\\src\\server\\game\\Entities\\Player\\CinematicMgr.h(",
-      "score": 23.41,
-      "score_reasons": [
-        "BountyHub paymentStatus is PAID",
-        "small first-payment-sized bounty",
-        "higher-cost language: c++",
-        "no competing attempt signal found",
-        "4 open competing PR(s)"
-      ],
-      "solved": false,
-      "title": "[BUG] can't build azerothcore with PlayerUpdates.cpp and sql files give error when importing",
-      "total_amount_usd": "20.00"
     },
     {
       "additional_description": "",
@@ -1762,7 +1734,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14068,
+      "repo_stars": 14069,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Affected app**\r\nName: Dott\r\nPackage id: com.ridedott.rider\r\n\r\n**Describe the bug**\r\nSigning in or signing up fails, seemingly because of a firebase error\r\n\r\n**To Reproduce**\r\nSteps to reproduce the behavior:\r\n1. get Dott\r\n2. Click on sign up\r\n3. enter phone number\r\n4. click sign up\r\n\r\n**Expected behavior**\r\nsends sms verification or proceeds in general\r\n\r\n**Screenshots**\r\n<details><summary>sign up error page</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/0938e413-1873-480a-a396-a598fcd98e47)\r\n\r\n</details>\r\n\r\n<details><summary>dott vehicle coverage</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/59c7d003-1954-41be-8fc1-43956a17f4a6)\r\n\r\n</details>\r\n\r\n**System**\r\nAndroid Version: 15\r\nCustom ROM: LineageOS+microg 22.1\r\n\r\n**microG**\r\nmicroG Core version: 0.3.6.244735\r\nmicroG Self-Check results: All ticked\r\n\r\n**Additional context**\r\nfull logcat of an app start and signup attempt, filtering out all logs, except those coming from com.ridedott.rider with personal or identifying information replaced by `[...]`:\r\n\r\n[dott 06_04-09-30-30_733.log](https://github.com/user-attachments/files/19620636/dott.06_04-09-30-30_733.log)\r\n\r\nLikely critical lines from the log:\r\n```\r\n1743924520.834 10285 20276 23037 W LocalRequestInterceptor: Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: Error returned from API. code: 403 body: App attestation failed.\r\n1743924521.066 10285 20276 23037 E FirebaseAuth: [SmsRetrieverHelper] SMS verification code request failed: unknown status code: 17499 Firebase App Check token is invalid.\r\n1743924521.067 10285 20276 20276 D FirebaseAuth: Invoking original failure callbacks after phone verification failure for (my phone number), error - An internal error has occurred. [ Firebase App Check token is invalid. ]\r\n```\r\nmicrog Google device registration is enabled, as is cloud messaging and \"SafetyNet\".\r\nmy device meets basic integrity and device integrity, uses sdk level 35\r\n\r\nPossibly related: https://github.com/microg/GmsCore/issues/1967, https://github.com/microg/GmsCore/issues/1281",
       "score": 13.35,
@@ -1868,7 +1840,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14068,
+      "repo_stars": 14069,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Feature Description:**\r\nGoogle Messages is currently the only widely available RCS client for Android. When attempting to use Google Messages with microG, users typically encounter issues such as:\r\n\r\nA persistent message stating \"RCS chats aren't available for this device.\"\r\nAn indefinite \"Setting up...\", where authentication of the phone number never completes.\r\n\r\nRecent developments suggest that Google Messages no longer strictly requires device attestation for RCS, making it possible to enable RCS functionality with microG. However, it appears there's a missing component or necessary adjustment within microG itself preventing successful setup.\r\n\r\nGoogle has effectively monopolized RCS, despite it being a GSMA-backed standard intended as a successor to SMS. Unlike SMS, RCS has become a closed ecosystem under Google's control, restricting open interoperability and limiting choice for users and developers. RCS has seen significant adoption, particularly in North America, and recently Apple added support RCS, further increasing its importance as a messaging standard.\r\n\r\n**Requested Solution**\r\n\r\nProvide a solution that enables Google Messages to successfully connect to and use RCS functionality when operating with microG. Acceptable outcomes include:\r\n- A fix or enhancement to microG itself, allowing seamless RCS connectivity.\r\n- Compatibility with recent versions of Google Messages is desired. Solutions that only support a specific Google Messages version from the past year will be awarded half of the bounty amount.\r\n- Modifications to AOSP or additional permissions changes are acceptable.\r\n- The solution must work on devices with a locked bootloader.\r\n\r\nLimitations\r\nSolutions relying on rooting, Magisk, or similar root-based tools are not acceptable.\r\n\r\n**Additional Information**\r\n\r\nGrapheneOS users, who leverage a Play services sandbox, have reported success with enabling RCS by applying permission changes. Although their setup differs from microG, the discussions that were taken in this thread (especially in the last year) may offer valuable insights for this bounty: https://discuss.grapheneos.org/d/3533-rcs-with-google-messages\r\n",
       "score": 1.0,
@@ -1923,18 +1895,18 @@
       "issue_url": "https://github.com/microg/GmsCore/issues/2843",
       "open_competing_prs": [
         {
+          "number": 3662,
+          "title": "WearOS pairing and data bridging support",
+          "updated_at": "2026-07-30T11:58:46Z",
+          "url": "https://github.com/microg/GmsCore/pull/3662",
+          "user": "namdamdoi68-oss"
+        },
+        {
           "number": 3672,
           "title": "feat: Add CompanionPairingManager for Wear OS 3+ device pairing",
           "updated_at": "2026-07-29T18:22:40Z",
           "url": "https://github.com/microg/GmsCore/pull/3672",
           "user": "laurentketterle-hub"
-        },
-        {
-          "number": 3662,
-          "title": "WearOS pairing and data bridging support",
-          "updated_at": "2026-07-29T07:47:42Z",
-          "url": "https://github.com/microg/GmsCore/pull/3662",
-          "user": "namdamdoi68-oss"
         },
         {
           "number": 3673,
@@ -2003,7 +1975,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14068,
+      "repo_stars": 14069,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**[BOUNTY CURRENTLY AT $550]**\n\n**Is your feature request related to a problem? Please describe.**\nWearOS devices do not work with MicroG\n\n**Describe the solution you'd like**\nMicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\n**Additional context**\nThere has been an issue open for over ten years regarding [MicroG support for WearOS](https://github.com/microg/GmsCore/issues/4#issuecomment-2581553597).  That issue and another [more recent post](https://github.com/microg/GmsCore/issues/2444#issuecomment-2691206945) have inspired some folks to post bounties for this feature, but it's buried so far down in the thread it's easy to miss.\n\nI personally am posting a $200 bounty for the MicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\nHere are the folks who've posted bounties in those threads.  I'll invite them to post again here confirming that their offers still stand, but all told, this adds up to over $500 already.\n\n@HyperCriSiS - $100\n@realPrix - $100\n@NullCode1337 - $50\n@TobiPeterG - $100\n@doctorgaul - $200",
       "score": -77.0,
