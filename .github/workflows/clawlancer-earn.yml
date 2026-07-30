@@ -2,11 +2,6 @@ name: Earn first Clawlancer micro-bounty
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - clawlancer_earn.py
-      - .github/workflows/clawlancer-earn.yml
 
 permissions:
   contents: write
@@ -52,6 +47,51 @@ jobs:
           fi
           rm -rf .clawlancer-state
 
+      - name: Recursively sanitize all public evidence
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          from collections.abc import Mapping
+          from pathlib import Path
+
+          sensitive_keys = {
+              'api_key', 'apikey', 'private_key', 'privatekey', 'secret', 'token',
+              'authorization', 'auth_header', 'bearer', 'mnemonic', 'seed',
+              'raw_key', 'rawkey', 'heartbeat_config', 'heartbeatconfig',
+              'details', 'request_body', 'signed_transaction', 'raw_transaction',
+              'rpc_url', 'provider_url', 'credentials',
+          }
+
+          def sanitize(value):
+              if isinstance(value, Mapping):
+                  result = {}
+                  for raw_key, item in value.items():
+                      key = str(raw_key)
+                      normalized = key.replace('-', '_').lower()
+                      result[key] = '[REDACTED]' if normalized in sensitive_keys else sanitize(item)
+                  return result
+              if isinstance(value, list):
+                  return [sanitize(item) for item in value]
+              if isinstance(value, str):
+                  value = re.sub(r'\b(?:clw|claw|cl|api)_[A-Za-z0-9._~+/=-]{8,}\b', '[REDACTED]', value)
+                  value = re.sub(r'Authorization:\s*Bearer\s+\S+', 'Authorization: Bearer [REDACTED]', value, flags=re.I)
+                  value = re.sub(r'https://[^\s\"\']*alchemy\.com/v2/[A-Za-z0-9_-]+', '[REDACTED_RPC_URL]', value, flags=re.I)
+                  value = re.sub(r'\b0x[0-9a-fA-F]{128,}\b', '[REDACTED_SIGNED_TRANSACTION]', value)
+                  value = re.sub(r'\b0x[0-9a-fA-F]{64}\b', '[REDACTED_PRIVATE_KEY]', value)
+              return value
+
+          for path in [Path('clawlancer-output/earn-result.json'), Path('clawlancer-output/agent-public.json')]:
+              if not path.exists():
+                  continue
+              data = json.loads(path.read_text(encoding='utf-8'))
+              temporary = path.with_suffix(path.suffix + '.tmp')
+              temporary.write_text(json.dumps(sanitize(data), ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+              os.replace(temporary, path)
+          PY
+
       - name: Fail closed on credential-like public output
         if: always()
         run: |
@@ -63,9 +103,12 @@ jobs:
               Path('clawlancer-output/agent-public.json'),
           ]
           patterns = {
-              'api key': re.compile(r'(?i)"(?:api_key|apikey|token|secret|private_key|wallet_private_key)"\s*:\s*"(?!\[REDACTED\])'),
+              'api key': re.compile(r'\b(?:clw|claw|cl|api)_[A-Za-z0-9._~+/=-]{8,}\b'),
+              'authorization header': re.compile(r'Authorization:\s*Bearer\s+(?!\[REDACTED\])\S+', re.I),
+              'Alchemy credential': re.compile(r'alchemy\.com/v2/[A-Za-z0-9_-]+', re.I),
+              'signed transaction': re.compile(r'\b0x[0-9a-fA-F]{128,}\b'),
               'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
-              'credential prefix': re.compile(r'\b(?:claw|cl|api)_[A-Za-z0-9_-]{12,}\b'),
+              'credential field': re.compile(r'(?i)"(?:api_key|apikey|token|secret|private_key|wallet_private_key|auth_header|heartbeat_config|details)"\s*:\s*"(?!\[REDACTED)'),
           }
           for path in public:
               if not path.exists():
