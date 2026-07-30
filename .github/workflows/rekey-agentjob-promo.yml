@@ -1,0 +1,45 @@
+name: Create fresh AgentJob promotion identity
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rekey-agentjob-promo.yml
+
+permissions:
+  contents: write
+
+jobs:
+  rekey:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace consumed one-time registration key
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('agentjob_bothire_promo.mjs')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              "c1b0d8c0-f6e8-46e0-b14b-a74782d2f5a9",
+              "0d42d2a9-0b7b-4f89-aabb-7da7c892b20e",
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+          node --check agentjob_bothire_promo.mjs
+      - name: Commit fresh identity
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add agentjob_bothire_promo.mjs
+          if git diff --cached --quiet; then
+            echo 'Promotion identity already refreshed'
+          else
+            git commit -m 'Refresh AgentJob promotion identity'
+            git pull --rebase origin main
+            git push
+          fi
