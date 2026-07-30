@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-07-30T12:19:37.555Z",
+  "writesPerformed": [],
+  "expensesUsd": 0,
+  "hosts": [
+    {
+      "host": "https://taskforce.app",
+      "attempts": [
+        {
+          "attempt": 1,
+          "ok": false,
+          "status": 404,
+          "finalUrl": "https://taskforce.app/api/agent/register",
+          "payload": {
+            "text": "<!DOCTYPE html><html lang=\"en\"> <head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Page Not Found | TaskForce.app</title><meta name=\"description\" content=\"The page you're looking for doesn't exist.\"><meta name=\"robots\" content=\"index, follow\"><meta name=\"theme-color\" content=\"#0B132B\"><link rel=\"canonical\" href=\"https://taskforce.app/api/agent/register\"><link rel=\"icon\" href=\"/taskforce-icon.svg\" type=\"image/svg+xml\"><link rel=\"shortcut icon\" href=\"/taskforce-icon.svg\"><!-- Open Graph --><meta property=\"og:type\" content=\"website\"><meta property=\"og:url\" content=\"https://taskforce.app/api/agent/register\"><meta property=\"og:title\" content=\"Page Not Found | TaskForce.app\"><meta property=\"og:description\" content=\"The page you're looking for doesn't exist.\"><meta property=\"og:image\" content=\"https://taskforce.app/images/hero-capitol.jpg?v=2026-02-25\"><meta property=\"og:image:secure_url\" content=\"https://taskforce.app/images/hero-capitol.jpg?v=2026-02-25\"><meta property=\"og:image:alt\" content=\"Page Not Found | TaskForce.app preview\"><meta property=\"og:image:type\" content=\"image/jpeg\"><meta property=\"og:image:width\" content=\"1200\"><meta property=\"og:image:height\" content=\"630\"><meta property=\"og:locale\" content=\"en_US\"><meta property=\"og:site_name\" content=\"TaskForce.app\"><!-- Twitter / iMessage --><meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"Page Not Found | TaskForce.app\"><meta name=\"twitter:description\" content=\"The page you're looking for doesn't exist.\"><meta name=\"twitter:image\" content=\"https://taskforce.app/images/hero-capitol.jpg?v=2026-02-25\"><meta name=\"twitter:image:alt\" content=\"Page Not Found | TaskForce.app preview\"><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link rel=\"preload\" as=\"style\" href=\"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap\" onload=\"this.onload=null;this.rel='stylesheet'\"><noscript><link href=\"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap\" rel=\"stylesheet\"></noscript><script type=\"application/ld+json\">\n    {\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"ProfessionalService\",\n      \"name\": \"TaskForce.app\",\n      \"url\": \"https://taskforce.app\",\n      \"logo\": \"https://taskforce.app/taskforce-icon.svg\",\n      \"description\": \"Government affairs advisory and campaign management for the AI era — strategic advisory, campaign management, proprietary software, and consultant networks.\",\n      \"email\": \"hello@taskforce.app\",\n      \"serviceType\": \"Government Affairs Advisory\",\n      \"areaServed\": {\n        \"@type\": \"Country\",\n        \"name\": \"United States\"\n      }\n    }\n    </script><link rel=\"stylesheet\" href=\"/_astro/campaign-management.Bzyun25t.css\">\n<style>.not-found[data-astro-cid-z"
+          }
+        }
+      ]
+    },
+    {
+      "host": "https://www.task-force.app",
+      "attempts": [
+        {
+          "attempt": 1,
+          "ok": false,
+          "status": 500,
+          "finalUrl": "https://www.task-force.app/api/agent/register",
+          "payload": {
+            "error": "Failed to register agent. Please try again."
+          }
+        },
+        {
+          "attempt": 2,
+          "ok": false,
+          "status": 500,
+          "finalUrl": "https://www.task-force.app/api/agent/register",
+          "payload": {
+            "error": "Failed to register agent. Please try again."
+          }
+        },
+        {
+          "attempt": 3,
+          "ok": false,
+          "status": 500,
+          "finalUrl": "https://www.task-force.app/api/agent/register",
+          "payload": {
+            "error": "Failed to register agent. Please try again."
+          }
+        }
+      ]
+    },
+    {
+      "host": "https://task-force.app",
+      "attempts": [
+        {
+          "attempt": 1,
+          "ok": false,
+          "status": 500,
+          "finalUrl": "https://www.task-force.app/api/agent/register",
+          "payload": {
+            "error": "Failed to register agent. Please try again."
+          }
+        },
+        {
+          "attempt": 2,
+          "ok": false,
+          "status": 500,
+          "finalUrl": "https://www.task-force.app/api/agent/register",
+          "payload": {
+            "error": "Failed to register agent. Please try again."
+          }
+        },
+        {
+          "attempt": 3,
+          "ok": false,
+          "status": 500,
+          "finalUrl": "https://www.task-force.app/api/agent/register",
+          "payload": {
+            "error": "Failed to register agent. Please try again."
+          }
+        }
+      ]
+    }
+  ],
+  "success": false,
+  "finishedAt": "2026-07-30T12:20:08.751Z"
+}
