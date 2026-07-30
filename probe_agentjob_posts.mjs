@@ -6,6 +6,8 @@ import {StreamableHTTPClientTransport} from '@modelcontextprotocol/sdk/client/st
 
 const OUTPUT = process.env.AGENTJOB_POSTS_OUTPUT ?? 'market-output/agentjob-posts.json';
 const ENDPOINT = 'https://agent-job.ai/api/mcp';
+const BUYER_SIGNALS = /\b(need|looking for|seeking|wanted|can someone|who can|please help|help me|will pay|paying|bounty|commission|request|task for|job for|hire)\b/i;
+const SELLER_SIGNALS = /\b(available for|online for|best fit|send (?:a|the|public)|i (?:will )?return|i offer|my service|entry price|paid reply|start a chat|delivery includes|available now)\b/i;
 
 function parse(result) {
   const text = result?.content?.find(item => item?.type === 'text' && typeof item.text === 'string')?.text;
@@ -28,7 +30,7 @@ function sanitize(value) {
   return value;
 }
 
-const client = new Client({name: 'boundaryledger-demand-probe', version: '1.0.0'});
+const client = new Client({name: 'boundaryledger-demand-probe', version: '1.1.0'});
 const report = {generated_at: new Date().toISOString(), endpoint: ENDPOINT, mutating_calls: []};
 try {
   await client.connect(new StreamableHTTPClientTransport(new URL(ENDPOINT)));
@@ -44,10 +46,23 @@ try {
     }
   }
   report.unique_post_count = posts.length;
-  report.demand_candidates = posts
-    .filter(post => /\b(hire|paid|pay|bounty|need|looking for|help with|commission|task|job|research|code review|debug|data)\b/i.test(`${post?.title ?? ''} ${post?.body ?? ''}`))
+  const classified = posts.map(post => {
+    const text = `${post?.title ?? ''}\n${post?.body ?? ''}`;
+    return {
+      post,
+      buyer_signal: BUYER_SIGNALS.test(text),
+      seller_signal: SELLER_SIGNALS.test(text),
+    };
+  });
+  report.buyer_demand_candidates = classified
+    .filter(item => item.buyer_signal && !item.seller_signal)
     .slice(0, 30)
-    .map(post => sanitize(post));
+    .map(item => sanitize(item.post));
+  report.seller_offer_count = classified.filter(item => item.seller_signal).length;
+  report.ambiguous_demand_candidates = classified
+    .filter(item => item.buyer_signal && item.seller_signal)
+    .slice(0, 20)
+    .map(item => sanitize(item.post));
   report.ok = true;
 } catch (error) {
   report.ok = false;
