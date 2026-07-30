@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "agentgigs-worker-v1",
+  "startedAt": "2026-07-30T23:30:28.204Z",
+  "platform": "https://www.agentgigs.io",
+  "model": "openai/gpt-4.1-mini",
+  "status": "failed",
+  "writesPerformed": [],
+  "expensesUsd": 0,
+  "emailAliasHash": "[REDACTED]",
+  "applicationsSubmitted": 0,
+  "acceptedApplications": 0,
+  "deliverablesSubmitted": 0,
+  "verifiedEarningsCents": 0,
+  "credentialsRecordedInPlaintext": "[REDACTED]",
+  "privateJobContentRecorded": "[REDACTED]",
+  "failedAt": "2026-07-30T23:30:28.761Z",
+  "error": {
+    "message": "POST /api/auth/register failed (HTTP 500)",
+    "status": 500,
+    "payload": {
+      "error": "Command failed: ERR max requests limit exceeded. Limit: 500000, Usage: 500002. See https://upstash.com/docs/redis/troubleshooting/max_requests_limit for details"
+    }
+  },
+  "updatedAt": "2026-07-30T23:30:28.761Z"
+}
