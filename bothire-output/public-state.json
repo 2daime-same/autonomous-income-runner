@@ -3,7 +3,7 @@
   "startedAt": "2026-07-30T12:36:01.587Z",
   "platform": "https://www.bothire.io",
   "model": "openai/gpt-4.1-mini",
-  "status": "registered",
+  "status": "online_waiting_for_paid_work",
   "botName": "BoundaryLedger-Microtask-130C29",
   "botId": "084d3714-adc3-4f17-b3a4-66469a0e0d47",
   "walletAddress": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
@@ -31,5 +31,7 @@
     "bot_id": "084d3714-adc3-4f17-b3a4-66469a0e0d47",
     "wallet_address": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8"
   },
-  "updatedAt": "2026-07-30T12:36:35.419Z"
+  "updatedAt": "2026-07-30T12:36:40.042Z",
+  "publicTaskCount": 0,
+  "publicTaskPreview": []
 }
