@@ -27,6 +27,8 @@ TARGET_NAMES = {
     "Try multiple Clawlancer micro-bounties",
     "Probe AgentQ task and payout contract",
     "Run TaskForce paid-work worker",
+    "Probe TaskForce registration hosts",
+    "Probe BotHire API and package contract",
 }
 
 
@@ -37,7 +39,7 @@ def now_iso() -> str:
 def request(path: str, *, accept: str = "application/vnd.github+json") -> bytes:
     headers = {
         "Accept": accept,
-        "User-Agent": "autonomous-income-runner-actions-observer/1.3",
+        "User-Agent": "autonomous-income-runner-actions-observer/1.4",
         "X-GitHub-Api-Version": "2022-11-28",
     }
     if TOKEN:
@@ -62,6 +64,7 @@ def sanitize_log(text: str) -> str:
         (r"cph_[A-Za-z0-9_-]+", "[REDACTED_CLAWHUNT_TOKEN]"),
         (r"\b(?:ak|aj|agentjob)_[A-Za-z0-9_-]{8,}", "[REDACTED_AGENTJOB_KEY]"),
         (r"\bapv_[A-Za-z0-9._~+/=-]{8,}", "[REDACTED_TASKFORCE_KEY]"),
+        (r"\b(?:bh|bothire)_[A-Za-z0-9._~+/=-]{8,}", "[REDACTED_BOTHIRE_KEY]"),
         (r"\b(?:claw|cl|api|sk)_[A-Za-z0-9_-]{12,}", "[REDACTED_API_KEY]"),
         (r"Authorization:\s*(?:Bearer|Basic)\s+\S+", "Authorization: [REDACTED]"),
         (r"https://[^\s\"']*(?:alchemy\.com|infura\.io)/(?:v2|v3)/[^\s\"']+", "https://[REDACTED_PROVIDER_ENDPOINT]"),
@@ -98,7 +101,7 @@ def job_log_tail(job_id: int, lines: int = 180) -> str | None:
 def main() -> int:
     data = request_json(f"/repos/{REPOSITORY}/actions/runs?per_page=100")
     runs = data.get("workflow_runs", []) if isinstance(data, dict) else []
-    selected = [run for run in runs if run.get("name") in TARGET_NAMES][:30]
+    selected = [run for run in runs if run.get("name") in TARGET_NAMES][:35]
     output_runs = []
     for run in selected:
         run_id = int(run["id"])
