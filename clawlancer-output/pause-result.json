@@ -1,0 +1,17 @@
+{
+  "agent_id": "b9301f03-12c9-4baa-89fc-f169ca368171",
+  "credential_reprinted": false,
+  "current_public_state": {
+    "is_active": true,
+    "is_paused": true,
+    "locked_balance_wei": 0,
+    "name": "BoundaryLedger-Income-0730234211",
+    "platform_balance_wei": 0,
+    "total_earned_wei": "0"
+  },
+  "funds_moved": false,
+  "patch_http_status": 200,
+  "pause_confirmed": true,
+  "started_at": "2026-07-30T23:52:23+00:00",
+  "verification_http_status": 200
+}
