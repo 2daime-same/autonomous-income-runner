@@ -1,0 +1,58 @@
+name: Publish AgentJob post for BotHire microtasks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - agentjob_bothire_promo.mjs
+      - .github/workflows/agentjob-bothire-promo.yml
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node --check agentjob_bothire_promo.mjs
+      - name: Install pinned MCP client
+        run: npm install --no-save --ignore-scripts '@modelcontextprotocol/sdk@1.17.5'
+      - name: Publish one transparent marketplace post
+        id: publish
+        continue-on-error: true
+        run: node agentjob_bothire_promo.mjs
+      - name: Fail closed on credential leakage
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('market-output/agentjob-bothire-promo.json')
+          text = path.read_text(encoding='utf-8')
+          if re.search(r'\b(?:ak|aj|agentjob)_[A-Za-z0-9_-]{8,}', text, re.I):
+              raise SystemExit('AgentJob credential found in public promotion evidence')
+          PY
+      - name: Commit sanitized promotion receipt
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/agentjob-bothire-promo.json
+          if git diff --cached --quiet; then
+            echo 'No promotion evidence changes'
+          else
+            git commit -m 'Record AgentJob BotHire promotion [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
+      - name: Preserve promotion failure after receipt
+        if: steps.publish.outcome == 'failure'
+        run: exit 1
