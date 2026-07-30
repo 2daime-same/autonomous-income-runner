@@ -1,0 +1,76 @@
+name: Run TaskForce paid-work worker
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskforce_worker.mjs
+      - .github/workflows/taskforce-worker.yml
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: taskforce-paid-work
+  cancel-in-progress: false
+
+jobs:
+  work:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate source and encryption certificate
+        run: |
+          set -euo pipefail
+          node --check taskforce_worker.mjs
+          openssl x509 -in keys/superteam-state-public.crt -noout -subject -fingerprint -sha256
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+
+      - name: Register, verify, find paid tasks, apply, deliver, and verify income
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MAX_RUNTIME_MINUTES: '335'
+          TASKFORCE_MODEL: openai/gpt-4.1-mini
+        run: node taskforce_worker.mjs
+
+      - name: Encrypt or remove every private-state residue
+        if: always()
+        run: |
+          set -euo pipefail
+          find /tmp -maxdepth 1 -type f -name 'taskforce-private*' -delete || true
+          test ! -e /tmp/taskforce-private.json
+
+      - name: Fail closed on credential-like public output
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          for path in [Path('taskforce-output/public-state.json'), Path('taskforce-output/applied-task-ids.json')]:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding='utf-8')
+              checks = {
+                  'API key': re.compile(r'\bapv_[A-Za-z0-9._~+/=-]{8,}\b'),
+                  'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+                  'unredacted secret property': re.compile(r'(?i)"(?:apiKey|api_key|token|secret|authorization|privateKey|private_key)"\s*:\s*"(?!\[REDACTED\])'),
+              }
+              for name, pattern in checks.items():
+                  if pattern.search(text):
+                      raise SystemExit(f'{name} found in public TaskForce evidence: {path}')
+          PY
