@@ -1,0 +1,6 @@
+{
+  "generated_at": "2026-07-30T06:07:05.234Z",
+  "operation": "paid-profile-patch",
+  "success": false,
+  "error": "Idempotent credential replay failed (HTTP 201)"
+}
