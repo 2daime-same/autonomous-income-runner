@@ -302,16 +302,6 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 918,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix first-depositor price manipulation in LiquidityPool",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/918"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -415,23 +405,33 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 3,
-      "repo": "theselfish/SlopStation13",
-      "title": "[BOUNTY][$67] Add the Tung Tung Tung Sahur antagonist.",
-      "url": "https://github.com/theselfish/SlopStation13/issues/3"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
         "unrecognized platform on a repository younger than 90 days"
       ],
       "issue_number": 11398,
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Automate Bug Detection and Reviews",
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 1,
+      "repo": "UnsafeLabs/RFC-5322",
+      "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+      "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 918,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix first-depositor price manipulation in LiquidityPool",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/918"
     },
     {
       "flags": [
@@ -443,6 +443,26 @@
       "repo": "theselfish/SlopStation13",
       "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
       "url": "https://github.com/theselfish/SlopStation13/issues/4"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 51468,
+      "repo": "tenstorrent/tt-metal",
+      "title": "`ttnn.pow(0, p)` returns `2^(-127p)` instead of `0` for every `p` in `(0, 1)` — the zero-base special case was written for negative exponents only",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/51468"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 758,
+      "repo": "PrimeIntellect-ai/community-environments",
+      "title": "Queue measurement: 52 open PRs are green on tests/test_envs.py and unmerged — and what that green does not establish",
+      "url": "https://github.com/PrimeIntellect-ai/community-environments/issues/758"
     },
     {
       "flags": [
@@ -461,17 +481,6 @@
         "existing reward links indicate the task may already be claimed",
         "more than two competing attempt users"
       ],
-      "issue_number": 80,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Pixel Art Creation with high Creative Thinking",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/80"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
-      ],
       "issue_number": 743,
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Low Handing Fruit Automation",
@@ -483,10 +492,10 @@
         "existing reward links indicate the task may already be claimed",
         "more than two competing attempt users"
       ],
-      "issue_number": 29,
+      "issue_number": 80,
       "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Implement a fully functional Admin Panel",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/29"
+      "title": "Pixel Art Creation with high Creative Thinking",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/80"
     },
     {
       "flags": [
@@ -527,40 +536,6 @@
       "repo": "devpool-directory/devpool-directory",
       "title": "Governance Token emissions to `ubq.eth` new strategy",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5846,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Security monitoring",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5846"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "issue is already assigned",
-        "no direct reward evidence",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1435,
-      "repo": "zhangjiayang6835-cyber/ai-research",
-      "title": "[BUG] Server-Side Prototype Pollution to RCE $200",
-      "url": "https://github.com/zhangjiayang6835-cyber/ai-research/issues/1435"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "issue is already assigned",
-        "no direct reward evidence",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1437,
-      "repo": "zhangjiayang6835-cyber/ai-research",
-      "title": "[BUG] Python Pickle Deserialization RCE via Cache $200",
-      "url": "https://github.com/zhangjiayang6835-cyber/ai-research/issues/1437"
     },
     {
       "flags": [
@@ -634,13 +609,13 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
       ],
-      "issue_number": 5017,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Automatic Transfer",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5017"
+      "issue_number": 696,
+      "repo": "RevoraOrg/Revora-Backend",
+      "title": "AML monitoring: structuring-detection rule with amount-clustering heuristic",
+      "url": "https://github.com/RevoraOrg/Revora-Backend/issues/696"
     },
     {
       "flags": [
@@ -667,6 +642,16 @@
     },
     {
       "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 377,
+      "repo": "ZcashCommunityGrants/zcashcommunitygrants",
+      "title": "Grant Application - Open Light Nodes",
+      "url": "https://github.com/ZcashCommunityGrants/zcashcommunitygrants/issues/377"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -675,11 +660,22 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "more than two competing attempt users",
+        "no direct reward evidence"
+      ],
+      "issue_number": 2853,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Job validation should reject inverted budget ranges",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2853"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-07-30T08:50:59+00:00",
+  "generated_at": "2026-07-30T14:33:18+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-07-30T08:50:59+00:00"
+  "source_generated_at": "2026-07-30T14:33:18+00:00"
 }
