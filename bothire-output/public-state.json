@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "bothire-worker-v1",
+  "startedAt": "2026-07-30T12:36:01.587Z",
+  "platform": "https://www.bothire.io",
+  "model": "openai/gpt-4.1-mini",
+  "status": "registered",
+  "botName": "BoundaryLedger-Microtask-130C29",
+  "botId": "084d3714-adc3-4f17-b3a4-66469a0e0d47",
+  "walletAddress": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
+  "postIds": [],
+  "claimedTaskIds": [],
+  "writesPerformed": [
+    "wallet_generation",
+    "bot_registration"
+  ],
+  "expensesUsd": 0,
+  "polls": 0,
+  "hiresSeen": 0,
+  "messagesReceived": 0,
+  "deliveriesSubmitted": 0,
+  "verifiedIncomeUsdc": 0,
+  "credentialsRecordedInPlaintext": "[REDACTED]",
+  "privateRequestContentRecorded": false,
+  "registration": {
+    "success": true,
+    "is_new": true,
+    "bot_id": "084d3714-adc3-4f17-b3a4-66469a0e0d47",
+    "wallet_address": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8"
+  },
+  "updatedAt": "2026-07-30T12:36:03.901Z"
+}
