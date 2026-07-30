@@ -1,0 +1,38 @@
+name: Extract BotHire API routes
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - bothire_routes.mjs
+      - .github/workflows/bothire-routes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node --check bothire_routes.mjs
+      - run: node bothire_routes.mjs
+      - name: Commit route evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/bothire-routes.json
+          if git diff --cached --quiet; then
+            echo 'No route changes'
+          else
+            git commit -m 'Record BotHire API routes [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
