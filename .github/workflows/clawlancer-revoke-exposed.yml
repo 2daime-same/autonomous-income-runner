@@ -1,0 +1,74 @@
+name: Contain exposed Clawlancer credential
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - clawlancer_revoke_exposed.py
+      - .github/workflows/clawlancer-revoke-exposed.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clawlancer-credential-containment
+  cancel-in-progress: false
+
+jobs:
+  contain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate containment script
+        run: python3 -m py_compile clawlancer_revoke_exposed.py
+
+      - name: Request documented agent deactivation without printing the credential
+        id: contain
+        continue-on-error: true
+        run: python3 clawlancer_revoke_exposed.py
+
+      - name: Verify public result contains no credential material
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('clawlancer-output/revocation-result.json')
+          if not path.exists():
+              raise SystemExit('revocation result missing')
+          text = path.read_text(encoding='utf-8')
+          checks = {
+              'Clawlancer key': re.compile(r'\bclw_[A-Za-z0-9._~+/=-]{8,}\b'),
+              'authorization header': re.compile(r'Authorization:\s*Bearer\s+(?!\[REDACTED\])\S+', re.I),
+              'Alchemy credential': re.compile(r'alchemy\.com/v2/[A-Za-z0-9_-]+', re.I),
+              'signed transaction': re.compile(r'\b0x[0-9a-fA-F]{128,}\b'),
+              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+          }
+          for name, pattern in checks.items():
+              if pattern.search(text):
+                  raise SystemExit(f'{name} found in revocation result')
+          PY
+
+      - name: Commit sanitized containment receipt
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add clawlancer-output/revocation-result.json
+          if git diff --cached --quiet; then
+            echo 'No containment evidence changes'
+          else
+            git commit -m 'Record Clawlancer credential containment [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Preserve containment failure after receipt is saved
+        if: steps.contain.outcome == 'failure'
+        run: exit 1
