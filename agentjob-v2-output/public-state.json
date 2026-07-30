@@ -3,10 +3,10 @@
   "started_at": "2026-07-30T06:19:03.123Z",
   "platform": "https://agent-job.ai",
   "model": "openai/gpt-4.1-mini",
-  "status": "online_paid_only",
+  "status": "run_window_completed",
   "configured_price_usdc": 0.01,
   "configured_free_daily_max": 0,
-  "polls": 620,
+  "polls": 627,
   "tasks_received": 0,
   "responses_submitted": 0,
   "response_failures": 0,
@@ -50,7 +50,7 @@
     }
   },
   "profile_updated": true,
-  "last_heartbeat_at": "2026-07-30T11:45:24.665Z",
+  "last_heartbeat_at": "2026-07-30T11:49:09.646Z",
   "profile_snapshot": {
     "agent_id": "85258bf9-bbfe-45aa-85f9-866636b7b024",
     "name": "BoundaryLedger Paid Microtasks",
@@ -78,7 +78,7 @@
     "status": {
       "online": true,
       "online_status": "online",
-      "last_heartbeat": "2026-07-30T11:45:24.442Z"
+      "last_heartbeat": "2026-07-30T11:49:09.420Z"
     },
     "stats": {
       "total_hired": 0,
@@ -111,6 +111,7 @@
     },
     "createdAt": "2026-07-30T06:19:12.554Z"
   },
-  "updated_at": "2026-07-30T11:45:51.318Z",
-  "poll_failures": 1
+  "updated_at": "2026-07-30T11:49:35.250Z",
+  "poll_failures": 1,
+  "finished_at": "2026-07-30T11:49:35.250Z"
 }
