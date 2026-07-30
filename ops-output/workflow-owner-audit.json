@@ -1,0 +1,900 @@
+{
+  "generated_at": "2026-07-30T23:59:30+00:00",
+  "repository": "2daime-same/autonomous-income-runner",
+  "stale_owner_reference_count": 63,
+  "stale_owner_workflow_count": 63,
+  "workflow_count": 72,
+  "workflows": [
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/actions-observer.yml",
+      "stale_owner_lines": [
+        {
+          "line": 26,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/actions-status-probe.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agent-api.yml",
+      "stale_owner_lines": [
+        {
+          "line": 23,
+          "text": "if: github.repository_owner == 'nexaworks-jp'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agenthire-autonomous-register.yml",
+      "stale_owner_lines": [
+        {
+          "line": 21,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agentjob-bothire-promo.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agentjob-deep-demand.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agentjob-live-worker.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agentjob-paid-worker-v2.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agentjob-profile-patch.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/agentq-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/algora-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/askuno-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/benchmark-fkill-25.yml",
+      "stale_owner_lines": [
+        {
+          "line": 21,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/bothire-demand.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/bothire-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/bothire-public-verify.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/bothire-routes.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/bothire-task-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/bothire-worker.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/bountyhub-selector.yml",
+      "stale_owner_lines": [
+        {
+          "line": 26,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/callboard-public-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawgig.yml",
+      "stale_owner_lines": [
+        {
+          "line": 25,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawhunt-discovery.yml",
+      "stale_owner_lines": [
+        {
+          "line": 21,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawlancer-contact-discovery.yml",
+      "stale_owner_lines": [
+        {
+          "line": 15,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawlancer-earn-general.yml",
+      "stale_owner_lines": [
+        {
+          "line": 21,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": false,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawlancer-earn.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawlancer-multi-earn.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawlancer-pause-exposed.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawlancer-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/clawlancer-revoke-exposed.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/compact-bounty-shortlist.yml",
+      "stale_owner_lines": [
+        {
+          "line": 23,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/compact-github-bounties.yml",
+      "stale_owner_lines": [
+        {
+          "line": 23,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/diagnose-fkill-25.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/export-encrypted-agentjob-state.yml",
+      "stale_owner_lines": [
+        {
+          "line": 15,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/extract-agentjob-contract.yml",
+      "stale_owner_lines": [
+        {
+          "line": 21,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/github-bounty-radar.yml",
+      "stale_owner_lines": [
+        {
+          "line": 27,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/income-recovery.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/inspect-clawlancer-mcp.yml",
+      "stale_owner_lines": [
+        {
+          "line": 19,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/inspect-moltjobs-open.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/inventory-path-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/market-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 24,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/mergefund-frontend-contract.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/mergefund-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/mergefund-query-variants.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/molt-market-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/moltjobs-schema-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/moltjobs-signup.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/new-agent-market-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/openjobs-actionable.yml",
+      "stale_owner_lines": [
+        {
+          "line": 17,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/openjobs-compact.yml",
+      "stale_owner_lines": [
+        {
+          "line": 21,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/openjobs-mini.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/openjobs-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/probe-agentjob-mcp.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/probe-agentjob-package.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/probe-agentjob-posts.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/probe-clawlancer-api.yml",
+      "stale_owner_lines": [
+        {
+          "line": 22,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/probe-github-models.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": false,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/probe.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/public-bounty-sites.yml",
+      "stale_owner_lines": [
+        {
+          "line": 26,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/rekey-agentjob-promo.yml",
+      "stale_owner_lines": [
+        {
+          "line": 15,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": false,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/repair-bothire-worker.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/select-issuehunt-candidates.yml",
+      "stale_owner_lines": [
+        {
+          "line": 17,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/select-molt-opportunities.yml",
+      "stale_owner_lines": [
+        {
+          "line": 23,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/solana-balance.yml",
+      "stale_owner_lines": [
+        {
+          "line": 23,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/taskforce-register-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/taskforce-worker.yml",
+      "stale_owner_lines": [
+        {
+          "line": 23,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/test-self-secret.yml",
+      "stale_owner_lines": [
+        {
+          "line": 16,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": true,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/trusted-bounty-radar.yml",
+      "stale_owner_lines": [
+        {
+          "line": 27,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/validate-fkill-25.yml",
+      "stale_owner_lines": [],
+      "stale_owner_reference_count": 0
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/workflow-owner-audit.yml",
+      "stale_owner_lines": [
+        {
+          "line": 37,
+          "text": "if 'nexaworks-jp' in line"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/worq-autonomous-register.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    },
+    {
+      "has_push": true,
+      "has_schedule": false,
+      "has_workflow_dispatch": true,
+      "path": ".github/workflows/worq-probe.yml",
+      "stale_owner_lines": [
+        {
+          "line": 20,
+          "text": "if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'"
+        }
+      ],
+      "stale_owner_reference_count": 1
+    }
+  ]
+}
