@@ -16,6 +16,13 @@ REGISTRY = "https://registry.npmjs.org/agentjob/latest"
 OUTPUT = Path(os.environ.get("AGENTJOB_PROBE_OUTPUT", "market-output/agentjob-package.json"))
 MAX_TARBALL = 15_000_000
 MAX_FILE = 1_000_000
+SELECTED_SOURCES = {
+    "package/bin/agentjob.js",
+    "package/dist/src/index.js",
+    "package/dist/auto-reply.js",
+    "package/dist/heartbeat.js",
+    "package/README.md",
+}
 NEEDLES = (
     "agent-job.ai",
     "/api/",
@@ -30,7 +37,7 @@ NEEDLES = (
     "withdraw",
     "task square",
 )
-SECRET_RE = re.compile(r"\b(?:aj|agentjob)_(?:live|test)_[A-Za-z0-9_-]+", re.I)
+SECRET_RE = re.compile(r"\b(?:ak|aj|agentjob)_(?:live|test)?[A-Za-z0-9_-]{8,}", re.I)
 
 
 def now_iso() -> str:
@@ -38,7 +45,7 @@ def now_iso() -> str:
 
 
 def fetch_json(url: str) -> Mapping[str, Any]:
-    request = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "nexaworks-agentjob-probe/1.0"})
+    request = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "nexaworks-agentjob-probe/1.1"})
     with urllib.request.urlopen(request, timeout=45) as response:
         value = json.loads(response.read(3_000_000).decode("utf-8"))
     if not isinstance(value, Mapping):
@@ -47,7 +54,7 @@ def fetch_json(url: str) -> Mapping[str, Any]:
 
 
 def fetch_bytes(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": "nexaworks-agentjob-probe/1.0"})
+    request = urllib.request.Request(url, headers={"User-Agent": "nexaworks-agentjob-probe/1.1"})
     with urllib.request.urlopen(request, timeout=60) as response:
         data = response.read(MAX_TARBALL + 1)
     if len(data) > MAX_TARBALL:
@@ -74,6 +81,7 @@ def main() -> int:
 
     files: list[dict[str, Any]] = []
     matches: list[dict[str, Any]] = []
+    selected_sources: dict[str, str] = {}
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as archive:
         for member in archive.getmembers():
             if not member.isfile() or member.size > MAX_FILE:
@@ -89,6 +97,9 @@ def main() -> int:
             files.append({"path": member.name, "size": member.size})
             if text is None:
                 continue
+            sanitized_text = SECRET_RE.sub("[REDACTED]", text)
+            if member.name in SELECTED_SOURCES:
+                selected_sources[member.name] = sanitized_text
             lower = text.lower()
             for needle in NEEDLES:
                 start = 0
@@ -105,8 +116,6 @@ def main() -> int:
                         break
                 if len(matches) >= 250:
                     break
-            if len(matches) >= 250:
-                break
 
     result = {
         "generated_at": now_iso(),
@@ -121,6 +130,7 @@ def main() -> int:
         "tarball_bytes": len(data),
         "inspected_file_count": len(files),
         "files": files[:300],
+        "selected_sources": selected_sources,
         "matches": matches,
         "execution_performed": False,
     }
@@ -128,7 +138,7 @@ def main() -> int:
     temporary = OUTPUT.with_suffix(OUTPUT.suffix + ".tmp")
     temporary.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     os.replace(temporary, OUTPUT)
-    print(json.dumps({"ok": True, "version": meta.get("version"), "matches": len(matches)}))
+    print(json.dumps({"ok": True, "version": meta.get("version"), "matches": len(matches), "sources": len(selected_sources)}))
     return 0
 
 
