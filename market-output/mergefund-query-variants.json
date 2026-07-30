@@ -1,0 +1,673 @@
+{
+  "generated_at": "2026-07-30T10:59:10+00:00",
+  "base": "https://app.mergefund.org/api/bounties",
+  "writes_performed": [],
+  "results": [
+    {
+      "query": {},
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "page": 1,
+        "limit": 1
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?page=1&limit=1",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 1,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 1,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "page": 1,
+        "limit": 2
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?page=1&limit=2",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 2,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 2,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "page": 1,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?page=1&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "page": 0,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?page=0&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "offset": 0,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?offset=0&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "status": "funded"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?status=funded",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "status": "funded",
+        "page": 1,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?status=funded&page=1&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "status": "all",
+        "page": 1,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?status=all&page=1&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "status": "open,funded",
+        "page": 1,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?status=open%2Cfunded&page=1&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "sort": "newest",
+        "page": 1,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?sort=newest&page=1&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "sort": "oldest",
+        "page": 1,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?sort=oldest&page=1&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "oldest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "sort": "reward_desc",
+        "page": 1,
+        "limit": 50
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?sort=reward_desc&page=1&limit=50",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "reward_desc"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "search": "Gus"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?search=Gus",
+        "payload": {
+          "bounties": [],
+          "total": 0,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "Gus",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 0,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "search": "Bonded"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?search=Bonded",
+        "payload": {
+          "bounties": [],
+          "total": 0,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "Bonded",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 0,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "q": "Gus"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?q=Gus",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "query": "Gus"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?query=Gus",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "funded": "true"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?funded=true",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "isFunded": "true"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?isFunded=true",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "include": "funded"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?include=funded",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    },
+    {
+      "query": {
+        "includeClosed": "true"
+      },
+      "result": {
+        "ok": true,
+        "status": 200,
+        "url": "https://app.mergefund.org/api/bounties?includeClosed=true",
+        "payload": {
+          "bounties": [],
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "filters": {
+            "languages": [],
+            "difficulties": [],
+            "minAmount": 0,
+            "maxAmount": 0,
+            "search": "",
+            "sort": "newest"
+          }
+        },
+        "summary": {
+          "total": 2,
+          "page": 1,
+          "limit": 50,
+          "bounty_count": 0,
+          "titles": []
+        }
+      }
+    }
+  ]
+}
