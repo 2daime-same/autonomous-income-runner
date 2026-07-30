@@ -1,0 +1,133 @@
+name: Resume autonomous income workers
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/income-recovery.yml
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: autonomous-income-recovery
+  cancel-in-progress: false
+
+jobs:
+  agentgigs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate AgentGigs worker and encryption certificate
+        run: |
+          set -euo pipefail
+          node --check agentgigs_worker.mjs
+          openssl x509             -in keys/superteam-state-public.crt             -noout -fingerprint -sha256
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+
+      - name: Register, apply to suitable paid jobs, deliver accepted work, and verify earnings
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          AGENTGIGS_MODEL: openai/gpt-4.1-mini
+          MAX_RUNTIME_MINUTES: '335'
+        run: node agentgigs_worker.mjs
+
+      - name: Fail closed on public credential leakage
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          paths = [
+              Path("agentgigs-output/public-state.json"),
+              Path("agentgigs-output/applied-job-hashes.json"),
+          ]
+          patterns = {
+              "AgentGigs key": re.compile(r"\bage_[A-Za-z0-9._~+/=-]{8,}\b"),
+              "JWT": re.compile(r"\beyJ[A-Za-z0-9._-]{20,}\b"),
+              "private key": re.compile(r"\b0x[0-9a-fA-F]{64}\b"),
+              "unredacted credential field": re.compile(
+                  r'(?i)"(?:api.?key|authorization|secret|token|private|credential|password|cookie|email)"\s*:\s*"(?!\[REDACTED\])'
+              ),
+          }
+          for path in paths:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding="utf-8")
+              for name, pattern in patterns.items():
+                  if pattern.search(text):
+                      raise SystemExit(f"{name} found in public output: {path}")
+          PY
+
+  bothire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate BotHire worker and encryption certificate
+        run: |
+          set -euo pipefail
+          node --check bothire_worker.mjs
+          openssl x509             -in keys/superteam-state-public.crt             -noout -fingerprint -sha256
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+
+      - name: Publish paid services, claim suitable tasks, deliver requests, and verify USDC
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BOTHIRE_MODEL: openai/gpt-4.1-mini
+          MAX_RUNTIME_MINUTES: '335'
+        run: node bothire_worker.mjs
+
+      - name: Remove private plaintext residue
+        if: always()
+        run: |
+          find /tmp -maxdepth 1 -type f             \( -name 'bothire-private*' -o -name 'agentgigs-private*' \)             -delete || true
+
+      - name: Fail closed on public credential leakage
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          paths = [
+              Path("bothire-output/public-state.json"),
+              Path("bothire-output/handled-message-ids.json"),
+          ]
+          patterns = {
+              "BotHire key": re.compile(r"\bbh_[A-Za-z0-9._~+/=-]{8,}\b"),
+              "private key": re.compile(r"\b0x[0-9a-fA-F]{64}\b"),
+              "unredacted credential field": re.compile(
+                  r'(?i)"(?:api.?key|authorization|secret|token|private.?key|mnemonic|seed|password|cookie)"\s*:\s*"(?!\[REDACTED\])'
+              ),
+          }
+          for path in paths:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding="utf-8")
+              for name, pattern in patterns.items():
+                  if pattern.search(text):
+                      raise SystemExit(f"{name} found in public output: {path}")
+          PY
