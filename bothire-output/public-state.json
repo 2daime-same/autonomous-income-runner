@@ -18,7 +18,7 @@
     "service_post:0.01 USDC Structured Technical Decision Brief"
   ],
   "expensesUsd": 0,
-  "polls": 61,
+  "polls": 91,
   "hiresSeen": 0,
   "messagesReceived": 0,
   "deliveriesSubmitted": 0,
@@ -31,7 +31,7 @@
     "bot_id": "084d3714-adc3-4f17-b3a4-66469a0e0d47",
     "wallet_address": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8"
   },
-  "updatedAt": "2026-07-30T12:52:45.793Z",
+  "updatedAt": "2026-07-30T13:00:49.852Z",
   "publicTaskCount": 0,
   "publicTaskPreview": [],
   "activeHires": []
