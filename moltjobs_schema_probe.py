@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Probe public MoltJobs API schema endpoints without authentication or mutation."""
+"""Extract MoltJobs public API contracts relevant to earning, without mutation."""
 from __future__ import annotations
 
 import json
@@ -10,72 +10,101 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping
 
-BASE = "https://api.moltjobs.io"
-CANDIDATES = [
-    "/docs-json",
-    "/openapi.json",
-    "/swagger.json",
-    "/api-json",
-    "/v1/docs-json",
-    "/v1/openapi.json",
-    "/v1/swagger.json",
-    "/v1/api-json",
-]
+URL = "https://api.moltjobs.io/docs-json"
 OUTPUT = Path(os.environ.get("MOLTJOBS_SCHEMA_OUTPUT", "moltjobs-output/schema-probe.json"))
+TARGET_ROUTES = {
+    "/v1/agent-signups",
+    "/v1/agent-signups/claim",
+    "/v1/agents/{id}/api-keys",
+    "/v1/agents/{id}/heartbeat",
+    "/v1/jobs",
+    "/v1/jobs/{id}",
+    "/v1/public/jobs/{id}",
+    "/v1/jobs/{jobId}/bids",
+    "/v1/bids/allowance/{agentId}",
+    "/v1/agents/{agentId}/wallet",
+    "/v1/agents/{agentId}/wallet/provision",
+    "/v1/agents/{agentId}/wallet/transactions",
+}
 
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
-def fetch(path: str) -> dict[str, Any]:
-    url = BASE + path
+def get_json() -> Mapping[str, Any]:
     request = urllib.request.Request(
-        url,
-        headers={"Accept": "application/json", "User-Agent": "nexaworks-schema-probe/1.0"},
+        URL,
+        headers={"Accept": "application/json", "User-Agent": "nexaworks-moltjobs-contract-probe/2.0"},
     )
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
-            raw = response.read(4_000_000).decode("utf-8", errors="replace")
-            content_type = response.headers.get("content-type", "")
-            try:
-                payload: Any = json.loads(raw)
-            except json.JSONDecodeError:
-                payload = None
-            result: dict[str, Any] = {
-                "url": url,
-                "status": response.status,
-                "content_type": content_type,
-                "bytes": len(raw.encode("utf-8")),
-                "json": isinstance(payload, (dict, list)),
-            }
-            if isinstance(payload, Mapping):
-                paths = payload.get("paths")
-                if isinstance(paths, Mapping):
-                    relevant = {}
-                    for route, methods in paths.items():
-                        lowered = str(route).lower()
-                        if any(marker in lowered for marker in ("signup", "claim", "agent", "bid", "job")):
-                            relevant[str(route)] = methods
-                    result["relevant_paths"] = relevant
-                    result["path_count"] = len(paths)
-                else:
-                    result["top_level_keys"] = sorted(str(key) for key in payload.keys())[:100]
-            else:
-                result["text_preview"] = raw[:500]
-            return result
+            payload = json.loads(response.read(5_000_000).decode("utf-8"))
     except urllib.error.HTTPError as error:
-        raw = error.read(2000).decode("utf-8", errors="replace")
-        return {"url": url, "status": error.code, "error_preview": raw[:500]}
-    except Exception as error:
-        return {"url": url, "error": f"{type(error).__name__}: {error}"}
+        detail = error.read(2000).decode("utf-8", errors="replace")
+        raise RuntimeError(f"HTTP {error.code}: {detail}") from error
+    if not isinstance(payload, Mapping):
+        raise RuntimeError("Unexpected OpenAPI response")
+    return payload
+
+
+def schema_name(ref: str) -> str | None:
+    prefix = "#/components/schemas/"
+    return ref[len(prefix):] if ref.startswith(prefix) else None
+
+
+def referenced_schema_names(value: Any) -> set[str]:
+    found: set[str] = set()
+    if isinstance(value, Mapping):
+        ref = value.get("$ref")
+        if isinstance(ref, str):
+            name = schema_name(ref)
+            if name:
+                found.add(name)
+        for item in value.values():
+            found.update(referenced_schema_names(item))
+    elif isinstance(value, list):
+        for item in value:
+            found.update(referenced_schema_names(item))
+    return found
 
 
 def main() -> int:
-    output = {"generated_at": now_iso(), "probes": [fetch(path) for path in CANDIDATES]}
+    payload = get_json()
+    paths = payload.get("paths")
+    components = payload.get("components")
+    schemas = components.get("schemas") if isinstance(components, Mapping) else None
+    if not isinstance(paths, Mapping) or not isinstance(schemas, Mapping):
+        raise RuntimeError("OpenAPI paths/components missing")
+
+    selected_paths = {route: paths[route] for route in sorted(TARGET_ROUTES) if route in paths}
+    pending = referenced_schema_names(selected_paths)
+    selected_schemas: dict[str, Any] = {}
+    while pending:
+        name = pending.pop()
+        if name in selected_schemas:
+            continue
+        schema = schemas.get(name)
+        if schema is None:
+            continue
+        selected_schemas[name] = schema
+        pending.update(referenced_schema_names(schema) - selected_schemas.keys())
+
+    output = {
+        "generated_at": now_iso(),
+        "source": URL,
+        "source_info": payload.get("info"),
+        "security_schemes": components.get("securitySchemes") if isinstance(components, Mapping) else None,
+        "selected_paths": selected_paths,
+        "selected_schemas": {name: selected_schemas[name] for name in sorted(selected_schemas)},
+        "missing_target_routes": sorted(TARGET_ROUTES - selected_paths.keys()),
+        "writes_performed": [],
+    }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"ok": True, "output": str(OUTPUT)}))
+    temporary = OUTPUT.with_suffix(OUTPUT.suffix + ".tmp")
+    temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    os.replace(temporary, OUTPUT)
+    print(json.dumps({"ok": True, "paths": len(selected_paths), "schemas": len(selected_schemas)}))
     return 0
 
 
