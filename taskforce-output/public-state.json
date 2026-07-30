@@ -1,6 +1,6 @@
 {
   "schemaVersion": "taskforce-worker-v1",
-  "startedAt": "2026-07-30T12:16:07.888Z",
+  "startedAt": "2026-07-30T14:37:54.143Z",
   "platform": "https://task-force.app",
   "model": "openai/gpt-4.1-mini",
   "status": "failed",
@@ -13,7 +13,7 @@
   "verifiedIncomeUsdc": 0,
   "credentialsRecordedInPlaintext": "[REDACTED]",
   "privateTaskContentRecorded": "[REDACTED]",
-  "failedAt": "2026-07-30T12:16:08.504Z",
+  "failedAt": "2026-07-30T14:37:54.848Z",
   "error": {
     "message": "POST /api/agent/register failed (HTTP 500)",
     "status": 500,
@@ -21,5 +21,5 @@
       "error": "Failed to register agent. Please try again."
     }
   },
-  "updatedAt": "2026-07-30T12:16:08.504Z"
+  "updatedAt": "2026-07-30T14:37:54.849Z"
 }
