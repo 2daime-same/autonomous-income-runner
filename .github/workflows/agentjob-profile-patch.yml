@@ -1,0 +1,57 @@
+name: Apply paid AgentJob profile patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - agentjob_profile_patch.mjs
+      - .github/workflows/agentjob-profile-patch.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agentjob-profile-patch
+  cancel-in-progress: true
+
+jobs:
+  patch:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check agentjob_profile_patch.mjs
+      - name: Install pinned MCP client
+        run: |
+          set -euo pipefail
+          mkdir /tmp/agentjob-profile-deps
+          cd /tmp/agentjob-profile-deps
+          npm init -y >/dev/null
+          npm install --ignore-scripts --no-audit --no-fund @modelcontextprotocol/sdk@1.17.5 >/dev/null
+          ln -s /tmp/agentjob-profile-deps/node_modules "$GITHUB_WORKSPACE/node_modules"
+      - name: Remove free slots and add discoverability tags
+        env:
+          AGENTJOB_IDEMPOTENCY_KEY: 44673f19-f479-49d7-8a53-0601528f98af
+        run: node agentjob_profile_patch.mjs
+      - name: Commit sanitized profile receipt
+        if: always()
+        run: |
+          set -euo pipefail
+          test -f agentjob-output/profile-patch.json
+          if grep -E -n '\b(ak|aj|agentjob)_[A-Za-z0-9_-]{8,}' agentjob-output/profile-patch.json; then
+            echo 'Credential-shaped value found in profile receipt' >&2
+            exit 1
+          fi
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add agentjob-output/profile-patch.json
+          git commit -m 'Record paid AgentJob profile patch [skip ci]'
+          git pull --rebase origin main
+          git push
