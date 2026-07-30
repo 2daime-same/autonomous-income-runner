@@ -1,4 +1,5 @@
 import {writeFile, mkdir, rename} from 'node:fs/promises';
+import path from 'node:path';
 import process from 'node:process';
 import {Client} from '@modelcontextprotocol/sdk/client/index.js';
 import {StreamableHTTPClientTransport} from '@modelcontextprotocol/sdk/client/streamableHttp.js';
@@ -61,7 +62,7 @@ try {
   } catch {}
 }
 
-await mkdir(new URL('.', `file://${process.cwd()}/${output}`).pathname, {recursive: true}).catch(() => {});
+await mkdir(path.dirname(output), {recursive: true});
 const temporary = `${output}.tmp`;
 await writeFile(temporary, `${JSON.stringify(result, null, 2)}\n`, {mode: 0o600});
 await rename(temporary, output);
