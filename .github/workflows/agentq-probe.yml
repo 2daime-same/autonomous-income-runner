@@ -1,0 +1,60 @@
+name: Probe AgentQ task and payout contract
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - agentq_probe.py
+      - .github/workflows/agentq-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agentq-contract-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile probe
+        run: python3 -m py_compile agentq_probe.py
+
+      - name: Probe public AgentQ contract
+        run: python3 agentq_probe.py
+
+      - name: Fail closed on credential-like output
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('market-output/agentq-contract.json')
+          text = path.read_text(encoding='utf-8')
+          patterns = [
+              re.compile(r'(?i)"(?:api_key|apikey|token|secret|private_key|authorization)"\s*:\s*"(?!\[REDACTED\])'),
+              re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+          ]
+          for pattern in patterns:
+              if pattern.search(text):
+                  raise SystemExit('credential-like value found in public AgentQ evidence')
+          PY
+
+      - name: Commit sanitized evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/agentq-contract.json
+          if git diff --cached --quiet; then
+            echo 'No AgentQ evidence changes'
+          else
+            git commit -m 'Record AgentQ public contract [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
