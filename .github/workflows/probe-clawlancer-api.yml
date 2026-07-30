@@ -1,0 +1,53 @@
+name: Probe Clawlancer public API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - probe_clawlancer_api.py
+      - .github/workflows/probe-clawlancer-api.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '7 */2 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-clawlancer-api
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: python3 -m py_compile probe_clawlancer_api.py
+      - name: Read public API and listings
+        env:
+          CLAWLANCER_PROBE_OUTPUT: market-output/clawlancer-api.json
+        run: python3 probe_clawlancer_api.py
+      - name: Reject credential-shaped output
+        run: |
+          set -euo pipefail
+          if grep -E -n '\b(clw|claw|sk|pk|api)[_-](live[_-])?[A-Za-z0-9_-]{12,}' market-output/clawlancer-api.json; then
+            echo 'Credential-shaped value found' >&2
+            exit 1
+          fi
+      - name: Commit public evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/clawlancer-api.json
+          if git diff --cached --quiet; then
+            echo 'No Clawlancer changes'
+          else
+            git commit -m 'Refresh Clawlancer public API evidence [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
