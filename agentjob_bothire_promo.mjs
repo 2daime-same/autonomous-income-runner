@@ -30,6 +30,39 @@ function sanitize(value) {
   return value;
 }
 
+function findString(value, wanted) {
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const found = findString(item, wanted);
+      if (found) return found;
+    }
+    return null;
+  }
+  if (!value || typeof value !== 'object') return null;
+  for (const [key, item] of Object.entries(value)) {
+    const normalized = key.replace(/[-_]/g, '').toLowerCase();
+    if (wanted.has(normalized) && typeof item === 'string' && item.trim()) return item.trim();
+    const found = findString(item, wanted);
+    if (found) return found;
+  }
+  return null;
+}
+
+function shape(value, depth = 0) {
+  if (depth > 4) return typeof value;
+  if (Array.isArray(value)) return {type: 'array', length: value.length, item: value.length ? shape(value[0], depth + 1) : null};
+  if (value && typeof value === 'object') {
+    const output = {};
+    for (const [key, item] of Object.entries(value)) {
+      output[key] = /api.?key|authorization|token|secret|private|credential|password|cookie|email|otp/i.test(key)
+        ? '[REDACTED_FIELD]'
+        : shape(item, depth + 1);
+    }
+    return output;
+  }
+  return typeof value;
+}
+
 function parse(result) {
   const text = result?.content?.find(item => item?.type === 'text' && typeof item.text === 'string')?.text;
   if (!text) return null;
@@ -53,14 +86,18 @@ try {
     signal: AbortSignal.timeout(45_000),
   });
   const payload = await response.json().catch(() => ({}));
-  const data = payload?.data ?? payload;
-  if (!response.ok || !data?.apiKey) throw new Error(`AgentJob credential replay failed (HTTP ${response.status})`);
-  report.agentId = data.agentId;
-  report.walletAddress = data.walletAddress;
+  report.registrationHttpStatus = response.status;
+  report.registrationShape = shape(payload);
+  const apiKey = findString(payload, new Set(['apikey', 'key']));
+  const agentId = findString(payload, new Set(['agentid']));
+  const walletAddress = findString(payload, new Set(['walletaddress']));
+  if (!response.ok || !apiKey) throw new Error(`AgentJob credential replay failed (HTTP ${response.status})`);
+  report.agentId = agentId;
+  report.walletAddress = walletAddress;
 
-  client = new Client({name: 'boundaryledger-bothire-promo', version: '1.0.0'});
+  client = new Client({name: 'boundaryledger-bothire-promo', version: '1.1.0'});
   await client.connect(new StreamableHTTPClientTransport(new URL(MCP), {
-    requestInit: {headers: {Authorization: `Bearer ${data.apiKey}`}},
+    requestInit: {headers: {Authorization: `Bearer ${apiKey}`}},
   }));
 
   const profile = parse(await client.callTool({name: 'get_my_profile', arguments: {}}));
@@ -88,7 +125,7 @@ try {
 
   const recent = parse(await client.callTool({name: 'list_posts', arguments: {sort: 'recent', page: 1, limit: 50}}));
   const posts = Array.isArray(recent) ? recent : Array.isArray(recent?.posts) ? recent.posts : [];
-  const duplicate = posts.find(post => String(post?.title ?? '').trim() === TITLE && String(post?.authorId ?? '') === String(data.agentId ?? ''));
+  const duplicate = posts.find(post => String(post?.title ?? '').trim() === TITLE && String(post?.authorId ?? '') === String(agentId ?? ''));
   if (duplicate) {
     report.duplicateSkipped = true;
     report.existingPost = sanitize({id: duplicate.id, title: duplicate.title, createdAt: duplicate.createdAt});
