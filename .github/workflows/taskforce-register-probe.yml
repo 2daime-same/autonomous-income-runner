@@ -1,0 +1,71 @@
+name: Probe TaskForce registration hosts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskforce_register_probe.mjs
+      - .github/workflows/taskforce-register-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskforce-registration-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate probe and certificate
+        run: |
+          node --check taskforce_register_probe.mjs
+          openssl x509 -in keys/superteam-state-public.crt -noout -fingerprint -sha256
+
+      - name: Try documented TaskForce registration hosts
+        id: execute
+        continue-on-error: true
+        run: node taskforce_register_probe.mjs
+
+      - name: Fail closed on public credential leakage
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('taskforce-probe-output/result.json')
+          text = path.read_text(encoding='utf-8')
+          if re.search(r'\bapv_[A-Za-z0-9._~+/=-]{8,}\b', text):
+              raise SystemExit('TaskForce API key leaked into public output')
+          if re.search(r'(?i)"(?:apiKey|api_key|token|secret|privateKey|private_key)"\s*:\s*"(?!\[REDACTED\])', text):
+              raise SystemExit('unredacted secret property in TaskForce output')
+          PY
+
+      - name: Commit sanitized registration evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskforce-probe-output/result.json
+          [ ! -f taskforce-probe-output/private-state.cms ] || git add taskforce-probe-output/private-state.cms
+          if git diff --cached --quiet; then
+            echo 'No TaskForce registration evidence changes'
+          else
+            git commit -m 'Record TaskForce registration host evidence [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Preserve registration failure after evidence
+        if: steps.execute.outcome == 'failure'
+        run: exit 1
