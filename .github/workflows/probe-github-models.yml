@@ -1,0 +1,95 @@
+name: Probe GitHub Models inference
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/probe-github-models.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Call model with a non-sensitive deterministic prompt
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p ops-output
+          cat > /tmp/request.json <<'JSON'
+          {
+            "model": "openai/gpt-4.1-mini",
+            "messages": [
+              {"role": "system", "content": "Return exactly the word READY and nothing else."},
+              {"role": "user", "content": "Capability probe."}
+            ],
+            "temperature": 0,
+            "max_tokens": 8
+          }
+          JSON
+          set +e
+          status=$(curl -sS -o /tmp/response.json -w '%{http_code}' \
+            -X POST \
+            -H 'Accept: application/vnd.github+json' \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            -H 'Content-Type: application/json' \
+            https://models.github.ai/inference/chat/completions \
+            --data-binary @/tmp/request.json)
+          curl_code=$?
+          set -e
+          python3 - "$status" "$curl_code" <<'PY'
+          import hashlib
+          import json
+          import sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+          status = int(sys.argv[1] or 0)
+          curl_code = int(sys.argv[2])
+          raw = Path('/tmp/response.json').read_bytes() if Path('/tmp/response.json').exists() else b''
+          content = None
+          model = None
+          error = None
+          try:
+              payload = json.loads(raw.decode('utf-8')) if raw else {}
+              model = payload.get('model') if isinstance(payload, dict) else None
+              choices = payload.get('choices') if isinstance(payload, dict) else None
+              if isinstance(choices, list) and choices:
+                  message = choices[0].get('message') if isinstance(choices[0], dict) else None
+                  content = message.get('content') if isinstance(message, dict) else None
+              if status >= 400:
+                  error = str(payload)[:1000]
+          except Exception as exc:
+              error = f'{type(exc).__name__}: {exc}'
+          result = {
+              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'http_status': status,
+              'curl_exit_code': curl_code,
+              'inference_supported': status == 200 and curl_code == 0 and isinstance(content, str),
+              'model': model,
+              'response_matches_probe': isinstance(content, str) and content.strip() == 'READY',
+              'response_sha256': hashlib.sha256(content.encode()).hexdigest() if isinstance(content, str) else None,
+              'response_length': len(content) if isinstance(content, str) else 0,
+              'error': error,
+              'token_recorded': False,
+              'prompt_sensitive_data': False,
+          }
+          Path('ops-output/github-models-capability.json').write_text(json.dumps(result, indent=2) + '\n')
+          PY
+      - name: Commit capability evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add ops-output/github-models-capability.json
+          git commit -m 'Record GitHub Models capability [skip ci]'
+          git pull --rebase origin main
+          git push
