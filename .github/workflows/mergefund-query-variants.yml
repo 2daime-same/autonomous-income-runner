@@ -1,0 +1,45 @@
+name: Probe MergeFund bounty query variants
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - mergefund_query_variants.py
+      - .github/workflows/mergefund-query-variants.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mergefund-query-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m py_compile mergefund_query_variants.py
+      - run: python3 mergefund_query_variants.py
+      - name: Commit public evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/mergefund-query-variants.json
+          if git diff --cached --quiet; then
+            echo 'No MergeFund query changes'
+          else
+            git commit -m 'Record MergeFund query contract [skip ci]'
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then
+                exit 0
+              fi
+              git rebase --abort 2>/dev/null || true
+              sleep $((attempt * 2))
+            done
+            exit 1
+          fi
