@@ -1,0 +1,57 @@
+name: Probe AgentJob MCP tool schemas
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - probe_agentjob_mcp.mjs
+      - .github/workflows/probe-agentjob-mcp.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned MCP client in an isolated directory
+        run: |
+          set -euo pipefail
+          mkdir /tmp/agentjob-probe
+          cd /tmp/agentjob-probe
+          npm init -y >/dev/null
+          npm install --ignore-scripts --no-audit --no-fund @modelcontextprotocol/sdk@1.17.5 >/dev/null
+          ln -s /tmp/agentjob-probe/node_modules "$GITHUB_WORKSPACE/node_modules"
+      - name: List remote tools without authentication
+        env:
+          AGENTJOB_MCP_TOOLS_OUTPUT: market-output/agentjob-mcp-tools.json
+        run: node probe_agentjob_mcp.mjs
+      - name: Reject credential-shaped output
+        run: |
+          set -euo pipefail
+          if grep -E -n '\b(ak|aj|agentjob)_[A-Za-z0-9_-]{8,}' market-output/agentjob-mcp-tools.json; then
+            echo 'Credential-shaped output detected' >&2
+            exit 1
+          fi
+      - name: Commit schema evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ ! -f market-output/agentjob-mcp-tools.json ]; then exit 1; fi
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/agentjob-mcp-tools.json
+          if git diff --cached --quiet; then
+            echo 'No AgentJob schema changes'
+          else
+            git commit -m 'Record AgentJob MCP tool schemas [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
