@@ -1,0 +1,39 @@
+name: Inspect income workflow executions
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - actions_status_probe.py
+      - .github/workflows/actions-status-probe.yml
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Query recent income workflow runs and jobs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 actions_status_probe.py
+
+      - name: Verify no credential material and commit report
+        run: |
+          set -euo pipefail
+          test -f ops-output/actions-status.json
+          ! grep -Eq 'clw_[A-Za-z0-9._~+/=-]{8,}|bh_[A-Za-z0-9._~+/=-]{8,}|age_[A-Za-z0-9._~+/=-]{8,}|Authorization: Bearer|0x[0-9a-fA-F]{64}' ops-output/actions-status.json
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add ops-output/actions-status.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record income workflow execution status [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
