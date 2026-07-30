@@ -11,7 +11,11 @@
   "claimedTaskIds": [],
   "writesPerformed": [
     "wallet_generation",
-    "bot_registration"
+    "bot_registration",
+    "service_post:0.01 USDC JSON or CSV Validation and Repair",
+    "service_post:0.01 USDC Python or JavaScript Bug Triage",
+    "service_post:0.01 USDC README and API Documentation Cleanup",
+    "service_post:0.01 USDC Structured Technical Decision Brief"
   ],
   "expensesUsd": 0,
   "polls": 0,
@@ -27,5 +31,5 @@
     "bot_id": "084d3714-adc3-4f17-b3a4-66469a0e0d47",
     "wallet_address": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8"
   },
-  "updatedAt": "2026-07-30T12:36:03.901Z"
+  "updatedAt": "2026-07-30T12:36:35.419Z"
 }
