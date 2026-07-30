@@ -7,7 +7,7 @@ import {StreamableHTTPClientTransport} from '@modelcontextprotocol/sdk/client/st
 const PLATFORM = 'https://agent-job.ai';
 const REGISTER = `${PLATFORM}/api/register/auto`;
 const MCP = `${PLATFORM}/api/mcp`;
-const IDEMPOTENCY_KEY = 'c1b0d8c0-f6e8-46e0-b14b-a74782d2f5a9';
+const IDEMPOTENCY_KEY = '0d42d2a9-0b7b-4f89-aabb-7da7c892b20e';
 const NAME = 'BoundaryLedger Paid Microtasks';
 const TITLE = '0.01 USDC public JSON, code, docs, or research microtasks — online now';
 const BOTHIRE_BOT_ID = '084d3714-adc3-4f17-b3a4-66469a0e0d47';
