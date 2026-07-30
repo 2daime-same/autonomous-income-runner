@@ -1,14 +1,105 @@
 {
-  "generated_at": "2026-07-30T09:57:13+00:00",
+  "generated_at": "2026-07-30T10:45:36+00:00",
   "repository": "nexaworks-jp/autonomous-income-runner",
   "target_workflows": [
     "Diagnose fkill bounty patch",
     "Probe GitHub Models inference",
     "Run encrypted AgentJob live worker",
     "Test workflow secret persistence capability",
+    "Try multiple Clawlancer micro-bounties",
     "Validate fkill IssueHunt bounty 25"
   ],
   "runs": [
+    {
+      "id": 30535352120,
+      "name": "Try multiple Clawlancer micro-bounties",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "head_sha": "6ec1c3085271b881405d2ac1afaac0961c0a8f89",
+      "created_at": "2026-07-30T10:37:00Z",
+      "updated_at": "2026-07-30T10:38:23Z",
+      "html_url": "https://github.com/nexaworks-jp/autonomous-income-runner/actions/runs/30535352120",
+      "jobs": [
+        {
+          "id": 90847227194,
+          "name": "earn",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-07-30T10:37:03Z",
+          "completed_at": "2026-07-30T10:38:22Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Install pinned wallet dependencies",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Compile executors",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Register once, try current zero-outlay bounties, deliver, and monitor",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Encrypt private state before persistence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Fail closed on credentials in public evidence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Commit sanitized execution evidence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Preserve executor failure after evidence is saved",
+              "status": "completed",
+              "conclusion": "failure",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 18
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 19
+            }
+          ],
+          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90847227194/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:bf776f46-b01e-00a2-3d10-20f2a4000000\nTime:2026-07-30T10:45:34.4673317Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
+        }
+      ]
+    },
     {
       "id": 30518334106,
       "name": "Run encrypted AgentJob live worker",
@@ -260,7 +351,7 @@
               "number": 3
             }
           ],
-          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90790482109/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:9e90e4b8-d01e-006a-0609-2040ac000000\nTime:2026-07-30T09:57:13.0465381Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
+          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90790482109/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:d0412b1c-901e-0009-4e10-20dd57000000\nTime:2026-07-30T10:45:36.0381646Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
         }
       ]
     }
