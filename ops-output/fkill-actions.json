@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-07-30T12:18:46+00:00",
+  "generated_at": "2026-07-30T12:27:51+00:00",
   "repository": "nexaworks-jp/autonomous-income-runner",
   "target_workflows": [
     "Diagnose fkill bounty patch",
     "Probe AgentQ task and payout contract",
+    "Probe BotHire API and package contract",
     "Probe GitHub Models inference",
+    "Probe TaskForce registration hosts",
     "Run TaskForce paid-work worker",
     "Run encrypted AgentJob live worker",
     "Run paid-only AgentJob worker v2",
@@ -13,6 +15,179 @@
     "Validate fkill IssueHunt bounty 25"
   ],
   "runs": [
+    {
+      "id": 30542415248,
+      "name": "Probe BotHire API and package contract",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "0e0b5f5ce59b79fcba3dd7754c4862fafd4fe5b3",
+      "created_at": "2026-07-30T12:24:30Z",
+      "updated_at": "2026-07-30T12:24:58Z",
+      "html_url": "https://github.com/nexaworks-jp/autonomous-income-runner/actions/runs/30542415248",
+      "jobs": [
+        {
+          "id": 90870104861,
+          "name": "probe",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-30T12:24:34Z",
+          "completed_at": "2026-07-30T12:24:57Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Validate BotHire probe",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Inspect public BotHire docs, frontend contract, and npm package",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Fail closed on credential-like output",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Commit sanitized BotHire evidence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30542059051,
+      "name": "Probe TaskForce registration hosts",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "head_sha": "eb912b8a5e18c40b2a0551515f2b680a7818d998",
+      "created_at": "2026-07-30T12:19:23Z",
+      "updated_at": "2026-07-30T12:20:12Z",
+      "html_url": "https://github.com/nexaworks-jp/autonomous-income-runner/actions/runs/30542059051",
+      "jobs": [
+        {
+          "id": 90868952039,
+          "name": "probe",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-07-30T12:19:30Z",
+          "completed_at": "2026-07-30T12:20:11Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Validate probe and certificate",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Try documented TaskForce registration hosts",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Fail closed on public credential leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Commit sanitized registration evidence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Preserve registration failure after evidence",
+              "status": "completed",
+              "conclusion": "failure",
+              "number": 8
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 15
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            }
+          ],
+          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90868952039/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:1efcdc52-d01e-006a-261e-20e950000000\nTime:2026-07-30T12:27:46.3820135Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
+        }
+      ]
+    },
     {
       "id": 30541832074,
       "name": "Run TaskForce paid-work worker",
@@ -99,7 +274,7 @@
               "number": 17
             }
           ],
-          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90868197640/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:e1d84b53-501e-0033-3f1d-206b65000000\nTime:2026-07-30T12:18:43.3950096Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
+          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90868197640/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:720dd8f2-301e-00e9-121e-20c440000000\nTime:2026-07-30T12:27:47.4283567Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
         }
       ]
     },
@@ -260,7 +435,7 @@
               "number": 19
             }
           ],
-          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90847227194/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:b917a9ea-601e-008e-441d-201e0b000000\nTime:2026-07-30T12:18:44.5382216Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
+          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90847227194/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:db20e28a-501e-004f-801e-2099c0000000\nTime:2026-07-30T12:27:48.7592350Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
         }
       ]
     },
@@ -610,7 +785,7 @@
               "number": 3
             }
           ],
-          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90790482109/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:7b5da6a1-701e-0087-351d-200be1000000\nTime:2026-07-30T12:18:46.7043041Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
+          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90790482109/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:ba1f94d8-f01e-001f-2e1e-20827c000000\nTime:2026-07-30T12:27:51.4848101Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
         }
       ]
     }
