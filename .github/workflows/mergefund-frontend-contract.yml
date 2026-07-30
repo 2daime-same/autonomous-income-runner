@@ -1,0 +1,52 @@
+name: Extract MergeFund frontend contract
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - mergefund_frontend_contract.py
+      - .github/workflows/mergefund-frontend-contract.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mergefund-frontend-contract
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m py_compile mergefund_frontend_contract.py
+      - run: python3 mergefund_frontend_contract.py
+      - name: Fail if public client credentials were not redacted
+        run: |
+          set -euo pipefail
+          if grep -E -n 'eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{10,}|https://[a-z0-9-]+\.supabase\.co' market-output/mergefund-frontend-contract.json; then
+            echo 'Unredacted public client credential detected' >&2
+            exit 1
+          fi
+      - name: Commit sanitized contract evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/mergefund-frontend-contract.json
+          if git diff --cached --quiet; then
+            echo 'No MergeFund contract changes'
+          else
+            git commit -m 'Record MergeFund frontend contract [skip ci]'
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then
+                exit 0
+              fi
+              git rebase --abort 2>/dev/null || true
+              sleep $((attempt * 2))
+            done
+            exit 1
+          fi
