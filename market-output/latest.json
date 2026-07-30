@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T03:39:24+00:00",
+  "generated_at": "2026-07-30T09:09:57+00:00",
   "priority": {
     "all_claimable_paid_candidates": [
       {
@@ -364,7 +364,7 @@
       }
     ],
     "claimable_paid_count": 8,
-    "generated_at": "2026-07-30T03:39:24.790342599+00:00",
+    "generated_at": "2026-07-30T09:09:58.068303029+00:00",
     "low_cost_candidates": [],
     "low_cost_count": 0,
     "schema_version": "agent-bounties/opportunity-projection-v1",
@@ -739,7 +739,7 @@
           }
         ],
         "claimable_paid_count": 8,
-        "generated_at": "2026-07-30T03:39:24.790342599+00:00",
+        "generated_at": "2026-07-30T09:09:58.068303029+00:00",
         "low_cost_candidates": [],
         "low_cost_count": 0,
         "schema_version": "agent-bounties/opportunity-projection-v1",
@@ -757,7 +757,7 @@
         "evidence_boundary": "This summary is derived at request time from confirmed canonical events and validated content-addressed terms in the hosted index. It proves current indexed inventory, not a future claim, completion, or payout. Only BountySettled proves payment.",
         "funded_usdc": "16.08",
         "funded_usdc_base_units": "16080000",
-        "generated_at": "2026-07-30T03:39:25.666832551+00:00",
+        "generated_at": "2026-07-30T09:09:58.265990426+00:00",
         "items": [
           {
             "bounty_contract": "0x6c93cb2ae08e2c44c45619ad5b08819a3b50da9a",
@@ -888,7 +888,7 @@
       "url": "https://www.hackmates.xyz/api/sandbox/status"
     },
     "moltguild": {
-      "error": "HTTP 404: {\"status\":\"error\",\"code\":404,\"message\":\"Application not found\",\"request_id\":\"z6DaRsrzQ1uLPWLznPRhug\"}",
+      "error": "HTTP 404: {\"status\":\"error\",\"code\":404,\"message\":\"Application not found\",\"request_id\":\"9RlxvNasSs-thH822h0iww\"}",
       "ok": false,
       "url": "https://agent-bounty-production.up.railway.app/api/jobs?status=open"
     },
