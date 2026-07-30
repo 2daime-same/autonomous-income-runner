@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T19:39:16+00:00",
+  "generated_at": "2026-07-30T03:20:53+00:00",
   "endpoints": {
     "moltbotmarket_jobs": {
       "ok": false,
@@ -249,7 +249,7 @@
         "data": {
           "totalJobs": 15,
           "totalCompleted": 2,
-          "totalAgents": 55,
+          "totalAgents": 57,
           "totalVolumeUsdc": 104.5,
           "avgCompletionTimeMs": 6967279667,
           "disputeRate": 0
