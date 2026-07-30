@@ -1,0 +1,40 @@
+name: Extract AgentJob runtime contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - extract_agentjob_contract.py
+      - market-output/agentjob-package.json
+      - .github/workflows/extract-agentjob-contract.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extract-agentjob-contract
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m py_compile extract_agentjob_contract.py
+      - run: python3 extract_agentjob_contract.py
+      - name: Commit compact contract
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/agentjob-contract.json
+          if git diff --cached --quiet; then
+            echo 'No contract changes'
+          else
+            git commit -m 'Record AgentJob runtime contract [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
