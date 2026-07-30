@@ -1,0 +1,114 @@
+name: Pause exposed Clawlancer agent
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/clawlancer-pause-exposed.yml
+
+permissions:
+  contents: write
+
+jobs:
+  pause:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pause the exposed agent without printing its credential
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+          import urllib.error
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          source_commit = 'adf28fb75cf65d122b836ee1163d18df96ed719d'
+          source_path = 'clawlancer-output/earn-result.json'
+          output = Path('clawlancer-output/pause-result.json')
+
+          raw = subprocess.check_output(['git', 'show', f'{source_commit}:{source_path}'], text=True, stderr=subprocess.DEVNULL)
+          historical = json.loads(raw)
+          registration = historical['registration']
+          agent_id = registration['agent_id']
+          auth_header = registration['response']['heartbeat_config']['auth_header']
+          match = re.fullmatch(r'Authorization:\s*Bearer\s+(\S+)', auth_header, flags=re.I)
+          if not match:
+              raise SystemExit('Historical authorization header missing')
+          api_key = match.group(1)
+
+          def call(method, path, body=None):
+              data = None if body is None else json.dumps(body).encode('utf-8')
+              headers = {
+                  'Accept': 'application/json',
+                  'Authorization': f'Bearer {api_key}',
+                  'User-Agent': 'boundaryledger-credential-containment/1.1',
+              }
+              if data is not None:
+                  headers['Content-Type'] = 'application/json'
+              request = urllib.request.Request('https://clawlancer.ai/api' + path, data=data, headers=headers, method=method)
+              try:
+                  with urllib.request.urlopen(request, timeout=45) as response:
+                      text = response.read().decode('utf-8', errors='replace')
+                      return response.status, json.loads(text) if text else None
+              except urllib.error.HTTPError as error:
+                  text = error.read().decode('utf-8', errors='replace')
+                  try:
+                      payload = json.loads(text) if text else None
+                  except json.JSONDecodeError:
+                      payload = text[:1000]
+                  return error.code, payload
+
+          patch_status, patch_payload = call('PATCH', f'/agents/{agent_id}', {
+              'is_paused': True,
+              'bio': 'Credential exposed in public build evidence. Agent paused; do not use.',
+          })
+          get_status, current = call('GET', f'/agents/{agent_id}')
+          paused = bool(current.get('is_paused')) if isinstance(current, dict) else False
+          result = {
+              'started_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'agent_id': agent_id,
+              'patch_http_status': patch_status,
+              'verification_http_status': get_status,
+              'pause_confirmed': paused,
+              'current_public_state': {
+                  'name': current.get('name') if isinstance(current, dict) else None,
+                  'is_active': current.get('is_active') if isinstance(current, dict) else None,
+                  'is_paused': current.get('is_paused') if isinstance(current, dict) else None,
+                  'platform_balance_wei': current.get('platform_balance_wei') if isinstance(current, dict) else None,
+                  'locked_balance_wei': current.get('locked_balance_wei') if isinstance(current, dict) else None,
+                  'total_earned_wei': current.get('total_earned_wei') if isinstance(current, dict) else None,
+              },
+              'credential_reprinted': False,
+              'funds_moved': False,
+          }
+          output.parent.mkdir(parents=True, exist_ok=True)
+          temporary = output.with_suffix('.json.tmp')
+          temporary.write_text(json.dumps(result, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          os.replace(temporary, output)
+          if not paused:
+              raise SystemExit('Platform did not confirm is_paused=true')
+          PY
+
+      - name: Verify and commit pause receipt
+        if: always()
+        run: |
+          set -euo pipefail
+          test -f clawlancer-output/pause-result.json
+          ! grep -Eq 'clw_[A-Za-z0-9._~+/=-]{8,}|Authorization: Bearer|alchemy\.com/v2/|0x[0-9a-fA-F]{64}' clawlancer-output/pause-result.json
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add clawlancer-output/pause-result.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record Clawlancer agent pause [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
