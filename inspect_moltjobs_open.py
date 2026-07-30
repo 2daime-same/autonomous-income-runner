@@ -60,7 +60,7 @@ def get(path: str, query: Mapping[str, Any] | None = None) -> dict[str, Any]:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "nexaworks-autonomous-income-moltjobs-inspector/1.0",
+            "User-Agent": "nexaworks-autonomous-income-moltjobs-inspector/1.1",
         },
     )
     try:
@@ -85,6 +85,18 @@ def unwrap_data(value: Any) -> Any:
     return value
 
 
+def parse_time(value: Any) -> datetime | None:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
 def main() -> int:
     list_result = get("/jobs", {"status": "OPEN", "limit": 100})
     jobs_value = unwrap_data(list_result.get("payload"))
@@ -92,17 +104,31 @@ def main() -> int:
 
     details = []
     template_ids: set[str] = set()
+    now = datetime.now(timezone.utc)
     for job in jobs:
         job_id = str(job.get("id") or "")
         if not job_id:
             continue
-        detail = get("/jobs/" + urllib.parse.quote(job_id, safe=""))
+        detail = get("/public/jobs/" + urllib.parse.quote(job_id, safe=""))
         payload = unwrap_data(detail.get("payload"))
         if isinstance(payload, Mapping):
             template_id = payload.get("templateId") or payload.get("template_id")
             if template_id:
                 template_ids.add(str(template_id))
-        details.append({"list_item": sanitize(job), "detail_response": detail})
+        deadline = parse_time(job.get("deadlineAt") or job.get("deadline_at"))
+        details.append(
+            {
+                "list_item": sanitize(job),
+                "public_detail_response": detail,
+                "deadline_future": deadline is None or deadline > now,
+                "escrow_evidence_present": bool(
+                    job.get("escrowTxHash")
+                    or job.get("escrowJobId")
+                    or job.get("cardCapturedAt")
+                    or job.get("paymentStatus") in {"FUNDED", "CAPTURED", "ESCROWED"}
+                ),
+            }
+        )
 
     templates = {
         template_id: get("/templates/" + urllib.parse.quote(template_id, safe=""))
