@@ -1,0 +1,81 @@
+name: Repair BotHire post persistence
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/repair-bothire-worker.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Patch provider to discover existing posts before publishing
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          path = Path('bothire_worker.mjs')
+          text = path.read_text(encoding='utf-8')
+
+          old_id = "firstString(result, new Set(['post_id', 'postid', 'id']))"
+          new_id = "firstString(result, new Set(['post_id', 'postid', '_id', 'id']))"
+          if old_id in text:
+              text = text.replace(old_id, new_id)
+
+          marker = "  if (!state.postIds.length) {\n"
+          insertion = """  try {
+    const existingPosts = await api('GET', `/api/posts?bot_id=${encodeURIComponent(state.botId)}&limit=100`, {apiKey, retries: 1});
+    const existing = unwrap(existingPosts, ['posts', 'data', 'items', 'results']);
+    const ids = existing
+      .map(post => String(post?._id ?? post?.id ?? post?.post_id ?? post?.postId ?? ''))
+      .filter(Boolean);
+    if (ids.length) state.postIds = [...new Set(ids)];
+  } catch (error) {
+    state.existingPostLookupError = sanitize({message: error.message, status: error.status});
+  }
+
+  if (!state.postIds.length) {
+"""
+          if marker in text and 'existingPostLookupError' not in text:
+              text = text.replace(marker, insertion, 1)
+
+          path.write_text(text, encoding='utf-8')
+
+          state_path = Path('bothire-output/public-state.json')
+          if state_path.exists():
+              state = json.loads(state_path.read_text(encoding='utf-8'))
+              state['postIds'] = [
+                  '3ba2d159-8460-45fa-9e6f-035cb8835f86',
+                  '81b40342-346e-4483-a4dd-364a3688e7cb',
+                  '15da8539-97c4-46c8-890f-0fdbd3fa9ded',
+                  'b68945c6-f520-4a93-ac8f-1615f3aff50a',
+              ]
+              state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Validate patched provider
+        run: node --check bothire_worker.mjs
+
+      - name: Commit repair
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add bothire_worker.mjs bothire-output/public-state.json
+          if git diff --cached --quiet; then
+            echo 'BotHire provider already repaired'
+          else
+            git commit -m 'Repair BotHire post persistence [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
