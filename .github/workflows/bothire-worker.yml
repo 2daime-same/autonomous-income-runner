@@ -1,0 +1,74 @@
+name: Run BotHire paid-work provider
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - bothire_worker.mjs
+      - .github/workflows/bothire-worker.yml
+  schedule:
+    - cron: '41 */6 * * *'
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: bothire-paid-provider
+  cancel-in-progress: false
+
+jobs:
+  provide:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate provider and encryption certificate
+        run: |
+          set -euo pipefail
+          node --check bothire_worker.mjs
+          openssl x509 -in keys/superteam-state-public.crt -noout -fingerprint -sha256
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+
+      - name: Register, publish services, claim suitable tasks, deliver requests, and verify USDC
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BOTHIRE_MODEL: openai/gpt-4.1-mini
+          MAX_RUNTIME_MINUTES: '335'
+        run: node bothire_worker.mjs
+
+      - name: Remove private plaintext residue
+        if: always()
+        run: |
+          find /tmp -maxdepth 1 -type f -name 'bothire-private*' -delete || true
+          test ! -e /tmp/bothire-private.json
+
+      - name: Fail closed on public credential leakage
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          for path in [Path('bothire-output/public-state.json'), Path('bothire-output/handled-message-ids.json')]:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding='utf-8')
+              checks = {
+                  'BotHire API key': re.compile(r'\bbh_[A-Za-z0-9._~+/=-]{8,}\b'),
+                  'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+                  'unredacted secret field': re.compile(r'(?i)"(?:apiKey|api_key|token|secret|authorization|privateKey|private_key|mnemonic|seed)"\s*:\s*"(?!\[REDACTED\])'),
+              }
+              for name, pattern in checks.items():
+                  if pattern.search(text):
+                      raise SystemExit(f'{name} found in public BotHire output: {path}')
+          PY
