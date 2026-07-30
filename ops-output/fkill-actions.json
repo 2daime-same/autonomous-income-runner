@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T07:08:23+00:00",
+  "generated_at": "2026-07-30T09:57:13+00:00",
   "repository": "nexaworks-jp/autonomous-income-runner",
   "target_workflows": [
     "Diagnose fkill bounty patch",
@@ -260,7 +260,7 @@
               "number": 3
             }
           ],
-          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90790482109/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:cdd8443d-e01e-010c-3af2-1ffef4000000\nTime:2026-07-30T07:08:22.9901668Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
+          "log_tail": "log fetch failed: RuntimeError: HTTP 401 for /repos/nexaworks-jp/autonomous-income-runner/actions/jobs/90790482109/logs: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>InvalidAuthenticationInfo</Code><Message>Server failed to authenticate the request. Please refer to the information in the www-authenticate header.\nRequestId:9e90e4b8-d01e-006a-0609-2040ac000000\nTime:2026-07-30T09:57:13.0465381Z</Message><AuthenticationErrorDetail>The access token was missing or malformed.</AuthenticationErrorDetail></Error>"
         }
       ]
     }
