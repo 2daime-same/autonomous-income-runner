@@ -1,0 +1,110 @@
+name: Try multiple Clawlancer micro-bounties
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - clawlancer_multi_earn.py
+      - .github/workflows/clawlancer-multi-earn.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clawlancer-multi-income
+  cancel-in-progress: false
+
+jobs:
+  earn:
+    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pinned wallet dependencies
+        run: python3 -m pip install --disable-pip-version-check --quiet 'eth-account>=0.13,<0.14' 'eth-utils>=5,<6'
+
+      - name: Compile executors
+        run: python3 -m py_compile clawlancer_earn.py clawlancer_multi_earn.py
+
+      - name: Register once, try current zero-outlay bounties, deliver, and monitor
+        id: execute
+        continue-on-error: true
+        env:
+          CLAWLANCER_MULTI_MAX_CLAIMS: '6'
+          CLAWLANCER_MULTI_MONITOR_SECONDS: '900'
+        run: python3 clawlancer_multi_earn.py
+
+      - name: Encrypt private state before persistence
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p clawlancer-multi-output
+          if [ -f .clawlancer-multi/private.json ]; then
+            chmod 600 .clawlancer-multi/private.json
+            openssl cms -encrypt -binary -aes-256-cbc \
+              -in .clawlancer-multi/private.json \
+              -outform DER \
+              -out clawlancer-multi-output/private-state.cms \
+              keys/superteam-state-public.crt
+            sha256sum clawlancer-multi-output/private-state.cms > clawlancer-multi-output/private-state.cms.sha256
+            rm -f .clawlancer-multi/private.json
+          fi
+          rm -rf .clawlancer-multi
+
+      - name: Fail closed on credentials in public evidence
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          files = [
+              Path('clawlancer-multi-output/earn-result.json'),
+              Path('clawlancer-multi-output/agent-public.json'),
+          ]
+          patterns = {
+              'unredacted credential field': re.compile(r'(?i)"(?:api_key|apikey|token|secret|private_key|wallet_private_key|authorization)"\s*:\s*"(?!\[REDACTED\])'),
+              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+              'credential prefix': re.compile(r'\b(?:claw|cl|api|sk)_[A-Za-z0-9_-]{12,}\b'),
+              'provider credential URL': re.compile(r'https://[^\s"\\]*(?:alchemy\.com|infura\.io)/(?:v2|v3)/(?!\[REDACTED)[^\s"\\]+', re.I),
+              'bearer token': re.compile(r'(?i)\bBearer\s+(?!\[REDACTED\])[A-Za-z0-9._~+/=-]{8,}'),
+          }
+          for path in files:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding='utf-8')
+              for name, pattern in patterns.items():
+                  if pattern.search(text):
+                      raise SystemExit(f'{name} found in {path}')
+          PY
+
+      - name: Commit sanitized execution evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          [ ! -f clawlancer-multi-output/earn-result.json ] || git add clawlancer-multi-output/earn-result.json
+          [ ! -f clawlancer-multi-output/agent-public.json ] || git add clawlancer-multi-output/agent-public.json
+          [ ! -f clawlancer-multi-output/private-state.cms ] || git add clawlancer-multi-output/private-state.cms clawlancer-multi-output/private-state.cms.sha256
+          if git diff --cached --quiet; then
+            echo 'No multi-bounty execution evidence changes'
+          else
+            git commit -m 'Record Clawlancer multi-bounty execution [skip ci]'
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then
+                exit 0
+              fi
+              git rebase --abort 2>/dev/null || true
+              sleep $((attempt * 2))
+            done
+            exit 1
+          fi
+
+      - name: Preserve executor failure after evidence is saved
+        if: steps.execute.outcome == 'failure'
+        run: exit 1
