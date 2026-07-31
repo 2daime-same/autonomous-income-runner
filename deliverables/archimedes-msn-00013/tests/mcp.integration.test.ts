@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 
-import { sendJson, startTestServer } from './helpers.js';
+import { assetHtml, sendJson, sendText, sitemapXml, startTestServer } from './helpers.js';
 
 const ASSET_ID = '46d1682f-6ceb-4288-97ae-8a05a4ab9c86';
 const BOUNTY_ID = '5586f0c8-cde1-416c-ac28-d85bc6a264f0';
@@ -24,17 +24,24 @@ function stringEnvironment(): Record<string, string> {
 }
 
 test('registers exactly four read-only tools and serves them over stdio', async () => {
+  let baseUrl = '';
   const api = await startTestServer((request, response) => {
     const url = new URL(request.url ?? '/', 'http://localhost');
-    if (url.pathname === '/api/public/assets') {
-      sendJson(response, {
-        total: 1,
-        items: [{ id: ASSET_ID, title: 'Python Engineering Model', asset_type: 'CODE' }],
-      });
+    if (url.pathname === '/sitemap.xml') {
+      sendText(response, sitemapXml(baseUrl, [ASSET_ID]), 'application/xml');
       return;
     }
-    if (url.pathname === `/api/public/assets/${ASSET_ID}`) {
-      sendJson(response, { id: ASSET_ID, title: 'Python Engineering Model' });
+    if (url.pathname === `/assets/${ASSET_ID}`) {
+      sendText(
+        response,
+        assetHtml(baseUrl, {
+          id: ASSET_ID,
+          title: 'Python Engineering Model',
+          description: 'Python engineering asset',
+          assetType: 'CODE',
+        }),
+        'text/html',
+      );
       return;
     }
     if (url.pathname === '/api/public/bounties') {
@@ -58,6 +65,7 @@ test('registers exactly four read-only tools and serves them over stdio', async 
     }
     sendJson(response, { error: 'not found' }, 404);
   });
+  baseUrl = api.baseUrl;
 
   const transport = new StdioClientTransport({
     command: process.execPath,
@@ -66,7 +74,7 @@ test('registers exactly four read-only tools and serves them over stdio', async 
     stderr: 'pipe',
     env: {
       ...stringEnvironment(),
-      ARCHIMEDES_BASE_URL: api.baseUrl,
+      ARCHIMEDES_BASE_URL: baseUrl,
       ARCHIMEDES_MAX_RETRIES: '0',
       ARCHIMEDES_TIMEOUT_MS: '5000',
     },

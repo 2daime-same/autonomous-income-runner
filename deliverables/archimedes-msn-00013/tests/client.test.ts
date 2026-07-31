@@ -3,30 +3,61 @@ import test from 'node:test';
 
 import { ArchimedesPublicClient } from '../src/client.js';
 import { ArchimedesApiError } from '../src/errors.js';
-import { sendJson, startTestServer } from './helpers.js';
+import { assetHtml, sendJson, sendText, sitemapXml, startTestServer } from './helpers.js';
 
 const ASSET_ID = '46d1682f-6ceb-4288-97ae-8a05a4ab9c86';
+const SECOND_ASSET_ID = '312e3c99-f858-44e7-ba2c-fcaf408825a8';
+const THIRD_ASSET_ID = 'aa632521-f830-4adf-9828-7c6079e06a83';
 const BOUNTY_ID = '5586f0c8-cde1-416c-ac28-d85bc6a264f0';
 const FIXED_NOW = new Date('2026-07-31T00:00:00.000Z');
 
-test('searches and fetches public resources using GET only', async () => {
-  const observations: Array<{ method: string | undefined; accept: string | undefined }> = [];
+test('searches static public assets and official public bounties using GET only', async () => {
+  const observations: Array<{ method: string | undefined; path: string; accept: string | undefined }> = [];
+  let baseUrl = '';
   const server = await startTestServer((request, response) => {
-    observations.push({ method: request.method, accept: request.headers.accept });
     const url = new URL(request.url ?? '/', 'http://localhost');
-    if (url.pathname === '/api/public/assets') {
-      sendJson(response, {
-        total: 3,
-        items: [
-          { id: ASSET_ID, title: 'Python stress calculator', asset_type: 'CODE' },
-          { id: '312e3c99-f858-44e7-ba2c-fcaf408825a8', title: 'Rust bridge', asset_type: 'CODE' },
-          { id: 'aa632521-f830-4adf-9828-7c6079e06a83', title: 'Python report', asset_type: 'DOCUMENT' },
-        ],
-      });
+    observations.push({ method: request.method, path: url.pathname, accept: request.headers.accept });
+    if (url.pathname === '/sitemap.xml') {
+      sendText(response, sitemapXml(baseUrl, [ASSET_ID, SECOND_ASSET_ID, THIRD_ASSET_ID]), 'application/xml');
       return;
     }
-    if (url.pathname === `/api/public/assets/${ASSET_ID}`) {
-      sendJson(response, { id: ASSET_ID, title: 'Python stress calculator' });
+    if (url.pathname === `/assets/${ASSET_ID}`) {
+      sendText(
+        response,
+        assetHtml(baseUrl, {
+          id: ASSET_ID,
+          title: 'Python stress calculator',
+          description: 'Engineering calculations in Python',
+          assetType: 'CODE',
+        }),
+        'text/html',
+      );
+      return;
+    }
+    if (url.pathname === `/assets/${SECOND_ASSET_ID}`) {
+      sendText(
+        response,
+        assetHtml(baseUrl, {
+          id: SECOND_ASSET_ID,
+          title: 'Rust bridge',
+          description: 'Engineering calculations in Rust',
+          assetType: 'CODE',
+        }),
+        'text/html',
+      );
+      return;
+    }
+    if (url.pathname === `/assets/${THIRD_ASSET_ID}`) {
+      sendText(
+        response,
+        assetHtml(baseUrl, {
+          id: THIRD_ASSET_ID,
+          title: 'Python report',
+          description: 'A written Python engineering report',
+          assetType: 'DOCUMENT',
+        }),
+        'text/html',
+      );
       return;
     }
     if (url.pathname === '/api/public/bounties') {
@@ -59,17 +90,20 @@ test('searches and fetches public resources using GET only', async () => {
     }
     sendJson(response, { error: 'not found' }, 404);
   });
+  baseUrl = server.baseUrl;
 
   try {
     const client = new ArchimedesPublicClient({
-      baseUrl: server.baseUrl,
+      baseUrl,
       maxRetries: 0,
       now: () => FIXED_NOW,
+      assetScanConcurrency: 2,
     });
     const assets = await client.searchAssets({ query: 'Python', asset_type: 'CODE', limit: 10 });
     assert.equal(assets.returned, 1);
-    assert.equal(assets.total, 3);
+    assert.equal(assets.total, 1);
     assert.equal((assets.items[0] as { id: string }).id, ASSET_ID);
+    assert.equal((assets.items[0] as { metadata_source: string }).metadata_source, 'public static schema.org Product JSON-LD');
     assert.equal((await client.getAsset(ASSET_ID)).id, ASSET_ID);
 
     const bounties = await client.searchBounties({ query: 'MCP', category: 'software' });
@@ -78,9 +112,40 @@ test('searches and fetches public resources using GET only', async () => {
     assert.equal(bounties.query.funded_only, true);
     assert.equal((await client.getBounty(BOUNTY_ID)).id, BOUNTY_ID);
 
-    assert.equal(observations.length, 4);
+    assert.equal(observations.length, 6);
     assert.ok(observations.every((item) => item.method === 'GET'));
-    assert.ok(observations.every((item) => item.accept === 'application/json'));
+    assert.ok(observations.every((item) => item.accept !== undefined));
+    assert.ok(observations.every((item) => !item.path.includes('increment_view_count')));
+    assert.ok(observations.every((item) => !item.path.startsWith('/api/public/assets')));
+  } finally {
+    await server.close();
+  }
+});
+
+test('fetches only the requested asset page for an unfiltered page', async () => {
+  let baseUrl = '';
+  const paths: string[] = [];
+  const server = await startTestServer((request, response) => {
+    const url = new URL(request.url ?? '/', 'http://localhost');
+    paths.push(url.pathname);
+    if (url.pathname === '/sitemap.xml') {
+      sendText(response, sitemapXml(baseUrl, [ASSET_ID, SECOND_ASSET_ID, THIRD_ASSET_ID]), 'application/xml');
+      return;
+    }
+    if (url.pathname === `/assets/${SECOND_ASSET_ID}`) {
+      sendText(response, assetHtml(baseUrl, { id: SECOND_ASSET_ID, title: 'Second asset' }), 'text/html');
+      return;
+    }
+    sendJson(response, { error: 'unexpected request' }, 500);
+  });
+  baseUrl = server.baseUrl;
+  try {
+    const client = new ArchimedesPublicClient({ baseUrl, maxRetries: 0 });
+    const result = await client.searchAssets({ limit: 1, offset: 1 });
+    assert.equal(result.total, 3);
+    assert.equal(result.returned, 1);
+    assert.equal((result.items[0] as { id: string }).id, SECOND_ASSET_ID);
+    assert.deepEqual(paths, ['/sitemap.xml', `/assets/${SECOND_ASSET_ID}`]);
   } finally {
     await server.close();
   }
@@ -108,7 +173,7 @@ test('retries a bounded HTTP 429 and honors Retry-After', async () => {
         sleeps.push(milliseconds);
       },
     });
-    assert.equal((await client.searchAssets()).returned, 0);
+    assert.equal((await client.searchBounties({ funded_only: false })).returned, 0);
     assert.equal(attempts, 2);
     assert.deepEqual(sleeps, [0]);
   } finally {
@@ -149,7 +214,7 @@ test('rejects oversized, invalid JSON, and redirect responses', async (t) => {
         maxRetries: 0,
         maxResponseBytes: 1_024,
       });
-      await assert.rejects(() => client.searchAssets(), (error: unknown) => {
+      await assert.rejects(() => client.searchBounties(), (error: unknown) => {
         assert.ok(error instanceof ArchimedesApiError);
         assert.equal(error.code, 'response_too_large');
         return true;
@@ -165,7 +230,7 @@ test('rejects oversized, invalid JSON, and redirect responses', async (t) => {
     });
     try {
       const client = new ArchimedesPublicClient({ baseUrl: server.baseUrl, maxRetries: 0 });
-      await assert.rejects(() => client.searchAssets(), (error: unknown) => {
+      await assert.rejects(() => client.searchBounties(), (error: unknown) => {
         assert.ok(error instanceof ArchimedesApiError);
         assert.equal(error.code, 'invalid_response');
         return true;
@@ -183,7 +248,7 @@ test('rejects oversized, invalid JSON, and redirect responses', async (t) => {
     });
     try {
       const client = new ArchimedesPublicClient({ baseUrl: server.baseUrl, maxRetries: 0 });
-      await assert.rejects(() => client.searchAssets(), (error: unknown) => {
+      await assert.rejects(() => client.searchBounties(), (error: unknown) => {
         assert.ok(error instanceof ArchimedesApiError);
         assert.equal(error.code, 'network_error');
         return true;

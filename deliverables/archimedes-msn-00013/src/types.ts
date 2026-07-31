@@ -45,4 +45,7 @@ export interface ArchimedesClientOptions {
   fetchImpl?: typeof fetch;
   sleep?: (milliseconds: number) => Promise<void>;
   now?: () => Date;
+  assetCatalogTtlMs?: number;
+  assetScanConcurrency?: number;
+  assetScanLimit?: number;
 }
