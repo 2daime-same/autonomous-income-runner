@@ -1,0 +1,49 @@
+name: Strict BountyHub candidate validation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - bountyhub_holdoff_filter.py
+      - .github/workflows/bountyhub-strict.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bountyhub-strict-validation
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate scripts
+        run: python3 -m py_compile bountyhub_selector.py bountyhub_holdoff_filter.py github_bounty_radar.py
+      - name: Refresh funded candidates and reject paused work
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 bountyhub_selector.py
+          python3 bountyhub_holdoff_filter.py
+      - name: Commit strict candidate evidence
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/bountyhub-candidates.json market-output/bountyhub-strict-candidates.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Refresh strict BountyHub candidates [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
