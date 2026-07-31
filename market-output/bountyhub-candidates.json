@@ -32,7 +32,7 @@
     }
   ],
   "actionable_count": 1,
-  "generated_at": "2026-07-31T19:54:57+00:00",
+  "generated_at": "2026-07-31T19:59:11+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -443,7 +443,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "TypeScript",
-      "repo_stars": 5346,
+      "repo_stars": 5347,
       "repository": "freelensapp/freelens",
       "scope_excerpt": "### What would you like to be added?\r\n\r\nIn short, the ability to change the theme colors on Freelens and create new ones as you like.\r\n\r\n### Why is this needed?\r\n\r\nMany users complain that they don't have this option, especially when it comes to colors they would prefer to change.\r\n\r\nFor example:\r\n- https://github.com/freelensapp/freelens/issues/550#issuecomment-3371177938\r\n- https://github.com/freelensapp/freelens/issues/1237\r\n- https://github.com/freelensapp/freelens/issues/186",
       "score": 47.59,
