@@ -27,7 +27,28 @@ INCOME_NAMES = {
     "Run TaskForce paid-work worker",
     "Run autonomous AgentGigs worker",
     "Run Callboard zero-spend worker",
+    "Run AgentMart zero-spend seller",
+    "Run BotBounty zero-spend worker",
+    "Probe BotBounty live inventory",
+    "Probe AgentMart seller contract",
+    "Probe Agentic Gateway supplier contract",
+    "GitHub-native open bounty radar",
+    "BountyHub funded candidate selector",
 }
+MARKERS = (
+    "income",
+    "bothire",
+    "agentgigs",
+    "agentjob",
+    "clawlancer",
+    "taskforce",
+    "callboard",
+    "agentmart",
+    "botbounty",
+    "agenticgateway",
+    "bountyhub",
+    "bounty-radar",
+)
 
 
 def now_iso() -> str:
@@ -41,7 +62,7 @@ def get(path: str) -> Any:
             "Accept": "application/vnd.github+json",
             "Authorization": f"Bearer {TOKEN}",
             "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "autonomous-income-runner-actions-probe/1.0",
+            "User-Agent": "autonomous-income-runner-actions-probe/1.1",
         },
     )
     try:
@@ -86,10 +107,8 @@ def main() -> int:
             continue
         name = str(run.get("name") or "")
         path = str(run.get("path") or "")
-        if name not in INCOME_NAMES and not any(
-            marker in (name + " " + path).lower()
-            for marker in ("income", "bothire", "agentgigs", "agentjob", "clawlancer", "taskforce", "callboard")
-        ):
+        haystack = (name + " " + path).lower()
+        if name not in INCOME_NAMES and not any(marker in haystack for marker in MARKERS):
             continue
         run_id = run.get("id")
         jobs_payload = get(f"/repos/{encoded_repo}/actions/runs/{run_id}/jobs?per_page=100") if run_id else {}
@@ -111,7 +130,7 @@ def main() -> int:
                 "jobs": [compact_job(job) for job in (jobs or []) if isinstance(job, Mapping)],
             }
         )
-        if len(runs) >= 30:
+        if len(runs) >= 50:
             break
 
     report = {
