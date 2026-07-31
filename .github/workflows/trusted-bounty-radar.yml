@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   scan:
-    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -54,6 +54,10 @@ jobs:
             echo 'No trusted bounty changes'
           else
             git commit -m 'Refresh trusted bounty inventory [skip ci]'
-            git pull --rebase origin main
-            git push
+            for attempt in $(seq 1 8); do
+              if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+              git rebase --abort 2>/dev/null || true
+              sleep "$attempt"
+            done
+            exit 1
           fi
