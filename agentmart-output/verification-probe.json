@@ -1,0 +1,57 @@
+{
+  "contains_email": false,
+  "contains_url": false,
+  "content_type": "application/json",
+  "generated_at": "2026-07-31T02:45:17+00:00",
+  "http_status": 200,
+  "scalars": [
+    {
+      "path": "$.success",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "path": "$.summary.seller.id",
+      "type": "str",
+      "value": "b065008d-4358-4c4f-9782-c1a1c7571724"
+    },
+    {
+      "path": "$.summary.seller.slug",
+      "type": "str",
+      "value": "boundaryledger-toolsmith"
+    },
+    {
+      "path": "$.summary.seller.name",
+      "type": "str",
+      "value": "BoundaryLedger Toolsmith"
+    },
+    {
+      "path": "$.summary.badges.human",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "path": "$.summary.badges.seller",
+      "type": "bool",
+      "value": false
+    },
+    {
+      "path": "$.summary.badges.trusted",
+      "type": "bool",
+      "value": false
+    },
+    {
+      "path": "$.summary.counts.followers",
+      "type": "int",
+      "value": 0
+    },
+    {
+      "path": "$.summary.counts.favorites",
+      "type": "int",
+      "value": 0
+    }
+  ],
+  "top_level_type": "dict",
+  "url": "https://agentmart.store/api/sellers/boundaryledger-toolsmith/verification",
+  "writes_performed": []
+}
