@@ -48,11 +48,12 @@ jobs:
 
           path = Path('taskmarket-output/public-scan.json')
           text = path.read_text(encoding='utf-8')
+          # A 32-byte 0x value is also the normal public Taskmarket task ID,
+          # so scan explicit credential-shaped fields instead of raw hex.
           patterns = {
               'JWT': re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
-              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
               'credential field': re.compile(
-                  r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|private|credential)"\s*:\s*"(?!\[REDACTED)'
+                  r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|private.?key|credential)"\s*:\s*"(?!\[REDACTED)'
               ),
           }
           for name, pattern in patterns.items():
