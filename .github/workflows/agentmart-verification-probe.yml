@@ -1,0 +1,85 @@
+name: Probe AgentMart verification response
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/agentmart-verification-probe.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and classify public verification response
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          url = 'https://agentmart.store/api/sellers/boundaryledger-toolsmith/verification'
+          req = urllib.request.Request(url, headers={
+              'Accept': 'application/json',
+              'User-Agent': 'boundaryledger-agentmart-verification-probe/1.0',
+          })
+          with urllib.request.urlopen(req, timeout=30) as response:
+              raw = response.read().decode('utf-8', errors='replace')
+              status = response.status
+              content_type = response.headers.get('content-type')
+          payload = json.loads(raw)
+
+          scalars = []
+          def walk(value, path='$'):
+              if isinstance(value, dict):
+                  for key, item in value.items():
+                      walk(item, f'{path}.{key}')
+              elif isinstance(value, list):
+                  for index, item in enumerate(value[:20]):
+                      walk(item, f'{path}[{index}]')
+              elif isinstance(value, bool) or value is None or isinstance(value, (int, float)):
+                  scalars.append({'path': path, 'type': type(value).__name__, 'value': value})
+              elif isinstance(value, str):
+                  lowered = value.lower()
+                  if '@' in value or 'http://' in lowered or 'https://' in lowered or 'token' in lowered:
+                      safe = '[REDACTED]'
+                  else:
+                      safe = value[:160]
+                  scalars.append({'path': path, 'type': 'str', 'value': safe})
+
+          walk(payload)
+          output = {
+              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'url': url,
+              'http_status': status,
+              'content_type': content_type,
+              'top_level_type': type(payload).__name__,
+              'scalars': scalars,
+              'contains_email': '@' in raw,
+              'contains_url': 'http://' in raw.lower() or 'https://' in raw.lower(),
+              'writes_performed': [],
+          }
+          path = Path('agentmart-output/verification-probe.json')
+          path.parent.mkdir(parents=True, exist_ok=True)
+          path.write_text(json.dumps(output, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit sanitized verification evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add agentmart-output/verification-probe.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record AgentMart verification response [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
