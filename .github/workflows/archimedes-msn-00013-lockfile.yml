@@ -33,7 +33,7 @@ jobs:
         run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
       - name: Commit lockfile when dependency metadata changed
         run: |
-          if git diff --quiet -- deliverables/archimedes-msn-00013/package-lock.json; then
+          if [ -z "$(git status --porcelain -- deliverables/archimedes-msn-00013/package-lock.json)" ]; then
             echo "package-lock.json is already current"
             exit 0
           fi
