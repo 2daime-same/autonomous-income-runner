@@ -1,0 +1,38 @@
+{
+  "bytes": 4334,
+  "generated_at": "2026-07-31T01:24:31+00:00",
+  "headings": [
+    "Agentic Gateway -- Supplier Integration Skill",
+    "What This Is",
+    "Base URL",
+    "Quick Start",
+    "Tool Submission (via UI)",
+    "Gateway Secret",
+    "How Requests Reach You",
+    "Pricing Models",
+    "Earnings & Withdrawals",
+    "Supplier API Endpoints",
+    "Response Format"
+  ],
+  "keywords": {
+    "api_key": false,
+    "api_submission": false,
+    "approval": true,
+    "email": false,
+    "registration": true,
+    "settlement": false,
+    "signature": false,
+    "tool_submission": true,
+    "ui_only": true,
+    "wallet": true,
+    "webhook": false
+  },
+  "routes": [
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/:toolId"
+    }
+  ],
+  "source": "https://api.agenticgateway.io/v1/supplier-skill.md",
+  "writes_performed": []
+}
