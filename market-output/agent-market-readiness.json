@@ -1,0 +1,129 @@
+{
+  "excluded_for_cost_or_deposit": [],
+  "ready_for_zero_spend_worker": [
+    "hyrve"
+  ],
+  "results": {
+    "agenticgateway_supplier": {
+      "apply_or_claim": [],
+      "auth_or_identity": [
+        "text:api.?key",
+        "text:signature"
+      ],
+      "complete_execution_contract": false,
+      "cost_or_deposit": [
+        "text:deposit"
+      ],
+      "decision": "incomplete_contract:apply_or_claim",
+      "delivery": [
+        "text:submit"
+      ],
+      "evidence_present": true,
+      "inventory": [
+        "text:marketplace",
+        "text:missions?"
+      ],
+      "name": "agenticgateway_supplier",
+      "payout": [
+        "text:balance",
+        "text:earnings?",
+        "text:settle",
+        "text:usdc",
+        "text:wallet",
+        "text:withdraw"
+      ],
+      "registration": [
+        "text:register"
+      ],
+      "route_count": 1,
+      "zero_spend_safe": false
+    },
+    "aigen": {
+      "apply_or_claim": [],
+      "auth_or_identity": [],
+      "complete_execution_contract": false,
+      "cost_or_deposit": [],
+      "decision": "incomplete_contract:registration,apply_or_claim,delivery,payout",
+      "delivery": [],
+      "evidence_present": true,
+      "inventory": [
+        "text:missions?"
+      ],
+      "name": "aigen",
+      "payout": [],
+      "registration": [],
+      "route_count": 0,
+      "zero_spend_safe": false
+    },
+    "hyrve": {
+      "apply_or_claim": [
+        "POST https://api.hyrveai.com/v1/agents/claim",
+        "text:apply",
+        "text:claim"
+      ],
+      "auth_or_identity": [
+        "text:api.?key"
+      ],
+      "complete_execution_contract": true,
+      "cost_or_deposit": [],
+      "decision": "implement_worker",
+      "delivery": [
+        "POST https://api.hyrveai.com/v1/orders/{order_id}/deliver",
+        "POST https://hyrveai.com/v1/orders/{id}/deliver",
+        "text:deliver"
+      ],
+      "evidence_present": true,
+      "inventory": [
+        "GET https://api.hyrveai.com/v1/jobs",
+        "GET https://api.hyrveai.com/v1/jobs/{job_id",
+        "GET https://hyrveai.com/v1/jobs",
+        "text:jobs?",
+        "text:marketplace",
+        "text:missions?",
+        "text:tasks?"
+      ],
+      "name": "hyrve",
+      "payout": [
+        "GET https://api.hyrveai.com/v1/wallet",
+        "POST https://api.hyrveai.com/v1/wallet/withdraw",
+        "text:usdc",
+        "text:wallet",
+        "text:withdraw"
+      ],
+      "registration": [
+        "POST https://api.hyrveai.com/v1/agents/self-register",
+        "POST https://hyrveai.com/v1/agents/self-register",
+        "text:register"
+      ],
+      "route_count": 27,
+      "zero_spend_safe": true
+    },
+    "tetto": {
+      "apply_or_claim": [
+        "text:accept",
+        "text:apply",
+        "text:bid"
+      ],
+      "auth_or_identity": [],
+      "complete_execution_contract": false,
+      "cost_or_deposit": [],
+      "decision": "incomplete_contract:registration",
+      "delivery": [
+        "text:solution"
+      ],
+      "evidence_present": true,
+      "inventory": [
+        "text:marketplace",
+        "text:tasks?"
+      ],
+      "name": "tetto",
+      "payout": [
+        "text:usdc",
+        "text:wallet"
+      ],
+      "registration": [],
+      "route_count": 6,
+      "zero_spend_safe": false
+    }
+  }
+}

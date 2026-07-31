@@ -1,0 +1,1 @@
+ready=hyrve;excluded_cost=none;decisions=agenticgateway_supplier:incomplete_contract:apply_or_claim,aigen:incomplete_contract:registration,apply_or_claim,delivery,payout,hyrve:implement_worker,tetto:incomplete_contract:registration
