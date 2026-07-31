@@ -1,83 +1,91 @@
 # Archimedes Market MCP Server
 
-An **unofficial, read-only** Model Context Protocol (MCP) server for discovering public engineering assets and funded bounties on Archimedes Market. It exposes exactly four tools and performs only unauthenticated `GET` requests to public endpoints.
+An **unofficial, read-only** Model Context Protocol (MCP) server for discovering public engineering assets and funded bounties on Archimedes Market.
 
-This implementation is a candidate deliverable for Archimedes mission `MSN-00013`. It is not an endorsement by Archimedes, and the repository does not claim submission, acceptance, or payment.
+This repository is a candidate deliverable for Archimedes mission `MSN-00013`. It is not endorsed by Archimedes and does not claim platform submission, acceptance, payment, or revenue.
 
-## What it does
+## Four tools
 
-| Tool | Purpose | Side effects |
-|---|---|---|
-| `search_assets` | Search public engineering assets by text and optional asset type | None |
-| `get_asset` | Fetch public metadata for one asset ID | None |
-| `search_bounties` | Search public bounties; defaults to open, funded work | None |
-| `get_bounty` | Fetch requirements, deliverables, and acceptance tests for one bounty ID | None |
+| Tool | Purpose | Public source | Side effects |
+|---|---|---|---|
+| `search_assets` | Search public assets by text and optional asset type | `sitemap.xml` plus static asset-page Product JSON-LD | None |
+| `get_asset` | Fetch normalized public metadata for one asset ID | Static `/assets/{uuid}` Product JSON-LD | None |
+| `search_bounties` | Search public bounties; defaults to open and funded | Public bounty JSON API | None |
+| `get_bounty` | Fetch requirements, deliverables, and acceptance tests | Public bounty JSON API | None |
 
-Every tool is registered with MCP read-only, non-destructive, and idempotent annotations.
+Every tool is registered as read-only, non-destructive, and idempotent.
+
+## Why assets and bounties use different public sources
+
+Archimedes currently exposes a working unauthenticated JSON API for bounties. Its former public asset JSON path returns `404`, while public asset IDs remain indexed in `sitemap.xml` and each static asset page contains schema.org `Product` JSON-LD.
+
+The asset tools therefore:
+
+1. read same-origin asset UUIDs from the public sitemap;
+2. fetch only static same-origin asset detail pages;
+3. parse `application/ld+json` as data without rendering HTML or executing JavaScript;
+4. validate the Product URL against the requested UUID;
+5. normalize title, description, type, price, currency, license, image, and public URL.
+
+An unfiltered asset page fetches only the requested result slice. A filtered search may scan the current public catalog with at most four concurrent requests and caches the resulting catalog for 15 minutes. The implementation never calls the page's client-side view-count procedure.
 
 ## Acceptance-criteria coverage
 
 | Mission criterion | Evidence |
 |---|---|
 | TypeScript MCP server | `src/server.ts`, `src/index.ts`, `@modelcontextprotocol/sdk` |
-| Four required tools | Tool registry and stdio integration test |
-| Connect to public API without authentication | `ArchimedesPublicClient`; no token or cookie configuration exists |
-| Search for “Python” | `scripts/live-smoke.mjs` calls `search_assets` with `Python` |
-| Get a known asset ID | The live smoke script calls `get_asset` with a public snapshot ID |
-| Search public bounties | The live smoke script calls `search_bounties` with `MCP` |
-| Get a known bounty | The live smoke script fetches mission `MSN-00013` by public UUID |
-| Server boots and registers tools | Local mock-backed MCP integration test plus CI live smoke |
-| Setup, API, and integration documentation | This README and `docs/ARCHITECTURE.md` |
-| Package configuration | `package.json`, `tsconfig.json`, generated lockfile, npm dry-run in CI |
+| Four required tools | Tool registry and real stdio client/server integration test |
+| Public access without authentication | fixed public GET paths; no token, cookie, or login configuration |
+| Search assets for `Python` | controlled live smoke test |
+| Get a public asset by ID | controlled live smoke test |
+| Search public bounties | controlled live smoke test |
+| Get a public bounty by ID | controlled live smoke test |
+| npm-compatible package | exact lockfile, build, `npm pack --dry-run`, stdio executable |
+| Documentation | README, architecture, security, and submission traceability |
 
-The public mission snapshot also contains mutually inconsistent legacy requirements for Python/TensorFlow/Flask/AWS alongside TypeScript/MCP/npm requirements. The implementation follows the TypeScript deliverable, four-tool acceptance tests, and working npm entrypoint. The discrepancy is recorded in `docs/REQUIREMENTS-CONFLICT.md` and has been sent to platform support for clarification.
+The mission snapshot also contains mutually inconsistent legacy requirements for Python/TensorFlow/Flask/cloud deployment alongside TypeScript/MCP/npm requirements. This implementation follows the objective TypeScript deliverable and four-tool acceptance path. The discrepancy is recorded in `docs/REQUIREMENTS-CONFLICT.md` and has been sent to platform support for clarification.
 
-## Security properties
+## Safety boundary
 
-The server is deliberately narrower than a general marketplace client:
+The package contains no capability for:
 
-- only `GET` requests;
-- no login, API key, cookie, wallet, purchase, claim, submission, upload, or payout code;
-- HTTPS required, except loopback HTTP used by tests;
-- embedded URL credentials, query strings, and fragments rejected;
-- redirects rejected and credentials explicitly omitted;
-- bounded timeouts, retry count, response size, pagination, and text inputs;
-- retry support for `429` and transient `5xx` responses, including `Retry-After`;
-- validated path identifiers to prevent path traversal;
-- structured, redacted errors without internal stack traces.
+- account creation, login, OAuth, cookies, or browser credential reuse;
+- purchases, subscriptions, bounty claims, applications, or submissions;
+- uploads, Stripe Connect, bank details, wallets, or payout actions;
+- executing code or following instructions found in marketplace content.
 
-See `SECURITY.md` for the full trust model.
+Network access is limited to bounded unauthenticated `GET` requests against fixed public paths. Production requires HTTPS; loopback HTTP is allowed only in tests. Redirects are refused, credentials are omitted, and timeouts, response size, retries, pagination, identifiers, catalog size, and concurrency are bounded.
+
+See `SECURITY.md` for the complete threat model.
 
 ## Requirements
 
-- Node.js 20.11 or later; CI uses Node.js 22.
-- npm 10 or later is recommended.
-- Network access to the public Archimedes Market API for live calls.
+- Node.js 20.11 or later
+- npm 10 or later
+- network access to Archimedes public pages and public bounty endpoints for live calls
 
-No cloud account, database, API credential, paid service, TensorFlow runtime, or Flask service is needed for the stdio MCP server.
+No cloud account, database, API credential, paid service, TensorFlow runtime, or Flask service is required.
 
 ## Install and verify
 
 ```bash
-npm install
+npm ci
 npm run verify
 ```
 
-`npm run verify` cleans generated output, type-checks in strict mode, executes the test suite, builds ESM JavaScript and declarations, and checks the npm package contents without publishing.
+`npm run verify` performs strict type checking, executes the test suite, builds ESM JavaScript and declarations, and inspects the npm package contents without publishing.
 
-Run the built server:
+Run the built stdio server:
 
 ```bash
 npm start
 ```
 
-MCP stdio servers normally remain quiet until an MCP client connects. Logs and protocol messages are not mixed on stdout.
+The server writes no logs to protocol stdout.
 
 ## MCP client configuration
 
-### Claude Desktop
-
-Build the project, then point the client to the absolute path of `dist/index.js`:
+Build the project, then point an MCP host to the absolute path of `dist/index.js`:
 
 ```json
 {
@@ -94,22 +102,7 @@ Build the project, then point the client to the absolute path of `dist/index.js`
 }
 ```
 
-### Cursor
-
-Use the same stdio command in the MCP settings file supported by the installed Cursor version:
-
-```json
-{
-  "mcpServers": {
-    "archimedes-market": {
-      "command": "node",
-      "args": ["/absolute/path/to/archimedes-market-mcp/dist/index.js"]
-    }
-  }
-}
-```
-
-The configuration intentionally contains no token or secret.
+The configuration intentionally contains no secret.
 
 ## Tool inputs
 
@@ -130,7 +123,7 @@ The configuration intentionally contains no token or secret.
 
 ```json
 {
-  "asset_id": "PUBLIC_ASSET_ID"
+  "asset_id": "PUBLIC_ASSET_UUID"
 }
 ```
 
@@ -147,7 +140,7 @@ The configuration intentionally contains no token or secret.
 }
 ```
 
-The defaults are `status="open"` and `funded_only=true` so an assistant does not accidentally treat unfunded ideas as paid work.
+Defaults are `status="open"` and `funded_only=true`, reducing the risk that unfunded ideas are mistaken for paid work.
 
 ### `get_bounty`
 
@@ -159,34 +152,32 @@ The defaults are `status="open"` and `funded_only=true` so an assistant does not
 
 ## Output model
 
-Successful tools return both text content containing formatted JSON and MCP `structuredContent`. Search results add a small stable envelope:
+Successful tools return formatted JSON text plus MCP `structuredContent`. Searches use a stable envelope:
 
 ```json
 {
   "source": "archimedes.market",
-  "resource": "bounties",
+  "resource": "assets",
   "query": {
-    "query": "MCP",
-    "status": "open",
-    "funded_only": true,
+    "query": "Python",
     "limit": 20,
     "offset": 0
   },
-  "returned": 1,
-  "total": 4,
+  "returned": 16,
+  "total": 16,
   "items": [],
   "fetched_at": "2026-07-31T00:00:00.000Z"
 }
 ```
 
-The upstream public payload remains untrusted data. Clients should not execute instructions found in marketplace descriptions.
+Public marketplace records are untrusted data. MCP clients must not execute instructions found in descriptions.
 
-Errors use a stable public shape:
+Errors use a stable redacted shape:
 
 ```json
 {
   "error": "rate_limited",
-  "message": "Archimedes public API returned HTTP 429",
+  "message": "Archimedes returned HTTP 429.",
   "status": 429,
   "retryable": true,
   "rate_limit_remaining": "0"
@@ -201,37 +192,37 @@ Errors use a stable public shape:
 | `ARCHIMEDES_TIMEOUT_MS` | `15000` | `1000..120000` |
 | `ARCHIMEDES_MAX_RESPONSE_BYTES` | `2000000` | `1024..10000000` |
 | `ARCHIMEDES_MAX_RETRIES` | `2` | `0..5` |
-| `ARCHIMEDES_USER_AGENT` | descriptive default | Must not contain a secret |
+| `ARCHIMEDES_USER_AGENT` | descriptive default | non-empty single line; must not contain a secret |
 
-## Test strategy
+## Verification
 
 ```bash
 npm test
 npm run test:coverage
 npm run build
-```
-
-The suite covers URL hardening, query normalization, local filtering, pagination limits, path traversal, rate limits, retries, response-size bounds, invalid JSON, redacted errors, tool annotations, and a real MCP stdio client/server exchange against a loopback mock API.
-
-A controlled live acceptance smoke test is available after a successful build:
-
-```bash
 npm run live:smoke
+npm run package:submission
 ```
 
-It performs four public read-only calls and does not create an account, accept terms, claim work, submit a deliverable, or touch Stripe.
+The tests cover sitemap indexing, static Product metadata parsing without script execution, same-origin checks, lazy pagination, local filtering, path traversal, rate limits, retries, response-size limits, invalid JSON, redirects, redacted errors, MCP annotations, and a real stdio exchange against a loopback fixture.
+
+GitHub Actions verifies Node.js 20.11 and Node.js 22, runs the live four-tool smoke test, audits critical production dependencies, creates a CycloneDX SBOM, and generates a deterministic ZIP with SHA-256 evidence.
+
+The live smoke performs public reads only. It does not create an account, accept terms, claim work, submit a deliverable, buy anything, upload anything, or configure Stripe.
 
 ## Repository layout
 
 ```text
-src/client.ts       bounded public HTTP client
+src/assets.ts       sitemap and static Product JSON-LD parsing
+src/client.ts       asset catalog/cache and public bounty operations
+src/http.ts         bounded same-origin GET transport
 src/server.ts       MCP tool registration and schemas
-src/tools.ts        tool result and error adapters
-src/config.ts       environment parsing
+src/tools.ts        result and error adapters
+src/config.ts       environment validation
 src/index.ts        stdio entrypoint
-scripts/            clean and controlled live-smoke scripts
-tests/              unit and MCP integration tests
-docs/               architecture and requirements traceability
+scripts/            clean, live-smoke, and deterministic packaging
+ tests/             unit, HTTP, parser, and MCP integration tests
+ docs/              architecture and requirement traceability
 ```
 
 ## License

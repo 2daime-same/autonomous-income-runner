@@ -7,11 +7,11 @@
 - Implementation: unofficial TypeScript stdio MCP server
 - License: MIT
 - Capability boundary: unauthenticated public reads only
-- Submission status: **not submitted**
+- Platform submission status: **not submitted**
 - Acceptance status: **not accepted**
 - Verified revenue or receivable: **0**
 
-The public bounty snapshot displayed a funded/locked reward, but a displayed amount is not income or a receivable.
+A publicly displayed funded/locked reward is an opportunity signal, not income or a receivable.
 
 ## Delivered features
 
@@ -19,22 +19,25 @@ The public bounty snapshot displayed a funded/locked reward, but a displayed amo
 - `get_asset`
 - `search_bounties`
 - `get_bounty`
-- strict TypeScript configuration
+- strict TypeScript and exact dependency lockfile
 - read-only MCP annotations
-- public HTTP client with timeout, response-size, rate-limit, retry, URL, and identifier controls
-- safe structured errors
-- unit tests
-- real stdio MCP integration test
-- controlled live acceptance smoke script
+- public asset discovery through same-origin sitemap UUIDs and static Product JSON-LD
+- public bounty discovery through the unauthenticated bounty JSON API
+- GET-only transport with timeout, size, retry, rate-limit, URL, identifier, catalog, and concurrency controls
+- static HTML parsing without rendering or JavaScript execution
+- stable structured results and redacted errors
+- unit, parser, HTTP, and real stdio MCP integration tests
+- controlled live four-tool acceptance smoke test
 - setup, integration, architecture, security, and requirement-conflict documentation
-- deterministic CI packaging and SHA-256 manifest
+- deterministic CI packaging, SHA-256 manifest, dependency audit, and CycloneDX SBOM
 
 ## Reproduction
 
 ```bash
-npm install
+npm ci
 npm run verify
 npm run live:smoke
+npm run package:submission
 ```
 
 The live smoke is read-only. It does not create an account, accept terms, apply, claim, submit, buy, upload, or configure Stripe.
@@ -43,18 +46,23 @@ The live smoke is read-only. It does not create an account, accept terms, apply,
 
 | Acceptance item | Verification |
 |---|---|
-| Server starts and registers tools | stdio MCP integration test |
-| `search_assets` works with “Python” | mock-backed integration plus controlled live smoke |
-| `get_asset` returns a public asset | mock-backed integration plus controlled live smoke |
-| `search_bounties` returns public missions | mock-backed integration plus controlled live smoke |
-| `get_bounty` returns mission detail | mock-backed integration plus controlled live smoke |
-| Package starts with npm | build + `npm start`; CI package dry run |
-| Documentation included | README, architecture, security, conflict note, this brief |
+| Server starts and registers exactly four tools | real stdio MCP integration test |
+| `search_assets` works with `Python` | parser/client tests plus controlled live smoke |
+| `get_asset` returns a public asset | Product JSON-LD binding tests plus controlled live smoke |
+| `search_bounties` returns public missions | mock-backed tests plus controlled live smoke |
+| `get_bounty` returns mission detail | mock-backed tests plus controlled live smoke |
+| Works on minimum supported runtime | Node.js 20.11 CI job |
+| npm package is complete | exact lockfile, build, `npm pack --dry-run`, manifest |
+| Supply-chain evidence exists | critical production audit and CycloneDX SBOM |
+| Submission ZIP is reproducible and intact | fixed timestamps, file manifest, generated SHA-256, checksum verification |
+| Documentation is complete | README, architecture, security, conflict note, this brief |
+
+The authoritative test count, coverage output, live resource IDs, commit, archive hash, SBOM, and audit result are generated in the GitHub Actions artifact. They are intentionally not copied into this source file because changing the source would itself change the final archive hash.
 
 ## Known requirement ambiguity
 
-The mission snapshot contains both Python/TensorFlow/Flask/AWS requirements and TypeScript/MCP/npm requirements. This implementation follows the TypeScript deliverable and the four automated acceptance tools. See `docs/REQUIREMENTS-CONFLICT.md`. Official clarification is required before representing the legacy Python/cloud language as waived.
+The mission snapshot contains both Python/TensorFlow/Flask/cloud requirements and TypeScript/MCP/npm requirements. This implementation follows the objective TypeScript deliverable and the four automated acceptance tools. See `docs/REQUIREMENTS-CONFLICT.md`. Official clarification is required before representing the legacy Python/cloud language as waived.
 
 ## Human-controlled boundary
 
-Account registration, residency statements, terms acceptance, identity verification, Stripe or bank onboarding, final submission, and any legal warranty remain actions for the human account owner after platform eligibility and requirement interpretation are confirmed.
+Account registration, age or residency statements, terms acceptance, identity verification, Stripe or bank onboarding, final upload/submission, and any legal warranty remain actions for the human account owner after platform eligibility and requirement interpretation are confirmed.

@@ -34,8 +34,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20.11"
-      - name: Install dependency graph
-        run: npm install --no-audit --no-fund
+      - name: Install locked dependency graph
+        run: npm ci --no-audit --no-fund
       - name: Verify on minimum supported Node line
         run: npm run verify
 
@@ -47,8 +47,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Install dependency graph
-        run: npm install --no-audit --no-fund
+      - name: Install locked dependency graph
+        run: npm ci --no-audit --no-fund
       - name: Strict verification
         run: npm run verify
       - name: Coverage evidence
@@ -63,12 +63,7 @@ jobs:
         run: |
           mkdir -p dist-submission
           npm sbom --sbom-format cyclonedx > dist-submission/sbom.cdx.json
-      - name: Discover current public asset endpoint
-        continue-on-error: true
-        run: |
-          set -o pipefail
-          node scripts/discover-public-assets.mjs | tee dist-submission/public-asset-endpoint-probe.json
-      - name: Controlled live public-API smoke test
+      - name: Controlled live four-tool smoke test
         run: |
           set -o pipefail
           npm run live:smoke | tee dist-submission/live-smoke.json
@@ -94,7 +89,6 @@ jobs:
             deliverables/archimedes-msn-00013/dist-submission/archimedes-msn-00013-mcp-server.zip.sha256
             deliverables/archimedes-msn-00013/dist-submission/sbom.cdx.json
             deliverables/archimedes-msn-00013/dist-submission/live-smoke.json
-            deliverables/archimedes-msn-00013/dist-submission/public-asset-endpoint-probe.json
             deliverables/archimedes-msn-00013/test-coverage.log
             deliverables/archimedes-msn-00013/dependency-audit.log
             deliverables/archimedes-msn-00013/package-lock.json
