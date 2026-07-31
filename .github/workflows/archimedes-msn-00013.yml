@@ -30,10 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: "20.11"
+          package-manager-cache: false
       - name: Install locked dependency graph
         run: npm ci --no-audit --no-fund
       - name: Verify on minimum supported Node line
@@ -43,10 +44,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: "22"
+          package-manager-cache: false
       - name: Install locked dependency graph
         run: npm ci --no-audit --no-fund
       - name: Strict verification
@@ -79,7 +81,7 @@ jobs:
           cd dist-submission
           sha256sum --check archimedes-msn-00013-mcp-server.zip.sha256
       - name: Upload review artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: archimedes-msn-00013-${{ github.sha }}
           if-no-files-found: error
