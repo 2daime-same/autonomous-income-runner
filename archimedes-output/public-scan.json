@@ -1,0 +1,522 @@
+{
+  "candidate_count": 3,
+  "details_fetched": 4,
+  "errors": [],
+  "excluded": [
+    {
+      "acceptance_tests": [
+        {
+          "description": "DRC passes with zero errors on JLCPCB design rules",
+          "name": "DRC clean",
+          "required": true,
+          "test_type": "SEMI_AUTOMATED"
+        },
+        {
+          "description": "ERC passes with zero errors",
+          "name": "ERC clean",
+          "required": true,
+          "test_type": "SEMI_AUTOMATED"
+        },
+        {
+          "description": "BOM resolves on LCSC for ≥ 90% of parts",
+          "name": "BOM resolvability",
+          "required": true,
+          "test_type": "SEMI_AUTOMATED"
+        },
+        {
+          "description": "Schematic readability, decoupling, antenna keepout",
+          "name": "Design quality review",
+          "required": true,
+          "test_type": "MANUAL"
+        }
+      ],
+      "candidate": false,
+      "capability_matches": [
+        "typescript_javascript",
+        "documentation"
+      ],
+      "category": "hardware",
+      "complexity": "medium",
+      "deadline": "2026-08-21T23:59:59Z",
+      "deliverables": [
+        {
+          "accepted_formats": [],
+          "description": "KiCad 8 project zip (schematic + PCB + libraries)",
+          "name": "KiCad project files",
+          "required": true,
+          "type": "DATA"
+        },
+        {
+          "accepted_formats": [],
+          "description": "Gerbers, drill files, BOM CSV with LCSC part numbers, CPL position file",
+          "name": "Manufacturing pack",
+          "required": true,
+          "type": "DATA"
+        },
+        {
+          "accepted_formats": [
+            "README explaining design choices",
+            "expected battery life math",
+            "known limitations"
+          ],
+          "description": null,
+          "name": "Design rationale",
+          "required": true,
+          "type": "DOCUMENT"
+        },
+        {
+          "accepted_formats": [],
+          "description": "Link to a fabricated and tested unit — extra credit, not required for payout",
+          "name": "Fabricated unit (optional)",
+          "required": true,
+          "type": "VIDEO"
+        }
+      ],
+      "description_excerpt": "I need a production-ready KiCad 8 schematic and PCB for a battery-powered IoT sensor node based on the ESP32-C6 (WiFi 6 + BLE + Thread). Target use: indoor environmental monitoring, 6-month battery life on a single 18650 cell, deep-sleep current under 15 µA. Not a hobbyist design — manufacturable, with a real BOM, fabrication outputs, and a written design rationale. If accepted, the design lists on archimedes.market with the engineer credited as designer and 0% commission for 12 months.",
+      "display_id": "MSN-00016",
+      "escrow_status": "locked",
+      "hard_exclusion_reasons": [
+        "requires_physical_or_hardware_work",
+        "unsupported_category"
+      ],
+      "id": "9f0acc01-1e89-4473-a340-c4d1719d1e3c",
+      "is_funded": true,
+      "payout_usd": 450.0,
+      "requirements": [
+        {
+          "category": "FUNCTIONAL",
+          "description": "KiCad 8 project: schematic + PCB + symbol/footprint libraries",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Sensors: BME280 (temp/humidity/pressure) + SCD41 (CO2) over I²C",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "18650 holder + TP4056 charging via USB-C + LDO regulation",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Deep-sleep current ≤ 15 µA, validated by simulation or measurement",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "4-layer PCB, ≤ 50 × 50 mm, JLCPCB-manufacturable",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "BOM in CSV with LCSC part numbers",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Gerbers + drill files + position file (CPL)",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Antenna placement validated against ESP32-C6 layout guidelines",
+          "priority": "SHOULD"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "ESD protection on USB-C, programming header",
+          "priority": "SHOULD"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "3D rendered preview",
+          "priority": "MAY"
+        }
+      ],
+      "score": 43.0,
+      "status": "open",
+      "summary": "I need a production-ready KiCad 8 schematic and PCB for a battery-powered IoT sensor node based on the ESP32-C6 (WiFi 6 + BLE + Thread). Target use: indoor environmental monitoring, 6-month battery life on a single 18650 cell, deep-sleep current under 15 µA. Not a hobbyist design",
+      "title": "KiCad 8 Reference Design — ESP32-C6 IoT Sensor Node with Battery Management",
+      "urgency_bucket": "1_to_30_days",
+      "url": "https://archimedes.market/bounties/9f0acc01-1e89-4473-a340-c4d1719d1e3c"
+    }
+  ],
+  "generated_at": "2026-07-31T06:37:32Z",
+  "geographic_note": "Platform terms say access from outside the United States may be limited; no registration or participation was attempted.",
+  "open_summaries_fetched": 4,
+  "ranked_candidates": [
+    {
+      "acceptance_tests": [
+        {
+          "description": "Server starts and registers all tools without errors",
+          "name": "Server boot + tool registration",
+          "required": true,
+          "test_type": "SEMI_AUTOMATED"
+        },
+        {
+          "description": "Listing PRs on a 50+ PR repo paginates correctly",
+          "name": "Pagination correctness",
+          "required": true,
+          "test_type": "SEMI_AUTOMATED"
+        },
+        {
+          "description": "Posting a review comment appears on the PR within 5 seconds",
+          "name": "Comment latency",
+          "required": true,
+          "test_type": "MANUAL"
+        },
+        {
+          "description": "README quickstart works from a clean machine in <10 minutes",
+          "name": "Clean-machine quickstart",
+          "required": true,
+          "test_type": "MANUAL"
+        }
+      ],
+      "candidate": true,
+      "capability_matches": [
+        "typescript_javascript",
+        "api_backend",
+        "mcp_agent",
+        "documentation"
+      ],
+      "category": "software",
+      "complexity": "medium",
+      "deadline": "2026-08-21T23:59:59Z",
+      "deliverables": [
+        {
+          "accepted_formats": [],
+          "description": "Public GitHub repo with source, tests, README",
+          "name": "Source code repository",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "accepted_formats": [],
+          "description": "Published to npm registry under MIT or Apache 2.0",
+          "name": "npm package",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "accepted_formats": [],
+          "description": "1-min screen capture demoing Claude Desktop using the server on a real repo",
+          "name": "Demo video",
+          "required": true,
+          "type": "VIDEO"
+        }
+      ],
+      "description_excerpt": "I want an MCP server that Claude can use to do everything I currently do manually on GitHub PRs: list open PRs in a repo, fetch PR diffs and review comments, post inline review comments, request changes, and label PRs. This isn't a wrapper around `gh` CLI — it should be a proper MCP server with typed tool schemas, error handling, rate-limit awareness, and a sensible permission model (read vs write tokens). If accepted, I'll list the production-ready version on archimedes.market with the engineer credited and 0% commission for 12 months.",
+      "display_id": "MSN-00015",
+      "escrow_status": "locked",
+      "hard_exclusion_reasons": [],
+      "id": "7176ab9f-1d21-4c98-b8b3-01d2cc3c273b",
+      "is_funded": true,
+      "payout_usd": 450.0,
+      "requirements": [
+        {
+          "category": "FUNCTIONAL",
+          "description": "MCP server in TypeScript, published to npm under MIT or Apache 2.0",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Tools: `list_prs`, `get_pr`, `get_pr_diff`, `list_pr_comments`, `post_review_comment`, `submit_review`, `add_labels`, `request_changes`",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "GitHub App **and** PAT auth modes",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Respects GitHub rate limits, surfaces remaining budget in error messages",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "README with config example for Claude Desktop and Cursor",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Pagination across large PRs",
+          "priority": "SHOULD"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Inline diff resolution (not just full file)",
+          "priority": "SHOULD"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Built-in code-review prompts users can opt into",
+          "priority": "MAY"
+        }
+      ],
+      "score": 146.5,
+      "status": "open",
+      "summary": "I want an MCP server that Claude can use to do everything I currently do manually on GitHub PRs: list open PRs in a repo, fetch PR diffs and review comments, post inline review comments, request changes, and label PRs. This isn't a wrapper around `gh` CLI — it should be a proper",
+      "title": "Build an MCP Server that Lets Claude Triage and Review GitHub PRs",
+      "urgency_bucket": "1_to_30_days",
+      "url": "https://archimedes.market/bounties/7176ab9f-1d21-4c98-b8b3-01d2cc3c273b"
+    },
+    {
+      "acceptance_tests": [
+        {
+          "description": "Each of the 4 MCP tools returns valid results when called with sample inputs (e.g., search for \"Python\", get a known asset ID).",
+          "name": "Functionality Test",
+          "required": true,
+          "test_type": "AUTOMATED"
+        },
+        {
+          "description": "Server starts successfully and connects to Archimedes public API without errors.",
+          "name": "Integration Test",
+          "required": true,
+          "test_type": "AUTOMATED"
+        }
+      ],
+      "candidate": true,
+      "capability_matches": [
+        "python",
+        "typescript_javascript",
+        "api_backend",
+        "mcp_agent",
+        "testing_debugging",
+        "documentation"
+      ],
+      "category": "software",
+      "complexity": "complex",
+      "deadline": "2026-08-21T23:59:59Z",
+      "deliverables": [
+        {
+          "accepted_formats": [
+            "TypeScript MCP server implementation",
+            ".ts"
+          ],
+          "description": "Complete source code for the MCP server, including all modules and components.",
+          "name": "MCP Server Source Code",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "accepted_formats": [
+            ".pdf",
+            ".docx. md"
+          ],
+          "description": "Comprehensive technical documentation including setup, API usage, and integration guidelines.",
+          "name": "Technical Documentation",
+          "required": true,
+          "type": "DOCUMENT"
+        },
+        {
+          "accepted_formats": [
+            ".json"
+          ],
+          "description": "Package Configuration",
+          "name": "",
+          "required": true,
+          "type": "CODE"
+        }
+      ],
+      "description_excerpt": "Develop a Model Context Protocol (MCP) server enabling AI assistants to interact seamlessly with the Archimedes Market platform.",
+      "display_id": "MSN-00013",
+      "escrow_status": "locked",
+      "hard_exclusion_reasons": [],
+      "id": "5586f0c8-cde1-416c-ac28-d85bc6a264f0",
+      "is_funded": true,
+      "payout_usd": 100.0,
+      "requirements": [
+        {
+          "category": "FUNCTIONAL",
+          "description": "Enable secure communication between AI assistants and the Archimedes platform.",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Support context-based interaction interfaces for AI queries.",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Facilitate real-time processing and response delivery to AI-generated queries.",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Implement robust error handling for AI interaction failures.",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Allow integration with multiple AI models like Claude, Cursor, and Copilot.",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "TECHNICAL",
+          "description": "Develop using Python with TensorFlow and Flask frameworks.",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "TECHNICAL",
+          "description": "Deploy on cloud services such as AWS or Azure.",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "PERFORMANCE",
+          "description": "Working entry point (npm start or npx)",
+          "priority": "MUST_HAVE"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "4 MCP tools: search_assets, get_asset, search_bounties, get_bounty",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "TypeScript using @modelcontextprotocol/sdk",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "README with setup instructions and usage example",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Connects to Archimedes public API (read-only, no auth)",
+          "priority": "SHALL"
+        }
+      ],
+      "score": 127.5,
+      "status": "open",
+      "summary": "Develop a Model Context Protocol (MCP) server enabling AI assistants to interact seamlessly with the Archimedes Market platform.",
+      "title": "AI Assistant Model Context Protocol Server Development",
+      "urgency_bucket": "1_to_30_days",
+      "url": "https://archimedes.market/bounties/5586f0c8-cde1-416c-ac28-d85bc6a264f0"
+    },
+    {
+      "acceptance_tests": [
+        {
+          "description": "API returns correct conversion results for at least one unit pair per domain (8 domains tested)",
+          "name": "Functional Test",
+          "required": true,
+          "test_type": "MANUAL"
+        },
+        {
+          "description": "All conversions match reference values within 0.1% tolerance",
+          "name": "Accuracy test",
+          "required": true,
+          "test_type": "MANUAL"
+        }
+      ],
+      "candidate": true,
+      "capability_matches": [
+        "python",
+        "typescript_javascript",
+        "api_backend",
+        "testing_debugging",
+        "documentation"
+      ],
+      "category": "software",
+      "complexity": "medium",
+      "deadline": "2026-08-21T23:59:59Z",
+      "deliverables": [
+        {
+          "accepted_formats": [
+            ".py",
+            ".ts",
+            ".js",
+            ".json",
+            ".zip"
+          ],
+          "description": "Python (FastAPI) or TypeScript (Express) REST API implementation",
+          "name": "Source Code",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "accepted_formats": [
+            "Dockerfile",
+            ".zip"
+          ],
+          "description": "Container-ready deployment config",
+          "name": "Dockerfile",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "accepted_formats": [
+            ".py",
+            ".ts",
+            ".jsm.zip"
+          ],
+          "description": "Test suite with 30+ test cases across all domains",
+          "name": "Unit Tests",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "accepted_formats": [
+            ".md",
+            ".docx",
+            ".pdf"
+          ],
+          "description": "README.md with API endpoints, supported units, and examples",
+          "name": "Documentation",
+          "required": true,
+          "type": "CODE"
+        }
+      ],
+      "description_excerpt": "Build a standalone REST API that converts between engineering units across the domains most relevant to mechanical, electrical, and manufacturing engineers. The API should support 3 endpoints: /convert (perform conversion), /units (list units per domain), and /domains (list all supported domains). All conversions must be computed locally with no external API dependencies. Suitable for integration into engineering toolchains, CI/CD pipelines, and AI-assisted workflows.",
+      "display_id": "MSN-00014",
+      "escrow_status": "locked",
+      "hard_exclusion_reasons": [],
+      "id": "89c2e397-bf5d-47d5-af06-7c5b749d76d1",
+      "is_funded": true,
+      "payout_usd": 100.0,
+      "requirements": [
+        {
+          "category": "FUNCTIONAL",
+          "description": "Support unit conversions across 8 engineering domains (length, force/torque, pressure, temperature, electrical, flow, thermal, mass/density)",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Implement minimum 50 unit pairs across all domains",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "All conversions computed locally — no external API calls",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Include unit tests covering all 8 domains (minimum 30 test cases)",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Include Dockerfile for deployment",
+          "priority": "SHALL"
+        },
+        {
+          "category": "FUNCTIONAL",
+          "description": "Include README with API documentation and usage examples",
+          "priority": "SHALL"
+        }
+      ],
+      "score": 119.0,
+      "status": "open",
+      "summary": "Build a standalone REST API that converts between engineering units across the domains most relevant to mechanical, electrical, and manufacturing engineers. The API should support 3 endpoints: /convert (perform conversion), /units (list units per domain), and /domains (list all s",
+      "title": "REST API for Engineering Unit Conversion",
+      "urgency_bucket": "1_to_30_days",
+      "url": "https://archimedes.market/bounties/89c2e397-bf5d-47d5-af06-7c5b749d76d1"
+    }
+  ],
+  "safety": "Read-only public scan; no account, terms acceptance, Stripe onboarding, claim, upload, submission, payment, or download.",
+  "source": "https://archimedes.market/api/public/bounties (GET only)",
+  "verified_income_usd": 0
+}
