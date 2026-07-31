@@ -32,7 +32,7 @@
     }
   ],
   "actionable_count": 1,
-  "generated_at": "2026-07-31T09:22:10+00:00",
+  "generated_at": "2026-07-31T11:37:32+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -200,6 +200,54 @@
       "total_amount_usd": "150.00"
     },
     {
+      "additional_description": "Bounty only available once the scope is fully defined",
+      "amount_usd": "15.00",
+      "assignment_type": "exclusive",
+      "attempt_signals": [],
+      "bountyhub_id": "6c8e18c0-e78a-4094-802d-0cbd3f48dbe0",
+      "claimed": false,
+      "exclusions": [
+        "BountyHub assignee already present",
+        "GitHub issue already assigned",
+        "assignment is not open",
+        "not escrow-paid: PROMISED",
+        "open competing PR exists"
+      ],
+      "github_assignees": [
+        "adityakrmishra"
+      ],
+      "github_issue_state": "open",
+      "issue_number": 12064,
+      "issue_url": "https://github.com/inventree/InvenTree/issues/12064",
+      "open_competing_prs": [
+        {
+          "number": 12072,
+          "title": "Feature: Backend scaffolding for Repair Orders (#12064)",
+          "updated_at": "2026-07-31T09:32:49Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12072",
+          "user": "adityakrmishra"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "Python",
+      "repo_stars": 7323,
+      "repository": "inventree/InvenTree",
+      "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
+      "score": 75.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "supported language: python",
+        "established repository",
+        "no competing attempt signal found",
+        "1 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[Feature] Repair orders",
+      "total_amount_usd": "15.00"
+    },
+    {
       "additional_description": "",
       "amount_usd": "250.00",
       "assignment_type": "open",
@@ -226,7 +274,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Go",
-      "repo_stars": 2181,
+      "repo_stars": 2182,
       "repository": "emersion/hydroxide",
       "scope_excerpt": "There was work put into making the address book available over CardDav/localhost:8080, is there interest in getting calendar working as well?",
       "score": 70.18,
@@ -464,75 +512,6 @@
       "total_amount_usd": "50.00"
     },
     {
-      "additional_description": "Bounty only available once the scope is fully defined",
-      "amount_usd": "15.00",
-      "assignment_type": "exclusive",
-      "attempt_signals": [],
-      "bountyhub_id": "6c8e18c0-e78a-4094-802d-0cbd3f48dbe0",
-      "claimed": false,
-      "exclusions": [
-        "BountyHub assignee already present",
-        "GitHub issue already assigned",
-        "assignment is not open",
-        "not escrow-paid: PROMISED",
-        "open competing PR exists"
-      ],
-      "github_assignees": [
-        "adityakrmishra"
-      ],
-      "github_issue_state": "open",
-      "issue_number": 12064,
-      "issue_url": "https://github.com/inventree/InvenTree/issues/12064",
-      "open_competing_prs": [
-        {
-          "number": 12072,
-          "title": "Feature: Backend scaffolding for Repair Orders (#12064)",
-          "updated_at": "2026-07-27T05:31:08Z",
-          "url": "https://github.com/inventree/InvenTree/pull/12072",
-          "user": "adityakrmishra"
-        },
-        {
-          "number": 12396,
-          "title": "feat: Add RepairOrder feature (#12064)",
-          "updated_at": "2026-07-14T11:16:45Z",
-          "url": "https://github.com/inventree/InvenTree/pull/12396",
-          "user": "stevenmini2019"
-        },
-        {
-          "number": 12326,
-          "title": "Add backend MVP for repair orders",
-          "updated_at": "2026-07-07T16:17:39Z",
-          "url": "https://github.com/inventree/InvenTree/pull/12326",
-          "user": "bobwoo0621-lab"
-        },
-        {
-          "number": 12303,
-          "title": "feat(order): add RepairOrder order type (backend)",
-          "updated_at": "2026-07-05T12:27:01Z",
-          "url": "https://github.com/inventree/InvenTree/pull/12303",
-          "user": "ameyypawar"
-        }
-      ],
-      "payment_status": "PROMISED",
-      "repo_archived": false,
-      "repo_language": "Python",
-      "repo_stars": 7323,
-      "repository": "inventree/InvenTree",
-      "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
-      "score": 45.41,
-      "score_reasons": [
-        "BountyHub paymentStatus is PAID",
-        "small first-payment-sized bounty",
-        "supported language: python",
-        "established repository",
-        "no competing attempt signal found",
-        "4 open competing PR(s)"
-      ],
-      "solved": false,
-      "title": "[Feature] Repair orders",
-      "total_amount_usd": "15.00"
-    },
-    {
       "additional_description": "",
       "amount_usd": "100.00",
       "assignment_type": "open",
@@ -563,6 +542,13 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
         {
+          "number": 1741,
+          "title": "fix: agent deletion leaves memories, sessions, and conflicts (data resurrection bug) #770",
+          "updated_at": "2026-07-31T10:42:15Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1741",
+          "user": "leanworld7-netizen"
+        },
+        {
           "number": 1571,
           "title": "fix: prevent recall loss, session corruption, and duplicate memories",
           "updated_at": "2026-07-31T07:23:05Z",
@@ -589,13 +575,6 @@
           "updated_at": "2026-07-31T04:25:25Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1743",
           "user": "Roezna"
-        },
-        {
-          "number": 1741,
-          "title": "fix: agent deletion leaves memories, sessions, and conflicts (data resurrection bug) #770",
-          "updated_at": "2026-07-31T02:47:31Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1741",
-          "user": "leanworld7-netizen"
         },
         {
           "number": 1740,
@@ -871,13 +850,6 @@
           "user": "smwsk1"
         },
         {
-          "number": 1605,
-          "title": "fix: 7 bug fixes (TTL timeline + batch integrity + 5 medium) — Fixes #770",
-          "updated_at": "2026-07-22T11:29:33Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1605",
-          "user": "hanu-14"
-        },
-        {
           "number": 1589,
           "title": "fix: ensure _parse_ts returns aware datetime and clean up batch counting logic",
           "updated_at": "2026-07-21T19:10:14Z",
@@ -1112,7 +1084,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1740,
+      "repo_stars": 1741,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
       "score": 29.0,
@@ -1123,7 +1095,7 @@
         "supported language: python",
         "established repository",
         "3 competing attempt signal(s)",
-        "78 open competing PR(s)"
+        "77 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
@@ -1368,7 +1340,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1740,
+      "repo_stars": 1741,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
       "score": 27.41,
@@ -1895,13 +1867,6 @@
           "user": "namdamdoi68-oss"
         },
         {
-          "number": 3672,
-          "title": "feat: Add CompanionPairingManager for Wear OS 3+ device pairing",
-          "updated_at": "2026-07-29T18:22:40Z",
-          "url": "https://github.com/microg/GmsCore/pull/3672",
-          "user": "laurentketterle-hub"
-        },
-        {
           "number": 3673,
           "title": "feat: implement WearOS support with DataApi, NodeApi, BLE discovery, and notification/media bridge [FaaFyfxR9WAQrL7FcAgEHJvztd8cVMxvjHRS55rw1nwH]",
           "updated_at": "2026-07-28T09:41:49Z",
@@ -1979,7 +1944,7 @@
         "higher-cost language: java",
         "established repository",
         "5 competing attempt signal(s)",
-        "11 open competing PR(s)"
+        "10 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY] WearOS Support",
