@@ -1,0 +1,7 @@
+src/
+tests/
+scripts/
+docs/
+.github/
+*.tgz
+.env
