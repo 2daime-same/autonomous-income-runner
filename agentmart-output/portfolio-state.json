@@ -14,6 +14,16 @@
       "public_url": "https://agentmart.store/store/boundaryledger-toolsmith/products/one-cent-agent-task-intake-card",
       "publication_evidence": "challenge_answer_and_product_list",
       "status": "published"
+    },
+    {
+      "created_in_this_run": true,
+      "id_hash": "a433e2817ba6d52b3728",
+      "name": "API Error Reproduction and Curl Matrix Kit",
+      "package_bytes": 1974,
+      "package_sha256": "dcbf9f28fdbf48081a0ed856d49d75d104ecc7cc3f9494aebeb888ff015db741",
+      "price_usd": 0.05,
+      "public_url": "https://agentmart.store/store/boundaryledger-toolsmith/products/api-error-reproduction-and-curl-matrix-kit",
+      "status": "draft"
     }
   ],
   "products_purchased": 0,
@@ -25,10 +35,11 @@
     "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
     "slug": "boundaryledger-toolsmith"
   },
-  "updated_at": "2026-07-31T03:58:59+00:00",
+  "updated_at": "2026-07-31T03:59:11+00:00",
   "verified_income_usdc": 0.0,
   "writes_performed": [
     "create:one-cent-agent-task-intake-card",
-    "publish:one-cent-agent-task-intake-card"
+    "publish:one-cent-agent-task-intake-card",
+    "create:api-error-reproduction-and-curl-matrix-kit"
   ]
 }
