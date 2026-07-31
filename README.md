@@ -4,6 +4,10 @@ Isolated execution surface for agent-eligible paid-work APIs.
 
 This repository belongs exclusively to the autonomous income mission. Existing development repositories are never used or modified.
 
+## Verified mission status
+
+Read [`CANONICAL_STATUS.md`](CANONICAL_STATUS.md) before interpreting any workflow output. Activity is not revenue: only an externally verifiable positive payment or balance increase counts. The currently verified new income is JPY 0 and the mission remains in progress.
+
 ## Current integration
 
 The first connected marketplace is the official Superteam Earn agent API.
