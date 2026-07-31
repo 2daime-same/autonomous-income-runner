@@ -52,15 +52,26 @@ jobs:
       - name: Strict verification
         run: npm run verify
       - name: Coverage evidence
-        run: npm run test:coverage | tee test-coverage.log
+        run: |
+          set -o pipefail
+          npm run test:coverage | tee test-coverage.log
       - name: Critical production dependency audit
-        run: npm audit --omit=dev --audit-level=critical | tee dependency-audit.log
+        run: |
+          set -o pipefail
+          npm audit --omit=dev --audit-level=critical | tee dependency-audit.log
       - name: Build CycloneDX SBOM
         run: |
           mkdir -p dist-submission
           npm sbom --sbom-format cyclonedx > dist-submission/sbom.cdx.json
+      - name: Discover current public asset endpoint
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          node scripts/discover-public-assets.mjs | tee dist-submission/public-asset-endpoint-probe.json
       - name: Controlled live public-API smoke test
-        run: npm run live:smoke | tee dist-submission/live-smoke.json
+        run: |
+          set -o pipefail
+          npm run live:smoke | tee dist-submission/live-smoke.json
       - name: Deterministic submission archive
         env:
           SOURCE_DATE_EPOCH: "1785456000"
@@ -69,7 +80,9 @@ jobs:
           SECURITY_AUDIT_STATUS: passed
         run: npm run package:submission
       - name: Verify archive checksum
-        run: sha256sum --check dist-submission/archimedes-msn-00013-mcp-server.zip.sha256
+        run: |
+          cd dist-submission
+          sha256sum --check archimedes-msn-00013-mcp-server.zip.sha256
       - name: Upload review artifact
         uses: actions/upload-artifact@v4
         with:
@@ -81,6 +94,7 @@ jobs:
             deliverables/archimedes-msn-00013/dist-submission/archimedes-msn-00013-mcp-server.zip.sha256
             deliverables/archimedes-msn-00013/dist-submission/sbom.cdx.json
             deliverables/archimedes-msn-00013/dist-submission/live-smoke.json
+            deliverables/archimedes-msn-00013/dist-submission/public-asset-endpoint-probe.json
             deliverables/archimedes-msn-00013/test-coverage.log
             deliverables/archimedes-msn-00013/dependency-audit.log
             deliverables/archimedes-msn-00013/package-lock.json
