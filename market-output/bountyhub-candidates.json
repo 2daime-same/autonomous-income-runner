@@ -32,7 +32,7 @@
     }
   ],
   "actionable_count": 1,
-  "generated_at": "2026-07-31T19:59:11+00:00",
+  "generated_at": "2026-07-31T22:17:26+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -480,7 +480,7 @@
         {
           "number": 12528,
           "title": "Add previous/next navigation to detail pages",
-          "updated_at": "2026-07-31T19:53:47Z",
+          "updated_at": "2026-07-31T20:13:32Z",
           "url": "https://github.com/inventree/InvenTree/pull/12528",
           "user": "ejspeed-cmd"
         },
@@ -549,11 +549,32 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
         {
-          "number": 1733,
-          "title": "Merge/temporal recall logic 2",
-          "updated_at": "2026-07-31T19:18:07Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1733",
-          "user": "het0814"
+          "number": 1747,
+          "title": "Bounty #770: prevent silent OKF context overwrite",
+          "updated_at": "2026-07-31T22:15:46Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1747",
+          "user": "biliman1-work"
+        },
+        {
+          "number": 1749,
+          "title": "fix(validation): reject overly long session IDs to prevent OSError [Bug #770]",
+          "updated_at": "2026-07-31T21:06:58Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1749",
+          "user": "airdropia"
+        },
+        {
+          "number": 1746,
+          "title": "fix: prevent LangGraph key collisions and stale agent locks",
+          "updated_at": "2026-07-31T21:02:19Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1746",
+          "user": "buildfix-ai"
+        },
+        {
+          "number": 1748,
+          "title": "feat: [BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
+          "updated_at": "2026-07-31T20:59:15Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1748",
+          "user": "laurentketterle-hub"
         },
         {
           "number": 1723,
@@ -738,13 +759,6 @@
           "user": "hc0533"
         },
         {
-          "number": 1617,
-          "title": "fix(read): search_as_of recalls since-expired memories (bounty #770)",
-          "updated_at": "2026-07-28T03:28:54Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1617",
-          "user": "StreetTriple765999"
-        },
-        {
           "number": 1420,
           "title": "fix: rate limiting, timezone fixes, upsert update flow",
           "updated_at": "2026-07-27T21:36:57Z",
@@ -757,13 +771,6 @@
           "updated_at": "2026-07-27T14:10:36Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1679",
           "user": "johneapen80"
-        },
-        {
-          "number": 1676,
-          "title": "fix: date only end of day recall bounds drop the final subsecond of the day",
-          "updated_at": "2026-07-27T00:13:57Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1676",
-          "user": "Dashboarrd"
         },
         {
           "number": 1585,
@@ -787,13 +794,6 @@
           "user": "KhangYen"
         },
         {
-          "number": 1657,
-          "title": "fix(temporal): as_of date-only parsed as start-of-day on one path, end-of-day on another (23:59:59 divergence)",
-          "updated_at": "2026-07-26T14:12:49Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1657",
-          "user": "ImmortalDemonGod"
-        },
-        {
           "number": 1635,
           "title": "fix(recall): include memories with unknown confidence in filtered queries",
           "updated_at": "2026-07-26T10:32:00Z",
@@ -808,13 +808,6 @@
           "user": "truongsontung"
         },
         {
-          "number": 1507,
-          "title": "fix(memory-write): preserve provenance and reject failed updates (#770)",
-          "updated_at": "2026-07-25T03:13:07Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1507",
-          "user": "evoesco"
-        },
-        {
           "number": 1501,
           "title": "Fix: strip leading whitespace in filtered query when query is empty",
           "updated_at": "2026-07-24T18:48:56Z",
@@ -827,13 +820,6 @@
           "updated_at": "2026-07-23T18:24:32Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1630",
           "user": "jamilahmadzai"
-        },
-        {
-          "number": 1619,
-          "title": "fix(api): preserve source_ref in recall responses",
-          "updated_at": "2026-07-23T14:05:51Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1619",
-          "user": "JoeJingzhou"
         },
         {
           "number": 1615,
@@ -857,13 +843,6 @@
           "user": "smwsk1"
         },
         {
-          "number": 1589,
-          "title": "fix: ensure _parse_ts returns aware datetime and clean up batch counting logic",
-          "updated_at": "2026-07-21T19:10:14Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1589",
-          "user": "pistakugli"
-        },
-        {
           "number": 1500,
           "title": "fix(okf): preserve memory lifecycle status",
           "updated_at": "2026-07-21T17:39:05Z",
@@ -876,13 +855,6 @@
           "updated_at": "2026-07-21T15:51:27Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1385",
           "user": "2lll5"
-        },
-        {
-          "number": 1584,
-          "title": "fix: bound yesterday temporal recall",
-          "updated_at": "2026-07-21T14:05:52Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1584",
-          "user": "Hero988"
         },
         {
           "number": 1541,
@@ -946,20 +918,6 @@
           "updated_at": "2026-07-17T01:14:23Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1499",
           "user": "lirunjie0510"
-        },
-        {
-          "number": 1496,
-          "title": "fix(voltagent): validate configured default limit",
-          "updated_at": "2026-07-16T22:50:55Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1496",
-          "user": "ideals2201"
-        },
-        {
-          "number": 1493,
-          "title": "fix: multi-line memory titles corrupt on recall and compound [FACT] prefixes until the memory is un-updatable (#770)",
-          "updated_at": "2026-07-16T18:26:26Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1493",
-          "user": "JoeSevenBrothersLabs"
         },
         {
           "number": 1485,
@@ -1091,7 +1049,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1743,
+      "repo_stars": 1744,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
       "score": 29.0,
@@ -1102,7 +1060,7 @@
         "supported language: python",
         "established repository",
         "3 competing attempt signal(s)",
-        "77 open competing PR(s)"
+        "71 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
@@ -1347,7 +1305,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1743,
+      "repo_stars": 1744,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
       "score": 27.41,
