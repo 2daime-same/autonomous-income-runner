@@ -1,7 +1,8 @@
 {
+  "capsule_consumed_at": "2026-07-31T03:46:15+00:00",
   "credential_plaintext_recorded": false,
   "generated_at": "2026-07-31T03:41:41+00:00",
   "run_id": "30602208444",
   "schema_version": "agentmart-portfolio-relay-v1",
-  "status": "awaiting_encrypted_credential_capsule"
+  "status": "capsule_consumed_and_relay_material_removed"
 }
