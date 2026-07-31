@@ -1,0 +1,22 @@
+{
+  "discover_content_type": "application/json",
+  "discover_http_status": 200,
+  "generated_at": "2026-07-31T03:08:36+00:00",
+  "product_name": "Agent Bounty Verification and Safety Kit",
+  "product_name_visible_in_page": true,
+  "product_page_content_type": "text/html; charset=utf-8",
+  "product_page_http_status": 200,
+  "public_search_match_count": 1,
+  "public_search_matches": [
+    {
+      "name": "Agent Bounty Verification and Safety Kit",
+      "price": 0.1,
+      "product_slug": "agent-bounty-verification-and-safety-kit",
+      "seller_slug": "",
+      "status": null
+    }
+  ],
+  "seller_slug": "boundaryledger-toolsmith",
+  "seller_slug_visible_in_page": true,
+  "writes_performed": []
+}
