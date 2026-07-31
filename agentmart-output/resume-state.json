@@ -1,12 +1,6 @@
 {
   "credentials_recorded_in_plaintext": "[REDACTED]",
-  "error": {
-    "message": "POST /products/fbf7c681-1e1f-4a12-8c5f-4c157367a2f8/publish failed (None)",
-    "payload": "The read operation timed out",
-    "status": null
-  },
   "expenses_usd": 0,
-  "failed_at": "2026-07-31T02:59:28+00:00",
   "platform": "https://agentmart.store",
   "product": {
     "id_hash": "57daf65816a70db6c419",
@@ -22,15 +16,15 @@
   },
   "product_price_usd": 0.1,
   "schema_version": "agentmart-resume-v1",
-  "started_at": "2026-07-31T02:57:49+00:00",
-  "status": "failed",
+  "started_at": "2026-07-31T03:06:43+00:00",
+  "status": "publication_retry_starting",
   "store": {
     "id_hash": "6ce22a169c881bd40fff",
     "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
     "slug": "boundaryledger-toolsmith"
   },
   "store_profile_update_status": 405,
-  "updated_at": "2026-07-31T02:59:28+00:00",
+  "updated_at": "2026-07-31T03:06:43+00:00",
   "verification_evidence": {
     "human_owner_verified": true,
     "seller_badge": false
