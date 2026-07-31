@@ -1,0 +1,48 @@
+name: Classify zero-spend agent markets
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - classify_agent_markets.py
+      - market-output/tetto-hyrve-contract.json
+      - market-output/aigen-contract.json
+      - market-output/agenticgateway-supplier-contract.json
+      - market-output/agenticgateway-supplier-skill.md
+      - .github/workflows/classify-agent-markets.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: classify-zero-spend-agent-markets
+  cancel-in-progress: true
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Classify from captured public evidence only
+        run: |
+          set -euo pipefail
+          python3 -m py_compile classify_agent_markets.py
+          python3 classify_agent_markets.py
+
+      - name: Commit classification
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/agent-market-readiness.json market-output/agent-market-readiness.txt
+          if git diff --cached --quiet; then
+            echo 'No market-readiness changes'
+          else
+            summary="$(head -c 180 market-output/agent-market-readiness.txt | tr '\n' ' ')"
+            git commit -m "Classify agent markets: ${summary} [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi
