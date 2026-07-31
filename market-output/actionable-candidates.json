@@ -372,6 +372,16 @@
     },
     {
       "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 913,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix missing slippage protection and deadline in SimpleSwap",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/913"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "unrecognized platform on a repository younger than 90 days"
       ],
@@ -400,16 +410,6 @@
     },
     {
       "flags": [
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 5,
-      "repo": "theselfish/SlopStation13",
-      "title": "[Bounty] [$600] Add Thursday's Boots",
-      "url": "https://github.com/theselfish/SlopStation13/issues/5"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists"
       ],
       "issue_number": 2850,
@@ -429,12 +429,14 @@
     },
     {
       "flags": [
-        "no direct reward evidence"
+        "an open competing pull request already exists",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 867,
-      "repo": "GoogleChrome/modern-web-guidance-src",
-      "title": "Guide proposal: x402-agent-payments — HTTP 402 micropayment pattern for WebMCP agents (post I/O 2026)",
-      "url": "https://github.com/GoogleChrome/modern-web-guidance-src/issues/867"
+      "issue_number": 5,
+      "repo": "theselfish/SlopStation13",
+      "title": "[Bounty] [$600] Add Thursday's Boots",
+      "url": "https://github.com/theselfish/SlopStation13/issues/5"
     },
     {
       "flags": [
@@ -453,17 +455,6 @@
         "existing reward links indicate the task may already be claimed",
         "more than two competing attempt users"
       ],
-      "issue_number": 743,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Low Handing Fruit Automation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
-      ],
       "issue_number": 80,
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Pixel Art Creation with high Creative Thinking",
@@ -471,25 +462,14 @@
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "more than two competing attempt users"
       ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 3200,
-      "repo": "shamanic-technologies/distribute.you",
-      "title": "Referral relaunch: $500 a side, stacking with the welcome credits, wired to the real invite code",
-      "url": "https://github.com/shamanic-technologies/distribute.you/issues/3200"
+      "issue_number": 743,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Low Handing Fruit Automation",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
     },
     {
       "flags": [
@@ -503,14 +483,33 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
       ],
-      "issue_number": 4,
-      "repo": "theselfish/SlopStation13",
-      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
-      "url": "https://github.com/theselfish/SlopStation13/issues/4"
+      "issue_number": 5066,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Cow Swap Cash Out",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5066"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 5035,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Recruiting: Dragonfly CTF II",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 5844,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Governance Token emissions to `ubq.eth` new strategy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
     },
     {
       "flags": [
@@ -523,6 +522,17 @@
       "repo": "Vikingr2023/awesome-agent-bounties",
       "title": "[aLexzzz430/Cognitive-OS] [ Bounty $3k ] [ Research ] Collect and compare AI-generated",
       "url": "https://github.com/Vikingr2023/awesome-agent-bounties/issues/167"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 4,
+      "repo": "theselfish/SlopStation13",
+      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
+      "url": "https://github.com/theselfish/SlopStation13/issues/4"
     },
     {
       "flags": [
@@ -585,14 +595,15 @@
     },
     {
       "flags": [
+        "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
+        "reward is unusually high for the first-income target"
       ],
-      "issue_number": 1,
-      "repo": "abbasiwa/kindlepool",
-      "title": "issue1.md — Enterprise Build Plan: Missing Contract Functions & Critical set_fee Vulnerability",
-      "url": "https://github.com/abbasiwa/kindlepool/issues/1"
+      "issue_number": 5916,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "UbiquityOS Sprint Management Dashboard",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5916"
     },
     {
       "flags": [
@@ -657,24 +668,11 @@
       "repo": "Spectral-Finance/lux",
       "title": "YouTube Content Intelligence System $2,500",
       "url": "https://github.com/Spectral-Finance/lux/issues/69"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 61,
-      "repo": "ktwu01/benchmark-radar",
-      "title": "📡 AI Benchmark & Data Radar — 2026-07-31",
-      "url": "https://github.com/ktwu01/benchmark-radar/issues/61"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-07-31T14:35:21+00:00",
+  "generated_at": "2026-07-31T19:53:01+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-07-31T14:35:21+00:00"
+  "source_generated_at": "2026-07-31T19:53:01+00:00"
 }
