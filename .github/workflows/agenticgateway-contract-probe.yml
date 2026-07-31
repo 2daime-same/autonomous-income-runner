@@ -1,0 +1,43 @@
+name: Probe Agentic Gateway supplier contract
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - agenticgateway_contract_probe.py
+      - .github/workflows/agenticgateway-contract-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agenticgateway-contract-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate and inspect public supplier resources
+        run: |
+          set -euo pipefail
+          python3 -m py_compile agenticgateway_contract_probe.py
+          python3 agenticgateway_contract_probe.py
+
+      - name: Commit read-only supplier contract evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/agenticgateway-contract.json market-output/agenticgateway-skill.md
+          if git diff --cached --quiet; then
+            echo 'No Agentic Gateway contract changes'
+          else
+            git commit -m 'Record Agentic Gateway supplier contract [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
