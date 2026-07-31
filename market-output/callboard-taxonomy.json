@@ -1,0 +1,2650 @@
+{
+  "capability_tags": [
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "59da20be-e61a-44b7-a891-d0cc164a25b2",
+      "name": "A/B variant generation",
+      "slug": "a-b-variants"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "36a3bcfc-14f8-49ee-bb4b-ffb021a6d75e",
+      "name": "Abuse detection",
+      "slug": "abuse-detection"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "2022af0c-2f57-450a-bf33-057897f72c3d",
+      "name": "Access review",
+      "slug": "access-review"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "184c03f2-7ae5-47f7-b14d-cc60eb4cd972",
+      "name": "Accessibility adaptation",
+      "slug": "accessibility-adaptation"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "6aa823bb-9e62-4488-b4f8-9bcbca50f3f6",
+      "name": "Accessibility review",
+      "slug": "accessibility-review"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "35babe3a-b477-4777-a2ad-53a7c08ccb98",
+      "name": "Accounts payable",
+      "slug": "accounts-payable"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "f7003933-64bc-45df-b068-f945d6bcb485",
+      "name": "Accounts receivable",
+      "slug": "accounts-receivable"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "5b8d564e-8566-463e-8230-30d2f519d3d5",
+      "name": "Ad copy",
+      "slug": "ad-copy"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "3258aeb9-96ca-43e7-ba32-69b7d3f1b709",
+      "name": "Adverse event extraction",
+      "slug": "adverse-event-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "544dbbb4-7f98-4b74-9ff8-690c08f8df12",
+      "name": "Agent handoff",
+      "slug": "agent-handoff"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "11e43869-ecb7-49de-866d-e225a816dc67",
+      "name": "Agent monitoring",
+      "slug": "agent-monitoring"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "8a74c979-95fc-4525-b7d9-0775e2cbd48b",
+      "name": "Alt text generation",
+      "slug": "alt-text-generation"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "8f6128e5-8363-4b96-9375-a5e61f642841",
+      "name": "AML review",
+      "slug": "aml-review"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "372b6409-349c-4fd4-bdd3-db537240673f",
+      "name": "Anomaly detection",
+      "slug": "anomaly-detection"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "696d92af-4881-43e8-9ed3-0f21134e44b6",
+      "name": "API design",
+      "slug": "api-design"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "3b344f11-e623-4bee-9872-fdb92a3fe853",
+      "name": "Appointment intake",
+      "slug": "appointment-intake"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "be62b44a-3ec8-473e-883d-cf61efb35778",
+      "name": "Approval workflow",
+      "slug": "approval-workflow"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "7e11a468-998e-41a0-986a-64855fded6e2",
+      "name": "Asset tagging",
+      "slug": "asset-tagging"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "29d345f9-52fd-4c53-a243-cb709e98c4e2",
+      "name": "Attribute extraction",
+      "slug": "attribute-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "f959e7d2-ec24-4a4a-a8f1-2e7060eb4e20",
+      "name": "Audience research",
+      "slug": "audience-research"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "47d3ad8a-6d7d-4156-a1f5-4a24fa3b1b5f",
+      "name": "Audit support",
+      "slug": "audit-support"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "842adbf0-dff2-46c9-9a6d-53433ffbe22f",
+      "name": "Audit trail review",
+      "slug": "audit-trail-review"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "9a7425c4-00b9-4f5a-9fdf-36420bdab6e7",
+      "name": "Back office reconciliation",
+      "slug": "back-office-reconciliation"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "db070e62-5425-4a68-9b2e-167a5cad2def",
+      "name": "Backend implementation",
+      "slug": "backend-implementation"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "41e60400-1972-4439-b461-911282637d58",
+      "name": "Bank reconciliation",
+      "slug": "bank-reconciliation"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "b1a38ebe-cd10-4515-b7da-39dc1924a0cb",
+      "name": "Benefit verification",
+      "slug": "benefit-verification"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "3d1b0d28-3b7c-4371-838f-ca67e8c6ce35",
+      "name": "BI reporting",
+      "slug": "bi-reporting"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "c89f66cc-1ef8-4a08-a9bf-c8c735fda388",
+      "name": "Bilingual review",
+      "slug": "bilingual-review"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "293fbfd2-73d9-457c-bd97-756f79f9f257",
+      "name": "Brand voice",
+      "slug": "brand-voice"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "e18f5aee-c66d-4964-878a-3d6095468b47",
+      "name": "Brief writing",
+      "slug": "brief-writing"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "a1a9be53-98b1-4a35-940e-876fb5e14170",
+      "name": "Browser automation",
+      "slug": "browser-automation"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "231390c6-8c67-45aa-9b9f-b232dcdf80dc",
+      "name": "Budget analysis",
+      "slug": "budget-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "2d37d663-43fc-4165-b883-2a035734b0f3",
+      "name": "Bug detection",
+      "slug": "bug-detection"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "deb85d42-519c-4620-91a1-117f01665da1",
+      "name": "Buyer agent",
+      "slug": "buyer-agent"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "d9e84192-d09b-4852-ada2-b03abc68f06b",
+      "name": "Call summarization",
+      "slug": "call-summarization"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "5c6fed45-d029-4565-aa81-98b7da787a8a",
+      "name": "Campaign planning",
+      "slug": "campaign-planning"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "77c95d1b-1b34-4368-8f89-aafa99c0f45b",
+      "name": "Captioning",
+      "slug": "captioning"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "55aa1174-c68d-4157-9faa-1b16b7a9deab",
+      "name": "Care gap analysis",
+      "slug": "care-gap-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "9c21f5cc-ad17-4af5-8db3-2dc290af2a87",
+      "name": "Case study drafting",
+      "slug": "case-study-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "61a5d441-d2ef-491f-b298-6f28ead0807d",
+      "name": "Cash flow forecast",
+      "slug": "cash-flow-forecast"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "1e82f81a-d9b2-4f41-8b81-49ef734f4153",
+      "name": "Catalog enrichment",
+      "slug": "catalog-enrichment"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "5f5215dd-a3a1-4277-9693-a36f8198e14f",
+      "name": "Certification prep",
+      "slug": "certification-prep"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "dfad07f3-aebe-4798-a411-a8b198046a1d",
+      "name": "Chart extraction",
+      "slug": "chart-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "3faa2351-88c8-48f1-b661-07cff6fb56a3",
+      "name": "Chart review",
+      "slug": "chart-review"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "22e24649-9574-43a7-b822-22ab44380c8f",
+      "name": "Citation generation",
+      "slug": "citation-generation"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "b1c4b4f8-02bc-4153-8772-bceab6bba283",
+      "name": "Claims analysis",
+      "slug": "claims-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "363a3b34-d894-4f6c-9e22-6d01bed592a0",
+      "name": "Clause extraction",
+      "slug": "clause-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "b7755f60-8384-4374-b3bb-b23337d94b1d",
+      "name": "Clause library",
+      "slug": "clause-library"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "b2d78d80-265a-47f9-b028-490d049e2564",
+      "name": "Clinical citation",
+      "slug": "clinical-citation"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "8cb18eeb-a1de-427b-899b-209102e39e7d",
+      "name": "Clinical NLP",
+      "slug": "clinical-nlp"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "17857e52-fcb9-43b9-babf-abec45687ad4",
+      "name": "Clip selection",
+      "slug": "clip-selection"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "d8dc6f8e-1dd7-4d75-bbda-282e4a13e0f3",
+      "name": "Cloud architecture",
+      "slug": "cloud-architecture"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "d4e1c9e0-bb02-464f-97d0-afa610236424",
+      "name": "Code migration",
+      "slug": "code-migration"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "730c997a-6e31-43b5-9941-b5ae5ea01e62",
+      "name": "Code review",
+      "slug": "code-review"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "1a21098b-1bff-44e6-b58e-5640e5f33099",
+      "name": "Cohort analysis",
+      "slug": "cohort-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "1c38fb18-639f-4bf3-97ef-e43f20d235d2",
+      "name": "Company research",
+      "slug": "company-research"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "b6e876c7-9931-41d4-9969-862cc6a16bff",
+      "name": "Competitor analysis",
+      "slug": "competitor-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "40114e2c-ed0f-4eba-8cf8-3803d6d44afc",
+      "name": "Competitor scraping",
+      "slug": "competitor-scraping"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "e1a336cb-f439-4dd6-a8de-81e21b4e0b99",
+      "name": "Compliance brief",
+      "slug": "compliance-brief"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "66da528a-473e-45fd-bf9c-2f4fcb58f0a1",
+      "name": "Compliance mapping",
+      "slug": "compliance-mapping"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "09bc7497-f95b-49af-8b43-0ffcb0bc5e90",
+      "name": "Content rewriting",
+      "slug": "content-rewriting"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "ce25a88a-6090-4334-91c9-9d7b2bd53515",
+      "name": "Contract redline",
+      "slug": "contract-redline"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "12beda48-0766-496f-b000-327c646a62c9",
+      "name": "Contract review",
+      "slug": "contract-review"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "887577bd-3f55-48a2-808b-fac26d61287e",
+      "name": "Course outline",
+      "slug": "course-outline"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "63b16662-975b-4384-99a6-83c1cb59f4c3",
+      "name": "CPT coding",
+      "slug": "cpt-coding"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "87508f32-3da2-4da7-a23c-6084ddb1b827",
+      "name": "CRM enrichment",
+      "slug": "crm-enrichment"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "cf46b70a-735e-4f2e-9205-366718f0815d",
+      "name": "CSV processing",
+      "slug": "csv-processing"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "a31608d8-4a91-46ac-bf1e-b6c874745c23",
+      "name": "CTR prediction",
+      "slug": "ctr-prediction"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "c85d39f9-493c-4f5f-a6cc-1533c56e5ee1",
+      "name": "Cultural review",
+      "slug": "cultural-review"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "52ce26d2-8ed0-4819-924c-6f0acc58b9d1",
+      "name": "Curriculum design",
+      "slug": "curriculum-design"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "a7b14269-72f0-441a-a034-cba418f09bc7",
+      "name": "Customer reply drafting",
+      "slug": "customer-reply-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "8998b631-eb8d-4db2-ba85-c7ec3c667841",
+      "name": "CVE correlation",
+      "slug": "cve-correlation"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "d40d916d-3f29-441f-a90e-723dba7e0751",
+      "name": "Dashboard generation",
+      "slug": "dashboard-generation"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "name": "Data and analytics",
+      "slug": "data-analytics"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "0900958a-eb79-4981-bfd1-69c590e24cf2",
+      "name": "Data cleaning",
+      "slug": "data-cleaning"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "0a805680-10e7-4228-b2e0-6f5f354422e9",
+      "name": "Data entry",
+      "slug": "data-entry"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "2271c47d-42e3-4792-894d-f490bc67721b",
+      "name": "Data extraction",
+      "slug": "data-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "7999794b-f13c-49f1-8568-0088a7c11034",
+      "name": "Data loss prevention",
+      "slug": "data-loss-prevention"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "4c6ec587-092e-44ee-a903-afebe5d5edc6",
+      "name": "Data sync",
+      "slug": "data-sync"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "adca300b-c41e-4f49-9fbc-2ba61f5186c4",
+      "name": "Data transformation",
+      "slug": "data-transformation"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "e1ea993e-62db-4bca-a550-3d433d872a74",
+      "name": "Data validation",
+      "slug": "data-validation"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "4f1e5fc3-9401-42b2-9cf8-b1873093b752",
+      "name": "Data visualization",
+      "slug": "data-visualization"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "05f8403c-96a2-4e9d-88f5-d2f6cded1ca6",
+      "name": "Database querying",
+      "slug": "database-querying"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "28643781-c02b-4d4b-af47-9439af490587",
+      "name": "Database schema design",
+      "slug": "database-schema-design"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "e76c1122-c2f9-4341-8443-68dd4bd8a3ca",
+      "name": "De-identification",
+      "slug": "de-identification"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "cf74a9dd-9ce7-48ce-bfc9-f2abdfffa3c8",
+      "name": "Dependency risk",
+      "slug": "dependency-risk"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "c5749abe-6bd7-424c-8f21-5012b15870bf",
+      "name": "Dependency upgrade",
+      "slug": "dependency-upgrade"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "Visual, audio, video, creative production, and asset processing capabilities.",
+      "id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "name": "Design and media",
+      "slug": "design-media"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "10b1bb06-43ed-4548-9d70-53e7b0304eae",
+      "name": "Developer docs",
+      "slug": "developer-docs"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "9618f932-a04e-49fc-b7af-90312375bb85",
+      "name": "DevOps automation",
+      "slug": "devops-automation"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "23c3ea4d-46dd-4768-bc99-210da81efd0d",
+      "name": "Dialect adaptation",
+      "slug": "dialect-adaptation"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "a5a7883d-8c7f-4489-b32e-90c287784629",
+      "name": "Discovery support",
+      "slug": "discovery-support"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "c875b51d-b80d-4dd0-8440-e866e4b1b67c",
+      "name": "Document classification",
+      "slug": "document-classification"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "e267cdb7-4d2c-4ae0-8a1b-7ee2c4155f83",
+      "name": "Document comparison",
+      "slug": "document-comparison"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "0c2520fd-0a14-49b2-bd09-95350272d95a",
+      "name": "Document redlining",
+      "slug": "document-redlining"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "name": "Documents and knowledge",
+      "slug": "documents-knowledge"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "1c6bd698-1c30-4a92-b101-b642d000403e",
+      "name": "Dubbing",
+      "slug": "dubbing"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "838605f9-2056-44b0-8a66-bd434648b5f6",
+      "name": "Due diligence",
+      "slug": "due-diligence"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "2a819b6e-a370-4b0a-a257-6479802abfd7",
+      "name": "Duplicate listing detection",
+      "slug": "duplicate-listing-detection"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "Catalog, merchandising, pricing, product data, marketplace, and commerce operations.",
+      "id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "name": "Ecommerce and catalog operations",
+      "slug": "ecommerce-catalog"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "Instructional design, assessment, tutoring, curriculum, and training operations.",
+      "id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "name": "Education and training",
+      "slug": "education-training"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "38945333-7993-4c01-b7df-2e3cedb13d41",
+      "name": "Eligibility matching",
+      "slug": "eligibility-matching"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "259e35b7-dec0-4455-8397-13230e60a733",
+      "name": "Email automation",
+      "slug": "email-automation"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "cf62669a-8b32-4e04-9e81-69ee9389b7a8",
+      "name": "Email copywriting",
+      "slug": "email-copywriting"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "15e1e643-419e-4de4-8b63-85ba6062e721",
+      "name": "Entity resolution",
+      "slug": "entity-resolution"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "e442b42a-c12d-4fd9-a759-ee768e074b10",
+      "name": "Entity screening",
+      "slug": "entity-screening"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "1446060e-ec85-41c8-87a3-266f3e8a29ba",
+      "name": "Escalation routing",
+      "slug": "escalation-routing"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "a8e694ae-b7a6-4dc5-8c8f-5ec5b51297ae",
+      "name": "Evidence collection",
+      "slug": "evidence-collection"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "4cc92c44-0ba9-4779-b31c-bd3fd0506f60",
+      "name": "Evidence review",
+      "slug": "evidence-review"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "14426301-f597-48e2-817f-0b45e0d4f42e",
+      "name": "Evidence synthesis",
+      "slug": "evidence-synthesis"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "390b2996-775a-49a4-816d-898606a18fc4",
+      "name": "Expense categorization",
+      "slug": "expense-categorization"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "6d030af6-0161-4355-a49f-cabf6a027ab9",
+      "name": "Experiment analysis",
+      "slug": "experiment-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "bcff826d-d16e-46ed-842c-af613d6abc69",
+      "name": "FAQ generation",
+      "slug": "faq-generation"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "37bc1bc0-c40d-4aa6-be71-7f09a9fe66da",
+      "name": "Feedback drafting",
+      "slug": "feedback-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "91da567e-f345-4617-9454-8f2da4af2d88",
+      "name": "File routing",
+      "slug": "file-routing"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "Bookkeeping, financial analysis, invoicing, tax prep support, and reconciliation.",
+      "id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "name": "Finance and accounting",
+      "slug": "finance-accounting"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "0a012684-24f4-4c7c-830f-dde8e64d0ced",
+      "name": "Financial modeling",
+      "slug": "financial-modeling"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "23aef43a-8066-4eec-8bbf-b5c4d2ebd45d",
+      "name": "Financial report drafting",
+      "slug": "financial-report-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "1fedb72b-1356-4faa-83b2-e196a560b720",
+      "name": "Flashcard generation",
+      "slug": "flashcard-generation"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "774bcad8-0cd9-4b66-b235-32a3e6f3b5bc",
+      "name": "Forecasting",
+      "slug": "forecasting"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "a068e93f-c9d0-4fd6-a4f2-7d40383835b1",
+      "name": "Form automation",
+      "slug": "form-automation"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "0af4939d-7954-4c8e-859a-f4965c424ef7",
+      "name": "Form filling",
+      "slug": "form-filling"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "7d7e3d3c-3646-4b21-87bf-251eaed5ecb2",
+      "name": "Fraud detection",
+      "slug": "fraud-detection"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "ae0c0338-f471-42ec-974f-88179fc0f02b",
+      "name": "Fraud risk review",
+      "slug": "fraud-risk-review"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "337c0bc1-ca4d-484c-b365-bc3bf25a8d41",
+      "name": "Frontend implementation",
+      "slug": "frontend-implementation"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "147e3e3d-8e38-43a3-b799-58c38dd180e9",
+      "name": "Glossary extraction",
+      "slug": "glossary-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "ad6942f1-eef7-4a34-bff4-d397f82bd328",
+      "name": "Grading assistance",
+      "slug": "grading-assistance"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "f1c8ca41-22bf-4d9b-9ac4-70c3d202d511",
+      "name": "Grammar correction",
+      "slug": "grammar-correction"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "179f5037-609e-48d4-9850-698cf2f3e13f",
+      "name": "Grant research",
+      "slug": "grant-research"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "Healthcare operations, clinical documentation support, coding, trials, and life sciences workflows.",
+      "id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "name": "Healthcare and life sciences",
+      "slug": "healthcare-life-sciences"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "78f3f085-d075-4a98-8ee3-0c840f8fae8f",
+      "name": "ICD-10 coding",
+      "slug": "icd-10-coding"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "8ccbb6d5-8614-41d8-b0b9-60e890c0f685",
+      "name": "Image analysis",
+      "slug": "image-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "f89074ec-12d2-402c-8123-e58ae0703be7",
+      "name": "Image background removal",
+      "slug": "image-bg-remove"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "b842ebea-8d8b-4c62-83f3-3cecb920c00e",
+      "name": "Image generation",
+      "slug": "image-generation"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "6954b3f8-9d63-4839-827c-720e6b87c58d",
+      "name": "Image quality check",
+      "slug": "image-quality-check"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "8ce84d5a-96d7-4cfd-af1c-203093f868e5",
+      "name": "Inbox triage",
+      "slug": "inbox-triage"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "e179bed4-5228-45bc-8ed8-5958e45fbbdf",
+      "name": "Incident response",
+      "slug": "incident-response"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "3423bae3-70f0-44e3-a17e-f50fadfce88c",
+      "name": "Incident summary",
+      "slug": "incident-summary"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "13a53598-9131-4d84-b14d-7280ec94e2b1",
+      "name": "Information extraction",
+      "slug": "information-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "e3f10166-33ed-4a35-aa5e-6b6dc8101efc",
+      "name": "Instructional design",
+      "slug": "instructional-design"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "d965ed32-29b2-4f38-9517-cc17c16141dc",
+      "name": "Integration setup",
+      "slug": "integration-setup"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "629fa322-859e-4356-854c-439a0c06bb60",
+      "name": "Internationalization review",
+      "slug": "internationalization-review"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "5a2e4be6-9d0d-422f-8efd-1c5b1a396854",
+      "name": "Inventory forecast",
+      "slug": "inventory-forecast"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "46b8c449-e96f-4c21-a614-ca9b8cea4d9c",
+      "name": "Inventory monitoring",
+      "slug": "inventory-monitoring"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "b5891526-727a-46ca-a25b-1b878160dbbb",
+      "name": "Invoice processing",
+      "slug": "invoice-processing"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "379a1550-f89d-453e-8f33-139466bdd0ab",
+      "name": "IP review",
+      "slug": "ip-review"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "f3d8cf98-19dc-403c-8cb2-07d2b93bf92f",
+      "name": "Job scheduling",
+      "slug": "job-scheduling"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "0bb7929b-dc3a-43f2-a013-f6a4436ad260",
+      "name": "Key extraction",
+      "slug": "key-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "4dbe6024-295d-4bcc-97ec-286ad934afa7",
+      "name": "Keyword research",
+      "slug": "keyword-research"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "6eaa6dba-3300-4c78-b64e-9a9233f876a4",
+      "name": "Knowledge base article",
+      "slug": "knowledge-base-article"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "f0fff4a5-7aa4-4cb7-a15a-c8405e77a974",
+      "name": "Knowledge check",
+      "slug": "knowledge-check"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "b1db76fd-b452-47fd-9a33-b7f33251a8dc",
+      "name": "KYC review",
+      "slug": "kyc-review"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "12a2feef-115d-4d9f-8358-e4a9960ca70a",
+      "name": "Lab result interpretation",
+      "slug": "lab-result-interpretation"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "510e18b7-2c1a-4459-923b-d992440ad14a",
+      "name": "Landing page copy",
+      "slug": "landing-page-copy"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "258c1c47-60e3-4679-820d-9a5a251a901a",
+      "name": "Language detection",
+      "slug": "language-detection"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "449f0728-ff4d-46eb-abe0-87e68e00050e",
+      "name": "Language tutoring",
+      "slug": "language-tutoring"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "816c54dd-6a57-4d37-9144-e6355e2ebafb",
+      "name": "Lead generation",
+      "slug": "lead-generation"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "9410c767-b52d-46f8-beb3-3bc124abf49f",
+      "name": "Learning analytics",
+      "slug": "learning-analytics"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "921cd9a7-d4a2-4f92-880f-d84daa4f7f25",
+      "name": "Learning objective mapping",
+      "slug": "learning-objective-mapping"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "Legal operations, compliance review, policy analysis, and contract support.",
+      "id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "name": "Legal and compliance",
+      "slug": "legal-compliance"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "8d4799ed-b929-467d-8e77-0c74f25e9c69",
+      "name": "Legal intake",
+      "slug": "legal-intake"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "6aa1b1b0-8d63-45a9-9e4b-6eaac507db76",
+      "name": "Legal memo",
+      "slug": "legal-memo"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "d2788254-a44a-4702-9987-f14eb1116118",
+      "name": "Lesson planning",
+      "slug": "lesson-planning"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "cbcc7388-7e36-4f0c-ada2-56701bff5662",
+      "name": "Lip sync alignment",
+      "slug": "lip-sync-align"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "a85a0fda-7227-413d-acad-13154acbca72",
+      "name": "Listing optimization",
+      "slug": "listing-optimization"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "e0eb5a40-3e24-4f11-854b-81d230903579",
+      "name": "Literature review",
+      "slug": "literature-review"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "3234ecb6-b861-48a7-a1d2-a73f7647272d",
+      "name": "Locale QA",
+      "slug": "locale-qa"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "b288a015-3d91-41e8-831e-bb787f439962",
+      "name": "Localization",
+      "slug": "localization"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "Translation, localization, language detection, terminology, and multilingual content operations.",
+      "id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "name": "Localization and language",
+      "slug": "localization-language"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "6cdcd2df-ddf5-400d-ab64-36867580e963",
+      "name": "Log analysis",
+      "slug": "log-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "9aab183f-dc5d-41a3-9771-a0452af138d6",
+      "name": "Log threat detection",
+      "slug": "log-threat-detection"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "c3c4d960-0c45-4292-a8e1-1683fc508344",
+      "name": "Logo concepts",
+      "slug": "logo-concepts"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "8596adff-9359-472f-8762-7dab32f9261f",
+      "name": "Margin analysis",
+      "slug": "margin-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "76381714-3bf8-4c49-90e0-be2adde9e580",
+      "name": "Margin check",
+      "slug": "margin-check"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "43f98012-b508-463d-9c3c-426e8ac331a6",
+      "name": "Market research",
+      "slug": "market-research"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "d8b51273-d3cb-4895-ad8e-bd8c84c3bfef",
+      "name": "Marketing analytics",
+      "slug": "marketing-analytics"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "2334b129-b21f-473a-834f-76ec664919e8",
+      "name": "Marketplace compliance",
+      "slug": "marketplace-compliance"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "a5b3abb1-25c0-47c0-a361-e2d30766d24e",
+      "name": "Marketplace response drafting",
+      "slug": "marketplace-response-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "c621b2f8-37ac-44e3-b601-f992d63bf71f",
+      "name": "Medical coding audit",
+      "slug": "medical-coding-audit"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "0f5ebb01-524e-495b-8939-17d01e0349a4",
+      "name": "Medical literature review",
+      "slug": "medical-literature-review"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "b1fbbf74-9c45-42df-93a3-cd47e4598cd5",
+      "name": "Medical summarization",
+      "slug": "medical-summarization"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "fb060374-b2c6-4660-8889-f3f22c540fc1",
+      "name": "Meeting notes",
+      "slug": "meeting-notes"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "d1c8ac8d-9f82-4623-a7ca-e430ed0f7cd5",
+      "name": "Memo drafting",
+      "slug": "memo-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "b7ecc4d6-5623-45b4-8b70-9a92a437c0f4",
+      "name": "Merchandising recommendations",
+      "slug": "merchandising-recommendations"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "3e693292-c1f6-4879-87bd-f7f26346415b",
+      "name": "Metric analysis",
+      "slug": "metric-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "4e1d6f83-689a-4435-95d9-9f4981489f5f",
+      "name": "Motion design",
+      "slug": "motion-design"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "f9dda0ae-4192-4abe-b0a1-235d52ea5d20",
+      "name": "Machine translation post-edit",
+      "slug": "mt-post-edit"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "2a2d9240-1ccd-4637-a634-68b1b6f6378c",
+      "name": "Multilingual SEO",
+      "slug": "multilingual-seo"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "29666eef-8f11-4ebb-a3c7-7aca3be9c94a",
+      "name": "Named entity localization",
+      "slug": "named-entity-localization"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "829a1cac-641f-4744-ac4d-ae68c98b2d73",
+      "name": "Negotiation support",
+      "slug": "negotiation-support"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "7940a930-3a94-426c-b7c2-369082b693c2",
+      "name": "Newsletter drafting",
+      "slug": "newsletter-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "71882c1c-4b4f-4ef9-a2b5-9f05852f38f6",
+      "name": "Notification routing",
+      "slug": "notification-routing"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "6a08eaf1-71ff-4fdf-9975-4c69053c62aa",
+      "name": "Object detection",
+      "slug": "object-detection"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "6f0c1ea1-20bb-4f16-a8cb-b453bcbd9ae2",
+      "name": "Objection handling",
+      "slug": "objection-handling"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "223427b9-5c5d-4bb4-a012-a6001404c711",
+      "name": "OCR",
+      "slug": "ocr"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "369ca9a4-1580-407d-b9c6-2a55021c95a9",
+      "name": "Onboarding training",
+      "slug": "onboarding-training"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "96dec087-9734-41ec-a7d4-be6d6cb1f06c",
+      "name": "Order support",
+      "slug": "order-support"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "265e5b8a-de29-4a17-8625-9bbfaf6bb43c",
+      "name": "Patch notes",
+      "slug": "patch-notes"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "63295da3-247b-48ce-8989-659901cf027b",
+      "name": "Patent research",
+      "slug": "patent-research"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "f63d1e45-c1d2-4f6f-99e6-69b4c773fd34",
+      "name": "Patient message drafting",
+      "slug": "patient-message-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "c8785028-f859-4269-84f7-3ec977b7e5d0",
+      "name": "Payer forms",
+      "slug": "payer-forms"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "3465451d-81bb-46b7-98f2-94da95869752",
+      "name": "Payment reconciliation",
+      "slug": "payment-reconciliation"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "cf934031-cea6-4b4f-a4d9-daede80b89bd",
+      "name": "Payroll review",
+      "slug": "payroll-review"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "1d8ce10a-0a50-468e-9460-ecf413f4a33d",
+      "name": "PDF parsing",
+      "slug": "pdf-parsing"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "264800b6-d5a9-4cdf-82e7-1524ef8c7e16",
+      "name": "People research",
+      "slug": "people-research"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "6bb98286-1c5b-4fe4-905b-ff70051569b9",
+      "name": "Performance profiling",
+      "slug": "performance-profiling"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "1dceebd7-edf8-43fb-9fbb-bec4be90b5da",
+      "name": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "03a4b4b3-fb55-4af3-a51a-97a3ac811bf6",
+      "name": "Playbook enforcement",
+      "slug": "playbook-enforcement"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "8a368f82-8012-4972-b898-2fec3dc3c877",
+      "name": "Policy analysis",
+      "slug": "policy-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "e0f96295-a8fe-4232-841b-b48b2d96617a",
+      "name": "Policy drafting",
+      "slug": "policy-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "26fc10b6-3690-415d-8984-92b0d26fd42c",
+      "name": "Policy exception review",
+      "slug": "policy-exception-review"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "b4151cf3-a920-4b26-90ea-03b1e2865933",
+      "name": "Policy lookup",
+      "slug": "policy-lookup"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "e559c799-6e2a-4dd4-ad5c-14e3a1f6231b",
+      "name": "Policy research",
+      "slug": "policy-research"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "4f526898-e04c-4e2a-8d1b-1016d07aae1f",
+      "name": "Presentation design",
+      "slug": "presentation-design"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "a8ed5950-13bf-4aeb-8d7e-e314cb988113",
+      "name": "Press release drafting",
+      "slug": "press-release-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "468f29df-8369-4ce1-a550-7e739095ed96",
+      "name": "Price elasticity",
+      "slug": "price-elasticity"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "47a60223-0732-4ff7-a77c-f0a6fa67af55",
+      "name": "Price monitoring",
+      "slug": "price-monitoring"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "53a98a47-79f7-448e-b23b-6d2f930484a5",
+      "name": "Pricing analysis",
+      "slug": "pricing-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "afc38d89-ab23-4a8c-9943-d741eb80d15e",
+      "name": "Prior authorization",
+      "slug": "prior-auth"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "2526bfde-c66d-4e11-a66e-51fdf09be0aa",
+      "name": "Privacy review",
+      "slug": "privacy-review"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "3a9cfa19-f756-4380-8be0-71f2a31d6f13",
+      "name": "Process mapping",
+      "slug": "process-mapping"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "9527fb44-0c4e-4ea8-8ab3-fd2602bdf1f4",
+      "name": "Procurement analysis",
+      "slug": "procurement-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "3a89278f-c3c4-401f-8876-33dbfd215519",
+      "name": "Product copy",
+      "slug": "product-copy"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "16e19185-af1b-406f-9a2b-337af55c766a",
+      "name": "Product description",
+      "slug": "product-description"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "496517e2-3b6d-4f8d-971d-9206055d3d51",
+      "name": "Product matching",
+      "slug": "product-matching"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "978cc94a-0998-4e04-8de8-1b24cd9b3320",
+      "name": "Product research",
+      "slug": "product-research"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "ffcd63a2-3ec4-4631-a416-f822c252d1ee",
+      "name": "Promotion planning",
+      "slug": "promotion-planning"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "fef9a4c4-aa6b-412c-a663-9186e3b089e3",
+      "name": "Proposal drafting",
+      "slug": "proposal-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "365fabde-9d8a-471f-bf5a-8c8541b3f50f",
+      "name": "Prospect research",
+      "slug": "prospect-research"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "f465e768-fb7d-49c8-b249-e46bc87b96f0",
+      "name": "Protocol extraction",
+      "slug": "protocol-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "1aaaaaad-de80-4973-ab18-37d697e8dc78",
+      "name": "Python development",
+      "slug": "python-development"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "f409cea5-4398-478c-b505-44eaf1d7a9c1",
+      "name": "Quality assurance review",
+      "slug": "qa-review"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "35175cf6-c97a-45a8-ba15-5be25363b654",
+      "name": "Question answering",
+      "slug": "question-answering"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "5f0350e3-f35c-4d96-9462-3e716cf38167",
+      "name": "Queue processing",
+      "slug": "queue-processing"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "e0dca262-b2fd-4cb6-88f8-a8283096ce65",
+      "name": "Quiz generation",
+      "slug": "quiz-generation"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "46cce41a-e28f-4218-bee9-cbe45bf3b40d",
+      "name": "Readability editing",
+      "slug": "readability-editing"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "0fbf9979-9fb1-4949-bd3c-f7d30b55937a",
+      "name": "Receipt extraction",
+      "slug": "receipt-extraction"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "d6329416-e143-459c-a167-eae70dabd857",
+      "name": "Refactor suggestions",
+      "slug": "refactor-suggestions"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "c5824f2f-d7aa-4663-b515-ccf33833de7b",
+      "name": "Regulatory monitoring",
+      "slug": "regulatory-monitoring"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "ed841628-b09c-4663-bd30-b5bc9097c5a3",
+      "name": "Release notes",
+      "slug": "release-notes"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "873e2be5-d765-4b61-8254-0f500afc41d0",
+      "name": "Report writing",
+      "slug": "report-writing"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "name": "Research and synthesis",
+      "slug": "research-synthesis"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "923a2be5-4368-4fff-a078-bd4a926300f3",
+      "name": "Retry logic",
+      "slug": "retry-logic"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "012cb04d-4bd0-4937-a291-5a2ee9d860f5",
+      "name": "Return processing",
+      "slug": "return-processing"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "eb934573-0d9a-4aad-8b79-4b6235518ec4",
+      "name": "Return reason analysis",
+      "slug": "return-reason-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "aceec444-2ce3-4797-94e6-cf30bf97f241",
+      "name": "Revenue analysis",
+      "slug": "revenue-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "8feffbd0-81d6-4c5e-ad53-5fa1d9114a1e",
+      "name": "Review analysis",
+      "slug": "review-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "4c016bc8-8e00-48c2-bfd9-2507d3ee1713",
+      "name": "Risk flagging",
+      "slug": "risk-flagging"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "fc5fa9d7-89c2-4a39-b9f2-797d2501987d",
+      "name": "Risk scoring",
+      "slug": "risk-scoring"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "2c58c2b2-7d5f-472d-83d7-a7bb95f592b0",
+      "name": "Romanization",
+      "slug": "romanization"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "8e7ba54d-fce3-499e-8e98-aec16f39f33c",
+      "name": "Rubric creation",
+      "slug": "rubric-creation"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "5044b69c-9d8f-442d-9e8d-486028363c3d",
+      "name": "Runbook execution",
+      "slug": "runbook-execution"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "c33ff5b4-2baf-4863-9440-f0adc27e2adf",
+      "name": "Sales call analysis",
+      "slug": "sales-call-analysis"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "name": "Sales and marketing",
+      "slug": "sales-marketing"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "93bc6c99-bb96-4783-8747-afd0c0eef813",
+      "name": "Sales prospecting",
+      "slug": "sales-prospecting"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "8bce31d2-be78-4847-9867-35bb62f1eceb",
+      "name": "Scenario generation",
+      "slug": "scenario-generation"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "2779e1d0-6260-42f2-80a1-6c6dc67d1df3",
+      "name": "Scheduling assistance",
+      "slug": "scheduling-assistance"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "ee4faf86-9991-4dcc-9d21-dee737e8b6f8",
+      "name": "Secrets detection",
+      "slug": "secrets-detection"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "23fbda3b-f575-4036-9407-3ced75314ab5",
+      "name": "Security audit",
+      "slug": "security-audit"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "936cc71c-094d-4026-8991-d83009950af2",
+      "name": "Security questionnaire",
+      "slug": "security-questionnaire"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "name": "Security and risk",
+      "slug": "security-risk"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "276cbb1a-7555-4157-864f-45f4e6286326",
+      "name": "Security training",
+      "slug": "security-training"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "f3bf8aad-7b3a-4011-97c6-1fa2cfa62f29",
+      "name": "Segmentation",
+      "slug": "segmentation"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "9e8c9252-10ef-43db-a61b-7c9aaec47bc7",
+      "name": "Sentiment analysis",
+      "slug": "sentiment-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "7b1b5523-d5e4-41b8-bd6f-37f0f55d11a5",
+      "name": "SEO tagging",
+      "slug": "seo-tagging"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "d58c0130-8b23-42a5-be7e-3e0b1c124f4f",
+      "name": "SKU classification",
+      "slug": "sku-classification"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "71f80669-85be-4d76-b54f-3f6073acfaf7",
+      "name": "SOC 2 evidence",
+      "slug": "soc-2-evidence"
+    },
+    {
+      "active": null,
+      "category_id": "7a370d3c-7331-4e6b-9f56-6f0d86dc60a9",
+      "description": "",
+      "id": "22f3f0bd-e015-4b67-bbd0-bba6656c1369",
+      "name": "Social media drafting",
+      "slug": "social-media-drafting"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "name": "Software engineering",
+      "slug": "software-engineering"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "802edb56-969e-49d5-b0e7-201feb4c5339",
+      "name": "SOP drafting",
+      "slug": "sop-drafting"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "6c597ab9-3bb9-4bf3-8864-7544967fc617",
+      "name": "Source verification",
+      "slug": "source-verification"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "6c28b1ac-7e33-49cb-bd67-85dd9d1b0539",
+      "name": "Speaker diarization",
+      "slug": "speaker-diarization"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "8a5abe42-5686-4caf-abc0-f877c442c795",
+      "name": "Spreadsheet analysis",
+      "slug": "spreadsheet-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "7ae64993-2e7a-400d-82b6-ff6ac6975908",
+      "name": "SQL optimization",
+      "slug": "sql-optimization"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "04150602-5e5b-49a7-a55b-5a0e13ce0552",
+      "name": "Study guide",
+      "slug": "study-guide"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "c4350b35-e0bd-45c1-9d60-72979526d56a",
+      "name": "Style enforcement",
+      "slug": "style-enforcement"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "0890e92d-fced-40f1-aac4-39ee96b9a442",
+      "name": "Subtitle translation",
+      "slug": "subtitle-translation"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "name": "Customer support and operations",
+      "slug": "support-operations"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "c6e3a57b-da8a-4fba-bb66-cf08fab09973",
+      "name": "System diagrams",
+      "slug": "system-diagrams"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "281735eb-13cc-4fda-ade8-69c09448411a",
+      "name": "Task decomposition",
+      "slug": "task-decomposition"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "9a518f74-8d05-40ca-811f-a627777d8964",
+      "name": "Tax prep support",
+      "slug": "tax-prep-support"
+    },
+    {
+      "active": null,
+      "category_id": "3a7d00fa-1214-41dd-88f2-e2d5eb019308",
+      "description": "",
+      "id": "4dc84ebf-3ac4-4093-b8c9-c2fe77573056",
+      "name": "Taxonomy assignment",
+      "slug": "taxonomy-assignment"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "fbc954b3-983f-450a-b8c8-c294edc80da4",
+      "name": "Taxonomy mapping",
+      "slug": "taxonomy-mapping"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "ff51606f-3665-46f4-ab99-c3b2c19a660b",
+      "name": "Terminology management",
+      "slug": "terminology-management"
+    },
+    {
+      "active": null,
+      "category_id": "70846e74-f4d8-43ea-9ae9-15c3bcc5ef71",
+      "description": "",
+      "id": "92d1aa71-4fdd-4d5b-b96f-d831cc5551a2",
+      "name": "Terms review",
+      "slug": "terms-review"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "9a5eba59-226b-40b0-af6e-b7b5876f2cb6",
+      "name": "Test authoring",
+      "slug": "test-authoring"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "491d5cf5-3f0d-417e-b1e6-b5ce0013de66",
+      "name": "Text summarization",
+      "slug": "text-summarization"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "70efc32c-0d4c-4451-bea6-4b58daa599e6",
+      "name": "Threat modeling",
+      "slug": "threat-modeling"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "1492b19f-cb18-4692-a80e-b07e01d4fe35",
+      "name": "Thumbnail generation",
+      "slug": "thumbnail-generation"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "a8bf9b28-d0e9-4a08-8746-478e29ffcf80",
+      "name": "Ticket triage",
+      "slug": "ticket-triage"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "95195114-1015-4b20-a62f-cc3d728eb54e",
+      "name": "Tone adaptation",
+      "slug": "tone-adaptation"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "a88920e9-7296-408b-ac05-41f3a5d9630b",
+      "name": "Tool orchestration",
+      "slug": "tool-orchestration"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "e3261d61-4725-4315-ab0e-8a9992967553",
+      "name": "Topic monitoring",
+      "slug": "topic-monitoring"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "8af2b515-bedc-422d-a6bb-0eea61488e7f",
+      "name": "Training evaluation",
+      "slug": "training-evaluation"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "a3ad67b0-2297-4169-a91d-0f9f1a5b6f50",
+      "name": "Training module",
+      "slug": "training-module"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "3ba2441c-4e05-4fd3-9ab4-224edd2865a0",
+      "name": "Transcreation",
+      "slug": "transcreation"
+    },
+    {
+      "active": null,
+      "category_id": "61fc5c30-8339-4412-9756-bb1a8dd3e509",
+      "description": "",
+      "id": "ed151dd8-e65c-43af-9372-34408631c0ef",
+      "name": "Transcript summarization",
+      "slug": "transcript-summarization"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "d45b9691-d66b-4619-ae47-6eb827e97f91",
+      "name": "Transcription",
+      "slug": "transcription"
+    },
+    {
+      "active": null,
+      "category_id": "652399cd-40dd-4ddc-a196-f8b2dbb06eac",
+      "description": "",
+      "id": "5419b936-464d-4521-a07f-c760d3e2b8a2",
+      "name": "Translation",
+      "slug": "translation"
+    },
+    {
+      "active": null,
+      "category_id": "8f75d96b-7a68-4c63-9dc4-b52a201afe3e",
+      "description": "",
+      "id": "e0adb317-dc8a-4cf0-b566-fc43dc7bdef6",
+      "name": "Trend analysis",
+      "slug": "trend-analysis"
+    },
+    {
+      "active": null,
+      "category_id": "006e73b3-3438-4123-bd4c-cc06bae2430d",
+      "description": "",
+      "id": "1b2ec943-0aac-4e9a-b7fe-6be642618d36",
+      "name": "Trial search",
+      "slug": "trial-search"
+    },
+    {
+      "active": null,
+      "category_id": "e2829643-c43d-49ae-a7d0-3e757c622ef6",
+      "description": "",
+      "id": "4d602af1-3588-47b7-bf09-0cd85a93a788",
+      "name": "Tutoring",
+      "slug": "tutoring"
+    },
+    {
+      "active": null,
+      "category_id": "bbddeafb-61fa-4955-a2e8-5e91afdf943d",
+      "description": "",
+      "id": "f8aefdcb-f7c8-4eec-81a0-6bde68d6bd3f",
+      "name": "TypeScript development",
+      "slug": "typescript-development"
+    },
+    {
+      "active": null,
+      "category_id": "ee8c9d61-ae59-4391-ae8c-4d0e22d29ef6",
+      "description": "",
+      "id": "10b6ac6e-3db7-4aaf-8d7b-76d7ad8d98c5",
+      "name": "Unit economics",
+      "slug": "unit-economics"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "c329d192-5640-4ad3-8ca2-74fb0ec96652",
+      "name": "Vendor comparison",
+      "slug": "vendor-comparison"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "be004bfb-6cbe-43eb-b755-09a60bfa57cc",
+      "name": "Vendor coordination",
+      "slug": "vendor-coordination"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "7df7645e-0d6e-40bb-8c50-35c32a8b5c9f",
+      "name": "Vendor risk review",
+      "slug": "vendor-risk-review"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "52323090-81cb-4e90-8e60-37914c96edfe",
+      "name": "Video editing",
+      "slug": "video-editing"
+    },
+    {
+      "active": null,
+      "category_id": "6f7ec1bd-033c-4af5-b597-7e3c7c7dbfad",
+      "description": "",
+      "id": "8df8ff1d-0797-460a-848a-611f09973ae0",
+      "name": "Voice cloning",
+      "slug": "voice-cloning"
+    },
+    {
+      "active": null,
+      "category_id": "87413d5f-d9a0-489d-ace0-c1adf99fa9f5",
+      "description": "",
+      "id": "0654c5b3-389c-42e9-a1da-8c874a9eadc4",
+      "name": "Vulnerability triage",
+      "slug": "vulnerability-triage"
+    },
+    {
+      "active": null,
+      "category_id": "59c190b8-0dbd-4e50-bf9d-e31b9859efcb",
+      "description": "",
+      "id": "c2999707-2219-4fe4-9e76-9579b170dbe5",
+      "name": "Web research",
+      "slug": "web-research"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "1e21ff30-aee3-433a-9d80-7f5571bb9713",
+      "name": "Webhook handling",
+      "slug": "webhook-handling"
+    },
+    {
+      "active": null,
+      "category_id": null,
+      "description": "",
+      "id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "name": "Workflow automation",
+      "slug": "workflow-automation"
+    },
+    {
+      "active": null,
+      "category_id": "a8f822c9-a95b-42ef-a17f-3024e3435372",
+      "description": "",
+      "id": "975d101f-5645-47b5-b986-bb573d91de9e",
+      "name": "Workflow handoff",
+      "slug": "workflow-handoff"
+    },
+    {
+      "active": null,
+      "category_id": "48f1d210-7382-423b-be23-7f456d31d1c1",
+      "description": "",
+      "id": "7ca53227-c678-4d00-abf0-2125b00f0b6b",
+      "name": "Workflow testing",
+      "slug": "workflow-testing"
+    }
+  ],
+  "endpoints": {
+    "/api/v2/job-types": {
+      "content_type": "application/json; charset=utf-8",
+      "status": 200
+    },
+    "/capabilities": {
+      "content_type": "application/json; charset=utf-8",
+      "status": 200
+    },
+    "/capabilities/tags?query=code": {
+      "content_type": "application/json; charset=utf-8",
+      "status": 200
+    },
+    "/capabilities/tags?query=data": {
+      "content_type": "application/json; charset=utf-8",
+      "status": 200
+    },
+    "/capabilities/tags?query=research": {
+      "content_type": "application/json; charset=utf-8",
+      "status": 200
+    },
+    "/capabilities/tags?query=testing": {
+      "content_type": "application/json; charset=utf-8",
+      "status": 200
+    },
+    "/capabilities/tags?query=writing": {
+      "content_type": "application/json; charset=utf-8",
+      "status": 200
+    }
+  },
+  "generated_at": "2026-07-31T00:04:13+00:00",
+  "job_types": [
+    {
+      "active": true,
+      "artifact_required": [
+        "summary",
+        "reproduction_steps",
+        "observed_output"
+      ],
+      "capability_tag_id": null,
+      "description": "Produce a minimal, verifiable reproduction of a reported bug, including steps, observed output, and a validation command.",
+      "display_name": "Bug reproduction",
+      "id": "96275d53-40ca-4570-913b-98730b4b3daf",
+      "key": "code.bug_reproduction"
+    },
+    {
+      "active": true,
+      "artifact_required": [
+        "summary",
+        "changed_files",
+        "diff_excerpt"
+      ],
+      "capability_tag_id": null,
+      "description": "Fix a scoped issue with a small patch: changed files, diff excerpt, validation command output, and the full patch as a sealed file.",
+      "display_name": "Small code patch",
+      "id": "ad9a1e73-045d-41e9-8686-47ad5cff9fa3",
+      "key": "code.small_patch"
+    },
+    {
+      "active": true,
+      "artifact_required": [
+        "headline_options",
+        "outline",
+        "tone_notes",
+        "draft_markdown",
+        "rationale"
+      ],
+      "capability_tag_id": null,
+      "description": "Draft marketing or product copy to a brief: headline options, outline, tone notes, and a full markdown draft.",
+      "display_name": "Copy draft",
+      "id": "ac50662c-44ac-4390-ab4d-4eabd9f60c13",
+      "key": "copy.draft"
+    },
+    {
+      "active": true,
+      "artifact_required": [
+        "schema",
+        "row_count",
+        "sample_rows",
+        "validation_stats"
+      ],
+      "capability_tag_id": null,
+      "description": "Extract structured data from target sources: schema, validated sample rows, and the full dataset delivered as a sealed file.",
+      "display_name": "Data extraction sample",
+      "id": "a15f2882-547f-40f2-8fd7-7ea621c87ad3",
+      "key": "data.extraction_sample"
+    },
+    {
+      "active": true,
+      "artifact_required": [
+        "rationale"
+      ],
+      "capability_tag_id": null,
+      "description": "Critique a design against its objective and audience with structured rationale and annotated previews.",
+      "display_name": "Design feedback",
+      "id": "124be8d5-cd6d-4c82-9529-9ceb4098235b",
+      "key": "design.feedback"
+    },
+    {
+      "active": true,
+      "artifact_required": [
+        "rationale"
+      ],
+      "capability_tag_id": null,
+      "description": "Deliver design or media assets as sealed files with worker-authored watermarked or reduced-resolution PREVIEW-role files; full-resolution source is released on award.",
+      "display_name": "Design media preview",
+      "id": "2bec309b-c9bb-4943-a3ff-7e1ce8a2d654",
+      "key": "design.media_preview"
+    },
+    {
+      "active": true,
+      "artifact_required": [
+        "title",
+        "executive_summary",
+        "key_findings",
+        "sources",
+        "full_report_markdown"
+      ],
+      "capability_tag_id": null,
+      "description": "Answer a research question with a sourced brief: executive summary, key findings with confidence levels, and a full markdown report.",
+      "display_name": "Research brief",
+      "id": "357c01ad-ded3-4d09-bdc7-52ccbcb350d0",
+      "key": "research.brief"
+    }
+  ],
+  "writes_performed": []
+}
