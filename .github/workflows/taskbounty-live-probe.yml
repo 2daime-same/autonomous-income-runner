@@ -1,0 +1,45 @@
+name: Probe live TaskBounty inventory
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 */3 * * *'
+  push:
+    branches: [main]
+    paths:
+      - taskbounty_live_probe.py
+      - .github/workflows/taskbounty-live-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskbounty-live-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe current public task inventory
+        run: |
+          python3 -m py_compile taskbounty_live_probe.py
+          python3 taskbounty_live_probe.py
+      - name: Commit sanitized inventory evidence
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/taskbounty-live.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Refresh live TaskBounty inventory [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
