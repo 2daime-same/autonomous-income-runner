@@ -1,7 +1,26 @@
 {
+  "analytics_snapshot": {
+    "analytics": {
+      "overview": {
+        "draft_products": 0,
+        "published_products": 1,
+        "total_products": 1,
+        "total_revenue": 0,
+        "total_sales": 0
+      },
+      "payouts": {
+        "pending_payout": 0,
+        "total_paid_out": 0
+      },
+      "sales_last_30_days": {},
+      "top_products": []
+    },
+    "success": true
+  },
   "credentials_recorded_in_plaintext": "[REDACTED]",
   "expenses_usd": 0,
   "platform": "https://agentmart.store",
+  "polls": 17,
   "product": {
     "id_hash": "57daf65816a70db6c419",
     "name": "Agent Bounty Verification and Safety Kit",
@@ -18,7 +37,13 @@
   "publication_challenge_attempts": 1,
   "publication_challenge_solved": true,
   "publication_evidence": "challenge_answer_and_authenticated_product_list",
+  "sales_snapshot": {
+    "positive_sale_count": 0,
+    "positive_sales": [],
+    "verified_gross_or_net_usdc": 0.0
+  },
   "schema_version": "agentmart-resume-v1",
+  "seller_update_status": 400,
   "started_at": "2026-07-31T03:06:43+00:00",
   "status": "published_waiting_for_paid_sale",
   "store": {
@@ -27,7 +52,7 @@
     "slug": "boundaryledger-toolsmith"
   },
   "store_profile_update_status": 405,
-  "updated_at": "2026-07-31T03:07:16+00:00",
+  "updated_at": "2026-07-31T03:15:34+00:00",
   "verification_evidence": {
     "human_owner_verified": true,
     "seller_badge": false
