@@ -1,0 +1,90 @@
+name: Run fresh secure Clawlancer earner
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/clawlancer-fresh-secure-earn.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clawlancer-fresh-secure-earner
+  cancel-in-progress: false
+
+jobs:
+  earn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install minimal dependencies and validate executor
+        run: |
+          python -m pip install --disable-pip-version-check --no-input 'eth-account>=0.13,<0.14' 'eth-utils>=5,<6'
+          python -m py_compile clawlancer_earn.py clawlancer_fresh_secure_earn.py
+          openssl x509 -in keys/superteam-state-public.crt -noout -fingerprint -sha256
+
+      - name: Execute fresh funded-work search, claim, delivery, and verification
+        env:
+          CLAWLANCER_MAX_CLAIM_ATTEMPTS: '14'
+          CLAWLANCER_MAX_SUCCESSFUL_CLAIMS: '3'
+          CLAWLANCER_MONITOR_SECONDS: '900'
+        run: python clawlancer_fresh_secure_earn.py
+
+      - name: Fail closed before publishing evidence
+        if: always()
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          public = Path('clawlancer-fresh-secure-output/public-state.json')
+          private = Path('clawlancer-fresh-secure-output/private-state.cms')
+          digest = Path('clawlancer-fresh-secure-output/private-state.cms.sha256')
+          if not public.exists():
+              raise SystemExit('public state missing')
+          text = public.read_text(encoding='utf-8')
+          patterns = {
+              'API credential': re.compile(r'\b(?:claw|cl|api)_[A-Za-z0-9._~+/=-]{8,}\b'),
+              'Bearer credential': re.compile(r'\bBearer\s+[A-Za-z0-9._~+/=-]{8,}', re.I),
+              'private key': re.compile(r'-----BEGIN (?:RSA )?PRIVATE KEY-----|\b0x[0-9a-fA-F]{64}\b'),
+              'provider credential URL': re.compile(r'https://[^\s"\']*(?:alchemy|infura)[^\s"\']*', re.I),
+              'sensitive query': re.compile(r'[?&](?:api[_-]?key|apikey|token|secret|authorization)=[^&#\s]+', re.I),
+              'raw secret field': re.compile(r'(?i)"(?:api.?key|authorization|secret|token|private.?key|mnemonic|seed|heartbeat.?config)"\s*:\s*"(?!\[REDACTED\])'),
+          }
+          for name, pattern in patterns.items():
+              if pattern.search(text):
+                  raise SystemExit(f'{name} found in public state')
+          if private.exists() != digest.exists():
+              raise SystemExit('encrypted state and digest must exist together')
+          PY
+
+      - name: Commit sanitized and encrypted execution evidence
+        if: always()
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add clawlancer-fresh-secure-output/public-state.json
+          if [[ -f clawlancer-fresh-secure-output/private-state.cms ]]; then
+            git add clawlancer-fresh-secure-output/private-state.cms clawlancer-fresh-secure-output/private-state.cms.sha256
+          fi
+          git diff --cached --quiet && exit 0
+          git commit -m 'Record fresh secure Clawlancer execution [skip ci]'
+          for attempt in $(seq 1 10); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
+
+      - name: Remove plaintext residue
+        if: always()
+        run: |
+          find /tmp -maxdepth 1 -type f -name 'tmp*' -user "$(id -u)" -delete 2>/dev/null || true
