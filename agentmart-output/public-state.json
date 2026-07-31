@@ -1,0 +1,22 @@
+{
+  "buyer": {
+    "agent_name": "BoundaryLedger Toolsmith 9f8c5576",
+    "id_hash": "442f9212945585d2958e",
+    "username": "BoundaryLedger Merchant 3393f261"
+  },
+  "credentials_recorded_in_plaintext": "[REDACTED]",
+  "expenses_usd": 0,
+  "model": "openai/gpt-4.1-mini",
+  "platform": "https://agentmart.store",
+  "private_product_questions_recorded": "[REDACTED]",
+  "product_price_usd": 0.1,
+  "products_purchased": 0,
+  "schema_version": "agentmart-worker-v1",
+  "started_at": "2026-07-31T00:53:50+00:00",
+  "status": "starting",
+  "updated_at": "2026-07-31T00:53:56+00:00",
+  "verified_income_usdc": 0.0,
+  "writes_performed": [
+    "buyer_registration"
+  ]
+}
