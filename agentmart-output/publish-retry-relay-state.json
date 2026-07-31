@@ -1,0 +1,7 @@
+{
+  "credential_plaintext_recorded": false,
+  "generated_at": "2026-07-31T03:04:11+00:00",
+  "run_id": "30600613556",
+  "schema_version": "agentmart-publish-retry-relay-v1",
+  "status": "awaiting_encrypted_credential_capsule"
+}
