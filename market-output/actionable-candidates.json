@@ -207,17 +207,6 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 51398,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/51398"
-    },
-    {
-      "flags": [
         "existing reward links indicate the task may already be claimed",
         "more than two competing attempt users"
       ],
@@ -266,17 +255,6 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ FastAPI ] Add request-scoped dependency caching to reduce duplicate resolution",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/795"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 785,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Laravel ] Add database health check endpoint with retry logic",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/785"
     },
     {
       "flags": [
@@ -494,14 +472,54 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
       ],
-      "issue_number": 29,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Implement a fully functional Admin Panel",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/29"
+      "issue_number": 5064,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Nomic Embeddings Model for +10% Accuracy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 5066,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Cow Swap Cash Out",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5066"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 5035,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Recruiting: Dragonfly CTF II",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 5844,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Governance Token emissions to `ubq.eth` new strategy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 4,
+      "repo": "theselfish/SlopStation13",
+      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
+      "url": "https://github.com/theselfish/SlopStation13/issues/4"
     },
     {
       "flags": [
@@ -517,39 +535,6 @@
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
-      ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 4,
-      "repo": "theselfish/SlopStation13",
-      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
-      "url": "https://github.com/theselfish/SlopStation13/issues/4"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 72,
-      "repo": "FreeCAD/FPA-grant-proposals",
-      "title": "KiConnect PCB Workbench [Time Commitment, Ecosystem]",
-      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/72"
-    },
-    {
-      "flags": [
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
@@ -557,6 +542,16 @@
       "repo": "FreeCAD/FPA-grant-proposals",
       "title": "Design System and Style Guidelines",
       "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/58"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "no direct reward evidence"
+      ],
+      "issue_number": 2648,
+      "repo": "simonmichael/hledger",
+      "title": "Support simple arithmetic expressions in posting amounts",
+      "url": "https://github.com/simonmichael/hledger/issues/2648"
     },
     {
       "flags": [
@@ -576,6 +571,16 @@
       "repo": "FreeCAD/FPA-grant-proposals",
       "title": "Implement ISO 13715 (Edge Symbols) and ISO 15785 (Joint Symbols) in TechDraw Workbench",
       "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/81"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 72,
+      "repo": "FreeCAD/FPA-grant-proposals",
+      "title": "KiConnect PCB Workbench [Time Commitment, Ecosystem]",
+      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/72"
     },
     {
       "flags": [
@@ -653,18 +658,6 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "more than two competing attempt users",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 58,
-      "repo": "Spectral-Finance/lux",
-      "title": "Twitter API Core Integration ($2,500)",
-      "url": "https://github.com/Spectral-Finance/lux/issues/58"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
@@ -675,8 +668,8 @@
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-07-31T03:50:47+00:00",
+  "generated_at": "2026-07-31T09:19:58+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-07-31T03:50:47+00:00"
+  "source_generated_at": "2026-07-31T09:19:57+00:00"
 }
