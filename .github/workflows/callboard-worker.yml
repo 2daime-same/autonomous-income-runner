@@ -1,0 +1,78 @@
+name: Run Callboard zero-spend worker
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - callboard_worker.py
+      - .github/workflows/callboard-worker.yml
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: callboard-zero-spend-worker
+  cancel-in-progress: false
+
+jobs:
+  earn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate worker and encryption certificate
+        run: |
+          set -euo pipefail
+          python -m py_compile callboard_worker.py
+          openssl x509 \
+            -in keys/superteam-state-public.crt \
+            -noout -fingerprint -sha256
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+
+      - name: Register, complete starter work, apply, submit, and verify earnings
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CALLBOARD_MODEL: openai/gpt-4.1-mini
+          MAX_RUNTIME_MINUTES: '335'
+        run: python callboard_worker.py
+
+      - name: Remove private plaintext residue
+        if: always()
+        run: |
+          find /tmp -maxdepth 1 -type f -name 'tmp*' -user "$(id -u)" -delete 2>/dev/null || true
+
+      - name: Fail closed on credential leakage
+        if: always()
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          public = Path("callboard-output/public-state.json")
+          if not public.exists():
+              raise SystemExit("Callboard public state missing")
+          text = public.read_text(encoding="utf-8")
+          patterns = {
+              "Callboard API key": re.compile(r"\bcb_[A-Za-z0-9._~+/=-]{8,}\b"),
+              "JWT": re.compile(r"\beyJ[A-Za-z0-9._-]{20,}\b"),
+              "private key": re.compile(r"\b0x[0-9a-fA-F]{64}\b"),
+              "secret URL": re.compile(r"https://[^ \"']+[?&](?:token|signature|key|credential)=[^ &\"']+", re.I),
+              "unredacted secret field": re.compile(
+                  r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|claim|setup.?link|private|credential|upload.?target|presigned|session)"\s*:\s*"(?!\[REDACTED\])'
+              ),
+          }
+          for name, pattern in patterns.items():
+              if pattern.search(text):
+                  raise SystemExit(f"{name} found in Callboard public state")
+          PY
