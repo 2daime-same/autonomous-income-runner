@@ -1,0 +1,81 @@
+name: Scan Taskmarket public zero-spend opportunities
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskmarket_public_scan.py
+      - .github/workflows/taskmarket-public-scan.yml
+  schedule:
+    - cron: '13 */4 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-public-zero-spend-scan
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate scanner
+        run: python -m py_compile taskmarket_public_scan.py
+
+      - name: Fetch and rank public opportunities
+        env:
+          TASKMARKET_API_URL: https://api.taskmarket.dev
+          TASKMARKET_PUBLIC_OUTPUT: taskmarket-output/public-scan.json
+          TASKMARKET_MAX_PAGES: '10'
+          TASKMARKET_PAGE_LIMIT: '100'
+        run: python taskmarket_public_scan.py
+
+      - name: Reject credential-like output
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          path = Path('taskmarket-output/public-scan.json')
+          text = path.read_text(encoding='utf-8')
+          patterns = {
+              'JWT': re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
+              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+              'credential field': re.compile(
+                  r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|private|credential)"\s*:\s*"(?!\[REDACTED)'
+              ),
+          }
+          for name, pattern in patterns.items():
+              if pattern.search(text):
+                  raise SystemExit(f'{name} found in public Taskmarket state')
+          PY
+
+      - name: Commit changed public evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/public-scan.json
+          if git diff --cached --quiet; then
+            echo 'No substantive Taskmarket opportunity changes'
+            exit 0
+          fi
+          git commit -m 'Refresh Taskmarket public opportunities [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
