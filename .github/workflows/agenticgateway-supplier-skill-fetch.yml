@@ -1,0 +1,43 @@
+name: Fetch Agentic Gateway supplier skill
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - agenticgateway_supplier_skill_fetch.py
+      - .github/workflows/agenticgateway-supplier-skill-fetch.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agenticgateway-supplier-skill-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate and fetch official supplier contract
+        run: |
+          set -euo pipefail
+          python3 -m py_compile agenticgateway_supplier_skill_fetch.py
+          python3 agenticgateway_supplier_skill_fetch.py
+
+      - name: Commit official supplier contract evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/agenticgateway-supplier-skill.md market-output/agenticgateway-supplier-contract.json
+          if git diff --cached --quiet; then
+            echo 'No supplier contract changes'
+          else
+            git commit -m 'Record Agentic Gateway supplier skill [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
