@@ -32,6 +32,7 @@ HARD_RISK_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("requires_account_or_social_action", re.compile(r"\b(create an account|sign up|log in|tweet|post on|linkedin|discord|telegram|send an email|make a call|phone call)\b", re.I)),
     ("requires_physical_or_location_action", re.compile(r"\b(ship|shipping|mail a|visit in person|photograph yourself|record yourself|physical product)\b", re.I)),
     ("requires_paid_media_model", re.compile(r"\b(suno|udio|veo|kling|runway|seedance|text-to-video|image-to-video|real audio model)\b", re.I)),
+    ("requires_unavailable_audio_or_video_production", re.compile(r"\b(shoot|filming|recording|animate|animation|reel|wav|mp3|mp4|mov)\b|\b(?:video|audio)[- ]generation\b", re.I)),
 )
 SOFT_RISK_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("external_code_or_file", re.compile(r"https?://|github|gist|download|repository|repo\b", re.I)),
