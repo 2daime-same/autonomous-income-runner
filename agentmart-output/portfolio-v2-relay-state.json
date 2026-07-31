@@ -1,0 +1,7 @@
+{
+  "credential_plaintext_recorded": false,
+  "generated_at": "2026-07-31T03:52:16+00:00",
+  "run_id": "30602656451",
+  "schema_version": "agentmart-portfolio-relay-v2",
+  "status": "awaiting_encrypted_credential_capsule"
+}
