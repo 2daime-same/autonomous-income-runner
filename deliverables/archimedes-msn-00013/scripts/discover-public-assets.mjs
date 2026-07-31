@@ -1,7 +1,7 @@
 const BASE_URL = new URL('https://archimedes.market/');
 const KNOWN_ASSET_ID = '7665aafa-08ff-4391-a1ef-82ea87ed4002';
 const KNOWN_BOUNTY_ID = '5586f0c8-cde1-416c-ac28-d85bc6a264f0';
-const USER_AGENT = 'archimedes-msn-00013-endpoint-probe/1.1 (+read-only; no-auth)';
+const USER_AGENT = 'archimedes-msn-00013-endpoint-probe/1.2 (+read-only; no-auth)';
 const MAX_TEXT_BYTES = 2_000_000;
 const UUID_PATTERN = '[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}';
 
@@ -78,7 +78,7 @@ function scriptUrls(html) {
       urls.add(new URL(source, BASE_URL).href);
     }
   }
-  return [...urls].slice(0, 40);
+  return [...urls].slice(0, 50);
 }
 
 function decodeFlightPayload(html) {
@@ -119,23 +119,14 @@ function uniqueMatches(text, pattern, group = 0, max = 100) {
   return [...values];
 }
 
-function contexts(text, needles, max = 20, radius = 220) {
+function contextsForRegex(text, pattern, max = 20, radius = 260) {
   const output = [];
-  const lowered = text.toLowerCase();
-  for (const needle of needles) {
-    let cursor = 0;
-    const normalizedNeedle = needle.toLowerCase();
-    while (output.length < max) {
-      const index = lowered.indexOf(normalizedNeedle, cursor);
-      if (index < 0) {
-        break;
-      }
-      output.push({
-        needle,
-        context: sanitize(text.slice(Math.max(0, index - radius), index + needle.length + radius), 600),
-      });
-      cursor = index + Math.max(needle.length, 1);
-    }
+  for (const match of text.matchAll(pattern)) {
+    const index = match.index ?? 0;
+    output.push({
+      match: sanitize(match[0], 180),
+      context: sanitize(text.slice(Math.max(0, index - radius), index + match[0].length + radius), 760),
+    });
     if (output.length >= max) {
       break;
     }
@@ -160,15 +151,34 @@ function metadata(html) {
   return output;
 }
 
+function jsonLdProducts(html) {
+  const products = [];
+  const normalized = normalizedSearchText(html);
+  const pattern = /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  for (const match of normalized.matchAll(pattern)) {
+    const body = match[1];
+    if (!body) {
+      continue;
+    }
+    try {
+      const value = JSON.parse(body);
+      const candidates = Array.isArray(value) ? value : [value];
+      for (const candidate of candidates) {
+        if (candidate && typeof candidate === 'object' && candidate['@type'] === 'Product') {
+          products.push(candidate);
+        }
+      }
+    } catch {
+      // React Flight also contains an escaped copy. Metadata below still proves the public product.
+    }
+  }
+  return products;
+}
+
 function analyzeHtml(response) {
   const flight = decodeFlightPayload(response.body);
   const combined = normalizedSearchText(`${response.body}\n${flight.joined}`);
-  const assetLinkIds = uniqueMatches(
-    combined,
-    new RegExp(`/assets/(${UUID_PATTERN})`, 'gi'),
-    1,
-    100,
-  );
+  const assetLinkIds = uniqueMatches(combined, new RegExp(`/assets/(${UUID_PATTERN})`, 'gi'), 1, 100);
   const allUuids = uniqueMatches(combined, new RegExp(UUID_PATTERN, 'gi'), 0, 200);
   return {
     url: response.url,
@@ -180,83 +190,103 @@ function analyzeHtml(response) {
     flight_segment_count: flight.segments.length,
     flight_decoded_bytes: Buffer.byteLength(flight.joined),
     metadata: metadata(response.body),
+    json_ld_products: jsonLdProducts(response.body),
     asset_link_count: assetLinkIds.length,
     asset_link_ids: assetLinkIds.slice(0, 30),
     uuid_count: allUuids.length,
     uuid_sample: allUuids.slice(0, 30),
     contains_known_asset_id: combined.toLowerCase().includes(KNOWN_ASSET_ID),
-    contains_python: /python/i.test(combined),
-    evidence: contexts(
-      combined,
-      [KNOWN_ASSET_ID, '/assets/', 'Python', 'asset_type', 'price_cents', 'seller', 'title'],
-      24,
-    ),
+    targeted_evidence: [
+      ...contextsForRegex(combined, new RegExp(KNOWN_ASSET_ID, 'gi'), 4),
+      ...contextsForRegex(combined, /application\/ld\+json|"@type":"Product"|priceCurrency|additionalProperty/gi, 8),
+    ],
   };
 }
 
-function endpointEvidence(text, source) {
-  const evidence = [];
+function scriptAnalysis(source, text) {
   const normalized = normalizedSearchText(text);
-  const lowered = normalized.toLowerCase();
-  for (const needle of ['/api/', '/assets/', 'supabase', 'rpc(', 'from("assets', "from('assets"]) {
-    let cursor = 0;
-    while (evidence.length < 60) {
-      const index = lowered.indexOf(needle.toLowerCase(), cursor);
-      if (index < 0) {
-        break;
-      }
-      const context = sanitize(normalized.slice(Math.max(0, index - 160), index + 420), 650);
-      if (/asset|solution|bount|marketplace|catalog|supabase/i.test(context)) {
-        evidence.push({ source, needle, context });
-      }
-      cursor = index + needle.length;
-    }
-  }
-  return evidence;
+  const tableNames = uniqueMatches(
+    normalized,
+    /\.from\(["']([^"']*(?:asset|product|listing|catalog)[^"']*)["']\)/gi,
+    1,
+    30,
+  );
+  const rpcNames = uniqueMatches(normalized, /\.rpc\(["']([^"']+)["']/gi, 1, 30);
+  const supabaseUrls = uniqueMatches(normalized, /https:\/\/[a-z0-9-]+\.supabase\.co/gi, 0, 10);
+  const evidence = [
+    ...contextsForRegex(normalized, /\.from\(["'][^"']*(?:asset|product|listing|catalog)[^"']*["']\)/gi, 20),
+    ...contextsForRegex(normalized, /asset_type|price_cents|gallery_images|published_at|trust_score|license_type/gi, 20),
+    ...contextsForRegex(normalized, /\.rpc\(["'][^"']+["']/gi, 10),
+  ];
+  return {
+    source,
+    bytes: Buffer.byteLength(text),
+    table_names: tableNames,
+    rpc_names: rpcNames,
+    supabase_urls: supabaseUrls,
+    evidence: evidence.slice(0, 40),
+  };
 }
 
-const queryPages = [
-  '/assets',
-  '/assets?q=Python',
-  '/assets?query=Python',
-  '/assets?search=Python',
-  '/assets?asset_type=CODE',
-  `/assets/${KNOWN_ASSET_ID}`,
-];
-const pages = [];
-for (const path of queryPages) {
-  pages.push(analyzeHtml(await fetchText(path, 'text/html,application/xhtml+xml')));
+function sitemapAnalysis(response) {
+  const normalized = decodeHtmlEntities(response.body);
+  const locations = uniqueMatches(normalized, /<loc>([^<]+)<\/loc>/gi, 1, 5_000);
+  const assetLocations = locations.filter((value) => new RegExp(`/assets/${UUID_PATTERN}(?:$|[?#])`, 'i').test(value));
+  return {
+    url: response.url,
+    status: response.status,
+    content_type: response.content_type,
+    location: response.location,
+    error: response.error ?? null,
+    bytes: Buffer.byteLength(response.body),
+    body_prefix: sanitize(response.body, 1_200),
+    location_count: locations.length,
+    location_sample: locations.slice(0, 20),
+    asset_location_count: assetLocations.length,
+    asset_location_sample: assetLocations.slice(0, 30),
+  };
 }
 
 const listingHtml = await fetchText('/assets', 'text/html,application/xhtml+xml');
-const scripts = scriptUrls(listingHtml.body);
-const evidence = [];
-for (const scriptUrl of scripts) {
+const detailHtml = await fetchText(`/assets/${KNOWN_ASSET_ID}`, 'text/html,application/xhtml+xml');
+const pages = [analyzeHtml(listingHtml), analyzeHtml(detailHtml)];
+
+const scripts = new Set([...scriptUrls(listingHtml.body), ...scriptUrls(detailHtml.body)]);
+const analyzedScripts = [];
+for (const scriptUrl of [...scripts]) {
   const response = await fetchText(scriptUrl, 'application/javascript,text/javascript,*/*');
   if (response.status === 200 && response.body) {
-    evidence.push(...endpointEvidence(response.body, scriptUrl));
+    const analysis = scriptAnalysis(scriptUrl, response.body);
+    if (
+      analysis.table_names.length > 0 ||
+      analysis.rpc_names.length > 0 ||
+      analysis.supabase_urls.length > 0 ||
+      analysis.evidence.length > 0
+    ) {
+      analyzedScripts.push(analysis);
+    }
   }
-  if (evidence.length >= 60) {
-    break;
-  }
+}
+
+const sitemapPaths = [
+  '/robots.txt',
+  '/sitemap.xml',
+  '/sitemap_index.xml',
+  '/sitemap-0.xml',
+  '/assets-sitemap.xml',
+  '/sitemaps/assets.xml',
+];
+const sitemaps = [];
+for (const path of sitemapPaths) {
+  sitemaps.push(sitemapAnalysis(await fetchText(path, 'application/xml,text/xml,text/plain,*/*')));
 }
 
 const candidatePaths = [
   '/api/public/assets?limit=1&offset=0',
-  '/api/assets?limit=1&offset=0',
-  '/api/marketplace/assets?limit=1&offset=0',
-  '/api/public/marketplace/assets?limit=1&offset=0',
-  '/api/public/solutions?limit=1&offset=0',
-  '/api/solutions?limit=1&offset=0',
-  '/api/catalog/assets?limit=1&offset=0',
-  '/api/assets/search?limit=1&offset=0',
   `/api/public/assets/${KNOWN_ASSET_ID}`,
-  `/api/assets/${KNOWN_ASSET_ID}`,
-  `/api/marketplace/assets/${KNOWN_ASSET_ID}`,
   '/api/public/bounties?status=open&limit=1&offset=0',
   `/api/public/bounties/${KNOWN_BOUNTY_ID}`,
 ];
-
 const probes = [];
 for (const path of candidatePaths) {
   const response = await fetchText(path, 'application/json,text/plain,*/*');
@@ -276,8 +306,9 @@ console.log(
       generated_at: new Date().toISOString(),
       policy: 'Unauthenticated GET requests only; no account, terms, claim, purchase, upload, or payment action.',
       pages,
-      discovered_script_count: scripts.length,
-      script_endpoint_evidence: evidence.slice(0, 60),
+      discovered_script_count: scripts.size,
+      relevant_scripts: analyzedScripts,
+      sitemaps,
       probes,
     },
     null,
