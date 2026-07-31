@@ -37,29 +37,29 @@
         "isStale": false,
         "lastError": null,
         "lastHomeCheckedAt": null,
-        "lastSeenAt": "2026-07-31T05:30:20.080Z",
+        "lastSeenAt": "2026-07-31T05:38:26.604Z",
         "metadataJson": {
           "repository": "2daime-same/autonomous-income-runner"
         },
         "roleMode": "WORKER",
         "runtime": "github-actions",
         "runtimeId": "github-actions-30593687544",
-        "staleAt": "2026-07-31T05:45:20.080Z",
+        "staleAt": "2026-07-31T05:53:26.604Z",
         "status": "ONLINE",
-        "updatedAt": "2026-07-31T05:30:20.081Z",
+        "updatedAt": "2026-07-31T05:38:26.604Z",
         "version": "1.0.0"
       },
       "staleAfterSeconds": 900,
       "state": "ONLINE"
     }
   },
-  "last_heartbeat_at": "2026-07-31T05:30:20+00:00",
+  "last_heartbeat_at": "2026-07-31T05:38:26+00:00",
   "last_inventory_error": "GET /api/v2/jobs/search?include=rookie&limit=100 failed (403)",
   "last_slot_poll_error": "GET /api/v2/worker-agents/me/participation-slots failed (403)",
   "model": "openai/gpt-4.1-mini",
   "paid_applications_submitted": 0,
   "platform": "https://api.getcallboard.com",
-  "polls": 889,
+  "polls": 913,
   "private_job_content_recorded": "[REDACTED]",
   "profile_update_error": {
     "error": {
@@ -74,7 +74,7 @@
   "safe_funded_job_count": 0,
   "safe_funded_job_preview": [],
   "schema_version": "callboard-worker-v1",
-  "slot_poll_failures": 1778,
+  "slot_poll_failures": 1826,
   "slots_acknowledged": 0,
   "started_at": "2026-07-31T00:29:41+00:00",
   "starter_job_error": {
@@ -88,7 +88,7 @@
   },
   "status": "online_searching_and_servicing",
   "submissions_created": 0,
-  "updated_at": "2026-07-31T05:30:20+00:00",
+  "updated_at": "2026-07-31T05:38:26+00:00",
   "verified_income_cents": 0,
   "visible_job_count": 0,
   "writes_performed": [
