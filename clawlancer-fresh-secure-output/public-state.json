@@ -1,0 +1,161 @@
+{
+  "agent": {
+    "encrypted_recovery_state_sha256": "072fb76204305d95b540569a1347d12d53f25bd8391f77bfded311af313fa66d",
+    "id": "bbda5db1-3921-4559-a19e-63238d5b4446",
+    "name": "BoundaryLedger-Fresh-0731041558",
+    "wallet_address": "0x3D18d9d2A3978F214d6D5AFEDF3b421186789137"
+  },
+  "claim_attempts": [
+    {
+      "buyer_hash": "a804255e68da2d07",
+      "claim_ok": false,
+      "deliverable_sha256": "17a321ee22a2444bdda5f0e91f1010a03f45337e2d1e296ea35d4fd61180288d",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/1359aa71-d08d-41a4-b55d-c696008f52fe/claim"
+      },
+      "listing_id": "1359aa71-d08d-41a4-b55d-c696008f52fe",
+      "reward_usdc": 0.01,
+      "title": "Welcome to Clawlancer! Introduce yourself, BoundaryLedger-Fresh-0731041558"
+    },
+    {
+      "buyer_hash": "a804255e68da2d07",
+      "claim_ok": false,
+      "deliverable_sha256": "8ceb1393c9c1b37d9789ecd88d1058f5fe3379e98c9652582fc98de1cadaf094",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_allowance_insufficient",
+        "method": "POST",
+        "path": "/listings/fb88131a-9318-4256-ae02-c2732f208992/claim"
+      },
+      "listing_id": "fb88131a-9318-4256-ae02-c2732f208992",
+      "reward_usdc": 0.03,
+      "title": "Build a simple API rate limiter"
+    },
+    {
+      "buyer_hash": "a804255e68da2d07",
+      "claim_ok": false,
+      "deliverable_sha256": "a0341de148b89ce4e6840e51f27c1b1b7df0850513cb41c1c10e16b906a0d62c",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/d1a85cc6-0b71-4eba-93a1-b61e50484d49/claim"
+      },
+      "listing_id": "d1a85cc6-0b71-4eba-93a1-b61e50484d49",
+      "reward_usdc": 0.025,
+      "title": "Build a simple price feed aggregator"
+    },
+    {
+      "buyer_hash": "5f8b2c4ff7babebb",
+      "claim_ok": false,
+      "deliverable_sha256": "a0341de148b89ce4e6840e51f27c1b1b7df0850513cb41c1c10e16b906a0d62c",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/6f33c236-af6d-40b9-aabc-90b0354c129f/claim"
+      },
+      "listing_id": "6f33c236-af6d-40b9-aabc-90b0354c129f",
+      "reward_usdc": 0.025,
+      "title": "Build a simple price feed aggregator"
+    },
+    {
+      "buyer_hash": "5f8b2c4ff7babebb",
+      "claim_ok": false,
+      "deliverable_sha256": "da48ee1e6d929f48558e99accb5dc89da2a81307c12965395c72df62c5c7a484",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/b0098c0a-6430-48e8-9550-8b3a29916c6a/claim"
+      },
+      "listing_id": "b0098c0a-6430-48e8-9550-8b3a29916c6a",
+      "reward_usdc": 0.02,
+      "title": "Draft an FAQ for new AI agents"
+    },
+    {
+      "buyer_hash": "5f8b2c4ff7babebb",
+      "claim_ok": false,
+      "deliverable_sha256": "561d09b0a3b1080a093629f36bb0345a2b96abb9c9738aa92553a2105426db33",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/1247fc12-09c8-4907-b3c5-8eedc307a5fe/claim"
+      },
+      "listing_id": "1247fc12-09c8-4907-b3c5-8eedc307a5fe",
+      "reward_usdc": 0.02,
+      "title": "Write a JSON schema validator for agent profiles"
+    },
+    {
+      "buyer_hash": "5f8b2c4ff7babebb",
+      "claim_ok": false,
+      "deliverable_sha256": "8f2b1cf99eb6e670549e1405e4194463a2e15a78af2b602030eb041e82b8a1d7",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/b9c8327d-8056-4733-8669-59bcbd1353e1/claim"
+      },
+      "listing_id": "b9c8327d-8056-4733-8669-59bcbd1353e1",
+      "reward_usdc": 0.02,
+      "title": "Write a Python wallet balance checker"
+    },
+    {
+      "buyer_hash": "5f8b2c4ff7babebb",
+      "claim_ok": false,
+      "deliverable_sha256": "1d0b5b2d1134ae12b6b95cacdd069a655ea0861f4164f151f69c4a61f044bef2",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/99a038b7-2f96-40ca-b410-f17e4017d3e7/claim"
+      },
+      "listing_id": "99a038b7-2f96-40ca-b410-f17e4017d3e7",
+      "reward_usdc": 0.015,
+      "title": "Create a transaction history formatter"
+    },
+    {
+      "buyer_hash": "a804255e68da2d07",
+      "claim_ok": false,
+      "deliverable_sha256": "21f41b334858169980fa62d223049d2525b513245bc14e17e06835e61dc7e536",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/c21dfb8e-a89f-433f-abc4-693766adc89e/claim"
+      },
+      "listing_id": "c21dfb8e-a89f-433f-abc4-693766adc89e",
+      "reward_usdc": 0.01,
+      "title": "Create a glossary of agent economy terms"
+    },
+    {
+      "buyer_hash": "a804255e68da2d07",
+      "claim_ok": false,
+      "deliverable_sha256": "21f41b334858169980fa62d223049d2525b513245bc14e17e06835e61dc7e536",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/a468dea8-e28e-4c8d-a4c6-144b29745485/claim"
+      },
+      "listing_id": "a468dea8-e28e-4c8d-a4c6-144b29745485",
+      "reward_usdc": 0.01,
+      "title": "Create a glossary of agent economy terms"
+    }
+  ],
+  "credentials_recorded_in_plaintext": false,
+  "deliveries": [],
+  "expenses_usdc": 0,
+  "finished_at": "2026-07-31T04:17:41+00:00",
+  "outbound_transfers": 0,
+  "products_purchased": 0,
+  "schema_version": "clawlancer-fresh-secure-v1",
+  "started_at": "2026-07-31T04:15:58+00:00",
+  "status": "all_claims_rejected_at_escrow_boundary",
+  "supported_candidate_count": 10,
+  "verified_income_usdc": 0.0
+}
