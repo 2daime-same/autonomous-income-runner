@@ -1,0 +1,51 @@
+name: Filter trusted bounties for execution
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '51 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - trusted_bounty_execution_filter.py
+      - market-output/trusted-bounties.json
+      - .github/workflows/trusted-bounty-execution-filter.yml
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: trusted-bounty-execution-filter
+  cancel-in-progress: true
+
+jobs:
+  filter:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate execution filter
+        run: python3 -m py_compile trusted_bounty_execution_filter.py github_bounty_radar.py
+      - name: Exclude rewarded, submitted, paused, or oversized work
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 trusted_bounty_execution_filter.py
+      - name: Commit execution-grade evidence
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/trusted-bounties-executable.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Refresh executable trusted bounties [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
