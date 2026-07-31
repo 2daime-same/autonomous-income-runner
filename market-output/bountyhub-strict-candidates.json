@@ -1,38 +1,7 @@
 {
-  "actionable": [
-    {
-      "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
-      "amount_usd": "250.00",
-      "assignment_type": "open",
-      "attempt_signals": [],
-      "bountyhub_id": "f35ef17a-ca1f-4a5a-a12e-762def0aee45",
-      "claimed": false,
-      "exclusions": [],
-      "github_assignees": [],
-      "github_issue_state": "open",
-      "issue_number": 5,
-      "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/5",
-      "open_competing_prs": [],
-      "payment_status": "PAID",
-      "repo_archived": false,
-      "repo_language": null,
-      "repo_stars": 7,
-      "repository": "fluxerapp/fluxer-meta",
-      "scope_excerpt": "**Status: needs mobile and desktop visual design**\n\n# Background\n\nThreads are one of our top requested features. A common desire on chat platform, akin to breakout rooms for specific sub-conversations, threads are generally considered to be “sub-channels” that sit inside a larger channel. Threads typically have a unique name and a starting message, however the latter should be viewed as optional.\n\n\nWe should avoid diverging from industry standard. Nor should we think of threads as a buildup to forums. Both serve different niches. Threads allow for quickly zooming in on a specific message during an active conversation. Forums create hubs for specific types of conversations. While the two products may intersect at a later point, as a MVP to meet user needs rapidly, we should focus our efforts on just implementing a standard “threads feature”\n\n\n# Product needs\n\nAll designs below (except instance level safety) should be treated as strong suggestions. If you feel you have a better design, we encourage you to explore it, but please understand that if it is not to the team’s liking, we may not accept the end result. Instance level safety designs are requirements.\n\n\nTLDR → Threads are sub-channels. They inherit a large amount of base design and UX from channels. There are specific nuances in the API, database structure, and UX for them, but broadly, they should be treated as channels. \n\n\n## Initiation - (Desktop)\n\n### Starting a thread\n\n* Users should be able to create a thread in any text based channel via three methods:\n  * Hovering over an existing message should display a “thread” icon in the context menu. The thread icon should be in between the reply and the forward icons. A tooltip should appear above with “Start new thread”\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n  * When right clicking a message or hitting the hamburger icon on a message, a “Start new thread” button should be there.\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n* “/thread” in the chat box should allow you to also initiate a thread\n* When initiating a thread, the creator is presented a popup modal. That modal has:\n  * Thread Name\n  * How long should the thread remain open (default 7d)\n  * Shows a preview of the first message (or nothing if doing /thread)\n  * a confirm and cancel button.\n* If a user does not have the permissions to start a thread, they will not see any of the buttons or have an autocomplete for /thread\n  * If permissions change while a thread creation modal is open, hitting confirm should fail the user. No special design is needed, but an error message in console is nice.\n* When a thread is created, the client renders it in the channel as an indented box below the origina",
-      "score": 103.0,
-      "score_reasons": [
-        "BountyHub paymentStatus is PAID",
-        "small and testable scope markers",
-        "no competing attempt signal found",
-        "no open competing PR found"
-      ],
-      "solved": false,
-      "title": "Threads - (Dev Bounty: $250)",
-      "total_amount_usd": "800.00"
-    }
-  ],
-  "actionable_count": 1,
-  "generated_at": "2026-07-31T03:58:38+00:00",
+  "actionable": [],
+  "actionable_count": 0,
+  "generated_at": "2026-07-31T03:58:46+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -41,11 +10,25 @@
       "attempt_signals": [],
       "bountyhub_id": "f35ef17a-ca1f-4a5a-a12e-762def0aee45",
       "claimed": false,
-      "exclusions": [],
+      "exclusions": [
+        "maintainer requested hold-off or is not accepting new attempts"
+      ],
       "github_assignees": [],
       "github_issue_state": "open",
       "issue_number": 5,
       "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/5",
+      "maintainer_holdoff_signals": [
+        {
+          "author_association": "MEMBER",
+          "created_at": "2026-07-13T13:06:57Z",
+          "excerpt": "I would like to ask submitters to hold off with any attempts to tackle this bounty for the time being. Thank you.",
+          "html_url": "https://github.com/fluxerapp/fluxer-meta/issues/5#issuecomment-4958267489",
+          "login": "hampus-fluxer",
+          "matched_rules": [
+            "\\bhold off\\b"
+          ]
+        }
+      ],
       "open_competing_prs": [],
       "payment_status": "PAID",
       "repo_archived": false,
@@ -79,6 +62,7 @@
       "github_issue_state": "open",
       "issue_number": 109,
       "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/109",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [],
       "payment_status": "PROMISED",
       "repo_archived": false,
@@ -112,6 +96,7 @@
       "github_issue_state": "closed",
       "issue_number": 22571,
       "issue_url": "https://github.com/azerothcore/azerothcore-wotlk/issues/22571",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [],
       "payment_status": "PAID",
       "repo_archived": false,
@@ -145,6 +130,7 @@
       "github_issue_state": "open",
       "issue_number": 2,
       "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/2",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [],
       "payment_status": "PROMISED",
       "repo_archived": false,
@@ -181,6 +167,7 @@
       "github_issue_state": "closed",
       "issue_number": 76,
       "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/76",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [],
       "payment_status": "PROMISED",
       "repo_archived": false,
@@ -214,6 +201,7 @@
       "github_issue_state": "closed",
       "issue_number": 207,
       "issue_url": "https://github.com/emersion/hydroxide/issues/207",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 282,
@@ -261,6 +249,7 @@
       "github_issue_state": "open",
       "issue_number": 3,
       "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/3",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [],
       "payment_status": "PROMISED",
       "repo_archived": false,
@@ -298,6 +287,7 @@
       "github_issue_state": "open",
       "issue_number": 8,
       "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/8",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [],
       "payment_status": "PROMISED",
       "repo_archived": false,
@@ -331,6 +321,7 @@
       "github_issue_state": "open",
       "issue_number": 12397,
       "issue_url": "https://github.com/inventree/InvenTree/issues/12397",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 12510,
@@ -385,6 +376,7 @@
       "github_issue_state": "closed",
       "issue_number": 115,
       "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/115",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [],
       "payment_status": "PROMISED",
       "repo_archived": false,
@@ -426,6 +418,7 @@
         "GitHub issue already assigned",
         "assignment is not open",
         "competing work signal exists",
+        "maintainer requested hold-off or is not accepting new attempts",
         "open competing PR exists"
       ],
       "github_assignees": [
@@ -434,6 +427,29 @@
       "github_issue_state": "open",
       "issue_number": 1280,
       "issue_url": "https://github.com/freelensapp/freelens/issues/1280",
+      "maintainer_holdoff_signals": [
+        {
+          "author_association": "MEMBER",
+          "created_at": "2025-11-15T12:35:38Z",
+          "excerpt": "> [@robertobandini](https://github.com/robertobandini) the person you assigned has not created a pr I know, we were waiting for a PR from him, there is no exact time limit set for this to happen at the moment, only the assignment, decided to avoid racing conditions. Let's wait for a feedback from @gambhirsharma thanks.",
+          "html_url": "https://github.com/freelensapp/freelens/issues/1280#issuecomment-3536449923",
+          "login": "robertobandini",
+          "matched_rules": [
+            "\\bwait (?:for|until|on)\\b"
+          ]
+        },
+        {
+          "author_association": "MEMBER",
+          "created_at": "2025-11-16T16:37:15Z",
+          "excerpt": "Hi @Excellencedev, when @gambhirsharma can, he'll do an initial review of your work if he wants to give you the bounty, and only then will I check. Unless someone else on the Freelens core team wants to give their opinion on your work in the meantime. So please wait until the review is done and don't comment further or continuously, please. I hope I've been clear enough.",
+          "html_url": "https://github.com/freelensapp/freelens/issues/1280#issuecomment-3538930201",
+          "login": "robertobandini",
+          "matched_rules": [
+            "\\bplease wait\\b",
+            "\\bwait (?:for|until|on)\\b"
+          ]
+        }
+      ],
       "open_competing_prs": [
         {
           "number": 1431,
@@ -482,6 +498,7 @@
       "github_issue_state": "open",
       "issue_number": 12064,
       "issue_url": "https://github.com/inventree/InvenTree/issues/12064",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 12072,
@@ -560,6 +577,7 @@
       "github_issue_state": "open",
       "issue_number": 770,
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 1741,
@@ -1138,6 +1156,7 @@
       "github_issue_state": "open",
       "issue_number": 1609,
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 1742,
@@ -1392,6 +1411,7 @@
       "github_issue_state": "open",
       "issue_number": 580,
       "issue_url": "https://github.com/microg/GmsCore/issues/580",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 3668,
@@ -1463,6 +1483,7 @@
       "github_issue_state": "open",
       "issue_number": 30,
       "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/30",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 934,
@@ -1526,6 +1547,7 @@
       "github_issue_state": "open",
       "issue_number": 580,
       "issue_url": "https://github.com/microg/GmsCore/issues/580",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 3668,
@@ -1597,6 +1619,7 @@
       "github_issue_state": "open",
       "issue_number": 31,
       "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/31",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 1031,
@@ -1672,6 +1695,7 @@
       "github_issue_state": "open",
       "issue_number": 2851,
       "issue_url": "https://github.com/microg/GmsCore/issues/2851",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 3681,
@@ -1750,6 +1774,7 @@
       "github_issue_state": "open",
       "issue_number": 2994,
       "issue_url": "https://github.com/microg/GmsCore/issues/2994",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 3683,
@@ -1878,6 +1903,7 @@
       "github_issue_state": "open",
       "issue_number": 2843,
       "issue_url": "https://github.com/microg/GmsCore/issues/2843",
+      "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
           "number": 3662,
@@ -1978,8 +2004,6 @@
       "total_amount_usd": "2340.00"
     }
   ],
-  "paid_open_unclaimed_before_github_validation": 4,
-  "safety": "read-only BountyHub and GitHub validation; no login, claim, payment, or write",
-  "source": "https://api.bountyhub.dev/api/bounties?limit=100",
-  "total_bounties": 21
+  "safety": "read-only GitHub comment validation; no claim, comment, PR, payment, or external write",
+  "source": "market-output/bountyhub-candidates.json"
 }
