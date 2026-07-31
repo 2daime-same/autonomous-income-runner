@@ -1,0 +1,43 @@
+{
+  "bounty_display_id": "MSN-00014",
+  "coverage_total_percent": "96",
+  "docker_build": {
+    "status": "not_run",
+    "reason": "Docker CLI/runtime unavailable in the validation container; GitHub Actions performs the Docker build and container smoke test."
+  },
+  "generated_at": "2026-07-31T07:31:18Z",
+  "notes": [
+    "No external conversion API is used.",
+    "No Archimedes account, terms acceptance, submission, Stripe onboarding, or payout action was performed.",
+    "Passing tests are implementation evidence, not evidence of bounty acceptance or payment."
+  ],
+  "platform_submission_status": "not_submitted",
+  "python_version": "3.13.5",
+  "registry": {
+    "directed_pair_count": 688,
+    "domain_count": 8,
+    "undirected_pair_count": 344,
+    "unit_count": 114
+  },
+  "runtime_smoke_test": {
+    "status": "passed",
+    "server": "uvicorn",
+    "checked_endpoints": [
+      "/health",
+      "/domains",
+      "/units",
+      "/convert (GET)",
+      "/convert (POST)"
+    ],
+    "samples": {
+      "35 psi -> kPa": "241.31650526088",
+      "68 F -> C": "20"
+    }
+  },
+  "schema_version": "archimedes-msn-00014-test-evidence-v1",
+  "test_command": "python -m coverage run --source=app -m pytest -q",
+  "tests_collected": 79,
+  "tests_failed": 0,
+  "tests_passed": 79,
+  "verified_income_usd": 0
+}
