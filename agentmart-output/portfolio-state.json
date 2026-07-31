@@ -65,15 +65,16 @@
     }
   ],
   "products_purchased": 0,
+  "published_product_count": 5,
   "schema_version": "agentmart-portfolio-v1",
   "started_at": "2026-07-31T03:55:58+00:00",
-  "status": "publishing_portfolio",
+  "status": "portfolio_published_waiting_for_paid_sale",
   "store": {
     "id_hash": "6ce22a169c881bd40fff",
     "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
     "slug": "boundaryledger-toolsmith"
   },
-  "updated_at": "2026-07-31T04:02:23+00:00",
+  "updated_at": "2026-07-31T04:02:24+00:00",
   "verified_income_usdc": 0.0,
   "writes_performed": [
     "create:one-cent-agent-task-intake-card",
