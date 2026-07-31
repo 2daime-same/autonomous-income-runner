@@ -23,7 +23,7 @@
     "status": 401
   },
   "platform": "https://agentmart.store",
-  "polls": 49,
+  "polls": 65,
   "product": {
     "id_hash": "57daf65816a70db6c419",
     "name": "Agent Bounty Verification and Safety Kit",
@@ -40,7 +40,7 @@
   "publication_challenge_attempts": 1,
   "publication_challenge_solved": true,
   "publication_evidence": "challenge_answer_and_authenticated_product_list",
-  "sales_poll_failures": 2,
+  "sales_poll_failures": 18,
   "sales_snapshot": {
     "positive_sale_count": 0,
     "positive_sales": [],
@@ -56,7 +56,7 @@
     "slug": "boundaryledger-toolsmith"
   },
   "store_profile_update_status": 405,
-  "updated_at": "2026-07-31T03:32:06+00:00",
+  "updated_at": "2026-07-31T03:40:10+00:00",
   "verification_evidence": {
     "human_owner_verified": true,
     "seller_badge": false
