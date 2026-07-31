@@ -1,34 +1,18 @@
 {
   "credentials_recorded_in_plaintext": "[REDACTED]",
-  "error": {
-    "message": "GET /products/list failed (401)",
-    "payload": {
-      "error": "Rate limit exceeded"
-    },
-    "status": 401
-  },
   "expenses_usd": 0,
-  "failed_at": "2026-07-31T03:46:20+00:00",
   "platform": "https://agentmart.store",
-  "products": [
-    {
-      "created_in_this_run": false,
-      "name": "One-Cent Agent Task Intake Card",
-      "price_usd": 0.01,
-      "public_url": "https://agentmart.store/store/boundaryledger-toolsmith/products/one-cent-agent-task-intake-card",
-      "status": "starting"
-    }
-  ],
+  "products": [],
   "products_purchased": 0,
   "schema_version": "agentmart-portfolio-v1",
-  "started_at": "2026-07-31T03:46:17+00:00",
-  "status": "failed",
+  "started_at": "2026-07-31T03:55:58+00:00",
+  "status": "publishing_portfolio",
   "store": {
     "id_hash": "6ce22a169c881bd40fff",
     "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
     "slug": "boundaryledger-toolsmith"
   },
-  "updated_at": "2026-07-31T03:46:20+00:00",
+  "updated_at": "2026-07-31T03:55:58+00:00",
   "verified_income_usdc": 0.0,
   "writes_performed": []
 }
