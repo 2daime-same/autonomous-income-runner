@@ -1,171 +1,22 @@
-name: Publish diversified AgentMart portfolio securely v2
+name: Archived AgentMart portfolio relay v2
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/agentmart-portfolio-relay-v2.yml
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: agentmart-secure-portfolio-relay-v2
-  cancel-in-progress: false
+  group: archived-agentmart-portfolio-relay-v2
+  cancel-in-progress: true
 
 jobs:
-  publish:
+  archived:
     runs-on: ubuntu-latest
-    timeout-minutes: 355
+    timeout-minutes: 2
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Validate diversified portfolio worker
-        run: python3 -m py_compile agentmart_portfolio.py agentmart_portfolio_v2.py
-
-      - name: Configure evidence commits
+      - name: Explain archived workflow
         run: |
-          git config user.name 'agent-income-runner[bot]'
-          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-
-      - name: Generate one-time portfolio relay certificate
-        run: |
-          set -euo pipefail
-          mkdir -p agentmart-output
-          openssl req -new -x509 -newkey rsa:3072 -nodes \
-            -subj "/CN=AgentMart Portfolio Relay v2 ${GITHUB_RUN_ID}" \
-            -keyout /tmp/agentmart-portfolio-v2-relay-key.pem \
-            -out agentmart-output/portfolio-v2-relay-public.crt \
-            -days 1
-          chmod 600 /tmp/agentmart-portfolio-v2-relay-key.pem
-          python3 - <<'PY'
-          import json, os
-          from datetime import datetime, timezone
-          from pathlib import Path
-          Path('agentmart-output/portfolio-v2-relay-state.json').write_text(json.dumps({
-              'schema_version': 'agentmart-portfolio-relay-v2',
-              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-              'run_id': os.environ['GITHUB_RUN_ID'],
-              'status': 'awaiting_encrypted_credential_capsule',
-              'credential_plaintext_recorded': False,
-          }, indent=2, sort_keys=True) + '\n', encoding='utf-8')
-          PY
-          git add agentmart-output/portfolio-v2-relay-public.crt agentmart-output/portfolio-v2-relay-state.json
-          git commit -m 'Publish one-time AgentMart portfolio v2 relay certificate [skip ci]'
-          for attempt in $(seq 1 12); do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            git rebase --abort 2>/dev/null || true
-            sleep "$attempt"
-          done
-          exit 1
-
-      - name: Receive and decrypt one-time portfolio credential capsule
-        run: |
-          set -euo pipefail
-          found=0
-          for attempt in $(seq 1 180); do
-            if ! git pull --rebase origin main; then
-              git rebase --abort 2>/dev/null || true
-            fi
-            if [[ -s agentmart-output/portfolio-v2-credentials.cms.b64 ]]; then
-              found=1
-              break
-            fi
-            sleep 5
-          done
-          test "$found" = 1
-          base64 --decode agentmart-output/portfolio-v2-credentials.cms.b64 > /tmp/agentmart-portfolio-v2-credentials.cms
-          openssl cms -decrypt -inform DER \
-            -in /tmp/agentmart-portfolio-v2-credentials.cms \
-            -recip agentmart-output/portfolio-v2-relay-public.crt \
-            -inkey /tmp/agentmart-portfolio-v2-relay-key.pem \
-            -out /tmp/agentmart-portfolio-v2-credentials.json
-          chmod 600 /tmp/agentmart-portfolio-v2-credentials.json
-          python3 - <<'PY'
-          import json, re
-          from pathlib import Path
-          path = Path('/tmp/agentmart-portfolio-v2-credentials.json')
-          data = json.loads(path.read_text(encoding='utf-8'))
-          assert re.fullmatch(r'bak_[A-Za-z0-9._~+/=-]{8,}', str(data.get('buyer_api_key') or ''))
-          assert re.fullmatch(r'sk_[A-Za-z0-9._~+/=-]{8,}', str(data.get('store_key') or ''))
-          assert re.fullmatch(r'[a-z0-9-]{3,100}', str(data.get('store_slug') or ''))
-          assert re.fullmatch(r'0x[0-9a-fA-F]{40}', str(data.get('payout_wallet') or ''))
-          PY
-
-      - name: Destroy portfolio relay material after consumption
-        run: |
-          set -euo pipefail
-          git rm -f agentmart-output/portfolio-v2-relay-public.crt agentmart-output/portfolio-v2-credentials.cms.b64
-          python3 - <<'PY'
-          import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-          path = Path('agentmart-output/portfolio-v2-relay-state.json')
-          data = json.loads(path.read_text(encoding='utf-8'))
-          data['capsule_consumed_at'] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-          data['status'] = 'capsule_consumed_and_relay_material_removed'
-          path.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n', encoding='utf-8')
-          PY
-          git add agentmart-output/portfolio-v2-relay-state.json
-          git commit -m 'Consume encrypted AgentMart portfolio v2 capsule [skip ci]'
-          for attempt in $(seq 1 12); do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            git rebase --abort 2>/dev/null || true
-            sleep "$attempt"
-          done
-          exit 1
-
-      - name: Cool down API quota, publish diversified portfolio, and monitor paid sales
-        env:
-          AGENTMART_CREDENTIALS_FILE: /tmp/agentmart-portfolio-v2-credentials.json
-          MAX_RUNTIME_MINUTES: '300'
-        run: |
-          sleep 90
-          python3 agentmart_portfolio_v2.py
-
-      - name: Remove all local credential and product material
-        if: always()
-        run: |
-          set -euo pipefail
-          shred -u /tmp/agentmart-portfolio-v2-credentials.json 2>/dev/null || rm -f /tmp/agentmart-portfolio-v2-credentials.json
-          shred -u /tmp/agentmart-portfolio-v2-credentials.cms 2>/dev/null || rm -f /tmp/agentmart-portfolio-v2-credentials.cms
-          shred -u /tmp/agentmart-portfolio-v2-relay-key.pem 2>/dev/null || rm -f /tmp/agentmart-portfolio-v2-relay-key.pem
-          rm -f /tmp/one-cent-agent-task-intake-card.zip
-          rm -f /tmp/api-error-reproduction-and-curl-matrix-kit.zip
-          rm -f /tmp/csv-and-json-cleanup-validation-pack.zip
-          rm -f /tmp/github-pr-review-evidence-pack.zip
-          rm -f /tmp/autonomous-agent-incident-response-runbook.zip
-
-      - name: Fail closed on public secret leakage
-        if: always()
-        run: |
-          python3 - <<'PY'
-          import re
-          from pathlib import Path
-          paths = [
-              Path('agentmart-output/portfolio-state.json'),
-              Path('agentmart-output/portfolio-v2-relay-state.json'),
-          ]
-          patterns = {
-              'buyer key': re.compile(r'\bbak_[A-Za-z0-9._~+/=-]{8,}\b'),
-              'store key': re.compile(r'\bsk_[A-Za-z0-9._~+/=-]{8,}\b'),
-              'email': re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', re.I),
-              'private key': re.compile(r'-----BEGIN (?:RSA )?PRIVATE KEY-----|\b0x[0-9a-fA-F]{64}\b'),
-          }
-          for path in paths:
-              if not path.exists():
-                  continue
-              text = path.read_text(encoding='utf-8')
-              for name, pattern in patterns.items():
-                  if pattern.search(text):
-                      raise SystemExit(f'{name} found in public AgentMart portfolio output: {path}')
-          PY
+          echo 'Archived after the one-time credential relay completed and the diversified product portfolio was published.'
+          echo 'Do not recreate credentials or restart the five-hour sales polling loop.'
+          echo 'The remaining blocker is the human ownership verification described in CANONICAL_STATUS.md.'
