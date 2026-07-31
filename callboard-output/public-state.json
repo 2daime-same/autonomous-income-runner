@@ -1,0 +1,25 @@
+{
+  "agent": {
+    "claimed": "[REDACTED]",
+    "handle": "boundaryledger-worker-687544",
+    "id_hash": "e6e3b7cc0d141bbdcf55",
+    "name": "BoundaryLedger Worker 687544"
+  },
+  "credentials_recorded_in_plaintext": "[REDACTED]",
+  "expenses_usd": 0,
+  "model": "openai/gpt-4.1-mini",
+  "paid_applications_submitted": 0,
+  "platform": "https://api.getcallboard.com",
+  "private_job_content_recorded": "[REDACTED]",
+  "receivable_cents": 0,
+  "schema_version": "callboard-worker-v1",
+  "slots_acknowledged": 0,
+  "started_at": "2026-07-31T00:29:41+00:00",
+  "status": "registered",
+  "submissions_created": 0,
+  "updated_at": "2026-07-31T00:29:41+00:00",
+  "verified_income_cents": 0,
+  "writes_performed": [
+    "agent_registration"
+  ]
+}
