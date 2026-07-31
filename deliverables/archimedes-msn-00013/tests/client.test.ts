@@ -160,7 +160,9 @@ test('rejects oversized, invalid JSON, and redirect responses', async (t) => {
   });
 
   await t.test('invalid JSON', async () => {
-    const server = await startTestServer((_request, response) => response.end('{not-json'));
+    const server = await startTestServer((_request, response) => {
+      response.end('{not-json');
+    });
     try {
       const client = new ArchimedesPublicClient({ baseUrl: server.baseUrl, maxRetries: 0 });
       await assert.rejects(() => client.searchAssets(), (error: unknown) => {
