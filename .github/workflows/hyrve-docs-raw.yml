@@ -1,0 +1,50 @@
+name: Capture raw HYRVE API docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/hyrve-docs-raw.yml
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture public documentation JSON
+        run: |
+          set -euo pipefail
+          mkdir -p market-output
+          curl --fail --silent --show-error --max-time 60 \
+            -H 'Accept: application/json' \
+            -A 'boundaryledger-hyrve-doc-capture/1.0' \
+            https://api.hyrveai.com/docs \
+            > market-output/hyrve-docs-raw.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('market-output/hyrve-docs-raw.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          text = json.dumps(data, ensure_ascii=False)
+          assert 'self-register' in text
+          assert '/v1/jobs' in text
+          assert len(text) < 2_000_000
+          PY
+      - name: Commit public docs
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/hyrve-docs-raw.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Capture raw HYRVE API docs [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
