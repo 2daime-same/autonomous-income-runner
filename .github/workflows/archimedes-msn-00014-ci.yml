@@ -59,7 +59,7 @@ jobs:
           python -m uvicorn app.main:app --host 127.0.0.1 --port 8765 > /tmp/msn14-uvicorn.log 2>&1 &
           pid=$!
           trap 'kill "$pid" 2>/dev/null || true' EXIT
-          curl --fail --silent --show-error --retry 30 --retry-delay 1 --retry-connrefused http://127.0.0.1:8765/health > /tmp/msn14-health.json
+          curl --fail --silent --show-error --retry 30 --retry-delay 1 --retry-connrefused --retry-all-errors http://127.0.0.1:8765/health > /tmp/msn14-health.json
           curl --fail --silent --show-error 'http://127.0.0.1:8765/convert?domain=pressure&from_unit=psi&to_unit=kPa&value=35' > /tmp/msn14-convert.json
           python - <<'PY'
           import json
@@ -76,7 +76,22 @@ jobs:
           docker build --tag engineering-unit-api:msn-00014 .
           container_id=$(docker run --detach --publish 8766:8000 engineering-unit-api:msn-00014)
           trap 'docker rm --force "$container_id" >/dev/null 2>&1 || true' EXIT
-          curl --fail --silent --show-error --retry 30 --retry-delay 1 --retry-connrefused http://127.0.0.1:8766/health > /tmp/msn14-docker-health.json
+          ready=0
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error http://127.0.0.1:8766/health > /tmp/msn14-docker-health.json; then
+              ready=1
+              break
+            fi
+            if ! docker inspect --format '{{.State.Running}}' "$container_id" | grep -qx true; then
+              docker logs "$container_id"
+              exit 1
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            docker logs "$container_id"
+            exit 1
+          fi
           python - <<'PY'
           import json
           health = json.load(open('/tmp/msn14-docker-health.json', encoding='utf-8'))
@@ -93,7 +108,6 @@ jobs:
           import zipfile
           from pathlib import Path
 
-          root = Path('.')
           included = [
               Path('.dockerignore'), Path('Dockerfile'), Path('LICENSE'), Path('README.md'),
               Path('SUBMISSION.md'), Path('TEST-EVIDENCE.json'), Path('app/__init__.py'),
