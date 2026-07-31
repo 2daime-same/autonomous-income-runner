@@ -31,7 +31,7 @@ test('normalizes public Product JSON-LD without executing page scripts', () => {
   assert.equal(asset.price, 12);
   assert.equal(asset.license_type, 'standard');
   assert.equal(asset.metadata_source, 'public static schema.org Product JSON-LD');
-  assert.equal(globalThis.SHOULD_NOT_RUN, undefined);
+  assert.equal((globalThis as unknown as Record<string, unknown>).SHOULD_NOT_RUN, undefined);
 });
 
 test('rejects missing or mismatched Product metadata', () => {
