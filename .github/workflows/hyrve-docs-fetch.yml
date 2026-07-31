@@ -1,0 +1,43 @@
+name: Fetch official HYRVE API documentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - hyrve_docs_fetch.py
+      - .github/workflows/hyrve-docs-fetch.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hyrve-docs-fetch
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch and validate official docs
+        run: |
+          python3 -m py_compile hyrve_docs_fetch.py
+          python3 hyrve_docs_fetch.py
+      - name: Commit official public documentation snapshot
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/hyrve-api-docs.md market-output/hyrve-api-docs-summary.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Record official HYRVE API documentation [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
