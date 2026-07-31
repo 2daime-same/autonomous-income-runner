@@ -32,7 +32,7 @@
     }
   ],
   "actionable_count": 1,
-  "generated_at": "2026-07-31T16:58:38+00:00",
+  "generated_at": "2026-07-31T19:54:57+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -116,7 +116,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "C++",
-      "repo_stars": 8696,
+      "repo_stars": 8697,
       "repository": "azerothcore/azerothcore-wotlk",
       "scope_excerpt": "### Describe your feature request or suggestion in detail\n\nHi,\n\nI’d like to propose implementing map partitioning for large continent maps, inspired by the following Project-Epoch TrinityCore PR:\n\n- https://github.com/Project-Epoch/TrinityCore/pull/120\n\n### The Problem\n\nCurrently, all continent maps (like Eastern Kingdoms or Kalimdor) are processed on a single thread. With thousands of entities and players, this becomes a performance bottleneck. While instances benefit from parallel processing via separate map threads, continents remain monolithic, even under heavy load.\n\n### The Proposed Approach\n\nThe PR from TrinityCore introduces a `MapPartitioned` class that allows continents to be split into smaller logical partitions. These partitions share the base map data and are processed in parallel, significantly reducing per-tick load.\n\nNotable points from the implementation:\n\n- Seamless player and entity movement across partitions (no loading screens)\n- Entities are assigned dynamically to the correct partition on startup\n- GridUnload removed to simplify logic and improve performance\n- Shared systems (e.g., weather) remain consistent via the base map\n- Cleaner structure for future improvements and easier debugging\n\n### Benefits for AzerothCore\n\n- Better performance on high-population servers\n- Reduced lag in major cities or crowded quest zones\n- Scales better for events like world PvP or Wintergrasp\n- Lays groundwork for more advanced systems (e.g. phasing, regional load balancing)\n\nI don't know if it's possible to implement a system similat to this, but this could be a significant architectural upgrade and help AzerothCore scale further as adoption grows. I’d love to hear your thoughts on feasibility and whether a similar system could be integrated.\n\nThanks for your time.\n\n### Describe a possible solution to your feature or suggestion in detail\n\n_No response_\n\n### Additional context\n\n_No response_",
       "score": 84.41,
@@ -223,7 +223,7 @@
         {
           "number": 12072,
           "title": "Feature: Backend scaffolding for Repair Orders (#12064)",
-          "updated_at": "2026-07-31T16:30:11Z",
+          "updated_at": "2026-07-31T19:23:45Z",
           "url": "https://github.com/inventree/InvenTree/pull/12072",
           "user": "adityakrmishra"
         }
@@ -231,7 +231,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7325,
+      "repo_stars": 7326,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
       "score": 75.41,
@@ -364,58 +364,6 @@
       "total_amount_usd": "250.00"
     },
     {
-      "additional_description": "A successful PR for this is a generic enough approach that it also works for frontend plugins using the components exposed by the lib (Instance, Page/PageDetail) and has tests ensure most common user and failure scenarios keep working.\n\nThe contributing.md needs to be followed to a T; do not credit your AI agent as a co-author if you use one, you should take full responsibility. for the work you submit",
-      "amount_usd": "20.00",
-      "assignment_type": "exclusive",
-      "attempt_signals": [],
-      "bountyhub_id": "a157ff08-20cf-466a-9ab3-a321f515133f",
-      "claimed": false,
-      "exclusions": [
-        "BountyHub assignee already present",
-        "assignment is not open",
-        "not escrow-paid: PROMISED",
-        "open competing PR exists"
-      ],
-      "github_assignees": [],
-      "github_issue_state": "open",
-      "issue_number": 12397,
-      "issue_url": "https://github.com/inventree/InvenTree/issues/12397",
-      "open_competing_prs": [
-        {
-          "number": 12510,
-          "title": "Add Previous/Next navigation between detail views (#12397)",
-          "updated_at": "2026-07-31T06:46:14Z",
-          "url": "https://github.com/inventree/InvenTree/pull/12510",
-          "user": "jdjioe5-cpu"
-        },
-        {
-          "number": 12511,
-          "title": "feat: Add generic previous/next navigation between detail views (closes #12397)",
-          "updated_at": "2026-07-31T06:45:33Z",
-          "url": "https://github.com/inventree/InvenTree/pull/12511",
-          "user": "chidii"
-        }
-      ],
-      "payment_status": "PROMISED",
-      "repo_archived": false,
-      "repo_language": "Python",
-      "repo_stars": 7325,
-      "repository": "inventree/InvenTree",
-      "scope_excerpt": "### Please verify that this feature request has NOT been suggested before.\n\n- [x] I checked and didn't find a similar feature request\n\n### Problem statement\n\nHi,\nwhen we want to change information in multiple object (for example 30 parts) , we have to filter list, click on the first object, change the value, return to the list , open the second object, change the value ...\n\n\n\n### Suggested solution\n\nI think it's a good idea to add two icons on banner \"Previous\" and \"Next\" for simplify navigation between the filter list objects\nWhen object change, the focus field must be the same.\n\n<img width=\"1399\" height=\"342\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/247e4063-c6e5-4a6e-a529-a195e45c7c18\" />\n\nBest regards\n\n\n### Describe alternatives you've considered\n\nAllow field edition as parametrics values\n\n### Examples of other systems\n\nFor example Maximo Ibm do this\n\n<img width=\"1776\" height=\"776\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/18ada624-4696-4347-9876-a5fb176191f7\" />\n\n### Do you want to develop this?\n\n- [ ] I want to develop this.",
-      "score": 61.41,
-      "score_reasons": [
-        "BountyHub paymentStatus is PAID",
-        "small first-payment-sized bounty",
-        "supported language: python",
-        "established repository",
-        "no competing attempt signal found",
-        "2 open competing PR(s)"
-      ],
-      "solved": false,
-      "title": "[FR] Add Next and Previous Icon to switch easily between 2 objects",
-      "total_amount_usd": "20.00"
-    },
-    {
       "additional_description": "",
       "amount_usd": "75.00",
       "assignment_type": "open",
@@ -512,6 +460,65 @@
       "total_amount_usd": "50.00"
     },
     {
+      "additional_description": "A successful PR for this is a generic enough approach that it also works for frontend plugins using the components exposed by the lib (Instance, Page/PageDetail) and has tests ensure most common user and failure scenarios keep working.\n\nThe contributing.md needs to be followed to a T; do not credit your AI agent as a co-author if you use one, you should take full responsibility. for the work you submit",
+      "amount_usd": "20.00",
+      "assignment_type": "exclusive",
+      "attempt_signals": [],
+      "bountyhub_id": "a157ff08-20cf-466a-9ab3-a321f515133f",
+      "claimed": false,
+      "exclusions": [
+        "BountyHub assignee already present",
+        "assignment is not open",
+        "not escrow-paid: PROMISED",
+        "open competing PR exists"
+      ],
+      "github_assignees": [],
+      "github_issue_state": "open",
+      "issue_number": 12397,
+      "issue_url": "https://github.com/inventree/InvenTree/issues/12397",
+      "open_competing_prs": [
+        {
+          "number": 12528,
+          "title": "Add previous/next navigation to detail pages",
+          "updated_at": "2026-07-31T19:53:47Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12528",
+          "user": "ejspeed-cmd"
+        },
+        {
+          "number": 12510,
+          "title": "Add Previous/Next navigation between detail views (#12397)",
+          "updated_at": "2026-07-31T06:46:14Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12510",
+          "user": "jdjioe5-cpu"
+        },
+        {
+          "number": 12511,
+          "title": "feat: Add generic previous/next navigation between detail views (closes #12397)",
+          "updated_at": "2026-07-31T06:45:33Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12511",
+          "user": "chidii"
+        }
+      ],
+      "payment_status": "PROMISED",
+      "repo_archived": false,
+      "repo_language": "Python",
+      "repo_stars": 7326,
+      "repository": "inventree/InvenTree",
+      "scope_excerpt": "### Please verify that this feature request has NOT been suggested before.\n\n- [x] I checked and didn't find a similar feature request\n\n### Problem statement\n\nHi,\nwhen we want to change information in multiple object (for example 30 parts) , we have to filter list, click on the first object, change the value, return to the list , open the second object, change the value ...\n\n\n\n### Suggested solution\n\nI think it's a good idea to add two icons on banner \"Previous\" and \"Next\" for simplify navigation between the filter list objects\nWhen object change, the focus field must be the same.\n\n<img width=\"1399\" height=\"342\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/247e4063-c6e5-4a6e-a529-a195e45c7c18\" />\n\nBest regards\n\n\n### Describe alternatives you've considered\n\nAllow field edition as parametrics values\n\n### Examples of other systems\n\nFor example Maximo Ibm do this\n\n<img width=\"1776\" height=\"776\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/18ada624-4696-4347-9876-a5fb176191f7\" />\n\n### Do you want to develop this?\n\n- [ ] I want to develop this.",
+      "score": 46.41,
+      "score_reasons": [
+        "BountyHub paymentStatus is PAID",
+        "small first-payment-sized bounty",
+        "supported language: python",
+        "established repository",
+        "no competing attempt signal found",
+        "3 open competing PR(s)"
+      ],
+      "solved": false,
+      "title": "[FR] Add Next and Previous Icon to switch easily between 2 objects",
+      "total_amount_usd": "20.00"
+    },
+    {
       "additional_description": "",
       "amount_usd": "100.00",
       "assignment_type": "open",
@@ -542,9 +549,16 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
         {
+          "number": 1733,
+          "title": "Merge/temporal recall logic 2",
+          "updated_at": "2026-07-31T19:18:07Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1733",
+          "user": "het0814"
+        },
+        {
           "number": 1723,
           "title": "fix: align API, UI, and CLI daily analysis dates with UTC storage",
-          "updated_at": "2026-07-31T16:58:03Z",
+          "updated_at": "2026-07-31T17:42:37Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1723",
           "user": "JPV97"
         },
@@ -617,13 +631,6 @@
           "updated_at": "2026-07-30T17:48:08Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1728",
           "user": "tharushadp"
-        },
-        {
-          "number": 1733,
-          "title": "Merge/temporal recall logic 2",
-          "updated_at": "2026-07-30T17:02:23Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1733",
-          "user": "het0814"
         },
         {
           "number": 1731,
@@ -1127,18 +1134,18 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
       "open_competing_prs": [
         {
+          "number": 1732,
+          "title": "feat(migrations): add privacy-first Codex session to OKF adapter",
+          "updated_at": "2026-07-31T18:41:23Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1732",
+          "user": "ILoveBuns"
+        },
+        {
           "number": 1742,
           "title": "feat(migrations): add Claude Code memory adapter to OKF (#1609)",
           "updated_at": "2026-07-31T02:58:17Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1742",
           "user": "harmonygemini8-collab"
-        },
-        {
-          "number": 1732,
-          "title": "feat(migrations): add privacy-first Codex session to OKF adapter",
-          "updated_at": "2026-07-30T12:27:32Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1732",
-          "user": "ILoveBuns"
         },
         {
           "number": 1624,
@@ -1746,13 +1753,6 @@
           "user": "laurentketterle-hub"
         },
         {
-          "number": 3680,
-          "title": "Add RCS Asterism and Constellation AIDL services and PhoneInfo real-telephony provider",
-          "updated_at": "2026-07-30T03:21:53Z",
-          "url": "https://github.com/microg/GmsCore/pull/3680",
-          "user": "Sasireddy001"
-        },
-        {
           "number": 3360,
           "title": "Implement `play-services-asterism`",
           "updated_at": "2026-07-27T06:39:09Z",
@@ -1822,7 +1822,7 @@
         "higher-cost language: java",
         "established repository",
         "no competing attempt signal found",
-        "11 open competing PR(s)"
+        "10 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY] RCS Support [14999$]",
@@ -1866,6 +1866,13 @@
       "issue_number": 2843,
       "issue_url": "https://github.com/microg/GmsCore/issues/2843",
       "open_competing_prs": [
+        {
+          "number": 3688,
+          "title": "Fix #2843: [BOUNTY] WearOS Support [$1340]",
+          "updated_at": "2026-07-31T19:26:09Z",
+          "url": "https://github.com/microg/GmsCore/pull/3688",
+          "user": "mazenfarkouh580-netizen"
+        },
         {
           "number": 3662,
           "title": "WearOS pairing and data bridging support",
@@ -1951,7 +1958,7 @@
         "higher-cost language: java",
         "established repository",
         "5 competing attempt signal(s)",
-        "10 open competing PR(s)"
+        "11 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY] WearOS Support",
