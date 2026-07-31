@@ -302,7 +302,7 @@
   ],
   "executable_count": 1,
   "expenses_usd": 0,
-  "generated_at": "2026-07-31T04:37:07+00:00",
+  "generated_at": "2026-07-31T09:33:20+00:00",
   "input_count": 11,
   "source": "market-output/trusted-bounties.json",
   "writes_performed": []
