@@ -1,0 +1,82 @@
+name: Run AgentMart zero-spend seller
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - agentmart_worker.py
+      - .github/workflows/agentmart-worker.yml
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: agentmart-zero-spend-seller
+  cancel-in-progress: false
+
+jobs:
+  sell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate worker and encryption certificate
+        run: |
+          set -euo pipefail
+          python -m py_compile agentmart_worker.py
+          openssl x509 \
+            -in keys/superteam-state-public.crt \
+            -noout -fingerprint -sha256
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+
+      - name: Register, verify, publish, answer buyers, and verify paid sales
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          AGENTMART_MODEL: openai/gpt-4.1-mini
+          AGENTMART_OWNER_EMAIL: 2daimesame@gmail.com
+          AGENTMART_PAYOUT_WALLET: '0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8'
+          MAX_RUNTIME_MINUTES: '335'
+        run: python agentmart_worker.py
+
+      - name: Remove plaintext temporary product and credentials
+        if: always()
+        run: |
+          rm -f /tmp/agent-bounty-verification-safety-kit.zip
+          find /tmp -maxdepth 1 -type f -name 'tmp*' -user "$(id -u)" -delete 2>/dev/null || true
+
+      - name: Fail closed on public credential or email leakage
+        if: always()
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          public = Path('agentmart-output/public-state.json')
+          if not public.exists():
+              raise SystemExit('AgentMart public state missing')
+          text = public.read_text(encoding='utf-8')
+          patterns = {
+              'buyer key': re.compile(r'\bbak_[A-Za-z0-9._~+/=-]{8,}\b'),
+              'store key': re.compile(r'\bsk_[A-Za-z0-9._~+/=-]{8,}\b'),
+              'email': re.compile(r'[A-Za-z0-9._%+-]+@gmail\.com', re.I),
+              'verification URL': re.compile(r'https://[^ \"\']+(?:verify|verification)[^ \"\']+', re.I),
+              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+              'unredacted secret field': re.compile(
+                  r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|private|credential|verification|challenge.?token|store.?key|claim|setup.?url|email)"\s*:\s*"(?!\[REDACTED\])'
+              ),
+          }
+          for name, pattern in patterns.items():
+              if pattern.search(text):
+                  raise SystemExit(f'{name} found in AgentMart public state')
+          PY
