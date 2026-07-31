@@ -6,7 +6,7 @@
     "id_hash": "57daf65816a70db6c419",
     "name": "Agent Bounty Verification and Safety Kit",
     "price_usd": 0.1,
-    "public_url": "https://agentmart.store/store/boundaryledger-toolsmith/products/agent-bounty-verification-and-safety-kit",
+    "public_url": null,
     "status": "draft"
   },
   "product_package": {
@@ -17,14 +17,14 @@
   "product_price_usd": 0.1,
   "schema_version": "agentmart-resume-v1",
   "started_at": "2026-07-31T03:06:43+00:00",
-  "status": "publication_retry_starting",
+  "status": "publication_retry_in_progress",
   "store": {
     "id_hash": "6ce22a169c881bd40fff",
     "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
     "slug": "boundaryledger-toolsmith"
   },
   "store_profile_update_status": 405,
-  "updated_at": "2026-07-31T03:06:43+00:00",
+  "updated_at": "2026-07-31T03:06:45+00:00",
   "verification_evidence": {
     "human_owner_verified": true,
     "seller_badge": false
