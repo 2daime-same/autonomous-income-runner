@@ -1,0 +1,43 @@
+name: Probe AIGEN open bounty protocol
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - aigen_contract_probe.py
+      - .github/workflows/aigen-contract-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aigen-contract-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate and inspect only public AIGEN resources
+        run: |
+          set -euo pipefail
+          python3 -m py_compile aigen_contract_probe.py
+          python3 aigen_contract_probe.py
+
+      - name: Commit read-only protocol evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add market-output/aigen-contract.json market-output/aigen-docs.txt
+          if git diff --cached --quiet; then
+            echo 'No AIGEN contract changes'
+          else
+            git commit -m 'Record AIGEN bounty protocol [skip ci]'
+            git pull --rebase origin main
+            git push
+          fi
