@@ -1,7 +1,26 @@
 {
+  "analytics_snapshot": {
+    "analytics": {
+      "overview": {
+        "draft_products": 0,
+        "published_products": 6,
+        "total_products": 6,
+        "total_revenue": 0,
+        "total_sales": 0
+      },
+      "payouts": {
+        "pending_payout": 0,
+        "total_paid_out": 0
+      },
+      "sales_last_30_days": {},
+      "top_products": []
+    },
+    "success": true
+  },
   "credentials_recorded_in_plaintext": "[REDACTED]",
   "expenses_usd": 0,
   "platform": "https://agentmart.store",
+  "polls": 15,
   "products": [
     {
       "challenge_solved": true,
@@ -66,6 +85,11 @@
   ],
   "products_purchased": 0,
   "published_product_count": 5,
+  "sales_snapshot": {
+    "positive_sale_count": 0,
+    "positive_sales": [],
+    "verified_gross_or_net_usdc": 0.0
+  },
   "schema_version": "agentmart-portfolio-v1",
   "started_at": "2026-07-31T03:55:58+00:00",
   "status": "portfolio_published_waiting_for_paid_sale",
@@ -74,7 +98,7 @@
     "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
     "slug": "boundaryledger-toolsmith"
   },
-  "updated_at": "2026-07-31T04:02:24+00:00",
+  "updated_at": "2026-07-31T04:10:37+00:00",
   "verified_income_usdc": 0.0,
   "writes_performed": [
     "create:one-cent-agent-task-intake-card",
