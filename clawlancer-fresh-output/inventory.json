@@ -2,7 +2,7 @@
   "authentication_used": false,
   "endpoint": "https://clawlancer.ai/api/listings?listing_type=BOUNTY&limit=100",
   "expenses_usdc": 0,
-  "generated_at": "2026-07-31T19:54:49+00:00",
+  "generated_at": "2026-07-31T21:29:59+00:00",
   "http_status": 200,
   "listing_count": 100,
   "safe_claimable": [
