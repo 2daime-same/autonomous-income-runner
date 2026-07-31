@@ -1,0 +1,309 @@
+{
+  "excluded": [
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2440%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/ps-list/issues/7)\n<!-- /Issuehunt Badges -->\n\n\nCurrently there's `process.cmd`, but it includes both the path and arguments. Would be useful for https://github.com/sindresorhus/fkill-cli/issues/16 to have separate `process.path` and `process.args` properties.\r\n\r\nContext:\r\n\r\n> I looked into this more, and I might have a solution to get the arguments without the full path. It seems `ps -o pid -o comm` returns the full path without arguments and `ps -o pid -o command` returns with arguments. So we could get both columns and just diff them to get the arguments. I think this should be added as a new property in [`ps-list`](https://github.com/sindresorhus/ps-list). So we could add an `args` property with just the arguments and a `path` property with the full path to the binary without arguments, just for completeness.\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $40.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($40.00)\n\n### Submitted pull Requests\n- [#29 Add process.path and process.args](https://oss.issuehunt.io/r/sindresorhus/ps-list/pull/29)\n- [#1 feat: add process.args output](https://oss.issuehunt.io/r/LYY435939/ps-list/pull/1)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/ps-list/issues/7)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/ps-list/issues/7)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/ps-list/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#1 feat: add process.args output]",
+        "- [#29 Add process.path and process.args]"
+      ],
+      "competitor_signals": [],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests"
+      ],
+      "execution_score": 110.82,
+      "execution_score_reasons": [
+        "small/testable scope marker",
+        "first-income-sized reward"
+      ],
+      "issue_number": 7,
+      "maintainer_holdoffs": [],
+      "repo": "sindresorhus/ps-list",
+      "repo_language": "JavaScript",
+      "repo_stars": 287,
+      "reward_usd": 40.0,
+      "title": "Add new properties for the path and arguments separately",
+      "updated_at": "2026-05-21T10:10:42Z",
+      "url": "https://github.com/sindresorhus/ps-list/issues/7"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2460%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/wallpaper/issues/52)\n<!-- /Issuehunt Badges -->\n\n\nWhen calling `wallpaper.set('img/artwork.png')` in a node app running on Mojave, the default wallpaper (not set via this API) is shown for approximately 0.5 sec. Is this a known issue? If so: any ways to get around it? Thanks.\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $60.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($60.00)\n\n### Submitted pull Requests\n- [#103 Avoid default wallpaper flash when setting the same path](https://oss.issuehunt.io/r/sindresorhus/wallpaper/pull/103)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/wallpaper/issues/52)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/wallpaper/issues/52)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/wallpaper/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#103 Avoid default wallpaper flash when setting the same path]"
+      ],
+      "competitor_signals": [
+        {
+          "association": "NONE",
+          "excerpt": "Opened the macOS-side PR for this since the issue points at the macos-wallpaper workaround: https://github.com/sindresorhus/macos-wallpaper/pull/56\\n\\nThe change refreshes same-path image updates by briefly switching matching screens to a temporary copy of the requested image instead of an empty URL, so it should avoid the default-wallpaper flash while preserving the existing fallback for directory wallpapers or copy failures.",
+          "login": "KingParmenides",
+          "pull_requests": [
+            "https://github.com/sindresorhus/macos-wallpaper/pull/56"
+          ],
+          "url": "https://github.com/sindresorhus/wallpaper/issues/52#issuecomment-4417723550"
+        }
+      ],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests",
+        "a contributor reported an active or submitted pull request"
+      ],
+      "execution_score": 97.23,
+      "execution_score_reasons": [
+        "first-income-sized reward"
+      ],
+      "issue_number": 52,
+      "maintainer_holdoffs": [],
+      "repo": "sindresorhus/wallpaper",
+      "repo_language": "JavaScript",
+      "repo_stars": 1095,
+      "reward_usd": 60.0,
+      "title": "Default wallpaper is shown for ≈0.5 sec",
+      "updated_at": "2026-05-11T09:10:29Z",
+      "url": "https://github.com/sindresorhus/wallpaper/issues/52"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2440%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/zerobias/effector/issues/142)\n<!-- /Issuehunt Badges -->\n\n\nhttps://effector.now.sh/try\r\nhttps://github.com/zerobias/effector/tree/master/website/editor\r\n\r\niOS is priority\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $40.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($40.00)\n\n### Submitted pull Requests\n- [#37 Fix iOS momentum scrolling in mobile panels](https://oss.issuehunt.io/r/effector/repl/pull/37)\n- [#1330 fix(docs): improve iOS touch scrolling in docs navigation](https://oss.issuehunt.io/r/effector/effector/pull/1330)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/zerobias/effector/issues/142)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/zerobias/effector/issues/142)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/zerobias/effector/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#1330 fix(docs): improve iOS touch scrolling in docs navigation]",
+        "- [#37 Fix iOS momentum scrolling in mobile panels]"
+      ],
+      "competitor_signals": [
+        {
+          "association": "NONE",
+          "excerpt": "Opened a PR for the current playground implementation: https://github.com/effector/repl/pull/37 It enables iOS momentum scrolling on the editor, console/errors, share list, and mobile menu scroll containers.",
+          "login": "diegog956",
+          "pull_requests": [
+            "https://github.com/effector/repl/pull/37"
+          ],
+          "url": "https://github.com/effector/effector/issues/142#issuecomment-4422945001"
+        }
+      ],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests",
+        "a contributor reported an active or submitted pull request"
+      ],
+      "execution_score": 95.82,
+      "execution_score_reasons": [
+        "first-income-sized reward"
+      ],
+      "issue_number": 142,
+      "maintainer_holdoffs": [],
+      "repo": "effector/effector",
+      "repo_language": "TypeScript",
+      "repo_stars": 4844,
+      "reward_usd": 40.0,
+      "title": "Better Try Effector experience on mobile devices",
+      "updated_at": "2026-05-18T15:25:04Z",
+      "url": "https://github.com/effector/effector/issues/142"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2440%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/fkill/issues/21)\n<!-- /Issuehunt Badges -->\n\n\nTypical use case is starting a process with multiple sub-processes and then wanting to killing them all:\r\n\r\n```js\r\nconst child = require('child_process').exec(\"node -e 'while (true);'\");\r\nchild.kill(); // will not work\r\n```\r\n\r\nIt's been implemented for Windows in https://github.com/sindresorhus/fkill/pull/20, would be nice to have this functionality cross-platform.\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $40.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($40.00)\n\n### Submitted pull Requests\n- [#1 Support killing process trees cross-platform](https://oss.issuehunt.io/r/jamilahmadzai/fkill/pull/1)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/fkill/issues/21)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/fkill/issues/21)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/fkill/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#1 Support killing process trees cross-platform]"
+      ],
+      "competitor_signals": [
+        {
+          "association": "OWNER",
+          "excerpt": "If anyone wants to work on this, see the initial attempt and feedback in https://github.com/sindresorhus/fkill/pull/34.",
+          "login": "sindresorhus",
+          "pull_requests": [
+            "https://github.com/sindresorhus/fkill/pull/34"
+          ],
+          "url": "https://github.com/sindresorhus/fkill/issues/21#issuecomment-792251436"
+        }
+      ],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests",
+        "a contributor reported an active or submitted pull request"
+      ],
+      "execution_score": 90.82,
+      "execution_score_reasons": [
+        "first-income-sized reward"
+      ],
+      "issue_number": 21,
+      "maintainer_holdoffs": [],
+      "repo": "sindresorhus/fkill",
+      "repo_language": "JavaScript",
+      "repo_stars": 795,
+      "reward_usd": 40.0,
+      "title": "Kill tree (all sub-processes) ",
+      "updated_at": "2026-07-23T20:18:50Z",
+      "url": "https://github.com/sindresorhus/fkill/issues/21"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2440%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/electron-reloader/issues/2)\n<!-- /Issuehunt Badges -->\n\n\nI just added `console.log('its not working')` to `index.js` & app stopped. `index.html` works.\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $40.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($40.00)\n\n### Submitted pull Requests\n- [#1 fix: preserve stdio on default-app restart](https://oss.issuehunt.io/r/LYY435939/electron-reloader/pull/1)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/electron-reloader/issues/2)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/electron-reloader/issues/2)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/electron-reloader/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#1 fix: preserve stdio on default-app restart]"
+      ],
+      "competitor_signals": [],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests"
+      ],
+      "execution_score": 90.82,
+      "execution_score_reasons": [
+        "first-income-sized reward"
+      ],
+      "issue_number": 2,
+      "maintainer_holdoffs": [],
+      "repo": "sindresorhus/electron-reloader",
+      "repo_language": "JavaScript",
+      "repo_stars": 586,
+      "reward_usd": 40.0,
+      "title": "Apparently Window Closes when I edit Main Electron File",
+      "updated_at": "2026-05-22T16:54:30Z",
+      "url": "https://github.com/sindresorhus/electron-reloader/issues/2"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%248%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/fkill/issues/25)\n<!-- /Issuehunt Badges -->\n\n\nI need to kill the process tree in 5 seconds. However, I found that the code will run almost 10+ seconds before returned. Any suggestions? Thanks.\r\n\r\n```\r\nconst fkill = require('fkill');\r\n...\r\nawait fkill(pid, {\"force\": true, \"tree\": true}); // It takes longer than expected\r\n```\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $8.00)\n\n- [<img src='https://avatars.githubusercontent.com/u/40680108?v=4' alt='0maxxam0' width=24 height=24> 0maxxam0](https://oss.issuehunt.io/u/0maxxam0) ($8.00)\n\n### Submitted pull Requests\n- [#1 Avoid checking process existence before successful kills](https://oss.issuehunt.io/r/Davifek/fkill/pull/1)\n- [#1 Avoid process listing before successful kills](https://oss.issuehunt.io/r/OMGletmein/fkill/pull/1)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/fkill/issues/25)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/fkill/issues/25)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/fkill/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#1 Avoid checking process existence before successful kills]",
+        "- [#1 Avoid process listing before successful kills]"
+      ],
+      "competitor_signals": [],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests"
+      ],
+      "execution_score": 85.22,
+      "execution_score_reasons": [
+        "first-income-sized reward"
+      ],
+      "issue_number": 25,
+      "maintainer_holdoffs": [],
+      "repo": "sindresorhus/fkill",
+      "repo_language": "JavaScript",
+      "repo_stars": 795,
+      "reward_usd": 8.0,
+      "title": "Is there any change to optimize the processing time?",
+      "updated_at": "2026-05-22T16:36:46Z",
+      "url": "https://github.com/sindresorhus/fkill/issues/25"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%240%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/avajs/ava/issues/2501)\n<!-- /Issuehunt Badges -->\n\n\nThis is a list of known problems and desired improvements with our default reporter. Some may be easier to solve than others, but probably we should [clean up our reporter implementation](https://github.com/avajs/ava/issues/2500) first.\r\n\r\n* If an exception occurs when loading the test file, before it manages to declare any tests, we should say so. Originally reported in https://github.com/avajs/ava/issues/2290.\r\n\r\n* When `--match` is used, if no matching tests were selected, the reporter shouldn't still print other errors that might have occurred. Originally reported in https://github.com/avajs/ava/issues/2191.\r\n\r\n* Code excerpts are derived from error stack traces, but we should show the excerpt for the test itself, not wherever the error originated from. Originally reported in https://github.com/avajs/ava/issues/1743, might have already been resolved. [<img alt=\"Issuehunt badges\" src=\"https://issuehunt.io/r/avajs/ava/issues/1743/badge.svg\" />](https://issuehunt.io/r/avajs/ava/issues/1743)\r\n\r\n* We should print how many snapshots were updated. Originally reported in https://github.com/avajs/ava/issues/1583.\r\n\r\n* Bad usage of the test interface is thrown as an internal error, which looks horrible. Originally reported in https://github.com/avajs/ava/issues/698.\r\n\r\n* When `--match` is used, or after a `test.only()` has been encountered, AVA still needs to launch each test file to see if there are matches or exclusive tests. There is no output while this is happening. There should be. Originally reported in https://github.com/avajs/ava/issues/2246.\r\n\r\n* We should revisit the color scheme. Originally reported in https://github.com/avajs/ava/issues/413.\r\n\r\n* It's hard to distinguish console output between watch runs. Originally reported in https://github.com/avajs/ava/issues/1917. [<img alt=\"Issuehunt badges\" src=\"https://issuehunt.io/r/avajs/ava/issues/1917/badge.svg\" />](https://issuehunt.io/r/avajs/ava/issues/1917)\r\n\r\n* We print pending tests when AVA times out. We should print just those tests (and hooks) that have started. Originally reported in https://github.com/avajs/ava/issues/2421.\r\n\r\n* ~`t.log()` output for passing tests is only available in _verbose_ mode. We should always print this. Originally reported in https://github.com/avajs/ava/issues/2201.~\r\n\r\n* The `-` & `+` diff symbols need an explanation. Originally reported in https://github.com/avajs/ava/issues/1558. [<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2460%20Funded-%2300A156.svg\" />](https://issuehunt.io/r/avajs/ava/issues/1558)\r\n\r\n* ~Even when not in _verbose_ mode, we should print details for all exceptions. Originally reported in https://github.com/avajs/ava/issues/2171.~\r\n\r\n* ~When not in _verbose_ mode, console output from the test files messes with the reporter output. Originally reported in https://github.com/avajs/ava/issues/1953. [<img alt=\"Issuehunt badges\" src=\"https://issuehunt.io/r/avajs/ava/issues/1953/badge.svg\" />](https://issuehunt.io/r/avajs/ava/issues/1953)~\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $0.00)\n\n\n### Submitted pull Requests\n- [#3446 Report updated snapshot files](https://oss.issuehunt.io/r/avajs/ava/pull/3446)\n---\n\n#### [Become a backer",
+      "body_submitted_pr_signals": [
+        "- [#3446 Report updated snapshot files]"
+      ],
+      "competitor_signals": [],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests"
+      ],
+      "execution_score": 81.74,
+      "execution_score_reasons": [],
+      "issue_number": 2501,
+      "maintainer_holdoffs": [],
+      "repo": "avajs/ava",
+      "repo_language": "JavaScript",
+      "repo_stars": 20845,
+      "reward_usd": 220.0,
+      "title": "Known reporter issues",
+      "updated_at": "2026-07-04T13:46:29Z",
+      "url": "https://github.com/avajs/ava/issues/2501"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%24302%20Rewarded-%237E24E3.svg\" />](https://oss.issuehunt.io/r/qwer80371832/loadertest/issues/1)\n<!-- /Issuehunt Badges -->\n\n\nneed to pass 360 and hr defence\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n#### [<img src='https://avatars.githubusercontent.com/u/161417069?v=4' alt='hsoiuie' width=24 height=24> hsoiuie](https://oss.issuehunt.io/u/hsoiuie) has been rewarded.\n\n### Backers (Total: $302.00)\n\n- [<img src='https://avatars.githubusercontent.com/u/74132349?v=4' alt='qq80378994' width=24 height=24> qq80378994](https://oss.issuehunt.io/u/qq80378994) ($302.00)\n\n### Submitted pull Requests\n- [#2 consolve 360 and hr defence](https://oss.issuehunt.io/r/qwer80371832/loadertest/pull/2)\n---\n\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/qwer80371832/loadertest/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#2 consolve 360 and hr defence]"
+      ],
+      "competitor_signals": [],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests",
+        "issue body indicates a reward has already been issued"
+      ],
+      "execution_score": 72.84,
+      "execution_score_reasons": [],
+      "issue_number": 1,
+      "maintainer_holdoffs": [],
+      "repo": "qwer80371832/loadertest",
+      "repo_language": "Go",
+      "repo_stars": 0,
+      "reward_usd": 302.0,
+      "title": "how to pass 360 and defence ",
+      "updated_at": "2024-07-14T14:22:26Z",
+      "url": "https://github.com/qwer80371832/loadertest/issues/1"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2460%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/issues/25)\n<!-- /Issuehunt Badges -->\n\n\nThis is on Mojave.  It reports the same wallpaper across both screens, but only the first screen has the reported wallpaper.\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $60.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($60.00)\n\n### Submitted pull Requests\n- [#1 fix: resolve directory wallpaper per screen](https://oss.issuehunt.io/r/LYY435939/macos-wallpaper/pull/1)\n- [#1 Fix per-screen wallpaper lookup for directory sources](https://oss.issuehunt.io/r/jamilahmadzai/macos-wallpaper/pull/1)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/issues/25)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/issues/25)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#1 Fix per-screen wallpaper lookup for directory sources]",
+        "- [#1 fix: resolve directory wallpaper per screen]"
+      ],
+      "competitor_signals": [],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests"
+      ],
+      "execution_score": 59.23,
+      "execution_score_reasons": [
+        "first-income-sized reward"
+      ],
+      "issue_number": 25,
+      "maintainer_holdoffs": [],
+      "repo": "sindresorhus/macos-wallpaper",
+      "repo_language": "Swift",
+      "repo_stars": 707,
+      "reward_usd": 60.0,
+      "title": "'get' command returns the same wallpaper for different screens with different wallpapers.",
+      "updated_at": "2026-07-23T19:36:11Z",
+      "url": "https://github.com/sindresorhus/macos-wallpaper/issues/25"
+    },
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2460%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/Preferences/issues/9)\n<!-- /Issuehunt Badges -->\n\n\n![prefs](https://user-images.githubusercontent.com/676069/54189415-07f6e800-44b2-11e9-8b99-c2de1ccc2dd1.gif)\r\n\r\nIs there an option to force view size recalculation every time another tab is selected?\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $60.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($60.00)\n\n### Submitted pull Requests\n- [#28 Fixes preferences window not appearing](https://oss.issuehunt.io/r/sindresorhus/Preferences/pull/28)\n- [#1 fix: serialize rapid tab transitions](https://oss.issuehunt.io/r/LYY435939/Settings/pull/1)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/Preferences/issues/9)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/Preferences/issues/9)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/Preferences/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
+      "body_submitted_pr_signals": [
+        "- [#1 fix: serialize rapid tab transitions]",
+        "- [#28 Fixes preferences window not appearing]"
+      ],
+      "competitor_signals": [
+        {
+          "association": "OWNER",
+          "excerpt": "If anyone wants to work on this, make sure to see the previous attempt and feedback: https://github.com/sindresorhus/Preferences/pull/28",
+          "login": "sindresorhus",
+          "pull_requests": [
+            "https://github.com/sindresorhus/Preferences/pull/28"
+          ],
+          "url": "https://github.com/sindresorhus/Settings/issues/9#issuecomment-671511300"
+        }
+      ],
+      "exclusions": [
+        "IssueHunt body already lists submitted pull requests",
+        "a contributor reported an active or submitted pull request"
+      ],
+      "execution_score": 59.23,
+      "execution_score_reasons": [
+        "first-income-sized reward"
+      ],
+      "issue_number": 9,
+      "maintainer_holdoffs": [],
+      "repo": "sindresorhus/Settings",
+      "repo_language": "Swift",
+      "repo_stars": 1551,
+      "reward_usd": 60.0,
+      "title": "Rapidly switching between tabs causes view size to be wrong",
+      "updated_at": "2026-05-21T11:42:47Z",
+      "url": "https://github.com/sindresorhus/Settings/issues/9"
+    }
+  ],
+  "excluded_count": 10,
+  "executable": [
+    {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%24200%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/dictation-toolbox/Caster/issues/814)\n<!-- /Issuehunt Badges -->\n\n\n@lexxish @alexboche  \r\n\r\n**Is your feature request related to a problem? Please describe.**\r\nPut simply re-implementing Dragon's Select-and-Say capability and text navigation.\r\n\r\n**Describe the solution you'd like**\r\nWork to explore tool that use accessibility API.\r\nKey concepts\r\n - Functions consumed by Grammars would be API, Engine, and OS agnostic\r\n - As fast as possible\r\n - The expectations this project would move out of Caster into [dtactions](https://github.com/dictation-toolbox/dtactions) Which will support Common OS action and related code from dictation-toolbox projects\r\n\r\n**Accessibility APIs**\r\nThere can be overlap between applications with the respective OSs. I have only research tools for exploring the Windows OS\r\n\r\n- Windows OS \r\n[Microsoft Active Accessibility (MSAA)](https://docs.microsoft.com/en-us/windows/win32/winauto/microsoft-active-accessibility)\r\n[UI Automation](https://docs.microsoft.com/en-us/windows/win32/winauto/entry-uiauto-win32)\r\n\t- Tools\r\n\t[Accessibility Insights for Windows (UIAutomation/win32)](https://accessibilityinsights.io/docs/en/windows/overview) (best in class)\r\n    [aViewer 2.0.3 (MSAA/IA2/ARIA/HTML/UIAutomation)](https://github.com/ThePacielloGroup/aviewer/releases)\r\n\t[au3spy](https://www.autoitscript.com/autoit3/docs/intro/au3spy.htm)\r\n\t[Inspect](https://github.com/yinkaisheng/Python-UIAutomation-for-Windows/tree/master/inspect)\r\n\t[spy++](https://docs.microsoft.com/en-us/visualstudio/debugger/introducing-spy-increment?view=vs-2019) part of visual studio.\r\n\t[winspy](http://www.catch22.net/software/winspy)\r\n\r\n- Linux \r\n[AT-SPI](https://developer.gnome.org/accessibility-devel-guide/stable/dev-start-5.html.es)\r\n[IAccessible2 (IA2)](https://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/)\r\n\r\n\r\n- Mac \r\n [Accessibility API](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078)\r\n\r\nOther APIs\r\n[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)\r\n\r\n[Scintilla](https://www.scintilla.org/ScintillaDoc.html)\r\n\r\nMFC classes to encapsulate the Scintilla edit control\r\n- [naughter](http://www.naughter.com/scintilla.html)\r\n- [pywin scintilla control](https://github.com/ojdkbuild/tools_python27/blob/master/Lib/site-packages/pythonwin/pywin/scintilla/control.py)\r\n\r\nJava Access Bridge is for Windows OS interface with Java software\r\nhttps://doc.bccnsoft.com/docs/jdk7-docs/technotes/guides/access/jab/introduction.html\r\nhttps://docs.oracle.com/javase/7/docs/technotes/guides/access/enable_and_test.html\r\nhttps://docs.oracle.com/javase/7/docs/api/javax/accessibility/package-summary.html\r\nhttps://github.com/nvaccess/nvda/blob/defed0ef2317cf3192922692a40cc2eb92d41143/source/JABHandler.py\r\n\r\n**Describe alternatives you've considered**\r\n\r\n\r\n**Additional context**\r\n\r\nDragonfly as a [Accessibility API](https://dragonfly2.readthedocs.io/en/latest/accessibility.html?) which is OS/controller agnostic, Due to the [pyia2](https://github.com/illinois-dres-aitg/pyia2) that exposes Google Chrome, Firefox and Gitter(electron based on chrome) is limited.\r\n\r\nThe Dragonfly accessibility if you can be leveraged by this Caster grammar [accessibilityapi.py](ht",
+      "body_submitted_pr_signals": [],
+      "competitor_signals": [],
+      "execution_score": 69.41,
+      "execution_score_reasons": [
+        "small/testable scope marker",
+        "large or cross-platform scope"
+      ],
+      "issue_number": 814,
+      "maintainer_holdoffs": [],
+      "repo": "dictation-toolbox/Caster",
+      "repo_language": "Python",
+      "repo_stars": 357,
+      "reward_usd": 200.0,
+      "title": "Integration with OS accessibility APIs",
+      "updated_at": "2026-05-30T22:46:10Z",
+      "url": "https://github.com/dictation-toolbox/Caster/issues/814"
+    }
+  ],
+  "executable_count": 1,
+  "expenses_usd": 0,
+  "generated_at": "2026-07-31T04:37:07+00:00",
+  "input_count": 11,
+  "source": "market-output/trusted-bounties.json",
+  "writes_performed": []
+}
