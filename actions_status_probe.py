@@ -21,6 +21,8 @@ INCOME_NAMES = {
     "Run AgentJob paid-only worker v2",
     "Run BotHire paid-work provider",
     "Earn first Clawlancer micro-bounty",
+    "Run fresh secure Clawlancer earner",
+    "Probe fresh Clawlancer micro-bounties",
     "Contain exposed Clawlancer credential",
     "Pause exposed Clawlancer agent",
     "Run AgentGigs paid-work worker",
@@ -28,12 +30,15 @@ INCOME_NAMES = {
     "Run autonomous AgentGigs worker",
     "Run Callboard zero-spend worker",
     "Run AgentMart zero-spend seller",
+    "Publish diversified AgentMart portfolio securely v2",
     "Run BotBounty zero-spend worker",
     "Probe BotBounty live inventory",
     "Probe AgentMart seller contract",
     "Probe Agentic Gateway supplier contract",
     "GitHub-native open bounty radar",
     "BountyHub funded candidate selector",
+    "Strict BountyHub candidate validation",
+    "Probe live TaskBounty inventory",
 }
 MARKERS = (
     "income",
@@ -48,6 +53,7 @@ MARKERS = (
     "agenticgateway",
     "bountyhub",
     "bounty-radar",
+    "taskbounty",
 )
 
 
@@ -62,7 +68,7 @@ def get(path: str) -> Any:
             "Accept": "application/vnd.github+json",
             "Authorization": f"Bearer {TOKEN}",
             "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "autonomous-income-runner-actions-probe/1.1",
+            "User-Agent": "autonomous-income-runner-actions-probe/1.2",
         },
     )
     try:
