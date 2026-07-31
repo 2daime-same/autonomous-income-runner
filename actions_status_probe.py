@@ -26,6 +26,7 @@ INCOME_NAMES = {
     "Run AgentGigs paid-work worker",
     "Run TaskForce paid-work worker",
     "Run autonomous AgentGigs worker",
+    "Run Callboard zero-spend worker",
 }
 
 
@@ -87,7 +88,7 @@ def main() -> int:
         path = str(run.get("path") or "")
         if name not in INCOME_NAMES and not any(
             marker in (name + " " + path).lower()
-            for marker in ("income", "bothire", "agentgigs", "agentjob", "clawlancer", "taskforce")
+            for marker in ("income", "bothire", "agentgigs", "agentjob", "clawlancer", "taskforce", "callboard")
         ):
             continue
         run_id = run.get("id")
