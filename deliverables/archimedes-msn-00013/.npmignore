@@ -3,5 +3,6 @@ tests/
 scripts/
 docs/
 .github/
-*.tgz
-.env
+.env.example
+SUBMISSION.md
+SAFETY.md

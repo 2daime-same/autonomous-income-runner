@@ -1,6 +1,7 @@
 node_modules/
 dist/
+dist-submission/
+.test-dist/
 coverage/
 *.tgz
-.env
 .DS_Store

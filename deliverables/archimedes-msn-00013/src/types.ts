@@ -28,6 +28,14 @@ export interface PublicSearchResult {
   fetched_at: string;
 }
 
+export interface PublicDetailResult {
+  source: 'archimedes.market';
+  resource: 'asset' | 'bounty';
+  id: string;
+  item: JsonValue;
+  fetched_at: string;
+}
+
 export interface ArchimedesClientOptions {
   baseUrl?: string;
   timeoutMs?: number;
