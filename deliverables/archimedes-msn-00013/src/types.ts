@@ -3,19 +3,19 @@ export type JsonValue = JsonPrimitive | JsonValue[] | { [key: string]: JsonValue
 export type JsonObject = { [key: string]: JsonValue };
 
 export interface SearchAssetsInput {
-  query?: string;
-  asset_type?: string;
-  limit?: number;
-  offset?: number;
+  query?: string | undefined;
+  asset_type?: string | undefined;
+  limit?: number | undefined;
+  offset?: number | undefined;
 }
 
 export interface SearchBountiesInput {
-  query?: string;
-  status?: string;
-  category?: string;
-  funded_only?: boolean;
-  limit?: number;
-  offset?: number;
+  query?: string | undefined;
+  status?: string | undefined;
+  category?: string | undefined;
+  funded_only?: boolean | undefined;
+  limit?: number | undefined;
+  offset?: number | undefined;
 }
 
 export interface PublicSearchResult {
