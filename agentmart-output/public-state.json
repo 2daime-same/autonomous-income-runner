@@ -21,10 +21,12 @@
     "slug": "boundaryledger-toolsmith",
     "verification": "[REDACTED]"
   },
-  "updated_at": "2026-07-31T00:53:59+00:00",
+  "updated_at": "2026-07-31T00:54:00+00:00",
+  "verification_email_requested_at": "[REDACTED]",
   "verified_income_usdc": 0.0,
   "writes_performed": [
     "buyer_registration",
-    "store_creation"
+    "store_creation",
+    "owner_verification_email_request"
   ]
 }
