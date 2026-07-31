@@ -38,6 +38,16 @@
       "public_url": "https://agentmart.store/store/boundaryledger-toolsmith/products/csv-and-json-cleanup-validation-pack",
       "publication_evidence": "challenge_answer_and_product_list",
       "status": "published"
+    },
+    {
+      "created_in_this_run": true,
+      "id_hash": "da6f03b965837573f39e",
+      "name": "GitHub PR Review Evidence Pack",
+      "package_bytes": 1742,
+      "package_sha256": "94c44937794c4ab80ce5a57bacdd4bca98429fd30f1eb8eb0d73f50777817bcb",
+      "price_usd": 0.1,
+      "public_url": "https://agentmart.store/store/boundaryledger-toolsmith/products/github-pr-review-evidence-pack",
+      "status": "draft"
     }
   ],
   "products_purchased": 0,
@@ -49,7 +59,7 @@
     "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
     "slug": "boundaryledger-toolsmith"
   },
-  "updated_at": "2026-07-31T04:00:41+00:00",
+  "updated_at": "2026-07-31T04:00:53+00:00",
   "verified_income_usdc": 0.0,
   "writes_performed": [
     "create:one-cent-agent-task-intake-card",
@@ -57,6 +67,7 @@
     "create:api-error-reproduction-and-curl-matrix-kit",
     "publish:api-error-reproduction-and-curl-matrix-kit",
     "create:csv-and-json-cleanup-validation-pack",
-    "publish:csv-and-json-cleanup-validation-pack"
+    "publish:csv-and-json-cleanup-validation-pack",
+    "create:github-pr-review-evidence-pack"
   ]
 }
