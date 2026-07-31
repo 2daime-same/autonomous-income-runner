@@ -1,0 +1,81 @@
+name: Scan Archimedes funded engineering bounties
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - archimedes_public_scan.py
+      - .github/workflows/archimedes-public-scan.yml
+  schedule:
+    - cron: '41 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archimedes-public-funded-bounty-scan
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate scanner
+        run: python -m py_compile archimedes_public_scan.py
+
+      - name: Fetch funded public bounties and full acceptance criteria
+        env:
+          ARCHIMEDES_PUBLIC_API_URL: https://archimedes.market
+          ARCHIMEDES_PUBLIC_OUTPUT: archimedes-output/public-scan.json
+          ARCHIMEDES_PAGE_LIMIT: '50'
+          ARCHIMEDES_MAX_PAGES: '10'
+        run: python archimedes_public_scan.py
+
+      - name: Reject credential-like output
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          path = Path('archimedes-output/public-scan.json')
+          text = path.read_text(encoding='utf-8')
+          patterns = {
+              'JWT': re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
+              'private key block': re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
+              'credential field': re.compile(
+                  r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|private.?key|credential)"\s*:\s*"(?!\[REDACTED)'
+              ),
+          }
+          for name, pattern in patterns.items():
+              if pattern.search(text):
+                  raise SystemExit(f'{name} found in public Archimedes state')
+          PY
+
+      - name: Commit changed public evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add archimedes-output/public-scan.json
+          if git diff --cached --quiet; then
+            echo 'No substantive Archimedes opportunity changes'
+            exit 0
+          fi
+          git commit -m 'Refresh Archimedes funded opportunities [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
