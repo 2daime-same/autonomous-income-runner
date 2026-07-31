@@ -1,24 +1,24 @@
 {
   "credentials_recorded": false,
-  "generated_at": "2026-07-31T01:20:32+00:00",
+  "generated_at": "2026-07-31T04:17:45+00:00",
   "income_workflow_run_count": 50,
   "repository": "2daime-same/autonomous-income-runner",
   "runs": [
     {
       "conclusion": null,
-      "created_at": "2026-07-31T01:20:08Z",
+      "created_at": "2026-07-31T04:17:19Z",
       "event": "push",
-      "head_sha": "3fe4b047e27717880504c6081a738ea553e60723",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30596063436",
-      "id": 30596063436,
+      "head_sha": "02a1e197a86d65eb046a56c0eb08a7f6ce828aa8",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603767945",
+      "id": 30603767945,
       "jobs": [
         {
           "completed_at": null,
           "conclusion": null,
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30596063436/job/91048571494",
-          "id": 91048571494,
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603767945/job/91071739788",
+          "id": 91071739788,
           "name": "inspect",
-          "started_at": "2026-07-31T01:20:11Z",
+          "started_at": "2026-07-31T04:17:22Z",
           "status": "in_progress",
           "steps": [
             {
@@ -57,9 +57,1472 @@
       "name": "Inspect income workflow executions",
       "path": ".github/workflows/actions-status-probe.yml",
       "run_attempt": 1,
-      "run_number": 3,
+      "run_number": 4,
       "status": "in_progress",
-      "updated_at": "2026-07-31T01:20:12Z"
+      "updated_at": "2026-07-31T04:17:22Z"
+    },
+    {
+      "conclusion": null,
+      "created_at": "2026-07-31T04:15:40Z",
+      "event": "push",
+      "head_sha": "7968c831c9cb4085ed3a0bffedea7acdefb055ab",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603697369",
+      "id": 30603697369,
+      "jobs": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603697369/job/91071525714",
+          "id": 91071525714,
+          "name": "earn",
+          "started_at": "2026-07-31T04:15:47Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install minimal dependencies and validate executor",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": null,
+              "name": "Execute fresh funded-work search, claim, delivery, and verification",
+              "number": 5,
+              "status": "in_progress"
+            },
+            {
+              "conclusion": null,
+              "name": "Fail closed before publishing evidence",
+              "number": 6,
+              "status": "pending"
+            },
+            {
+              "conclusion": null,
+              "name": "Commit sanitized and encrypted execution evidence",
+              "number": 7,
+              "status": "pending"
+            },
+            {
+              "conclusion": null,
+              "name": "Remove plaintext residue",
+              "number": 8,
+              "status": "pending"
+            },
+            {
+              "conclusion": null,
+              "name": "Post Run actions/setup-python@v5",
+              "number": 15,
+              "status": "pending"
+            },
+            {
+              "conclusion": null,
+              "name": "Post Run actions/checkout@v4",
+              "number": 16,
+              "status": "pending"
+            }
+          ]
+        }
+      ],
+      "name": "Run fresh secure Clawlancer earner",
+      "path": ".github/workflows/clawlancer-fresh-secure-earn.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "in_progress",
+      "updated_at": "2026-07-31T04:15:48Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T04:08:04Z",
+      "event": "push",
+      "head_sha": "74a628a1c654fc85490aa5cf93888d905749865f",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603347155",
+      "id": 30603347155,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T04:08:22Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603347155/job/91070486007",
+          "id": 91070486007,
+          "name": "probe",
+          "started_at": "2026-07-31T04:08:13Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Probe current claimable micro-bounties",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit compact public evidence",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 11,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Probe fresh Clawlancer micro-bounties",
+      "path": ".github/workflows/clawlancer-fresh-probe.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T04:08:23Z"
+    },
+    {
+      "conclusion": null,
+      "created_at": "2026-07-31T04:04:12Z",
+      "event": "schedule",
+      "head_sha": "c9f5816bb415f43e049f5990488cf7289c52cbcd",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603175026",
+      "id": 30603175026,
+      "jobs": [],
+      "name": "Run BotHire paid-work provider",
+      "path": ".github/workflows/bothire-worker.yml",
+      "run_attempt": 1,
+      "run_number": 5,
+      "status": "pending",
+      "updated_at": "2026-07-31T04:04:13Z"
+    },
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-07-31T04:03:41Z",
+      "event": "schedule",
+      "head_sha": "c9f5816bb415f43e049f5990488cf7289c52cbcd",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603152208",
+      "id": 30603152208,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T04:03:41Z",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603152208/job/91069890195",
+          "id": 91069890195,
+          "name": "scan",
+          "started_at": "2026-07-31T04:03:41Z",
+          "status": "completed",
+          "steps": []
+        }
+      ],
+      "name": "Trusted bounty program radar",
+      "path": ".github/workflows/trusted-bounty-radar.yml",
+      "run_attempt": 1,
+      "run_number": 10,
+      "status": "completed",
+      "updated_at": "2026-07-31T04:03:51Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T04:00:38Z",
+      "event": "push",
+      "head_sha": "8b49d703d98e2909aa907b1e8b7c8c53b69a1f1c",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603019876",
+      "id": 30603019876,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T04:00:56Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30603019876/job/91069501742",
+          "id": 91069501742,
+          "name": "probe",
+          "started_at": "2026-07-31T04:00:46Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Probe current public task inventory",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit sanitized inventory evidence",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 11,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Probe live TaskBounty inventory",
+      "path": ".github/workflows/taskbounty-live-probe.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T04:00:57Z"
+    },
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-07-31T04:00:03Z",
+      "event": "schedule",
+      "head_sha": "f573b16ddb200bd98812aabe19a2bb96d47401e0",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602987228",
+      "id": 30602987228,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T04:00:03Z",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602987228/job/91069429899",
+          "id": 91069429899,
+          "name": "probe",
+          "started_at": "2026-07-31T04:00:09Z",
+          "status": "completed",
+          "steps": []
+        }
+      ],
+      "name": "Probe Callboard public inventory",
+      "path": ".github/workflows/callboard-public-probe.yml",
+      "run_attempt": 1,
+      "run_number": 13,
+      "status": "completed",
+      "updated_at": "2026-07-31T04:00:03Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T03:57:19Z",
+      "event": "push",
+      "head_sha": "dbf1ed7f1c8548f098839985a2b7e04a6be4f68c",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602878836",
+      "id": 30602878836,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:58:52Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602878836/job/91069093644",
+          "id": 91069093644,
+          "name": "validate",
+          "started_at": "2026-07-31T03:57:22Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Validate scripts",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Refresh funded candidates and reject paused work",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit strict candidate evidence",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 13,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Strict BountyHub candidate validation",
+      "path": ".github/workflows/bountyhub-strict.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:58:54Z"
+    },
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-07-31T03:53:50Z",
+      "event": "schedule",
+      "head_sha": "a6b869682d12aa24927b4464ddec56edf28d51bd",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602730722",
+      "id": 30602730722,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:53:50Z",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602730722/job/91068673848",
+          "id": 91068673848,
+          "name": "work",
+          "started_at": "2026-07-31T03:53:51Z",
+          "status": "completed",
+          "steps": []
+        }
+      ],
+      "name": "Run TaskForce paid-work worker",
+      "path": ".github/workflows/taskforce-worker.yml",
+      "run_attempt": 1,
+      "run_number": 4,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:53:51Z"
+    },
+    {
+      "conclusion": null,
+      "created_at": "2026-07-31T03:52:08Z",
+      "event": "push",
+      "head_sha": "296b1d4e90891f70fd19841ce6f4e99cecc52110",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602656451",
+      "id": 30602656451,
+      "jobs": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602656451/job/91068459951",
+          "id": 91068459951,
+          "name": "publish",
+          "started_at": "2026-07-31T03:52:11Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Validate diversified portfolio worker",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Configure evidence commits",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Generate one-time portfolio relay certificate",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Receive and decrypt one-time portfolio credential capsule",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Destroy portfolio relay material after consumption",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": null,
+              "name": "Cool down API quota, publish diversified portfolio, and monitor paid sales",
+              "number": 9,
+              "status": "in_progress"
+            },
+            {
+              "conclusion": null,
+              "name": "Remove all local credential and product material",
+              "number": 10,
+              "status": "pending"
+            },
+            {
+              "conclusion": null,
+              "name": "Fail closed on public secret leakage",
+              "number": 11,
+              "status": "pending"
+            },
+            {
+              "conclusion": null,
+              "name": "Post Run actions/setup-python@v5",
+              "number": 21,
+              "status": "pending"
+            },
+            {
+              "conclusion": null,
+              "name": "Post Run actions/checkout@v4",
+              "number": 22,
+              "status": "pending"
+            }
+          ]
+        }
+      ],
+      "name": "Publish diversified AgentMart portfolio securely v2",
+      "path": ".github/workflows/agentmart-portfolio-relay-v2.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "in_progress",
+      "updated_at": "2026-07-31T03:52:11Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T03:51:27Z",
+      "event": "schedule",
+      "head_sha": "e6b7c348b86f29a4cf68f058fdf1dacacd4c9d27",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602628121",
+      "id": 30602628121,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:52:56Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602628121/job/91068377062",
+          "id": 91068377062,
+          "name": "select",
+          "started_at": "2026-07-31T03:51:36Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check out dedicated repository",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Test BountyHub selector",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Compile BountyHub selector",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Validate funded BountyHub tasks against GitHub",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit public candidate evidence",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Check out dedicated repository",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 13,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "BountyHub funded candidate selector",
+      "path": ".github/workflows/bountyhub-selector.yml",
+      "run_attempt": 1,
+      "run_number": 14,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:52:57Z"
+    },
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-07-31T03:49:08Z",
+      "event": "schedule",
+      "head_sha": "9d22430f261928ecaa1b24a7a07dcb5c07a021d8",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602530265",
+      "id": 30602530265,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:49:08Z",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602530265/job/91068091479",
+          "id": 91068091479,
+          "name": "probe",
+          "started_at": "2026-07-31T03:49:08Z",
+          "status": "completed",
+          "steps": []
+        }
+      ],
+      "name": "Probe AgentJob marketplace demand",
+      "path": ".github/workflows/probe-agentjob-posts.yml",
+      "run_attempt": 1,
+      "run_number": 11,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:49:09Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T03:48:10Z",
+      "event": "push",
+      "head_sha": "8516decebb7fc0d0e1737a5db6d96d9be51c2388",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602490413",
+      "id": 30602490413,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:48:29Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602490413/job/91068004261",
+          "id": 91068004261,
+          "name": "supersede",
+          "started_at": "2026-07-31T03:48:27Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run echo 'Superseding the old single-product AgentMart publication monitor.'",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 3,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Cancel superseded AgentMart publication monitor",
+      "path": ".github/workflows/cancel-agentmart-publication-monitor.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:48:30Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T03:47:56Z",
+      "event": "push",
+      "head_sha": "ad598af0a6ac75af0055874eb09913ace965baf9",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602479959",
+      "id": 30602479959,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:48:16Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602479959/job/91067973423",
+          "id": 91067973423,
+          "name": "supersede",
+          "started_at": "2026-07-31T03:48:13Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run echo 'Superseding the old single-product AgentMart monitor.'",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 3,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Cancel superseded AgentMart seller monitor",
+      "path": ".github/workflows/cancel-agentmart-seller-monitor.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:48:17Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T03:47:18Z",
+      "event": "schedule",
+      "head_sha": "08e95c83ed935266586c73bc1721cd44c7b89d23",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602454218",
+      "id": 30602454218,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:50:52Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602454218/job/91067862772",
+          "id": 91067862772,
+          "name": "radar",
+          "started_at": "2026-07-31T03:47:21Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check out dedicated repository",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run radar and selector tests",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Compile radar and selector",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Search and validate live GitHub bounty issues",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Apply zero-cost and anti-exfiltration policy",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Write diagnostic summary",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit candidate evidence and diagnostics",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Preserve validation or scan failure status",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Check out dedicated repository",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "GitHub-native open bounty radar",
+      "path": ".github/workflows/github-bounty-radar.yml",
+      "run_attempt": 1,
+      "run_number": 13,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:50:52Z"
+    },
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-07-31T03:46:08Z",
+      "event": "schedule",
+      "head_sha": "ec9a57dc3cdb190699a42bbdae8748b7bfc888f4",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602402951",
+      "id": 30602402951,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:46:08Z",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602402951/job/91067711744",
+          "id": 91067711744,
+          "name": "probe",
+          "started_at": "2026-07-31T03:46:08Z",
+          "status": "completed",
+          "steps": []
+        }
+      ],
+      "name": "Probe AgentJob published package",
+      "path": ".github/workflows/probe-agentjob-package.yml",
+      "run_attempt": 1,
+      "run_number": 6,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:46:09Z"
+    },
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-07-31T03:45:54Z",
+      "event": "schedule",
+      "head_sha": "ec9a57dc3cdb190699a42bbdae8748b7bfc888f4",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602393016",
+      "id": 30602393016,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:45:54Z",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602393016/job/91067683188",
+          "id": 91067683188,
+          "name": "scan",
+          "started_at": "2026-07-31T03:45:54Z",
+          "status": "completed",
+          "steps": []
+        }
+      ],
+      "name": "Deep scan AgentJob buyer demand",
+      "path": ".github/workflows/agentjob-deep-demand.yml",
+      "run_attempt": 1,
+      "run_number": 4,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:45:55Z"
+    },
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-07-31T03:45:52Z",
+      "event": "schedule",
+      "head_sha": "ec9a57dc3cdb190699a42bbdae8748b7bfc888f4",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602391677",
+      "id": 30602391677,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:45:52Z",
+          "conclusion": "skipped",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602391677/job/91067678568",
+          "id": 91067678568,
+          "name": "probe",
+          "started_at": "2026-07-31T03:45:52Z",
+          "status": "completed",
+          "steps": []
+        }
+      ],
+      "name": "Probe Clawlancer public API",
+      "path": ".github/workflows/probe-clawlancer-api.yml",
+      "run_attempt": 1,
+      "run_number": 8,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:46:02Z"
+    },
+    {
+      "conclusion": "failure",
+      "created_at": "2026-07-31T03:41:33Z",
+      "event": "push",
+      "head_sha": "842e92fc65380fb6640e9edd3aaba0448bf4490d",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602208444",
+      "id": 30602208444,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:46:25Z",
+          "conclusion": "failure",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30602208444/job/91067140516",
+          "id": 91067140516,
+          "name": "publish",
+          "started_at": "2026-07-31T03:41:35Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Validate diversified portfolio worker",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Configure evidence commits",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Generate one-time portfolio relay certificate",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Receive and decrypt one-time portfolio credential capsule",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Destroy portfolio relay material after consumption",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "failure",
+              "name": "Publish diversified portfolio and monitor paid sales",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Remove all local credential and product material",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Fail closed on public secret leakage",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 21,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 22,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Publish diversified AgentMart portfolio securely",
+      "path": ".github/workflows/agentmart-portfolio-relay.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:46:26Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T03:08:27Z",
+      "event": "push",
+      "head_sha": "f67acc87679c50aea701d9c4fb0c6c51968dc9b7",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30600808536",
+      "id": 30600808536,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:08:39Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30600808536/job/91062830331",
+          "id": 91062830331,
+          "name": "verify",
+          "started_at": "2026-07-31T03:08:29Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Verify public marketplace and product page",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit public visibility evidence",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 9,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Verify AgentMart product public visibility",
+      "path": ".github/workflows/agentmart-public-product-probe.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:08:40Z"
+    },
+    {
+      "conclusion": "cancelled",
+      "created_at": "2026-07-31T03:04:06Z",
+      "event": "push",
+      "head_sha": "ab4bd3b0447570c178d37ab77fb3f36dc61ae30f",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30600613556",
+      "id": 30600613556,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T03:48:25Z",
+          "conclusion": "cancelled",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30600613556/job/91062231912",
+          "id": 91062231912,
+          "name": "publish",
+          "started_at": "2026-07-31T03:04:08Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Validate publication retry worker",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Configure evidence commits",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Generate one-time publication relay certificate",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Receive and decrypt one-time credential capsule",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Destroy publication relay material after consumption",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "cancelled",
+              "name": "Publish existing product and monitor paid sales",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Remove all local credential material",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Fail closed on public secret leakage",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 21,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 22,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Retry verified AgentMart product publication securely",
+      "path": ".github/workflows/agentmart-publish-retry-relay.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T03:48:26Z"
+    },
+    {
+      "conclusion": "failure",
+      "created_at": "2026-07-31T02:55:17Z",
+      "event": "push",
+      "head_sha": "39c63562a1a4f92748b009ca8925f0be9cd7fd99",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30600228549",
+      "id": 30600228549,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T02:59:31Z",
+          "conclusion": "failure",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30600228549/job/91061067946",
+          "id": 91061067946,
+          "name": "resume",
+          "started_at": "2026-07-31T02:55:26Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Validate resume worker",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Configure evidence commits",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Generate one-time relay certificate",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Receive and decrypt one-time credential capsule",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Destroy relay material in repository after consumption",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "failure",
+              "name": "Configure, publish, and monitor the verified store",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Remove all local credential material",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Fail closed on public secret leakage",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 21,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 22,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Resume verified AgentMart store securely",
+      "path": ".github/workflows/agentmart-resume-relay.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T02:59:32Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T02:45:06Z",
+      "event": "push",
+      "head_sha": "40923d6dd4bc7582aa428575e9389944833b6e11",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30599789397",
+      "id": 30599789397,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T02:45:20Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30599789397/job/91059777060",
+          "id": 91059777060,
+          "name": "probe",
+          "started_at": "2026-07-31T02:45:14Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Fetch and classify public verification response",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit sanitized verification evidence",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 9,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Probe AgentMart verification response",
+      "path": ".github/workflows/agentmart-verification-probe.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T02:45:20Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T01:24:24Z",
+      "event": "push",
+      "head_sha": "28f7aa216b9c63a243588f2caa89f67e3fb8729b",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30596251819",
+      "id": 30596251819,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T01:24:35Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30596251819/job/91049139761",
+          "id": 91049139761,
+          "name": "fetch",
+          "started_at": "2026-07-31T01:24:28Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Validate and fetch official supplier contract",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Commit official supplier contract evidence",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 9,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Fetch Agentic Gateway supplier skill",
+      "path": ".github/workflows/agenticgateway-supplier-skill-fetch.yml",
+      "run_attempt": 1,
+      "run_number": 1,
+      "status": "completed",
+      "updated_at": "2026-07-31T01:24:36Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-31T01:20:08Z",
+      "event": "push",
+      "head_sha": "3fe4b047e27717880504c6081a738ea553e60723",
+      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30596063436",
+      "id": 30596063436,
+      "jobs": [
+        {
+          "completed_at": "2026-07-31T01:20:36Z",
+          "conclusion": "success",
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30596063436/job/91048571494",
+          "id": 91048571494,
+          "name": "inspect",
+          "started_at": "2026-07-31T01:20:11Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Query recent income workflow runs and jobs",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Verify no credential material and commit report",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 9,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "Inspect income workflow executions",
+      "path": ".github/workflows/actions-status-probe.yml",
+      "run_attempt": 1,
+      "run_number": 3,
+      "status": "completed",
+      "updated_at": "2026-07-31T01:20:37Z"
     },
     {
       "conclusion": "success",
@@ -344,7 +1807,7 @@
       "updated_at": "2026-07-31T01:02:11Z"
     },
     {
-      "conclusion": null,
+      "conclusion": "cancelled",
       "created_at": "2026-07-31T00:53:45Z",
       "event": "push",
       "head_sha": "be433f1645eeb3364b93eee975cfe1320760979c",
@@ -352,13 +1815,13 @@
       "id": 30594843931,
       "jobs": [
         {
-          "completed_at": null,
-          "conclusion": null,
+          "completed_at": "2026-07-31T03:48:11Z",
+          "conclusion": "cancelled",
           "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30594843931/job/91044864227",
           "id": 91044864227,
           "name": "sell",
           "started_at": "2026-07-31T00:53:48Z",
-          "status": "in_progress",
+          "status": "completed",
           "steps": [
             {
               "conclusion": "success",
@@ -391,34 +1854,40 @@
               "status": "completed"
             },
             {
-              "conclusion": null,
+              "conclusion": "cancelled",
               "name": "Register, verify, publish, answer buyers, and verify paid sales",
               "number": 6,
-              "status": "in_progress"
+              "status": "completed"
             },
             {
-              "conclusion": null,
+              "conclusion": "success",
               "name": "Remove plaintext temporary product and credentials",
               "number": 7,
-              "status": "pending"
+              "status": "completed"
             },
             {
-              "conclusion": null,
+              "conclusion": "success",
               "name": "Fail closed on public credential or email leakage",
               "number": 8,
-              "status": "pending"
+              "status": "completed"
             },
             {
-              "conclusion": null,
+              "conclusion": "skipped",
               "name": "Post Run actions/setup-python@v5",
               "number": 15,
-              "status": "pending"
+              "status": "completed"
             },
             {
-              "conclusion": null,
+              "conclusion": "success",
               "name": "Post Run actions/checkout@v4",
               "number": 16,
-              "status": "pending"
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "status": "completed"
             }
           ]
         }
@@ -427,8 +1896,8 @@
       "path": ".github/workflows/agentmart-worker.yml",
       "run_attempt": 1,
       "run_number": 1,
-      "status": "in_progress",
-      "updated_at": "2026-07-31T00:53:48Z"
+      "status": "completed",
+      "updated_at": "2026-07-31T03:48:11Z"
     },
     {
       "conclusion": "success",
@@ -1455,801 +2924,6 @@
       "run_number": 2,
       "status": "completed",
       "updated_at": "2026-07-30T23:42:26Z"
-    },
-    {
-      "conclusion": "failure",
-      "created_at": "2026-07-30T23:41:56Z",
-      "event": "push",
-      "head_sha": "ff03f40217e620c3f79f00390454e2c844ffb793",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30591312859",
-      "id": 30591312859,
-      "jobs": [],
-      "name": ".github/workflows/repair-bothire-worker.yml",
-      "path": ".github/workflows/repair-bothire-worker.yml",
-      "run_attempt": 1,
-      "run_number": 9,
-      "status": "completed",
-      "updated_at": "2026-07-30T23:41:56Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T23:32:54Z",
-      "event": "schedule",
-      "head_sha": "fd6d004d18aeeb10a2f6dfbf41b85b3c90f8c28b",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590856101",
-      "id": 30590856101,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T23:32:54Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590856101/job/91032647144",
-          "id": 91032647144,
-          "name": "probe",
-          "started_at": "2026-07-30T23:32:55Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Callboard public inventory",
-      "path": ".github/workflows/callboard-public-probe.yml",
-      "run_attempt": 1,
-      "run_number": 12,
-      "status": "completed",
-      "updated_at": "2026-07-30T23:33:03Z"
-    },
-    {
-      "conclusion": null,
-      "created_at": "2026-07-30T23:30:22Z",
-      "event": "push",
-      "head_sha": "b1199da4515931ec3861ccb337b590bdd39a58ab",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590720079",
-      "id": 30590720079,
-      "jobs": [
-        {
-          "completed_at": null,
-          "conclusion": null,
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590720079/job/91032233719",
-          "id": 91032233719,
-          "name": "bothire",
-          "started_at": "2026-07-30T23:30:25Z",
-          "status": "in_progress",
-          "steps": [
-            {
-              "conclusion": "success",
-              "name": "Set up job",
-              "number": 1,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Run actions/checkout@v4",
-              "number": 2,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Run actions/setup-node@v4",
-              "number": 3,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Validate BotHire worker and encryption certificate",
-              "number": 4,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Configure evidence commits",
-              "number": 5,
-              "status": "completed"
-            },
-            {
-              "conclusion": null,
-              "name": "Publish paid services, claim suitable tasks, deliver requests, and verify USDC",
-              "number": 6,
-              "status": "in_progress"
-            },
-            {
-              "conclusion": null,
-              "name": "Remove private plaintext residue",
-              "number": 7,
-              "status": "pending"
-            },
-            {
-              "conclusion": null,
-              "name": "Fail closed on public credential leakage",
-              "number": 8,
-              "status": "pending"
-            },
-            {
-              "conclusion": null,
-              "name": "Post Run actions/setup-node@v4",
-              "number": 15,
-              "status": "pending"
-            },
-            {
-              "conclusion": null,
-              "name": "Post Run actions/checkout@v4",
-              "number": 16,
-              "status": "pending"
-            }
-          ]
-        },
-        {
-          "completed_at": "2026-07-30T23:30:31Z",
-          "conclusion": "failure",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590720079/job/91032233853",
-          "id": 91032233853,
-          "name": "agentgigs",
-          "started_at": "2026-07-30T23:30:24Z",
-          "status": "completed",
-          "steps": [
-            {
-              "conclusion": "success",
-              "name": "Set up job",
-              "number": 1,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Run actions/checkout@v4",
-              "number": 2,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Run actions/setup-node@v4",
-              "number": 3,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Validate AgentGigs worker and encryption certificate",
-              "number": 4,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Configure evidence commits",
-              "number": 5,
-              "status": "completed"
-            },
-            {
-              "conclusion": "failure",
-              "name": "Register, apply to suitable paid jobs, deliver accepted work, and verify earnings",
-              "number": 6,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Fail closed on public credential leakage",
-              "number": 7,
-              "status": "completed"
-            },
-            {
-              "conclusion": "skipped",
-              "name": "Post Run actions/setup-node@v4",
-              "number": 13,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Post Run actions/checkout@v4",
-              "number": 14,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Complete job",
-              "number": 15,
-              "status": "completed"
-            }
-          ]
-        }
-      ],
-      "name": "Resume autonomous income workers",
-      "path": ".github/workflows/income-recovery.yml",
-      "run_attempt": 1,
-      "run_number": 1,
-      "status": "in_progress",
-      "updated_at": "2026-07-30T23:30:25Z"
-    },
-    {
-      "conclusion": "failure",
-      "created_at": "2026-07-30T23:30:21Z",
-      "event": "push",
-      "head_sha": "b1199da4515931ec3861ccb337b590bdd39a58ab",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590719447",
-      "id": 30590719447,
-      "jobs": [],
-      "name": ".github/workflows/repair-bothire-worker.yml",
-      "path": ".github/workflows/repair-bothire-worker.yml",
-      "run_attempt": 1,
-      "run_number": 8,
-      "status": "completed",
-      "updated_at": "2026-07-30T23:30:21Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T23:18:00Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590068224",
-      "id": 30590068224,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T23:18:01Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30590068224/job/91030184031",
-          "id": 91030184031,
-          "name": "probe",
-          "started_at": "2026-07-30T23:18:01Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe AgentJob marketplace demand",
-      "path": ".github/workflows/probe-agentjob-posts.yml",
-      "run_attempt": 1,
-      "run_number": 10,
-      "status": "completed",
-      "updated_at": "2026-07-30T23:18:10Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T23:15:57Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30589958179",
-      "id": 30589958179,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T23:15:57Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30589958179/job/91029858868",
-          "id": 91029858868,
-          "name": "probe",
-          "started_at": "2026-07-30T23:16:03Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Clawlancer public API",
-      "path": ".github/workflows/probe-clawlancer-api.yml",
-      "run_attempt": 1,
-      "run_number": 7,
-      "status": "completed",
-      "updated_at": "2026-07-30T23:15:58Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T22:19:41Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30586740516",
-      "id": 30586740516,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T22:19:42Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30586740516/job/91019800605",
-          "id": 91019800605,
-          "name": "select",
-          "started_at": "2026-07-30T22:19:50Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "BountyHub funded candidate selector",
-      "path": ".github/workflows/bountyhub-selector.yml",
-      "run_attempt": 1,
-      "run_number": 12,
-      "status": "completed",
-      "updated_at": "2026-07-30T22:19:43Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T21:43:14Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30584500853",
-      "id": 30584500853,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T21:43:14Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30584500853/job/91012610173",
-          "id": 91012610173,
-          "name": "probe",
-          "started_at": "2026-07-30T21:43:25Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Callboard public inventory",
-      "path": ".github/workflows/callboard-public-probe.yml",
-      "run_attempt": 1,
-      "run_number": 11,
-      "status": "completed",
-      "updated_at": "2026-07-30T21:43:15Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T21:31:29Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30583730310",
-      "id": 30583730310,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T21:31:29Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30583730310/job/91010081681",
-          "id": 91010081681,
-          "name": "probe",
-          "started_at": "2026-07-30T21:31:36Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe AgentJob marketplace demand",
-      "path": ".github/workflows/probe-agentjob-posts.yml",
-      "run_attempt": 1,
-      "run_number": 9,
-      "status": "completed",
-      "updated_at": "2026-07-30T21:31:30Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T21:19:52Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30582948544",
-      "id": 30582948544,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T21:19:52Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30582948544/job/91007499238",
-          "id": 91007499238,
-          "name": "probe",
-          "started_at": "2026-07-30T21:20:02Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Clawlancer public API",
-      "path": ".github/workflows/probe-clawlancer-api.yml",
-      "run_attempt": 1,
-      "run_number": 6,
-      "status": "completed",
-      "updated_at": "2026-07-30T21:19:53Z"
-    },
-    {
-      "conclusion": null,
-      "created_at": "2026-07-30T20:05:01Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30577608807",
-      "id": 30577608807,
-      "jobs": [
-        {
-          "completed_at": null,
-          "conclusion": null,
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30577608807/job/91034975818",
-          "id": 91034975818,
-          "name": "provide",
-          "started_at": "2026-07-30T23:48:03Z",
-          "status": "in_progress",
-          "steps": [
-            {
-              "conclusion": "success",
-              "name": "Set up job",
-              "number": 1,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Run actions/checkout@v4",
-              "number": 2,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Run actions/setup-node@v4",
-              "number": 3,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Validate provider and encryption certificate",
-              "number": 4,
-              "status": "completed"
-            },
-            {
-              "conclusion": "success",
-              "name": "Configure evidence commits",
-              "number": 5,
-              "status": "completed"
-            },
-            {
-              "conclusion": null,
-              "name": "Register, publish services, claim suitable tasks, deliver requests, and verify USDC",
-              "number": 6,
-              "status": "in_progress"
-            },
-            {
-              "conclusion": null,
-              "name": "Remove private plaintext residue",
-              "number": 7,
-              "status": "pending"
-            },
-            {
-              "conclusion": null,
-              "name": "Fail closed on public credential leakage",
-              "number": 8,
-              "status": "pending"
-            },
-            {
-              "conclusion": null,
-              "name": "Post Run actions/setup-node@v4",
-              "number": 15,
-              "status": "pending"
-            },
-            {
-              "conclusion": null,
-              "name": "Post Run actions/checkout@v4",
-              "number": 16,
-              "status": "pending"
-            }
-          ]
-        }
-      ],
-      "name": "Run BotHire paid-work provider",
-      "path": ".github/workflows/bothire-worker.yml",
-      "run_attempt": 1,
-      "run_number": 4,
-      "status": "in_progress",
-      "updated_at": "2026-07-30T23:48:04Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T20:04:09Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30577544711",
-      "id": 30577544711,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T20:04:09Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30577544711/job/90989469291",
-          "id": 90989469291,
-          "name": "scan",
-          "started_at": "2026-07-30T20:04:10Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Trusted bounty program radar",
-      "path": ".github/workflows/trusted-bounty-radar.yml",
-      "run_attempt": 1,
-      "run_number": 9,
-      "status": "completed",
-      "updated_at": "2026-07-30T20:04:10Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T20:02:02Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30577390207",
-      "id": 30577390207,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T20:02:02Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30577390207/job/90988956586",
-          "id": 90988956586,
-          "name": "probe",
-          "started_at": "2026-07-30T20:02:03Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Callboard public inventory",
-      "path": ".github/workflows/callboard-public-probe.yml",
-      "run_attempt": 1,
-      "run_number": 10,
-      "status": "completed",
-      "updated_at": "2026-07-30T20:02:11Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T19:55:06Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576891103",
-      "id": 30576891103,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T19:55:07Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576891103/job/90987281062",
-          "id": 90987281062,
-          "name": "work",
-          "started_at": "2026-07-30T19:55:07Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Run TaskForce paid-work worker",
-      "path": ".github/workflows/taskforce-worker.yml",
-      "run_attempt": 1,
-      "run_number": 3,
-      "status": "completed",
-      "updated_at": "2026-07-30T19:55:15Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T19:53:20Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576764916",
-      "id": 30576764916,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T19:53:21Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576764916/job/90986862074",
-          "id": 90986862074,
-          "name": "select",
-          "started_at": "2026-07-30T19:53:21Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "BountyHub funded candidate selector",
-      "path": ".github/workflows/bountyhub-selector.yml",
-      "run_attempt": 1,
-      "run_number": 11,
-      "status": "completed",
-      "updated_at": "2026-07-30T19:53:21Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T19:51:46Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576651543",
-      "id": 30576651543,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T19:51:47Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576651543/job/90986486967",
-          "id": 90986486967,
-          "name": "probe",
-          "started_at": "2026-07-30T19:51:47Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe AgentJob marketplace demand",
-      "path": ".github/workflows/probe-agentjob-posts.yml",
-      "run_attempt": 1,
-      "run_number": 8,
-      "status": "completed",
-      "updated_at": "2026-07-30T19:51:47Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T19:48:58Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576450409",
-      "id": 30576450409,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T19:48:59Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576450409/job/90985813680",
-          "id": 90985813680,
-          "name": "radar",
-          "started_at": "2026-07-30T19:48:59Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "GitHub-native open bounty radar",
-      "path": ".github/workflows/github-bounty-radar.yml",
-      "run_attempt": 1,
-      "run_number": 11,
-      "status": "completed",
-      "updated_at": "2026-07-30T19:48:59Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T19:47:03Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576314752",
-      "id": 30576314752,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T19:47:04Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576314752/job/90985364401",
-          "id": 90985364401,
-          "name": "probe",
-          "started_at": "2026-07-30T19:47:04Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe AgentJob published package",
-      "path": ".github/workflows/probe-agentjob-package.yml",
-      "run_attempt": 1,
-      "run_number": 5,
-      "status": "completed",
-      "updated_at": "2026-07-30T19:47:14Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T19:46:21Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576266565",
-      "id": 30576266565,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T19:46:21Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576266565/job/90985199918",
-          "id": 90985199918,
-          "name": "scan",
-          "started_at": "2026-07-30T19:46:22Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Deep scan AgentJob buyer demand",
-      "path": ".github/workflows/agentjob-deep-demand.yml",
-      "run_attempt": 1,
-      "run_number": 3,
-      "status": "completed",
-      "updated_at": "2026-07-30T19:46:22Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T19:46:13Z",
-      "event": "schedule",
-      "head_sha": "f6938fe8d7abf40f2775bb7b1f5a8b3d6461fdf4",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576257240",
-      "id": 30576257240,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T19:46:13Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30576257240/job/90985168731",
-          "id": 90985168731,
-          "name": "probe",
-          "started_at": "2026-07-30T19:46:14Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Clawlancer public API",
-      "path": ".github/workflows/probe-clawlancer-api.yml",
-      "run_attempt": 1,
-      "run_number": 5,
-      "status": "completed",
-      "updated_at": "2026-07-30T19:46:14Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T17:56:27Z",
-      "event": "schedule",
-      "head_sha": "bd9b1d9da97082b6955c7e2c22b453daee5fb08a",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30568204309",
-      "id": 30568204309,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T17:56:28Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30568204309/job/90957916944",
-          "id": 90957916944,
-          "name": "probe",
-          "started_at": "2026-07-30T17:56:28Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Callboard public inventory",
-      "path": ".github/workflows/callboard-public-probe.yml",
-      "run_attempt": 1,
-      "run_number": 9,
-      "status": "completed",
-      "updated_at": "2026-07-30T17:56:37Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T17:47:51Z",
-      "event": "schedule",
-      "head_sha": "b48e84c226745ef3db9f9089155f35bb871001b5",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30567562881",
-      "id": 30567562881,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T17:47:52Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30567562881/job/90955783029",
-          "id": 90955783029,
-          "name": "probe",
-          "started_at": "2026-07-30T17:47:52Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe AgentJob marketplace demand",
-      "path": ".github/workflows/probe-agentjob-posts.yml",
-      "run_attempt": 1,
-      "run_number": 7,
-      "status": "completed",
-      "updated_at": "2026-07-30T17:48:01Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T17:43:57Z",
-      "event": "schedule",
-      "head_sha": "b48e84c226745ef3db9f9089155f35bb871001b5",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30567269101",
-      "id": 30567269101,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T17:43:57Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30567269101/job/90954814556",
-          "id": 90954814556,
-          "name": "probe",
-          "started_at": "2026-07-30T17:43:58Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "Probe Clawlancer public API",
-      "path": ".github/workflows/probe-clawlancer-api.yml",
-      "run_attempt": 1,
-      "run_number": 4,
-      "status": "completed",
-      "updated_at": "2026-07-30T17:43:58Z"
-    },
-    {
-      "conclusion": "skipped",
-      "created_at": "2026-07-30T16:50:36Z",
-      "event": "schedule",
-      "head_sha": "af9f2d2167f00920bb619619f7b738d4520a97bf",
-      "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30563288912",
-      "id": 30563288912,
-      "jobs": [
-        {
-          "completed_at": "2026-07-30T16:50:36Z",
-          "conclusion": "skipped",
-          "html_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30563288912/job/90941482284",
-          "id": 90941482284,
-          "name": "select",
-          "started_at": "2026-07-30T16:50:37Z",
-          "status": "completed",
-          "steps": []
-        }
-      ],
-      "name": "BountyHub funded candidate selector",
-      "path": ".github/workflows/bountyhub-selector.yml",
-      "run_attempt": 1,
-      "run_number": 10,
-      "status": "completed",
-      "updated_at": "2026-07-30T16:50:37Z"
     }
   ],
   "writes_performed": []
