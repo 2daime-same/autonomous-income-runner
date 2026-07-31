@@ -1,0 +1,1854 @@
+{
+  "assets": {
+    "https://agenticgateway.io/_next/static/chunks/3608-2cd4155b8d39b625.js": {
+      "bytes": 121305,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3608],{53101:function(t,e,i){\"use strict\";var n,s;t.exports=(null==(n=i.g.process)?void 0:n.env)&&\"object\"==typeof(null==(s=i.g.process)?void 0:s.env)?i.g.process:i(2940)},2940:function(t){!function(){var e={229:function(t){var e,i,n,s=t.exports={};function r(){throw Error(\"setTimeout has not been defined\")}function o(){throw Error(\"clearTimeout has not been defined\")}function a(t){if(e===setTimeout)return setTimeout(t,0);if((e===r||!e)&&setTimeout)return e=setTimeout,setTimeout(t,0);try{return e(t,0)}catch(i){try{return e.call(null,t,0)}catch(i){return e.call(this,t,0)}}}!function(){try{e=\"function\"==typeof setTimeout?setTimeout:r}catch(t){e=r}try{i=\"function\"==typeof clearTimeout?clearTimeout:o}catch(t){i=o}}();var l=[],h=!1,u=-1;function d(){h&&n&&(h=!1,n.length?l=n.concat(l):u=-1,l.length&&c())}function c(){if(!h){var t=a(d);h=!0;for(var e=l.length;e;){for(n=l,l=[];++u<e;)n&&n[u].run();u=-1,e=l.length}n=null,h=!1,function(t){if(i===clearTimeout)return clearTimeout(t);if((i===o||!i)&&clearTimeout)return i=clearTimeout,clearTimeout(t);try{i(t)}catch(e){try{return i.call(null,t)}catch(e){return i.call(this,t)}}}(t)}}function p(t,e){this.fun=t,this.array=e}function m(){}s.nextTick=function(t){var e=Array(arguments.length-1);if(arguments.length>1)for(var i=1;i<arguments.length;i++)e[i-1]=arguments[i];l.push(new p(t,e)),1!==l.length||h||a(c)},p.prototype.run=function(){this.fun.apply(null,this.array)},s.title=\"browser\",s.browser=!0,s.env={},s.argv=[],s.version=\"\",s.versions={},s.on=m,s.addListener=m,s.once=m,s.off=m,s.removeListener=m,s.removeAllListeners=m,s.emit=m,s.prependListener=m,s.prependOnceListener=m,s.listeners=function(t){return[]},s.binding=function(t){throw Error(\"process.binding is not supported\")},s.cwd=function(){return\"/\"},s.chdir=function(t){throw Error(\"process.chdir is not supported\")},s.umask=function(){return 0}}},i={};function n(t){var s=i[t];if(void 0!==s)return s.exports;var r=i[t]={exports:{}},o=!0;try{e[t](r,r.exports,n),o=!1}finally{o&&delete i[t]}return r.exports}n.ab=\"//\";var s=n(229);t.exports=s}()},68611:function(t,e,i){\"use strict\";i.d(e,{oO:function(){return r}});var n=i(25540),s=i(60300);function r(){let t=!(arguments.length>0)||void 0===arguments[0]||arguments[0],e=(0,n.useContext)(s.O);if(null===e)return[!0,null];let{isPresent:i,onExitComplete:r,register:o}=e,a=(0,n.useId)();(0,n.useEffect)(()=>{if(t)return o(a)},[t]);let l=(0,n.useCallback)(()=>t&&r&&r(a),[a,r,t]);return!i&&r?[!1,l]:[!0]}},34293:function(t,e,i){\"use strict\";i.d(e,{p:function(){return n}});let n=(0,i(25540).createContext)({})},35184:function(t,e,i){\"use strict\";i.d(e,{_:function(){return n}});let n=(0,i(25540).createContext)({transformPagePoint:t=>t,isStatic:!1,reducedMotion:\"never\"})},60300:function(t,e,i){\"use strict\";i.d(e,{O:function(){return n}});let n=(0,i(25540).createContext)(null)},53608:function(t,e,i){\"use strict\";let n,s,r;i.d(e,{E:function(){return rQ}});let o=[\"transformPerspective\",\"x\",\"y\",\"z\",\"translateX\",\"translateY\",\"translateZ\",\"scale\",\"scaleX\",\"scaleY\",\"rotate\",\"rotateX\",\"rotateY\",\"rotateZ\",\"skew\",\"skewX\",\"skewY\"],a=new Set(o),l=(t,e,i)=>i>e?e:i<t?t:i,h={test:t=>\"number\"==typeof t,parse:parseFloat,transform:t=>t},u={...h,transform:t=>l(0,1,t)},d={...h,default:1},c=t=>Math.round(1e5*t)/1e5,p=/-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)/gu,m=/^(?:#[\\da-f]{3,8}|(?:rgb|hsl)a?\\((?:-?[\\d.]+%?[,\\s]+){2}-?[\\d.]+%?\\s*(?:[,/]\\s*)?(?:\\b\\d+(?:\\.\\d+)?|\\.\\d+)?%?\\))$/iu,f=(t,e)=>i=>!!(\"string\"==typeof i&&m.test(i)&&i.startsWith(t)||e&&null!=i&&Object.prototype.hasOwnProperty.call(i,e)),g=(t,e,i)=>n=>{if(\"string\"!=typeof n)return n;let[s,r,o,a]=n.match(p);return{[t]:parseFloat(s),[e]:parseFloat(r),[i]:parseFloat(o),alpha:void 0!==a?parseFloat(a):1}},v=t=>l(0,255,t),y={...h,transform:t=>Math.round(v(t))},x={test:f(\"rgb\",\"red\"),parse:g(\"red\",\"green\",\"blue\"),transform:({red:t,green:e,blue:i,alpha:n=1})=>\"rgba(\"+y.transform(t)+\", \"+y.transform(e)+\", \"+y.transform(i)+\", \"+c(u.transform(n))+\")\"},w={test:f(\"#\"),parse:function(t){let e=\"\",i=\"\",n=\"\",s=\"\";return t.length>5?(e=t.substring(1,3),i=t.substring(3,5),n=t.substring(5,7),s=t.substring(7,9)):(e=t.substring(1,2),i=t.substring(2,3),n=t.substring(3,4),s=t.substring(4,5),e+=e,i+=i,n+=n,s+=s),{red:parseInt(e,16),green:parseInt(i,16),blue:parseInt(n,16),alpha:s?parseInt(s,16)/255:1}},transform:x.transform},T=t=>({test:e=>\"string\"==typeof e&&e.endsWith(t)&&1===e.split(\" \").length,parse:parseFloat,transform:e=>`${e}${t}`}),P=T(\"deg\"),S=T(\"%\"),b=T(\"px\"),A=T(\"vh\"),E=T(\"vw\"),M={...S,parse:t=>S.parse(t)/100,transform:t=>S.transform(100*t)},V={test:f(\"hsl\",\"hue\"),parse:g(\"hue\",\"saturation\",\"lightness\"),transform:({hue:t,saturation:e,lightness:i,alpha:n=1})=>\"hsla(\"+Math.round(t)+\", \"+S.transform(c(e))+\", \"+S.transform(c(i))+\", \"+c(u.transform(n))+\")\"},C={test:t=>x.test(t)||w.test(t)||V.test(t),parse:t=>x.test(t)?x.parse(t):V.test(t)?V.parse(t):w.parse(t),transform:t=>\"string\"==typeof t?t:t.hasOwnProperty(\"red\")?x.transform(t):V.",
+      "url": "https://agenticgateway.io/_next/static/chunks/3608-2cd4155b8d39b625.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/4004-cabbc340c95289f0.js": {
+      "bytes": 124768,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4004],{54562:function(e,t){\"use strict\";function n(){return\"\"}Object.defineProperty(t,\"__esModule\",{value:!0}),Object.defineProperty(t,\"getDeploymentIdQueryOrEmptyString\",{enumerable:!0,get:function(){return n}})},66013:function(){\"trimStart\"in String.prototype||(String.prototype.trimStart=String.prototype.trimLeft),\"trimEnd\"in String.prototype||(String.prototype.trimEnd=String.prototype.trimRight),\"description\"in Symbol.prototype||Object.defineProperty(Symbol.prototype,\"description\",{configurable:!0,get:function(){var e=/\\((.*)\\)/.exec(this.toString());return e?e[1]:void 0}}),Array.prototype.flat||(Array.prototype.flat=function(e,t){return t=this.concat.apply([],this),e>1&&t.some(Array.isArray)?t.flat(e-1):t},Array.prototype.flatMap=function(e,t){return this.map(e,t).flat()}),Promise.prototype.finally||(Promise.prototype.finally=function(e){if(\"function\"!=typeof e)return this.then(e,e);var t=this.constructor||Promise;return this.then(function(n){return t.resolve(e()).then(function(){return n})},function(n){return t.resolve(e()).then(function(){throw n})})}),Object.fromEntries||(Object.fromEntries=function(e){return Array.from(e).reduce(function(e,t){return e[t[0]]=t[1],e},{})}),Array.prototype.at||(Array.prototype.at=function(e){var t=Math.trunc(e)||0;if(t<0&&(t+=this.length),!(t<0||t>=this.length))return this[t]}),Object.hasOwn||(Object.hasOwn=function(e,t){if(null==e)throw TypeError(\"Cannot convert undefined or null to object\");return Object.prototype.hasOwnProperty.call(Object(e),t)}),\"canParse\"in URL||(URL.canParse=function(e,t){try{return new URL(e,t),!0}catch(e){return!1}})},86972:function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),Object.defineProperty(t,\"addBasePath\",{enumerable:!0,get:function(){return u}});let r=n(84455),o=n(70065);function u(e,t){return(0,o.normalizePathTrailingSlash)((0,r.addPathPrefix)(e,\"\"))}(\"function\"==typeof t.default||\"object\"==typeof t.default&&null!==t.default)&&void 0===t.default.__esModule&&(Object.defineProperty(t.default,\"__esModule\",{value:!0}),Object.assign(t.default,t),e.exports=t.default)},14564:function(e,t){\"use strict\";function n(e){var t,n;t=self.__next_s,n=()=>{e()},t&&t.length?t.reduce((e,t)=>{let[n,r]=t;return e.then(()=>new Promise((e,t)=>{let o=document.createElement(\"script\");if(r)for(let e in r)\"children\"!==e&&o.setAttribute(e,r[e]);n?(o.src=n,o.onload=()=>e(),o.onerror=t):r&&(o.innerHTML=r.children,setTimeout(e)),document.head.appendChild(o)}))},Promise.resolve()).catch(e=>{console.error(e)}).then(()=>{n()}):n()}Object.defineProperty(t,\"__esModule\",{value:!0}),Object.defineProperty(t,\"appBootstrap\",{enumerable:!0,get:function(){return n}}),window.next={version:\"14.2.35\",appDir:!0},(\"function\"==typeof t.default||\"object\"==typeof t.default&&null!==t.default)&&void 0===t.default.__esModule&&(Object.defineProperty(t.default,\"__esModule\",{value:!0}),Object.assign(t.default,t),e.exports=t.default)},77842:function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),Object.defineProperty(t,\"callServer\",{enumerable:!0,get:function(){return o}});let r=n(99919);async function o(e,t){let n=(0,r.getServerActionDispatcher)();if(!n)throw Error(\"Invariant: missing action dispatcher.\");return new Promise((r,o)=>{n({actionId:e,actionArgs:t,resolve:r,reject:o})})}(\"function\"==typeof t.default||\"object\"==typeof t.default&&null!==t.default)&&void 0===t.default.__esModule&&(Object.defineProperty(t.default,\"__esModule\",{value:!0}),Object.assign(t.default,t),e.exports=t.default)},41835:function(e,t,n){\"use strict\";let r,o;Object.defineProperty(t,\"__esModule\",{value:!0}),Object.defineProperty(t,\"hydrate\",{enumerable:!0,get:function(){return C}});let u=n(58873),l=n(40454),a=n(22975);n(66013);let i=u._(n(77950)),c=l._(n(25540)),s=n(31335),f=n(55607),d=u._(n(76516)),p=n(77842),h=n(41059),y=n(17931);n(64232);let _=window.console.error;window.console.error=function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];(0,h.isNextRouterError)(t[0])||_.apply(window.console,t)},window.addEventListener(\"error\",e=>{if((0,h.isNextRouterError)(e.error)){e.preventDefault();return}});let v=document,b=new TextEncoder,g=!1,m=!1,R=null;function P(e){if(0===e[0])r=[];else if(1===e[0]){if(!r)throw Error(\"Unexpected server data: missing bootstrap script.\");o?o.enqueue(b.encode(e[1])):r.push(e[1])}else 2===e[0]&&(R=e[1])}let j=function(){o&&!m&&(o.close(),m=!0,r=void 0),g=!0};\"loading\"===document.readyState?document.addEventListener(\"DOMContentLoaded\",j,!1):j();let O=self.__next_f=self.__next_f||[];O.forEach(P),O.push=P;let E=new ReadableStream({start(e){r&&(r.forEach(t=>{e.enqueue(b.encode(t))}),g&&!m&&(e.close(),m=!0,r=void 0)),o=e}}),S=(0,s.createFromReadableStream)(E,{callServer:p.callServer});function w(){return(0,c.use)(S)}let M=c.default.StrictMode;function T(e){let{children:t}=e;return t}function C(){let e=(0,y.createMutableActionQueue)(),t=(0,a.jsx)(M,{children:(0,a.jsx)(f",
+      "url": "https://agenticgateway.io/_next/static/chunks/4004-cabbc340c95289f0.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/4951-b45395fffa561228.js": {
+      "bytes": 7954,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/api/auth/logout"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/api/auth/nonce"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/api/auth/refresh-token"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/api/auth/session"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/api/auth/verify"
+        }
+      ],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4951],{71410:function(){},50952:function(){},86585:function(){},41559:function(){},2838:function(){},23938:function(){},55233:function(e,t,n){\"use strict\";n.d(t,{default:function(){return J},a:function(){return B}});var r=n(22975),a=n(25540),i=n(95104),l=n(1095),u=n(44221),o=n(65224),c=n(45962),s=n(52824),d=n(94963),f=n(70838),w=n(84214),h=n(14311),g=n(67941);let v=\"ag-siwx-sessions\";async function p(){let e=await fetch(\"/api/auth/session\",{method:\"GET\",cache:\"no-store\",credentials:\"same-origin\"});if(!e.ok)return null;let t=await e.json();return(null==t?void 0:t.walletAddress)?t:null}async function m(){try{let e=await fetch(\"/api/auth/refresh-token\",{method:\"POST\",credentials:\"same-origin\"});if(!e.ok)return null;let t=await e.json();return(null==t?void 0:t.jwt)?t:null}catch(e){return null}}async function y(){try{await fetch(\"/api/auth/logout\",{method:\"POST\"})}finally{localStorage.removeItem(v)}}let S=new Set([\"eip155\",\"ethereum\",\"eth\"]);function E(e){let t=String(e).trim();return t?/^0x[0-9a-f]+$/i.test(t)?String(parseInt(t,16)):/^\\d+$/.test(t)?String(parseInt(t,10)):null:null}function j(e){if(\"string\"!=typeof e)return e;let t=e.trim();if(!t)return t;let n=t.split(\":\");if(n.length>1){let e=n[0].toLowerCase(),t=n.slice(1).join(\":\").trim();if(\"solana\"===e)return\"1\"===t?\"solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp\":\"solana:\".concat(t);if(S.has(e)){let e=E(t);return e?\"eip155:\".concat(e):\"eip155:\".concat(t)}return\"\".concat(e,\":\").concat(t)}let r=E(t);return r?\"eip155:\".concat(r):t}class x extends l.z{async verify(e){try{let t=e.message.toString();return(await (0,s.k)({message:t,signature:e.signature})).toLowerCase()===e.data.accountAddress.toLowerCase()}catch(e){return console.error(\"[SIWX] EIP155 local verification failed:\",e),!1}}constructor(...e){super(...e),this.chainNamespace=\"eip155\"}}function C(e){let t=new Map;for(let n of e)t.set(function(e){var t;return[j(e.data.chainId),e.data.accountAddress.toLowerCase(),null!==(t=e.data.nonce)&&void 0!==t?t:\"\",e.signature].join(\"|\")}(n),n);return Array.from(t.values())}function T(){try{let e=localStorage.getItem(v);return e?C(JSON.parse(e)):[]}catch(e){return[]}}function I(e){localStorage.setItem(v,JSON.stringify(C(e)))}class L extends u.F{async createMessage(e){return super.createMessage({...e,chainId:j(e.chainId)})}}let k=window.location.host,A=new o.e({messenger:new L({domain:k,uri:window.location.origin,getNonce:async()=>{let e=await fetch(\"/api/auth/nonce\",{method:\"POST\"}),{nonce:t}=await e.json();return t}}),verifiers:[new x,new c._],storage:{async add(e){var t;let n=e.message.toString(),r={...e.data,chainId:j(e.data.chainId)},a=await fetch(\"/api/auth/verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({message:n,signature:e.signature,data:r})});if(!a.ok){let e=await a.json().catch(()=>({}));throw console.error(\"[SIWX] Server verify failed:\",a.status,e),Error(null!==(t=e.error)&&void 0!==t?t:\"Verification failed\")}let i={...e,message:n,data:r};I([...T(),i]),window.dispatchEvent(new CustomEvent(\"siwx:verified\"))},async get(e,t){let n=Date.now(),r=j(e);return T().filter(e=>!(j(e.data.chainId)!==r||e.data.accountAddress.toLowerCase()!==t.toLowerCase()||e.data.expirationTime&&new Date(e.data.expirationTime).getTime()<n))},async set(e){I(e)},async delete(e,t){await y().catch(()=>{});let n=j(e);I(T().filter(e=>!(j(e.data.chainId)===n&&e.data.accountAddress.toLowerCase()===t.toLowerCase())))}}});(0,i.cz)({adapters:[g.Hx,g.tT],projectId:g.Sx,networks:[...g.QW],defaultNetwork:g.QW[0],metadata:{name:\"Agentic Gateway\",description:\"Crypto-Native API Marketplace for AI Agents\",url:\"https://agenticgateway.io\",icons:[]},siwx:A,features:{analytics:!1,email:!1,socials:!1}});let b=new d.S;function N(e){let{children:t,cookies:n}=e,a=(0,w.jx)(g.Hx.wagmiConfig,n);return(0,r.jsx)(h.F,{config:g.Hx.wagmiConfig,initialState:a,children:(0,r.jsx)(f.aH,{client:b,children:t})})}var P=n(39155);let O=(0,a.createContext)(null);function B(){return(0,a.useContext)(O)}function _(e){let{children:t}=e,{address:n,isConnected:l}=(0,i.Tj)(),{disconnect:u}=(0,i.qL)(),[o,c]=(0,a.useState)(null),[s,d]=(0,a.useState)(null),[f,w]=(0,a.useState)(null),[h,g]=(0,a.useState)(null),[v,S]=(0,a.useState)(!0),E=(0,a.useRef)(null),j=(0,a.useRef)(null),x=(0,a.useCallback)(async()=>{try{let e=await p();e?(w(e.walletAddress),c(e.jwt),d(e.role),g(e.walletType||\"evm\"),(0,P.uB)(e.jwt)):(w(null),c(null),d(null),g(null),(0,P.uB)(null))}catch(e){}finally{S(!1)}},[]);(0,a.useEffect)(()=>{x()},[x]),(0,a.useEffect)(()=>{let e=()=>x();return window.addEventListener(\"siwx:verified\",e),()=>window.removeEventListener(\"siwx:verified\",e)},[x]),(0,a.useEffect)(()=>{if(l&&n&&!f){let e=0;return E.current=setInterval(async()=>{e++;let t=await p();(null==t?void 0:t.walletAddress)?(clearInterval(E.current),E.current=null,w(t.walletAddress),c(t.jwt||null),d(t.role||null),g(t.walletType||\"evm\"),(0,P.uB)(t.jwt||null),S(!1)):e>=120&&(clearInterval(E.cur",
+      "url": "https://agenticgateway.io/_next/static/chunks/4951-b45395fffa561228.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/5734-7e0d522a91120d6c.js": {
+      "bytes": 3017168,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/convert/allowance"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/convert/build-approve"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/convert/build-transaction"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/convert/gas-price"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/convert/quotes"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/convert/tokens"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/fungible/price"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/generators/onrampurl"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/onramp/options"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/onramp/quote"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/profile/account"
+        }
+      ],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5734],{13301:function(e,t,r){\"use strict\";var n=r(91531),i=r(85653),a=r(83145);function o(e){var t=Object.create(null);return e&&Object.keys(e).forEach(function(r){if(\"default\"!==r){var n=Object.getOwnPropertyDescriptor(e,r);Object.defineProperty(t,r,n.get?n:{enumerable:!0,get:function(){return e[r]}})}}),t.default=e,Object.freeze(t)}var s=o(i),c=o(a);let l=n.secp256k1.ProjectivePoint,u=\"Expected Private\",d=\"Expected Point\",h=\"Expected Tweak\",f=\"Expected Signature\",p=\"Expected Extra Data (32 bytes)\",m=\"Expected Scalar\",b=new Uint8Array([255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,254,186,174,220,230,175,72,160,59,191,210,94,140,208,54,65,65]),g=new Uint8Array(32),y=new Uint8Array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,69,81,35,25,80,183,95,196,64,45,161,114,47,201,186,238]),w=BigInt(1);function v(e,t){for(let r=0;r<32;++r)if(e[r]!==t[r])return e[r]<t[r]?-1:1;return 0}function E(e){return!(!(e instanceof Uint8Array)||32!==e.length||v(e,b)>=0)}function C(e){return e instanceof Uint8Array&&64===e.length&&0>v(e.subarray(0,32),b)&&0>v(e.subarray(32,64),b)}function x(e){return e instanceof Uint8Array&&32===e.length}function A(e){return void 0===e||e instanceof Uint8Array&&32===e.length}function k(e){let t;if(\"bigint\"==typeof e)t=e;else if(\"number\"==typeof e&&Number.isSafeInteger(e)&&e>=0)t=BigInt(e);else if(\"string\"==typeof e){if(64!==e.length)throw Error(\"Expected 32 bytes of private scalar\");t=c.hexToNumber(e)}else if(e instanceof Uint8Array){if(32!==e.length)throw Error(\"Expected 32 bytes of private scalar\");t=c.bytesToNumberBE(e)}else throw TypeError(\"Expected valid private scalar\");if(t<0)throw Error(\"Expected private scalar >= 0\");return t}function S(e){return n.secp256k1.utils.normPrivateKeyToScalar(e)}function _(e,t,r){let n=O(e),i=k(t),a=l.BASE.multiplyAndAddUnsafe(n,i,w);if(!a)throw Error(\"Tweaked point at infinity\");return a.toRawBytes(r)}function I(e,t){return void 0===e?void 0===t||B(t):!!e}function T(e){try{return e()}catch(e){return null}}function P(e){return n.schnorr.utils.lift_x(c.bytesToNumberBE(e))}function O(e){return 32===e.length?P(e):l.fromHex(e)}function N(e,t){if(32===e.length!==t)return!1;try{if(t)return!!P(e);return!!l.fromHex(e)}catch(e){return!1}}function R(e){return N(e,!1)}function B(e){return N(e,!1)&&33===e.length}function M(e){return n.secp256k1.utils.isValidPrivateKey(e)}function U(e){return N(e,!0)}function D(e){if(!R(e))throw Error(d);return e.slice(1,33)}function L(e,t){if(!M(e))throw Error(u);return T(()=>n.secp256k1.getPublicKey(e,I(t)))}t.isPoint=R,t.isPointCompressed=B,t.isPrivate=M,t.isXOnlyPoint=U,t.pointAdd=function(e,t,r){if(!R(e)||!R(t))throw Error(d);return T(()=>{let n=O(e),i=O(t);return n.equals(i.negate())?null:n.add(i).toRawBytes(I(r,e))})},t.pointAddScalar=function(e,t,r){if(!R(e))throw Error(d);if(!E(t))throw Error(h);return T(()=>_(e,t,I(r,e)))},t.pointCompress=function(e,t){if(!R(e))throw Error(d);return O(e).toRawBytes(I(t,e))},t.pointFromScalar=L,t.pointMultiply=function(e,t,r){if(!R(e))throw Error(d);if(!E(t))throw Error(h);return T(()=>(function(e,t,r){let n=O(e),i=\"string\"==typeof t?t:c.bytesToHex(t),a=c.hexToNumber(i);return n.multiply(a).toRawBytes(r)})(e,t,I(r,e)))},t.privateAdd=function(e,t){if(!M(e))throw Error(u);if(!E(t))throw Error(h);return T(()=>(function(e,t){let r=S(e),i=k(t),a=c.numberToBytesBE(s.mod(r+i,n.secp256k1.CURVE.n),32);return n.secp256k1.utils.isValidPrivateKey(a)?a:null})(e,t))},t.privateNegate=function(e){if(!M(e))throw Error(u);return function(e){let t=S(e),r=c.numberToBytesBE(n.secp256k1.CURVE.n-t,32);return n.secp256k1.utils.isValidPrivateKey(r)?r:null}(e)},t.privateSub=function(e,t){if(!M(e))throw Error(u);if(!E(t))throw Error(h);return T(()=>(function(e,t){let r=S(e),i=k(t),a=c.numberToBytesBE(s.mod(r-i,n.secp256k1.CURVE.n),32);return n.secp256k1.utils.isValidPrivateKey(a)?a:null})(e,t))},t.recover=function(e,t,r,i){if(!x(e))throw Error(\"Expected Hash\");if(!C(t)||0===v(t.subarray(0,32),g)||0===v(t.subarray(32,64),g))throw Error(f);if(2&r&&!(t instanceof Uint8Array&&64===t.length&&0>v(t.subarray(0,32),y)))throw Error(\"Bad Recovery Id\");if(!U(t.subarray(0,32)))throw Error(f);let a=n.secp256k1.Signature.fromCompact(t).addRecoveryBit(r).recoverPublicKey(e);if(!a)throw Error(f);return a.toRawBytes(I(i))},t.sign=function(e,t,r){if(!M(t))throw Error(u);if(!x(e))throw Error(m);if(!A(r))throw Error(p);return n.secp256k1.sign(e,t,{extraEntropy:r}).toCompactRawBytes()},t.signRecoverable=function(e,t,r){if(!M(t))throw Error(u);if(!x(e))throw Error(m);if(!A(r))throw Error(p);let i=n.secp256k1.sign(e,t,{extraEntropy:r});return{signature:i.toCompactRawBytes(),recoveryId:i.recovery}},t.signSchnorr=function(e,t,r){if(!M(t))throw Error(u);if(!x(e))throw Error(m);if(!A(r))throw Error(p);return n.schnorr.sign(e,t,r)},t.verify=function(e,t,r,i){if(!R(t))throw Error(d);if(!C(r))throw Error(f);if(!x(e))throw Error(m);return n.secp256k1.verify(r,e,t,{lowS:i})},t.verifySchnorr=func",
+      "url": "https://agenticgateway.io/_next/static/chunks/5734-7e0d522a91120d6c.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/app/docs/page-d448a5432cc32b0d.js": {
+      "bytes": 36649,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/mcp"
+        },
+        {
+          "method": "POST",
+          "url": "https://api.agenticgateway.io/v1/proxy/:toolId"
+        },
+        {
+          "method": "POST",
+          "url": "https://api.agenticgateway.io/v1/proxy/:toolId\\nHeaders:"
+        },
+        {
+          "method": "POST",
+          "url": "https://api.agenticgateway.io/v1/proxy/TOOL_ID"
+        },
+        {
+          "method": "POST",
+          "url": "https://api.agenticgateway.io/v1/proxy/abc123"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/proxy/abc123"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/skill.md"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.agenticgateway.io/v1/supplier/status"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.agenticgateway.io/v1/tools"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.agenticgateway.io/v1/transactions/:requestId"
+        }
+      ],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2726],{70682:function(e,t,n){Promise.resolve().then(n.bind(n,25973))},25973:function(e,t,n){\"use strict\";n.r(t),n.d(t,{default:function(){return j}});var a=n(22975),s=n(25540),r=n(53608),i=n(68819);let o=\"https://api.agenticgateway.io\";function l(e){let{text:t}=e,[n,r]=(0,s.useState)(!1);return(0,a.jsx)(\"button\",{onClick:function(){navigator.clipboard.writeText(t),r(!0),setTimeout(()=>r(!1),2e3)},className:\"absolute top-2 right-2 text-[11px] font-medium text-brand-accent hover:text-brand-text bg-brand-surface/80 backdrop-blur px-2 py-0.5 rounded-md border border-white/[0.06] transition-colors\",children:n?\"Copied!\":\"Copy\"})}function d(e){let{snippets:t}=e,[n,r]=(0,s.useState)(0),o=t[n];return(0,a.jsxs)(\"div\",{className:\"my-3 rounded-lg border border-white/[0.06] overflow-hidden\",children:[(0,a.jsxs)(\"div\",{className:\"flex items-center bg-white/[0.02] border-b border-white/[0.06] overflow-x-auto\",children:[(0,a.jsx)(\"div\",{className:\"flex items-center gap-0 flex-1\",children:t.map((e,t)=>(0,a.jsx)(\"button\",{onClick:()=>r(t),className:\"px-3.5 py-2 text-xs font-mono whitespace-nowrap transition-all border-b-2 \".concat(t===n?\"text-brand-accent border-brand-accent bg-brand-accent/[0.06]\":\"text-brand-dim border-transparent hover:text-brand-muted\"),children:e.label},e.label))}),(0,a.jsx)(\"div\",{className:\"pr-2 shrink-0\",children:(0,a.jsx)(i.q,{text:o.code.trim()})})]}),(0,a.jsx)(i.Z,{code:o.code,language:o.lang,bare:!0})]})}let c=[{id:\"agent\",label:\"Agent Developer Guide\"},{id:\"supplier\",label:\"Supplier Integration Guide\"}],p=[{num:\"1\",title:\"Get the deposit address\",desc:\"Send USDC or USDT to the vault on Base L2 or Solana. Your balance is credited in seconds.\",request:\"curl https://api.agenticgateway.io/v1/deposit-address\",reqLang:\"bash\",response:'{\\n  \"vault_address\": \"0x1a2b3c...f9e8\",\\n  \"solana_vault_address\": \"DD7m...AAuo\"\\n}',resLang:\"json\"},{num:\"2\",title:\"Search for a tool\",desc:\"Find APIs by keyword, semantic intent, or AI reasoning. No auth needed.\",request:'curl \"https://api.agenticgateway.io/v1/tools/search?query=weather\"',reqLang:\"bash\",response:'{\\n  \"results\": [{\\n    \"id\": \"abc123\",\\n    \"name\": \"Weather API\",\\n    \"price\": \"0.05\",\\n    \"status\": \"active\"\\n  }]\\n}',resLang:\"json\"},{num:\"3\",title:\"Call it\",desc:\"Sign the request with your wallet. The gateway handles billing and proxying.\",request:'curl -X POST https://api.agenticgateway.io/v1/proxy/abc123 \\\\\\n  -H \"X-Signature: 0x...\" \\\\\\n  -H \"X-Timestamp: 1708300000000\" \\\\\\n  -d \\'{\"city\": \"London\"}\\'',reqLang:\"bash\",response:'{\\n  \"gateway\": {\\n    \"cost\": 0.05,\\n    \"balance\": 49.95,\\n    \"request_id\": \"d4e5f6...\"\\n  },\\n  \"data\": { \"temp\": 15, \"unit\": \"celsius\" }\\n}',resLang:\"json\"}],m=[{label:\"JavaScript\",lang:\"javascript\",code:\"import { Wallet, keccak256, toUtf8Bytes } from 'ethers';\\n\\nconst wallet = new Wallet(PRIVATE_KEY);\\nconst body = JSON.stringify({ city: 'London' });\\nconst timestamp = Date.now().toString();\\nconst message = timestamp + keccak256(toUtf8Bytes(body));\\nconst signature = await wallet.signMessage(message);\\n\\nconst res = await fetch('https://api.agenticgateway.io/v1/proxy/TOOL_ID', {\\n  method: 'POST',\\n  headers: {\\n    'Content-Type': 'application/json',\\n    'X-Timestamp': timestamp,\\n    'X-Signature': signature,\\n  },\\n  body,\\n});\"},{label:\"Python\",lang:\"python\",code:'from eth_account import Account\\nfrom eth_account.messages import encode_defunct\\nfrom web3 import Web3\\nimport json, time, requests\\n\\nbody = json.dumps({\"city\": \"London\"})\\ntimestamp = str(int(time.time() * 1000))\\nbody_hash = Web3.keccak(text=body).hex()\\nmessage = encode_defunct(text=timestamp + body_hash)\\nsig = Account.sign_message(message, private_key=PRIVATE_KEY)\\n\\nr = requests.post(\"https://api.agenticgateway.io/v1/proxy/TOOL_ID\",\\n    headers={\\n        \"Content-Type\": \"application/json\",\\n        \"X-Timestamp\": timestamp,\\n        \"X-Signature\": sig.signature.hex()\\n    },\\n    data=body)'},{label:\"cURL\",lang:\"bash\",code:'# Sign: message = timestamp + keccak256(body)\\n# Use ethers.js, web3.py, or any EIP-191 signer\\n\\nTIMESTAMP=$(date +%s000)\\nSIGNATURE=\"0x...\"  # from your signing tool\\n\\ncurl -X POST https://api.agenticgateway.io/v1/proxy/TOOL_ID \\\\\\n  -H \"Content-Type: application/json\" \\\\\\n  -H \"X-Timestamp: $TIMESTAMP\" \\\\\\n  -H \"X-Signature: $SIGNATURE\" \\\\\\n  -d \\'{\"city\": \"London\"}\\''}],h=[{id:\"ai-agents\",title:\"For AI Agents\",custom:\"ai-agents\"},{id:\"base-url\",title:\"Base URL\",custom:\"base-url\"},{id:\"quickstart\",title:\"Quick Start\",custom:\"quickstart\"},{id:\"auth\",title:\"Authentication\",custom:\"auth\"},{id:\"discovery\",title:\"Tool Discovery\",content:\"**List all tools** (no auth):\\n\\n```bash\\nGET /v1/tools\\n```\\n\\nReturns all active and degraded tools with name, description, price, and status.\\n\\n**Search tools** (no auth):\\n\\n```bash\\nGET /v1/tools/search?query=weather+forecast\\nGET /v1/tools/search?query=translate+text&mode=semantic\\nGET /v1/tools/search?query=I+need+to+resize+im",
+      "url": "https://agenticgateway.io/_next/static/chunks/app/docs/page-d448a5432cc32b0d.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/app/layout-5447374c552d92d4.js": {
+      "bytes": 10743,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/account"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/supplier/status"
+        }
+      ],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3185],{6056:function(e,t,n){Promise.resolve().then(n.bind(n,55233)),Promise.resolve().then(n.bind(n,5037)),Promise.resolve().then(n.t.bind(n,64428,23)),Promise.resolve().then(n.t.bind(n,78322,23)),Promise.resolve().then(n.t.bind(n,95022,23)),Promise.resolve().then(n.t.bind(n,78557,23))},83208:function(e,t,n){\"use strict\";n.d(t,{Z:function(){return o}});var r=n(22975),a=n(95104),s=n(55233);function o(){let{isAuthenticated:e,address:t,walletType:n,logout:o}=(0,s.a)(),{open:l}=(0,a.Ig)(),{isConnected:i}=(0,a.Tj)(),{disconnect:c}=(0,a.qL)();if(e&&t){let e=\"solana\"===n;return(0,r.jsxs)(\"div\",{className:\"flex items-center gap-2\",children:[(0,r.jsxs)(\"div\",{className:\"flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium border \".concat(e?\"bg-[#9945FF]/10 border-[#9945FF]/20 text-[#9945FF]\":\"bg-brand-accent/10 border-brand-accent/20 text-brand-accent\"),children:[e?(0,r.jsxs)(\"svg\",{className:\"w-3 h-3\",viewBox:\"0 0 397 311\",fill:\"currentColor\",children:[(0,r.jsx)(\"path\",{d:\"M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z\"}),(0,r.jsx)(\"path\",{d:\"M64.6 3.8C67.1 1.4 70.4 0 73.8 0h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1L64.6 3.8z\"}),(0,r.jsx)(\"path\",{d:\"M333.1 120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8 0-8.7 7-4.6 11.1l62.7 62.7c2.4 2.4 5.7 3.8 9.2 3.8h317.4c5.8 0 8.7-7 4.6-11.1l-62.7-62.7z\"})]}):(0,r.jsx)(\"svg\",{className:\"w-3 h-3\",viewBox:\"0 0 24 24\",fill:\"none\",stroke:\"currentColor\",strokeWidth:2.5,children:(0,r.jsx)(\"path\",{strokeLinecap:\"round\",strokeLinejoin:\"round\",d:\"M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"})}),t?\"\".concat(t.slice(0,4),\"...\").concat(t.slice(-4)):\"\"]}),(0,r.jsx)(\"button\",{onClick:o,className:\"text-brand-dim hover:text-red-400 transition-colors p-1 rounded-md hover:bg-white/[0.04]\",title:\"Disconnect\",children:(0,r.jsx)(\"svg\",{className:\"w-4 h-4\",fill:\"none\",viewBox:\"0 0 24 24\",stroke:\"currentColor\",strokeWidth:2,children:(0,r.jsx)(\"path\",{strokeLinecap:\"round\",strokeLinejoin:\"round\",d:\"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1\"})})})]})}return(0,r.jsx)(\"button\",{onClick:async()=>{i&&await Promise.allSettled([c()]),await l()},className:\"glow-button px-4 py-2 text-sm font-semibold\",children:\"Connect Wallet\"})}},5037:function(e,t,n){\"use strict\";n.d(t,{default:function(){return d}});var r=n(22975),a=n(25540),s=n(74182),o=n(90485),l=n(55233),i=n(39155),c=n(83208);function d(){let{jwt:e,role:t,isAuthenticated:n}=(0,l.a)(),d=(0,o.usePathname)(),[u,h]=(0,a.useState)(null),[m,f]=(0,a.useState)(null),[b,x]=(0,a.useState)(!1),p=(0,a.useRef)(null);function v(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],a=d===e||d.startsWith(e+\"/\");return n?(0,r.jsx)(s.default,{href:e,className:\"block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 \".concat(a?\"text-brand-accent bg-brand-accent/10\":\"text-brand-muted hover:text-brand-text hover:bg-white/[0.04]\"),children:t}):(0,r.jsxs)(s.default,{href:e,className:\"relative py-1 transition-colors duration-200 \".concat(a?\"text-brand-accent\":\"text-brand-muted hover:text-brand-text\"),children:[t,a&&(0,r.jsx)(\"span\",{className:\"absolute -bottom-0.5 left-0 right-0 h-px bg-brand-accent/60\"})]})}return(0,a.useEffect)(()=>{x(!1)},[d]),(0,a.useEffect)(()=>{if(b)return document.addEventListener(\"mousedown\",e),()=>document.removeEventListener(\"mousedown\",e);function e(e){p.current&&!p.current.contains(e.target)&&x(!1)}},[b]),(0,a.useEffect)(()=>{if(!e){h(null),f(null);return}i.hi.get(\"/v1/account\").then(e=>{null!=e.agent_balance&&h(e.agent_balance)}).catch(()=>{}),i.hi.get(\"/v1/supplier/status\").then(e=>{null!=e.available_balance&&f(e.available_balance+e.pending_balance)}).catch(()=>{})},[e,d]),(0,r.jsxs)(\"nav\",{className:\"sticky top-0 z-50 bg-brand-surface/60 backdrop-blur-xl border-b border-white/[0.06]\",children:[(0,r.jsxs)(\"div\",{className:\"max-w-6xl mx-auto px-6 h-16 flex items-center justify-between\",children:[(0,r.jsxs)(\"div\",{className:\"flex items-center gap-8\",children:[(0,r.jsxs)(s.default,{href:\"/\",className:\"flex items-center gap-2 group\",children:[(0,r.jsx)(\"span\",{className:\"w-2 h-2 rounded-full bg-brand-accent group-hover:animate-glow-pulse transition-shadow\"}),(0,r.jsx)(\"span\",{className:\"font-display text-lg font-bold text-brand-text tracking-tight\",children:\"Agentic Gateway\"})]}),(0,r.jsxs)(\"div\",{className:\"hidden sm:flex items-center gap-6 text-sm\",children:[v(\"/marketplace\",\"Marketplace\"),v(\"/docs\",\"Docs\"),n&&v(\"/dashboard\",\"Dashboard\"),n&&\"admin\"===t&&v(\"/admin\",\"Admin\")]})]}),(0,r.jsxs)(\"div\",{className:\"flex items-center gap-3\",children:[n&&e&&(0,r.jsxs)(\"div\",{className:\"hidden sm:flex items-center gap-2\",children:[null!=u&&(0,r.jsxs)(s.default,{href:\"/deposit\",className:\"flex items-center gap-1.5 bg-brand-accent/10 border border-brand-accent/20 text-brand-acce",
+      "url": "https://agenticgateway.io/_next/static/chunks/app/layout-5447374c552d92d4.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/app/marketplace/page-a8bb69b756be6472.js": {
+      "bytes": 9472,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/tools"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/tools/search?query="
+        }
+      ],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[7240],{48610:function(e,t,a){Promise.resolve().then(a.bind(a,24381))},24381:function(e,t,a){\"use strict\";a.r(t),a.d(t,{default:function(){return h}});var n=a(22975),s=a(25540),i=a(74182),r=a(53608),l=a(39155);let c={hidden:{opacity:0,y:16},show:{opacity:1,y:0}},o={show:{transition:{staggerChildren:.06}}},d=[{id:\"keyword\",label:\"Keyword\",desc:\"Fast text + tag matching\"},{id:\"semantic\",label:\"Semantic\",desc:\"Intent-based similarity\"},{id:\"agentic\",label:\"Agentic\",desc:\"AI-powered reasoning\"}];function h(){var e;let[t,a]=(0,s.useState)([]),[h,m]=(0,s.useState)(null),[x,u]=(0,s.useState)(\"\"),[b,p]=(0,s.useState)(\"keyword\"),[g,y]=(0,s.useState)(!0),[v,f]=(0,s.useState)(!1),[j,w]=(0,s.useState)(null);(0,s.useEffect)(()=>{l.hi.get(\"/v1/tools\").then(e=>{Array.isArray(e)?a(e):w(\"Failed to load tools\")}).catch(()=>w(\"Failed to load tools\")).finally(()=>y(!1))},[]);let N=(0,s.useCallback)(async(e,t)=>{if(!e.trim()){m(null);return}f(!0);try{let a=await l.hi.get(\"/v1/tools/search?query=\".concat(encodeURIComponent(e),\"&mode=\").concat(t));a.results?m(a.results):m([])}catch(e){m([])}f(!1)},[]);(0,s.useEffect)(()=>{if(!x.trim()){m(null);return}if(\"keyword\"===b){let e=setTimeout(()=>N(x,b),200);return()=>clearTimeout(e)}},[x,b,N]);let k=null!==h?h:t;return(0,n.jsxs)(\"div\",{className:\"max-w-6xl mx-auto px-6 py-16\",children:[(0,n.jsxs)(r.E.div,{className:\"text-center mb-12\",initial:{opacity:0,y:16},animate:{opacity:1,y:0},transition:{duration:.5},children:[(0,n.jsx)(\"h1\",{className:\"section-heading mb-3\",children:\"API Marketplace\"}),(0,n.jsxs)(\"p\",{className:\"text-brand-muted\",children:[\"Browse \",t.length,\" available tool\",1!==t.length?\"s\":\"\",\". Click any tool to view details and try it live.\"]})]}),(0,n.jsxs)(r.E.div,{className:\"max-w-xl mx-auto mb-12\",initial:{opacity:0,y:12},animate:{opacity:1,y:0},transition:{duration:.4,delay:.1},children:[(0,n.jsx)(\"form\",{onSubmit:function(e){e.preventDefault(),x.trim()&&N(x,b)},role:\"search\",\"aria-label\":\"Search API tools\",children:(0,n.jsxs)(\"div\",{className:\"relative\",children:[(0,n.jsx)(\"svg\",{className:\"absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-dim\",fill:\"none\",viewBox:\"0 0 24 24\",stroke:\"currentColor\",strokeWidth:2,\"aria-hidden\":\"true\",children:(0,n.jsx)(\"path\",{strokeLinecap:\"round\",strokeLinejoin:\"round\",d:\"M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z\"})}),(0,n.jsx)(\"input\",{type:\"search\",placeholder:\"agentic\"===b?\"Describe what you need in plain English...\":\"semantic\"===b?\"Search by intent...\":\"Search tools...\",value:x,onChange:e=>u(e.target.value),className:\"input-dark pl-10 pr-24\"}),\"semantic\"===b&&x.trim()&&(0,n.jsx)(\"button\",{type:\"submit\",disabled:v,className:\"absolute right-2 top-1/2 -translate-y-1/2 glow-button px-3 py-1.5 text-xs disabled:opacity-50\",children:v?\"Searching...\":\"Search\"}),\"agentic\"===b&&v&&(0,n.jsxs)(\"span\",{className:\"absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-xs text-brand-accent\",children:[(0,n.jsxs)(\"svg\",{className:\"w-3.5 h-3.5 animate-spin\",fill:\"none\",viewBox:\"0 0 24 24\",children:[(0,n.jsx)(\"circle\",{className:\"opacity-25\",cx:\"12\",cy:\"12\",r:\"10\",stroke:\"currentColor\",strokeWidth:\"4\"}),(0,n.jsx)(\"path\",{className:\"opacity-75\",fill:\"currentColor\",d:\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z\"})]}),\"Thinking...\"]}),v&&\"keyword\"===b&&(0,n.jsx)(\"span\",{className:\"absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-brand-dim\",children:\"Searching...\"})]})}),(0,n.jsxs)(\"div\",{className:\"flex items-center gap-2 mt-3\",children:[(0,n.jsx)(\"button\",{disabled:v,onClick:()=>{p(\"keyword\"),x.trim()&&N(x,\"keyword\")},className:\"px-3 py-1.5 rounded-lg text-xs font-medium transition-all disabled:opacity-50 \".concat(\"keyword\"===b?\"bg-white/[0.08] text-brand-text border border-white/[0.1]\":\"text-brand-dim hover:text-brand-muted\"),children:\"Keyword\"}),(0,n.jsx)(r.E.button,{disabled:v,onClick:()=>{p(\"agentic\"),x.trim()&&N(x,\"agentic\")},animate:\"agentic\"!==b?{boxShadow:[\"0 0 0px rgba(56,209,159,0)\",\"0 0 14px rgba(56,209,159,0.18)\",\"0 0 0px rgba(56,209,159,0)\"]}:{},transition:\"agentic\"!==b?{duration:2.5,repeat:1/0,ease:\"easeInOut\"}:{},whileHover:{scale:1.04},whileTap:{scale:.97},className:\"relative px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer disabled:opacity-50 \".concat(\"agentic\"===b?\"bg-gradient-to-r from-brand-accent/20 to-purple-500/20 text-brand-accent border border-brand-accent/30 shadow-[0_0_12px_rgba(56,209,159,0.15)]\":\"bg-brand-accent/[0.06] text-brand-accent/80 border border-brand-accent/20 hover:text-brand-accent hover:border-brand-accent/35 hover:bg-brand-accent/10\"),children:\"Try AI Search\"}),(0,n.jsx)(\"button\",{disabled:v,onClick:()=>{p(\"semantic\"),m(null)},className:\"px-3 py-1.5 rounded-lg text-xs font-medium transition-all disabled:opacity-50 \".concat(\"semantic\"===b?\"bg-brand-blue/10 text-brand-blue border border-brand-blue/20\":\"text-brand-dim hover:text-brand-muted\"),children:\"Semantic\"}),(0,n.jsx)(\"span\",{classN",
+      "url": "https://agenticgateway.io/_next/static/chunks/app/marketplace/page-a8bb69b756be6472.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/app/page-3b40015587543efe.js": {
+      "bytes": 33094,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [
+        {
+          "method": "GET",
+          "url": "https://api.agenticgateway.io/v1/deposit-address"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/mcp"
+        },
+        {
+          "method": "POST",
+          "url": "https://api.agenticgateway.io/v1/proxy/abc"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/skill.md"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/supplier-skill.md"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.agenticgateway.io/v1/tools/search?query=weather"
+        },
+        {
+          "method": "UNKNOWN",
+          "url": "https://api.agenticgateway.io/v1/tools/search?query=weather"
+        }
+      ],
+      "status": 200,
+      "text_preview": "(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1931],{95577:function(e,t,a){Promise.resolve().then(a.bind(a,87446))},87446:function(e,t,a){\"use strict\";a.r(t),a.d(t,{default:function(){return j}});var n=a(22975),s=a(25540),r=a(74182),i=a(53608),l=a(55233),o=a(68819);let d=\"https://api.agenticgateway.io\";function c(e){let{text:t}=e,[a,r]=(0,s.useState)(!1);return(0,n.jsx)(\"button\",{onClick:function(){navigator.clipboard.writeText(t),r(!0),setTimeout(()=>r(!1),2e3)},className:\"absolute top-2.5 right-2.5 text-[11px] font-medium text-brand-accent hover:text-brand-text bg-brand-surface/80 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06] transition-colors\",children:a?\"Copied!\":\"Copy\"})}let x={hidden:{opacity:0,y:24},show:{opacity:1,y:0}},m={show:{transition:{staggerChildren:.1}}},h=[{num:\"1\",label:\"Deposit\",endpoint:\"GET /v1/deposit-address\",desc:\"Send USDC or USDT to the vault on Base L2 or Solana\",response:'{ \"vault_address\": \"0x1a2b...f9e8\", \"solana_vault_address\": \"DD7m...AAuo\" }'},{num:\"2\",label:\"Search\",endpoint:\"GET /v1/tools/search?query=weather\",desc:\"Find any API by keyword or intent\",response:'[{ \"id\": \"abc\", \"name\": \"Weather API\", \"price\": \"0.05\" }]'},{num:\"3\",label:\"Call\",endpoint:\"POST /v1/proxy/abc\",desc:\"Sign with your wallet, get the result\",response:'{ \"gateway\": { \"cost\": 0.05 }, \"data\": { \"temp\": 15 } }'}],p=[{num:\"1\",label:\"Search\",endpoint:\"GET /v1/tools/search?query=weather\",desc:\"Find any API by keyword or intent\",response:'[{ \"id\": \"abc\", \"name\": \"Weather API\", \"x402_supported\": true }]'},{num:\"2\",label:\"Request\",endpoint:\"POST /v1/proxy/abc\",desc:\"Call without auth, receive a 402 challenge\",response:'{ \"x402Version\": 2, \"accepts\": [{ \"amount\": \"50000\" }] }'},{num:\"3\",label:\"Pay & Call\",endpoint:\"POST /v1/proxy/abc + PAYMENT-SIGNATURE\",desc:\"Sign USDC authorization, retry — done\",response:'{ \"gateway\": { \"payment_method\": \"x402\" }, \"data\": { \"temp\": 15 } }'}],b=[{label:\"Express\",lang:\"javascript\",code:\"app.use((req, res, next) => {\\n  if (req.headers['x-gateway-secret'] !== SECRET)\\n    return res.status(401).json({ error: 'Unauthorized' });\\n  next();\\n});\"},{label:\"FastAPI\",lang:\"python\",code:'@app.middleware(\"http\")\\nasync def verify(request: Request, call_next):\\n    if request.headers.get(\"x-gateway-secret\") != SECRET:\\n        raise HTTPException(401, \"Unauthorized\")\\n    return await call_next(request)'},{label:\"Flask\",lang:\"python\",code:'@app.before_request\\ndef verify_gateway():\\n    if request.headers.get(\"X-Gateway-Secret\") != SECRET:\\n        return jsonify(error=\"Unauthorized\"), 401'},{label:\"Go\",lang:\"go\",code:'func verifyGateway(next http.Handler) http.Handler {\\n  return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\\n    if r.Header.Get(\"X-Gateway-Secret\") != secret {\\n      http.Error(w, \"Unauthorized\", 401)\\n      return\\n    }\\n    next.ServeHTTP(w, r)\\n  })\\n}'}],u=[\"Manage API keys for every provider\",\"Set up billing accounts with credit cards\",\"Learn different auth schemes per API\",\"Handle payment disputes manually\",\"Monitor uptime yourself\",\"No recourse when APIs fail\"],g=[\"Deposit once or pay per request via x402\",\"One signature scheme for every call\",\"Automatic refunds when APIs fail\",\"Uptime monitored every 5 minutes\",\"Search tools by intent, not docs\",\"AI agents self-discover via one prompt\"],f=[{title:\"Money Back If It Breaks\",desc:\"Supplier returns an error or times out? Your balance is restored instantly. No disputes, no forms, no waiting.\",icon:(0,n.jsx)(\"svg\",{className:\"w-5 h-5\",fill:\"none\",viewBox:\"0 0 24 24\",stroke:\"currentColor\",strokeWidth:2,children:(0,n.jsx)(\"path\",{strokeLinecap:\"round\",strokeLinejoin:\"round\",d:\"M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6\"})})},{title:\"Your Wallet Is Your Key\",desc:\"No API keys to manage. No accounts to create. Your EVM wallet is your identity — sign once, call any API.\",icon:(0,n.jsx)(\"svg\",{className:\"w-5 h-5\",fill:\"none\",viewBox:\"0 0 24 24\",stroke:\"currentColor\",strokeWidth:2,children:(0,n.jsx)(\"path\",{strokeLinecap:\"round\",strokeLinejoin:\"round\",d:\"M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z\"})})},{title:\"We Watch So You Don't Have To\",desc:\"Every listed API is health-checked every 5 minutes. Degraded tools are flagged automatically before you call them.\",icon:(0,n.jsx)(\"svg\",{className:\"w-5 h-5\",fill:\"none\",viewBox:\"0 0 24 24\",stroke:\"currentColor\",strokeWidth:2,children:(0,n.jsx)(\"path\",{strokeLinecap:\"round\",strokeLinejoin:\"round\",d:\"M13 7h8m0 0v8m0-8l-8 8-4-4-6 6\"})})},{title:\"Two Ways to Pay. Zero Cards.\",desc:\"Pre-fund a balance for high-volume usage, or pay per request on-chain with x402 — no deposit needed. USDC on Base L2 or Solana.\",icon:(0,n.jsx)(\"svg\",{className:\"w-5 h-5\",fill:\"none\",viewBox:\"0 0 24 24\",stroke:\"currentColor\",strokeWidth:2,children:(0,n.jsx)(\"path\",{strokeLinecap:\"round\",strokeLinejoin:\"round\",d:\"M13 10V3L4 14h7v7l9-11h-7z\"})})}];function j(){let{jwt:e,role:t,isAuthen",
+      "url": "https://agenticgateway.io/_next/static/chunks/app/page-3b40015587543efe.js"
+    },
+    "https://agenticgateway.io/_next/static/chunks/b6890e83-d0817d09d5d511da.js": {
+      "bytes": 172837,
+      "content_type": "application/javascript; charset=UTF-8",
+      "ok": true,
+      "routes": [],
+      "status": 200,
+      "text_preview": "\"use strict\";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[598],{92783:function(e,t,n){var r,l=n(25540),a=n(80199),o={usingClientEntryPoint:!1,Events:null,Dispatcher:{current:null}};function i(e){var t=\"https://react.dev/errors/\"+e;if(1<arguments.length){t+=\"?args[]=\"+encodeURIComponent(arguments[1]);for(var n=2;n<arguments.length;n++)t+=\"&args[]=\"+encodeURIComponent(arguments[n])}return\"Minified React error #\"+e+\"; visit \"+t+\" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\"}var u=Object.assign,s=l.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,c=s.ReactCurrentDispatcher,f={pending:!1,data:null,method:null,action:null},d=[],p=-1;function m(e){return{current:e}}function h(e){0>p||(e.current=d[p],d[p]=null,p--)}function g(e,t){d[++p]=e.current,e.current=t}var y=Symbol.for(\"react.element\"),v=Symbol.for(\"react.portal\"),b=Symbol.for(\"react.fragment\"),k=Symbol.for(\"react.strict_mode\"),w=Symbol.for(\"react.profiler\"),S=Symbol.for(\"react.provider\"),C=Symbol.for(\"react.consumer\"),E=Symbol.for(\"react.context\"),x=Symbol.for(\"react.forward_ref\"),z=Symbol.for(\"react.suspense\"),P=Symbol.for(\"react.suspense_list\"),N=Symbol.for(\"react.memo\"),_=Symbol.for(\"react.lazy\"),L=Symbol.for(\"react.scope\");Symbol.for(\"react.debug_trace_mode\");var T=Symbol.for(\"react.offscreen\"),F=Symbol.for(\"react.legacy_hidden\"),M=Symbol.for(\"react.cache\");Symbol.for(\"react.tracing_marker\");var O=Symbol.iterator;function R(e){return null===e||\"object\"!=typeof e?null:\"function\"==typeof(e=O&&e[O]||e[\"@@iterator\"])?e:null}var D=m(null),A=m(null),I=m(null),U=m(null),B={$$typeof:E,_currentValue:null,_currentValue2:null,_threadCount:0,Provider:null,Consumer:null};function V(e,t){switch(g(I,t),g(A,e),g(D,null),e=t.nodeType){case 9:case 11:t=(t=t.documentElement)&&(t=t.namespaceURI)?s2(t):0;break;default:if(t=(e=8===e?t.parentNode:t).tagName,e=e.namespaceURI)t=s3(e=s2(e),t);else switch(t){case\"svg\":t=1;break;case\"math\":t=2;break;default:t=0}}h(D),g(D,t)}function Q(){h(D),h(A),h(I)}function $(e){null!==e.memoizedState&&g(U,e);var t=D.current,n=s3(t,e.type);t!==n&&(g(A,e),g(D,n))}function j(e){A.current===e&&(h(D),h(A)),U.current===e&&(h(U),B._currentValue=null)}var W=a.unstable_scheduleCallback,H=a.unstable_cancelCallback,q=a.unstable_shouldYield,K=a.unstable_requestPaint,Y=a.unstable_now,X=a.unstable_getCurrentPriorityLevel,G=a.unstable_ImmediatePriority,Z=a.unstable_UserBlockingPriority,J=a.unstable_NormalPriority,ee=a.unstable_LowPriority,et=a.unstable_IdlePriority,en=a.log,er=a.unstable_setDisableYieldValue,el=null,ea=null;function eo(e){if(\"function\"==typeof en&&er(e),ea&&\"function\"==typeof ea.setStrictMode)try{ea.setStrictMode(el,e)}catch(e){}}var ei=Math.clz32?Math.clz32:function(e){return 0==(e>>>=0)?32:31-(eu(e)/es|0)|0},eu=Math.log,es=Math.LN2,ec=128,ef=4194304;function ed(e){var t=42&e;if(0!==t)return t;switch(e&-e){case 1:return 1;case 2:return 2;case 4:return 4;case 8:return 8;case 16:return 16;case 32:return 32;case 64:return 64;case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return 4194176&e;case 4194304:case 8388608:case 16777216:case 33554432:return 62914560&e;case 67108864:return 67108864;case 134217728:return 134217728;case 268435456:return 268435456;case 536870912:return 536870912;case 1073741824:return 0;default:return e}}function ep(e,t){var n=e.pendingLanes;if(0===n)return 0;var r=0,l=e.suspendedLanes;e=e.pingedLanes;var a=134217727&n;return 0!==a?0!=(n=a&~l)?r=ed(n):0!=(e&=a)&&(r=ed(e)):0!=(n&=~l)?r=ed(n):0!==e&&(r=ed(e)),0===r?0:0!==t&&t!==r&&0==(t&l)&&((l=r&-r)>=(e=t&-t)||32===l&&0!=(4194176&e))?t:r}function em(e,t){return e.errorRecoveryDisabledLanes&t?0:0!=(e=-536870913&e.pendingLanes)?e:536870912&e?536870912:0}function eh(){var e=ec;return 0==(4194176&(ec<<=1))&&(ec=128),e}function eg(){var e=ef;return 0==(62914560&(ef<<=1))&&(ef=4194304),e}function ey(e){for(var t=[],n=0;31>n;n++)t.push(e);return t}function ev(e,t,n){e.pendingLanes|=t,e.suspendedLanes&=~t;var r=31-ei(t);e.entangledLanes|=t,e.entanglements[r]=1073741824|e.entanglements[r]|4194218&n}function eb(e,t){var n=e.entangledLanes|=t;for(e=e.entanglements;n;){var r=31-ei(n),l=1<<r;l&t|e[r]&t&&(e[r]|=t),n&=~l}}var ek=0;function ew(e){return 2<(e&=-e)?8<e?0!=(134217727&e)?32:268435456:8:2}var eS=Object.prototype.hasOwnProperty,eC=Math.random().toString(36).slice(2),eE=\"__reactFiber$\"+eC,ex=\"__reactProps$\"+eC,ez=\"__reactContainer$\"+eC,eP=\"__reactEvents$\"+eC,eN=\"__reactListeners$\"+eC,e_=\"__reactHandles$\"+eC,eL=\"__reactResources$\"+eC,eT=\"__reactMarker$\"+eC;function eF(e){delete e[eE],delete e[ex],delete e[eP],delete e[eN],delete e[e_]}function eM(e){var t=e[eE];if(t)return t;for(var n=e.parentNode;n;){if(t=n[ez]||n[eE]){if(n=t.alternate,null!==t.child||null!==n&&null!==n.child)for(e=ci(e);null!==e;){if(n=e[eE])return n;e=ci(e)}return t}n=(e=n).parentNode}return null}function eO(e){if(e=e[eE",
+      "url": "https://agenticgateway.io/_next/static/chunks/b6890e83-d0817d09d5d511da.js"
+    }
+  },
+  "generated_at": "2026-07-31T01:17:21+00:00",
+  "responses": {
+    "https://agenticgateway.io/": {
+      "bytes": 45651,
+      "content_type": "text/html; charset=utf-8",
+      "ok": true,
+      "status": 200,
+      "text_preview": "<!DOCTYPE html><html lang=\"en\" class=\"__variable_744198 __variable_ed3508 __variable_3c557b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/0ee0f0b3be32fc89.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-a7753d67055269f8.js\"/><script src=\"/_next/static/chunks/b6890e83-d0817d09d5d511da.js\" async=\"\"></script><script src=\"/_next/static/chunks/4004-cabbc340c95289f0.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-87124481d4a78b38.js\" async=\"\"></script><script src=\"/_next/static/chunks/64192c46-483b727987fcbe8b.js\" async=\"\"></script><script src=\"/_next/static/chunks/3608-2cd4155b8d39b625.js\" async=\"\"></script><script src=\"/_next/static/chunks/4182-4959e3b5b8edbd30.js\" async=\"\"></script><script src=\"/_next/static/chunks/5734-7e0d522a91120d6c.js\" async=\"\"></script><script src=\"/_next/static/chunks/1802-2ba327b186fb6a96.js\" async=\"\"></script><script src=\"/_next/static/chunks/4951-b45395fffa561228.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/page-3b40015587543efe.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-5447374c552d92d4.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/not-found-9f57dd76588f6e37.js\" async=\"\"></script><title>Agentic Gateway — Crypto-Native API Marketplace for AI Agents</title><meta name=\"description\" content=\"Deposit USDC once and call any API with a wallet signature. The crypto-native marketplace where AI agents discover, pay for, and consume APIs on Base L2.\"/><meta name=\"author\" content=\"Agentic Gateway\"/><link rel=\"manifest\" href=\"/manifest.json\" crossorigin=\"use-credentials\"/><meta name=\"keywords\" content=\"AI agents,API marketplace,crypto API,USDC,Base L2,x402,agentic,web3 API,pay per request,machine to machine payments\"/><meta name=\"creator\" content=\"Agentic Gateway\"/><meta name=\"robots\" content=\"index, follow\"/><meta name=\"ai-content-declarations\" content=\"none\"/><meta property=\"og:title\" content=\"Agentic Gateway — Crypto-Native API Marketplace for AI Agents\"/><meta property=\"og:description\" content=\"One deposit, every API. AI agents pay with USDC/USDT on Base L2 — no API keys, no billing accounts. Automatic refunds when APIs fail.\"/><meta property=\"og:site_name\" content=\"Agentic Gateway\"/><meta property=\"og:locale\" content=\"en_US\"/><meta property=\"og:image\" content=\"https://agenticgateway.io/og-image.png\"/><meta property=\"og:image:width\" content=\"1200\"/><meta property=\"og:image:height\" content=\"630\"/><meta property=\"og:image:alt\" content=\"Agentic Gateway — Crypto-Native API Marketplace for AI Agents\"/><meta property=\"og:type\" content=\"website\"/><meta name=\"twitter:card\" content=\"summary_large_image\"/><meta name=\"twitter:title\" content=\"Agentic Gateway\"/><meta name=\"twitter:description\" content=\"Crypto-native API marketplace for AI agents. Pay per request with USDC on Base L2.\"/><meta name=\"twitter:image\" content=\"https://agenticgateway.io/og-image.png\"/><link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\"/><link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\"/><link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\"/><meta name=\"next-size-adjust\"/><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Agentic Gateway\",\"url\":\"https://agenticgateway.io\",\"description\":\"Crypto-native API marketplace where AI agents discover, pay for, and consume APIs using USDC/USDT on Base L2.\",\"applicationCategory\":\"DeveloperApplication\",\"operatingSystem\":\"Web\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Free to sign up. Pay per API call with USDC/USDT.\"},\"featureList\":[\"Wallet-based authentication\",\"USDC/USDT payments on Base L2\",\"x402 pay-per-request protocol\",\"Automatic refunds on API failures\",\"Semantic and agentic tool search\",\"Real-time health monitoring\"]}</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\"></script></head><body class=\"font-body\"><nav class=\"sticky top-0 z-50 bg-brand-surface/60 backdrop-blur-xl border-b border-white/[0.06]\"><div class=\"max-w-6xl mx-auto px-6 h-16 flex items-center justify-between\"><div class=\"flex items-center gap-8\"><a class=\"flex items-center gap-2 group\" href=\"/\"><span class=\"w-2 h-2 rounded-full bg-brand-accent group-hover:animate-glow-pulse transition-shadow\"></span><span class=\"font-display text-lg font-bold text-brand-text tracking-tight\">Agentic Gateway</span></a><div class=\"hidden sm:flex items-center gap-6 text-sm\"><a class=\"relative py-1 transition-colors duration-200 text-brand-muted hover:text-brand-text\" href=\"/marketplace\">Marketplace</a><a class=\"relative py-1 transition-colors duration-200 text-brand-muted hover:text-brand-text\" href=\"/docs\">Docs</a></div></div><div class=\"flex items-center gap-3\"><button class=\"glow-button px-4 py-2 text-sm font-semibold\">Connect Wallet</button><button class=\"sm:hidden relative w-9",
+      "url": "https://agenticgateway.io/"
+    },
+    "https://agenticgateway.io/docs": {
+      "bytes": 82554,
+      "content_type": "text/html; charset=utf-8",
+      "ok": true,
+      "status": 200,
+      "text_preview": "<!DOCTYPE html><html lang=\"en\" class=\"__variable_744198 __variable_ed3508 __variable_3c557b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/0ee0f0b3be32fc89.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-a7753d67055269f8.js\"/><script src=\"/_next/static/chunks/b6890e83-d0817d09d5d511da.js\" async=\"\"></script><script src=\"/_next/static/chunks/4004-cabbc340c95289f0.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-87124481d4a78b38.js\" async=\"\"></script><script src=\"/_next/static/chunks/3608-2cd4155b8d39b625.js\" async=\"\"></script><script src=\"/_next/static/chunks/1802-2ba327b186fb6a96.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/docs/page-d448a5432cc32b0d.js\" async=\"\"></script><script src=\"/_next/static/chunks/64192c46-483b727987fcbe8b.js\" async=\"\"></script><script src=\"/_next/static/chunks/4182-4959e3b5b8edbd30.js\" async=\"\"></script><script src=\"/_next/static/chunks/5734-7e0d522a91120d6c.js\" async=\"\"></script><script src=\"/_next/static/chunks/4951-b45395fffa561228.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-5447374c552d92d4.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/not-found-9f57dd76588f6e37.js\" async=\"\"></script><title>Documentation | Agentic Gateway</title><meta name=\"description\" content=\"Integrate with Agentic Gateway in minutes. API docs, code examples in JavaScript, Python, Go, and cURL for wallet auth, deposits, and proxy calls.\"/><meta name=\"author\" content=\"Agentic Gateway\"/><link rel=\"manifest\" href=\"/manifest.json\" crossorigin=\"use-credentials\"/><meta name=\"keywords\" content=\"AI agents,API marketplace,crypto API,USDC,Base L2,x402,agentic,web3 API,pay per request,machine to machine payments\"/><meta name=\"creator\" content=\"Agentic Gateway\"/><meta name=\"robots\" content=\"index, follow\"/><meta name=\"ai-content-declarations\" content=\"none\"/><meta property=\"og:title\" content=\"Documentation | Agentic Gateway\"/><meta property=\"og:description\" content=\"Full API reference and quickstart guides for the crypto-native API marketplace.\"/><meta name=\"twitter:card\" content=\"summary_large_image\"/><meta name=\"twitter:title\" content=\"Agentic Gateway\"/><meta name=\"twitter:description\" content=\"Crypto-native API marketplace for AI agents. Pay per request with USDC on Base L2.\"/><meta name=\"twitter:image\" content=\"https://agenticgateway.io/og-image.png\"/><link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\"/><link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\"/><link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\"/><meta name=\"next-size-adjust\"/><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Agentic Gateway\",\"url\":\"https://agenticgateway.io\",\"description\":\"Crypto-native API marketplace where AI agents discover, pay for, and consume APIs using USDC/USDT on Base L2.\",\"applicationCategory\":\"DeveloperApplication\",\"operatingSystem\":\"Web\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Free to sign up. Pay per API call with USDC/USDT.\"},\"featureList\":[\"Wallet-based authentication\",\"USDC/USDT payments on Base L2\",\"x402 pay-per-request protocol\",\"Automatic refunds on API failures\",\"Semantic and agentic tool search\",\"Real-time health monitoring\"]}</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\"></script></head><body class=\"font-body\"><nav class=\"sticky top-0 z-50 bg-brand-surface/60 backdrop-blur-xl border-b border-white/[0.06]\"><div class=\"max-w-6xl mx-auto px-6 h-16 flex items-center justify-between\"><div class=\"flex items-center gap-8\"><a class=\"flex items-center gap-2 group\" href=\"/\"><span class=\"w-2 h-2 rounded-full bg-brand-accent group-hover:animate-glow-pulse transition-shadow\"></span><span class=\"font-display text-lg font-bold text-brand-text tracking-tight\">Agentic Gateway</span></a><div class=\"hidden sm:flex items-center gap-6 text-sm\"><a class=\"relative py-1 transition-colors duration-200 text-brand-muted hover:text-brand-text\" href=\"/marketplace\">Marketplace</a><a class=\"relative py-1 transition-colors duration-200 text-brand-accent\" href=\"/docs\">Docs<span class=\"absolute -bottom-0.5 left-0 right-0 h-px bg-brand-accent/60\"></span></a></div></div><div class=\"flex items-center gap-3\"><button class=\"glow-button px-4 py-2 text-sm font-semibold\">Connect Wallet</button><button class=\"sm:hidden relative w-9 h-9 flex items-center justify-center rounded-lg text-brand-muted hover:text-brand-text hover:bg-white/[0.06] transition-colors\" aria-label=\"Toggle menu\"><span class=\"sr-only\">Menu</span><svg class=\"w-5 h-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 6h16M4 12h16M4 18h16\"></path></svg></button></div></div></nav><main><div class=\"max-w-3xl mx-auto px-6 py-16\"><div style=\"opacity:0;transf",
+      "url": "https://agenticgateway.io/docs"
+    },
+    "https://agenticgateway.io/marketplace": {
+      "bytes": 14184,
+      "content_type": "text/html; charset=utf-8",
+      "ok": true,
+      "status": 200,
+      "text_preview": "<!DOCTYPE html><html lang=\"en\" class=\"__variable_744198 __variable_ed3508 __variable_3c557b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/0ee0f0b3be32fc89.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-a7753d67055269f8.js\"/><script src=\"/_next/static/chunks/b6890e83-d0817d09d5d511da.js\" async=\"\"></script><script src=\"/_next/static/chunks/4004-cabbc340c95289f0.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-87124481d4a78b38.js\" async=\"\"></script><script src=\"/_next/static/chunks/3608-2cd4155b8d39b625.js\" async=\"\"></script><script src=\"/_next/static/chunks/4182-4959e3b5b8edbd30.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/marketplace/page-a8bb69b756be6472.js\" async=\"\"></script><script src=\"/_next/static/chunks/64192c46-483b727987fcbe8b.js\" async=\"\"></script><script src=\"/_next/static/chunks/5734-7e0d522a91120d6c.js\" async=\"\"></script><script src=\"/_next/static/chunks/4951-b45395fffa561228.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-5447374c552d92d4.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/not-found-9f57dd76588f6e37.js\" async=\"\"></script><title>API Marketplace | Agentic Gateway</title><meta name=\"description\" content=\"Browse and search crypto-native APIs for AI agents. Pay per call with USDC/USDT on Base L2 — keyword, semantic, and agentic search.\"/><meta name=\"author\" content=\"Agentic Gateway\"/><link rel=\"manifest\" href=\"/manifest.json\" crossorigin=\"use-credentials\"/><meta name=\"keywords\" content=\"AI agents,API marketplace,crypto API,USDC,Base L2,x402,agentic,web3 API,pay per request,machine to machine payments\"/><meta name=\"creator\" content=\"Agentic Gateway\"/><meta name=\"robots\" content=\"index, follow\"/><meta name=\"ai-content-declarations\" content=\"none\"/><meta property=\"og:title\" content=\"API Marketplace | Agentic Gateway\"/><meta property=\"og:description\" content=\"Discover APIs that AI agents can call and pay for with crypto. Search by keyword, intent, or let an AI agent find the right tool.\"/><meta name=\"twitter:card\" content=\"summary_large_image\"/><meta name=\"twitter:title\" content=\"Agentic Gateway\"/><meta name=\"twitter:description\" content=\"Crypto-native API marketplace for AI agents. Pay per request with USDC on Base L2.\"/><meta name=\"twitter:image\" content=\"https://agenticgateway.io/og-image.png\"/><link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\"/><link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\"/><link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\"/><meta name=\"next-size-adjust\"/><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Agentic Gateway\",\"url\":\"https://agenticgateway.io\",\"description\":\"Crypto-native API marketplace where AI agents discover, pay for, and consume APIs using USDC/USDT on Base L2.\",\"applicationCategory\":\"DeveloperApplication\",\"operatingSystem\":\"Web\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Free to sign up. Pay per API call with USDC/USDT.\"},\"featureList\":[\"Wallet-based authentication\",\"USDC/USDT payments on Base L2\",\"x402 pay-per-request protocol\",\"Automatic refunds on API failures\",\"Semantic and agentic tool search\",\"Real-time health monitoring\"]}</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\"></script></head><body class=\"font-body\"><nav class=\"sticky top-0 z-50 bg-brand-surface/60 backdrop-blur-xl border-b border-white/[0.06]\"><div class=\"max-w-6xl mx-auto px-6 h-16 flex items-center justify-between\"><div class=\"flex items-center gap-8\"><a class=\"flex items-center gap-2 group\" href=\"/\"><span class=\"w-2 h-2 rounded-full bg-brand-accent group-hover:animate-glow-pulse transition-shadow\"></span><span class=\"font-display text-lg font-bold text-brand-text tracking-tight\">Agentic Gateway</span></a><div class=\"hidden sm:flex items-center gap-6 text-sm\"><a class=\"relative py-1 transition-colors duration-200 text-brand-accent\" href=\"/marketplace\">Marketplace<span class=\"absolute -bottom-0.5 left-0 right-0 h-px bg-brand-accent/60\"></span></a><a class=\"relative py-1 transition-colors duration-200 text-brand-muted hover:text-brand-text\" href=\"/docs\">Docs</a></div></div><div class=\"flex items-center gap-3\"><button class=\"glow-button px-4 py-2 text-sm font-semibold\">Connect Wallet</button><button class=\"sm:hidden relative w-9 h-9 flex items-center justify-center rounded-lg text-brand-muted hover:text-brand-text hover:bg-white/[0.06] transition-colors\" aria-label=\"Toggle menu\"><span class=\"sr-only\">Menu</span><svg class=\"w-5 h-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 6h16M4 12h16M4 18h16\"></path></svg></button></div></div></nav><main><div class=\"max-w-6xl mx-auto px-6 py-16\"><div class=\"text-center mb-12\" style=\"opacity:0;transform:tr",
+      "url": "https://agenticgateway.io/marketplace"
+    },
+    "https://agenticgateway.io/suppliers": {
+      "bytes": 13552,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html><html lang=\"en\" class=\"__variable_744198 __variable_ed3508 __variable_3c557b\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/0ee0f0b3be32fc89.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-a7753d67055269f8.js\"/><script src=\"/_next/static/chunks/b6890e83-d0817d09d5d511da.js\" async=\"\"></script><script src=\"/_next/static/chunks/4004-cabbc340c95289f0.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-87124481d4a78b38.js\" async=\"\"></script><script src=\"/_next/static/chunks/3608-2cd4155b8d39b625.js\" async=\"\"></script><script src=\"/_next/static/chunks/4182-4959e3b5b8edbd30.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/not-found-9f57dd76588f6e37.js\" async=\"\"></script><script src=\"/_next/static/chunks/64192c46-483b727987fcbe8b.js\" async=\"\"></script><script src=\"/_next/static/chunks/5734-7e0d522a91120d6c.js\" async=\"\"></script><script src=\"/_next/static/chunks/4951-b45395fffa561228.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-5447374c552d92d4.js\" async=\"\"></script><meta name=\"robots\" content=\"noindex\"/><title>Agentic Gateway — Crypto-Native API Marketplace for AI Agents</title><meta name=\"description\" content=\"Deposit USDC once and call any API with a wallet signature. The crypto-native marketplace where AI agents discover, pay for, and consume APIs on Base L2.\"/><meta name=\"author\" content=\"Agentic Gateway\"/><link rel=\"manifest\" href=\"/manifest.json\" crossorigin=\"use-credentials\"/><meta name=\"keywords\" content=\"AI agents,API marketplace,crypto API,USDC,Base L2,x402,agentic,web3 API,pay per request,machine to machine payments\"/><meta name=\"creator\" content=\"Agentic Gateway\"/><meta name=\"robots\" content=\"index, follow\"/><meta name=\"ai-content-declarations\" content=\"none\"/><meta property=\"og:title\" content=\"Agentic Gateway — Crypto-Native API Marketplace for AI Agents\"/><meta property=\"og:description\" content=\"One deposit, every API. AI agents pay with USDC/USDT on Base L2 — no API keys, no billing accounts. Automatic refunds when APIs fail.\"/><meta property=\"og:site_name\" content=\"Agentic Gateway\"/><meta property=\"og:locale\" content=\"en_US\"/><meta property=\"og:image\" content=\"https://agenticgateway.io/og-image.png\"/><meta property=\"og:image:width\" content=\"1200\"/><meta property=\"og:image:height\" content=\"630\"/><meta property=\"og:image:alt\" content=\"Agentic Gateway — Crypto-Native API Marketplace for AI Agents\"/><meta property=\"og:type\" content=\"website\"/><meta name=\"twitter:card\" content=\"summary_large_image\"/><meta name=\"twitter:title\" content=\"Agentic Gateway\"/><meta name=\"twitter:description\" content=\"Crypto-native API marketplace for AI agents. Pay per request with USDC on Base L2.\"/><meta name=\"twitter:image\" content=\"https://agenticgateway.io/og-image.png\"/><link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\"/><link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\"/><link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\"/><meta name=\"next-size-adjust\"/><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"Agentic Gateway\",\"url\":\"https://agenticgateway.io\",\"description\":\"Crypto-native API marketplace where AI agents discover, pay for, and consume APIs using USDC/USDT on Base L2.\",\"applicationCategory\":\"DeveloperApplication\",\"operatingSystem\":\"Web\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Free to sign up. Pay per API call with USDC/USDT.\"},\"featureList\":[\"Wallet-based authentication\",\"USDC/USDT payments on Base L2\",\"x402 pay-per-request protocol\",\"Automatic refunds on API failures\",\"Semantic and agentic tool search\",\"Real-time health monitoring\"]}</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\"></script></head><body class=\"font-body\"><nav class=\"sticky top-0 z-50 bg-brand-surface/60 backdrop-blur-xl border-b border-white/[0.06]\"><div class=\"max-w-6xl mx-auto px-6 h-16 flex items-center justify-between\"><div class=\"flex items-center gap-8\"><a class=\"flex items-center gap-2 group\" href=\"/\"><span class=\"w-2 h-2 rounded-full bg-brand-accent group-hover:animate-glow-pulse transition-shadow\"></span><span class=\"font-display text-lg font-bold text-brand-text tracking-tight\">Agentic Gateway</span></a><div class=\"hidden sm:flex items-center gap-6 text-sm\"><a class=\"relative py-1 transition-colors duration-200 text-brand-muted hover:text-brand-text\" href=\"/marketplace\">Marketplace</a><a class=\"relative py-1 transition-colors duration-200 text-brand-muted hover:text-brand-text\" href=\"/docs\">Docs</a></div></div><div class=\"flex items-center gap-3\"><button class=\"glow-button px-4 py-2 text-sm font-semibold\">Connect Wallet</button><button class=\"sm:hidden relative w-9 h-9 flex items-center justify-center rounded-lg text-brand-muted hover:text-brand-text hover:bg-white/[0.06] transition-",
+      "url": "https://agenticgateway.io/suppliers"
+    },
+    "https://api.agenticgateway.io/v1/skill.md": {
+      "bytes": 11587,
+      "content_type": "text/markdown; charset=utf-8",
+      "ok": true,
+      "status": 200,
+      "text_preview": "# Agentic Gateway -- Agent Skill\n\n## What This Is\n\nA crypto-native API marketplace where AI agents deposit USDC once, then search and call any API instantly using wallet signatures. Automatic refunds if an API fails.\n\n## Base URL\n\n`https://api.agenticgateway.io` (or your self-hosted instance)\n\n## Quick Start\n\n```\n1. GET  /v1/deposit-address          → send USDC to the returned vault address (Base L2 or Solana)\n2. GET  /v1/tools/search?query=...   → find a tool by keyword or intent\n3. POST /v1/proxy/:toolId            → call the tool (signed request) → get the result\n```\n\n### Alternative: Pay per Request with x402\n\nNo deposit needed. Send a request without auth headers and the gateway returns HTTP 402 with x402 payment requirements. Sign the USDC payment, retry with a `PAYMENT-SIGNATURE` header, and the request is processed. Two integration methods are available -- see the full x402 section below.\n\n```\n1. POST /v1/proxy/:toolId            → receive 402 with payment requirements\n2. Sign USDC payment authorization   → create PAYMENT-SIGNATURE (Base64)\n3. POST /v1/proxy/:toolId            → retry with PAYMENT-SIGNATURE header → get the result\n```\n\n## Payment Methods\n\nThe gateway supports two payment methods. Choose whichever suits your use case.\n\n| Method | How It Works | Best For |\n|---|---|---|\n| **Balance** (default) | Deposit USDC/USDT once, pay from platform balance per request | High-volume agents, lowest per-call cost |\n| **x402** (pay-per-request) | Pay on-chain via x402 protocol each request (Base L2 or Solana), no deposit needed | One-off calls, zero-trust agents, no setup |\n\nIf x402 is enabled, tools include `x402_supported: true` in their listing.\n\n## Authentication (Balance Mode)\n\nAuthenticated endpoints require two headers:\n\n| Header | Value |\n|---|---|\n| `X-Timestamp` | `Date.now().toString()` (Unix milliseconds) |\n| `X-Signature` | `ethers.signMessage(timestamp + keccak256(JSON.stringify(body)))` |\n\nThe timestamp must be within 5 minutes of server time. The recovered wallet address is your identity -- no API keys needed.\n\n### Balance Signing Example (ethers.js v6)\n\n```javascript\nimport { Wallet, keccak256, toUtf8Bytes } from 'ethers';\n\nconst wallet = new Wallet(PRIVATE_KEY);\nconst body = JSON.stringify({ city: 'London' });\nconst timestamp = Date.now().toString();\nconst message = timestamp + keccak256(toUtf8Bytes(body));\nconst signature = await wallet.signMessage(message);\n\n// Send with headers: X-Timestamp: <timestamp>, X-Signature: <signature>\n```\n\n## x402 Pay-Per-Request (No Deposit Needed)\n\nNo deposit or pre-authentication required. The gateway follows the [x402 protocol](https://www.x402.org/) (v2). When you POST to `/v1/proxy/:toolId` without auth headers, the gateway returns HTTP 402 with payment details for each supported network. Your agent picks a network (Base L2 or Solana), signs a USDC transfer authorization, and retries with a `PAYMENT-SIGNATURE` header. The gateway verifies the signature, settles the payment on-chain, then proxies to the supplier.\n\nIf an API call fails after x402 payment, the refund is credited to your platform balance (usable for future calls via balance mode).\n\n### 402 Response Format\n\nThe 402 response body (and `PAYMENT-REQUIRED` header, Base64-encoded) contains:\n\n```json\n{\n  \"x402Version\": 2,\n  \"resource\": {\n    \"url\": \"https://api.agenticgateway.io/v1/proxy/<toolId>\",\n    \"description\": \"API call to tool <toolId>\",\n    \"mimeType\": \"application/json\"\n  },\n  \"accepts\": [\n    {\n      \"scheme\": \"exact\",\n      \"network\": \"eip155:8453\",\n      \"asset\": \"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\",\n      \"amount\": \"50000\",\n      \"payTo\": \"0x...\"\n    },\n    {\n      \"scheme\": \"exact\",\n      \"network\": \"solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp\",\n      \"asset\": \"USDC\",\n      \"amount\": \"50000\",\n      \"payTo\": \"...\"\n    }\n  ]\n}\n```\n\nKey fields in each `accepts` entry:\n\n| Field | Meaning |\n|---|---|\n| `scheme` | Always `\"exact\"` -- pay the exact USDC amount |\n| `network` | CAIP-2 chain ID (`eip155:8453` = Base L2, `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp` = Solana mainnet) |\n| `asset` | USDC contract address (EVM) or `\"USDC\"` (Solana) |\n| `amount` | Cost in USDC smallest units (e.g. `\"50000\"` = $0.05 USDC with 6 decimals) |\n| `payTo` | Wallet address to pay |\n\n### Method 1: Native Fetch (viem + fetch, no x402 packages)\n\nUse only `viem` for wallet signing and standard `fetch` for HTTP. No `@x402/*` packages required. This is useful when you cannot install additional dependencies or want full control over the payment flow.\n\n**Dependencies:** `npm install viem`\n\n```javascript\nimport { privateKeyToAccount } from \"viem/accounts\";\nimport { toHex } from \"viem\";\n\nconst PRIVATE_KEY = \"0x...\";\nconst account = privateKeyToAccount(PRIVATE_KEY);\n\nconst toolUrl = \"https://api.agenticgateway.io/v1/proxy/<toolId>\";\nconst requestBody = JSON.stringify({ city: \"London\" });\n\n// --- Step 1: Request → receive 402 challenge ---\nconst res402 = await fetch(toolUrl, {\n  method: \"POST\",\n  headers: { \"C",
+      "url": "https://api.agenticgateway.io/v1/skill.md"
+    },
+    "https://api.agenticgateway.io/v1/tools": {
+      "bytes": 5831,
+      "content_type": "application/json; charset=utf-8",
+      "json_count": 26,
+      "json_preview": [
+        {
+          "id": "155d5b67-d7ec-495f-a285-049734f72e45",
+          "name": "Stock Quotes - MULTIPLE/MANY",
+          "oneliner": "Fetch real-time stock quotes for one or more ticker symbols.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "stocks",
+            "market",
+            "data"
+          ]
+        },
+        {
+          "id": "037d58d8-9bdb-4f07-bb47-d4c609f110f5",
+          "name": "Single Stock Summary",
+          "oneliner": "Fetch a comprehensive stock profile with fundamentals, ownership, and analyst data.",
+          "price": "0.010000",
+          "tags": [
+            "analytics",
+            "finance",
+            "data"
+          ]
+        },
+        {
+          "id": "2d8a7c5b-1c5d-4373-ab34-25d7d736de4f",
+          "name": "YouTube Video Info",
+          "oneliner": "Retrieve metadata for any YouTube video.",
+          "price": "0.010000",
+          "tags": [
+            "youtube",
+            "video",
+            "data"
+          ]
+        },
+        {
+          "id": "489a5b69-9929-45f6-b2a0-afdf93068541",
+          "name": "S&P 500 Sector Performance",
+          "oneliner": "Real-time daily performance summary of all S&P 500 stocks grouped by GICS sector.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "stocks",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "890b8016-5b57-4e9e-a138-a3da092c2199",
+          "name": "Stock Quote History",
+          "oneliner": "Fetch historical OHLCV price data and corporate events for a stock ticker.",
+          "price": "0.010000",
+          "tags": [
+            "analytics",
+            "finance",
+            "data"
+          ]
+        },
+        {
+          "id": "b65609db-c27d-42b4-abad-df4a508e509f",
+          "name": "Currencies Overview",
+          "oneliner": "Live FX market overview with 23 currency pairs grouped by category.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "bd7211ac-821b-4b77-aa00-193328c20c99",
+          "name": "Futures Market Overview",
+          "oneliner": "Live futures market overview with 37 contracts grouped by category.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "bd66e959-a1b4-49da-9015-5661854e1b4e",
+          "name": "Stock Financials Overview",
+          "oneliner": "Fetch comprehensive financial statements, profitability metrics, and EPS trends for a stock.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "dd4827c8-3043-4bc6-b11a-1839228b1cbb",
+          "name": "Stock Analysis",
+          "oneliner": "Fetch comprehensive stock analysis with earnings, valuation, analyst actions, and forward estimates.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "e0843977-8908-4690-9531-9b62d10df1b5",
+          "name": "Tavily Search API",
+          "oneliner": null,
+          "price": "0.015000",
+          "tags": [
+            "search",
+            "web",
+            "data"
+          ]
+        },
+        {
+          "id": "ff28c9dd-2982-4ca1-81bc-c19d3fc0e5a8",
+          "name": "Stock News",
+          "oneliner": "Fetch recent news articles and coverage analytics for a stock ticker. ",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "2ce94629-2751-4f69-a63b-c316f0a6b16a",
+          "name": "Bonds & Yields Overview",
+          "oneliner": "Live Treasury bond and yield overview with curve analysis.",
+          "price": "0.010000",
+          "tags": null
+        },
+        {
+          "id": "a0d3790f-6b40-4d69-aaac-16333addf895",
+          "name": "YouTube Transcript",
+          "oneliner": "Get captions and subtitles from any YouTube video.",
+          "price": "0.010000",
+          "tags": [
+            "youtube",
+            "video",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "bcd504ba-26a0-4faf-bf86-66bf8982e9c9",
+          "name": "Crypto Market Overview",
+          "oneliner": "Live cryptocurrency market overview with top 10 coins by market cap.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data",
+            "crypto"
+          ]
+        },
+        {
+          "id": "70d3ce78-b036-44c5-a71e-ddd7c7987e76",
+          "name": "World Indices Overview",
+          "oneliner": "Live global market overview with 41 world indices grouped by region.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "34850db3-72e6-47c6-a279-dd2228cb0751",
+          "name": "Get a Stock's Recent Updates ",
+          "oneliner": "Fetch earnings history, analyst ratings, price targets, and SEC filings for a stock.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "89a8b480-c9e0-4db2-8a98-3977a1229f77",
+          "name": "Major ETF Daily Flows",
+          "oneliner": "Daily fund flow data for 27 major ETFs with sector rotation and momentum analysis.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data",
+            "crypto"
+          ]
+        },
+        {
+          "id": "bf73d84c-53a8-4e98-be7c-dfef21de3e1f",
+          "name": "Finviz Stock News",
+          "oneliner": "Stock-specific news headlines from Finviz, filterable by ticker",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "stocks",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "38944c0c-8634-444e-b4e2-0173bc77a733",
+          "name": "Finviz ETF News",
+          "oneliner": "ETF-specific financial news headlines from Finviz with ticker and source analytics",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "etf",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "1329fc7a-6ac6-458a-8dab-f2451acb0d77",
+          "name": "Finviz Crypto News",
+          "oneliner": "Crypto-specific financial news headlines from Finviz with ticker and source analytics",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "crypto",
+            "bitcoin",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "f01c7980-7f7c-45ee-90e8-ff148261ec59",
+          "name": "Finviz Economic Calendar",
+          "oneliner": "Upcoming and recent economic events with importance ratings, forecasts, and actuals",
+          "price": "0.010000",
+          "tags": [
+            "finviz",
+            "calendar",
+            "economic",
+            "macro",
+            "fomc",
+            "finance"
+          ]
+        },
+        {
+          "id": "330de371-8a1a-4659-adab-53130a049152",
+          "name": "Finviz Earnings Calendar",
+          "oneliner": "Upcoming and recent earnings reports with EPS/sales estimates, actuals, and surprises",
+          "price": "0.010000",
+          "tags": [
+            "finviz",
+            "calendar",
+            "earnings",
+            "eps",
+            "finance"
+          ]
+        },
+        {
+          "id": "ba21cc3c-3a46-4d15-ba08-e951e7c926b8",
+          "name": "Finviz Dividends Calendar",
+          "oneliner": "Upcoming and recent ex-dividend dates with ordinary/special amounts and yield data",
+          "price": "0.010000",
+          "tags": [
+            "finviz",
+            "calendar",
+            "dividends",
+            "yield",
+            "income",
+            "finance"
+          ]
+        },
+        {
+          "id": "25ae9912-64cb-4ad3-bcf8-3247a1b2f630",
+          "name": "Finviz Market News",
+          "oneliner": "Market-wide financial news headlines from Finviz with source analytics",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "market",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "738393aa-68e0-4954-b7ba-15b6c53f942d",
+          "name": "Stock Insights",
+          "oneliner": "Fetch stock insights combining technical outlook, valuation, and Morningstar analyst research.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "5b219344-f57d-4b17-bbea-308e98c5fb24",
+          "name": "X/Twitter Tweets by User Handle",
+          "oneliner": "Fetches recent tweets for a Twitter/X user.",
+          "price": "0.010000",
+          "tags": [
+            "social",
+            "twitter",
+            "data"
+          ]
+        }
+      ],
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=validation": {
+      "bytes": 475,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "mode",
+        "query",
+        "results"
+      ],
+      "json_preview": {
+        "mode": "keyword",
+        "query": "validation",
+        "results": [
+          {
+            "id": "2d8a7c5b-1c5d-4373-ab34-25d7d736de4f",
+            "name": "YouTube Video Info",
+            "oneliner": "Retrieve metadata for any YouTube video.",
+            "price": "0.010000",
+            "tags": [
+              "youtube",
+              "video",
+              "data"
+            ]
+          },
+          {
+            "id": "489a5b69-9929-45f6-b2a0-afdf93068541",
+            "name": "S&P 500 Sector Performance",
+            "oneliner": "Real-time daily performance summary of all S&P 500 stocks grouped by GICS sector.",
+            "price": "0.010000",
+            "tags": [
+              "finance",
+              "stocks",
+              "analytics",
+              "data"
+            ]
+          }
+        ]
+      },
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=validation"
+    }
+  },
+  "routes": [
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/api/auth/logout"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/api/auth/nonce"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/api/auth/refresh-token"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/api/auth/session"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/api/auth/verify"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/account"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/convert/allowance"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/convert/build-approve"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/convert/build-transaction"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/convert/gas-price"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/convert/quotes"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/convert/tokens"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/deposit-address"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/deposit-address</code><code"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/fungible/price"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/generators/onrampurl"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/mcp"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/onramp/options"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/onramp/quote"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/profile/account"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/:toolId"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/:toolId</code>"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/:toolId</span></div><div"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/:toolId\\nHeaders:"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/TOOL_ID"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/abc"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/abc123"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/proxy/abc123"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.agenticgateway.io/v1/proxy/abc</code><code"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/skill.md"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/supplier-skill.md"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/supplier/status"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/supplier/status"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/tools"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/:toolId</span></div></pre></div></div></section><section"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query="
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=..."
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=I+need+to+resize+images+in+bulk&amp;mode=agentic</span></div></pre></div><p"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=I+need+to+resize+images+in+bulk&mode=agentic"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=translate+text&amp;mode=semantic</span></div><div"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=translate+text+to+spanish&mode=semantic"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather"
+    },
+    {
+      "method": "UNKNOWN",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather+forecast"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather+forecast</span></div><div"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather</code><code"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools</code></p></div></section><section"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/tools</span></div></pre></div><p"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/transactions/:requestId"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.agenticgateway.io/v1/transactions/:requestId</code>"
+    }
+  ],
+  "safe_get_results": {
+    "https://api.agenticgateway.io/api/auth/logout": {
+      "bytes": 154,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth/logout</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/api/auth/logout"
+    },
+    "https://api.agenticgateway.io/api/auth/nonce": {
+      "bytes": 153,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth/nonce</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/api/auth/nonce"
+    },
+    "https://api.agenticgateway.io/api/auth/refresh-token": {
+      "bytes": 161,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth/refresh-token</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/api/auth/refresh-token"
+    },
+    "https://api.agenticgateway.io/api/auth/session": {
+      "bytes": 155,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth/session</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/api/auth/session"
+    },
+    "https://api.agenticgateway.io/api/auth/verify": {
+      "bytes": 154,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth/verify</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/api/auth/verify"
+    },
+    "https://api.agenticgateway.io/v1/account": {
+      "bytes": 111,
+      "json_keys": [
+        "error",
+        "message"
+      ],
+      "json_preview": {
+        "error": "MISSING_AUTH",
+        "message": "X-Signature and X-Timestamp headers, or Authorization: Bearer JWT required"
+      },
+      "ok": false,
+      "status": 401,
+      "url": "https://api.agenticgateway.io/v1/account"
+    },
+    "https://api.agenticgateway.io/v1/convert/allowance": {
+      "bytes": 159,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/convert/allowance</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/convert/allowance"
+    },
+    "https://api.agenticgateway.io/v1/convert/build-approve": {
+      "bytes": 163,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/convert/build-approve</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/convert/build-approve"
+    },
+    "https://api.agenticgateway.io/v1/convert/build-transaction": {
+      "bytes": 167,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/convert/build-transaction</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/convert/build-transaction"
+    },
+    "https://api.agenticgateway.io/v1/convert/gas-price": {
+      "bytes": 159,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/convert/gas-price</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/convert/gas-price"
+    },
+    "https://api.agenticgateway.io/v1/convert/quotes": {
+      "bytes": 156,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/convert/quotes</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/convert/quotes"
+    },
+    "https://api.agenticgateway.io/v1/convert/tokens": {
+      "bytes": 156,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/convert/tokens</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/convert/tokens"
+    },
+    "https://api.agenticgateway.io/v1/deposit-address": {
+      "bytes": 132,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "vault_address",
+        "solana_vault_address"
+      ],
+      "json_preview": {
+        "solana_vault_address": "DD7mDVHdxrxap1VcNcLH4GrgWf2ZxZF5isK4L1fQAAuo",
+        "vault_address": "0x29C9D73113de1C436839C71C64dEDb4F61389c00"
+      },
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/deposit-address"
+    },
+    "https://api.agenticgateway.io/v1/deposit-address</code><code": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/deposit-address</code><code"
+    },
+    "https://api.agenticgateway.io/v1/fungible/price": {
+      "bytes": 156,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/fungible/price</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/fungible/price"
+    },
+    "https://api.agenticgateway.io/v1/generators/onrampurl": {
+      "bytes": 162,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/generators/onrampurl</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/generators/onrampurl"
+    },
+    "https://api.agenticgateway.io/v1/mcp": {
+      "bytes": 83,
+      "json_keys": [
+        "jsonrpc",
+        "error",
+        "id"
+      ],
+      "json_preview": {
+        "error": {
+          "code": -32000,
+          "message": "Method not allowed."
+        },
+        "id": null,
+        "jsonrpc": "2.0"
+      },
+      "ok": false,
+      "status": 405,
+      "url": "https://api.agenticgateway.io/v1/mcp"
+    },
+    "https://api.agenticgateway.io/v1/onramp/options": {
+      "bytes": 156,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/onramp/options</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/onramp/options"
+    },
+    "https://api.agenticgateway.io/v1/onramp/quote": {
+      "bytes": 154,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/onramp/quote</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/onramp/quote"
+    },
+    "https://api.agenticgateway.io/v1/profile/account": {
+      "bytes": 157,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/profile/account</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/profile/account"
+    },
+    "https://api.agenticgateway.io/v1/proxy/abc123": {
+      "bytes": 154,
+      "ok": false,
+      "status": 404,
+      "text_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/proxy/abc123</pre>\n</body>\n</html>\n",
+      "url": "https://api.agenticgateway.io/v1/proxy/abc123"
+    },
+    "https://api.agenticgateway.io/v1/skill.md": {
+      "bytes": 11587,
+      "content_type": "text/markdown; charset=utf-8",
+      "ok": true,
+      "status": 200,
+      "text_preview": "# Agentic Gateway -- Agent Skill\n\n## What This Is\n\nA crypto-native API marketplace where AI agents deposit USDC once, then search and call any API instantly using wallet signatures. Automatic refunds if an API fails.\n\n## Base URL\n\n`https://api.agenticgateway.io` (or your self-hosted instance)\n\n## Quick Start\n\n```\n1. GET  /v1/deposit-address          → send USDC to the returned vault address (Base L2 or Solana)\n2. GET  /v1/tools/search?query=...   → find a tool by keyword or intent\n3. POST /v1/proxy/:toolId            → call the tool (signed request) → get the result\n```\n\n### Alternative: Pay per Request with x402\n\nNo deposit needed. Send a request without auth headers and the gateway returns HTTP 402 with x402 payment requirements. Sign the USDC payment, retry with a `PAYMENT-SIGNATURE` header, and the request is processed. Two integration methods are available -- see the full x402 section below.\n\n```\n1. POST /v1/proxy/:toolId            → receive 402 with payment requirements\n2. Sign USDC payment authorization   → create PAYMENT-SIGNATURE (Base64)\n3. POST /v1/proxy/:toolId            → retry with PAYMENT-SIGNATURE header → get the result\n```\n\n## Payment Methods\n\nThe gateway supports two payment methods. Choose whichever suits your use case.\n\n| Method | How It Works | Best For |\n|---|---|---|\n| **Balance** (default) | Deposit USDC/USDT once, pay from platform balance per request | High-volume agents, lowest per-call cost |\n| **x402** (pay-per-request) | Pay on-chain via x402 protocol each request (Base L2 or Solana), no deposit needed | One-off calls, zero-trust agents, no setup |\n\nIf x402 is enabled, tools include `x402_supported: true` in their listing.\n\n## Authentication (Balance Mode)\n\nAuthenticated endpoints require two headers:\n\n| Header | Value |\n|---|---|\n| `X-Timestamp` | `Date.now().toString()` (Unix milliseconds) |\n| `X-Signature` | `ethers.signMessage(timestamp + keccak256(JSON.stringify(body)))` |\n\nThe timestamp must be within 5 minutes of server time. The recovered wallet address is your identity -- no API keys needed.\n\n### Balance Signing Example (ethers.js v6)\n\n```javascript\nimport { Wallet, keccak256, toUtf8Bytes } from 'ethers';\n\nconst wallet = new Wallet(PRIVATE_KEY);\nconst body = JSON.stringify({ city: 'London' });\nconst timestamp = Date.now().toString();\nconst message = timestamp + keccak256(toUtf8Bytes(body));\nconst signature = await wallet.signMessage(message);\n\n// Send with headers: X-Timestamp: <timestamp>, X-Signature: <signature>\n```\n\n## x402 Pay-Per-Request (No Deposit Needed)\n\nNo deposit or pre-authentication required. The gateway follows the [x402 protocol](https://www.x402.org/) (v2). When you POST to `/v1/proxy/:toolId` without auth headers, the gateway returns HTTP 402 with payment details for each supported network. Your agent picks a network (Base L2 or Solana), signs a USDC transfer authorization, and retries with a `PAYMENT-SIGNATURE` header. The gateway verifies the signature, settles the payment on-chain, then proxies to the supplier.\n\nIf an API call fails after x402 payment, the refund is credited to your platform balance (usable for future calls via balance mode).\n\n### 402 Response Format\n\nThe 402 response body (and `PAYMENT-REQUIRED` header, Base64-encoded) contains:\n\n```json\n{\n  \"x402Version\": 2,\n  \"resource\": {\n    \"url\": \"https://api.agenticgateway.io/v1/proxy/<toolId>\",\n    \"description\": \"API call to tool <toolId>\",\n    \"mimeType\": \"application/json\"\n  },\n  \"accepts\": [\n    {\n      \"scheme\": \"exact\",\n      \"network\": \"eip155:8453\",\n      \"asset\": \"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\",\n      \"amount\": \"50000\",\n      \"payTo\": \"0x...\"\n    },\n    {\n      \"scheme\": \"exact\",\n      \"network\": \"solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp\",\n      \"asset\": \"USDC\",\n      \"amount\": \"50000\",\n      \"payTo\": \"...\"\n    }\n  ]\n}\n```\n\nKey fields in each `accepts` entry:\n\n| Field | Meaning |\n|---|---|\n| `scheme` | Always `\"exact\"` -- pay the exact USDC amount |\n| `network` | CAIP-2 chain ID (`eip155:8453` = Base L2, `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp` = Solana mainnet) |\n| `asset` | USDC contract address (EVM) or `\"USDC\"` (Solana) |\n| `amount` | Cost in USDC smallest units (e.g. `\"50000\"` = $0.05 USDC with 6 decimals) |\n| `payTo` | Wallet address to pay |\n\n### Method 1: Native Fetch (viem + fetch, no x402 packages)\n\nUse only `viem` for wallet signing and standard `fetch` for HTTP. No `@x402/*` packages required. This is useful when you cannot install additional dependencies or want full control over the payment flow.\n\n**Dependencies:** `npm install viem`\n\n```javascript\nimport { privateKeyToAccount } from \"viem/accounts\";\nimport { toHex } from \"viem\";\n\nconst PRIVATE_KEY = \"0x...\";\nconst account = privateKeyToAccount(PRIVATE_KEY);\n\nconst toolUrl = \"https://api.agenticgateway.io/v1/proxy/<toolId>\";\nconst requestBody = JSON.stringify({ city: \"London\" });\n\n// --- Step 1: Request → receive 402 challenge ---\nconst res402 = await fetch(toolUrl, {\n  method: \"POST\",\n  headers: { \"C",
+      "url": "https://api.agenticgateway.io/v1/skill.md"
+    },
+    "https://api.agenticgateway.io/v1/supplier-skill.md": {
+      "bytes": 4334,
+      "content_type": "text/markdown; charset=utf-8",
+      "ok": true,
+      "status": 200,
+      "text_preview": "# Agentic Gateway -- Supplier Integration Skill\n\n## What This Is\n\nA guide for suppliers who want to list their API on the Agentic Gateway marketplace. Once listed, AI agents worldwide can discover and pay for your API with USDC/USDT. You earn crypto for every successful call.\n\n## Base URL\n\n`https://agenticgateway.io` (frontend) / `https://api.agenticgateway.io` (API)\n\n## Quick Start\n\n```\n1. Connect wallet at https://agenticgateway.io → go to Supplier Dashboard\n2. Click \"Submit New Tool\" → fill in endpoint URL, pricing, parameters, and description\n3. Pay the listing deposit → tool goes to \"Pending\" for admin review\n4. Once approved → your API is live on the marketplace and discoverable by agents\n```\n\n## Tool Submission (via UI)\n\nGo to `/supplier/tools/new` on the frontend. You will need:\n\n- **Tool Name** and **Description** (Markdown supported — agents rely on this to decide which tool to call)\n- **Endpoint URL** — the POST endpoint the gateway will proxy requests to\n- **Pricing Model** — `per_request` (flat price per call) or `formula` (dynamic pricing based on request parameters)\n- **Input Parameters** — define typed parameters with constraints (integer, number, string, boolean, list). These generate the example request and validate incoming calls.\n- **Test Endpoint** — click to verify your endpoint is reachable and returns valid JSON. The response is auto-captured as the example response.\n- **Output-Based Pricing** (optional) — define a second formula evaluated against response data. Final cost is the lesser of input and output formula, with the difference refunded.\n\n## Gateway Secret\n\nWhen your tool is approved, you receive a 64-character hex `gateway_secret`. The gateway sends this as the `X-Gateway-Secret` header on every proxied request. **Verify this header** in your API to ensure requests come from the gateway.\n\n```javascript\napp.use((req, res, next) => {\n  if (req.headers['x-gateway-secret'] !== process.env.GATEWAY_SECRET)\n    return res.status(401).json({ error: 'Unauthorized' });\n  next();\n});\n```\n\n## How Requests Reach You\n\n```\nAgent → POST /v1/proxy/:toolId → Gateway validates, deducts balance → POST your_endpoint_url\n                                                                       with X-Gateway-Secret header\n                                                                       and the agent's request body\n```\n\nYour API receives the raw request body from the agent. Return standard JSON. The gateway wraps your response for the caller.\n\n## Pricing Models\n\n**Per Request** — flat USDC price per call. Set the price when submitting your tool.\n\n**Formula** — dynamic pricing based on request parameters. Define:\n- A base price (available as `base_price` in the formula)\n- Typed parameters with constraints (min/max, type validation)\n- A formula expression: e.g. `base_price * num_images * (high_def ? 2 : 1)`\n\n**Output-Based Pricing** (optional, works with both models) — define output parameters extracted from your API response and a second formula. The gateway evaluates it post-response and charges the lesser amount. Example: pre-authorize for 10 images, but only charge for 3 if that's what was generated.\n\n## Earnings & Withdrawals\n\n- Earnings settle after 7 days\n- View available vs. pending balance on the Supplier Dashboard\n- Withdraw to USDC or USDT on Base L2\n\n## Supplier API Endpoints\n\n| Method | Path | Description |\n|---|---|---|\n| POST | /v1/supplier/register | Register a new tool (requires deposit) |\n| GET | /v1/supplier/status | Dashboard: tools, balances, earnings |\n| PATCH | /v1/supplier/tools/:toolId | Update tool details |\n| POST | /v1/supplier/tools/draft | Save/update a draft (no deposit) |\n| POST | /v1/supplier/tools/:toolId/submit | Submit a draft for review (requires deposit) |\n| POST | /v1/supplier/tools/test-endpoint | Test an endpoint URL |\n| POST | /v1/supplier/tools/:toolId/rotate-key | Rotate gateway secret |\n| POST | /v1/supplier/withdraw | Request withdrawal of settled earnings |\n\n## Response Format\n\nReturn standard JSON from your endpoint. The gateway wraps it:\n\n```json\n{\n  \"gateway\": {\n    \"cost\": 0.05,\n    \"balance\": 49.95,\n    \"request_id\": \"d4e5f6...\"\n  },\n  \"data\": { \"your\": \"response\" }\n}\n```\n\nIf your API returns HTTP 4xx/5xx or times out (15s), the agent is automatically refunded.\n",
+      "url": "https://api.agenticgateway.io/v1/supplier-skill.md"
+    },
+    "https://api.agenticgateway.io/v1/supplier/status": {
+      "bytes": 86,
+      "json_keys": [
+        "error",
+        "message"
+      ],
+      "json_preview": {
+        "error": "UNAUTHORIZED",
+        "message": "Authorization header or X-Wallet-Address required"
+      },
+      "ok": false,
+      "status": 401,
+      "url": "https://api.agenticgateway.io/v1/supplier/status"
+    },
+    "https://api.agenticgateway.io/v1/tools": {
+      "bytes": 5831,
+      "content_type": "application/json; charset=utf-8",
+      "json_count": 26,
+      "json_preview": [
+        {
+          "id": "155d5b67-d7ec-495f-a285-049734f72e45",
+          "name": "Stock Quotes - MULTIPLE/MANY",
+          "oneliner": "Fetch real-time stock quotes for one or more ticker symbols.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "stocks",
+            "market",
+            "data"
+          ]
+        },
+        {
+          "id": "037d58d8-9bdb-4f07-bb47-d4c609f110f5",
+          "name": "Single Stock Summary",
+          "oneliner": "Fetch a comprehensive stock profile with fundamentals, ownership, and analyst data.",
+          "price": "0.010000",
+          "tags": [
+            "analytics",
+            "finance",
+            "data"
+          ]
+        },
+        {
+          "id": "2d8a7c5b-1c5d-4373-ab34-25d7d736de4f",
+          "name": "YouTube Video Info",
+          "oneliner": "Retrieve metadata for any YouTube video.",
+          "price": "0.010000",
+          "tags": [
+            "youtube",
+            "video",
+            "data"
+          ]
+        },
+        {
+          "id": "489a5b69-9929-45f6-b2a0-afdf93068541",
+          "name": "S&P 500 Sector Performance",
+          "oneliner": "Real-time daily performance summary of all S&P 500 stocks grouped by GICS sector.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "stocks",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "890b8016-5b57-4e9e-a138-a3da092c2199",
+          "name": "Stock Quote History",
+          "oneliner": "Fetch historical OHLCV price data and corporate events for a stock ticker.",
+          "price": "0.010000",
+          "tags": [
+            "analytics",
+            "finance",
+            "data"
+          ]
+        },
+        {
+          "id": "b65609db-c27d-42b4-abad-df4a508e509f",
+          "name": "Currencies Overview",
+          "oneliner": "Live FX market overview with 23 currency pairs grouped by category.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "bd7211ac-821b-4b77-aa00-193328c20c99",
+          "name": "Futures Market Overview",
+          "oneliner": "Live futures market overview with 37 contracts grouped by category.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "bd66e959-a1b4-49da-9015-5661854e1b4e",
+          "name": "Stock Financials Overview",
+          "oneliner": "Fetch comprehensive financial statements, profitability metrics, and EPS trends for a stock.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "dd4827c8-3043-4bc6-b11a-1839228b1cbb",
+          "name": "Stock Analysis",
+          "oneliner": "Fetch comprehensive stock analysis with earnings, valuation, analyst actions, and forward estimates.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "e0843977-8908-4690-9531-9b62d10df1b5",
+          "name": "Tavily Search API",
+          "oneliner": null,
+          "price": "0.015000",
+          "tags": [
+            "search",
+            "web",
+            "data"
+          ]
+        },
+        {
+          "id": "ff28c9dd-2982-4ca1-81bc-c19d3fc0e5a8",
+          "name": "Stock News",
+          "oneliner": "Fetch recent news articles and coverage analytics for a stock ticker. ",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "2ce94629-2751-4f69-a63b-c316f0a6b16a",
+          "name": "Bonds & Yields Overview",
+          "oneliner": "Live Treasury bond and yield overview with curve analysis.",
+          "price": "0.010000",
+          "tags": null
+        },
+        {
+          "id": "a0d3790f-6b40-4d69-aaac-16333addf895",
+          "name": "YouTube Transcript",
+          "oneliner": "Get captions and subtitles from any YouTube video.",
+          "price": "0.010000",
+          "tags": [
+            "youtube",
+            "video",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "bcd504ba-26a0-4faf-bf86-66bf8982e9c9",
+          "name": "Crypto Market Overview",
+          "oneliner": "Live cryptocurrency market overview with top 10 coins by market cap.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data",
+            "crypto"
+          ]
+        },
+        {
+          "id": "70d3ce78-b036-44c5-a71e-ddd7c7987e76",
+          "name": "World Indices Overview",
+          "oneliner": "Live global market overview with 41 world indices grouped by region.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "34850db3-72e6-47c6-a279-dd2228cb0751",
+          "name": "Get a Stock's Recent Updates ",
+          "oneliner": "Fetch earnings history, analyst ratings, price targets, and SEC filings for a stock.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "data",
+            "analytics"
+          ]
+        },
+        {
+          "id": "89a8b480-c9e0-4db2-8a98-3977a1229f77",
+          "name": "Major ETF Daily Flows",
+          "oneliner": "Daily fund flow data for 27 major ETFs with sector rotation and momentum analysis.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data",
+            "crypto"
+          ]
+        },
+        {
+          "id": "bf73d84c-53a8-4e98-be7c-dfef21de3e1f",
+          "name": "Finviz Stock News",
+          "oneliner": "Stock-specific news headlines from Finviz, filterable by ticker",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "stocks",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "38944c0c-8634-444e-b4e2-0173bc77a733",
+          "name": "Finviz ETF News",
+          "oneliner": "ETF-specific financial news headlines from Finviz with ticker and source analytics",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "etf",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "1329fc7a-6ac6-458a-8dab-f2451acb0d77",
+          "name": "Finviz Crypto News",
+          "oneliner": "Crypto-specific financial news headlines from Finviz with ticker and source analytics",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "crypto",
+            "bitcoin",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "f01c7980-7f7c-45ee-90e8-ff148261ec59",
+          "name": "Finviz Economic Calendar",
+          "oneliner": "Upcoming and recent economic events with importance ratings, forecasts, and actuals",
+          "price": "0.010000",
+          "tags": [
+            "finviz",
+            "calendar",
+            "economic",
+            "macro",
+            "fomc",
+            "finance"
+          ]
+        },
+        {
+          "id": "330de371-8a1a-4659-adab-53130a049152",
+          "name": "Finviz Earnings Calendar",
+          "oneliner": "Upcoming and recent earnings reports with EPS/sales estimates, actuals, and surprises",
+          "price": "0.010000",
+          "tags": [
+            "finviz",
+            "calendar",
+            "earnings",
+            "eps",
+            "finance"
+          ]
+        },
+        {
+          "id": "ba21cc3c-3a46-4d15-ba08-e951e7c926b8",
+          "name": "Finviz Dividends Calendar",
+          "oneliner": "Upcoming and recent ex-dividend dates with ordinary/special amounts and yield data",
+          "price": "0.010000",
+          "tags": [
+            "finviz",
+            "calendar",
+            "dividends",
+            "yield",
+            "income",
+            "finance"
+          ]
+        },
+        {
+          "id": "25ae9912-64cb-4ad3-bcf8-3247a1b2f630",
+          "name": "Finviz Market News",
+          "oneliner": "Market-wide financial news headlines from Finviz with source analytics",
+          "price": "0.020000",
+          "tags": [
+            "finviz",
+            "news",
+            "market",
+            "headlines",
+            "finance"
+          ]
+        },
+        {
+          "id": "738393aa-68e0-4954-b7ba-15b6c53f942d",
+          "name": "Stock Insights",
+          "oneliner": "Fetch stock insights combining technical outlook, valuation, and Morningstar analyst research.",
+          "price": "0.010000",
+          "tags": [
+            "finance",
+            "analytics",
+            "data"
+          ]
+        },
+        {
+          "id": "5b219344-f57d-4b17-bbea-308e98c5fb24",
+          "name": "X/Twitter Tweets by User Handle",
+          "oneliner": "Fetches recent tweets for a Twitter/X user.",
+          "price": "0.010000",
+          "tags": [
+            "social",
+            "twitter",
+            "data"
+          ]
+        }
+      ],
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools"
+    },
+    "https://api.agenticgateway.io/v1/tools/:toolId</span></div></pre></div></div></section><section": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/tools/:toolId</span></div></pre></div></div></section><section"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=": {
+      "bytes": 65,
+      "json_keys": [
+        "error",
+        "message"
+      ],
+      "json_preview": {
+        "error": "MISSING_QUERY",
+        "message": "query parameter is required"
+      },
+      "ok": false,
+      "status": 400,
+      "url": "https://api.agenticgateway.io/v1/tools/search?query="
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=...": {
+      "bytes": 1239,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "mode",
+        "query",
+        "results"
+      ],
+      "json_preview": {
+        "mode": "keyword",
+        "query": "...",
+        "results": [
+          {
+            "id": "2d8a7c5b-1c5d-4373-ab34-25d7d736de4f",
+            "name": "YouTube Video Info",
+            "oneliner": "Retrieve metadata for any YouTube video.",
+            "price": "0.010000",
+            "tags": [
+              "youtube",
+              "video",
+              "data"
+            ]
+          },
+          {
+            "id": "489a5b69-9929-45f6-b2a0-afdf93068541",
+            "name": "S&P 500 Sector Performance",
+            "oneliner": "Real-time daily performance summary of all S&P 500 stocks grouped by GICS sector.",
+            "price": "0.010000",
+            "tags": [
+              "finance",
+              "stocks",
+              "analytics",
+              "data"
+            ]
+          },
+          {
+            "id": "bd7211ac-821b-4b77-aa00-193328c20c99",
+            "name": "Futures Market Overview",
+            "oneliner": "Live futures market overview with 37 contracts grouped by category.",
+            "price": "0.010000",
+            "tags": [
+              "finance",
+              "data",
+              "analytics"
+            ]
+          },
+          {
+            "id": "e0843977-8908-4690-9531-9b62d10df1b5",
+            "name": "Tavily Search API",
+            "oneliner": null,
+            "price": "0.015000",
+            "tags": [
+              "search",
+              "web",
+              "data"
+            ]
+          },
+          {
+            "id": "70d3ce78-b036-44c5-a71e-ddd7c7987e76",
+            "name": "World Indices Overview",
+            "oneliner": "Live global market overview with 41 world indices grouped by region.",
+            "price": "0.010000",
+            "tags": [
+              "finance",
+              "data",
+              "analytics"
+            ]
+          },
+          {
+            "id": "5b219344-f57d-4b17-bbea-308e98c5fb24",
+            "name": "X/Twitter Tweets by User Handle",
+            "oneliner": "Fetches recent tweets for a Twitter/X user.",
+            "price": "0.010000",
+            "tags": [
+              "social",
+              "twitter",
+              "data"
+            ]
+          }
+        ]
+      },
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=..."
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=I+need+to+resize+images+in+bulk&amp;mode=agentic</span></div></pre></div><p": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=I+need+to+resize+images+in+bulk&amp;mode=agentic</span></div></pre></div><p"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=I+need+to+resize+images+in+bulk&mode=agentic": {
+      "bytes": 73,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "mode",
+        "query",
+        "results"
+      ],
+      "json_preview": {
+        "mode": "agentic",
+        "query": "I need to resize images in bulk",
+        "results": []
+      },
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=I+need+to+resize+images+in+bulk&mode=agentic"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=translate+text&amp;mode=semantic</span></div><div": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=translate+text&amp;mode=semantic</span></div><div"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=translate+text+to+spanish&mode=semantic": {
+      "bytes": 4950,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "mode",
+        "query",
+        "results"
+      ],
+      "json_preview": {
+        "mode": "semantic",
+        "query": "translate text to spanish",
+        "results": [
+          {
+            "id": "dd4827c8-3043-4bc6-b11a-1839228b1cbb",
+            "name": "Stock Analysis",
+            "oneliner": "Fetch comprehensive stock analysis with earnings, valuation, analyst actions, and forward estimates.",
+            "price": "0.010000",
+            "similarity": 0.14,
+            "tags": [
+              "finance",
+              "analytics",
+              "data"
+            ]
+          },
+          {
+            "id": "a0d3790f-6b40-4d69-aaac-16333addf895",
+            "name": "YouTube Transcript",
+            "oneliner": "Get captions and subtitles from any YouTube video.",
+            "price": "0.010000",
+            "similarity": 0.137,
+            "tags": [
+              "youtube",
+              "video",
+              "data",
+              "analytics"
+            ]
+          },
+          {
+            "id": "890b8016-5b57-4e9e-a138-a3da092c2199",
+            "name": "Stock Quote History",
+            "oneliner": "Fetch historical OHLCV price data and corporate events for a stock ticker.",
+            "price": "0.010000",
+            "similarity": 0.133,
+            "tags": [
+              "analytics",
+              "finance",
+              "data"
+            ]
+          },
+          {
+            "id": "bd66e959-a1b4-49da-9015-5661854e1b4e",
+            "name": "Stock Financials Overview",
+            "oneliner": "Fetch comprehensive financial statements, profitability metrics, and EPS trends for a stock.",
+            "price": "0.010000",
+            "similarity": 0.131,
+            "tags": [
+              "finance",
+              "analytics",
+              "data"
+            ]
+          },
+          {
+            "id": "34850db3-72e6-47c6-a279-dd2228cb0751",
+            "name": "Get a Stock's Recent Updates ",
+            "oneliner": "Fetch earnings history, analyst ratings, price targets, and SEC filings for a stock.",
+            "price": "0.010000",
+            "similarity": 0.128,
+            "tags": [
+              "finance",
+              "data",
+              "analytics"
+            ]
+          },
+          {
+            "id": "bf73d84c-53a8-4e98-be7c-dfef21de3e1f",
+            "name": "Finviz Stock News",
+            "oneliner": "Stock-specific news headlines from Finviz, filterable by ticker",
+            "price": "0.020000",
+            "similarity": 0.122,
+            "tags": [
+              "finviz",
+              "news",
+              "stocks",
+              "headlines",
+              "finance"
+            ]
+          },
+          {
+            "id": "738393aa-68e0-4954-b7ba-15b6c53f942d",
+            "name": "Stock Insights",
+            "oneliner": "Fetch stock insights combining technical outlook, valuation, and Morningstar analyst research.",
+            "price": "0.010000",
+            "similarity": 0.121,
+            "tags": [
+              "finance",
+              "analytics",
+              "data"
+            ]
+          },
+          {
+            "id": "2ce94629-2751-4f69-a63b-c316f0a6b16a",
+            "name": "Bonds & Yields Overview",
+            "oneliner": "Live Treasury bond and yield overview with curve analysis.",
+            "price": "0.010000",
+            "similarity": 0.119,
+            "tags": null
+          },
+          {
+            "id": "25ae9912-64cb-4ad3-bcf8-3247a1b2f630",
+            "name": "Finviz Market News",
+            "oneliner": "Market-wide financial news headlines from Finviz with source analytics",
+            "price": "0.020000",
+            "similarity": 0.115,
+            "tags": [
+              "finviz",
+              "news",
+              "market",
+              "headlines",
+              "finance"
+            ]
+          },
+          {
+            "id": "037d58d8-9bdb-4f07-bb47-d4c609f110f5",
+            "name": "Single Stock Summary",
+            "oneliner": "Fetch a comprehensive stock profile with fundamentals, ownership, and analyst data.",
+            "price": "0.010000",
+            "similarity": 0.115,
+            "tags": [
+              "analytics",
+              "finance",
+              "data"
+            ]
+          },
+          {
+            "id": "b65609db-c27d-42b4-abad-df4a508e509f",
+            "name": "Currencies Overview",
+            "oneliner": "Live FX market overview with 23 currency pairs grouped by category.",
+            "price": "0.010000",
+            "similarity": 0.11,
+            "tags": [
+              "finance",
+              "data",
+              "analytics"
+            ]
+          },
+          {
+            "id": "ba21cc3c-3a46-4d15-ba08-e951e7c926b8",
+            "name": "Finviz Dividends Calendar",
+            "oneliner": "Upcoming and recent ex-dividend dates with ordinary/special amounts and yield data",
+            "price": "0.010000",
+            "similarity": 0.108,
+            "tags": [
+              "finviz",
+              "calendar",
+              "dividends",
+              "yield",
+              "income",
+              "finance"
+            ]
+          },
+          {
+            "id": "38944c0c-8634-444e-b4e2-0173bc77a733",
+            "name": "Finviz ETF News",
+            "oneliner": "ETF-specific financial news headlines from Finviz with ticker and source analytics",
+            "price": "0.020000",
+            "similarity": 0.108,
+            "tags": [
+              "finviz",
+              "news",
+              "etf",
+              "headlines",
+              "finance"
+            ]
+          },
+          {
+            "id": "1329fc7a-6ac6-458a-8dab-f2451acb0d77",
+            "name": "Finviz Crypto News",
+            "oneliner": "Crypto-specific financial news headlines from Finviz with ticker and source analytics",
+            "price": "0.020000",
+            "similarity": 0.103,
+            "tags": [
+              "finviz",
+              "news",
+              "crypto",
+              "bitcoin",
+              "headlines",
+              "finance"
+            ]
+          },
+          {
+            "id": "330de371-8a1a-4659-adab-53130a049152",
+            "name": "Finviz Earnings Calendar",
+            "oneliner": "Upcoming and recent earnings reports with EPS/sales estimates, actuals, and surprises",
+            "price": "0.010000",
+            "similarity": 0.1,
+            "tags": [
+              "finviz",
+              "calendar",
+              "earnings",
+              "eps",
+              "finance"
+            ]
+          },
+          {
+            "id": "89a8b480-c9e0-4db2-8a98-3977a1229f77",
+            "name": "Major ETF Daily Flows",
+            "oneliner": "Daily fund flow data for 27 major ETFs with sector rotation and momentum analysis.",
+            "price": "0.010000",
+            "similarity": 0.1,
+            "tags": [
+              "finance",
+              "analytics",
+              "data",
+              "crypto"
+            ]
+          },
+          {
+            "id": "ff28c9dd-2982-4ca1-81bc-c19d3fc0e5a8",
+            "name": "Stock News",
+            "oneliner": "Fetch recent news articles and coverage analytics for a stock ticker. ",
+            "price": "0.010000",
+            "similarity": 0.099,
+            "tags": [
+              "finance",
+              "analytics",
+              "data"
+            ]
+          },
+          {
+            "id": "e0843977-8908-4690-9531-9b62d10df1b5",
+            "name": "Tavily Search API",
+            "oneliner": null,
+            "price": "0.015000",
+            "similarity": 0.087,
+            "tags": [
+              "search",
+              "web",
+              "data"
+            ]
+          },
+          {
+            "id": "bd7211ac-821b-4b77-aa00-193328c20c99",
+            "name": "Futures Market Overview",
+            "oneliner": "Live futures market overview with 37 contracts grouped by category.",
+            "price": "0.010000",
+            "similarity": 0.085,
+            "tags": [
+              "finance",
+              "data",
+              "analytics"
+            ]
+          },
+          {
+            "id": "bcd504ba-26a0-4faf-bf86-66bf8982e9c9",
+            "name": "Crypto Market Overview",
+            "oneliner": "Live cryptocurrency market overview with top 10 coins by market cap.",
+            "price": "0.010000",
+            "similarity": 0.085,
+            "tags": [
+              "finance",
+              "analytics",
+              "data",
+              "crypto"
+            ]
+          }
+        ]
+      },
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=translate+text+to+spanish&mode=semantic"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=weather": {
+      "bytes": 49,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "mode",
+        "query",
+        "results"
+      ],
+      "json_preview": {
+        "mode": "keyword",
+        "query": "weather",
+        "results": []
+      },
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=weather+forecast": {
+      "bytes": 58,
+      "content_type": "application/json; charset=utf-8",
+      "json_keys": [
+        "mode",
+        "query",
+        "results"
+      ],
+      "json_preview": {
+        "mode": "keyword",
+        "query": "weather forecast",
+        "results": []
+      },
+      "ok": true,
+      "status": 200,
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather+forecast"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=weather+forecast</span></div><div": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather+forecast</span></div><div"
+    },
+    "https://api.agenticgateway.io/v1/tools/search?query=weather</code><code": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/tools/search?query=weather</code><code"
+    },
+    "https://api.agenticgateway.io/v1/tools</code></p></div></section><section": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/tools</code></p></div></section><section"
+    },
+    "https://api.agenticgateway.io/v1/tools</span></div></pre></div><p": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/tools</span></div></pre></div><p"
+    },
+    "https://api.agenticgateway.io/v1/transactions/:requestId": {
+      "bytes": 111,
+      "json_keys": [
+        "error",
+        "message"
+      ],
+      "json_preview": {
+        "error": "MISSING_AUTH",
+        "message": "X-Signature and X-Timestamp headers, or Authorization: Bearer JWT required"
+      },
+      "ok": false,
+      "status": 401,
+      "url": "https://api.agenticgateway.io/v1/transactions/:requestId"
+    },
+    "https://api.agenticgateway.io/v1/transactions/:requestId</code>": {
+      "bytes": 0,
+      "ok": false,
+      "status": 400,
+      "text_preview": "",
+      "url": "https://api.agenticgateway.io/v1/transactions/:requestId</code>"
+    }
+  },
+  "writes_performed": []
+}
