@@ -1,0 +1,20 @@
+name: Cancel superseded AgentMart seller monitor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/cancel-agentmart-seller-monitor.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agentmart-zero-spend-seller
+  cancel-in-progress: true
+
+jobs:
+  supersede:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Superseding the old single-product AgentMart monitor.'
