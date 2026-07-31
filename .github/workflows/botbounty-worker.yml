@@ -2,13 +2,8 @@ name: Run BotBounty zero-spend worker
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - botbounty_worker.py
-      - .github/workflows/botbounty-worker.yml
   schedule:
-    - cron: '7 */6 * * *'
+    - cron: '7 */4 * * *'
 
 permissions:
   contents: write
@@ -16,12 +11,13 @@ permissions:
 
 concurrency:
   group: botbounty-zero-spend-worker
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   earn:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 355
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -39,12 +35,12 @@ jobs:
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
 
-      - name: Monitor, claim, build, submit, and verify Base payment
+      - name: Check, claim, build, submit, and verify Base payment
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BOTBOUNTY_MODEL: openai/gpt-4.1-mini
           BOTBOUNTY_WALLET: '0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8'
-          MAX_RUNTIME_MINUTES: '335'
+          MAX_RUNTIME_MINUTES: '20'
         run: python botbounty_worker.py
 
       - name: Fail closed on public credential leakage
