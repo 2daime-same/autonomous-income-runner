@@ -65,22 +65,39 @@ def unwrap(value: Any) -> list[Mapping[str, Any]]:
     return []
 
 
+def load_existing_semantic_report() -> dict[str, Any] | None:
+    try:
+        existing = json.loads(OUTPUT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(existing, dict):
+        return None
+    existing.pop("generated_at", None)
+    return existing
+
+
 def main() -> int:
     endpoints = [fetch(url) for url in ENDPOINTS]
     calls: list[Mapping[str, Any]] = []
     for result in endpoints:
         calls.extend(unwrap((result.get("payload") or {})))
-    report = {
-        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+    semantic_report = {
         "safety": "GET-only; no registration, terms acceptance, signature, application, submission, payment, or withdrawal",
         "endpoint_results": endpoints,
         "observed_call_records": len(calls),
+    }
+    if load_existing_semantic_report() == semantic_report:
+        print(json.dumps({"ok": True, "records": len(calls), "changed": False}))
+        return 0
+    report = {
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        **semantic_report,
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     temp = OUTPUT.with_suffix(OUTPUT.suffix + ".tmp")
     temp.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     os.replace(temp, OUTPUT)
-    print(json.dumps({"ok": True, "records": len(calls)}))
+    print(json.dumps({"ok": True, "records": len(calls), "changed": True}))
     return 0
 
 
