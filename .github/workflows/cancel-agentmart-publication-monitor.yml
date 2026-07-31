@@ -1,0 +1,20 @@
+name: Cancel superseded AgentMart publication monitor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/cancel-agentmart-publication-monitor.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agentmart-secure-publish-retry-relay
+  cancel-in-progress: true
+
+jobs:
+  supersede:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Superseding the old single-product AgentMart publication monitor.'
