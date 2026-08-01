@@ -37,21 +37,22 @@ jobs:
       EXPECTED_VERSION: ${{ inputs.expected_version }}
       EXPECTED_TARBALL_SHA256: ${{ inputs.expected_tarball_sha256 }}
       CONFIRM_PUBLICATION: ${{ inputs.confirm_publication }}
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
-      - name: Refuse accidental or unauthenticated execution
-        run: |
-          set -euo pipefail
-          test "$CONFIRM_PUBLICATION" = 'PUBLISH-MSN-00015'
-          test "$EXPECTED_VERSION" = '1.0.0'
-          test "$EXPECTED_TARBALL_SHA256" = '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219'
-          test -n "${NODE_AUTH_TOKEN:-}"
-
       - name: Check out the reviewed default branch
         uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
+
+      - name: Refuse accidental or unauthenticated execution
+        env:
+          NPM_TOKEN_FOR_PRESENCE_CHECK: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          test "$CONFIRM_PUBLICATION" = 'PUBLISH-MSN-00015'
+          test "$EXPECTED_VERSION" = '1.0.0'
+          test "$EXPECTED_TARBALL_SHA256" = '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219'
+          test -n "${NPM_TOKEN_FOR_PRESENCE_CHECK:-}"
 
       - name: Set up Node.js and npm registry authentication
         uses: actions/setup-node@v6
@@ -60,9 +61,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false
 
-      - name: Verify locked source and production dependencies
+      - name: Verify locked source and production dependencies without publish credentials
         run: |
           set -euo pipefail
+          test -z "${NODE_AUTH_TOKEN:-}"
           npm ci --no-audit --no-fund
           npm run verify
           npm audit --omit=dev --audit-level=high
@@ -74,6 +76,7 @@ jobs:
         id: pack
         run: |
           set -euo pipefail
+          test -z "${NODE_AUTH_TOKEN:-}"
           npm pack --json > /tmp/npm-pack.json
           TARBALL=$(python3 - <<'PY'
           import json
@@ -91,6 +94,7 @@ jobs:
       - name: Refuse overwrite or name collision
         run: |
           set -euo pipefail
+          test -z "${NODE_AUTH_TOKEN:-}"
           PACKAGE='archimedes-github-pr-mcp'
           if npm view "$PACKAGE@$EXPECTED_VERSION" version --json >/tmp/existing-version.json 2>/tmp/existing-version.err; then
             echo "Package version already exists; refusing a second publication attempt."
@@ -104,13 +108,17 @@ jobs:
           fi
 
       - name: Publish the approved public package once
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           set -euo pipefail
+          test -n "${NODE_AUTH_TOKEN:-}"
           npm publish "${{ steps.pack.outputs.tarball }}" --access public --provenance
 
-      - name: Verify public registry metadata and installability
+      - name: Verify public registry metadata and installed-package MCP handshake
         run: |
           set -euo pipefail
+          test -z "${NODE_AUTH_TOKEN:-}"
           PACKAGE='archimedes-github-pr-mcp'
           for attempt in $(seq 1 30); do
             if npm view "$PACKAGE@$EXPECTED_VERSION" --json > /tmp/published.json 2>/tmp/published.err; then
@@ -124,21 +132,70 @@ jobs:
           cd /tmp/msn15-registry-install
           npm init -y >/dev/null
           npm install --no-audit --no-fund "$PACKAGE@$EXPECTED_VERSION"
-          test -s node_modules/archimedes-github-pr-mcp/dist/index.js
-          node node_modules/archimedes-github-pr-mcp/dist/index.js </dev/null >/tmp/server.stdout 2>/tmp/server.stderr || STATUS=$?
-          test "${STATUS:-0}" -eq 0
+          SERVER_PATH="$PWD/node_modules/archimedes-github-pr-mcp/dist/index.js"
+          test -s "$SERVER_PATH"
+          SERVER_PATH="$SERVER_PATH" node <<'NODE'
+          import { spawn } from 'node:child_process';
+          import readline from 'node:readline';
+
+          const child = spawn(process.execPath, [process.env.SERVER_PATH], {
+            env: {
+              ...process.env,
+              GITHUB_AUTH_MODE: 'none',
+              GITHUB_ALLOW_WRITES: 'false',
+              GITHUB_READ_TOKEN: '',
+              GITHUB_WRITE_TOKEN: '',
+              GITHUB_TOKEN: '',
+            },
+            stdio: ['pipe', 'pipe', 'inherit'],
+          });
+          const lines = readline.createInterface({ input: child.stdout, crlfDelay: Infinity });
+          let id = 1;
+          const pending = new Map();
+          lines.on('line', (line) => {
+            const value = JSON.parse(line);
+            const waiter = pending.get(value.id);
+            if (!waiter) return;
+            pending.delete(value.id);
+            value.error ? waiter.reject(new Error(JSON.stringify(value.error))) : waiter.resolve(value.result);
+          });
+          function request(method, params = {}) {
+            const requestId = id++;
+            return new Promise((resolve, reject) => {
+              const timer = setTimeout(() => reject(new Error(`timeout: ${method}`)), 20_000);
+              pending.set(requestId, {
+                resolve(value) { clearTimeout(timer); resolve(value); },
+                reject(error) { clearTimeout(timer); reject(error); },
+              });
+              child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', id: requestId, method, params })}\n`);
+            });
+          }
+          const initialized = await request('initialize', {
+            protocolVersion: '2025-06-18',
+            capabilities: {},
+            clientInfo: { name: 'registry-smoke', version: '1.0.0' },
+          });
+          child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized', params: {} })}\n`);
+          const tools = await request('tools/list');
+          if (!initialized?.serverInfo || tools.tools?.length !== 8) {
+            throw new Error('published package did not register the expected MCP surface');
+          }
+          child.stdin.end();
+          setTimeout(() => child.kill('SIGTERM'), 250).unref();
+          NODE
 
       - name: Record public publication evidence without credentials
         env:
-          SOURCE_SHA: ${{ github.sha }}
           WORKFLOW_RUN_ID: ${{ github.run_id }}
           TARBALL: ${{ steps.pack.outputs.tarball }}
           TARBALL_SHA: ${{ steps.pack.outputs.sha256 }}
         run: |
           set -euo pipefail
+          test -z "${NODE_AUTH_TOKEN:-}"
           mkdir -p publication-evidence
+          SOURCE_SHA=$(git rev-parse HEAD)
+          export SOURCE_SHA
           python3 - <<'PY'
-          import hashlib
           import json
           import os
           import re
@@ -159,6 +216,7 @@ jobs:
               'tarball_sha256': os.environ['TARBALL_SHA'],
               'registry_dist': metadata.get('dist'),
               'registry_install_verified': True,
+              'mcp_tool_count_verified': 8,
               'provenance_requested': True,
               'expense_usd': 0,
               'income_or_receivable_proven': False,
