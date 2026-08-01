@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Fetch the current public Archimedes bounty inventory through its official MCP endpoint.
+"""Audit the current public Archimedes bounty inventory through its official MCP.
 
-This scanner is deliberately read-only and one-shot. It does not register an account,
-accept terms, connect Stripe, submit work, send messages, or create transactions.
-The resulting JSON is public-source evidence for deciding whether a funded mission is
-currently open and worth a human-authorized submission step.
+The scanner performs a bounded, read-only, one-shot lookup. It does not register an
+account, accept terms, connect Stripe, submit work, message users, or create a
+transaction. Public results are committed as evidence for execution decisions.
 """
 from __future__ import annotations
 
@@ -21,19 +20,19 @@ from typing import Any, Iterable, Mapping
 
 ENDPOINT = "https://archimedes.market/api/mcp"
 OUTPUT = Path(os.environ.get("ARCHIMEDES_OUTPUT", "market-output/archimedes-live.json"))
-USER_AGENT = "autonomous-income-runner-archimedes-audit/1.0"
-QUERIES = (
-    "MSN-00013",
-    "MSN-00014",
-    "MSN-00015",
-    "GitHub pull request MCP",
-    "engineering unit conversion API",
-    "MCP server",
-    "software API",
-    "Python TypeScript",
+USER_AGENT = "autonomous-income-runner-archimedes-audit/2.0"
+SEARCHES: tuple[tuple[str, str | None], ...] = (
+    ("all_open", None),
+    ("MSN-00013", "MSN-00013"),
+    ("MSN-00014", "MSN-00014"),
+    ("MSN-00015", "MSN-00015"),
+    ("github_pr_mcp", "GitHub pull request MCP"),
+    ("unit_conversion", "unit conversion"),
+    ("mcp", "MCP"),
+    ("api", "API"),
 )
-UUID_RE = re.compile(r"\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b", re.I)
-MISSION_RE = re.compile(r"\bMSN-[0-9]{5}\b", re.I)
+UUID_RE = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$", re.I)
+MISSION_RE = re.compile(r"^MSN-[0-9]{5}$", re.I)
 SECRET_RE = re.compile(
     r"(?i)(authorization\s*[:=]|bearer\s+[A-Za-z0-9._~+/=-]{16,}|"
     r"\b(?:sk|pk|ghp|gho|ghs|github_pat)_[A-Za-z0-9_=-]{16,}\b|"
@@ -64,7 +63,6 @@ def parse_response(raw: str, content_type: str) -> Any:
     text = raw.strip()
     if not text:
         raise ScannerError("Archimedes returned an empty response")
-
     if "text/event-stream" in content_type.lower() or text.startswith("data:"):
         events: list[Any] = []
         chunks: list[str] = []
@@ -87,9 +85,8 @@ def parse_response(raw: str, content_type: str) -> Any:
                 except json.JSONDecodeError:
                     events.append({"unparsed_data": candidate[:20_000]})
         if not events:
-            raise ScannerError("Archimedes returned SSE without a JSON data event")
+            raise ScannerError("Archimedes returned SSE without a JSON event")
         return events[-1] if len(events) == 1 else {"events": events}
-
     try:
         return json.loads(text)
     except json.JSONDecodeError as exc:
@@ -125,11 +122,7 @@ def post_json(payload: Mapping[str, Any], attempts: int = 2) -> Any:
 
 
 def rpc(method: str, params: Mapping[str, Any] | None, request_id: int) -> Any:
-    payload: dict[str, Any] = {
-        "jsonrpc": "2.0",
-        "id": request_id,
-        "method": method,
-    }
+    payload: dict[str, Any] = {"jsonrpc": "2.0", "id": request_id, "method": method}
     if params is not None:
         payload["params"] = dict(params)
     response = post_json(payload)
@@ -193,23 +186,24 @@ def enum_values(schema: Any) -> list[str]:
     return [str(value) for value in values] if isinstance(values, list) else []
 
 
-def search_arguments(tool: Mapping[str, Any] | None, query: str) -> dict[str, Any]:
+def search_arguments(tool: Mapping[str, Any] | None, query: str | None) -> dict[str, Any]:
     properties = schema_properties(tool)
     arguments: dict[str, Any] = {}
-    if "query" in properties:
+    if query and "query" in properties:
         arguments["query"] = query
     if "limit" in properties:
         arguments["limit"] = 50
+    if "offset" in properties:
+        arguments["offset"] = 0
     if "page" in properties:
         arguments["page"] = 1
     if "page_size" in properties:
         arguments["page_size"] = 50
-
     for field in ("funding_status", "fundingStatus", "status"):
         if field not in properties:
             continue
         values = enum_values(properties[field])
-        for preferred in ("funded", "open", "all"):
+        for preferred in ("open", "funded", "all"):
             if preferred in values:
                 arguments[field] = preferred
                 break
@@ -226,43 +220,55 @@ def walk(value: Any) -> Iterable[Any]:
             yield from walk(item)
 
 
+def is_bounty_record(item: Mapping[str, Any]) -> bool:
+    identifier = item.get("id")
+    title = item.get("title")
+    price = item.get("price_cents") if "price_cents" in item else item.get("payout_cents")
+    url = item.get("url") or item.get("public_url")
+    return (
+        isinstance(identifier, str)
+        and UUID_RE.fullmatch(identifier) is not None
+        and isinstance(title, str)
+        and bool(title.strip())
+        and isinstance(price, (int, float))
+        and isinstance(url, str)
+        and "/bounties/" in url
+    )
+
+
 def candidate_records(value: Any) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     seen: set[str] = set()
     for item in walk(value):
-        if not isinstance(item, Mapping):
+        if not isinstance(item, Mapping) or not is_bounty_record(item):
             continue
-        keys = {str(key).lower() for key in item.keys()}
-        if not keys.intersection({"title", "name", "summary", "payout", "payout_cents", "public_url", "url"}):
+        identifier = str(item["id"]).lower()
+        if identifier in seen:
             continue
-        serialized = json.dumps(item, ensure_ascii=False, sort_keys=True, default=str)
-        digest = hashlib.sha256(serialized.encode("utf-8")).hexdigest()
-        if digest in seen:
-            continue
-        seen.add(digest)
+        seen.add(identifier)
         records.append(dict(item))
     return records
 
 
-def identifiers(value: Any) -> list[str]:
-    found: list[str] = []
-    for item in walk(value):
-        if isinstance(item, Mapping):
-            for key in ("id", "uuid", "bounty_id", "bountyId", "mission_id", "missionId", "code"):
-                raw = item.get(key)
-                if isinstance(raw, (str, int)) and str(raw).strip():
-                    found.append(str(raw).strip())
-        elif isinstance(item, str):
-            found.extend(UUID_RE.findall(item))
-            found.extend(MISSION_RE.findall(item))
-    deduped: list[str] = []
-    seen: set[str] = set()
-    for item in found:
-        normalized = item.upper() if MISSION_RE.fullmatch(item) else item.lower()
-        if normalized not in seen:
-            seen.add(normalized)
-            deduped.append(item)
-    return deduped
+def record_identifiers(records: Iterable[Mapping[str, Any]]) -> tuple[list[str], list[str]]:
+    uuids: list[str] = []
+    displays: list[str] = []
+    seen_uuids: set[str] = set()
+    seen_displays: set[str] = set()
+    for record in records:
+        identifier = record.get("id")
+        if isinstance(identifier, str) and UUID_RE.fullmatch(identifier):
+            normalized = identifier.lower()
+            if normalized not in seen_uuids:
+                seen_uuids.add(normalized)
+                uuids.append(identifier)
+        display = record.get("display_id")
+        if isinstance(display, str) and MISSION_RE.fullmatch(display):
+            normalized_display = display.upper()
+            if normalized_display not in seen_displays:
+                seen_displays.add(normalized_display)
+                displays.append(normalized_display)
+    return uuids, displays
 
 
 def details_arguments(tool: Mapping[str, Any] | None, identifier: str) -> dict[str, Any] | None:
@@ -292,8 +298,7 @@ def main() -> int:
 
     searches: list[dict[str, Any]] = []
     all_records: list[dict[str, Any]] = []
-    all_identifiers: list[str] = []
-    for query in QUERIES:
+    for label, query in SEARCHES:
         arguments = search_arguments(search_tool, query)
         response = rpc(
             "tools/call",
@@ -303,36 +308,29 @@ def main() -> int:
         request_id += 1
         decoded = decode_embedded_json(result_value(response))
         records = candidate_records(decoded)
-        ids = identifiers(decoded)
+        record_uuids, record_displays = record_identifiers(records)
         searches.append(
             {
+                "label": label,
                 "query": query,
                 "arguments": arguments,
                 "candidate_record_count": len(records),
-                "identifiers": ids,
+                "bounty_uuids": record_uuids,
+                "display_ids": record_displays,
                 "result": decoded,
             }
         )
         all_records.extend(records)
-        all_identifiers.extend(ids)
         time.sleep(0.6)
 
-    deduped_records: list[dict[str, Any]] = []
-    record_hashes: set[str] = set()
+    records_by_id: dict[str, dict[str, Any]] = {}
     for record in all_records:
-        serialized = json.dumps(record, ensure_ascii=False, sort_keys=True, default=str)
-        digest = hashlib.sha256(serialized.encode("utf-8")).hexdigest()
-        if digest not in record_hashes:
-            record_hashes.add(digest)
-            deduped_records.append(record)
-
-    unique_ids: list[str] = []
-    seen_ids: set[str] = set()
-    for identifier in all_identifiers:
-        normalized = identifier.upper() if MISSION_RE.fullmatch(identifier) else identifier.lower()
-        if normalized not in seen_ids:
-            seen_ids.add(normalized)
-            unique_ids.append(identifier)
+        records_by_id[str(record["id"]).lower()] = record
+    deduped_records = sorted(
+        records_by_id.values(),
+        key=lambda item: (-int(item.get("price_cents") or 0), str(item.get("display_id") or "")),
+    )
+    unique_ids, display_ids = record_identifiers(deduped_records)
 
     details: list[dict[str, Any]] = []
     if details_tool is not None:
@@ -361,17 +359,13 @@ def main() -> int:
     stats: Any = None
     if stats_tool is not None:
         try:
-            response = rpc(
-                "tools/call",
-                {"name": "get_platform_stats", "arguments": {}},
-                request_id,
-            )
+            response = rpc("tools/call", {"name": "get_platform_stats", "arguments": {}}, request_id)
             stats = decode_embedded_json(result_value(response))
         except ScannerError as exc:
             stats = {"error": str(exc)}
 
     output = {
-        "schema_version": "archimedes-live-audit-v1",
+        "schema_version": "archimedes-live-audit-v2",
         "generated_at": iso_now(),
         "source": ENDPOINT,
         "mode": "public_read_only_one_shot",
@@ -386,9 +380,10 @@ def main() -> int:
         "platform_stats": stats,
         "search_count": len(searches),
         "searches": searches,
-        "deduped_candidate_record_count": len(deduped_records),
-        "deduped_candidate_records": deduped_records,
-        "identifiers": unique_ids,
+        "open_bounty_count": len(deduped_records),
+        "open_bounties": deduped_records,
+        "bounty_uuids": unique_ids,
+        "display_ids": display_ids,
         "details": details,
     }
     assert_public_output(output)
@@ -396,9 +391,9 @@ def main() -> int:
     print(json.dumps({
         "ok": True,
         "output": str(OUTPUT),
-        "candidate_records": len(deduped_records),
-        "identifiers": len(unique_ids),
+        "open_bounties": len(deduped_records),
         "details": len(details),
+        "display_ids": display_ids,
     }, sort_keys=True))
     return 0
 
