@@ -26,7 +26,7 @@ jobs:
 
       - uses: actions/setup-go@v6
         with:
-          go-version: '1.25.x'
+          go-version: stable
           cache: false
 
       - name: Install and run actionlint
@@ -49,7 +49,7 @@ jobs:
           from datetime import datetime, timezone
           from pathlib import Path
           value = {
-              'schema_version': 'archimedes-msn-00015-first-publish-workflow-validation-v1',
+              'schema_version': 'archimedes-msn-00015-first-publish-workflow-validation-v2',
               'validated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
               'source_commit': os.environ['SOURCE_SHA'],
               'workflow': '.github/workflows/archimedes-msn-00015-first-npm-publish.yml',
