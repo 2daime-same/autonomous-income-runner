@@ -9,12 +9,12 @@
     "deploy": "skipped",
     "setup": "failure",
     "upload": "skipped",
-    "validate": "failure"
+    "validate": "success"
   },
   "page_url": null,
-  "recorded_at": "2026-08-01T19:12:08+00:00",
+  "recorded_at": "2026-08-01T19:15:50+00:00",
   "schema_version": "income-runner-pages-run-v1",
-  "source_commit": "c4ab37cf9b9cdfd192af394f5bdd53c0f8999d76",
+  "source_commit": "79cbd1c28861f9742063a7486d2a52b509f78222",
   "success": false,
-  "workflow_run_id": 30714245081
+  "workflow_run_id": 30714380390
 }
