@@ -1,0 +1,105 @@
+name: Check MSN-00015 npm package name
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - deliverables/archimedes-msn-00015/package.json
+      - .github/workflows/archimedes-msn-00015-npm-name.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archimedes-msn-00015-npm-name
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.23.1'
+          package-manager-cache: false
+
+      - name: Query public npm registry without authentication
+        working-directory: deliverables/archimedes-msn-00015
+        run: |
+          set -euo pipefail
+          mkdir -p demo-evidence
+          PACKAGE=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          set +e
+          npm view "$PACKAGE" version --json > /tmp/npm-view-output.json 2> /tmp/npm-view-error.txt
+          STATUS=$?
+          set -e
+          PACKAGE="$PACKAGE" VERSION="$VERSION" STARTED="$STARTED" STATUS="$STATUS" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          package = os.environ['PACKAGE']
+          version = os.environ['VERSION']
+          status = int(os.environ['STATUS'])
+          stdout = Path('/tmp/npm-view-output.json').read_text(encoding='utf-8', errors='replace').strip()
+          stderr = Path('/tmp/npm-view-error.txt').read_text(encoding='utf-8', errors='replace').strip()
+          available = status != 0 and ('E404' in stderr or '404 Not Found' in stderr)
+          existing_version = None
+          if status == 0 and stdout:
+              try:
+                  existing_version = json.loads(stdout)
+              except json.JSONDecodeError:
+                  existing_version = stdout[:500]
+          result = {
+              'schema_version': 'archimedes-msn-00015-npm-name-v1',
+              'checked_at': os.environ['STARTED'],
+              'registry': 'https://registry.npmjs.org',
+              'package': package,
+              'candidate_version': version,
+              'available_at_check_time': available,
+              'already_exists': status == 0,
+              'existing_version': existing_version,
+              'query_exit_code': status,
+              'authenticated': False,
+              'publish_attempted': False,
+              'commercial_status': {
+                  'verified_income_usd': 0,
+                  'verified_receivable_usd': 0,
+                  'expenses_usd': 0,
+              },
+          }
+          if status != 0 and not available:
+              result['unexpected_error'] = stderr[:2000]
+          Path('demo-evidence/npm-name-status.json').write_text(
+              json.dumps(result, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          if status != 0 and not available:
+              raise SystemExit(f'unexpected npm registry error: {stderr[:1000]}')
+          PY
+
+      - name: Commit registry evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add deliverables/archimedes-msn-00015/demo-evidence/npm-name-status.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Record MSN-00015 npm name availability [skip ci]'
+          for attempt in $(seq 1 12); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
