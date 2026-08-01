@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - trusted_bounty_execution_filter.py
+      - tests/test_trusted_bounty_execution_filter.py
       - market-output/trusted-bounties.json
       - .github/workflows/trusted-bounty-execution-filter.yml
 
@@ -26,10 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Test execution hard exclusions
+        run: python3 -m unittest tests/test_trusted_bounty_execution_filter.py -v
       - name: Validate execution filter
         run: python3 -m py_compile trusted_bounty_execution_filter.py github_bounty_radar.py
       - name: Exclude rewarded, submitted, paused, or oversized work
