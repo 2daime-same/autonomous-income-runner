@@ -1,0 +1,54 @@
+name: Publish evidence-backed engineering site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - site/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Validate static site
+        run: |
+          set -euo pipefail
+          test -s site/index.html
+          test -s site/robots.txt
+          grep -Fq 'Verified commercial ledger' site/index.html
+          grep -Fq 'Paid engineering request' site/index.html
+          if grep -Eqi '(gh[opsu]_[A-Za-z0-9_]{16,}|github_pat_[A-Za-z0-9_]{16,}|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY)' site/index.html; then
+            echo 'Credential-like material found in static site' >&2
+            exit 1
+          fi
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
