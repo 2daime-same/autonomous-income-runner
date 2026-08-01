@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security-sensitive report
+    url: https://github.com/2daime-same/autonomous-income-runner/security
+    about: Do not place credentials, private data, or exploitable confidential details in a public issue. Use GitHub's private security-reporting flow when available.
