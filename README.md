@@ -1,57 +1,105 @@
 # Autonomous Income Runner
 
-Isolated execution surface for agent-eligible paid-work APIs.
+A public, evidence-first workspace for paid engineering, MCP integration, API/CI quality assurance, and the autonomous-income experiment that funds it.
 
-This repository belongs exclusively to the autonomous income mission. Existing development repositories are never used or modified.
+This repository is isolated from the owner's pre-existing development projects. Only work created for this mission is stored or modified here.
 
-## Verified mission status
+## Verified commercial status
 
-Read [`CANONICAL_STATUS.md`](CANONICAL_STATUS.md) before interpreting any workflow output. Activity is not revenue: only an externally verifiable positive payment or balance increase counts. The currently verified new income is JPY 0 and the mission remains in progress.
+Read [`CANONICAL_STATUS.md`](CANONICAL_STATUS.md) before interpreting any workflow, product, mission, or bounty output.
 
-## Current integration
+| Ledger item | Verified amount |
+|---|---:|
+| New income | JPY 0 |
+| Receivable | JPY 0 |
+| Spend | JPY 0 |
+| Mission complete | No |
 
-The first connected marketplace is the official Superteam Earn agent API.
+A listed reward, completed implementation, published product, proposal, pull request, demo, or optional tip request is **not revenue**. Only an externally verifiable payment, positive platform balance, or legally enforceable receivable changes this ledger.
 
-- `request.json` selects one API operation.
-- `runner.py` registers an agent, lists agent-eligible work, fetches listing details and comments, posts clarification comments, and submits or updates completed work.
-- `output/` contains sanitized evidence plus an encrypted copy of private registration state.
-- `.github/workflows/agent-api.yml` runs only on an owner-controlled push or manual dispatch. It does not run on pull requests or on a recurring schedule.
-- `keys/superteam-state-public.crt` is an encryption certificate only. It cannot decrypt the private state.
+## Verified deliverables
 
-## Supported operations
+These are working technical assets with reproducible evidence. They are not claims of platform acceptance or payment.
 
-- `list`
-- `details`
-- `comments`
-- `comment_create`
-- `submit`
-- `update_submission`
-- `reveal_claim` — disabled in public-safe execution; encrypted state must be decrypted privately after a verified win
+| Deliverable | What is implemented | Verification | Source and evidence |
+|---|---|---|---|
+| **GitHub PR Review MCP** | TypeScript stdio MCP with 8 tools, PAT and GitHub App auth, inline-diff resolution, read/write credential separation, explicit write confirmation, pagination, rate-limit evidence, and opt-in review prompts | 20 tests; Node.js 20.11/22; 91.35% line coverage; live public-PR reads; one authorized inline-comment acceptance visible in 1,160 ms; clean npm install plus installed-package MCP exercise in 5.385 s; 151 s H.264 demo | [`deliverables/archimedes-msn-00015/`](deliverables/archimedes-msn-00015/) · [`SUBMISSION_READINESS.md`](deliverables/archimedes-msn-00015/SUBMISSION_READINESS.md) |
+| **Archimedes Public-Data MCP** | Read-only TypeScript MCP for public asset and funded-bounty discovery, with fixed public GET paths, bounded requests, redacted errors, and no account or transaction capability | 19 tests; Node.js 20.11/22; 93.65% line coverage; four-tool public live smoke; production audit; CycloneDX SBOM | [`deliverables/archimedes-msn-00013/`](deliverables/archimedes-msn-00013/) · [`SUBMISSION_BUNDLE.md`](deliverables/archimedes-msn-00013/SUBMISSION_BUNDLE.md) |
+| **Engineering Unit Conversion API** | FastAPI REST service for 8 engineering domains, 114 units, affine temperature handling, incompatible-quantity rejection, Docker deployment, OpenAPI, and local-only calculations | 79 tests; 96% coverage; real Uvicorn smoke; Docker build/start/health validation | [`deliverables/archimedes-msn-00014/`](deliverables/archimedes-msn-00014/) · [`SUBMISSION_BUNDLE.md`](deliverables/archimedes-msn-00014/SUBMISSION_BUNDLE.md) |
 
-The initial `request.json` uses `list` to register an agent and fetch currently live agent-eligible opportunities.
+All material use of AI assistance, background technology, third-party dependencies, and open-source licenses is disclosed in the relevant submission packet.
 
-## Public-safe execution design
+## Paid engineering requests
 
-The repository is prepared to use free GitHub-hosted Actions without exposing platform credentials:
+A buyer can request a small, objectively testable engagement through the repository's **Paid engineering request** Issue Form. Opening a request is free and creates no payment obligation for either party.
 
-1. The workflow validates the request and runs the unit tests.
-2. `runner.py` registers a short-lived agent and performs the requested operation with `PUBLIC_SAFE_MODE=1`.
-3. The API key and claim code are written temporarily to `.agent-state/superteam.json`.
-4. OpenSSL CMS encrypts that file to `output/private-state.cms` using the committed public certificate.
-5. The plaintext state is deleted before any commit.
-6. A recursive credential scan blocks the output commit if a secret appears in public JSON.
-7. Only sanitized results, the ciphertext, and its checksum are committed.
+Indicative starting scopes:
 
-The corresponding private key is stored outside GitHub in the mission's private Google Drive folder. Git history contains no private key.
+| Service | Typical evidence | Indicative budget |
+|---|---|---:|
+| Reproduce a public API or CI defect | Minimal reproduction, request/response matrix, root-cause boundary, acceptance test | USD 5–25 |
+| MCP installation and integration verification | Clean-install log, configuration example, tool inventory, failure diagnosis | USD 25+ |
+| Read-only MCP adapter for a documented public API | Source, schemas, tests, safety boundary, setup guide | USD 75+ |
+| Guarded GitHub PR-review MCP customization | Scoped tools, permission model, write gates, tests, integration evidence | USD 150+ |
+| Reproducible technical tutorial or implementation QA | Original text/code, runnable evidence, disclosure and source notes | By written agreement |
 
-Because each public-safe run is intentionally self-contained, it creates a new platform agent instead of restoring plaintext credentials from an unsafe public cache. This is acceptable for initial discovery and a small number of targeted submissions; it is not intended for high-volume automation.
+These amounts are non-binding estimates. Before work begins, both sides must agree in writing on scope, acceptance criteria, price, rights, deadline, payment method, and whether AI-assisted implementation is acceptable. For a very small public task, payment after accepted delivery can be proposed; larger or private work requires explicit milestone terms.
+
+### Request rules
+
+1. Use the **Paid engineering request** Issue Form.
+2. Provide only public or sanitized context.
+3. Never paste API keys, tokens, passwords, private keys, customer data, private source code, personal information, or confidential documents into an issue.
+4. A request is accepted only after a written scope and price are agreed. Silence or exploratory discussion is not acceptance.
+5. Test evidence is reported truthfully. Unrun tests, inaccessible hardware, and external-account limitations are stated explicitly.
+
+## Evidence standard
+
+Every completed engagement should include, where applicable:
+
+- exact source revision and dependency lockfile;
+- commands needed to reproduce the result;
+- machine-readable test or request evidence;
+- hashes for final archives and large artifacts;
+- documented side effects and external writes;
+- credential-leakage checks;
+- explicit limitations and unresolved risks;
+- AI-assistance and license disclosure.
+
+## Automated opportunity system
+
+The repository also contains read-only or tightly gated scanners for public paid-work channels. A candidate reaches implementation only when the canonical source is open, funding evidence and submission path are credible, competition is low, no fee or deposit is required, and the task does not request secrets or hidden prompts.
+
+The strict selector rejects:
+
+- system-prompt, runtime-instruction, startup-context, or private-context extraction;
+- social spam, fake reviews, and fabricated identity or experience;
+- upfront deposits, bonds, purchases, gas, or stakes;
+- closed, deleted, missing, assigned, already rewarded, or heavily competed work;
+- hardware or account dependencies that cannot be truthfully validated;
+- ambiguous writes that would be unsafe to retry.
+
+Current execution-grade public bounty inventory is zero. The official Algora SDK snapshot also currently returns zero active items. See [`market-output/`](market-output/) and [`reports/`](reports/) for evidence rather than relying on marketplace card text.
+
+## Superteam agent integration
+
+The original integration remains available for agent-eligible Superteam Earn work:
+
+- `request.json` selects one operation;
+- `runner.py` supports listing, details, comments, submission, update, and encrypted claim-state handling;
+- plaintext API keys and claim codes are never committed;
+- public-safe execution encrypts private state with the committed certificate and deletes plaintext before any commit;
+- non-idempotent external writes are not automatically retried after ambiguous failures.
 
 ## Safety boundaries
 
-- No existing GitHub repository is modified.
-- No fees, deposits, purchases, or paid registrations are permitted without explicit human approval.
-- No fabricated identity, qualifications, inventory, test results, or human experience.
-- API keys, claim codes, private keys, payment data, and personal information must never be committed.
-- Non-idempotent writes are not automatically retried after ambiguous network failures.
-- Pull requests cannot trigger external paid-work API calls.
-- A human completes payout identity, profile, KYC, wallet, tax, or contract steps only after a verified earning event requires them.
+- No fees, deposits, purchases, paid registrations, or financial transfers without explicit human approval.
+- No fabricated identity, age, country, employment, qualifications, inventory, customer, or test result.
+- No secrets or personal data in Git history, Issues, logs, artifacts, or public evidence.
+- No modification of the owner's protected pre-existing repositories.
+- Account creation, terms acceptance, age/country certification, KYC, tax/bank details, Stripe onboarding, npm account/2FA, IP assignment, and final legal submission remain human-controlled.
+- No VPN, false location, nominee account, duplicate account, or other geographic circumvention.
+
+## Contact
+
+Use **Issues → New issue → Paid engineering request** with public or sanitized information. Do not send credentials or confidential material before a secure exchange and written scope have been agreed.
