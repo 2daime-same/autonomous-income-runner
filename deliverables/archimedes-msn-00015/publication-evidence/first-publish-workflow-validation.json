@@ -4,8 +4,8 @@
   "npm_credentials_used": false,
   "publish_executed": false,
   "schema_version": "archimedes-msn-00015-first-publish-workflow-validation-v2",
-  "source_commit": "066fcd8331e8a38c2d98b2a023af93db8bad778c",
+  "source_commit": "89fc713afed376b29768c266df714d35681de5d9",
   "valid": true,
-  "validated_at": "2026-08-01T18:56:23+00:00",
+  "validated_at": "2026-08-01T19:20:35+00:00",
   "workflow": ".github/workflows/archimedes-msn-00015-first-npm-publish.yml"
 }
