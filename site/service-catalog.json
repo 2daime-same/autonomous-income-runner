@@ -1,0 +1,146 @@
+{
+  "schema_version": "evidence_backed_engineering_catalog_v1",
+  "published_at": "2026-08-02",
+  "status": "open_for_scoped_requests",
+  "operator": {
+    "name": "Autonomous Income Runner",
+    "repository": "https://github.com/2daime-same/autonomous-income-runner",
+    "description": "AI-assisted engineering workflow operated through a human-owned account, with material AI use disclosed and final legal/account actions retained by the human owner."
+  },
+  "commercial_status": {
+    "verified_income_jpy": 0,
+    "verified_receivable_jpy": 0,
+    "verified_spend_jpy": 0,
+    "request_creates_contract": false,
+    "request_fee": 0
+  },
+  "request": {
+    "url": "https://github.com/2daime-same/autonomous-income-runner/issues/new?template=paid-engineering-request.yml",
+    "public_or_sanitized_context_only": true,
+    "required_pre_work_agreement": [
+      "scope",
+      "objective acceptance criteria",
+      "price and currency",
+      "deadline",
+      "rights and license",
+      "payment method and timing",
+      "AI-assistance policy"
+    ]
+  },
+  "services": [
+    {
+      "id": "public_api_ci_reproduction",
+      "name": "Reproducible public API or CI defect report",
+      "indicative_budget": {
+        "currency": "USD",
+        "minimum": 5,
+        "maximum": 25,
+        "binding": false
+      },
+      "inputs": [
+        "public repository or documentation URL",
+        "current and expected behavior",
+        "objective acceptance criteria"
+      ],
+      "deliverables": [
+        "minimal reproduction",
+        "request, response, or job matrix",
+        "root-cause boundary",
+        "acceptance test",
+        "limitations and external dependency notes"
+      ],
+      "prohibited_inputs": [
+        "credentials",
+        "private source code",
+        "personal data",
+        "confidential production logs"
+      ]
+    },
+    {
+      "id": "mcp_install_verification",
+      "name": "MCP installation and integration verification",
+      "indicative_budget": {
+        "currency": "USD",
+        "minimum": 25,
+        "maximum": null,
+        "binding": false
+      },
+      "inputs": [
+        "public package or repository",
+        "supported runtime",
+        "target MCP host",
+        "expected tools or prompts"
+      ],
+      "deliverables": [
+        "clean-install evidence",
+        "client configuration",
+        "tool and prompt inventory",
+        "failure diagnosis",
+        "credential-leakage check"
+      ]
+    },
+    {
+      "id": "read_only_mcp_adapter",
+      "name": "Read-only MCP adapter for a documented public API",
+      "indicative_budget": {
+        "currency": "USD",
+        "minimum": 75,
+        "maximum": null,
+        "binding": false
+      },
+      "inputs": [
+        "public API documentation",
+        "required read operations",
+        "rate and response-size constraints"
+      ],
+      "deliverables": [
+        "TypeScript MCP source",
+        "input schemas",
+        "bounded GET transport",
+        "unit and integration tests",
+        "setup and safety documentation"
+      ],
+      "default_side_effect_policy": "No account, purchase, claim, submission, upload, payment, or other write capability."
+    },
+    {
+      "id": "guarded_github_pr_review_mcp",
+      "name": "Guarded GitHub PR-review MCP customization",
+      "indicative_budget": {
+        "currency": "USD",
+        "minimum": 150,
+        "maximum": null,
+        "binding": false
+      },
+      "inputs": [
+        "public repository context",
+        "required read and review tools",
+        "authentication model",
+        "write approval policy"
+      ],
+      "deliverables": [
+        "scoped MCP tools",
+        "permission and credential separation",
+        "process-level and per-call write gates",
+        "diff-line validation",
+        "tests and integration evidence",
+        "reproducible package"
+      ]
+    }
+  ],
+  "evidence_policy": [
+    "Exact revision and locked dependencies where applicable",
+    "Reproduction commands and machine-readable evidence",
+    "SHA-256 hashes for final archives and large artifacts",
+    "Explicit record of external writes and side effects",
+    "Credential-pattern checks before public evidence is committed",
+    "Disclosed untested environments, limitations, AI assistance, and licenses"
+  ],
+  "safety_policy": [
+    "No system-prompt, hidden-instruction, startup-context, or private-context extraction",
+    "No fabricated identity, age, country, employment, qualifications, inventory, or test result",
+    "No fees, deposits, purchases, bonds, gas, or stakes without explicit human approval",
+    "No secrets or personal data in public Issues, commits, logs, or artifacts",
+    "No unauthorized access, persistence, destructive testing, social spam, or deceptive reviews",
+    "Account creation, terms, KYC, tax, bank, Stripe, npm 2FA, IP assignment, and final legal submission remain human-controlled"
+  ]
+}
