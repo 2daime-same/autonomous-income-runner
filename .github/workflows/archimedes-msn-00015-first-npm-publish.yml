@@ -68,9 +68,12 @@ jobs:
           npm ci --no-audit --no-fund
           npm run verify
           npm audit --omit=dev --audit-level=high
-          test "$(node -p "require('./package.json').version")" = "$EXPECTED_VERSION"
-          test "$(node -p "require('./package.json').name")" = 'archimedes-github-pr-mcp'
-          test "$(node -p "require('./package.json').private === true ? 'private' : 'public')" = 'public'
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VISIBILITY=$(node -p "require('./package.json').private === true ? 'private' : 'public'")
+          test "$PACKAGE_VERSION" = "$EXPECTED_VERSION"
+          test "$PACKAGE_NAME" = 'archimedes-github-pr-mcp'
+          test "$PACKAGE_VISIBILITY" = 'public'
 
       - name: Rebuild and match the approved npm tarball exactly
         id: pack
@@ -124,7 +127,7 @@ jobs:
             if npm view "$PACKAGE@$EXPECTED_VERSION" --json > /tmp/published.json 2>/tmp/published.err; then
               break
             fi
-            sleep 4
+            sleep "$((attempt < 5 ? 2 : 4))"
           done
           test -s /tmp/published.json
           rm -rf /tmp/msn15-registry-install
