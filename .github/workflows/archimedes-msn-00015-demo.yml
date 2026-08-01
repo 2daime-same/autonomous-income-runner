@@ -1,0 +1,275 @@
+name: Build MSN-00015 clean-install demo video
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - deliverables/archimedes-msn-00015/scripts/demo-client.mjs
+      - deliverables/archimedes-msn-00015/scripts/render-demo-video.py
+      - .github/workflows/archimedes-msn-00015-demo.yml
+
+permissions:
+  contents: write
+  pull-requests: read
+  issues: read
+
+concurrency:
+  group: archimedes-msn-00015-demo
+  cancel-in-progress: false
+
+jobs:
+  demo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: deliverables/archimedes-msn-00015
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22.23.1'
+          package-manager-cache: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          package-manager-cache: false
+
+      - name: Install video runtime
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng fonts-dejavu-core
+          ffmpeg -version | head -1
+          espeak-ng --version | head -1
+
+      - name: Install, test, build, and inspect package
+        run: |
+          set -euo pipefail
+          mkdir -p dist-submission/demo
+          npm ci --no-audit --no-fund
+          npm run verify 2>&1 | tee dist-submission/demo/verify.log
+          npm audit --omit=dev --audit-level=high --json > dist-submission/demo/npm-audit-production.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('dist-submission/demo/npm-audit-production.json').read_text())
+          vulnerabilities = data.get('metadata', {}).get('vulnerabilities', {})
+          if sum(int(value) for value in vulnerabilities.values()) != 0:
+              raise SystemExit(f'production dependency vulnerabilities found: {vulnerabilities}')
+          PY
+
+      - name: Pack and install into an empty npm project
+        id: clean_install
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/msn15-clean-install
+          mkdir -p /tmp/msn15-clean-install
+          PACK_STARTED=$(python3 -c 'import time; print(time.time())')
+          npm pack --json > dist-submission/demo/npm-pack.json
+          TARBALL=$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('dist-submission/demo/npm-pack.json').read_text())
+          print(data[0]['filename'])
+          PY
+          )
+          TARBALL_PATH="$PWD/$TARBALL"
+          cd /tmp/msn15-clean-install
+          npm init -y >/dev/null
+          INSTALL_STARTED=$(python3 -c 'import time; print(time.time())')
+          npm install --no-audit --no-fund "$TARBALL_PATH" 2>&1 | tee "$OLDPWD/dist-submission/demo/clean-install.log"
+          INSTALL_FINISHED=$(python3 -c 'import time; print(time.time())')
+          SERVER_PATH="/tmp/msn15-clean-install/node_modules/archimedes-github-pr-mcp/dist/index.js"
+          test -s "$SERVER_PATH"
+          cd "$OLDPWD"
+          python3 - <<PY
+          import json
+          from pathlib import Path
+          pack_started = float('$PACK_STARTED')
+          install_started = float('$INSTALL_STARTED')
+          install_finished = float('$INSTALL_FINISHED')
+          Path('dist-submission/demo/clean-install.json').write_text(json.dumps({
+              'schema_version': 'archimedes-msn-00015-clean-install-v1',
+              'runner': 'ubuntu-24.04',
+              'node': '22.23.1',
+              'tarball': '$TARBALL',
+              'install_seconds': round(install_finished - install_started, 3),
+              'pack_and_install_seconds': round(install_finished - pack_started, 3),
+              'total_seconds': 0,
+              'source_imports_used': False,
+              'installed_server_path': 'node_modules/archimedes-github-pr-mcp/dist/index.js',
+          }, indent=2, sort_keys=True) + '\n')
+          PY
+          echo "tarball=$TARBALL" >> "$GITHUB_OUTPUT"
+          echo "server_path=/tmp/msn15-clean-install/node_modules/archimedes-github-pr-mcp/dist/index.js" >> "$GITHUB_OUTPUT"
+
+      - name: Exercise installed package through MCP stdio
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DEMO_SERVER_PATH: ${{ steps.clean_install.outputs.server_path }}
+          DEMO_OUTPUT_DIR: dist-submission/demo
+          DEMO_GITHUB_OWNER: 2daime-same
+          DEMO_GITHUB_REPO: autonomous-income-runner
+          DEMO_GITHUB_PR: '7'
+          DEMO_EXPECTED_COMMENT_ID: '3695975388'
+        run: |
+          set -euo pipefail
+          DEMO_STARTED=$(python3 -c 'import time; print(time.time())')
+          node scripts/demo-client.mjs 2>&1 | tee dist-submission/demo/mcp-demo-console.log
+          DEMO_FINISHED=$(python3 -c 'import time; print(time.time())')
+          python3 - <<PY
+          import json
+          from pathlib import Path
+          path = Path('dist-submission/demo/clean-install.json')
+          data = json.loads(path.read_text())
+          data['demo_seconds'] = round(float('$DEMO_FINISHED') - float('$DEMO_STARTED'), 3)
+          data['total_seconds'] = round(data['pack_and_install_seconds'] + data['demo_seconds'], 3)
+          path.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
+          if data['total_seconds'] >= 600:
+              raise SystemExit(f"clean-machine quickstart exceeded 10 minutes: {data['total_seconds']}s")
+          PY
+
+      - name: Render evidence-driven narrated video
+        run: |
+          set -euo pipefail
+          python3 scripts/render-demo-video.py 2>&1 | tee dist-submission/demo/render.log
+          ffprobe -v error \
+            -show_entries stream=codec_name,width,height,r_frame_rate:format=duration,size \
+            -of json dist-submission/demo/Archimedes_MSN-00015_Demo.mp4 \
+            > dist-submission/demo/ffprobe.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('dist-submission/demo/ffprobe.json').read_text())
+          video = next(stream for stream in data['streams'] if stream.get('width'))
+          assert video['codec_name'] == 'h264'
+          assert video['width'] == 1920 and video['height'] == 1080
+          assert float(data['format']['duration']) >= 90
+          assert int(data['format']['size']) >= 1_000_000
+          PY
+
+      - name: Build evidence manifest and reject credential leakage
+        env:
+          GITHUB_RUN_ID_VALUE: ${{ github.run_id }}
+          GITHUB_SHA_VALUE: ${{ github.sha }}
+          ARTIFACT_NAME_VALUE: archimedes-msn-00015-demo-${{ github.sha }}
+          TARBALL_VALUE: ${{ steps.clean_install.outputs.tarball }}
+        run: |
+          set -euo pipefail
+          cp "$TARBALL_VALUE" dist-submission/demo/
+          cd dist-submission/demo
+          sha256sum \
+            Archimedes_MSN-00015_Demo.mp4 \
+            "$TARBALL_VALUE" \
+            mcp-demo-evidence.json \
+            clean-install.json \
+            > SHA256SUMS.txt
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          directory = Path('.')
+          hashes = {}
+          for name in [
+              'Archimedes_MSN-00015_Demo.mp4',
+              os.environ['TARBALL_VALUE'],
+              'mcp-demo-evidence.json',
+              'clean-install.json',
+          ]:
+              hashes[name] = hashlib.sha256((directory / name).read_bytes()).hexdigest()
+          manifest = {
+              'schema_version': 'archimedes-msn-00015-demo-manifest-v1',
+              'workflow_run_id': int(os.environ['GITHUB_RUN_ID_VALUE']),
+              'source_commit': os.environ['GITHUB_SHA_VALUE'],
+              'artifact_name': os.environ['ARTIFACT_NAME_VALUE'],
+              'commercial_status': {
+                  'verified_income_usd': 0,
+                  'verified_receivable_usd': 0,
+                  'expenses_usd': 0,
+                  'npm_published': False,
+                  'archimedes_submitted': False,
+              },
+              'hashes': hashes,
+              'writes_performed_during_demo': [],
+          }
+          Path('manifest.json').write_text(json.dumps(manifest, indent=2, sort_keys=True) + '\n')
+
+          patterns = [
+              re.compile(r'\bgh[opsu]_[A-Za-z0-9_]{16,}\b'),
+              re.compile(r'\bgithub_pat_[A-Za-z0-9_]{16,}\b'),
+              re.compile(r'\b(?:sk|pk)_[A-Za-z0-9._~+/=-]{16,}\b'),
+              re.compile(r'(?i)authorization\s*[:=]'),
+              re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
+          ]
+          for path in directory.iterdir():
+              if path.suffix.lower() in {'.mp4', '.tgz', '.wav'} or path.is_dir():
+                  continue
+              text = path.read_text(encoding='utf-8', errors='replace')
+              for pattern in patterns:
+                  if pattern.search(text):
+                      raise SystemExit(f'credential-like material found in {path}: {pattern.pattern}')
+          PY
+
+      - name: Upload demo and reproducibility evidence
+        id: upload
+        uses: actions/upload-artifact@v7
+        with:
+          name: archimedes-msn-00015-demo-${{ github.sha }}
+          path: deliverables/archimedes-msn-00015/dist-submission/demo/
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 6
+
+      - name: Persist lightweight evidence index
+        env:
+          ARTIFACT_ID_VALUE: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL_VALUE: ${{ steps.upload.outputs.artifact-url }}
+          ARTIFACT_DIGEST_VALUE: ${{ steps.upload.outputs.artifact-digest }}
+        run: |
+          set -euo pipefail
+          mkdir -p demo-evidence
+          cp dist-submission/demo/mcp-demo-evidence.json demo-evidence/
+          cp dist-submission/demo/mcp-demo-transcript.txt demo-evidence/
+          cp dist-submission/demo/clean-install.json demo-evidence/
+          cp dist-submission/demo/video-metadata.json demo-evidence/
+          cp dist-submission/demo/ffprobe.json demo-evidence/
+          cp dist-submission/demo/SHA256SUMS.txt demo-evidence/
+          cp dist-submission/demo/manifest.json demo-evidence/manifest.json
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          path = Path('demo-evidence/manifest.json')
+          data = json.loads(path.read_text())
+          data['artifact_id'] = int(os.environ['ARTIFACT_ID_VALUE'])
+          data['artifact_url'] = os.environ['ARTIFACT_URL_VALUE']
+          data['artifact_digest'] = os.environ['ARTIFACT_DIGEST_VALUE']
+          path.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
+          PY
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add demo-evidence
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Record MSN-00015 clean-install demo evidence [skip ci]'
+          for attempt in $(seq 1 12); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
