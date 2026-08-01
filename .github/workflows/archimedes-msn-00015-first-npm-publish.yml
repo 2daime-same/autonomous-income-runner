@@ -17,6 +17,10 @@ on:
         description: Type PUBLISH-MSN-00015 to authorize the irreversible public release
         required: true
         type: string
+  push:
+    branches: [main]
+    paths:
+      - deliverables/archimedes-msn-00015/publication-evidence/publication-authorization.json
 
 permissions:
   contents: write
@@ -34,9 +38,9 @@ jobs:
       run:
         working-directory: deliverables/archimedes-msn-00015
     env:
-      EXPECTED_VERSION: ${{ inputs.expected_version }}
-      EXPECTED_TARBALL_SHA256: ${{ inputs.expected_tarball_sha256 }}
-      CONFIRM_PUBLICATION: ${{ inputs.confirm_publication }}
+      EXPECTED_VERSION: '1.0.0'
+      EXPECTED_TARBALL_SHA256: '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219'
+      CONFIRM_PUBLICATION: 'PUBLISH-MSN-00015'
     steps:
       - name: Check out the reviewed default branch
         uses: actions/checkout@v6
@@ -44,15 +48,57 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Refuse accidental or unauthenticated execution
+      - name: Validate explicit human authorization and credential presence
         env:
+          DISPATCH_EXPECTED_VERSION: ${{ inputs.expected_version }}
+          DISPATCH_EXPECTED_TARBALL_SHA256: ${{ inputs.expected_tarball_sha256 }}
+          DISPATCH_CONFIRM_PUBLICATION: ${{ inputs.confirm_publication }}
           NPM_TOKEN_FOR_PRESENCE_CHECK: ${{ secrets.NPM_TOKEN }}
         run: |
           set -euo pipefail
-          test "$CONFIRM_PUBLICATION" = 'PUBLISH-MSN-00015'
-          test "$EXPECTED_VERSION" = '1.0.0'
-          test "$EXPECTED_TARBALL_SHA256" = '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219'
           test -n "${NPM_TOKEN_FOR_PRESENCE_CHECK:-}"
+
+          if [ "$GITHUB_EVENT_NAME" = 'workflow_dispatch' ]; then
+            test "$DISPATCH_EXPECTED_VERSION" = "$EXPECTED_VERSION"
+            test "$DISPATCH_EXPECTED_TARBALL_SHA256" = "$EXPECTED_TARBALL_SHA256"
+            test "$DISPATCH_CONFIRM_PUBLICATION" = "$CONFIRM_PUBLICATION"
+          elif [ "$GITHUB_EVENT_NAME" = 'push' ]; then
+            python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path('publication-evidence/publication-authorization.json')
+          if not path.is_file():
+              raise SystemExit('publication authorization file is missing')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          expected = {
+              'schema_version': 'archimedes-msn-00015-publication-authorization-v1',
+              'mission_id': 'MSN-00015',
+              'package': 'archimedes-github-pr-mcp',
+              'expected_version': '1.0.0',
+              'expected_tarball_sha256': '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219',
+              'authorization_phrase': 'PUBLISH-MSN-00015',
+              'authorized': True,
+              'authorization_source': 'chat-user-explicit',
+          }
+          for key, value in expected.items():
+              if data.get(key) != value:
+                  raise SystemExit(f'invalid publication authorization field: {key}')
+          raw_time = str(data.get('authorized_at') or '')
+          try:
+              authorized_at = datetime.fromisoformat(raw_time.replace('Z', '+00:00'))
+          except ValueError as exc:
+              raise SystemExit('invalid authorized_at timestamp') from exc
+          now = datetime.now(timezone.utc)
+          age_seconds = (now - authorized_at.astimezone(timezone.utc)).total_seconds()
+          if age_seconds < -300 or age_seconds > 7200:
+              raise SystemExit(f'publication authorization is outside the two-hour window: {age_seconds}s')
+          PY
+          else
+            echo "Unsupported trigger: $GITHUB_EVENT_NAME"
+            exit 1
+          fi
 
       - name: Set up Node.js and npm registry authentication
         uses: actions/setup-node@v6
