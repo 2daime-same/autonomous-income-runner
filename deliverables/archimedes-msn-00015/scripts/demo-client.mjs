@@ -18,12 +18,14 @@ if (!owner || !repo || !Number.isSafeInteger(pullNumber) || pullNumber < 1) {
 const cleanEnvironment = Object.fromEntries(
   Object.entries(process.env).filter(([, value]) => typeof value === 'string'),
 );
+const githubToken = cleanEnvironment.GITHUB_TOKEN ?? '';
 Object.assign(cleanEnvironment, {
-  GITHUB_AUTH_MODE: cleanEnvironment.GITHUB_TOKEN ? 'pat' : 'none',
-  GITHUB_READ_TOKEN: cleanEnvironment.GITHUB_TOKEN ?? '',
+  GITHUB_AUTH_MODE: githubToken ? 'pat' : 'none',
+  GITHUB_READ_TOKEN: githubToken,
   GITHUB_WRITE_TOKEN: '',
   GITHUB_ALLOW_WRITES: 'false',
 });
+delete cleanEnvironment.GITHUB_TOKEN;
 
 const child = spawn(process.execPath, [serverPath], {
   cwd: process.cwd(),
