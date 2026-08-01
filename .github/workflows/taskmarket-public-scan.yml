@@ -1,4 +1,4 @@
-name: Scan Taskmarket public zero-spend opportunities
+name: Scan Taskmarket public and execution-grade opportunities
 
 on:
   workflow_dispatch:
@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - taskmarket_public_scan.py
+      - taskmarket_execution_filter.py
+      - tests/test_taskmarket_execution_filter.py
       - .github/workflows/taskmarket-public-scan.yml
   schedule:
     - cron: '13 */4 * * *'
@@ -23,14 +25,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Validate scanner
-        run: python -m py_compile taskmarket_public_scan.py
+      - name: Test and compile scanners
+        run: |
+          python -m unittest tests/test_taskmarket_execution_filter.py -v
+          python -m py_compile taskmarket_public_scan.py taskmarket_execution_filter.py
 
       - name: Fetch and rank public opportunities
         env:
@@ -40,25 +44,33 @@ jobs:
           TASKMARKET_PAGE_LIMIT: '100'
         run: python taskmarket_public_scan.py
 
+      - name: Apply execution-route and expected-value gate
+        env:
+          TASKMARKET_PUBLIC_OUTPUT: taskmarket-output/public-scan.json
+          TASKMARKET_EXECUTION_OUTPUT: taskmarket-output/executable-scan.json
+        run: python taskmarket_execution_filter.py
+
       - name: Reject credential-like output
         run: |
           python - <<'PY'
           import re
           from pathlib import Path
 
-          path = Path('taskmarket-output/public-scan.json')
-          text = path.read_text(encoding='utf-8')
-          # A 32-byte 0x value is also the normal public Taskmarket task ID,
-          # so scan explicit credential-shaped fields instead of raw hex.
+          paths = [
+              Path('taskmarket-output/public-scan.json'),
+              Path('taskmarket-output/executable-scan.json'),
+          ]
           patterns = {
               'JWT': re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
               'credential field': re.compile(
                   r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|private.?key|credential)"\s*:\s*"(?!\[REDACTED)'
               ),
           }
-          for name, pattern in patterns.items():
-              if pattern.search(text):
-                  raise SystemExit(f'{name} found in public Taskmarket state')
+          for path in paths:
+              text = path.read_text(encoding='utf-8')
+              for name, pattern in patterns.items():
+                  if pattern.search(text):
+                      raise SystemExit(f'{name} found in public Taskmarket state: {path}')
           PY
 
       - name: Commit changed public evidence
@@ -66,12 +78,12 @@ jobs:
           set -euo pipefail
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-          git add taskmarket-output/public-scan.json
+          git add taskmarket-output/public-scan.json taskmarket-output/executable-scan.json
           if git diff --cached --quiet; then
             echo 'No substantive Taskmarket opportunity changes'
             exit 0
           fi
-          git commit -m 'Refresh Taskmarket public opportunities [skip ci]'
+          git commit -m 'Refresh Taskmarket public and executable opportunities [skip ci]'
           for attempt in $(seq 1 8); do
             if git pull --rebase origin main && git push origin HEAD:main; then
               exit 0
