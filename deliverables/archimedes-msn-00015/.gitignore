@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dist-submission/
+.test-dist/
+.core-dist/
+coverage/
+*.tgz
+.DS_Store
