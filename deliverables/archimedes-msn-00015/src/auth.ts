@@ -7,7 +7,8 @@ import { normalizeApiBaseUrl, normalizePrivateKey } from './validation.js';
 const APP_TOKEN_SAFETY_MARGIN_MS = 60_000;
 
 function base64Url(value: string | Buffer): string {
-  return Buffer.from(value)
+  const buffer = Buffer.isBuffer(value) ? value : Buffer.from(value);
+  return buffer
     .toString('base64')
     .replace(/=/g, '')
     .replace(/\+/g, '-')
