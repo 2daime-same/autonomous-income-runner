@@ -1,0 +1,64 @@
+{
+  "name": "archimedes-github-pr-mcp",
+  "version": "1.0.0",
+  "description": "Permission-gated MCP server for listing, reviewing, commenting on, and labeling GitHub pull requests",
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "mcpName": "io.github.2daime-same/archimedes-github-pr-mcp",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "bin": {
+    "archimedes-github-pr-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "server.json",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.tests.json --noEmit",
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
+    "test:coverage": "node --import tsx --test --test-concurrency=1 --experimental-test-coverage tests/*.test.ts",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "live:smoke": "node scripts/live-smoke.mjs",
+    "package:submission": "python3 scripts/package_submission.py",
+    "verify": "npm run clean && npm run typecheck && npm test && npm run build && npm pack --dry-run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.0",
+    "tsx": "4.20.0",
+    "typescript": "5.8.3"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "github",
+    "pull-requests",
+    "code-review",
+    "github-app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2daime-same/autonomous-income-runner.git",
+    "directory": "deliverables/archimedes-msn-00015"
+  },
+  "bugs": {
+    "url": "https://github.com/2daime-same/autonomous-income-runner/issues"
+  },
+  "homepage": "https://github.com/2daime-same/autonomous-income-runner/tree/main/deliverables/archimedes-msn-00015#readme"
+}

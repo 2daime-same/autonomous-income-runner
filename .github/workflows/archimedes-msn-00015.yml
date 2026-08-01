@@ -1,0 +1,109 @@
+name: Archimedes MSN-00015
+
+on:
+  push:
+    branches:
+      - main
+      - agent/build-archimedes-msn-00015
+    paths:
+      - "deliverables/archimedes-msn-00015/**"
+      - ".github/workflows/archimedes-msn-00015.yml"
+  pull_request:
+    paths:
+      - "deliverables/archimedes-msn-00015/**"
+      - ".github/workflows/archimedes-msn-00015.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: archimedes-msn-00015-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: deliverables/archimedes-msn-00015
+
+jobs:
+  node-20-compatibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "20.11"
+          package-manager-cache: false
+      - name: Install locked dependency graph
+        run: npm ci --no-audit --no-fund
+      - name: Verify on minimum supported Node line
+        run: npm run verify
+
+  verify-package-and-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Install locked dependency graph
+        run: npm ci --no-audit --no-fund
+      - name: Strict verification
+        run: npm run verify
+      - name: Coverage evidence
+        run: |
+          set -o pipefail
+          npm run test:coverage | tee test-coverage.log
+      - name: Critical production dependency audit
+        run: |
+          set -o pipefail
+          npm audit --omit=dev --audit-level=critical | tee dependency-audit.log
+      - name: Build CycloneDX SBOM
+        run: |
+          mkdir -p dist-submission
+          npm sbom --sbom-format cyclonedx > dist-submission/sbom.cdx.json
+      - name: Controlled live read-only smoke test on this pull request
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_AUTH_MODE: pat
+          GITHUB_READ_TOKEN: ${{ github.token }}
+          GITHUB_ALLOW_WRITES: "false"
+          GITHUB_SMOKE_OWNER: ${{ github.repository_owner }}
+          GITHUB_SMOKE_REPO: ${{ github.event.repository.name }}
+          GITHUB_SMOKE_PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -o pipefail
+          npm run live:smoke | tee dist-submission/live-smoke.json
+          echo 'LIVE_SMOKE_STATUS=passed' >> "$GITHUB_ENV"
+      - name: Record skipped live-smoke state outside pull requests
+        if: github.event_name != 'pull_request'
+        run: echo 'LIVE_SMOKE_STATUS=not_run_no_pull_request_context' >> "$GITHUB_ENV"
+      - name: Deterministic submission archive
+        env:
+          SOURCE_DATE_EPOCH: "1785542400"
+          VERIFICATION_STATUS: passed
+          SECURITY_AUDIT_STATUS: passed
+        run: npm run package:submission
+      - name: Verify archive checksum
+        run: |
+          cd dist-submission
+          sha256sum --check archimedes-msn-00015-github-pr-mcp.zip.sha256
+      - name: Upload review artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: archimedes-msn-00015-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            deliverables/archimedes-msn-00015/dist-submission/archimedes-msn-00015-github-pr-mcp.zip
+            deliverables/archimedes-msn-00015/dist-submission/archimedes-msn-00015-github-pr-mcp.zip.sha256
+            deliverables/archimedes-msn-00015/dist-submission/sbom.cdx.json
+            deliverables/archimedes-msn-00015/dist-submission/live-smoke.json
+            deliverables/archimedes-msn-00015/test-coverage.log
+            deliverables/archimedes-msn-00015/dependency-audit.log
+            deliverables/archimedes-msn-00015/package-lock.json
