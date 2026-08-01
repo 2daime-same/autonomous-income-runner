@@ -1,0 +1,203 @@
+{
+  "commercial_status": {
+    "account_action_performed": false,
+    "expenses_usd": 0,
+    "submission_performed": false,
+    "verified_income_usd": 0,
+    "verified_receivable_usd": 0
+  },
+  "generated_at": "2026-08-01T18:23:26+00:00",
+  "items": [
+    {
+      "category": "SOFTWARE",
+      "complexity": "MEDIUM",
+      "cover_image_url": "https://rdmvevwsrdgitdsabous.supabase.co/storage/v1/object/public/mission-covers/b477f0b4-9728-44e0-968f-b5ba17cc31b8/7176ab9f-1d21-4c98-b8b3-01d2cc3c273b-cover-1777603517309.png",
+      "created_at_iso": "2026-05-01T02:45:15.145653+00:00",
+      "currency": "USD",
+      "deadline_iso": "2026-08-21T23:59:59+00:00",
+      "deliverables_summary": [
+        {
+          "name": "Source code repository",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "name": "npm package",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "name": "Demo video",
+          "required": true,
+          "type": "VIDEO"
+        }
+      ],
+      "display_id": "MSN-00015",
+      "escrow_status": "locked",
+      "id": "7176ab9f-1d21-4c98-b8b3-01d2cc3c273b",
+      "is_funded": true,
+      "price_cents": 45000,
+      "requirements_summary": [
+        " MCP server in TypeScript, published to npm under MIT or Apache 2.0",
+        "Tools: `list_prs`, `get_pr`, `get_pr_diff`, `list_pr_comments`, `post_review_comment`, `submit_review`, `add_labels`, `request_changes`",
+        "GitHub App **and** PAT auth modes",
+        "Respects GitHub rate limits, surfaces remaining budget in error messages",
+        "README with config example for Claude Desktop and Cursor",
+        "Pagination across large PRs",
+        "Inline diff resolution (not just full file)",
+        "Built-in code-review prompts users can opt into"
+      ],
+      "status": "open",
+      "summary": "I want an MCP server that Claude can use to do everything I currently do manually on GitHub PRs: list open PRs in a repo, fetch PR diffs and review comments, post inline review comments, request changes, and label PRs. This isn't a wrapper around `gh` CLI — it should be a proper ",
+      "title": "Build an MCP Server that Lets Claude Triage and Review GitHub PRs",
+      "url": "https://archimedes.market/bounties/7176ab9f-1d21-4c98-b8b3-01d2cc3c273b"
+    },
+    {
+      "category": "HARDWARE",
+      "complexity": "MEDIUM",
+      "cover_image_url": "https://rdmvevwsrdgitdsabous.supabase.co/storage/v1/object/public/mission-covers/b477f0b4-9728-44e0-968f-b5ba17cc31b8/9f0acc01-1e89-4473-a340-c4d1719d1e3c-cover-1777681939597.png",
+      "created_at_iso": "2026-05-02T00:32:16.903074+00:00",
+      "currency": "USD",
+      "deadline_iso": "2026-08-21T23:59:59+00:00",
+      "deliverables_summary": [
+        {
+          "name": "KiCad project files",
+          "required": true,
+          "type": "DATA"
+        },
+        {
+          "name": "Manufacturing pack",
+          "required": true,
+          "type": "DATA"
+        },
+        {
+          "name": "Design rationale",
+          "required": true,
+          "type": "DOCUMENT"
+        },
+        {
+          "name": "Fabricated unit (optional)",
+          "required": true,
+          "type": "VIDEO"
+        }
+      ],
+      "display_id": "MSN-00016",
+      "escrow_status": "locked",
+      "id": "9f0acc01-1e89-4473-a340-c4d1719d1e3c",
+      "is_funded": true,
+      "price_cents": 45000,
+      "requirements_summary": [
+        "KiCad 8 project: schematic + PCB + symbol/footprint libraries",
+        "Sensors: BME280 (temp/humidity/pressure) + SCD41 (CO2) over I²C",
+        "18650 holder + TP4056 charging via USB-C + LDO regulation",
+        "Deep-sleep current ≤ 15 µA, validated by simulation or measurement ",
+        "4-layer PCB, ≤ 50 × 50 mm, JLCPCB-manufacturable",
+        "BOM in CSV with LCSC part numbers",
+        "Gerbers + drill files + position file (CPL)",
+        "Antenna placement validated against ESP32-C6 layout guidelines"
+      ],
+      "status": "open",
+      "summary": "I need a production-ready KiCad 8 schematic and PCB for a battery-powered IoT sensor node based on the ESP32-C6 (WiFi 6 + BLE + Thread). Target use: indoor environmental monitoring, 6-month battery life on a single 18650 cell, deep-sleep current under 15 µA. Not a hobbyist design",
+      "title": "KiCad 8 Reference Design — ESP32-C6 IoT Sensor Node with Battery Management",
+      "url": "https://archimedes.market/bounties/9f0acc01-1e89-4473-a340-c4d1719d1e3c"
+    },
+    {
+      "category": "SOFTWARE",
+      "complexity": "COMPLEX",
+      "cover_image_url": "https://rdmvevwsrdgitdsabous.supabase.co/storage/v1/object/public/mission-covers/b477f0b4-9728-44e0-968f-b5ba17cc31b8/5586f0c8-cde1-416c-ac28-d85bc6a264f0-cover-1776104417305.png",
+      "created_at_iso": "2026-04-13T18:20:14.520952+00:00",
+      "currency": "USD",
+      "deadline_iso": "2026-08-21T23:59:59+00:00",
+      "deliverables_summary": [
+        {
+          "name": "MCP Server Source Code",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "name": "Technical Documentation",
+          "required": true,
+          "type": "DOCUMENT"
+        },
+        {
+          "name": "",
+          "required": true,
+          "type": "CODE"
+        }
+      ],
+      "display_id": "MSN-00013",
+      "escrow_status": "locked",
+      "id": "5586f0c8-cde1-416c-ac28-d85bc6a264f0",
+      "is_funded": true,
+      "price_cents": 10000,
+      "requirements_summary": [
+        "Enable secure communication between AI assistants and the Archimedes platform.",
+        "Support context-based interaction interfaces for AI queries.",
+        "Facilitate real-time processing and response delivery to AI-generated queries.",
+        "Implement robust error handling for AI interaction failures.",
+        "Allow integration with multiple AI models like Claude, Cursor, and Copilot.",
+        "Develop the server in TypeScript using the @modelcontextprotocol/sdk (Node.js).",
+        "Deliver as a local stdio MCP server runnable via npm start / npx; no separately hosted cloud service is required.",
+        "Working entry point (npm start or npx)"
+      ],
+      "status": "open",
+      "summary": "Develop a Model Context Protocol (MCP) server enabling AI assistants to interact seamlessly with the Archimedes Market platform.",
+      "title": "AI Assistant Model Context Protocol Server Development",
+      "url": "https://archimedes.market/bounties/5586f0c8-cde1-416c-ac28-d85bc6a264f0"
+    },
+    {
+      "category": "SOFTWARE",
+      "complexity": "MEDIUM",
+      "cover_image_url": "https://rdmvevwsrdgitdsabous.supabase.co/storage/v1/object/public/mission-covers/b477f0b4-9728-44e0-968f-b5ba17cc31b8/89c2e397-bf5d-47d5-af06-7c5b749d76d1-cover-1776109947593.png",
+      "created_at_iso": "2026-04-13T19:52:25.134069+00:00",
+      "currency": "USD",
+      "deadline_iso": "2026-08-21T23:59:59+00:00",
+      "deliverables_summary": [
+        {
+          "name": "Source Code",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "name": "Dockerfile",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "name": "Unit Tests ",
+          "required": true,
+          "type": "CODE"
+        },
+        {
+          "name": "Documentation",
+          "required": true,
+          "type": "CODE"
+        }
+      ],
+      "display_id": "MSN-00014",
+      "escrow_status": "locked",
+      "id": "89c2e397-bf5d-47d5-af06-7c5b749d76d1",
+      "is_funded": true,
+      "price_cents": 10000,
+      "requirements_summary": [
+        "Support unit conversions across 8 engineering domains (length, force/torque, pressure, temperature, electrical,     flow, thermal, mass/density) ",
+        "Implement minimum 50 unit pairs across all domains ",
+        "All conversions computed locally — no external API calls",
+        "Include unit tests covering all 8 domains (minimum 30 test cases)",
+        "Include Dockerfile for deployment ",
+        "Include README with API documentation and usage examples"
+      ],
+      "status": "open",
+      "summary": "Build a standalone REST API that converts between engineering units across the domains most relevant to mechanical, electrical, and manufacturing engineers. The API should support 3 endpoints: /convert (perform conversion), /units (list units per domain), and /domains (list all s",
+      "title": "REST API for Engineering Unit Conversion",
+      "url": "https://archimedes.market/bounties/89c2e397-bf5d-47d5-af06-7c5b749d76d1"
+    }
+  ],
+  "mode": "public_read_only_one_call",
+  "open_bounty_count": 4,
+  "open_payout_total_cents": 110000,
+  "open_payout_total_usd": 1100.0,
+  "response_sha256": "2296958e5810341e8c2741c35e13a855a82658056868f08ae22ad38b5a5a3e71",
+  "schema_version": "archimedes-open-summary-v1",
+  "source": "https://archimedes.market/api/mcp"
+}
