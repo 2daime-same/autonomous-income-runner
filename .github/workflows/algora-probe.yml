@@ -19,12 +19,12 @@ concurrency:
 
 jobs:
   probe:
-    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Check out dedicated repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Algora public SDK without lifecycle scripts
         run: npm install --no-save --ignore-scripts @algora/sdk@0.2.0
