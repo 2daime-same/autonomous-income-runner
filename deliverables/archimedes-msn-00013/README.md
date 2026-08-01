@@ -41,9 +41,9 @@ An unfiltered asset page fetches only the requested result slice. A filtered sea
 | Search public bounties | controlled live smoke test |
 | Get a public bounty by ID | controlled live smoke test |
 | npm-compatible package | exact lockfile, build, `npm pack --dry-run`, stdio executable |
-| Documentation | README, architecture, security, and submission traceability |
+| Documentation | README, architecture, security, submission, and requirements traceability |
 
-The mission snapshot also contains mutually inconsistent legacy requirements for Python/TensorFlow/Flask/cloud deployment alongside TypeScript/MCP/npm requirements. This implementation follows the objective TypeScript deliverable and four-tool acceptance path. The discrepancy is recorded in `docs/REQUIREMENTS-CONFLICT.md` and has been sent to platform support for clarification.
+The current public mission metadata consistently requires a TypeScript stdio MCP server using `@modelcontextprotocol/sdk`, the four tools above, an npm entrypoint, read-only public access, and documentation. This implementation follows that requirement set directly. An earlier stale snapshot contained conflicting Python/cloud wording; the platform has since replaced it. `docs/REQUIREMENTS-CONFLICT.md` records that resolution for historical traceability.
 
 ## Safety boundary
 
@@ -221,8 +221,8 @@ src/tools.ts        result and error adapters
 src/config.ts       environment validation
 src/index.ts        stdio entrypoint
 scripts/            clean, live-smoke, and deterministic packaging
- tests/             unit, HTTP, parser, and MCP integration tests
- docs/              architecture and requirement traceability
+tests/              unit, HTTP, parser, and MCP integration tests
+docs/               architecture and requirement traceability
 ```
 
 ## License
