@@ -6,10 +6,12 @@ on:
     paths:
       - bountyhub_selector.py
       - bountyhub_postfilter.py
+      - bountyhub_holdoff_filter.py
       - github_bounty_radar.py
       - tests/test_bountyhub_selector.py
       - tests/test_bountyhub_postfilter.py
       - .github/workflows/bountyhub-selector.yml
+      - .github/workflows/bountyhub-strict.yml
   workflow_dispatch:
   schedule:
     - cron: '19 */3 * * *'
@@ -20,7 +22,7 @@ permissions:
   pull-requests: read
 
 concurrency:
-  group: bountyhub-selector-main
+  group: bountyhub-candidates-main
   cancel-in-progress: true
 
 jobs:
@@ -32,31 +34,49 @@ jobs:
       - name: Check out dedicated repository
         uses: actions/checkout@v6
 
-      - name: Test BountyHub selector and fail-safe post-filter
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test BountyHub selectors and fail-safe filters
         run: python3 -m unittest discover -s tests -p 'test_bountyhub*.py' -v
 
-      - name: Compile BountyHub selector
-        run: python3 -m py_compile bountyhub_selector.py bountyhub_postfilter.py github_bounty_radar.py
+      - name: Compile BountyHub pipeline
+        run: >-
+          python3 -m py_compile
+          bountyhub_selector.py
+          bountyhub_postfilter.py
+          bountyhub_holdoff_filter.py
+          github_bounty_radar.py
 
-      - name: Validate funded BountyHub tasks against GitHub
+      - name: Build authoritative funded-candidate evidence
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BOUNTYHUB_OUTPUT: market-output/bountyhub-candidates.json
         run: |
+          set -euo pipefail
           python3 bountyhub_selector.py
           python3 bountyhub_postfilter.py
+          python3 bountyhub_holdoff_filter.py
 
-      - name: Commit public candidate evidence
+      - name: Commit public and strict candidate evidence
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-          git add market-output/bountyhub-candidates.json
+          git add market-output/bountyhub-candidates.json market-output/bountyhub-strict-candidates.json
           if git diff --cached --quiet; then
             echo 'No BountyHub candidate changes'
-          else
-            git commit -m 'Refresh BountyHub funded candidates [skip ci]'
-            git pull --rebase origin main
-            git push
+            exit 0
           fi
+          git commit -m 'Refresh authoritative BountyHub candidates [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
