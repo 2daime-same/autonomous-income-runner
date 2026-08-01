@@ -41,7 +41,6 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-          package-manager-cache: false
 
       - name: Install video runtime
         run: |
@@ -54,9 +53,10 @@ jobs:
       - name: Install, test, build, and inspect package
         run: |
           set -euo pipefail
-          mkdir -p dist-submission/demo
           npm ci --no-audit --no-fund
-          npm run verify 2>&1 | tee dist-submission/demo/verify.log
+          npm run verify 2>&1 | tee /tmp/msn15-verify.log
+          mkdir -p dist-submission/demo
+          cp /tmp/msn15-verify.log dist-submission/demo/verify.log
           npm audit --omit=dev --audit-level=high --json > dist-submission/demo/npm-audit-production.json
           python3 - <<'PY'
           import json
