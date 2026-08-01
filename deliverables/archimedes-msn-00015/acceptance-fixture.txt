@@ -1,0 +1,2 @@
+MSN-00015 controlled write acceptance fixture.
+This added line exists only to validate permission-gated inline review comment delivery.
