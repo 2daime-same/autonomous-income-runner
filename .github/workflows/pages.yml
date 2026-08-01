@@ -37,7 +37,7 @@ jobs:
           test -s site/index.html
           test -s site/robots.txt
           grep -Fq 'Verified commercial ledger' site/index.html
-          grep -Fq 'Paid engineering request' site/index.html
+          grep -Fq 'Open a paid request' site/index.html
           if grep -Eqi '(gh[opsu]_[A-Za-z0-9_]{16,}|github_pat_[A-Za-z0-9_]{16,}|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY)' site/index.html; then
             echo 'Credential-like material found in static site' >&2
             exit 1
@@ -81,17 +81,16 @@ jobs:
           from datetime import datetime, timezone
           from pathlib import Path
 
-          now = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-          index = Path('site/index.html')
           outcomes = {
               'validate': os.environ.get('VALIDATE_OUTCOME') or 'unknown',
               'setup': os.environ.get('SETUP_OUTCOME') or 'unknown',
               'upload': os.environ.get('UPLOAD_OUTCOME') or 'unknown',
               'deploy': os.environ.get('DEPLOY_OUTCOME') or 'unknown',
           }
+          index = Path('site/index.html')
           payload = {
               'schema_version': 'income-runner-pages-run-v1',
-              'recorded_at': now,
+              'recorded_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
               'workflow_run_id': int(os.environ['RUN_ID']),
               'source_commit': os.environ['SOURCE_SHA'],
               'page_url': os.environ.get('PAGE_URL') or None,
@@ -105,33 +104,27 @@ jobs:
               },
           }
           Path('site/pages-run-summary.json').write_text(
-              json.dumps(payload, indent=2, sort_keys=True) + '\n',
-              encoding='utf-8',
+              json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8'
           )
           if payload['success']:
-              deployment = {
-                  'schema_version': 'income-runner-pages-deployment-v1',
-                  'deployed_at': now,
-                  'page_url': payload['page_url'],
-                  'workflow_run_id': payload['workflow_run_id'],
-                  'source_commit': payload['source_commit'],
-                  'index_sha256': payload['index_sha256'],
-                  'commercial_status': payload['commercial_status'],
-              }
               Path('site/deployment.json').write_text(
-                  json.dumps(deployment, indent=2, sort_keys=True) + '\n',
+                  json.dumps({
+                      'schema_version': 'income-runner-pages-deployment-v1',
+                      'deployed_at': payload['recorded_at'],
+                      'page_url': payload['page_url'],
+                      'workflow_run_id': payload['workflow_run_id'],
+                      'source_commit': payload['source_commit'],
+                      'index_sha256': payload['index_sha256'],
+                      'commercial_status': payload['commercial_status'],
+                  }, indent=2, sort_keys=True) + '\n',
                   encoding='utf-8',
               )
           PY
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
           git add site/pages-run-summary.json
-          if [[ -f site/deployment.json ]]; then
-            git add site/deployment.json
-          fi
-          if git diff --cached --quiet; then
-            exit 0
-          fi
+          [[ ! -f site/deployment.json ]] || git add site/deployment.json
+          git diff --cached --quiet && exit 0
           git commit -m 'Record GitHub Pages run result [skip ci]'
           for attempt in $(seq 1 10); do
             if git pull --rebase origin main && git push origin HEAD:main; then
