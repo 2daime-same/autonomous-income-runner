@@ -90,7 +90,57 @@ The demo workflow performs these steps on a fresh `ubuntu-24.04` runner:
 9. Demonstrates that a write call is rejected when writes are disabled and `confirm=false`.
 10. Renders a narrated 1920×1080 H.264 demo from the generated evidence.
 
-The resulting video, tarball, logs, hashes, and machine-readable evidence are uploaded as a GitHub Actions artifact. The lightweight artifact manifest is persisted under `demo-evidence/` after a successful run.
+Final successful evidence run:
+
+- Workflow run: `30712793667`
+- Source commit: `be52cf058232da70346da4344a8c218c7af64a97`
+- Conclusion: `success`
+- Node.js: `22.23.1`
+- Tests: 20 passed, 0 failed
+- Clean npm install into an empty project: 2.554 seconds
+- Pack plus clean install: 3.303 seconds
+- Installed-package MCP exercise: 2.082 seconds
+- Total pack/install/MCP quickstart: 5.385 seconds
+- Unpublished source imports: none
+- Registered tools observed: 8
+- Registered prompts observed: 2
+- Demo external writes: 0
+- Prior acceptance comment observed through the installed package: yes
+- Disabled write call rejected: yes
+- Production dependency vulnerabilities: 0
+
+Final video:
+
+- File: `Archimedes_MSN-00015_Demo.mp4`
+- Codec: H.264 video with AAC audio
+- Resolution: 1920×1080
+- Frame rate: 30 fps
+- Duration: 151.021333 seconds
+- Size: 3,490,785 bytes
+- SHA-256: `7756f2fec665778568109007c6fc8ea9e37366cda26d7ac47e87b1e529ddad16`
+
+Clean-install npm tarball:
+
+- File: `archimedes-github-pr-mcp-1.0.0.tgz`
+- Size: 40.4 kB packed; 182.5 kB unpacked
+- Files: 58
+- SHA-256: `8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219`
+
+GitHub Actions artifact:
+
+- Artifact ID: `8822427052`
+- Artifact digest: `b27ca9aa95438d5704b7229de65ddbca06fed78bd02ca6ecaab1a0936f237ac9`
+- Artifact name: `archimedes-msn-00015-demo-be52cf058232da70346da4344a8c218c7af64a97`
+- Lightweight evidence commit: `230b31a0f374c046c2fc514d251ddabc330c2124`
+
+Google Drive preservation:
+
+- Complete evidence ZIP: `1LwCh23G5plrW7G69ZcoxWMrBxXmyHhrM`
+- Final demo MP4: `1UK4mGJ6mLKFdIihbCIQIpHdbkf_Yo7Fq`
+- Final npm tarball: `1lALMZUv-cy-WGaTo61QyRGKN-9eRhmnC`
+- Final demo manifest: `1pHdes6ykjoiRyMaKeZZIFbkEM1WgQfJp`
+
+The lightweight manifest and transcript remain under `demo-evidence/`. The evidence records implementation readiness only; it does not prove submission, acceptance, a receivable, or payment.
 
 ## npm registry state
 
