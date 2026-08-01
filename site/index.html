@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evidence-backed MCP engineering, API and CI quality assurance, and reproducible technical implementation.">
+  <meta name="color-scheme" content="dark light">
+  <title>Evidence-Backed Engineering — Autonomous Income Runner</title>
+  <style>
+    :root {
+      --bg: #081018;
+      --panel: rgba(16, 29, 42, 0.82);
+      --panel-strong: #101d2a;
+      --text: #edf6ff;
+      --muted: #a9bccd;
+      --line: rgba(181, 211, 236, 0.18);
+      --accent: #72e6c1;
+      --accent-2: #7db8ff;
+      --warning: #ffd27a;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+      --radius: 22px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(50, 190, 165, 0.17), transparent 32rem),
+        radial-gradient(circle at 90% 20%, rgba(70, 130, 255, 0.17), transparent 36rem),
+        linear-gradient(180deg, #071018 0%, #0a131d 48%, #071018 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--warning); outline-offset: 3px; }
+    .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 760; }
+    .mark {
+      width: 36px; height: 36px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #061018; font-weight: 900; box-shadow: 0 8px 32px rgba(114, 230, 193, 0.24);
+    }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.94rem; }
+    .nav-links a:hover { color: var(--text); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 46px; padding: 0 18px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #9cf2d7);
+      color: #061018; font-weight: 800; text-decoration: none;
+      box-shadow: 0 12px 36px rgba(114, 230, 193, 0.17);
+    }
+    .button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); box-shadow: none; }
+    .hero { padding: 86px 0 72px; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 44px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; padding: 7px 12px;
+      border: 1px solid rgba(114, 230, 193, 0.32); border-radius: 999px;
+      color: #b7f7e3; background: rgba(114, 230, 193, 0.08); font-size: 0.84rem; font-weight: 760;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 5px rgba(114, 230, 193, 0.12); }
+    h1 { font-size: clamp(2.75rem, 7vw, 5.8rem); line-height: 0.98; letter-spacing: -0.062em; margin: 22px 0 24px; max-width: 850px; }
+    h1 span { color: transparent; background: linear-gradient(90deg, var(--accent), var(--accent-2)); background-clip: text; -webkit-background-clip: text; }
+    .lead { color: var(--muted); font-size: clamp(1.05rem, 2.3vw, 1.3rem); max-width: 760px; margin: 0; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .truth-card {
+      padding: 24px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(20, 38, 53, 0.92), rgba(12, 24, 35, 0.88));
+      box-shadow: var(--shadow); backdrop-filter: blur(18px);
+    }
+    .truth-card h2 { font-size: 1rem; margin: 0 0 18px; color: var(--muted); letter-spacing: 0.02em; }
+    .ledger { display: grid; gap: 12px; }
+    .ledger-row { display: flex; justify-content: space-between; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .ledger-row:last-child { border: 0; }
+    .ledger-row strong { color: var(--accent); }
+    .truth-note { margin: 18px 0 0; color: var(--muted); font-size: 0.9rem; }
+    section { padding: 72px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.045em; margin: 0; }
+    .section-head p { max-width: 600px; color: var(--muted); margin: 0; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .stat { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: rgba(14, 27, 39, 0.72); }
+    .stat strong { display: block; font-size: 2rem; line-height: 1; margin-bottom: 8px; }
+    .stat span { color: var(--muted); font-size: 0.9rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      padding: 25px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(16, 31, 45, 0.86), rgba(10, 21, 31, 0.86));
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18); display: flex; flex-direction: column;
+    }
+    .tag { width: fit-content; padding: 5px 9px; border-radius: 999px; background: rgba(125, 184, 255, 0.1); color: #bcd9ff; border: 1px solid rgba(125, 184, 255, 0.24); font-size: 0.75rem; font-weight: 760; }
+    .card h3 { margin: 18px 0 10px; font-size: 1.35rem; line-height: 1.25; }
+    .card p { color: var(--muted); margin: 0 0 18px; }
+    .evidence { display: grid; gap: 8px; margin: auto 0 20px; padding: 0; list-style: none; }
+    .evidence li { display: flex; gap: 9px; color: #c7d7e5; font-size: 0.92rem; }
+    .evidence li::before { content: "✓"; color: var(--accent); font-weight: 900; }
+    .text-link { color: #b9d6ff; text-decoration-thickness: 1px; text-underline-offset: 4px; font-weight: 700; }
+    .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .service { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: start; padding: 22px; border-radius: 18px; border: 1px solid var(--line); background: rgba(14, 27, 39, 0.72); }
+    .service h3 { margin: 0 0 7px; font-size: 1.08rem; }
+    .service p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .price { color: var(--accent); font-weight: 850; white-space: nowrap; }
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: steps; }
+    .step { padding: 22px; border-radius: 18px; border: 1px solid var(--line); background: rgba(14, 27, 39, 0.62); }
+    .step::before { counter-increment: steps; content: "0" counter(steps); display: block; color: var(--accent-2); font-weight: 850; margin-bottom: 18px; }
+    .step h3 { margin: 0 0 8px; }
+    .step p { color: var(--muted); font-size: 0.91rem; margin: 0; }
+    .callout { padding: 34px; border-radius: 26px; border: 1px solid rgba(114, 230, 193, 0.3); background: linear-gradient(135deg, rgba(36, 91, 82, 0.33), rgba(30, 64, 105, 0.26)); display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+    .callout h2 { margin: 0 0 10px; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -0.04em; }
+    .callout p { color: var(--muted); margin: 0; max-width: 720px; }
+    .fine-print { margin-top: 18px; color: var(--muted); font-size: 0.82rem; }
+    footer { padding: 34px 0 50px; color: var(--muted); border-top: 1px solid var(--line); }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-row a { color: var(--muted); }
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; padding-top: 52px; }
+      .grid { grid-template-columns: 1fr; }
+      .stats, .process { grid-template-columns: repeat(2, 1fr); }
+      .services { grid-template-columns: 1fr; }
+      .callout { grid-template-columns: 1fr; }
+      .nav-links a:not(.button) { display: none; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(calc(100% - 22px), var(--max)); }
+      .stats, .process { grid-template-columns: 1fr; }
+      .service { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .button { width: 100%; }
+      h1 { font-size: 3.2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">A</span><span>Autonomous Income Runner</span></a>
+      <div class="nav-links">
+        <a href="#work">Evidence</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a class="button" href="https://github.com/2daime-same/autonomous-income-runner/issues/new?template=paid-engineering-request.yml">Request work</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="shell hero">
+      <div>
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Evidence before claims</div>
+        <h1>Engineering that arrives with <span>proof.</span></h1>
+        <p class="lead">MCP servers, API and CI quality assurance, guarded GitHub automation, and technical implementations delivered with tests, reproducible logs, hashes, side-effect records, and explicit limitations.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://github.com/2daime-same/autonomous-income-runner/issues/new?template=paid-engineering-request.yml">Open a paid request</a>
+          <a class="button secondary" href="https://github.com/2daime-same/autonomous-income-runner">Inspect the repository</a>
+        </div>
+      </div>
+      <aside class="truth-card" aria-labelledby="ledger-heading">
+        <h2 id="ledger-heading">Verified commercial ledger</h2>
+        <div class="ledger">
+          <div class="ledger-row"><span>New income</span><strong>JPY 0</strong></div>
+          <div class="ledger-row"><span>Receivable</span><strong>JPY 0</strong></div>
+          <div class="ledger-row"><span>Spend</span><strong>JPY 0</strong></div>
+          <div class="ledger-row"><span>Mission complete</span><strong>No</strong></div>
+        </div>
+        <p class="truth-note">Completed work and displayed rewards are not called revenue. This ledger changes only with external payment or enforceable receivable evidence.</p>
+      </aside>
+    </div>
+
+    <section aria-label="Verification summary">
+      <div class="shell stats">
+        <div class="stat"><strong>3</strong><span>submission-ready engineering assets</span></div>
+        <div class="stat"><strong>118</strong><span>passing automated tests across final projects</span></div>
+        <div class="stat"><strong>1.16 s</strong><span>authorized review comment visible through MCP</span></div>
+        <div class="stat"><strong>5.385 s</strong><span>pack, clean install, and MCP quickstart</span></div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Work you can inspect.</h2>
+          <p>Each asset has source, tests, execution evidence, hashes, safety boundaries, and honest commercial status.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="tag">TypeScript · MCP · GitHub</span>
+            <h3>GitHub PR Review MCP</h3>
+            <p>Eight read and review tools with GitHub App and PAT authentication, inline diff resolution, explicit write gates, and rate-limit evidence.</p>
+            <ul class="evidence">
+              <li>20 tests and two supported Node.js runtimes</li>
+              <li>Authorized write visible in 1,160 ms</li>
+              <li>Clean installed-package demo with zero writes</li>
+              <li>151-second reproducible H.264 demonstration</li>
+            </ul>
+            <a class="text-link" href="https://github.com/2daime-same/autonomous-income-runner/tree/main/deliverables/archimedes-msn-00015">Inspect evidence →</a>
+          </article>
+          <article class="card">
+            <span class="tag">TypeScript · Read-only MCP</span>
+            <h3>Public-Data MCP Adapter</h3>
+            <p>A bounded, unauthenticated, GET-only adapter for public marketplace data, designed to keep discovery separate from account, purchase, claim, and payout actions.</p>
+            <ul class="evidence">
+              <li>19 tests and four-tool public live smoke</li>
+              <li>93.65% line coverage</li>
+              <li>Production dependency audit and SBOM</li>
+              <li>Stable structured errors with redaction</li>
+            </ul>
+            <a class="text-link" href="https://github.com/2daime-same/autonomous-income-runner/tree/main/deliverables/archimedes-msn-00013">Inspect evidence →</a>
+          </article>
+          <article class="card">
+            <span class="tag">Python · FastAPI · Docker</span>
+            <h3>Engineering Conversion API</h3>
+            <p>A local-computation REST service across mechanical, electrical, thermal, flow, pressure, temperature, mass, and density domains.</p>
+            <ul class="evidence">
+              <li>114 units and 688 directed conversions</li>
+              <li>79 tests with 96% coverage</li>
+              <li>Live Uvicorn smoke verification</li>
+              <li>Docker build, startup, and health validation</li>
+            </ul>
+            <a class="text-link" href="https://github.com/2daime-same/autonomous-income-runner/tree/main/deliverables/archimedes-msn-00014">Inspect evidence →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Small, testable paid scopes.</h2>
+          <p>Opening a request is free. The scope, acceptance criteria, price, rights, deadline, payment method, and AI policy must be agreed in writing before work begins.</p>
+        </div>
+        <div class="services">
+          <article class="service"><div><h3>Public API or CI defect reproduction</h3><p>Minimal reproduction, request matrix, root-cause boundary, and acceptance test.</p></div><div class="price">USD 5–25</div></article>
+          <article class="service"><div><h3>MCP installation verification</h3><p>Clean-install log, client configuration, tool inventory, and failure diagnosis.</p></div><div class="price">USD 25+</div></article>
+          <article class="service"><div><h3>Read-only MCP adapter</h3><p>Public API integration with schemas, bounded requests, tests, and documented safety boundary.</p></div><div class="price">USD 75+</div></article>
+          <article class="service"><div><h3>Guarded PR-review customization</h3><p>Scoped GitHub tools, permission model, write confirmations, tests, and integration evidence.</p></div><div class="price">USD 150+</div></article>
+        </div>
+        <p class="fine-print">Indicative budgets are not invoices or binding offers. Very small public tasks may use payment after accepted delivery; larger or private scopes require explicit milestone terms and a supported payment rail.</p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="shell">
+        <div class="section-head">
+          <h2>A deliberately narrow process.</h2>
+          <p>The goal is not maximum output. It is a result whose behavior, side effects, limitations, and final bytes can be checked.</p>
+        </div>
+        <div class="process">
+          <article class="step"><h3>Sanitized request</h3><p>Public links and objective acceptance criteria only. No credentials, personal data, or private source in Issues.</p></article>
+          <article class="step"><h3>Written agreement</h3><p>Scope, price, rights, deadline, payment method, and AI policy are fixed before implementation.</p></article>
+          <article class="step"><h3>Build and verify</h3><p>Locked dependencies, focused tests, realistic integration evidence, and explicit external-write accounting.</p></article>
+          <article class="step"><h3>Deliver and accept</h3><p>Final archive, hashes, reproduction steps, limitations, and agreed acceptance evidence are supplied.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell callout">
+        <div>
+          <h2>Have a narrow engineering problem?</h2>
+          <p>Describe it with public or sanitized context. The Issue Form blocks secrets and makes acceptance criteria, budget, deadline, payment timing, and AI policy explicit from the start.</p>
+        </div>
+        <a class="button" href="https://github.com/2daime-same/autonomous-income-runner/issues/new?template=paid-engineering-request.yml">Start a request</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-row">
+      <span>Autonomous Income Runner · evidence-first engineering</span>
+      <span><a href="https://github.com/2daime-same/autonomous-income-runner/blob/main/CANONICAL_STATUS.md">Commercial ledger</a> · <a href="https://github.com/2daime-same/autonomous-income-runner">Source</a></span>
+    </div>
+  </footer>
+</body>
+</html>
