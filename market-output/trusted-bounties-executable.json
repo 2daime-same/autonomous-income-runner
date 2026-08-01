@@ -219,6 +219,28 @@
       "url": "https://github.com/qwer80371832/loadertest/issues/1"
     },
     {
+      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%24200%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/dictation-toolbox/Caster/issues/814)\n<!-- /Issuehunt Badges -->\n\n\n@lexxish @alexboche  \r\n\r\n**Is your feature request related to a problem? Please describe.**\r\nPut simply re-implementing Dragon's Select-and-Say capability and text navigation.\r\n\r\n**Describe the solution you'd like**\r\nWork to explore tool that use accessibility API.\r\nKey concepts\r\n - Functions consumed by Grammars would be API, Engine, and OS agnostic\r\n - As fast as possible\r\n - The expectations this project would move out of Caster into [dtactions](https://github.com/dictation-toolbox/dtactions) Which will support Common OS action and related code from dictation-toolbox projects\r\n\r\n**Accessibility APIs**\r\nThere can be overlap between applications with the respective OSs. I have only research tools for exploring the Windows OS\r\n\r\n- Windows OS \r\n[Microsoft Active Accessibility (MSAA)](https://docs.microsoft.com/en-us/windows/win32/winauto/microsoft-active-accessibility)\r\n[UI Automation](https://docs.microsoft.com/en-us/windows/win32/winauto/entry-uiauto-win32)\r\n\t- Tools\r\n\t[Accessibility Insights for Windows (UIAutomation/win32)](https://accessibilityinsights.io/docs/en/windows/overview) (best in class)\r\n    [aViewer 2.0.3 (MSAA/IA2/ARIA/HTML/UIAutomation)](https://github.com/ThePacielloGroup/aviewer/releases)\r\n\t[au3spy](https://www.autoitscript.com/autoit3/docs/intro/au3spy.htm)\r\n\t[Inspect](https://github.com/yinkaisheng/Python-UIAutomation-for-Windows/tree/master/inspect)\r\n\t[spy++](https://docs.microsoft.com/en-us/visualstudio/debugger/introducing-spy-increment?view=vs-2019) part of visual studio.\r\n\t[winspy](http://www.catch22.net/software/winspy)\r\n\r\n- Linux \r\n[AT-SPI](https://developer.gnome.org/accessibility-devel-guide/stable/dev-start-5.html.es)\r\n[IAccessible2 (IA2)](https://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/)\r\n\r\n\r\n- Mac \r\n [Accessibility API](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078)\r\n\r\nOther APIs\r\n[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)\r\n\r\n[Scintilla](https://www.scintilla.org/ScintillaDoc.html)\r\n\r\nMFC classes to encapsulate the Scintilla edit control\r\n- [naughter](http://www.naughter.com/scintilla.html)\r\n- [pywin scintilla control](https://github.com/ojdkbuild/tools_python27/blob/master/Lib/site-packages/pythonwin/pywin/scintilla/control.py)\r\n\r\nJava Access Bridge is for Windows OS interface with Java software\r\nhttps://doc.bccnsoft.com/docs/jdk7-docs/technotes/guides/access/jab/introduction.html\r\nhttps://docs.oracle.com/javase/7/docs/technotes/guides/access/enable_and_test.html\r\nhttps://docs.oracle.com/javase/7/docs/api/javax/accessibility/package-summary.html\r\nhttps://github.com/nvaccess/nvda/blob/defed0ef2317cf3192922692a40cc2eb92d41143/source/JABHandler.py\r\n\r\n**Describe alternatives you've considered**\r\n\r\n\r\n**Additional context**\r\n\r\nDragonfly as a [Accessibility API](https://dragonfly2.readthedocs.io/en/latest/accessibility.html?) which is OS/controller agnostic, Due to the [pyia2](https://github.com/illinois-dres-aitg/pyia2) that exposes Google Chrome, Firefox and Gitter(electron based on chrome) is limited.\r\n\r\nThe Dragonfly accessibility if you can be leveraged by this Caster grammar [accessibilityapi.py](ht",
+      "body_submitted_pr_signals": [],
+      "competitor_signals": [],
+      "exclusions": [
+        "large or cross-platform scope is unsuitable for first-income execution"
+      ],
+      "execution_score": 69.41,
+      "execution_score_reasons": [
+        "small/testable scope marker",
+        "large or cross-platform scope"
+      ],
+      "issue_number": 814,
+      "maintainer_holdoffs": [],
+      "repo": "dictation-toolbox/Caster",
+      "repo_language": "Python",
+      "repo_stars": 357,
+      "reward_usd": 200.0,
+      "title": "Integration with OS accessibility APIs",
+      "updated_at": "2026-05-30T22:46:10Z",
+      "url": "https://github.com/dictation-toolbox/Caster/issues/814"
+    },
+    {
       "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%2460%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/issues/25)\n<!-- /Issuehunt Badges -->\n\n\nThis is on Mojave.  It reports the same wallpaper across both screens, but only the first screen has the reported wallpaper.\n\n\n<!-- Issuehunt content -->\n\n---\n\n<details>\n<summary>\n<b>IssueHunt Summary</b>\n</summary>\n\n\n### Backers (Total: $60.00)\n\n- [<img src='https://avatars3.githubusercontent.com/u/44827199?v=4' alt='issuehunt' width=24 height=24> issuehunt](https://oss.issuehunt.io/u/issuehunt) ($60.00)\n\n### Submitted pull Requests\n- [#1 fix: resolve directory wallpaper per screen](https://oss.issuehunt.io/r/LYY435939/macos-wallpaper/pull/1)\n- [#1 Fix per-screen wallpaper lookup for directory sources](https://oss.issuehunt.io/r/jamilahmadzai/macos-wallpaper/pull/1)\n---\n\n#### [Become a backer now!](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/issues/25)\n#### [Or submit a pull request to get the deposits!](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/issues/25)\n### Tips\n\n- Checkout the [Issuehunt explorer](https://oss.issuehunt.io/r/sindresorhus/macos-wallpaper/) to discover more funded issues.\n- Need some help from other developers? [Add your repositories](https://oss.issuehunt.io/r/new) on IssueHunt to raise funds.\n</details>\n<!-- /Issuehunt content-->",
       "body_submitted_pr_signals": [
         "- [#1 Fix per-screen wallpaper lookup for directory sources]",
@@ -278,31 +300,11 @@
       "url": "https://github.com/sindresorhus/Settings/issues/9"
     }
   ],
-  "excluded_count": 10,
-  "executable": [
-    {
-      "body_excerpt": "<!-- Issuehunt Badges -->\n[<img alt=\"Issuehunt badges\" src=\"https://img.shields.io/badge/IssueHunt-%24200%20Funded-%2300A156.svg\" />](https://oss.issuehunt.io/r/dictation-toolbox/Caster/issues/814)\n<!-- /Issuehunt Badges -->\n\n\n@lexxish @alexboche  \r\n\r\n**Is your feature request related to a problem? Please describe.**\r\nPut simply re-implementing Dragon's Select-and-Say capability and text navigation.\r\n\r\n**Describe the solution you'd like**\r\nWork to explore tool that use accessibility API.\r\nKey concepts\r\n - Functions consumed by Grammars would be API, Engine, and OS agnostic\r\n - As fast as possible\r\n - The expectations this project would move out of Caster into [dtactions](https://github.com/dictation-toolbox/dtactions) Which will support Common OS action and related code from dictation-toolbox projects\r\n\r\n**Accessibility APIs**\r\nThere can be overlap between applications with the respective OSs. I have only research tools for exploring the Windows OS\r\n\r\n- Windows OS \r\n[Microsoft Active Accessibility (MSAA)](https://docs.microsoft.com/en-us/windows/win32/winauto/microsoft-active-accessibility)\r\n[UI Automation](https://docs.microsoft.com/en-us/windows/win32/winauto/entry-uiauto-win32)\r\n\t- Tools\r\n\t[Accessibility Insights for Windows (UIAutomation/win32)](https://accessibilityinsights.io/docs/en/windows/overview) (best in class)\r\n    [aViewer 2.0.3 (MSAA/IA2/ARIA/HTML/UIAutomation)](https://github.com/ThePacielloGroup/aviewer/releases)\r\n\t[au3spy](https://www.autoitscript.com/autoit3/docs/intro/au3spy.htm)\r\n\t[Inspect](https://github.com/yinkaisheng/Python-UIAutomation-for-Windows/tree/master/inspect)\r\n\t[spy++](https://docs.microsoft.com/en-us/visualstudio/debugger/introducing-spy-increment?view=vs-2019) part of visual studio.\r\n\t[winspy](http://www.catch22.net/software/winspy)\r\n\r\n- Linux \r\n[AT-SPI](https://developer.gnome.org/accessibility-devel-guide/stable/dev-start-5.html.es)\r\n[IAccessible2 (IA2)](https://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/)\r\n\r\n\r\n- Mac \r\n [Accessibility API](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078)\r\n\r\nOther APIs\r\n[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)\r\n\r\n[Scintilla](https://www.scintilla.org/ScintillaDoc.html)\r\n\r\nMFC classes to encapsulate the Scintilla edit control\r\n- [naughter](http://www.naughter.com/scintilla.html)\r\n- [pywin scintilla control](https://github.com/ojdkbuild/tools_python27/blob/master/Lib/site-packages/pythonwin/pywin/scintilla/control.py)\r\n\r\nJava Access Bridge is for Windows OS interface with Java software\r\nhttps://doc.bccnsoft.com/docs/jdk7-docs/technotes/guides/access/jab/introduction.html\r\nhttps://docs.oracle.com/javase/7/docs/technotes/guides/access/enable_and_test.html\r\nhttps://docs.oracle.com/javase/7/docs/api/javax/accessibility/package-summary.html\r\nhttps://github.com/nvaccess/nvda/blob/defed0ef2317cf3192922692a40cc2eb92d41143/source/JABHandler.py\r\n\r\n**Describe alternatives you've considered**\r\n\r\n\r\n**Additional context**\r\n\r\nDragonfly as a [Accessibility API](https://dragonfly2.readthedocs.io/en/latest/accessibility.html?) which is OS/controller agnostic, Due to the [pyia2](https://github.com/illinois-dres-aitg/pyia2) that exposes Google Chrome, Firefox and Gitter(electron based on chrome) is limited.\r\n\r\nThe Dragonfly accessibility if you can be leveraged by this Caster grammar [accessibilityapi.py](ht",
-      "body_submitted_pr_signals": [],
-      "competitor_signals": [],
-      "execution_score": 69.41,
-      "execution_score_reasons": [
-        "small/testable scope marker",
-        "large or cross-platform scope"
-      ],
-      "issue_number": 814,
-      "maintainer_holdoffs": [],
-      "repo": "dictation-toolbox/Caster",
-      "repo_language": "Python",
-      "repo_stars": 357,
-      "reward_usd": 200.0,
-      "title": "Integration with OS accessibility APIs",
-      "updated_at": "2026-05-30T22:46:10Z",
-      "url": "https://github.com/dictation-toolbox/Caster/issues/814"
-    }
-  ],
-  "executable_count": 1,
+  "excluded_count": 11,
+  "executable": [],
+  "executable_count": 0,
   "expenses_usd": 0,
-  "generated_at": "2026-08-01T04:05:09+00:00",
+  "generated_at": "2026-08-01T04:13:38+00:00",
   "input_count": 11,
   "source": "market-output/trusted-bounties.json",
   "writes_performed": []
