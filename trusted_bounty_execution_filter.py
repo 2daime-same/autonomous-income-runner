@@ -71,6 +71,24 @@ def explicit_submissions(body: str) -> list[str]:
     return sorted(set(matches))
 
 
+def hard_scope_exclusions(item: Mapping[str, Any]) -> list[str]:
+    """Return work-size exclusions, independent of the ranking score.
+
+    A score penalty is not sufficient: a large task can still rank above stale
+    alternatives and be mislabeled executable.  Large cross-platform and OS
+    integration projects therefore fail closed for the first-income loop.
+    """
+    body = str(item.get("body_excerpt") or "").lower()
+    title = str(item.get("title") or "").lower()
+    text = title + "\n" + body
+    matched = sorted(marker for marker in LARGE_SCOPE if marker in text)
+    if not matched:
+        return []
+    return [
+        "large or cross-platform scope is unsuitable for first-income execution"
+    ]
+
+
 def inspect_comments(repo: str, number: int) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     holdoffs: list[dict[str, Any]] = []
     competitors: list[dict[str, Any]] = []
@@ -144,7 +162,7 @@ def main() -> int:
         repo = str(item.get("repo") or "")
         number = item.get("issue_number")
         body = str(item.get("body_excerpt") or "")
-        reasons: list[str] = []
+        reasons: list[str] = hard_scope_exclusions(item)
 
         submissions = explicit_submissions(body)
         if submissions:
