@@ -142,7 +142,7 @@
       "url": "https://archimedes.market/bounties/9f0acc01-1e89-4473-a340-c4d1719d1e3c"
     }
   ],
-  "generated_at": "2026-07-31T06:37:32Z",
+  "generated_at": "2026-08-01T04:03:39Z",
   "geographic_note": "Platform terms say access from outside the United States may be limited; no registration or participation was attempted.",
   "open_summaries_fetched": 4,
   "ranked_candidates": [
@@ -355,12 +355,12 @@
         },
         {
           "category": "TECHNICAL",
-          "description": "Develop using Python with TensorFlow and Flask frameworks.",
+          "description": "Develop the server in TypeScript using the @modelcontextprotocol/sdk (Node.js).",
           "priority": "MUST_HAVE"
         },
         {
           "category": "TECHNICAL",
-          "description": "Deploy on cloud services such as AWS or Azure.",
+          "description": "Deliver as a local stdio MCP server runnable via npm start / npx; no separately hosted cloud service is required.",
           "priority": "MUST_HAVE"
         },
         {
