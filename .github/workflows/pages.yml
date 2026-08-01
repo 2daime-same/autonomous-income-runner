@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -52,3 +52,52 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Record deployment evidence
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          RUN_ID: ${{ github.run_id }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          index = Path('site/index.html')
+          payload = {
+              'schema_version': 'income-runner-pages-deployment-v1',
+              'deployed_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'page_url': os.environ['PAGE_URL'],
+              'workflow_run_id': int(os.environ['RUN_ID']),
+              'source_commit': os.environ['SOURCE_SHA'],
+              'index_sha256': hashlib.sha256(index.read_bytes()).hexdigest(),
+              'commercial_status': {
+                  'verified_income_jpy': 0,
+                  'verified_receivable_jpy': 0,
+                  'verified_spend_jpy': 0,
+              },
+          }
+          Path('site/deployment.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add site/deployment.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Record GitHub Pages deployment [skip ci]'
+          for attempt in $(seq 1 10); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
