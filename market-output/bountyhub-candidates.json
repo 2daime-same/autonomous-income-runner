@@ -1,38 +1,7 @@
 {
-  "actionable": [
-    {
-      "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
-      "amount_usd": "250.00",
-      "assignment_type": "open",
-      "attempt_signals": [],
-      "bountyhub_id": "f35ef17a-ca1f-4a5a-a12e-762def0aee45",
-      "claimed": false,
-      "exclusions": [],
-      "github_assignees": [],
-      "github_issue_state": "open",
-      "issue_number": 5,
-      "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/5",
-      "open_competing_prs": [],
-      "payment_status": "PAID",
-      "repo_archived": false,
-      "repo_language": null,
-      "repo_stars": 7,
-      "repository": "fluxerapp/fluxer-meta",
-      "scope_excerpt": "**Status: needs mobile and desktop visual design**\n\n# Background\n\nThreads are one of our top requested features. A common desire on chat platform, akin to breakout rooms for specific sub-conversations, threads are generally considered to be “sub-channels” that sit inside a larger channel. Threads typically have a unique name and a starting message, however the latter should be viewed as optional.\n\n\nWe should avoid diverging from industry standard. Nor should we think of threads as a buildup to forums. Both serve different niches. Threads allow for quickly zooming in on a specific message during an active conversation. Forums create hubs for specific types of conversations. While the two products may intersect at a later point, as a MVP to meet user needs rapidly, we should focus our efforts on just implementing a standard “threads feature”\n\n\n# Product needs\n\nAll designs below (except instance level safety) should be treated as strong suggestions. If you feel you have a better design, we encourage you to explore it, but please understand that if it is not to the team’s liking, we may not accept the end result. Instance level safety designs are requirements.\n\n\nTLDR → Threads are sub-channels. They inherit a large amount of base design and UX from channels. There are specific nuances in the API, database structure, and UX for them, but broadly, they should be treated as channels. \n\n\n## Initiation - (Desktop)\n\n### Starting a thread\n\n* Users should be able to create a thread in any text based channel via three methods:\n  * Hovering over an existing message should display a “thread” icon in the context menu. The thread icon should be in between the reply and the forward icons. A tooltip should appear above with “Start new thread”\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n  * When right clicking a message or hitting the hamburger icon on a message, a “Start new thread” button should be there.\n    * If the message is already the start of a thread, this tooltip should instead read “Join thread”, and enter the user into the thread. They should not be able to start a secondary thread.\n* “/thread” in the chat box should allow you to also initiate a thread\n* When initiating a thread, the creator is presented a popup modal. That modal has:\n  * Thread Name\n  * How long should the thread remain open (default 7d)\n  * Shows a preview of the first message (or nothing if doing /thread)\n  * a confirm and cancel button.\n* If a user does not have the permissions to start a thread, they will not see any of the buttons or have an autocomplete for /thread\n  * If permissions change while a thread creation modal is open, hitting confirm should fail the user. No special design is needed, but an error message in console is nice.\n* When a thread is created, the client renders it in the channel as an indented box below the origina",
-      "score": 103.0,
-      "score_reasons": [
-        "BountyHub paymentStatus is PAID",
-        "small and testable scope markers",
-        "no competing attempt signal found",
-        "no open competing PR found"
-      ],
-      "solved": false,
-      "title": "Threads - (Dev Bounty: $250)",
-      "total_amount_usd": "800.00"
-    }
-  ],
-  "actionable_count": 1,
-  "generated_at": "2026-08-01T14:03:28+00:00",
+  "actionable": [],
+  "actionable_count": 0,
+  "generated_at": "2026-08-01T15:40:02+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -41,11 +10,48 @@
       "attempt_signals": [],
       "bountyhub_id": "f35ef17a-ca1f-4a5a-a12e-762def0aee45",
       "claimed": false,
-      "exclusions": [],
+      "exclusions": [
+        "current competing implementation signal exists in issue comments",
+        "large full-stack or cross-platform scope is unsuitable for first-income execution"
+      ],
       "github_assignees": [],
       "github_issue_state": "open",
       "issue_number": 5,
       "issue_url": "https://github.com/fluxerapp/fluxer-meta/issues/5",
+      "live_comment_competition": [
+        {
+          "excerpt": "Thanks for the confirmation! I will confidently claim and tackle the complete **desktop implementation** (Backend/DB extensions + Desktop Frontend Layout + Context Actions).\\n\\n### ���️ Engineering Battle-Plan\\n\\n1. **DB Migration:** I will add `parent_channel_id`, `thread_id`, and creator metadata to the channels and messages schemas.\\n2. **Transient State Engine:** Implement the conditional visibility check so unjoined threads vanish from the sidebar array the moment a user clicks away.\\n3. **UX & Hotkeys:** Map out the hover context menu, `/thread` chat command hook, and the outlined thread",
+          "login": "Adebolajames145"
+        },
+        {
+          "excerpt": "Hi — I've read the full spec and [#30](https://github.com/fluxerapp/fluxer-meta/issues/30). I understand the bounty is currently paused following @hampus-fluxer's note on July 13. Once submissions reopen, I'm interested in contributing. My background is backend/data engineering (Python, pipelines, APIs). I'd prefer a **scoped slice** rather than duplicating the full [#1170](https://github.com/fluxerapp/fluxer/pull/1170) effort — for example: - **Mobile (Flutter)** — thread chip, bottom sheet, creation sheet, lifecycle actions - **Gateway/backend** — thread sync in `READY`/`GUILD_CREATE`, `THRE",
+          "login": "br413"
+        },
+        {
+          "excerpt": "Submitted a mobile-first Threads design spec for this bounty: https://github.com/fluxerapp/fluxer-meta/pull/38 I focused this package on the maintainer note that mobile designs are needed. Scope covered: - starting a thread from the mobile message action rail / context surface; - existing-thread \"Join thread\" state to prevent duplicate thread creation; - mobile create-thread sheet with name, lifetime, parent-message preview, and permission-failure copy; - inline thread card under the parent message; - preview vs joined channel drawer behavior; - thread-list sheet for open, closed, and archived",
+          "login": "caydyan"
+        },
+        {
+          "excerpt": "Opened a focused Fluxer app PR for the thread notification inheritance slice discussed here: https://github.com/fluxerapp/fluxer/pull/1121 Scope is intentionally narrow: gateway push now resolves notification overrides as direct child/thread target -> parent channel -> guild/default, and push message data carries parent_id from the existing channel index. This matches the requirement that thread notification settings inherit the starting profile from the parent channel while remaining independently overrideable later. I am not claiming this implements the full Threads feature; sharing it as a ",
+          "login": "dangelo352"
+        },
+        {
+          "excerpt": "/claim #5",
+          "login": "elevasyncsolutions-jpg"
+        },
+        {
+          "excerpt": "Hey @Kamalaja spoke to @ejspeed-cmd and hes confirmed he already accepted mobile, happy to implement the bug fix either way.",
+          "login": "NathanialWolf"
+        },
+        {
+          "excerpt": "Submitted a full desktop + mobile Threads design package for this bounty: https://github.com/fluxerapp/fluxer-meta/pull/46 Scope covered: - desktop message actions, create modal, inline thread card, sidebar preview/joined behavior, and topbar thread list dropdown; - mobile action sheet, create sheet, inline thread card, drawer nesting, and thread list sheet; - permissions, open/closed/archived/deleted states, leave/open/close/archive/unarchive/delete controls; - backend ThreadID, parent channel, creator snapshot, bot events, and API documentation requirements; - instance-admin Message Tools an",
+          "login": "YfengJ"
+        },
+        {
+          "excerpt": "/claim I'll work on implementing the Threads feature for Fluxer. Bounty: $750. Note: Status says 'needs mobile and desktop visual design'. I can implement the backend logic for threads/sub-conversations.",
+          "login": "zhaog100"
+        }
+      ],
       "open_competing_prs": [],
       "payment_status": "PAID",
       "repo_archived": false,
@@ -223,7 +229,7 @@
         {
           "number": 12072,
           "title": "Feature: Backend scaffolding for Repair Orders (#12064)",
-          "updated_at": "2026-07-31T23:31:05Z",
+          "updated_at": "2026-08-01T15:25:03Z",
           "url": "https://github.com/inventree/InvenTree/pull/12072",
           "user": "adityakrmishra"
         }
@@ -231,7 +237,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7328,
+      "repo_stars": 7330,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
       "score": 75.41,
@@ -509,7 +515,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7328,
+      "repo_stars": 7330,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "### Please verify that this feature request has NOT been suggested before.\n\n- [x] I checked and didn't find a similar feature request\n\n### Problem statement\n\nHi,\nwhen we want to change information in multiple object (for example 30 parts) , we have to filter list, click on the first object, change the value, return to the list , open the second object, change the value ...\n\n\n\n### Suggested solution\n\nI think it's a good idea to add two icons on banner \"Previous\" and \"Next\" for simplify navigation between the filter list objects\nWhen object change, the focus field must be the same.\n\n<img width=\"1399\" height=\"342\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/247e4063-c6e5-4a6e-a529-a195e45c7c18\" />\n\nBest regards\n\n\n### Describe alternatives you've considered\n\nAllow field edition as parametrics values\n\n### Examples of other systems\n\nFor example Maximo Ibm do this\n\n<img width=\"1776\" height=\"776\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/18ada624-4696-4347-9876-a5fb176191f7\" />\n\n### Do you want to develop this?\n\n- [ ] I want to develop this.",
       "score": 46.41,
@@ -556,18 +562,25 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
         {
+          "number": 1762,
+          "title": "feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T14:13:24Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1762",
+          "user": "gianmarcozap"
+        },
+        {
+          "number": 1761,
+          "title": "fix(idempotency): prevent TOCTOU race condition in IdempotencyStore [Bounty #770]",
+          "updated_at": "2026-08-01T14:10:37Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1761",
+          "user": "gianmarcozap"
+        },
+        {
           "number": 1712,
           "title": "Harden invalid session marker cleanup",
           "updated_at": "2026-08-01T13:42:47Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1712",
           "user": "zy26thu-hash"
-        },
-        {
-          "number": 1761,
-          "title": "fix(idempotency): prevent TOCTOU race condition in IdempotencyStore [Bounty #770]",
-          "updated_at": "2026-08-01T13:10:54Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1761",
-          "user": "gianmarcozap"
         },
         {
           "number": 1760,
@@ -1091,7 +1104,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1750,
+      "repo_stars": 1749,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
       "score": 29.0,
@@ -1102,7 +1115,7 @@
         "supported language: python",
         "established repository",
         "3 competing attempt signal(s)",
-        "76 open competing PR(s)"
+        "77 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
@@ -1136,7 +1149,7 @@
         {
           "number": 1762,
           "title": "feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
-          "updated_at": "2026-08-01T12:56:51Z",
+          "updated_at": "2026-08-01T14:13:24Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1762",
           "user": "gianmarcozap"
         },
@@ -1375,7 +1388,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1750,
+      "repo_stars": 1749,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
       "score": 27.41,
@@ -1987,6 +2000,56 @@
     }
   ],
   "paid_open_unclaimed_before_github_validation": 4,
+  "postfilter": {
+    "checked_count": 1,
+    "excluded_count": 1,
+    "exclusions_applied": [
+      {
+        "issue_number": 5,
+        "live_comment_competition": [
+          {
+            "excerpt": "Thanks for the confirmation! I will confidently claim and tackle the complete **desktop implementation** (Backend/DB extensions + Desktop Frontend Layout + Context Actions).\\n\\n### ���️ Engineering Battle-Plan\\n\\n1. **DB Migration:** I will add `parent_channel_id`, `thread_id`, and creator metadata to the channels and messages schemas.\\n2. **Transient State Engine:** Implement the conditional visibility check so unjoined threads vanish from the sidebar array the moment a user clicks away.\\n3. **UX & Hotkeys:** Map out the hover context menu, `/thread` chat command hook, and the outlined thread",
+            "login": "Adebolajames145"
+          },
+          {
+            "excerpt": "Hi — I've read the full spec and [#30](https://github.com/fluxerapp/fluxer-meta/issues/30). I understand the bounty is currently paused following @hampus-fluxer's note on July 13. Once submissions reopen, I'm interested in contributing. My background is backend/data engineering (Python, pipelines, APIs). I'd prefer a **scoped slice** rather than duplicating the full [#1170](https://github.com/fluxerapp/fluxer/pull/1170) effort — for example: - **Mobile (Flutter)** — thread chip, bottom sheet, creation sheet, lifecycle actions - **Gateway/backend** — thread sync in `READY`/`GUILD_CREATE`, `THRE",
+            "login": "br413"
+          },
+          {
+            "excerpt": "Submitted a mobile-first Threads design spec for this bounty: https://github.com/fluxerapp/fluxer-meta/pull/38 I focused this package on the maintainer note that mobile designs are needed. Scope covered: - starting a thread from the mobile message action rail / context surface; - existing-thread \"Join thread\" state to prevent duplicate thread creation; - mobile create-thread sheet with name, lifetime, parent-message preview, and permission-failure copy; - inline thread card under the parent message; - preview vs joined channel drawer behavior; - thread-list sheet for open, closed, and archived",
+            "login": "caydyan"
+          },
+          {
+            "excerpt": "Opened a focused Fluxer app PR for the thread notification inheritance slice discussed here: https://github.com/fluxerapp/fluxer/pull/1121 Scope is intentionally narrow: gateway push now resolves notification overrides as direct child/thread target -> parent channel -> guild/default, and push message data carries parent_id from the existing channel index. This matches the requirement that thread notification settings inherit the starting profile from the parent channel while remaining independently overrideable later. I am not claiming this implements the full Threads feature; sharing it as a ",
+            "login": "dangelo352"
+          },
+          {
+            "excerpt": "/claim #5",
+            "login": "elevasyncsolutions-jpg"
+          },
+          {
+            "excerpt": "Hey @Kamalaja spoke to @ejspeed-cmd and hes confirmed he already accepted mobile, happy to implement the bug fix either way.",
+            "login": "NathanialWolf"
+          },
+          {
+            "excerpt": "Submitted a full desktop + mobile Threads design package for this bounty: https://github.com/fluxerapp/fluxer-meta/pull/46 Scope covered: - desktop message actions, create modal, inline thread card, sidebar preview/joined behavior, and topbar thread list dropdown; - mobile action sheet, create sheet, inline thread card, drawer nesting, and thread list sheet; - permissions, open/closed/archived/deleted states, leave/open/close/archive/unarchive/delete controls; - backend ThreadID, parent channel, creator snapshot, bot events, and API documentation requirements; - instance-admin Message Tools an",
+            "login": "YfengJ"
+          },
+          {
+            "excerpt": "/claim I'll work on implementing the Threads feature for Fluxer. Bounty: $750. Note: Status says 'needs mobile and desktop visual design'. I can implement the backend logic for threads/sub-conversations.",
+            "login": "zhaog100"
+          }
+        ],
+        "reasons": [
+          "current competing implementation signal exists in issue comments",
+          "large full-stack or cross-platform scope is unsuitable for first-income execution"
+        ],
+        "repository": "fluxerapp/fluxer-meta",
+        "title": "Threads - (Dev Bounty: $250)"
+      }
+    ],
+    "policy": "exclude large first-income scopes and live non-vacated implementation signals from issue comments"
+  },
   "safety": "read-only BountyHub and GitHub validation; no login, claim, payment, or write",
   "source": "https://api.bountyhub.dev/api/bounties?limit=100",
   "total_bounties": 21
