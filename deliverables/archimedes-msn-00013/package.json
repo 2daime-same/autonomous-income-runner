@@ -1,0 +1,61 @@
+{
+  "name": "archimedes-market-mcp",
+  "version": "1.0.0",
+  "description": "Unofficial read-only MCP server for public Archimedes Market assets and funded engineering bounties",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "mcpName": "io.github.2daime-same/archimedes-market-mcp",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "bin": {
+    "archimedes-market-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "server.json",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.tests.json --noEmit",
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
+    "test:coverage": "node --import tsx --test --test-concurrency=1 --experimental-test-coverage tests/*.test.ts",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "live:smoke": "node scripts/live-smoke.mjs",
+    "package:submission": "python3 scripts/package_submission.py",
+    "verify": "npm run clean && npm run typecheck && npm test && npm run build && npm pack --dry-run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.0",
+    "tsx": "4.20.0",
+    "typescript": "5.8.3"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "archimedes-market",
+    "engineering",
+    "bounties",
+    "read-only"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2daime-same/autonomous-income-runner.git",
+    "directory": "deliverables/archimedes-msn-00013"
+  },
+  "bugs": {
+    "url": "https://github.com/2daime-same/autonomous-income-runner/issues"
+  },
+  "homepage": "https://github.com/2daime-same/autonomous-income-runner/tree/main/deliverables/archimedes-msn-00013#readme"
+}

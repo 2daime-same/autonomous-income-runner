@@ -1,0 +1,96 @@
+name: Archimedes MSN-00013
+
+on:
+  push:
+    branches:
+      - main
+      - agent/build-archimedes-msn-00013
+    paths:
+      - "deliverables/archimedes-msn-00013/**"
+      - ".github/workflows/archimedes-msn-00013.yml"
+  pull_request:
+    paths:
+      - "deliverables/archimedes-msn-00013/**"
+      - ".github/workflows/archimedes-msn-00013.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: archimedes-msn-00013-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: deliverables/archimedes-msn-00013
+
+jobs:
+  node-20-compatibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "20.11"
+          package-manager-cache: false
+      - name: Install locked dependency graph
+        run: npm ci --no-audit --no-fund
+      - name: Verify on minimum supported Node line
+        run: npm run verify
+
+  verify-package-and-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Install locked dependency graph
+        run: npm ci --no-audit --no-fund
+      - name: Strict verification
+        run: npm run verify
+      - name: Coverage evidence
+        run: |
+          set -o pipefail
+          npm run test:coverage | tee test-coverage.log
+      - name: Critical production dependency audit
+        run: |
+          set -o pipefail
+          npm audit --omit=dev --audit-level=critical | tee dependency-audit.log
+      - name: Build CycloneDX SBOM
+        run: |
+          mkdir -p dist-submission
+          npm sbom --sbom-format cyclonedx > dist-submission/sbom.cdx.json
+      - name: Controlled live four-tool smoke test
+        run: |
+          set -o pipefail
+          npm run live:smoke | tee dist-submission/live-smoke.json
+      - name: Deterministic submission archive
+        env:
+          SOURCE_DATE_EPOCH: "1785456000"
+          VERIFICATION_STATUS: passed
+          LIVE_SMOKE_STATUS: passed
+          SECURITY_AUDIT_STATUS: passed
+        run: npm run package:submission
+      - name: Verify archive checksum
+        run: |
+          cd dist-submission
+          sha256sum --check archimedes-msn-00013-mcp-server.zip.sha256
+      - name: Upload review artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: archimedes-msn-00013-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            deliverables/archimedes-msn-00013/dist-submission/archimedes-msn-00013-mcp-server.zip
+            deliverables/archimedes-msn-00013/dist-submission/archimedes-msn-00013-mcp-server.zip.sha256
+            deliverables/archimedes-msn-00013/dist-submission/sbom.cdx.json
+            deliverables/archimedes-msn-00013/dist-submission/live-smoke.json
+            deliverables/archimedes-msn-00013/test-coverage.log
+            deliverables/archimedes-msn-00013/dependency-audit.log
+            deliverables/archimedes-msn-00013/package-lock.json
