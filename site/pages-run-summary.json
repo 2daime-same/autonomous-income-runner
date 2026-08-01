@@ -1,0 +1,20 @@
+{
+  "commercial_status": {
+    "verified_income_jpy": 0,
+    "verified_receivable_jpy": 0,
+    "verified_spend_jpy": 0
+  },
+  "index_sha256": "fdaf2d7ce17ad3f74405348bd79a15084180767b4b1358cc296a33f4357f16a0",
+  "outcomes": {
+    "deploy": "skipped",
+    "setup": "failure",
+    "upload": "skipped",
+    "validate": "failure"
+  },
+  "page_url": null,
+  "recorded_at": "2026-08-01T19:12:08+00:00",
+  "schema_version": "income-runner-pages-run-v1",
+  "source_commit": "c4ab37cf9b9cdfd192af394f5bdd53c0f8999d76",
+  "success": false,
+  "workflow_run_id": 30714245081
+}
