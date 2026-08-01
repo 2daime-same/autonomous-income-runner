@@ -393,6 +393,16 @@
     },
     {
       "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 919,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix zero-fee flash loans and add pool drainage protection",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/919"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "unrecognized platform on a repository younger than 90 days"
       ],
@@ -450,6 +460,15 @@
     },
     {
       "flags": [
+        "no direct reward evidence"
+      ],
+      "issue_number": 2648,
+      "repo": "simonmichael/hledger",
+      "title": "Support simple arithmetic expressions in posting amounts",
+      "url": "https://github.com/simonmichael/hledger/issues/2648"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "unrecognized platform on a low-reputation personal repository",
         "unrecognized platform on a repository younger than 90 days"
@@ -494,27 +513,14 @@
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "more than two competing attempt users"
       ],
-      "issue_number": 1519,
-      "repo": "zhangjiayang6835-cyber/ai-research",
-      "title": "🏆 Hall of Fame — August 2026",
-      "url": "https://github.com/zhangjiayang6835-cyber/ai-research/issues/1519"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
-      ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+      "issue_number": 29,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Implement a fully functional Admin Panel",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/29"
     },
     {
       "flags": [
@@ -535,16 +541,6 @@
       "repo": "devpool-directory/devpool-directory",
       "title": "Recruiting: Dragonfly CTF II",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5844,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Governance Token emissions to `ubq.eth` new strategy",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
     },
     {
       "flags": [
@@ -630,6 +626,17 @@
       "flags": [
         "an open competing pull request already exists",
         "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 5017,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Automatic Transfer",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5017"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
@@ -659,22 +666,11 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 6,
-      "repo": "dfinity/public-multidex",
-      "title": "OhShii Labs review, 3/8: liquidation evasion, a de-lever trap, and release priority that is purchasable",
-      "url": "https://github.com/dfinity/public-multidex/issues/6"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-01T13:54:42+00:00",
+  "generated_at": "2026-08-01T18:26:22+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-01T13:54:41+00:00"
+  "source_generated_at": "2026-08-01T18:26:21+00:00"
 }
