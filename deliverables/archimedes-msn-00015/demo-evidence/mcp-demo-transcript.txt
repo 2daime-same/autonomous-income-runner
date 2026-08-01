@@ -1,0 +1,30 @@
+# Archimedes GitHub PR MCP — deterministic demo transcript
+
+Generated: 2026-08-01T18:34:32.471Z
+Server: archimedes-github-pr-mcp 1.0.0
+Protocol: 2025-06-18
+Repository: 2daime-same/autonomous-income-runner PR #7
+
+Registered tools (8):
+  - list_prs
+  - get_pr
+  - get_pr_diff
+  - list_pr_comments
+  - post_review_comment
+  - submit_review
+  - add_labels
+  - request_changes
+
+Registered prompts (2):
+  - review_pr_correctness
+  - review_pr_security
+
+Read calls:
+  - list_prs: 446 ms, error=false
+  - get_pr: 482 ms, error=false
+  - get_pr_diff: 334 ms, error=false
+  - list_pr_comments: 562 ms, error=false
+
+Prior acceptance inline comment 3695975388: visible=true
+Write gate (writes disabled + confirm=false): rejected=true
+Writes performed during this demo: 0

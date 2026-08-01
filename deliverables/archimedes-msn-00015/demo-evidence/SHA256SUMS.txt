@@ -1,0 +1,4 @@
+7756f2fec665778568109007c6fc8ea9e37366cda26d7ac47e87b1e529ddad16  Archimedes_MSN-00015_Demo.mp4
+8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219  archimedes-github-pr-mcp-1.0.0.tgz
+f63168b8275ed78c82f55b392e378048db3dc081e26718e85a4187b66a723a53  mcp-demo-evidence.json
+14df9434de79d71163bf269f308b6a2e67a6979f647e43de8e4e5ec13343d77b  clean-install.json

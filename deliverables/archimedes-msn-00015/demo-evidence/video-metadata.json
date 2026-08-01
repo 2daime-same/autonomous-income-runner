@@ -1,0 +1,27 @@
+{
+  "duration_seconds": 151.021,
+  "fps": 30,
+  "height": 1080,
+  "narration": "espeak-ng",
+  "schema_version": "archimedes-msn-00015-demo-v1",
+  "slide_durations": [
+    11,
+    15,
+    17,
+    14,
+    14,
+    16,
+    15,
+    17,
+    16,
+    16
+  ],
+  "slides": 10,
+  "source_evidence": [
+    "mcp-demo-evidence.json",
+    "clean-install.json"
+  ],
+  "video": "Archimedes_MSN-00015_Demo.mp4",
+  "width": 1920,
+  "writes_performed": []
+}

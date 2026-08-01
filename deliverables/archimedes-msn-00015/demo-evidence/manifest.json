@@ -1,0 +1,23 @@
+{
+  "artifact_digest": "b27ca9aa95438d5704b7229de65ddbca06fed78bd02ca6ecaab1a0936f237ac9",
+  "artifact_id": 8822427052,
+  "artifact_name": "archimedes-msn-00015-demo-be52cf058232da70346da4344a8c218c7af64a97",
+  "artifact_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30712793667/artifacts/8822427052",
+  "commercial_status": {
+    "archimedes_submitted": false,
+    "expenses_usd": 0,
+    "npm_published": false,
+    "verified_income_usd": 0,
+    "verified_receivable_usd": 0
+  },
+  "hashes": {
+    "Archimedes_MSN-00015_Demo.mp4": "7756f2fec665778568109007c6fc8ea9e37366cda26d7ac47e87b1e529ddad16",
+    "archimedes-github-pr-mcp-1.0.0.tgz": "8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219",
+    "clean-install.json": "14df9434de79d71163bf269f308b6a2e67a6979f647e43de8e4e5ec13343d77b",
+    "mcp-demo-evidence.json": "f63168b8275ed78c82f55b392e378048db3dc081e26718e85a4187b66a723a53"
+  },
+  "schema_version": "archimedes-msn-00015-demo-manifest-v1",
+  "source_commit": "be52cf058232da70346da4344a8c218c7af64a97",
+  "workflow_run_id": 30712793667,
+  "writes_performed_during_demo": []
+}

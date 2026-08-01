@@ -1,0 +1,492 @@
+{
+  "ok": true,
+  "generated_at": "2026-08-01T18:34:32.471Z",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "archimedes-github-pr-mcp",
+    "version": "1.0.0"
+  },
+  "repository": "2daime-same/autonomous-income-runner",
+  "pull_number": 7,
+  "registered_tools": [
+    "list_prs",
+    "get_pr",
+    "get_pr_diff",
+    "list_pr_comments",
+    "post_review_comment",
+    "submit_review",
+    "add_labels",
+    "request_changes"
+  ],
+  "registered_prompts": [
+    "review_pr_correctness",
+    "review_pr_security"
+  ],
+  "read_calls": [
+    {
+      "name": "list_prs",
+      "duration_ms": 446,
+      "is_error": false,
+      "structured": {
+        "source": "github.com",
+        "operation": "list_prs",
+        "repository": "2daime-same/autonomous-income-runner",
+        "auth": "personal-access-token",
+        "returned": 7,
+        "pages_fetched": 1,
+        "truncated": false,
+        "items": [
+          {
+            "number": 7,
+            "title": "Run MSN-00015 guarded live write acceptance",
+            "state": "closed",
+            "draft": false,
+            "locked": false,
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/7",
+            "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/7",
+            "user": {
+              "login": "2daime-same",
+              "id": 267329804,
+              "type": "User",
+              "html_url": "https://github.com/2daime-same"
+            },
+            "head": {
+              "ref": "agent/msn15-write-acceptance",
+              "sha": "bc086d52e59b486c59b07c0be350781921332163",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "base": {
+              "ref": "main",
+              "sha": "ffa5ea39db0570473455122b164383641f1e1e07",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "labels": [],
+            "created_at": "2026-08-01T15:53:21Z",
+            "updated_at": "2026-08-01T17:03:56Z",
+            "closed_at": "2026-08-01T17:03:56Z",
+            "merged_at": null
+          },
+          {
+            "number": 6,
+            "title": "Build production-ready Archimedes MSN-00015 GitHub PR review MCP server",
+            "state": "closed",
+            "draft": false,
+            "locked": false,
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/6",
+            "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/6",
+            "user": {
+              "login": "2daime-same",
+              "id": 267329804,
+              "type": "User",
+              "html_url": "https://github.com/2daime-same"
+            },
+            "head": {
+              "ref": "agent/build-archimedes-msn-00015",
+              "sha": "b03912e9304d50d1b1ed06cf6bf1e77bd7420399",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "base": {
+              "ref": "main",
+              "sha": "b6a8387bf6834fb4157e7ea922398e800bc896b8",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "labels": [],
+            "created_at": "2026-08-01T15:15:41Z",
+            "updated_at": "2026-08-01T15:38:58Z",
+            "closed_at": "2026-08-01T15:29:35Z",
+            "merged_at": "2026-08-01T15:29:35Z"
+          },
+          {
+            "number": 5,
+            "title": "Add production-ready Archimedes MSN-00013 MCP server",
+            "state": "closed",
+            "draft": false,
+            "locked": false,
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/5",
+            "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/5",
+            "user": {
+              "login": "2daime-same",
+              "id": 267329804,
+              "type": "User",
+              "html_url": "https://github.com/2daime-same"
+            },
+            "head": {
+              "ref": "agent/build-archimedes-msn-00013",
+              "sha": "efe2388b1975b6752871e4898aaf23fe912da074",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "base": {
+              "ref": "main",
+              "sha": "00500f0b30dfb1e197ef94f5e5720c57d24e81e3",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "labels": [],
+            "created_at": "2026-07-31T11:48:06Z",
+            "updated_at": "2026-08-01T04:33:29Z",
+            "closed_at": "2026-08-01T04:25:25Z",
+            "merged_at": "2026-08-01T04:25:25Z"
+          },
+          {
+            "number": 4,
+            "title": "Publish funded Archimedes MSN-00014 engineering unit API",
+            "state": "closed",
+            "draft": false,
+            "locked": false,
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/4",
+            "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/4",
+            "user": {
+              "login": "2daime-same",
+              "id": 267329804,
+              "type": "User",
+              "html_url": "https://github.com/2daime-same"
+            },
+            "head": {
+              "ref": "agent/publish-archimedes-msn-00014",
+              "sha": "f936b3a844ca4e9f33f3624c51b4a755623bea09",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "base": {
+              "ref": "main",
+              "sha": "fe547afac4d55c2d320237736f5e8e71f92b9f84",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "labels": [],
+            "created_at": "2026-07-31T07:42:17Z",
+            "updated_at": "2026-07-31T07:47:37Z",
+            "closed_at": "2026-07-31T07:47:37Z",
+            "merged_at": "2026-07-31T07:47:37Z"
+          },
+          {
+            "number": 3,
+            "title": "Add GitHub-native live bounty radar",
+            "state": "closed",
+            "draft": false,
+            "locked": false,
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/3",
+            "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/3",
+            "user": {
+              "login": "2daime-same",
+              "id": 267329804,
+              "type": "User",
+              "html_url": "https://github.com/2daime-same"
+            },
+            "head": {
+              "ref": "agent/github-bounty-radar",
+              "sha": "56c6f815c8054483241dca9401c6b79d6022a9cc",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "base": {
+              "ref": "main",
+              "sha": "ed2c4f676746adb60e0d9e766a8d19cb1fe260a2",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "labels": [],
+            "created_at": "2026-07-29T08:07:57Z",
+            "updated_at": "2026-07-29T08:08:24Z",
+            "closed_at": "2026-07-29T08:08:24Z",
+            "merged_at": "2026-07-29T08:08:23Z"
+          },
+          {
+            "number": 2,
+            "title": "Add read-only MergeFund marketplace probe",
+            "state": "closed",
+            "draft": false,
+            "locked": false,
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/2",
+            "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/2",
+            "user": {
+              "login": "2daime-same",
+              "id": 267329804,
+              "type": "User",
+              "html_url": "https://github.com/2daime-same"
+            },
+            "head": {
+              "ref": "agent/mergefund-probe",
+              "sha": "c87622f8f242e683f0bfcfa731a1a00eb89bac28",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "base": {
+              "ref": "main",
+              "sha": "fe772b231a4db02d35e64fe447fc2348fe7e9595",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "labels": [],
+            "created_at": "2026-07-29T08:00:10Z",
+            "updated_at": "2026-07-29T08:00:39Z",
+            "closed_at": "2026-07-29T08:00:39Z",
+            "merged_at": "2026-07-29T08:00:39Z"
+          },
+          {
+            "number": 1,
+            "title": "[closed] Actions smoke test — superseded by public-safe main workflow",
+            "state": "closed",
+            "draft": true,
+            "locked": false,
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/1",
+            "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/1",
+            "user": {
+              "login": "2daime-same",
+              "id": 267329804,
+              "type": "User",
+              "html_url": "https://github.com/2daime-same"
+            },
+            "head": {
+              "ref": "agent/actions-smoke",
+              "sha": "f20f2994ec0f077132a2bbb1108d177e4f6dd5cf",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "base": {
+              "ref": "main",
+              "sha": "eda4d324c382a747bc0005667703918ae247869a",
+              "repository": "2daime-same/autonomous-income-runner"
+            },
+            "labels": [],
+            "created_at": "2026-07-28T01:30:42Z",
+            "updated_at": "2026-07-29T06:19:12Z",
+            "closed_at": "2026-07-29T06:19:12Z",
+            "merged_at": null
+          }
+        ],
+        "fetched_at": "2026-08-01T18:34:31.090Z",
+        "response": {
+          "status": 200,
+          "request_id": "E410:BD0CC:5CF392C:5F29E73:6A6E3C36",
+          "rate_limit": {
+            "limit": 5000,
+            "remaining": 4756,
+            "used": 244,
+            "reset_at": "2026-08-01T19:15:59.000Z",
+            "resource": "core"
+          }
+        }
+      },
+      "text": "{\n  \"source\": \"github.com\",\n  \"operation\": \"list_prs\",\n  \"repository\": \"2daime-same/autonomous-income-runner\",\n  \"auth\": \"personal-access-token\",\n  \"returned\": 7,\n  \"pages_fetched\": 1,\n  \"truncated\": false,\n  \"items\": [\n    {\n      \"number\": 7,\n      \"title\": \"Run MSN-00015 guarded live write acceptance\",\n      \"state\": \"closed\",\n      \"draft\": false,\n      \"locked\": false,\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/7\",\n      \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/7\",\n      \"user\": {\n        \"login\": \"2daime-same\",\n        \"id\": 267329804,\n        \"type\": \"User\",\n        \"html_url\": \"https://github.com/2daime-same\"\n      },\n      \"head\": {\n        \"ref\": \"agent/msn15-write-acceptance\",\n        \"sha\": \"bc086d52e59b486c59b07c0be350781921332163\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"base\": {\n        \"ref\": \"main\",\n        \"sha\": \"ffa5ea39db0570473455122b164383641f1e1e07\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"labels\": [],\n      \"created_at\": \"2026-08-01T15:53:21Z\",\n      \"updated_at\": \"2026-08-01T17:03:56Z\",\n      \"closed_at\": \"2026-08-01T17:03:56Z\",\n      \"merged_at\": null\n    },\n    {\n      \"number\": 6,\n      \"title\": \"Build production-ready Archimedes MSN-00015 GitHub PR review MCP server\",\n      \"state\": \"closed\",\n      \"draft\": false,\n      \"locked\": false,\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/6\",\n      \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/6\",\n      \"user\": {\n        \"login\": \"2daime-same\",\n        \"id\": 267329804,\n        \"type\": \"User\",\n        \"html_url\": \"https://github.com/2daime-same\"\n      },\n      \"head\": {\n        \"ref\": \"agent/build-archimedes-msn-00015\",\n        \"sha\": \"b03912e9304d50d1b1ed06cf6bf1e77bd7420399\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"base\": {\n        \"ref\": \"main\",\n        \"sha\": \"b6a8387bf6834fb4157e7ea922398e800bc896b8\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"labels\": [],\n      \"created_at\": \"2026-08-01T15:15:41Z\",\n      \"updated_at\": \"2026-08-01T15:38:58Z\",\n      \"closed_at\": \"2026-08-01T15:29:35Z\",\n      \"merged_at\": \"2026-08-01T15:29:35Z\"\n    },\n    {\n      \"number\": 5,\n      \"title\": \"Add production-ready Archimedes MSN-00013 MCP server\",\n      \"state\": \"closed\",\n      \"draft\": false,\n      \"locked\": false,\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/5\",\n      \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/5\",\n      \"user\": {\n        \"login\": \"2daime-same\",\n        \"id\": 267329804,\n        \"type\": \"User\",\n        \"html_url\": \"https://github.com/2daime-same\"\n      },\n      \"head\": {\n        \"ref\": \"agent/build-archimedes-msn-00013\",\n        \"sha\": \"efe2388b1975b6752871e4898aaf23fe912da074\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"base\": {\n        \"ref\": \"main\",\n        \"sha\": \"00500f0b30dfb1e197ef94f5e5720c57d24e81e3\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"labels\": [],\n      \"created_at\": \"2026-07-31T11:48:06Z\",\n      \"updated_at\": \"2026-08-01T04:33:29Z\",\n      \"closed_at\": \"2026-08-01T04:25:25Z\",\n      \"merged_at\": \"2026-08-01T04:25:25Z\"\n    },\n    {\n      \"number\": 4,\n      \"title\": \"Publish funded Archimedes MSN-00014 engineering unit API\",\n      \"state\": \"closed\",\n      \"draft\": false,\n      \"locked\": false,\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/4\",\n      \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/4\",\n      \"user\": {\n        \"login\": \"2daime-same\",\n        \"id\": 267329804,\n        \"type\": \"User\",\n        \"html_url\": \"https://github.com/2daime-same\"\n      },\n      \"head\": {\n        \"ref\": \"agent/publish-archimedes-msn-00014\",\n        \"sha\": \"f936b3a844ca4e9f33f3624c51b4a755623bea09\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"base\": {\n        \"ref\": \"main\",\n        \"sha\": \"fe547afac4d55c2d320237736f5e8e71f92b9f84\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"labels\": [],\n      \"created_at\": \"2026-07-31T07:42:17Z\",\n      \"updated_at\": \"2026-07-31T07:47:37Z\",\n      \"closed_at\": \"2026-07-31T07:47:37Z\",\n      \"merged_at\": \"2026-07-31T07:47:37Z\"\n    },\n    {\n      \"number\": 3,\n      \"title\": \"Add GitHub-native live bounty radar\",\n      \"state\": \"closed\",\n      \"draft\": false,\n      \"locked\": false,\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/3\",\n      \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/3\",\n      \"user\": {\n        \"login\": \"2daime-same\",\n        \"id\": 267329804,\n        \"type\": \"User\",\n        \"html_url\": \"https://github.com/2daime-same\"\n      },\n      \"head\": {\n        \"ref\": \"agent/github-bounty-radar\",\n        \"sha\": \"56c6f815c8054483241dca9401c6b79d6022a9cc\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"base\": {\n        \"ref\": \"main\",\n        \"sha\": \"ed2c4f676746adb60e0d9e766a8d19cb1fe260a2\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"labels\": [],\n      \"created_at\": \"2026-07-29T08:07:57Z\",\n      \"updated_at\": \"2026-07-29T08:08:24Z\",\n      \"closed_at\": \"2026-07-29T08:08:24Z\",\n      \"merged_at\": \"2026-07-29T08:08:23Z\"\n    },\n    {\n      \"number\": 2,\n      \"title\": \"Add read-only MergeFund marketplace probe\",\n      \"state\": \"closed\",\n      \"draft\": false,\n      \"locked\": false,\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/2\",\n      \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/2\",\n      \"user\": {\n        \"login\": \"2daime-same\",\n        \"id\": 267329804,\n        \"type\": \"User\",\n        \"html_url\": \"https://github.com/2daime-same\"\n      },\n      \"head\": {\n        \"ref\": \"agent/mergefund-probe\",\n        \"sha\": \"c87622f8f242e683f0bfcfa731a1a00eb89bac28\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"base\": {\n        \"ref\": \"main\",\n        \"sha\": \"fe772b231a4db02d35e64fe447fc2348fe7e9595\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"labels\": [],\n      \"created_at\": \"2026-07-29T08:00:10Z\",\n      \"updated_at\": \"2026-07-29T08:00:39Z\",\n      \"closed_at\": \"2026-07-29T08:00:39Z\",\n      \"merged_at\": \"2026-07-29T08:00:39Z\"\n    },\n    {\n      \"number\": 1,\n      \"title\": \"[closed] Actions smoke test — superseded by public-safe main workflow\",\n      \"state\": \"closed\",\n      \"draft\": true,\n      \"locked\": false,\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/1\",\n      \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/1\",\n      \"user\": {\n        \"login\": \"2daime-same\",\n        \"id\": 267329804,\n        \"type\": \"User\",\n        \"html_url\": \"https://github.com/2daime-same\"\n      },\n      \"head\": {\n        \"ref\": \"agent/actions-smoke\",\n        \"sha\": \"f20f2994ec0f077132a2bbb1108d177e4f6dd5cf\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"base\": {\n        \"ref\": \"main\",\n        \"sha\": \"eda4d324c382a747bc0005667703918ae247869a\",\n        \"repository\": \"2daime-same/autonomous-income-runner\"\n      },\n      \"labels\": [],\n      \"created_at\": \"2026-07-28T01:30:42Z\",\n      \"updated_at\": \"2026-07-29T06:19:12Z\",\n      \"closed_at\": \"2026-07-29T06:19:12Z\",\n      \"merged_at\": null\n    }\n  ],\n  \"fetched_at\": \"2026-08-01T18:34:31.090Z\",\n  \"response\": {\n    \"status\": 200,\n    \"request_id\": \"E410:BD0CC:5CF392C:5F29E73:6A6E3C36\",\n    \"rate_limit\": {\n      \"limit\": 5000,\n      \"remaining\": 4756,\n      \"used\": 244,\n      \"reset_at\": \"2026-08-01T19:15:59.000Z\",\n      \"resource\": \"core\"\n    }\n  }\n}"
+    },
+    {
+      "name": "get_pr",
+      "duration_ms": 482,
+      "is_error": false,
+      "structured": {
+        "source": "github.com",
+        "operation": "get_pr",
+        "repository": "2daime-same/autonomous-income-runner",
+        "pull_number": 7,
+        "auth": "personal-access-token",
+        "item": {
+          "number": 7,
+          "title": "Run MSN-00015 guarded live write acceptance",
+          "state": "closed",
+          "draft": false,
+          "locked": false,
+          "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/7",
+          "api_url": "https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/7",
+          "user": {
+            "login": "2daime-same",
+            "id": 267329804,
+            "type": "User",
+            "html_url": "https://github.com/2daime-same"
+          },
+          "head": {
+            "ref": "agent/msn15-write-acceptance",
+            "sha": "bc086d52e59b486c59b07c0be350781921332163",
+            "repository": "2daime-same/autonomous-income-runner"
+          },
+          "base": {
+            "ref": "main",
+            "sha": "ffa5ea39db0570473455122b164383641f1e1e07",
+            "repository": "2daime-same/autonomous-income-runner"
+          },
+          "labels": [],
+          "created_at": "2026-08-01T15:53:21Z",
+          "updated_at": "2026-08-01T17:03:56Z",
+          "closed_at": "2026-08-01T17:03:56Z",
+          "merged_at": null,
+          "body": "## Purpose\n\nThis temporary same-repository PR existed only to validate the final manual acceptance item for Archimedes mission `MSN-00015`.\n\n## Result\n\nAcceptance succeeded in GitHub Actions run `30706913841`:\n\n- the verified MCP server started with a repository-scoped GitHub Actions token;\n- writes were enabled at process start;\n- `post_review_comment` was called with `confirm=true` on the fixture line;\n- exactly one inline review comment was created;\n- the same comment was returned by `list_pr_comments` after **1,160 ms**;\n- the five-second visibility requirement passed;\n- request duration was 562 ms;\n- credential-like evidence checks passed;\n- artifact digest: `571567b360c61c8a66f8a2581bba3e870f2bd4d5853cc2b7c3276d7666f756f0`.\n\nThe fixture is not intended for main, so this PR is closed without merge. This evidence does not represent npm publication, Archimedes submission, acceptance, payment, or revenue.",
+          "mergeable": true,
+          "mergeable_state": "clean",
+          "merged": false,
+          "commits": 1,
+          "additions": 2,
+          "deletions": 0,
+          "changed_files": 1,
+          "comments": 0,
+          "review_comments": 1,
+          "requested_reviewers": []
+        },
+        "fetched_at": "2026-08-01T18:34:31.573Z",
+        "response": {
+          "status": 200,
+          "request_id": "E410:BD0CC:5CF3ACA:5F2A01A:6A6E3C37",
+          "rate_limit": {
+            "limit": 5000,
+            "remaining": 4755,
+            "used": 245,
+            "reset_at": "2026-08-01T19:15:59.000Z",
+            "resource": "core"
+          }
+        }
+      },
+      "text": "{\n  \"source\": \"github.com\",\n  \"operation\": \"get_pr\",\n  \"repository\": \"2daime-same/autonomous-income-runner\",\n  \"pull_number\": 7,\n  \"auth\": \"personal-access-token\",\n  \"item\": {\n    \"number\": 7,\n    \"title\": \"Run MSN-00015 guarded live write acceptance\",\n    \"state\": \"closed\",\n    \"draft\": false,\n    \"locked\": false,\n    \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/7\",\n    \"api_url\": \"https://api.github.com/repos/2daime-same/autonomous-income-runner/pulls/7\",\n    \"user\": {\n      \"login\": \"2daime-same\",\n      \"id\": 267329804,\n      \"type\": \"User\",\n      \"html_url\": \"https://github.com/2daime-same\"\n    },\n    \"head\": {\n      \"ref\": \"agent/msn15-write-acceptance\",\n      \"sha\": \"bc086d52e59b486c59b07c0be350781921332163\",\n      \"repository\": \"2daime-same/autonomous-income-runner\"\n    },\n    \"base\": {\n      \"ref\": \"main\",\n      \"sha\": \"ffa5ea39db0570473455122b164383641f1e1e07\",\n      \"repository\": \"2daime-same/autonomous-income-runner\"\n    },\n    \"labels\": [],\n    \"created_at\": \"2026-08-01T15:53:21Z\",\n    \"updated_at\": \"2026-08-01T17:03:56Z\",\n    \"closed_at\": \"2026-08-01T17:03:56Z\",\n    \"merged_at\": null,\n    \"body\": \"## Purpose\\n\\nThis temporary same-repository PR existed only to validate the final manual acceptance item for Archimedes mission `MSN-00015`.\\n\\n## Result\\n\\nAcceptance succeeded in GitHub Actions run `30706913841`:\\n\\n- the verified MCP server started with a repository-scoped GitHub Actions token;\\n- writes were enabled at process start;\\n- `post_review_comment` was called with `confirm=true` on the fixture line;\\n- exactly one inline review comment was created;\\n- the same comment was returned by `list_pr_comments` after **1,160 ms**;\\n- the five-second visibility requirement passed;\\n- request duration was 562 ms;\\n- credential-like evidence checks passed;\\n- artifact digest: `571567b360c61c8a66f8a2581bba3e870f2bd4d5853cc2b7c3276d7666f756f0`.\\n\\nThe fixture is not intended for main, so this PR is closed without merge. This evidence does not represent npm publication, Archimedes submission, acceptance, payment, or revenue.\",\n    \"mergeable\": true,\n    \"mergeable_state\": \"clean\",\n    \"merged\": false,\n    \"commits\": 1,\n    \"additions\": 2,\n    \"deletions\": 0,\n    \"changed_files\": 1,\n    \"comments\": 0,\n    \"review_comments\": 1,\n    \"requested_reviewers\": []\n  },\n  \"fetched_at\": \"2026-08-01T18:34:31.573Z\",\n  \"response\": {\n    \"status\": 200,\n    \"request_id\": \"E410:BD0CC:5CF3ACA:5F2A01A:6A6E3C37\",\n    \"rate_limit\": {\n      \"limit\": 5000,\n      \"remaining\": 4755,\n      \"used\": 245,\n      \"reset_at\": \"2026-08-01T19:15:59.000Z\",\n      \"resource\": \"core\"\n    }\n  }\n}"
+    },
+    {
+      "name": "get_pr_diff",
+      "duration_ms": 334,
+      "is_error": false,
+      "structured": {
+        "source": "github.com",
+        "operation": "get_pr_diff",
+        "repository": "2daime-same/autonomous-income-runner",
+        "pull_number": 7,
+        "auth": "personal-access-token",
+        "returned_files": 1,
+        "pages_fetched": 1,
+        "truncated": false,
+        "files": [
+          {
+            "path": "deliverables/archimedes-msn-00015/acceptance-fixture.txt",
+            "previousPath": null,
+            "status": "added",
+            "additions": 2,
+            "deletions": 0,
+            "changes": 2,
+            "binary": false,
+            "patchUnavailable": false,
+            "patchTruncated": false,
+            "hunks": [
+              {
+                "header": "@@ -0,0 +1,2 @@",
+                "oldStart": 0,
+                "oldCount": 0,
+                "newStart": 1,
+                "newCount": 2,
+                "lines": [
+                  {
+                    "position": 2,
+                    "kind": "addition",
+                    "text": "MSN-00015 controlled write acceptance fixture.",
+                    "oldLine": null,
+                    "newLine": 1
+                  },
+                  {
+                    "position": 3,
+                    "kind": "addition",
+                    "text": "This added line exists only to validate permission-gated inline review comment delivery.",
+                    "oldLine": null,
+                    "newLine": 2
+                  }
+                ]
+              }
+            ],
+            "rawPatch": null
+          }
+        ],
+        "fetched_at": "2026-08-01T18:34:31.907Z",
+        "response": {
+          "status": 200,
+          "request_id": "E410:BD0CC:5CF3CBF:5F2A210:6A6E3C37",
+          "rate_limit": {
+            "limit": 5000,
+            "remaining": 4754,
+            "used": 246,
+            "reset_at": "2026-08-01T19:15:59.000Z",
+            "resource": "core"
+          }
+        }
+      },
+      "text": "{\n  \"source\": \"github.com\",\n  \"operation\": \"get_pr_diff\",\n  \"repository\": \"2daime-same/autonomous-income-runner\",\n  \"pull_number\": 7,\n  \"auth\": \"personal-access-token\",\n  \"returned_files\": 1,\n  \"pages_fetched\": 1,\n  \"truncated\": false,\n  \"files\": [\n    {\n      \"path\": \"deliverables/archimedes-msn-00015/acceptance-fixture.txt\",\n      \"previousPath\": null,\n      \"status\": \"added\",\n      \"additions\": 2,\n      \"deletions\": 0,\n      \"changes\": 2,\n      \"binary\": false,\n      \"patchUnavailable\": false,\n      \"patchTruncated\": false,\n      \"hunks\": [\n        {\n          \"header\": \"@@ -0,0 +1,2 @@\",\n          \"oldStart\": 0,\n          \"oldCount\": 0,\n          \"newStart\": 1,\n          \"newCount\": 2,\n          \"lines\": [\n            {\n              \"position\": 2,\n              \"kind\": \"addition\",\n              \"text\": \"MSN-00015 controlled write acceptance fixture.\",\n              \"oldLine\": null,\n              \"newLine\": 1\n            },\n            {\n              \"position\": 3,\n              \"kind\": \"addition\",\n              \"text\": \"This added line exists only to validate permission-gated inline review comment delivery.\",\n              \"oldLine\": null,\n              \"newLine\": 2\n            }\n          ]\n        }\n      ],\n      \"rawPatch\": null\n    }\n  ],\n  \"fetched_at\": \"2026-08-01T18:34:31.907Z\",\n  \"response\": {\n    \"status\": 200,\n    \"request_id\": \"E410:BD0CC:5CF3CBF:5F2A210:6A6E3C37\",\n    \"rate_limit\": {\n      \"limit\": 5000,\n      \"remaining\": 4754,\n      \"used\": 246,\n      \"reset_at\": \"2026-08-01T19:15:59.000Z\",\n      \"resource\": \"core\"\n    }\n  }\n}"
+    },
+    {
+      "name": "list_pr_comments",
+      "duration_ms": 562,
+      "is_error": false,
+      "structured": {
+        "source": "github.com",
+        "operation": "list_pr_comments",
+        "repository": "2daime-same/autonomous-income-runner",
+        "pull_number": 7,
+        "auth": "personal-access-token",
+        "returned": 2,
+        "total_collected": 2,
+        "pages_fetched": 3,
+        "truncated": false,
+        "items": [
+          {
+            "kind": "review",
+            "id": 4835010269,
+            "node_id": "PRR_kwDOTlhXts8AAAABIDBm3Q",
+            "body": "",
+            "state": "COMMENTED",
+            "user": {
+              "login": "github-actions[bot]",
+              "id": 41898282,
+              "type": "Bot",
+              "html_url": "https://github.com/apps/github-actions"
+            },
+            "path": null,
+            "line": null,
+            "side": null,
+            "start_line": null,
+            "start_side": null,
+            "commit_id": "bc086d52e59b486c59b07c0be350781921332163",
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/7#pullrequestreview-4835010269",
+            "created_at": null,
+            "submitted_at": "2026-08-01T15:53:54Z",
+            "updated_at": null
+          },
+          {
+            "kind": "inline_review_comment",
+            "id": 3695975388,
+            "node_id": "PRRC_kwDOTlhXts7cTBvc",
+            "body": "MSN-00015 write acceptance 30706913841:1",
+            "state": null,
+            "user": {
+              "login": "github-actions[bot]",
+              "id": 41898282,
+              "type": "Bot",
+              "html_url": "https://github.com/apps/github-actions"
+            },
+            "path": "deliverables/archimedes-msn-00015/acceptance-fixture.txt",
+            "line": 1,
+            "side": "RIGHT",
+            "start_line": null,
+            "start_side": null,
+            "commit_id": "bc086d52e59b486c59b07c0be350781921332163",
+            "html_url": "https://github.com/2daime-same/autonomous-income-runner/pull/7#discussion_r3695975388",
+            "created_at": "2026-08-01T15:53:54Z",
+            "submitted_at": null,
+            "updated_at": "2026-08-01T15:53:54Z"
+          }
+        ],
+        "fetched_at": "2026-08-01T18:34:32.469Z",
+        "response": {
+          "status": 200,
+          "request_id": "E411:2E7A80:595DBDA:5B936A5:6A6E3C37",
+          "rate_limit": {
+            "limit": 5000,
+            "remaining": 4993,
+            "used": 7,
+            "reset_at": "2026-08-01T19:15:59.000Z",
+            "resource": "core"
+          }
+        }
+      },
+      "text": "{\n  \"source\": \"github.com\",\n  \"operation\": \"list_pr_comments\",\n  \"repository\": \"2daime-same/autonomous-income-runner\",\n  \"pull_number\": 7,\n  \"auth\": \"personal-access-token\",\n  \"returned\": 2,\n  \"total_collected\": 2,\n  \"pages_fetched\": 3,\n  \"truncated\": false,\n  \"items\": [\n    {\n      \"kind\": \"review\",\n      \"id\": 4835010269,\n      \"node_id\": \"PRR_kwDOTlhXts8AAAABIDBm3Q\",\n      \"body\": \"\",\n      \"state\": \"COMMENTED\",\n      \"user\": {\n        \"login\": \"github-actions[bot]\",\n        \"id\": 41898282,\n        \"type\": \"Bot\",\n        \"html_url\": \"https://github.com/apps/github-actions\"\n      },\n      \"path\": null,\n      \"line\": null,\n      \"side\": null,\n      \"start_line\": null,\n      \"start_side\": null,\n      \"commit_id\": \"bc086d52e59b486c59b07c0be350781921332163\",\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/7#pullrequestreview-4835010269\",\n      \"created_at\": null,\n      \"submitted_at\": \"2026-08-01T15:53:54Z\",\n      \"updated_at\": null\n    },\n    {\n      \"kind\": \"inline_review_comment\",\n      \"id\": 3695975388,\n      \"node_id\": \"PRRC_kwDOTlhXts7cTBvc\",\n      \"body\": \"MSN-00015 write acceptance 30706913841:1\",\n      \"state\": null,\n      \"user\": {\n        \"login\": \"github-actions[bot]\",\n        \"id\": 41898282,\n        \"type\": \"Bot\",\n        \"html_url\": \"https://github.com/apps/github-actions\"\n      },\n      \"path\": \"deliverables/archimedes-msn-00015/acceptance-fixture.txt\",\n      \"line\": 1,\n      \"side\": \"RIGHT\",\n      \"start_line\": null,\n      \"start_side\": null,\n      \"commit_id\": \"bc086d52e59b486c59b07c0be350781921332163\",\n      \"html_url\": \"https://github.com/2daime-same/autonomous-income-runner/pull/7#discussion_r3695975388\",\n      \"created_at\": \"2026-08-01T15:53:54Z\",\n      \"submitted_at\": null,\n      \"updated_at\": \"2026-08-01T15:53:54Z\"\n    }\n  ],\n  \"fetched_at\": \"2026-08-01T18:34:32.469Z\",\n  \"response\": {\n    \"status\": 200,\n    \"request_id\": \"E411:2E7A80:595DBDA:5B936A5:6A6E3C37\",\n    \"rate_limit\": {\n      \"limit\": 5000,\n      \"remaining\": 4993,\n      \"used\": 7,\n      \"reset_at\": \"2026-08-01T19:15:59.000Z\",\n      \"resource\": \"core\"\n    }\n  }\n}"
+    }
+  ],
+  "prior_acceptance_comment_id": 3695975388,
+  "prior_acceptance_comment_visible": true,
+  "write_gate": {
+    "process_gate": "GITHUB_ALLOW_WRITES=false",
+    "call_confirm": false,
+    "rejected": true,
+    "evidence": {
+      "name": "add_labels",
+      "duration_ms": 2,
+      "is_error": true,
+      "structured": null,
+      "text": "MCP error -32602: Input validation error: Invalid arguments for tool add_labels: Invalid input: expected true at confirm"
+    }
+  },
+  "writes_performed": [],
+  "stderr": ""
+}

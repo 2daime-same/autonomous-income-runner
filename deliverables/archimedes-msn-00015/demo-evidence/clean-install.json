@@ -1,0 +1,12 @@
+{
+  "demo_seconds": 2.082,
+  "install_seconds": 2.554,
+  "installed_server_path": "node_modules/archimedes-github-pr-mcp/dist/index.js",
+  "node": "22.23.1",
+  "pack_and_install_seconds": 3.303,
+  "runner": "ubuntu-24.04",
+  "schema_version": "archimedes-msn-00015-clean-install-v1",
+  "source_imports_used": false,
+  "tarball": "archimedes-github-pr-mcp-1.0.0.tgz",
+  "total_seconds": 5.385
+}
