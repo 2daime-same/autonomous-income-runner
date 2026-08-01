@@ -28,7 +28,7 @@ A publicly displayed funded/locked reward is an opportunity signal, not income o
 - stable structured results and redacted errors
 - unit, parser, HTTP, and real stdio MCP integration tests
 - controlled live four-tool acceptance smoke test
-- setup, integration, architecture, security, and requirement-conflict documentation
+- setup, integration, architecture, security, and requirements-resolution documentation
 - deterministic CI packaging, SHA-256 manifest, dependency audit, and CycloneDX SBOM
 
 ## Reproduction
@@ -55,14 +55,14 @@ The live smoke is read-only. It does not create an account, accept terms, apply,
 | npm package is complete | exact lockfile, build, `npm pack --dry-run`, manifest |
 | Supply-chain evidence exists | critical production audit and CycloneDX SBOM |
 | Submission ZIP is reproducible and intact | fixed timestamps, file manifest, generated SHA-256, checksum verification |
-| Documentation is complete | README, architecture, security, conflict note, this brief |
+| Documentation is complete | README, architecture, security, requirements-resolution note, this brief |
 
 The authoritative test count, coverage output, live resource IDs, commit, archive hash, SBOM, and audit result are generated in the GitHub Actions artifact. They are intentionally not copied into this source file because changing the source would itself change the final archive hash.
 
-## Known requirement ambiguity
+## Requirement status
 
-The mission snapshot contains both Python/TensorFlow/Flask/cloud requirements and TypeScript/MCP/npm requirements. This implementation follows the objective TypeScript deliverable and the four automated acceptance tools. See `docs/REQUIREMENTS-CONFLICT.md`. Official clarification is required before representing the legacy Python/cloud language as waived.
+The current public mission metadata consistently specifies TypeScript, `@modelcontextprotocol/sdk`, a local stdio npm entrypoint, unauthenticated read-only Archimedes access, and the four named tools. The implementation directly satisfies that current technical direction. An earlier public snapshot contained stale Python/TensorFlow/Flask/cloud wording, but those entries have since been replaced. `docs/REQUIREMENTS-CONFLICT.md` records the resolution for historical traceability; no technical requirement waiver is being claimed.
 
 ## Human-controlled boundary
 
-Account registration, age or residency statements, terms acceptance, identity verification, Stripe or bank onboarding, final upload/submission, and any legal warranty remain actions for the human account owner after platform eligibility and requirement interpretation are confirmed.
+Account registration, age or residency statements, terms acceptance, identity verification, Stripe or bank onboarding, final upload/submission, and any legal warranty remain actions for the human account owner after platform eligibility is confirmed.
