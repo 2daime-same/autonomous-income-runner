@@ -1,0 +1,18 @@
+{
+  "already_exists": false,
+  "authenticated": false,
+  "available_at_check_time": true,
+  "candidate_version": "1.0.0",
+  "checked_at": "2026-08-01T18:24:15Z",
+  "commercial_status": {
+    "expenses_usd": 0,
+    "verified_income_usd": 0,
+    "verified_receivable_usd": 0
+  },
+  "existing_version": null,
+  "package": "archimedes-github-pr-mcp",
+  "publish_attempted": false,
+  "query_exit_code": 1,
+  "registry": "https://registry.npmjs.org",
+  "schema_version": "archimedes-msn-00015-npm-name-v1"
+}
