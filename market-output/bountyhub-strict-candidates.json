@@ -1,7 +1,7 @@
 {
   "actionable": [],
   "actionable_count": 0,
-  "generated_at": "2026-08-01T19:36:54+00:00",
+  "generated_at": "2026-08-01T22:13:01+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -495,7 +495,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "TypeScript",
-      "repo_stars": 5349,
+      "repo_stars": 5350,
       "repository": "freelensapp/freelens",
       "scope_excerpt": "### What would you like to be added?\r\n\r\nIn short, the ability to change the theme colors on Freelens and create new ones as you like.\r\n\r\n### Why is this needed?\r\n\r\nMany users complain that they don't have this option, especially when it comes to colors they would prefer to change.\r\n\r\nFor example:\r\n- https://github.com/freelensapp/freelens/issues/550#issuecomment-3371177938\r\n- https://github.com/freelensapp/freelens/issues/1237\r\n- https://github.com/freelensapp/freelens/issues/186",
       "score": 47.59,
@@ -610,6 +610,13 @@
       "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
+          "number": 1747,
+          "title": "Bounty #770: prevent silent OKF context overwrite",
+          "updated_at": "2026-08-01T22:05:21Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1747",
+          "user": "biliman1-work"
+        },
+        {
           "number": 1705,
           "title": "fix(migrate): use valid source for imported memories",
           "updated_at": "2026-08-01T16:21:18Z",
@@ -685,13 +692,6 @@
           "updated_at": "2026-08-01T04:44:19Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1752",
           "user": "reallyreallycoolguy"
-        },
-        {
-          "number": 1747,
-          "title": "Bounty #770: prevent silent OKF context overwrite",
-          "updated_at": "2026-07-31T22:45:57Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1747",
-          "user": "biliman1-work"
         },
         {
           "number": 1746,
@@ -1152,7 +1152,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1750,
+      "repo_stars": 1751,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
       "score": 29.0,
@@ -1195,6 +1195,90 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
       "maintainer_holdoff_signals": [],
       "open_competing_prs": [
+        {
+          "number": 1786,
+          "title": "feat(examples): migrate Codex CLI sessions to privacy-safe OKF",
+          "updated_at": "2026-08-01T22:05:53Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1786",
+          "user": "dd222574-droid"
+        },
+        {
+          "number": 1785,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:53:26Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1785",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1784,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:47:45Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1784",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1783,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:42:16Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1783",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1782,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:36:53Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1782",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1781,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:31:25Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1781",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1780,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:25:55Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1780",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1779,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:20:24Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1779",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1778,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:18:21Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1778",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1777,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:12:04Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1777",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1776,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:06:33Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1776",
+          "user": "Chetan786"
+        },
+        {
+          "number": 1775,
+          "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
+          "updated_at": "2026-08-01T21:01:12Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1775",
+          "user": "Chetan786"
+        },
         {
           "number": 1774,
           "title": "fix: fix: fix: fix: fix: fix: fix: fix: fix: fix: feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
@@ -1507,7 +1591,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1750,
+      "repo_stars": 1751,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
       "score": 27.41,
@@ -1517,7 +1601,7 @@
         "supported language: python",
         "established repository",
         "2 competing attempt signal(s)",
-        "44 open competing PR(s)"
+        "56 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
@@ -1580,7 +1664,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14082,
+      "repo_stars": 14083,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 25.18,
@@ -1716,7 +1800,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14082,
+      "repo_stars": 14083,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 23.41,
@@ -1871,7 +1955,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14082,
+      "repo_stars": 14083,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Affected app**\r\nName: Dott\r\nPackage id: com.ridedott.rider\r\n\r\n**Describe the bug**\r\nSigning in or signing up fails, seemingly because of a firebase error\r\n\r\n**To Reproduce**\r\nSteps to reproduce the behavior:\r\n1. get Dott\r\n2. Click on sign up\r\n3. enter phone number\r\n4. click sign up\r\n\r\n**Expected behavior**\r\nsends sms verification or proceeds in general\r\n\r\n**Screenshots**\r\n<details><summary>sign up error page</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/0938e413-1873-480a-a396-a598fcd98e47)\r\n\r\n</details>\r\n\r\n<details><summary>dott vehicle coverage</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/59c7d003-1954-41be-8fc1-43956a17f4a6)\r\n\r\n</details>\r\n\r\n**System**\r\nAndroid Version: 15\r\nCustom ROM: LineageOS+microg 22.1\r\n\r\n**microG**\r\nmicroG Core version: 0.3.6.244735\r\nmicroG Self-Check results: All ticked\r\n\r\n**Additional context**\r\nfull logcat of an app start and signup attempt, filtering out all logs, except those coming from com.ridedott.rider with personal or identifying information replaced by `[...]`:\r\n\r\n[dott 06_04-09-30-30_733.log](https://github.com/user-attachments/files/19620636/dott.06_04-09-30-30_733.log)\r\n\r\nLikely critical lines from the log:\r\n```\r\n1743924520.834 10285 20276 23037 W LocalRequestInterceptor: Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: Error returned from API. code: 403 body: App attestation failed.\r\n1743924521.066 10285 20276 23037 E FirebaseAuth: [SmsRetrieverHelper] SMS verification code request failed: unknown status code: 17499 Firebase App Check token is invalid.\r\n1743924521.067 10285 20276 20276 D FirebaseAuth: Invoking original failure callbacks after phone verification failure for (my phone number), error - An internal error has occurred. [ Firebase App Check token is invalid. ]\r\n```\r\nmicrog Google device registration is enabled, as is cloud messaging and \"SafetyNet\".\r\nmy device meets basic integrity and device integrity, uses sdk level 35\r\n\r\nPossibly related: https://github.com/microg/GmsCore/issues/1967, https://github.com/microg/GmsCore/issues/1281",
       "score": 13.35,
@@ -1964,7 +2048,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14082,
+      "repo_stars": 14083,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Feature Description:**\r\nGoogle Messages is currently the only widely available RCS client for Android. When attempting to use Google Messages with microG, users typically encounter issues such as:\r\n\r\nA persistent message stating \"RCS chats aren't available for this device.\"\r\nAn indefinite \"Setting up...\", where authentication of the phone number never completes.\r\n\r\nRecent developments suggest that Google Messages no longer strictly requires device attestation for RCS, making it possible to enable RCS functionality with microG. However, it appears there's a missing component or necessary adjustment within microG itself preventing successful setup.\r\n\r\nGoogle has effectively monopolized RCS, despite it being a GSMA-backed standard intended as a successor to SMS. Unlike SMS, RCS has become a closed ecosystem under Google's control, restricting open interoperability and limiting choice for users and developers. RCS has seen significant adoption, particularly in North America, and recently Apple added support RCS, further increasing its importance as a messaging standard.\r\n\r\n**Requested Solution**\r\n\r\nProvide a solution that enables Google Messages to successfully connect to and use RCS functionality when operating with microG. Acceptable outcomes include:\r\n- A fix or enhancement to microG itself, allowing seamless RCS connectivity.\r\n- Compatibility with recent versions of Google Messages is desired. Solutions that only support a specific Google Messages version from the past year will be awarded half of the bounty amount.\r\n- Modifications to AOSP or additional permissions changes are acceptable.\r\n- The solution must work on devices with a locked bootloader.\r\n\r\nLimitations\r\nSolutions relying on rooting, Magisk, or similar root-based tools are not acceptable.\r\n\r\n**Additional Information**\r\n\r\nGrapheneOS users, who leverage a Play services sandbox, have reported success with enabling RCS by applying permission changes. Although their setup differs from microG, the discussions that were taken in this thread (especially in the last year) may offer valuable insights for this bounty: https://discuss.grapheneos.org/d/3533-rcs-with-google-messages\r\n",
       "score": 1.0,
@@ -2093,7 +2177,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14082,
+      "repo_stars": 14083,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**[BOUNTY CURRENTLY AT $550]**\n\n**Is your feature request related to a problem? Please describe.**\nWearOS devices do not work with MicroG\n\n**Describe the solution you'd like**\nMicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\n**Additional context**\nThere has been an issue open for over ten years regarding [MicroG support for WearOS](https://github.com/microg/GmsCore/issues/4#issuecomment-2581553597).  That issue and another [more recent post](https://github.com/microg/GmsCore/issues/2444#issuecomment-2691206945) have inspired some folks to post bounties for this feature, but it's buried so far down in the thread it's easy to miss.\n\nI personally am posting a $200 bounty for the MicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\nHere are the folks who've posted bounties in those threads.  I'll invite them to post again here confirming that their offers still stand, but all told, this adds up to over $500 already.\n\n@HyperCriSiS - $100\n@realPrix - $100\n@NullCode1337 - $50\n@TobiPeterG - $100\n@doctorgaul - $200",
       "score": -77.0,
