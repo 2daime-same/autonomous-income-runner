@@ -1,0 +1,77 @@
+name: Validate MSN-00015 first-publish workflow
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/archimedes-msn-00015-first-npm-publish.yml
+      - .github/workflows/validate-msn15-first-publish.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: validate-msn15-first-publish
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.25.x'
+          cache: false
+
+      - name: Install and run actionlint
+        run: |
+          set -euo pipefail
+          go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.7
+          "$(go env GOPATH)/bin/actionlint" \
+            .github/workflows/archimedes-msn-00015-first-npm-publish.yml
+
+      - name: Record validation evidence
+        run: |
+          set -euo pipefail
+          mkdir -p deliverables/archimedes-msn-00015/publication-evidence
+          SOURCE_SHA=$(git rev-parse HEAD)
+          ACTIONLINT_VERSION="$("$(go env GOPATH)/bin/actionlint" -version | head -1)"
+          export SOURCE_SHA ACTIONLINT_VERSION
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          value = {
+              'schema_version': 'archimedes-msn-00015-first-publish-workflow-validation-v1',
+              'validated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'source_commit': os.environ['SOURCE_SHA'],
+              'workflow': '.github/workflows/archimedes-msn-00015-first-npm-publish.yml',
+              'actionlint': os.environ['ACTIONLINT_VERSION'],
+              'valid': True,
+              'publish_executed': False,
+              'npm_credentials_used': False,
+              'commercial_effect': 'none',
+          }
+          Path('deliverables/archimedes-msn-00015/publication-evidence/first-publish-workflow-validation.json').write_text(
+              json.dumps(value, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add deliverables/archimedes-msn-00015/publication-evidence/first-publish-workflow-validation.json
+          git commit -m 'Record MSN-00015 first-publish workflow validation [skip ci]'
+          for attempt in $(seq 1 12); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
