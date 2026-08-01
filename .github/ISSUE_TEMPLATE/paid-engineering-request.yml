@@ -1,0 +1,142 @@
+name: Paid engineering request
+description: Request a scoped, evidence-backed engineering, MCP, API/CI QA, or technical-writing engagement.
+title: "[Paid request] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for considering this workspace.
+
+        Opening this form is free and creates no payment obligation. Work starts only after both sides agree in writing on scope, acceptance criteria, price, rights, deadline, payment method, and AI-assistance terms.
+
+        **Public issue rule:** do not paste API keys, tokens, passwords, private keys, customer data, personal information, confidential documents, or private source code. Use sanitized examples and public links only.
+
+  - type: dropdown
+    id: service
+    attributes:
+      label: Requested service
+      description: Choose the closest scope. A narrower, objectively testable request is more likely to be accepted.
+      options:
+        - Reproducible public API or CI defect report
+        - MCP installation and integration verification
+        - Read-only MCP adapter for a documented public API
+        - Guarded GitHub PR-review MCP customization
+        - Reproducible technical tutorial or implementation QA
+        - Other scoped engineering work
+    validations:
+      required: true
+
+  - type: input
+    id: public_context
+    attributes:
+      label: Public repository, documentation, or issue URL
+      description: Use a public URL. For private work, provide only a sanitized high-level description here.
+      placeholder: https://github.com/owner/repository/issues/123
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and desired outcome
+      description: Describe the current behavior, desired behavior, affected users, and why the change matters.
+      placeholder: |
+        Current behavior:
+        Desired outcome:
+        Why it matters:
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Objective acceptance criteria
+      description: List observable conditions that would make the work acceptable. Avoid purely subjective goals.
+      placeholder: |
+        - A clean install succeeds on Node.js 22.
+        - The MCP server registers the four named tools.
+        - The supplied reproduction test fails before the fix and passes after it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Expected deliverables
+      description: Specify source, patch, report, archive, demo, tests, documentation, or other evidence you need.
+      placeholder: Source patch, test log, README update, and SHA-256 manifest.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: budget
+    attributes:
+      label: Indicative budget
+      description: This is not an invoice or acceptance. Final price and payment method require written agreement.
+      options:
+        - USD 5–25
+        - USD 25–75
+        - USD 75–150
+        - USD 150–500
+        - More than USD 500
+        - Budget not fixed; request a quote
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Desired deadline
+      description: Include an absolute date and timezone. Leave blank when flexible.
+      placeholder: 2026-08-15 17:00 UTC
+
+  - type: dropdown
+    id: payment_timing
+    attributes:
+      label: Preferred payment structure
+      description: Final terms remain subject to written agreement and supported payment rails.
+      options:
+        - Payment after accepted delivery for a small public task
+        - Milestone payment for a larger task
+        - Platform-managed bounty or escrow
+        - Request a recommendation
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai_policy
+    attributes:
+      label: AI-assisted implementation policy
+      description: Material AI assistance is disclosed. Testing and evidence are still required.
+      options:
+        - AI-assisted work is allowed with disclosure
+        - AI-assisted work is allowed subject to additional review
+        - AI-assisted work is prohibited
+        - Unsure; discuss before work begins
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Technical, licensing, security, or rights constraints
+      description: State required licenses, environments, dependency limits, disclosure rules, and ownership expectations.
+      placeholder: MIT license; no hosted service; no external API calls; Node.js 20+.
+
+  - type: checkboxes
+    id: public_safety
+    attributes:
+      label: Public information and safety confirmation
+      options:
+        - label: I have not included credentials, secrets, private keys, personal data, confidential documents, or proprietary source code in this public issue.
+          required: true
+        - label: I understand that opening this issue does not create a contract, acceptance, invoice, receivable, or payment obligation.
+          required: true
+        - label: I will not ask for fabricated identity, hidden prompt extraction, social spam, deceptive reviews, unlawful access, or geographic/payment circumvention.
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional public notes
+      description: Optional sanitized context. A secure exchange can be discussed only after the scope is accepted.
