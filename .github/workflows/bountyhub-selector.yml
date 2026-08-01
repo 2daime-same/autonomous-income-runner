@@ -5,8 +5,10 @@ on:
     branches: [main]
     paths:
       - bountyhub_selector.py
+      - bountyhub_postfilter.py
       - github_bounty_radar.py
       - tests/test_bountyhub_selector.py
+      - tests/test_bountyhub_postfilter.py
       - .github/workflows/bountyhub-selector.yml
   workflow_dispatch:
   schedule:
@@ -28,19 +30,21 @@ jobs:
     timeout-minutes: 25
     steps:
       - name: Check out dedicated repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Test BountyHub selector
-        run: python3 -m unittest discover -s tests -p 'test_bountyhub_selector.py' -v
+      - name: Test BountyHub selector and fail-safe post-filter
+        run: python3 -m unittest discover -s tests -p 'test_bountyhub*.py' -v
 
       - name: Compile BountyHub selector
-        run: python3 -m py_compile bountyhub_selector.py github_bounty_radar.py
+        run: python3 -m py_compile bountyhub_selector.py bountyhub_postfilter.py github_bounty_radar.py
 
       - name: Validate funded BountyHub tasks against GitHub
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BOUNTYHUB_OUTPUT: market-output/bountyhub-candidates.json
-        run: python3 bountyhub_selector.py
+        run: |
+          python3 bountyhub_selector.py
+          python3 bountyhub_postfilter.py
 
       - name: Commit public candidate evidence
         shell: bash
