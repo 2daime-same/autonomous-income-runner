@@ -1,0 +1,81 @@
+name: Record MSN-00015 demo workflow result
+
+on:
+  workflow_run:
+    workflows:
+      - Build MSN-00015 clean-install demo video
+    types:
+      - completed
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: archimedes-msn-00015-demo-result
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out default branch
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Write public workflow result
+        env:
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
+          RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_STATUS: ${{ github.event.workflow_run.status }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          CREATED_AT: ${{ github.event.workflow_run.created_at }}
+          UPDATED_AT: ${{ github.event.workflow_run.updated_at }}
+        run: |
+          set -euo pipefail
+          mkdir -p deliverables/archimedes-msn-00015/demo-evidence
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          value = {
+              'schema_version': 'archimedes-msn-00015-demo-workflow-result-v1',
+              'run_id': int(os.environ['RUN_ID']),
+              'run_number': int(os.environ['RUN_NUMBER']),
+              'run_attempt': int(os.environ['RUN_ATTEMPT']),
+              'status': os.environ['RUN_STATUS'],
+              'conclusion': os.environ['RUN_CONCLUSION'],
+              'run_url': os.environ['RUN_URL'],
+              'head_sha': os.environ['HEAD_SHA'],
+              'created_at': os.environ['CREATED_AT'],
+              'updated_at': os.environ['UPDATED_AT'],
+              'income_or_receivable_proven': False,
+          }
+          path = Path('deliverables/archimedes-msn-00015/demo-evidence/workflow-result.json')
+          path.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit result
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add deliverables/archimedes-msn-00015/demo-evidence/workflow-result.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Record MSN-00015 demo workflow result [skip ci]'
+          for attempt in $(seq 1 12); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
