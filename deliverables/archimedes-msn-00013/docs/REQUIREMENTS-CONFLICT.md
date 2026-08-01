@@ -1,16 +1,19 @@
-# MSN-00013 requirements conflict
+# MSN-00013 requirements resolution
 
-The public mission snapshot contains two incompatible implementation directions:
+## Current authoritative public requirements
 
-- one section requests Python, TensorFlow, Flask, and AWS/Azure;
-- the code deliverable, npm entrypoint, TypeScript SDK requirement, and automated acceptance tests request a TypeScript MCP server with four named tools.
+The public mission metadata was refreshed on 2026-08-01 and now presents one consistent implementation direction:
 
-This candidate follows the directly testable TypeScript path:
+- TypeScript on Node.js using `@modelcontextprotocol/sdk`;
+- a local stdio MCP server runnable through `npm start` or `npx`;
+- four tools: `search_assets`, `get_asset`, `search_bounties`, and `get_bounty`;
+- unauthenticated, read-only access to Archimedes public data;
+- setup and usage documentation.
 
-1. `@modelcontextprotocol/sdk` over stdio;
-2. `npm start` and a local executable entrypoint;
-3. `search_assets`, `get_asset`, `search_bounties`, and `get_bounty`;
-4. public read-only API access;
-5. Markdown documentation and automated tests.
+This candidate directly implements that current requirement set. No Python, TensorFlow, Flask, AWS, or Azure component is required by the current public mission metadata.
 
-A separate cloud/TensorFlow service would not contribute to those four metadata tools. Platform support has been asked which requirement set is authoritative. Until written clarification or platform acceptance exists, this file is traceability rather than a claim that any requirement is waived.
+## Historical traceability
+
+An earlier public snapshot contained stale Python/TensorFlow/Flask/cloud wording alongside the TypeScript/MCP/npm acceptance path. The platform later replaced those stale technical entries with the TypeScript stdio requirements above. This note is retained only to explain the repository history and should not be interpreted as an unresolved waiver request.
+
+Eligibility, account registration, terms acceptance, residency statements, Stripe onboarding, final submission, and payout remain separate human-controlled platform steps. The codebase does not perform any of them.
