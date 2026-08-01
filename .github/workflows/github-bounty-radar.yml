@@ -6,6 +6,7 @@ on:
     paths:
       - github_bounty_radar.py
       - strict_candidate_selector.py
+      - strict_candidate_selector_hardened.py
       - tests/test_github_bounty_radar.py
       - tests/test_strict_candidate_selector.py
       - .github/workflows/github-bounty-radar.yml
@@ -29,7 +30,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Check out dedicated repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run radar and selector tests
         id: tests
@@ -41,7 +42,11 @@ jobs:
       - name: Compile radar and selector
         id: compile
         continue-on-error: true
-        run: python3 -m py_compile github_bounty_radar.py strict_candidate_selector.py
+        run: >-
+          python3 -m py_compile
+          github_bounty_radar.py
+          strict_candidate_selector.py
+          strict_candidate_selector_hardened.py
 
       - name: Search and validate live GitHub bounty issues
         id: scan
@@ -57,7 +62,7 @@ jobs:
         env:
           STRICT_SELECTOR_INPUT: market-output/github-bounties.json
           STRICT_SELECTOR_OUTPUT: market-output/actionable-candidates.json
-        run: python3 strict_candidate_selector.py
+        run: python3 strict_candidate_selector_hardened.py
 
       - name: Write diagnostic summary
         if: always()
