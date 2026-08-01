@@ -1,0 +1,85 @@
+name: Archimedes MSN-00015 live write acceptance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths:
+      - "deliverables/archimedes-msn-00015/acceptance-fixture.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: archimedes-msn-00015-write-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  live-write-acceptance:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.head_ref == 'agent/msn15-write-acceptance'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: deliverables/archimedes-msn-00015
+    steps:
+      - name: Check out acceptance branch
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          package-manager-cache: false
+
+      - name: Install and verify locked package
+        run: |
+          npm ci --no-audit --no-fund
+          npm run verify
+
+      - name: Post one MCP inline comment and verify visibility within five seconds
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_WRITE_ACCEPTANCE_OWNER: ${{ github.repository_owner }}
+          GITHUB_WRITE_ACCEPTANCE_REPO: ${{ github.event.repository.name }}
+          GITHUB_WRITE_ACCEPTANCE_PR: ${{ github.event.pull_request.number }}
+          GITHUB_WRITE_ACCEPTANCE_PATH: deliverables/archimedes-msn-00015/acceptance-fixture.txt
+        run: |
+          set -o pipefail
+          mkdir -p dist-submission
+          npm run write:acceptance | tee dist-submission/write-acceptance.log
+
+      - name: Reject credential-like evidence
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          for path in [
+              Path('dist-submission/write-acceptance.json'),
+              Path('dist-submission/write-acceptance.log'),
+          ]:
+              text = path.read_text(encoding='utf-8')
+              patterns = [
+                  re.compile(r'\bgh[opsu]_[A-Za-z0-9_]{20,}\b'),
+                  re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
+                  re.compile(r'(?i)authorization\s*[:=]'),
+              ]
+              if any(pattern.search(text) for pattern in patterns):
+                  raise SystemExit(f'Credential-like material found in {path}')
+          PY
+
+      - name: Upload write acceptance evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: archimedes-msn-00015-write-acceptance-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            deliverables/archimedes-msn-00015/dist-submission/write-acceptance.json
+            deliverables/archimedes-msn-00015/dist-submission/write-acceptance.log
