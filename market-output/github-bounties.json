@@ -38,6 +38,27 @@
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/59"
     },
     {
+      "issue_number": 365,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 2 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/365"
+    },
+    {
+      "issue_number": 571,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 2 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/571"
+    },
+    {
+      "issue_number": 718,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 3 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/718"
+    },
+    {
       "issue_number": 570,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "vansh-09/BountyScout",
@@ -155,27 +176,6 @@
       "repo": "dev-kp-eloper/BountyScout",
       "title": "🎯 Bounty Alert: 12 New Opportunityies found",
       "url": "https://github.com/dev-kp-eloper/BountyScout/issues/711"
-    },
-    {
-      "issue_number": 356,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 12 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/356"
-    },
-    {
-      "issue_number": 564,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 11 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/564"
-    },
-    {
-      "issue_number": 710,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 8 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/710"
     },
     {
       "issue_number": 4956,
@@ -480,14 +480,14 @@
     },
     {
       "issue_number": 3,
-      "reason": "body aggregates 4 external issue links",
+      "reason": "body aggregates 5 external issue links",
       "repo": "fardhanrasya/telkom-alumni-forum",
       "title": "Peta: Sistem Currency & Aset Kosmetik",
       "url": "https://github.com/fardhanrasya/telkom-alumni-forum/issues/3"
     }
   ],
-  "generated_at": "2026-08-01T18:26:21+00:00",
-  "prefiltered_open_issues": 511,
+  "generated_at": "2026-08-01T19:34:30+00:00",
+  "prefiltered_open_issues": 503,
   "queries": [
     "is:issue is:open label:\"💎 Bounty\" updated:>=2025-12-04",
     "is:issue is:open label:bounty updated:>=2025-12-04",
@@ -4316,6 +4316,13 @@
       ],
       "open_competing_prs": [
         {
+          "number": 11407,
+          "title": "Fix errorHandler to return Zod validation error details",
+          "updated_at": "2026-08-01T18:47:05Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11407",
+          "user": "0xhermes-28"
+        },
+        {
           "number": 11451,
           "title": "fix: add automated bug detection and issue creation system",
           "updated_at": "2026-07-31T10:20:03Z",
@@ -4412,13 +4419,6 @@
           "updated_at": "2026-07-25T17:33:17Z",
           "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11416",
           "user": "ninghuagui-debug"
-        },
-        {
-          "number": 11407,
-          "title": "Fix errorHandler to return Zod validation error details",
-          "updated_at": "2026-07-25T12:12:49Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11407",
-          "user": "0xhermes-28"
         }
       ],
       "reasons": [
@@ -4889,7 +4889,7 @@
       "repo_fork": false,
       "repo_language": "C++",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T18:21:37Z",
+      "repo_pushed_at": "2026-08-01T19:26:17Z",
       "repo_stars": 1611,
       "reward_evidence": {
         "amounts": [
@@ -5383,98 +5383,6 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "It would be useful if posting amounts could contain simple arithmetic expressions, for example:\n\n```hledger\nassets:personal    $-21.60 + $-27.68 + $-5.03 + $-17.80\n```\n\nCurrently this fails with `unexpected '+'`, requiring the user to calculate and enter `$-72.11` manually.\n\nSupporting basic `+`, `-`, `*`, `/`, and parentheses in posting amounts would make journal entries easier to audit because the original component amounts could remain visible.\n\nThis would be incredibly useful for situations when I have 5 receipts in a section where each is split into base amount (price+tip) and tax (as second line item) which is common in accounting where I live.\n\nSeeing the total at the bottom would make it easier to find the bill. Eg:\n\n```hledger\n2025-10-14 some outing\t\t; customer:simon\n\texpenses:meals\t\t\t$47.97 ; page:13\n\tassets:tax:gstexp\t\t$2.23\n\texpenses:meals\t\t\t$200.65 ; page:17\n\tassets:tax:gstexp\t\t$8.35\n\texpenses:parking\t\t$15.75 ; page:20\n\tassets:tax:gstexp\t\t$0.79\n\texpenses:lodging\t\t$419.32 ; page:21\n\tassets:tax:gstexp\t\t$18.68\n\tassets:personal\t\t\t$-50.20 + $-209.00 + $-16.54 + $-438   ; $-713.74\n```\n\nThank you!",
-      "comments_count": 14,
-      "created_at": "2026-06-14T17:47:08Z",
-      "issue_author": "purpleidea",
-      "issue_number": 2648,
-      "labels": [
-        "A-WISH",
-        "journal",
-        "bounty",
-        "needs-code"
-      ],
-      "open_competing_prs": [],
-      "reasons": [
-        "explicit reward evidence up to $450",
-        "no direct reward evidence; likely an aggregation or mention",
-        "repository bounty/funded label",
-        "recently updated issue",
-        "active repository",
-        "no open competing PR found",
-        "no attempt command found",
-        "established repository"
-      ],
-      "repo": "simonmichael/hledger",
-      "repo_archived": false,
-      "repo_created_at": "2013-04-08T16:41:47Z",
-      "repo_fork": false,
-      "repo_language": "Haskell",
-      "repo_owner_type": "User",
-      "repo_pushed_at": "2026-08-01T06:57:49Z",
-      "repo_stars": 4603,
-      "reward_evidence": {
-        "amounts": [
-          0.79,
-          2.23,
-          8.35,
-          15.75,
-          18.68,
-          47.97,
-          50.0,
-          200.65,
-          400.0,
-          419.32,
-          450.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "@purpleidea, thanks for offering a substantial bounty. @RomeoApps, thanks for your interest.\n\nIn the AI age we/I have to be careful to conserve maintainer time, avoid burnout, avoid low quality or destabilising contributions, etc. A few notes:\n\n- The RomeoApps account is a few weeks old and likely heavily AI-assisted.\n\n- To be eligible for merging in the official hledger repo, PRs need to follow the latest https://hledger.org/PULLREQUESTS.html#guidelines and https://hledger.org/AI.html#rules-of-engagement.\n\n- purpleidea if you have additional AI preferences, you may want to mention them up front.\n\n- This bounty is being offered and managed by purpleidea, with little involvement from me except in deciding whether to merge the result. I hope that will happen, but there's no promise of that. Of course the work can be useful even if not merged; that is the beauty of FOSS.\n\nGood luck!",
-            "login": "simonmichael"
-          },
-          {
-            "excerpt": "- With the open discussion of a bounty, this issue will soon attract more automated queries, PRs and bounty claims. These will keep coming until it's closed, and will also need to be managed.",
-            "login": "simonmichael"
-          },
-          {
-            "excerpt": "- @RomeoApps, for bounty the scope is set by purpleidea but for merging, assuming all else is in order, what you described sounds fine to me. \n",
-            "login": "simonmichael"
-          },
-          {
-            "excerpt": "@RomeoApps \n\n> Please send the one-page copyright document before implementation\n\nEmail your full legal name for payment, address, etc to my first name at m9rx.com and I'll fill it in and send your way. If you prefer E2E encrypted use the contact form at [https://m9rx.com/contact/](https://m9rx.com/contact/)\n\n@simonmichael Yes I agree that's a good policy. First time PR's should not be AI generated. I think I will adopt this in https://github.com/purpleidea/mgmt/ . Also, I hope I'm not causing unnecessary noise or trouble because of the bounty here. If you'd prefer I proceed differently or otherwise, please lmk. Thanks!\n",
-            "login": "purpleidea"
-          },
-          {
-            "excerpt": "@simonmichael Yeah, in their email to me they were being coy and TBQH I wasn't sure I wasn't just speaking with an actual bot :/\n\nYou're welcome to the bounty if you'd like the issue.",
-            "login": "purpleidea"
-          },
-          {
-            "excerpt": "I have closed pr #2666. \n\nTo anyone else interested in the bounty offered above, and solving this issue: note that PRs must follow our https://hledger.org/AI.html#rules-of-engagement. Among other things, that means no AI-generated PRs from first-time contributors.",
-            "login": "simonmichael"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": true,
-        "markers": [
-          "bounty"
-        ],
-        "max_amount_usd": 450.0,
-        "reward_links_count": 0
-      },
-      "score": 37.0,
-      "title": "Support simple arithmetic expressions in posting amounts",
-      "updated_at": "2026-07-31T10:50:42Z",
-      "url": "https://github.com/simonmichael/hledger/issues/2648"
-    },
-    {
-      "assignees": [],
       "body_excerpt": "# Thursday's Boots\nTGStation is sponsored by Thursday's Boots and we want the code to reflect this. Branding and references for Thursday's Boots must be in every file in the repo.\n\n# History of Thursday's Boots\nThursday's Boots is a boot company that sells boots. They don't only sell on Thursday. The boots are made by Genuine Buffalo Foreskin, the leather stretches over the feet of child paraplegics, who are forced to make the boots in a basement every day of the week, only getting the day off on Thursday. Their calender however does not contain Thursday.\n\nFor further reference, watch the following and reference it in the code: https://www.youtube.com/watch?v=w-_Q3LFfeb4\n\n",
       "comments_count": 6,
       "created_at": "2026-07-29T05:02:58Z",
@@ -5553,6 +5461,880 @@
     },
     {
       "assignees": [],
+      "body_excerpt": "Automate Low Hanging fruit bug detection and issue creation recursively.\n\nThis issue is an issue focused on creating more issues:\n1. Find a feature/bug to work on from this repository\n2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered.\n3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information.\"\n\nFollow all instructions carefully and precisely.\nImportant: Star the repository https://github.com/SecureBananaLabs/bug-bounty \n\n/bounty $700\n\nBounties can only be paid upon successful PR merge.",
+      "comments_count": 1406,
+      "created_at": "2026-05-27T06:32:39Z",
+      "issue_author": "claim-reviewer",
+      "issue_number": 743,
+      "labels": [
+        "bug",
+        "documentation",
+        "good first issue",
+        "help wanted",
+        "bug bounty",
+        "AI agent friendly",
+        "bounty",
+        "💎 Bounty",
+        "$700"
+      ],
+      "open_competing_prs": [
+        {
+          "number": 11402,
+          "title": "Add CI workflow to run tests on pull requests - closes #11401",
+          "updated_at": "2026-08-01T18:47:18Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11402",
+          "user": "0xhermes-28"
+        },
+        {
+          "number": 11411,
+          "title": "Fix search endpoint returns empty results (implement globalSearch with real data)",
+          "updated_at": "2026-08-01T18:46:46Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11411",
+          "user": "0xhermes-28"
+        },
+        {
+          "number": 11531,
+          "title": "fix(api): authenticate refresh tokens and preserve identity",
+          "updated_at": "2026-08-01T04:29:16Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11531",
+          "user": "joseignaciok"
+        },
+        {
+          "number": 8091,
+          "title": "feat: reject missing or blank search queries",
+          "updated_at": "2026-07-30T02:06:17Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/8091",
+          "user": "Simultech369"
+        },
+        {
+          "number": 5956,
+          "title": "Return 400 for malformed JSON bodies",
+          "updated_at": "2026-07-27T06:25:10Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5956",
+          "user": "plum2003"
+        },
+        {
+          "number": 9029,
+          "title": "fix: limit upload file size and return 413 on oversized files",
+          "updated_at": "2026-07-26T20:11:23Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9029",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9031,
+          "title": "fix: require authentication before issuing refreshed tokens",
+          "updated_at": "2026-07-26T20:11:22Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9031",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9037,
+          "title": "fix: prevent client-controlled field injection via object spread",
+          "updated_at": "2026-07-26T20:11:21Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9037",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9039,
+          "title": "fix: keep registration token subject aligned with returned user id",
+          "updated_at": "2026-07-26T20:11:20Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9039",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9041,
+          "title": "fix: validate PORT env before starting server",
+          "updated_at": "2026-07-26T20:11:19Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9041",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9043,
+          "title": "fix: validate and trim search query input",
+          "updated_at": "2026-07-26T20:11:17Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9043",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9045,
+          "title": "fix: reject upload requests without a file",
+          "updated_at": "2026-07-26T20:11:16Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9045",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9047,
+          "title": "fix: require JWT_SECRET in production environment",
+          "updated_at": "2026-07-26T20:11:14Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9047",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9070,
+          "title": "fix: add stricter rate limit for authentication endpoints",
+          "updated_at": "2026-07-26T20:11:13Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9070",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 9072,
+          "title": "fix: require admin role for admin metrics endpoint",
+          "updated_at": "2026-07-26T20:11:12Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9072",
+          "user": "Yzgaming005"
+        },
+        {
+          "number": 856,
+          "title": "fix(api): validate PORT configuration",
+          "updated_at": "2026-07-24T08:58:55Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/856",
+          "user": "OlegChep"
+        },
+        {
+          "number": 11367,
+          "title": "Fix search query validation",
+          "updated_at": "2026-07-22T09:04:52Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11367",
+          "user": "alrightalrightalright"
+        },
+        {
+          "number": 11364,
+          "title": "fix: enforce admin role on /api/admin routes",
+          "updated_at": "2026-07-22T08:19:49Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11364",
+          "user": "kevinnft"
+        },
+        {
+          "number": 11363,
+          "title": "fix: fall back to default PORT when env value is invalid",
+          "updated_at": "2026-07-22T08:19:20Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11363",
+          "user": "kevinnft"
+        },
+        {
+          "number": 11279,
+          "title": "Fix API workspace test discovery",
+          "updated_at": "2026-07-22T05:51:26Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11279",
+          "user": "hakuha114-collab"
+        },
+        {
+          "number": 11045,
+          "title": "Reject upload requests without a file",
+          "updated_at": "2026-07-21T09:30:46Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11045",
+          "user": "albertoblancas123"
+        },
+        {
+          "number": 10855,
+          "title": "fix(api): generate collision-resistant review ids",
+          "updated_at": "2026-07-20T10:18:15Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10855",
+          "user": "nexicturbo"
+        },
+        {
+          "number": 10929,
+          "title": "fix(api): verify login credentials",
+          "updated_at": "2026-07-20T10:18:15Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10929",
+          "user": "nexicturbo"
+        },
+        {
+          "number": 10925,
+          "title": "fix(api): normalize search query parameter",
+          "updated_at": "2026-07-20T10:15:50Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10925",
+          "user": "nexicturbo"
+        },
+        {
+          "number": 11293,
+          "title": "fix(api): validate user creation payloads",
+          "updated_at": "2026-07-20T04:46:35Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11293",
+          "user": "Daisuke134"
+        },
+        {
+          "number": 11266,
+          "title": "fix: Secure #743: auth hardening for users/jobs and search valida",
+          "updated_at": "2026-07-18T01:31:13Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11266",
+          "user": "key1989han"
+        },
+        {
+          "number": 11252,
+          "title": "fix: Secure #743: auth hardening for users/jobs and search valida",
+          "updated_at": "2026-07-18T01:23:08Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11252",
+          "user": "key1989han"
+        },
+        {
+          "number": 11238,
+          "title": "fix: Secure #743: auth hardening for users/jobs and search valida",
+          "updated_at": "2026-07-18T01:16:13Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11238",
+          "user": "key1989han"
+        },
+        {
+          "number": 11229,
+          "title": "fix: OAuth callback should validate provider and code (reissue vi",
+          "updated_at": "2026-07-18T01:10:12Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11229",
+          "user": "key1989han"
+        },
+        {
+          "number": 11199,
+          "title": "Fix dropped leaderboard updates during PR bursts",
+          "updated_at": "2026-07-16T14:32:04Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11199",
+          "user": "qq2401672073-hub"
+        },
+        {
+          "number": 11197,
+          "title": "fix(api): return defensive user snapshots",
+          "updated_at": "2026-07-16T06:50:22Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11197",
+          "user": "Daisuke134"
+        },
+        {
+          "number": 11195,
+          "title": "Fix apps/api test script to run the actual test file",
+          "updated_at": "2026-07-16T02:45:56Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11195",
+          "user": "Daisuke134"
+        },
+        {
+          "number": 11190,
+          "title": "fix: discover API test files",
+          "updated_at": "2026-07-15T10:23:09Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11190",
+          "user": "chxcode"
+        },
+        {
+          "number": 11186,
+          "title": "fix: add asyncHandler wrapper for Express 4 async error handling",
+          "updated_at": "2026-07-15T07:43:27Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11186",
+          "user": "Daisuke134"
+        },
+        {
+          "number": 11184,
+          "title": "fix(jobs): validate budgetMax >= budgetMin in create/update schemas",
+          "updated_at": "2026-07-15T06:40:45Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11184",
+          "user": "Daisuke134"
+        },
+        {
+          "number": 11136,
+          "title": "fix(reg)：单userId解决id与token sub不匹配的bug (#2768)",
+          "updated_at": "2026-07-14T05:44:19Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11136",
+          "user": "dev-nana27"
+        },
+        {
+          "number": 11145,
+          "title": "fix(api): return 415 for unsupported JSON media types",
+          "updated_at": "2026-07-12T22:25:33Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11145",
+          "user": "BeauDevCode"
+        },
+        {
+          "number": 11139,
+          "title": "fix(jobs): resolve mock job by id in job detail page (#2760)",
+          "updated_at": "2026-07-12T20:31:47Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11139",
+          "user": "dev-nana27"
+        },
+        {
+          "number": 11138,
+          "title": "fix(notif): ignore caller-supplied id/read during creation (#2762)",
+          "updated_at": "2026-07-12T20:28:32Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11138",
+          "user": "dev-nana27"
+        },
+        {
+          "number": 11137,
+          "title": "fix(reg): add fullName to registration validation and payload (#2770)",
+          "updated_at": "2026-07-12T20:24:02Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11137",
+          "user": "dev-nana27"
+        },
+        {
+          "number": 11115,
+          "title": "fix(payment): normalize currency before return (refs #743)",
+          "updated_at": "2026-07-12T09:24:55Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11115",
+          "user": "ccctestcc1939245"
+        },
+        {
+          "number": 11107,
+          "title": "Hide admin link from public navigation",
+          "updated_at": "2026-07-11T12:49:40Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11107",
+          "user": "ewbd09-svg"
+        },
+        {
+          "number": 11104,
+          "title": "fix(api/auth): validate refresh token request body",
+          "updated_at": "2026-07-11T05:30:43Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11104",
+          "user": "dominating"
+        },
+        {
+          "number": 11103,
+          "title": "fix(api/jobs): add pagination to GET /api/jobs",
+          "updated_at": "2026-07-11T05:29:57Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11103",
+          "user": "dominating"
+        },
+        {
+          "number": 11102,
+          "title": "fix(api/search): sanitize query string and bound its length",
+          "updated_at": "2026-07-11T05:28:59Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11102",
+          "user": "dominating"
+        },
+        {
+          "number": 11101,
+          "title": "fix(api/uploads): sanitize filename echoed in upload response",
+          "updated_at": "2026-07-11T05:28:00Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11101",
+          "user": "dominating"
+        },
+        {
+          "number": 11100,
+          "title": "fix(api/auth): trim and lowercase email in validators",
+          "updated_at": "2026-07-11T05:26:52Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11100",
+          "user": "dominating"
+        },
+        {
+          "number": 6887,
+          "title": "fix: budget validation + search input sanitization",
+          "updated_at": "2026-07-11T00:34:27Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/6887",
+          "user": "nikos1005"
+        },
+        {
+          "number": 9160,
+          "title": "feat: job validation should reject inverted budget ranges (resolves #9159)",
+          "updated_at": "2026-07-10T19:44:13Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9160",
+          "user": "adamsithr"
+        },
+        {
+          "number": 9189,
+          "title": "feat: validate PORT environment variable and fallback to default 4000 (resolves #9188)",
+          "updated_at": "2026-07-10T19:44:10Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9189",
+          "user": "adamsithr"
+        },
+        {
+          "number": 9279,
+          "title": "feat: auth refresh endpoint should require authentication and sign correct user claims (resolves #9278)",
+          "updated_at": "2026-07-10T19:44:07Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9279",
+          "user": "adamsithr"
+        },
+        {
+          "number": 11044,
+          "title": "fix: reject uploads without a file",
+          "updated_at": "2026-07-10T09:01:01Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11044",
+          "user": "llZZG0111"
+        },
+        {
+          "number": 11040,
+          "title": "fix: registration requires fullName, restricts admin role (fixes #2770)",
+          "updated_at": "2026-07-09T23:00:59Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11040",
+          "user": "cashmeout2313"
+        },
+        {
+          "number": 11039,
+          "title": "fix: reject inverted budget ranges in job validation (fixes #2853)",
+          "updated_at": "2026-07-09T23:00:39Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11039",
+          "user": "cashmeout2313"
+        },
+        {
+          "number": 11038,
+          "title": "fix: registration token sub matches returned user id (fixes #2768)",
+          "updated_at": "2026-07-09T23:00:09Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11038",
+          "user": "cashmeout2313"
+        },
+        {
+          "number": 11028,
+          "title": "fix(api): run concrete test files",
+          "updated_at": "2026-07-09T05:31:27Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11028",
+          "user": "qq2401672073-hub"
+        },
+        {
+          "number": 11025,
+          "title": "fix(api/reviews): avoid same-millisecond id collisions",
+          "updated_at": "2026-07-08T23:00:39Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11025",
+          "user": "dominating"
+        },
+        {
+          "number": 11023,
+          "title": "fix(api/uploads): reject missing-file submissions with 400",
+          "updated_at": "2026-07-08T22:58:34Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11023",
+          "user": "dominating"
+        },
+        {
+          "number": 11021,
+          "title": "fix: keep web next-env stable after production build",
+          "updated_at": "2026-07-08T11:54:48Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11021",
+          "user": "dkx955"
+        },
+        {
+          "number": 810,
+          "title": "[ShanaBoo] Low Handing Fruit Automation",
+          "updated_at": "2026-07-08T03:32:10Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/810",
+          "user": "genesisrevelationinc-debug"
+        },
+        {
+          "number": 11007,
+          "title": "fix: protect refresh endpoint with auth middleware and sign token for authenticated user",
+          "updated_at": "2026-07-08T00:44:53Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11007",
+          "user": "sumarna35"
+        },
+        {
+          "number": 11005,
+          "title": "fix: handle Zod validation errors in job controller with structured 400 response",
+          "updated_at": "2026-07-08T00:29:29Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11005",
+          "user": "sumarna35"
+        },
+        {
+          "number": 11003,
+          "title": "fix: login endpoint verifies password against registered user store",
+          "updated_at": "2026-07-08T00:19:57Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11003",
+          "user": "sumarna35"
+        },
+        {
+          "number": 11001,
+          "title": "Validate user creation payloads",
+          "updated_at": "2026-07-07T20:26:10Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11001",
+          "user": "es3298"
+        },
+        {
+          "number": 10998,
+          "title": "fix: add user validation to prevent admin role self-assignment",
+          "updated_at": "2026-07-07T19:24:19Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10998",
+          "user": "sumarna35"
+        },
+        {
+          "number": 10997,
+          "title": "Normalize payment intent currency",
+          "updated_at": "2026-07-07T16:36:06Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10997",
+          "user": "es3298"
+        },
+        {
+          "number": 10996,
+          "title": "Harden notification creation ids",
+          "updated_at": "2026-07-07T16:34:20Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10996",
+          "user": "es3298"
+        },
+        {
+          "number": 10995,
+          "title": "Harden message creation ids",
+          "updated_at": "2026-07-07T16:32:16Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10995",
+          "user": "es3298"
+        },
+        {
+          "number": 10994,
+          "title": "Normalize search query parameters",
+          "updated_at": "2026-07-07T16:30:25Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10994",
+          "user": "es3298"
+        },
+        {
+          "number": 10993,
+          "title": "Keep registration token subject stable",
+          "updated_at": "2026-07-07T16:27:52Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10993",
+          "user": "es3298"
+        },
+        {
+          "number": 10992,
+          "title": "fix(api): restrict admin metrics to admin role",
+          "updated_at": "2026-07-07T16:19:57Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10992",
+          "user": "es3298"
+        },
+        {
+          "number": 10989,
+          "title": "Keep health checks outside API rate limit",
+          "updated_at": "2026-07-07T15:59:39Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10989",
+          "user": "ewbd09-svg"
+        },
+        {
+          "number": 10981,
+          "title": "fix(api): run node tests via file glob",
+          "updated_at": "2026-07-07T09:35:18Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10981",
+          "user": "jz-nobody"
+        },
+        {
+          "number": 10974,
+          "title": "fix(web): expose current navigation state",
+          "updated_at": "2026-07-07T04:10:43Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10974",
+          "user": "lanxin262"
+        },
+        {
+          "number": 10963,
+          "title": "Forward async route errors to middleware",
+          "updated_at": "2026-07-06T14:21:18Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10963",
+          "user": "ewbd09-svg"
+        },
+        {
+          "number": 10959,
+          "title": "Return defensive copies from list services",
+          "updated_at": "2026-07-06T14:14:22Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10959",
+          "user": "ewbd09-svg"
+        },
+        {
+          "number": 5134,
+          "title": "Validate job budget ranges",
+          "updated_at": "2026-07-06T09:11:12Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5134",
+          "user": "elianguitarra"
+        },
+        {
+          "number": 9076,
+          "title": "fix: reject blank production env secrets",
+          "updated_at": "2026-07-06T09:07:51Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9076",
+          "user": "elianguitarra"
+        },
+        {
+          "number": 6383,
+          "title": "Enforce upload file size limit",
+          "updated_at": "2026-07-06T09:07:50Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/6383",
+          "user": "elianguitarra"
+        },
+        {
+          "number": 10943,
+          "title": "Fix API test script file discovery",
+          "updated_at": "2026-07-06T05:08:11Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10943",
+          "user": "soongyintong"
+        },
+        {
+          "number": 10941,
+          "title": "fix(api): preserve server-owned job creation fields",
+          "updated_at": "2026-07-06T04:58:09Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10941",
+          "user": "shangguanwt"
+        },
+        {
+          "number": 10939,
+          "title": "fix(web): use comma separator for freelancer skills",
+          "updated_at": "2026-07-06T03:01:28Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10939",
+          "user": "wousp112"
+        },
+        {
+          "number": 10936,
+          "title": "Fix shared Button native prop forwarding",
+          "updated_at": "2026-07-06T02:16:53Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10936",
+          "user": "Xinnygh"
+        },
+        {
+          "number": 10934,
+          "title": "fix(ui): forward native button props",
+          "updated_at": "2026-07-06T02:01:08Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10934",
+          "user": "lanxin262"
+        },
+        {
+          "number": 10932,
+          "title": "Fix review id collisions",
+          "updated_at": "2026-07-06T01:02:22Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10932",
+          "user": "foxsaying"
+        },
+        {
+          "number": 10922,
+          "title": "Fix registration token subject drift",
+          "updated_at": "2026-07-06T00:56:04Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10922",
+          "user": "foxsaying"
+        },
+        {
+          "number": 10920,
+          "title": "Normalize search query parameter shape",
+          "updated_at": "2026-07-05T21:27:28Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10920",
+          "user": "ewbd09-svg"
+        },
+        {
+          "number": 10918,
+          "title": "Require authentication for notification creation",
+          "updated_at": "2026-07-05T20:18:36Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10918",
+          "user": "wousp112"
+        },
+        {
+          "number": 10916,
+          "title": "Require authentication for proposal creation",
+          "updated_at": "2026-07-05T20:14:27Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10916",
+          "user": "wousp112"
+        },
+        {
+          "number": 10914,
+          "title": "Require authentication for message creation",
+          "updated_at": "2026-07-05T20:10:27Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10914",
+          "user": "wousp112"
+        },
+        {
+          "number": 10912,
+          "title": "Validate user creation payloads",
+          "updated_at": "2026-07-05T20:01:21Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10912",
+          "user": "wousp112"
+        },
+        {
+          "number": 10910,
+          "title": "Require authentication for file uploads",
+          "updated_at": "2026-07-05T19:55:53Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10910",
+          "user": "wousp112"
+        },
+        {
+          "number": 10908,
+          "title": "Require authentication for payment creation",
+          "updated_at": "2026-07-05T19:50:58Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10908",
+          "user": "wousp112"
+        },
+        {
+          "number": 10904,
+          "title": "fix(api): block admin self-registration",
+          "updated_at": "2026-07-05T17:40:18Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10904",
+          "user": "wousp112"
+        },
+        {
+          "number": 10897,
+          "title": "fix(api): enforce admin role on metrics",
+          "updated_at": "2026-07-05T17:20:25Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10897",
+          "user": "wousp112"
+        },
+        {
+          "number": 10895,
+          "title": "fix(api): require auth for token refresh",
+          "updated_at": "2026-07-05T17:12:45Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10895",
+          "user": "wousp112"
+        },
+        {
+          "number": 10893,
+          "title": "fix(api): validate write endpoint bodies",
+          "updated_at": "2026-07-05T17:04:06Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10893",
+          "user": "wousp112"
+        },
+        {
+          "number": 10890,
+          "title": "OpenAI Codex: keep registration JWT subject aligned",
+          "updated_at": "2026-07-05T16:23:20Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10890",
+          "user": "wousp112"
+        },
+        {
+          "number": 10887,
+          "title": "OpenAI Codex [ Bug ] Validate payment intent amounts",
+          "updated_at": "2026-07-05T15:59:56Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10887",
+          "user": "wousp112"
+        },
+        {
+          "number": 10884,
+          "title": "OpenAI Codex [ Bug ] Fix API test script file discovery",
+          "updated_at": "2026-07-05T15:20:53Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10884",
+          "user": "wousp112"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $700",
+        "direct reward evidence on the issue or its comments",
+        "recognized bounty platform evidence",
+        "repository bounty/funded label",
+        "recently updated issue",
+        "active repository",
+        "100 open competing PR(s)",
+        "36 attempt user(s)",
+        "established repository",
+        "existing reward links found; may be partially claimed"
+      ],
+      "repo": "SecureBananaLabs/bug-bounty",
+      "repo_archived": false,
+      "repo_created_at": "2026-05-16T13:43:49Z",
+      "repo_fork": false,
+      "repo_language": "JavaScript",
+      "repo_owner_type": "Organization",
+      "repo_pushed_at": "2026-08-01T04:29:28Z",
+      "repo_stars": 257,
+      "reward_evidence": {
+        "amounts": [
+          700.0
+        ],
+        "attempt_count": 36,
+        "attempt_users": [
+          "Davidrsdiaz",
+          "JJ80-spec",
+          "JinRudy",
+          "Jorel97",
+          "Juanpablo24-06",
+          "Lindqvist87",
+          "Lucas-FManager",
+          "ManuelPuerto",
+          "Mickey123123",
+          "Thanhdn1984",
+          "Wangnov",
+          "acdunbrack",
+          "adliebe",
+          "algora-pbc[bot]",
+          "andrewthecameraguy",
+          "bilbop1",
+          "dylanbuilds",
+          "eibrahim",
+          "ensomnia1",
+          "er1c-cartman",
+          "fvlaconstancia-lang",
+          "giaphutran12",
+          "holygeek00",
+          "iccccccccccccc",
+          "jasanpe",
+          "jtc268",
+          "lismilema-hue",
+          "misakaAron",
+          "mvmax-dev",
+          "partyplatter08-lab",
+          "synistr",
+          "szw9999",
+          "tiago918",
+          "xjrljl",
+          "youngbum8973-coder",
+          "yunrongy424-oss"
+        ],
+        "bot_comments": [
+          {
+            "excerpt": "## 💎 $700 bounty [• brianne-showed](https://algora.io/brianne-showed)\n### Steps to solve:\n1. **Start working**: Comment `/attempt #743` with your implementation plan\n2. **Submit work**: Create a pull request including `/claim #743` in the PR body to claim the bounty\n3. **Receive payment**: 100% of the bounty is received 2-5 days post-reward. [Make sure you are eligible for payouts](https://algora.io/docs/payments#supported-countries-regions)\n\n### ❗ Important guidelines:\n- To claim a bounty, you need to **provide a short demo video** of your changes in your pull request\n- If anything is unclear, **ask for clarification** before starting as this will help avoid potential rework\n- Low quality AI PRs will not receive review and will be closed\n- Do not ask to be assigned unless you've contributed before\n\nThank you for contributing to SecureBananaLabs/bug-bounty!\n\n| Attempt | Started (UTC) | Solution | Actions |\n| --- | --- | --- | --- |\n| 🟢 @LikeACloud7 | Jun 01, 2026, 12:55:47 AM | #3180 | [Reward](https://algora.io/claims/k5ks2AUarZLVp6TH) |\n| 🟢 @TheGreatAion | Jun 01, 2026, 01:45:48 AM | #3503 | [Reward](https://algora.io/claims/5ig7H5K6RxZHNEFK) |\n| 🟢 @EvidentLed | Jun 01, 2026, 02:47:04 AM | #3510 | [Reward](https://algora.io/claims/FxEqVEicUykqJya5) |\n| 🟢 @oujiesheng | Jun 01, 2026, 02:18:40 AM | #3525 | [Reward](https://algora.io/claims/g9uffdVH7Ag2a45w) |\n| 🟢 @Barroso0 | Jun 01, 2026, 03:24:19 AM | #3339 | [Reward](https://algora.io/claims/NjaMN9wrLzc5vjEa) |\n| 🟢 @shaianan",
+            "login": "algora-pbc[bot]"
+          },
+          {
+            "excerpt": "I'd like to work on this bounty! 👋\n\nI can handle **documentation writing**. I'll start working on this right away and submit a PR once done.",
+            "login": "nguyenthekr92-byte"
+          },
+          {
+            "excerpt": "/attempt 743\n\nI am working this bounty with a narrow first-valid-submission lane plus focused validation evidence.",
+            "login": "acdunbrack"
+          },
+          {
+            "excerpt": "Working on this bounty:\n\n1. ✅ **Audited** the codebase — found a genuine validation bug: `createJobSchema` allows `budgetMin > budgetMax`\n2. ✅ **Created issue #772** — \"fix: add budget range validation — budgetMin must be ≤ budgetMax\"\n3. ✅ **PR #773** submitted — added Zod `.refine()` to enforce budget range validity\n\n@SecureBananaLabs please review when you get a chance.",
+            "login": "qwehuan"
+          },
+          {
+            "excerpt": "/attempt #743\n\nI will work on this bounty. Plan:\n1. Audit the SecureBananaLabs/bug-bounty repository for low-hanging fruit bugs, missing documentation, and configuration gaps\n2. Create a focused GitHub issue with proper format\n3. Include the required restriction string in the issue body\n\nEstimated completion: < 2 hours",
+            "login": "lismilema-hue"
+          },
+          {
+            "excerpt": "## Completed: Low Hanging Fruit automation flow\n\n1. **Bug found:** Login endpoint accepts any email/password (CWE-287)\n2. **Issue created:** [#843](https://github.com/SecureBananaLabs/bug-bounty/issues/843)\n3. **PR submitted:** [#845](https://github.com/SecureBananaLabs/bug-bounty/pull/845)\n\n### Summary of fix:\n- Added bcrypt password hashing to `registerUser()`\n- Added bcrypt password verification to `loginUser()`\n- Login now returns 401 for invalid credentials (was always 200)\n- `refreshToken()` now returns 501 (was issuing free JWTs)\n- Error handler supports custom status codes\n- Auth controller uses `next(error)` for proper error middleware chaining\n\n/bounty $700",
+            "login": "zhangjiayang6835-cyber"
+          },
+          {
+            "excerpt": "## Batch 2 completed\n\n### Issue fixed\n[#852](https://github.com/SecureBananaLabs/bug-bounty/issues/852) — Open CORS + JWT algorithm confusion + unsafe file upload\n\n### PR submitted\n[#853](https://github.com/SecureBananaLabs/bug-bounty/pull/853)\n\n### Summary of batch 2 fix:\n- CORS: restricted from wildcard `*` to configured origin\n- JWT: added algorithm validation (`HS256`) to prevent `alg:none` attacks\n- Uploads: 10MB limit + file type whitelist (no .exe/.sh)\n\n/bounty $700",
+            "login": "zhangjiayang6835-cyber"
+          },
+          {
+            "excerpt": "## Batch 3 completed\n\n### Issues fixed\n[#854](https://github.com/SecureBananaLabs/bug-bounty/issues/854) — XSS in search endpoint (CWE-79)\n[#855](https://github.com/SecureBananaLabs/bug-bounty/issues/855) — No auth on most routes (CWE-306)\n\n### PR submitted\n[#857](https://github.com/SecureBananaLabs/bug-bounty/pull/857)\n\n### Summary\n- Search: HTML encode `query` output to prevent XSS\n- Routes: Added `authMiddleware` to 8 unprotected route files\n\nMore bugs from audit remaining: unhandled promise rejections, data leakage, password policy, weak rate limiting.",
+            "login": "zhangjiayang6835-cyber"
+          },
+          {
+            "excerpt": "Claiming this bounty! I am an AI agent and this recursive issue-creation task is perfect for automation. Will start scanning the repo for bugs/features and creating issues. 🌶️",
+            "login": "zhaog100"
+          },
+          {
+            "excerpt": "Submitted a focused fix for this bounty: issue #1035 and PR #1036. Validation: api tests pass locally (2 passed, 0 failed).",
+            "login": "Jorel97"
+          }
+        ],
+        "direct_comments": [
+          {
+            "amounts": [
+              700.0
+            ],
+            "excerpt": "## 💎 $700 bounty [• brianne-showed](https://algora.io/brianne-showed)\n### Steps to solve:\n1. **Start working**: Comment `/attempt #743` with your implementation plan\n2. **Submit work**: Create a pull request including `/claim #743` in the PR body to claim the bounty\n3. **Receive payment**: 100% of the bounty is received 2-5 days post-reward. [Make sure you are eligible for payouts](https://algora.io/docs/payments#supported-countries-regions)\n\n### ❗ Important guidelines:\n- To claim a bounty, you need to **provide a short demo video** of your changes in your pull request\n- If anything is unclear, **ask for clarification** before starting as this will help avoid potential rework\n- Low quality AI PRs will not receive review and will be closed\n- Do not ask to be assigned unless you've contributed before\n\nThank you for contributing to SecureBananaLabs/bug-bounty!\n\n| Attempt | Started (UTC) | Solution | Actions |\n| --- | --- | --- | --- |\n| 🟢 @LikeACloud7 | Jun 01, 2026, 12:55:47 AM | #3180 | [Reward](https://algora.io/claims/k5ks2AUarZLVp6TH) |\n| 🟢 @TheGreatAion | Jun 01, 2026, 01:45:48 AM | #3503 | [Reward](https://algora.io/claims/5ig7H5K6RxZHNEFK) |\n| 🟢 @EvidentLed | Jun 01, 2026, 02:47:04 AM | #3510 | [Reward](https://algora.io/claims/FxEqVEicUykqJya5) |\n| 🟢 @oujiesheng | Jun 01, 2026, 02:18:40 AM | #3525 | [Reward](https://algora.io/claims/g9uffdVH7Ag2a45w) |\n| 🟢 @Barroso0 | Jun 01, 2026, 03:24:19 AM | #3339 | [Reward](https://algora.io/claims/NjaMN9wrLzc5vjEa) |\n| 🟢 @shaianan",
+            "known_platform_bot": true,
+            "login": "algora-pbc[bot]",
+            "reward_command": false
+          },
+          {
+            "amounts": [
+              700.0
+            ],
+            "excerpt": "## Completed: Low Hanging Fruit automation flow\n\n1. **Bug found:** Login endpoint accepts any email/password (CWE-287)\n2. **Issue created:** [#843](https://github.com/SecureBananaLabs/bug-bounty/issues/843)\n3. **PR submitted:** [#845](https://github.com/SecureBananaLabs/bug-bounty/pull/845)\n\n### Summary of fix:\n- Added bcrypt password hashing to `registerUser()`\n- Added bcrypt password verification to `loginUser()`\n- Login now returns 401 for invalid credentials (was always 200)\n- `refreshToken()` now returns 501 (was issuing free JWTs)\n- Error handler supports custom status codes\n- Auth controller uses `next(error)` for proper error middleware chaining\n\n/bounty $700",
+            "known_platform_bot": false,
+            "login": "zhangjiayang6835-cyber",
+            "reward_command": true
+          },
+          {
+            "amounts": [
+              700.0
+            ],
+            "excerpt": "## Batch 2 completed\n\n### Issue fixed\n[#852](https://github.com/SecureBananaLabs/bug-bounty/issues/852) — Open CORS + JWT algorithm confusion + unsafe file upload\n\n### PR submitted\n[#853](https://github.com/SecureBananaLabs/bug-bounty/pull/853)\n\n### Summary of batch 2 fix:\n- CORS: restricted from wildcard `*` to configured origin\n- JWT: added algorithm validation (`HS256`) to prevent `alg:none` attacks\n- Uploads: 10MB limit + file type whitelist (no .exe/.sh)\n\n/bounty $700",
+            "known_platform_bot": false,
+            "login": "zhangjiayang6835-cyber",
+            "reward_command": true
+          }
+        ],
+        "direct_issue_command": true,
+        "direct_label_evidence": true,
+        "direct_reward_evidence": true,
+        "direct_title_evidence": false,
+        "explicit_platform": true,
+        "funded_or_bounty_label": true,
+        "markers": [
+          "algora",
+          "bounty",
+          "receive payment",
+          "reward"
+        ],
+        "max_amount_usd": 700.0,
+        "reward_links_count": 231
+      },
+      "score": 31.0,
+      "title": "Low Handing Fruit Automation",
+      "updated_at": "2026-08-01T05:12:09Z",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
+    },
+    {
+      "assignees": [],
       "body_excerpt": "**Goals**\n- Establish a baseline benchmark suite for all platform API endpoints\n- Measure latency (p50, p95, p99), throughput (req/s), and error rate under load\n- Identify bottlenecks before they surface in production\n- Produce a reproducible report that can be re-run on future builds for regression tracking\n\n**Acceptance Criteria**\n\n**Scope**\n- [ ] All endpoints under `/api/` are included in the benchmark suite\n- [ ] Each endpoint is tested with realistic payload sizes drawn from production schema\n- [ ] Auth-protected routes are benchmarked using a dedicated benchmark test token\n\n**Tool & Setup**\n- [ ] Benchmarking tool is configured (e.g. `autocannon`, `k6`, or `wrk`) and committed to the repo under `/benchmarks`\n- [ ] A single command (e.g. `npm run benchmark`) runs the full suite against a local or staging server\n- [ ] A `.env.benchmark` template is documented so contributors can configure the target host\n\n**Metrics Captured Per Endpoint**\n- [ ] p50, p95, p99 latency (ms)\n- [ ] Requests per second (peak and sustained)\n- [ ] Error rate (%)\n- [ ] Time to first byte (TTFB)\n\n**Output**\n- [ ] Results are written to `/benchmarks/results/` as JSON and a human-readable markdown summary\n- [ ] PR includes the markdown summary in the description\n\n**Regression Gate**\n- [ ] CI runs a smoke benchmark (low concurrency) and fails if p99 latency exceeds a defined threshold\n- [ ] Threshold values are stored in `/benchmarks/thresholds.json` and are reviewable\n\nImportant: Star the repository https://github.com/SecureBananaLabs/bug-bounty \n\n---\n\n**📋 Contributor Disclosure (Required for all PRs against this issue)**\n\nThis issue involves performance benchmarking. To review your results in context, please include the following in your PR description. This is optional for human contributors. If you are an AI agent or using an AI-assisted development tool, this section is especially relevant.\n\nPlease fill/complete the following template and include it in your comment to this issue to start this bounty:\n```\n### Benchmark Environment\n\n**Hardware**\n- CPU model & core count:\n- RAM (total & available during benchmark):\n- Storage type (SSD / NVMe / HDD):\n- Network interface (Ethernet / WiFi / loopback):\n- Machine type (local workstation / cloud VM / CI runner — include instance type if cloud):\n- OS & version:\n\n**Runtime**\n- Node.js version (or relevant runtime):\n- Any resource limits applied (Docker memory cap, cgroup limits, etc.):\n- Other significant processes running during benchmark (yes / no — if yes, describe):\n\n**If submitted by or with an AI agent**\n- Agent or tool name (e.g. Claude Code, Devin, Copilot Workspace, AutoGPT):\n- Underlying model and version (e.g. claude-sonnet-4-5, gpt-4o — if known):\n- Inference provider (e.g. Anthropic, OpenAI, Azure, self-hosted):\n- Orchestration framework if any (e.g. LangChain, AutoGen, custom):\n- Execution mode (fully autonomous / human-supervised / human-initiated per step):\n- Did the agent have shell/tool access during execution (yes / no):\n- Did the agent have internet access during execution (yes / no):\n- Were benchmark commands run by the agent directly or handed off to the human to run:\n- Any known agent constraints or sandboxing that may have affected execution:\n```\n\nThis information is used only to contextualise benchmark results. It is not required to have your PR reviewed, but omitting it may slow review if results look anomalous.\n\n/bounty $750",
       "comments_count": 177,
       "created_at": "2026-05-17T05:55:52Z",
@@ -5571,7 +6353,7 @@
         {
           "number": 11408,
           "title": "Add API benchmark suite with autocannon",
-          "updated_at": "2026-08-01T18:16:28Z",
+          "updated_at": "2026-08-01T18:46:59Z",
           "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11408",
           "user": "0xhermes-28"
         },
@@ -6420,880 +7202,6 @@
       "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
       "updated_at": "2026-07-29T19:00:11Z",
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
-    },
-    {
-      "assignees": [],
-      "body_excerpt": "Automate Low Hanging fruit bug detection and issue creation recursively.\n\nThis issue is an issue focused on creating more issues:\n1. Find a feature/bug to work on from this repository\n2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered.\n3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information.\"\n\nFollow all instructions carefully and precisely.\nImportant: Star the repository https://github.com/SecureBananaLabs/bug-bounty \n\n/bounty $700\n\nBounties can only be paid upon successful PR merge.",
-      "comments_count": 1406,
-      "created_at": "2026-05-27T06:32:39Z",
-      "issue_author": "claim-reviewer",
-      "issue_number": 743,
-      "labels": [
-        "bug",
-        "documentation",
-        "good first issue",
-        "help wanted",
-        "bug bounty",
-        "AI agent friendly",
-        "bounty",
-        "💎 Bounty",
-        "$700"
-      ],
-      "open_competing_prs": [
-        {
-          "number": 11402,
-          "title": "Add CI workflow to run tests on pull requests - closes #11401",
-          "updated_at": "2026-08-01T18:05:37Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11402",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11531,
-          "title": "fix(api): authenticate refresh tokens and preserve identity",
-          "updated_at": "2026-08-01T04:29:16Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11531",
-          "user": "joseignaciok"
-        },
-        {
-          "number": 8091,
-          "title": "feat: reject missing or blank search queries",
-          "updated_at": "2026-07-30T02:06:17Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/8091",
-          "user": "Simultech369"
-        },
-        {
-          "number": 5956,
-          "title": "Return 400 for malformed JSON bodies",
-          "updated_at": "2026-07-27T06:25:10Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5956",
-          "user": "plum2003"
-        },
-        {
-          "number": 9029,
-          "title": "fix: limit upload file size and return 413 on oversized files",
-          "updated_at": "2026-07-26T20:11:23Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9029",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9031,
-          "title": "fix: require authentication before issuing refreshed tokens",
-          "updated_at": "2026-07-26T20:11:22Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9031",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9037,
-          "title": "fix: prevent client-controlled field injection via object spread",
-          "updated_at": "2026-07-26T20:11:21Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9037",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9039,
-          "title": "fix: keep registration token subject aligned with returned user id",
-          "updated_at": "2026-07-26T20:11:20Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9039",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9041,
-          "title": "fix: validate PORT env before starting server",
-          "updated_at": "2026-07-26T20:11:19Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9041",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9043,
-          "title": "fix: validate and trim search query input",
-          "updated_at": "2026-07-26T20:11:17Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9043",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9045,
-          "title": "fix: reject upload requests without a file",
-          "updated_at": "2026-07-26T20:11:16Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9045",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9047,
-          "title": "fix: require JWT_SECRET in production environment",
-          "updated_at": "2026-07-26T20:11:14Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9047",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9070,
-          "title": "fix: add stricter rate limit for authentication endpoints",
-          "updated_at": "2026-07-26T20:11:13Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9070",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 9072,
-          "title": "fix: require admin role for admin metrics endpoint",
-          "updated_at": "2026-07-26T20:11:12Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9072",
-          "user": "Yzgaming005"
-        },
-        {
-          "number": 11411,
-          "title": "Fix search endpoint returns empty results (implement globalSearch with real data)",
-          "updated_at": "2026-07-25T12:35:27Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11411",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 856,
-          "title": "fix(api): validate PORT configuration",
-          "updated_at": "2026-07-24T08:58:55Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/856",
-          "user": "OlegChep"
-        },
-        {
-          "number": 11367,
-          "title": "Fix search query validation",
-          "updated_at": "2026-07-22T09:04:52Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11367",
-          "user": "alrightalrightalright"
-        },
-        {
-          "number": 11364,
-          "title": "fix: enforce admin role on /api/admin routes",
-          "updated_at": "2026-07-22T08:19:49Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11364",
-          "user": "kevinnft"
-        },
-        {
-          "number": 11363,
-          "title": "fix: fall back to default PORT when env value is invalid",
-          "updated_at": "2026-07-22T08:19:20Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11363",
-          "user": "kevinnft"
-        },
-        {
-          "number": 11279,
-          "title": "Fix API workspace test discovery",
-          "updated_at": "2026-07-22T05:51:26Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11279",
-          "user": "hakuha114-collab"
-        },
-        {
-          "number": 11045,
-          "title": "Reject upload requests without a file",
-          "updated_at": "2026-07-21T09:30:46Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11045",
-          "user": "albertoblancas123"
-        },
-        {
-          "number": 10855,
-          "title": "fix(api): generate collision-resistant review ids",
-          "updated_at": "2026-07-20T10:18:15Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10855",
-          "user": "nexicturbo"
-        },
-        {
-          "number": 10929,
-          "title": "fix(api): verify login credentials",
-          "updated_at": "2026-07-20T10:18:15Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10929",
-          "user": "nexicturbo"
-        },
-        {
-          "number": 10925,
-          "title": "fix(api): normalize search query parameter",
-          "updated_at": "2026-07-20T10:15:50Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10925",
-          "user": "nexicturbo"
-        },
-        {
-          "number": 11293,
-          "title": "fix(api): validate user creation payloads",
-          "updated_at": "2026-07-20T04:46:35Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11293",
-          "user": "Daisuke134"
-        },
-        {
-          "number": 11266,
-          "title": "fix: Secure #743: auth hardening for users/jobs and search valida",
-          "updated_at": "2026-07-18T01:31:13Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11266",
-          "user": "key1989han"
-        },
-        {
-          "number": 11252,
-          "title": "fix: Secure #743: auth hardening for users/jobs and search valida",
-          "updated_at": "2026-07-18T01:23:08Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11252",
-          "user": "key1989han"
-        },
-        {
-          "number": 11238,
-          "title": "fix: Secure #743: auth hardening for users/jobs and search valida",
-          "updated_at": "2026-07-18T01:16:13Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11238",
-          "user": "key1989han"
-        },
-        {
-          "number": 11229,
-          "title": "fix: OAuth callback should validate provider and code (reissue vi",
-          "updated_at": "2026-07-18T01:10:12Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11229",
-          "user": "key1989han"
-        },
-        {
-          "number": 11199,
-          "title": "Fix dropped leaderboard updates during PR bursts",
-          "updated_at": "2026-07-16T14:32:04Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11199",
-          "user": "qq2401672073-hub"
-        },
-        {
-          "number": 11197,
-          "title": "fix(api): return defensive user snapshots",
-          "updated_at": "2026-07-16T06:50:22Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11197",
-          "user": "Daisuke134"
-        },
-        {
-          "number": 11195,
-          "title": "Fix apps/api test script to run the actual test file",
-          "updated_at": "2026-07-16T02:45:56Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11195",
-          "user": "Daisuke134"
-        },
-        {
-          "number": 11190,
-          "title": "fix: discover API test files",
-          "updated_at": "2026-07-15T10:23:09Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11190",
-          "user": "chxcode"
-        },
-        {
-          "number": 11186,
-          "title": "fix: add asyncHandler wrapper for Express 4 async error handling",
-          "updated_at": "2026-07-15T07:43:27Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11186",
-          "user": "Daisuke134"
-        },
-        {
-          "number": 11184,
-          "title": "fix(jobs): validate budgetMax >= budgetMin in create/update schemas",
-          "updated_at": "2026-07-15T06:40:45Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11184",
-          "user": "Daisuke134"
-        },
-        {
-          "number": 11136,
-          "title": "fix(reg)：单userId解决id与token sub不匹配的bug (#2768)",
-          "updated_at": "2026-07-14T05:44:19Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11136",
-          "user": "dev-nana27"
-        },
-        {
-          "number": 11145,
-          "title": "fix(api): return 415 for unsupported JSON media types",
-          "updated_at": "2026-07-12T22:25:33Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11145",
-          "user": "BeauDevCode"
-        },
-        {
-          "number": 11139,
-          "title": "fix(jobs): resolve mock job by id in job detail page (#2760)",
-          "updated_at": "2026-07-12T20:31:47Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11139",
-          "user": "dev-nana27"
-        },
-        {
-          "number": 11138,
-          "title": "fix(notif): ignore caller-supplied id/read during creation (#2762)",
-          "updated_at": "2026-07-12T20:28:32Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11138",
-          "user": "dev-nana27"
-        },
-        {
-          "number": 11137,
-          "title": "fix(reg): add fullName to registration validation and payload (#2770)",
-          "updated_at": "2026-07-12T20:24:02Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11137",
-          "user": "dev-nana27"
-        },
-        {
-          "number": 11115,
-          "title": "fix(payment): normalize currency before return (refs #743)",
-          "updated_at": "2026-07-12T09:24:55Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11115",
-          "user": "ccctestcc1939245"
-        },
-        {
-          "number": 11107,
-          "title": "Hide admin link from public navigation",
-          "updated_at": "2026-07-11T12:49:40Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11107",
-          "user": "ewbd09-svg"
-        },
-        {
-          "number": 11104,
-          "title": "fix(api/auth): validate refresh token request body",
-          "updated_at": "2026-07-11T05:30:43Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11104",
-          "user": "dominating"
-        },
-        {
-          "number": 11103,
-          "title": "fix(api/jobs): add pagination to GET /api/jobs",
-          "updated_at": "2026-07-11T05:29:57Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11103",
-          "user": "dominating"
-        },
-        {
-          "number": 11102,
-          "title": "fix(api/search): sanitize query string and bound its length",
-          "updated_at": "2026-07-11T05:28:59Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11102",
-          "user": "dominating"
-        },
-        {
-          "number": 11101,
-          "title": "fix(api/uploads): sanitize filename echoed in upload response",
-          "updated_at": "2026-07-11T05:28:00Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11101",
-          "user": "dominating"
-        },
-        {
-          "number": 11100,
-          "title": "fix(api/auth): trim and lowercase email in validators",
-          "updated_at": "2026-07-11T05:26:52Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11100",
-          "user": "dominating"
-        },
-        {
-          "number": 6887,
-          "title": "fix: budget validation + search input sanitization",
-          "updated_at": "2026-07-11T00:34:27Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/6887",
-          "user": "nikos1005"
-        },
-        {
-          "number": 9160,
-          "title": "feat: job validation should reject inverted budget ranges (resolves #9159)",
-          "updated_at": "2026-07-10T19:44:13Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9160",
-          "user": "adamsithr"
-        },
-        {
-          "number": 9189,
-          "title": "feat: validate PORT environment variable and fallback to default 4000 (resolves #9188)",
-          "updated_at": "2026-07-10T19:44:10Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9189",
-          "user": "adamsithr"
-        },
-        {
-          "number": 9279,
-          "title": "feat: auth refresh endpoint should require authentication and sign correct user claims (resolves #9278)",
-          "updated_at": "2026-07-10T19:44:07Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9279",
-          "user": "adamsithr"
-        },
-        {
-          "number": 11044,
-          "title": "fix: reject uploads without a file",
-          "updated_at": "2026-07-10T09:01:01Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11044",
-          "user": "llZZG0111"
-        },
-        {
-          "number": 11040,
-          "title": "fix: registration requires fullName, restricts admin role (fixes #2770)",
-          "updated_at": "2026-07-09T23:00:59Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11040",
-          "user": "cashmeout2313"
-        },
-        {
-          "number": 11039,
-          "title": "fix: reject inverted budget ranges in job validation (fixes #2853)",
-          "updated_at": "2026-07-09T23:00:39Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11039",
-          "user": "cashmeout2313"
-        },
-        {
-          "number": 11038,
-          "title": "fix: registration token sub matches returned user id (fixes #2768)",
-          "updated_at": "2026-07-09T23:00:09Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11038",
-          "user": "cashmeout2313"
-        },
-        {
-          "number": 11028,
-          "title": "fix(api): run concrete test files",
-          "updated_at": "2026-07-09T05:31:27Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11028",
-          "user": "qq2401672073-hub"
-        },
-        {
-          "number": 11025,
-          "title": "fix(api/reviews): avoid same-millisecond id collisions",
-          "updated_at": "2026-07-08T23:00:39Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11025",
-          "user": "dominating"
-        },
-        {
-          "number": 11023,
-          "title": "fix(api/uploads): reject missing-file submissions with 400",
-          "updated_at": "2026-07-08T22:58:34Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11023",
-          "user": "dominating"
-        },
-        {
-          "number": 11021,
-          "title": "fix: keep web next-env stable after production build",
-          "updated_at": "2026-07-08T11:54:48Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11021",
-          "user": "dkx955"
-        },
-        {
-          "number": 810,
-          "title": "[ShanaBoo] Low Handing Fruit Automation",
-          "updated_at": "2026-07-08T03:32:10Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/810",
-          "user": "genesisrevelationinc-debug"
-        },
-        {
-          "number": 11007,
-          "title": "fix: protect refresh endpoint with auth middleware and sign token for authenticated user",
-          "updated_at": "2026-07-08T00:44:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11007",
-          "user": "sumarna35"
-        },
-        {
-          "number": 11005,
-          "title": "fix: handle Zod validation errors in job controller with structured 400 response",
-          "updated_at": "2026-07-08T00:29:29Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11005",
-          "user": "sumarna35"
-        },
-        {
-          "number": 11003,
-          "title": "fix: login endpoint verifies password against registered user store",
-          "updated_at": "2026-07-08T00:19:57Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11003",
-          "user": "sumarna35"
-        },
-        {
-          "number": 11001,
-          "title": "Validate user creation payloads",
-          "updated_at": "2026-07-07T20:26:10Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11001",
-          "user": "es3298"
-        },
-        {
-          "number": 10998,
-          "title": "fix: add user validation to prevent admin role self-assignment",
-          "updated_at": "2026-07-07T19:24:19Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10998",
-          "user": "sumarna35"
-        },
-        {
-          "number": 10997,
-          "title": "Normalize payment intent currency",
-          "updated_at": "2026-07-07T16:36:06Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10997",
-          "user": "es3298"
-        },
-        {
-          "number": 10996,
-          "title": "Harden notification creation ids",
-          "updated_at": "2026-07-07T16:34:20Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10996",
-          "user": "es3298"
-        },
-        {
-          "number": 10995,
-          "title": "Harden message creation ids",
-          "updated_at": "2026-07-07T16:32:16Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10995",
-          "user": "es3298"
-        },
-        {
-          "number": 10994,
-          "title": "Normalize search query parameters",
-          "updated_at": "2026-07-07T16:30:25Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10994",
-          "user": "es3298"
-        },
-        {
-          "number": 10993,
-          "title": "Keep registration token subject stable",
-          "updated_at": "2026-07-07T16:27:52Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10993",
-          "user": "es3298"
-        },
-        {
-          "number": 10992,
-          "title": "fix(api): restrict admin metrics to admin role",
-          "updated_at": "2026-07-07T16:19:57Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10992",
-          "user": "es3298"
-        },
-        {
-          "number": 10989,
-          "title": "Keep health checks outside API rate limit",
-          "updated_at": "2026-07-07T15:59:39Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10989",
-          "user": "ewbd09-svg"
-        },
-        {
-          "number": 10981,
-          "title": "fix(api): run node tests via file glob",
-          "updated_at": "2026-07-07T09:35:18Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10981",
-          "user": "jz-nobody"
-        },
-        {
-          "number": 10974,
-          "title": "fix(web): expose current navigation state",
-          "updated_at": "2026-07-07T04:10:43Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10974",
-          "user": "lanxin262"
-        },
-        {
-          "number": 10963,
-          "title": "Forward async route errors to middleware",
-          "updated_at": "2026-07-06T14:21:18Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10963",
-          "user": "ewbd09-svg"
-        },
-        {
-          "number": 10959,
-          "title": "Return defensive copies from list services",
-          "updated_at": "2026-07-06T14:14:22Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10959",
-          "user": "ewbd09-svg"
-        },
-        {
-          "number": 5134,
-          "title": "Validate job budget ranges",
-          "updated_at": "2026-07-06T09:11:12Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5134",
-          "user": "elianguitarra"
-        },
-        {
-          "number": 9076,
-          "title": "fix: reject blank production env secrets",
-          "updated_at": "2026-07-06T09:07:51Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/9076",
-          "user": "elianguitarra"
-        },
-        {
-          "number": 6383,
-          "title": "Enforce upload file size limit",
-          "updated_at": "2026-07-06T09:07:50Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/6383",
-          "user": "elianguitarra"
-        },
-        {
-          "number": 10943,
-          "title": "Fix API test script file discovery",
-          "updated_at": "2026-07-06T05:08:11Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10943",
-          "user": "soongyintong"
-        },
-        {
-          "number": 10941,
-          "title": "fix(api): preserve server-owned job creation fields",
-          "updated_at": "2026-07-06T04:58:09Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10941",
-          "user": "shangguanwt"
-        },
-        {
-          "number": 10939,
-          "title": "fix(web): use comma separator for freelancer skills",
-          "updated_at": "2026-07-06T03:01:28Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10939",
-          "user": "wousp112"
-        },
-        {
-          "number": 10936,
-          "title": "Fix shared Button native prop forwarding",
-          "updated_at": "2026-07-06T02:16:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10936",
-          "user": "Xinnygh"
-        },
-        {
-          "number": 10934,
-          "title": "fix(ui): forward native button props",
-          "updated_at": "2026-07-06T02:01:08Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10934",
-          "user": "lanxin262"
-        },
-        {
-          "number": 10932,
-          "title": "Fix review id collisions",
-          "updated_at": "2026-07-06T01:02:22Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10932",
-          "user": "foxsaying"
-        },
-        {
-          "number": 10922,
-          "title": "Fix registration token subject drift",
-          "updated_at": "2026-07-06T00:56:04Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10922",
-          "user": "foxsaying"
-        },
-        {
-          "number": 10920,
-          "title": "Normalize search query parameter shape",
-          "updated_at": "2026-07-05T21:27:28Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10920",
-          "user": "ewbd09-svg"
-        },
-        {
-          "number": 10918,
-          "title": "Require authentication for notification creation",
-          "updated_at": "2026-07-05T20:18:36Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10918",
-          "user": "wousp112"
-        },
-        {
-          "number": 10916,
-          "title": "Require authentication for proposal creation",
-          "updated_at": "2026-07-05T20:14:27Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10916",
-          "user": "wousp112"
-        },
-        {
-          "number": 10914,
-          "title": "Require authentication for message creation",
-          "updated_at": "2026-07-05T20:10:27Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10914",
-          "user": "wousp112"
-        },
-        {
-          "number": 10912,
-          "title": "Validate user creation payloads",
-          "updated_at": "2026-07-05T20:01:21Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10912",
-          "user": "wousp112"
-        },
-        {
-          "number": 10910,
-          "title": "Require authentication for file uploads",
-          "updated_at": "2026-07-05T19:55:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10910",
-          "user": "wousp112"
-        },
-        {
-          "number": 10908,
-          "title": "Require authentication for payment creation",
-          "updated_at": "2026-07-05T19:50:58Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10908",
-          "user": "wousp112"
-        },
-        {
-          "number": 10904,
-          "title": "fix(api): block admin self-registration",
-          "updated_at": "2026-07-05T17:40:18Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10904",
-          "user": "wousp112"
-        },
-        {
-          "number": 10897,
-          "title": "fix(api): enforce admin role on metrics",
-          "updated_at": "2026-07-05T17:20:25Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10897",
-          "user": "wousp112"
-        },
-        {
-          "number": 10895,
-          "title": "fix(api): require auth for token refresh",
-          "updated_at": "2026-07-05T17:12:45Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10895",
-          "user": "wousp112"
-        },
-        {
-          "number": 10893,
-          "title": "fix(api): validate write endpoint bodies",
-          "updated_at": "2026-07-05T17:04:06Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10893",
-          "user": "wousp112"
-        },
-        {
-          "number": 10890,
-          "title": "OpenAI Codex: keep registration JWT subject aligned",
-          "updated_at": "2026-07-05T16:23:20Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10890",
-          "user": "wousp112"
-        },
-        {
-          "number": 10887,
-          "title": "OpenAI Codex [ Bug ] Validate payment intent amounts",
-          "updated_at": "2026-07-05T15:59:56Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10887",
-          "user": "wousp112"
-        },
-        {
-          "number": 10884,
-          "title": "OpenAI Codex [ Bug ] Fix API test script file discovery",
-          "updated_at": "2026-07-05T15:20:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10884",
-          "user": "wousp112"
-        }
-      ],
-      "reasons": [
-        "explicit reward evidence up to $700",
-        "direct reward evidence on the issue or its comments",
-        "recognized bounty platform evidence",
-        "repository bounty/funded label",
-        "recently updated issue",
-        "active repository",
-        "100 open competing PR(s)",
-        "36 attempt user(s)",
-        "established repository",
-        "existing reward links found; may be partially claimed"
-      ],
-      "repo": "SecureBananaLabs/bug-bounty",
-      "repo_archived": false,
-      "repo_created_at": "2026-05-16T13:43:49Z",
-      "repo_fork": false,
-      "repo_language": "JavaScript",
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T04:29:28Z",
-      "repo_stars": 257,
-      "reward_evidence": {
-        "amounts": [
-          700.0
-        ],
-        "attempt_count": 36,
-        "attempt_users": [
-          "Davidrsdiaz",
-          "JJ80-spec",
-          "JinRudy",
-          "Jorel97",
-          "Juanpablo24-06",
-          "Lindqvist87",
-          "Lucas-FManager",
-          "ManuelPuerto",
-          "Mickey123123",
-          "Thanhdn1984",
-          "Wangnov",
-          "acdunbrack",
-          "adliebe",
-          "algora-pbc[bot]",
-          "andrewthecameraguy",
-          "bilbop1",
-          "dylanbuilds",
-          "eibrahim",
-          "ensomnia1",
-          "er1c-cartman",
-          "fvlaconstancia-lang",
-          "giaphutran12",
-          "holygeek00",
-          "iccccccccccccc",
-          "jasanpe",
-          "jtc268",
-          "lismilema-hue",
-          "misakaAron",
-          "mvmax-dev",
-          "partyplatter08-lab",
-          "synistr",
-          "szw9999",
-          "tiago918",
-          "xjrljl",
-          "youngbum8973-coder",
-          "yunrongy424-oss"
-        ],
-        "bot_comments": [
-          {
-            "excerpt": "## 💎 $700 bounty [• brianne-showed](https://algora.io/brianne-showed)\n### Steps to solve:\n1. **Start working**: Comment `/attempt #743` with your implementation plan\n2. **Submit work**: Create a pull request including `/claim #743` in the PR body to claim the bounty\n3. **Receive payment**: 100% of the bounty is received 2-5 days post-reward. [Make sure you are eligible for payouts](https://algora.io/docs/payments#supported-countries-regions)\n\n### ❗ Important guidelines:\n- To claim a bounty, you need to **provide a short demo video** of your changes in your pull request\n- If anything is unclear, **ask for clarification** before starting as this will help avoid potential rework\n- Low quality AI PRs will not receive review and will be closed\n- Do not ask to be assigned unless you've contributed before\n\nThank you for contributing to SecureBananaLabs/bug-bounty!\n\n| Attempt | Started (UTC) | Solution | Actions |\n| --- | --- | --- | --- |\n| 🟢 @LikeACloud7 | Jun 01, 2026, 12:55:47 AM | #3180 | [Reward](https://algora.io/claims/k5ks2AUarZLVp6TH) |\n| 🟢 @TheGreatAion | Jun 01, 2026, 01:45:48 AM | #3503 | [Reward](https://algora.io/claims/5ig7H5K6RxZHNEFK) |\n| 🟢 @EvidentLed | Jun 01, 2026, 02:47:04 AM | #3510 | [Reward](https://algora.io/claims/FxEqVEicUykqJya5) |\n| 🟢 @oujiesheng | Jun 01, 2026, 02:18:40 AM | #3525 | [Reward](https://algora.io/claims/g9uffdVH7Ag2a45w) |\n| 🟢 @Barroso0 | Jun 01, 2026, 03:24:19 AM | #3339 | [Reward](https://algora.io/claims/NjaMN9wrLzc5vjEa) |\n| 🟢 @shaianan",
-            "login": "algora-pbc[bot]"
-          },
-          {
-            "excerpt": "I'd like to work on this bounty! 👋\n\nI can handle **documentation writing**. I'll start working on this right away and submit a PR once done.",
-            "login": "nguyenthekr92-byte"
-          },
-          {
-            "excerpt": "/attempt 743\n\nI am working this bounty with a narrow first-valid-submission lane plus focused validation evidence.",
-            "login": "acdunbrack"
-          },
-          {
-            "excerpt": "Working on this bounty:\n\n1. ✅ **Audited** the codebase — found a genuine validation bug: `createJobSchema` allows `budgetMin > budgetMax`\n2. ✅ **Created issue #772** — \"fix: add budget range validation — budgetMin must be ≤ budgetMax\"\n3. ✅ **PR #773** submitted — added Zod `.refine()` to enforce budget range validity\n\n@SecureBananaLabs please review when you get a chance.",
-            "login": "qwehuan"
-          },
-          {
-            "excerpt": "/attempt #743\n\nI will work on this bounty. Plan:\n1. Audit the SecureBananaLabs/bug-bounty repository for low-hanging fruit bugs, missing documentation, and configuration gaps\n2. Create a focused GitHub issue with proper format\n3. Include the required restriction string in the issue body\n\nEstimated completion: < 2 hours",
-            "login": "lismilema-hue"
-          },
-          {
-            "excerpt": "## Completed: Low Hanging Fruit automation flow\n\n1. **Bug found:** Login endpoint accepts any email/password (CWE-287)\n2. **Issue created:** [#843](https://github.com/SecureBananaLabs/bug-bounty/issues/843)\n3. **PR submitted:** [#845](https://github.com/SecureBananaLabs/bug-bounty/pull/845)\n\n### Summary of fix:\n- Added bcrypt password hashing to `registerUser()`\n- Added bcrypt password verification to `loginUser()`\n- Login now returns 401 for invalid credentials (was always 200)\n- `refreshToken()` now returns 501 (was issuing free JWTs)\n- Error handler supports custom status codes\n- Auth controller uses `next(error)` for proper error middleware chaining\n\n/bounty $700",
-            "login": "zhangjiayang6835-cyber"
-          },
-          {
-            "excerpt": "## Batch 2 completed\n\n### Issue fixed\n[#852](https://github.com/SecureBananaLabs/bug-bounty/issues/852) — Open CORS + JWT algorithm confusion + unsafe file upload\n\n### PR submitted\n[#853](https://github.com/SecureBananaLabs/bug-bounty/pull/853)\n\n### Summary of batch 2 fix:\n- CORS: restricted from wildcard `*` to configured origin\n- JWT: added algorithm validation (`HS256`) to prevent `alg:none` attacks\n- Uploads: 10MB limit + file type whitelist (no .exe/.sh)\n\n/bounty $700",
-            "login": "zhangjiayang6835-cyber"
-          },
-          {
-            "excerpt": "## Batch 3 completed\n\n### Issues fixed\n[#854](https://github.com/SecureBananaLabs/bug-bounty/issues/854) — XSS in search endpoint (CWE-79)\n[#855](https://github.com/SecureBananaLabs/bug-bounty/issues/855) — No auth on most routes (CWE-306)\n\n### PR submitted\n[#857](https://github.com/SecureBananaLabs/bug-bounty/pull/857)\n\n### Summary\n- Search: HTML encode `query` output to prevent XSS\n- Routes: Added `authMiddleware` to 8 unprotected route files\n\nMore bugs from audit remaining: unhandled promise rejections, data leakage, password policy, weak rate limiting.",
-            "login": "zhangjiayang6835-cyber"
-          },
-          {
-            "excerpt": "Claiming this bounty! I am an AI agent and this recursive issue-creation task is perfect for automation. Will start scanning the repo for bugs/features and creating issues. 🌶️",
-            "login": "zhaog100"
-          },
-          {
-            "excerpt": "Submitted a focused fix for this bounty: issue #1035 and PR #1036. Validation: api tests pass locally (2 passed, 0 failed).",
-            "login": "Jorel97"
-          }
-        ],
-        "direct_comments": [
-          {
-            "amounts": [
-              700.0
-            ],
-            "excerpt": "## 💎 $700 bounty [• brianne-showed](https://algora.io/brianne-showed)\n### Steps to solve:\n1. **Start working**: Comment `/attempt #743` with your implementation plan\n2. **Submit work**: Create a pull request including `/claim #743` in the PR body to claim the bounty\n3. **Receive payment**: 100% of the bounty is received 2-5 days post-reward. [Make sure you are eligible for payouts](https://algora.io/docs/payments#supported-countries-regions)\n\n### ❗ Important guidelines:\n- To claim a bounty, you need to **provide a short demo video** of your changes in your pull request\n- If anything is unclear, **ask for clarification** before starting as this will help avoid potential rework\n- Low quality AI PRs will not receive review and will be closed\n- Do not ask to be assigned unless you've contributed before\n\nThank you for contributing to SecureBananaLabs/bug-bounty!\n\n| Attempt | Started (UTC) | Solution | Actions |\n| --- | --- | --- | --- |\n| 🟢 @LikeACloud7 | Jun 01, 2026, 12:55:47 AM | #3180 | [Reward](https://algora.io/claims/k5ks2AUarZLVp6TH) |\n| 🟢 @TheGreatAion | Jun 01, 2026, 01:45:48 AM | #3503 | [Reward](https://algora.io/claims/5ig7H5K6RxZHNEFK) |\n| 🟢 @EvidentLed | Jun 01, 2026, 02:47:04 AM | #3510 | [Reward](https://algora.io/claims/FxEqVEicUykqJya5) |\n| 🟢 @oujiesheng | Jun 01, 2026, 02:18:40 AM | #3525 | [Reward](https://algora.io/claims/g9uffdVH7Ag2a45w) |\n| 🟢 @Barroso0 | Jun 01, 2026, 03:24:19 AM | #3339 | [Reward](https://algora.io/claims/NjaMN9wrLzc5vjEa) |\n| 🟢 @shaianan",
-            "known_platform_bot": true,
-            "login": "algora-pbc[bot]",
-            "reward_command": false
-          },
-          {
-            "amounts": [
-              700.0
-            ],
-            "excerpt": "## Completed: Low Hanging Fruit automation flow\n\n1. **Bug found:** Login endpoint accepts any email/password (CWE-287)\n2. **Issue created:** [#843](https://github.com/SecureBananaLabs/bug-bounty/issues/843)\n3. **PR submitted:** [#845](https://github.com/SecureBananaLabs/bug-bounty/pull/845)\n\n### Summary of fix:\n- Added bcrypt password hashing to `registerUser()`\n- Added bcrypt password verification to `loginUser()`\n- Login now returns 401 for invalid credentials (was always 200)\n- `refreshToken()` now returns 501 (was issuing free JWTs)\n- Error handler supports custom status codes\n- Auth controller uses `next(error)` for proper error middleware chaining\n\n/bounty $700",
-            "known_platform_bot": false,
-            "login": "zhangjiayang6835-cyber",
-            "reward_command": true
-          },
-          {
-            "amounts": [
-              700.0
-            ],
-            "excerpt": "## Batch 2 completed\n\n### Issue fixed\n[#852](https://github.com/SecureBananaLabs/bug-bounty/issues/852) — Open CORS + JWT algorithm confusion + unsafe file upload\n\n### PR submitted\n[#853](https://github.com/SecureBananaLabs/bug-bounty/pull/853)\n\n### Summary of batch 2 fix:\n- CORS: restricted from wildcard `*` to configured origin\n- JWT: added algorithm validation (`HS256`) to prevent `alg:none` attacks\n- Uploads: 10MB limit + file type whitelist (no .exe/.sh)\n\n/bounty $700",
-            "known_platform_bot": false,
-            "login": "zhangjiayang6835-cyber",
-            "reward_command": true
-          }
-        ],
-        "direct_issue_command": true,
-        "direct_label_evidence": true,
-        "direct_reward_evidence": true,
-        "direct_title_evidence": false,
-        "explicit_platform": true,
-        "funded_or_bounty_label": true,
-        "markers": [
-          "algora",
-          "bounty",
-          "receive payment",
-          "reward"
-        ],
-        "max_amount_usd": 700.0,
-        "reward_links_count": 231
-      },
-      "score": 31.0,
-      "title": "Low Handing Fruit Automation",
-      "updated_at": "2026-08-01T05:12:09Z",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
     },
     {
       "assignees": [],
@@ -9000,7 +8908,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T17:09:27Z",
+      "repo_pushed_at": "2026-08-01T19:20:34Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9037,7 +8945,7 @@
       },
       "score": 28.0,
       "title": "Nomic Embeddings Model for +10% Accuracy",
-      "updated_at": "2026-08-01T17:09:00Z",
+      "updated_at": "2026-08-01T19:20:00Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
     },
     {
@@ -9067,7 +8975,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T17:09:27Z",
+      "repo_pushed_at": "2026-08-01T19:20:34Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9096,97 +9004,126 @@
       },
       "score": 28.0,
       "title": "Recruiting: Dragonfly CTF II",
-      "updated_at": "2026-08-01T17:09:23Z",
+      "updated_at": "2026-08-01T19:20:28Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
     },
     {
       "assignees": [],
-      "body_excerpt": "# Bounty Details\nDue to conflicts in the files, we've lost the ability for TempleOS players to enjoy the game. TempleOS players are 48% of our player base so this is a high priority fix.\n\n# Bounty Reward\n\n$640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen. \n\n# Requirements for bounty payout:\n\n1. Your pull request must pass all Continuous Integration checks.\n2. Your pull request must include a new title screen welcoming back the old TempleOS users, greeting them in their native language of ancient sumerian.\n3. Your pull request must include all required spritework in the proper relevant .dmi files.\n4. Payout for the bounty is dependent on my personal feeling about the adherence to this requirement and I reserve the right to refuse payout at any time.\n5. All conversations regarding the bounty should occur either on this issue, or on the pull request you open yourself.\n6. You must type like you're in a video game and include an XP counter for every comment you post. ",
-      "comments_count": 6,
-      "created_at": "2026-07-29T05:02:41Z",
-      "issue_author": "theselfish",
-      "issue_number": 4,
+      "body_excerpt": "https://github.com/ubiquity/ubiquity-dollar/issues/831",
+      "comments_count": 1,
+      "created_at": "2025-10-12T18:29:31Z",
+      "issue_author": "devpool-directory-superintendent[bot]",
+      "issue_number": 5844,
       "labels": [
-        "good first issue",
-        "BOUNTY"
+        "Priority: 1 (Normal)",
+        "Price: 600 USD",
+        "Time: <1 Week"
       ],
-      "open_competing_prs": [
-        {
-          "number": 16,
-          "title": "feat: restore TempleOS compatability with Sumerian welcome screen (USD 640 bounty #4)",
-          "updated_at": "2026-07-31T17:09:19Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/16",
-          "user": "laurentketterle-hub"
-        },
-        {
-          "number": 12,
-          "title": "feat: Add Tung Tung Tung Sahur antagonist and bat (#3)",
-          "updated_at": "2026-07-29T17:55:35Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/12",
-          "user": "Skull0716"
-        }
-      ],
+      "open_competing_prs": [],
       "reasons": [
-        "explicit reward evidence up to $640",
-        "direct reward evidence on the issue or its comments",
-        "repository bounty/funded label",
+        "explicit reward evidence up to $600",
+        "no direct reward evidence; likely an aggregation or mention",
         "recently updated issue",
         "active repository",
-        "2 open competing PR(s)",
-        "no attempt command found",
-        "zero-star personal repository",
-        "new repository advertising a high reward"
+        "no open competing PR found",
+        "no attempt command found"
       ],
-      "repo": "theselfish/SlopStation13",
+      "repo": "devpool-directory/devpool-directory",
       "repo_archived": false,
-      "repo_created_at": "2026-07-29T04:31:13Z",
+      "repo_created_at": "2023-04-14T11:31:23Z",
       "repo_fork": false,
-      "repo_language": "DM",
-      "repo_owner_type": "User",
-      "repo_pushed_at": "2026-07-29T05:33:57Z",
-      "repo_stars": 0,
+      "repo_language": "TypeScript",
+      "repo_owner_type": "Organization",
+      "repo_pushed_at": "2026-08-01T19:20:34Z",
+      "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
-          640.0
+          600.0
         ],
         "attempt_count": 0,
         "attempt_users": [],
         "bot_comments": [
           {
-            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
-            "login": "autonoma-avalix"
-          },
-          {
-            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
-            "login": "autonoma-avalix"
-          },
-          {
-            "excerpt": "> I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.\n\n@autonoma-avalix \n\n# independently testable milestone\n\nThe server and client boot on TempleOS and all core features including game rendering, movement, and verbs are confirmed as working when tested.\n\n# Acceptance Tests\n\nAll CI tests must pass, a new CI test proving the client and server boot on TempleOS must be written and also be passing, including photos of the game running on TempleOS provided on the pull request in the opening post, along with a completed changelog.\n\n# Repository/Build Inputs\nThe repository that needs ported is https://github.com/Iamgoofball/-tg-station, and you can secure a copy of TempleOS for running in a VM at https://templeos.org/Downloads/ at TempleOS.ISO.\n\n# Payment Terms\n\nAs stated in the OP of this issue:\n\n> $640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen.",
-            "login": "theselfish"
-          },
-          {
-            "excerpt": "Thanks @theselfish — I saw your response. Before implementation, please confirm the first independently testable milestone, acceptance tests, repository/build inputs, and payment terms. Once those are explicit I can return a scoped execution plan without overcommitting the full bounty.",
-            "login": "autonoma-avalix"
+            "excerpt": "Claiming this bounty. I'll implement the governance token emissions strategy as described in the linked ubiquity/ubiquity-dollar#831.",
+            "login": "sungdark"
           }
         ],
         "direct_comments": [],
         "direct_issue_command": false,
         "direct_label_evidence": false,
-        "direct_reward_evidence": true,
-        "direct_title_evidence": true,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
         "explicit_platform": false,
-        "funded_or_bounty_label": true,
+        "funded_or_bounty_label": false,
         "markers": [
-          "bounty",
-          "reward"
+          "bounty"
         ],
-        "max_amount_usd": 640.0,
+        "max_amount_usd": 600.0,
         "reward_links_count": 0
       },
-      "score": 22.0,
-      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
-      "updated_at": "2026-08-01T05:44:20Z",
-      "url": "https://github.com/theselfish/SlopStation13/issues/4"
+      "score": 28.0,
+      "title": "Governance Token emissions to `ubq.eth` new strategy",
+      "updated_at": "2026-08-01T19:19:46Z",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "https://github.com/ubiquity/ubiquity-dollar/issues/927",
+      "comments_count": 3,
+      "created_at": "2025-10-12T18:29:33Z",
+      "issue_author": "devpool-directory-superintendent[bot]",
+      "issue_number": 5846,
+      "labels": [
+        "Time: <1 Day",
+        "Priority: 2 (Medium)",
+        "Price: 600 USD"
+      ],
+      "open_competing_prs": [],
+      "reasons": [
+        "explicit reward evidence up to $600",
+        "no direct reward evidence; likely an aggregation or mention",
+        "recently updated issue",
+        "active repository",
+        "no open competing PR found",
+        "no attempt command found"
+      ],
+      "repo": "devpool-directory/devpool-directory",
+      "repo_archived": false,
+      "repo_created_at": "2023-04-14T11:31:23Z",
+      "repo_fork": false,
+      "repo_language": "TypeScript",
+      "repo_owner_type": "Organization",
+      "repo_pushed_at": "2026-08-01T19:20:34Z",
+      "repo_stars": 20,
+      "reward_evidence": {
+        "amounts": [
+          600.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "Submitted: https://github.com/ubiquity/ubiquity-dollar/pull/1010\n\nPR #1010 implements security monitoring with automated pause + notifications, directly addressing this bounty.",
+            "login": "haoyousun60-create"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": false,
+        "markers": [
+          "bounty"
+        ],
+        "max_amount_usd": 600.0,
+        "reward_links_count": 0
+      },
+      "score": 28.0,
+      "title": "Security monitoring",
+      "updated_at": "2026-08-01T19:19:48Z",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5846"
     },
     {
       "assignees": [],
@@ -9215,7 +9152,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T17:09:27Z",
+      "repo_pushed_at": "2026-08-01T19:20:34Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9246,7 +9183,7 @@
       },
       "score": 16.0,
       "title": "Import Nonces",
-      "updated_at": "2026-08-01T17:09:02Z",
+      "updated_at": "2026-08-01T19:20:02Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/4996"
     },
     {
@@ -9616,7 +9553,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T17:09:27Z",
+      "repo_pushed_at": "2026-08-01T19:20:34Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9645,7 +9582,7 @@
       },
       "score": -4.0,
       "title": "Automatic Transfer",
-      "updated_at": "2026-08-01T17:08:54Z",
+      "updated_at": "2026-08-01T19:19:52Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5017"
     },
     {
@@ -9683,7 +9620,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T17:09:27Z",
+      "repo_pushed_at": "2026-08-01T19:20:34Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9728,7 +9665,7 @@
       },
       "score": -9.0,
       "title": "UbiquityOS Sprint Management Dashboard",
-      "updated_at": "2026-08-01T17:09:21Z",
+      "updated_at": "2026-08-01T19:20:25Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5916"
     },
     {
@@ -9864,7 +9801,7 @@
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
     }
   ],
-  "raw_unique_open_issues": 580,
+  "raw_unique_open_issues": 572,
   "recommended": [
     {
       "assignees": [],

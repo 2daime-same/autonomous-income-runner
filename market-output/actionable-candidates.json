@@ -37,6 +37,7 @@
         "bot-authored issue without recognized platform evidence",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata",
         "requires private payout details to be posted publicly",
         "requires social spam or adversarial review activity",
         "reward is unusually high for the first-income target",
@@ -83,6 +84,7 @@
         "bot-authored issue without recognized platform evidence",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata",
         "requires private payout details to be posted publicly",
         "requires social spam or adversarial review activity",
         "reward is unusually high for the first-income target",
@@ -143,6 +145,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -154,6 +157,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -165,6 +169,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -176,6 +181,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -187,6 +193,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -198,6 +205,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 763,
@@ -208,6 +216,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 796,
@@ -218,6 +227,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -229,7 +239,9 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
       ],
       "issue_number": 766,
       "repo": "UnsafeLabs/Bounty-Hunters",
@@ -239,6 +251,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 758,
@@ -249,6 +262,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 795,
@@ -259,6 +273,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -270,6 +285,7 @@
     {
       "flags": [
         "an open competing pull request already exists",
+        "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
       ],
       "issue_number": 2773,
@@ -280,6 +296,7 @@
     {
       "flags": [
         "an open competing pull request already exists",
+        "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
       ],
       "issue_number": 2779,
@@ -290,6 +307,7 @@
     {
       "flags": [
         "an open competing pull request already exists",
+        "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
       ],
       "issue_number": 2776,
@@ -300,6 +318,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -311,7 +330,9 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
       ],
       "issue_number": 916,
       "repo": "UnsafeLabs/Bounty-Hunters",
@@ -321,6 +342,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 918,
@@ -331,6 +353,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -342,7 +365,9 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
       ],
       "issue_number": 914,
       "repo": "UnsafeLabs/Bounty-Hunters",
@@ -352,6 +377,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -363,6 +389,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 911,
@@ -373,6 +400,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
@@ -384,6 +412,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 913,
@@ -394,6 +423,7 @@
     {
       "flags": [
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 919,
@@ -404,6 +434,7 @@
     {
       "flags": [
         "an open competing pull request already exists",
+        "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
       ],
       "issue_number": 11398,
@@ -413,7 +444,8 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists"
+        "an open competing pull request already exists",
+        "known synthetic or adversarial bounty repository"
       ],
       "issue_number": 2845,
       "repo": "SecureBananaLabs/bug-bounty",
@@ -422,7 +454,8 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists"
+        "an open competing pull request already exists",
+        "known synthetic or adversarial bounty repository"
       ],
       "issue_number": 2847,
       "repo": "SecureBananaLabs/bug-bounty",
@@ -441,7 +474,8 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists"
+        "an open competing pull request already exists",
+        "known synthetic or adversarial bounty repository"
       ],
       "issue_number": 2850,
       "repo": "SecureBananaLabs/bug-bounty",
@@ -460,15 +494,6 @@
     },
     {
       "flags": [
-        "no direct reward evidence"
-      ],
-      "issue_number": 2648,
-      "repo": "simonmichael/hledger",
-      "title": "Support simple arithmetic expressions in posting amounts",
-      "url": "https://github.com/simonmichael/hledger/issues/2648"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "unrecognized platform on a low-reputation personal repository",
         "unrecognized platform on a repository younger than 90 days"
@@ -482,17 +507,7 @@
       "flags": [
         "an open competing pull request already exists",
         "existing reward links indicate the task may already be claimed",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 30,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 743,
@@ -504,6 +519,19 @@
       "flags": [
         "an open competing pull request already exists",
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 30,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 80,
@@ -515,6 +543,7 @@
       "flags": [
         "an open competing pull request already exists",
         "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 29,
@@ -544,14 +573,23 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
       ],
-      "issue_number": 4,
-      "repo": "theselfish/SlopStation13",
-      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
-      "url": "https://github.com/theselfish/SlopStation13/issues/4"
+      "issue_number": 5844,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Governance Token emissions to `ubq.eth` new strategy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 5846,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Security monitoring",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5846"
     },
     {
       "flags": [
@@ -669,8 +707,8 @@
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-01T18:26:22+00:00",
+  "generated_at": "2026-08-01T19:34:30+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-01T18:26:21+00:00"
+  "source_generated_at": "2026-08-01T19:34:30+00:00"
 }
