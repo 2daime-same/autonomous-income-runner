@@ -1,14 +1,7 @@
 {
   "deep_inspected": 60,
-  "excluded_aggregator_count": 69,
+  "excluded_aggregator_count": 57,
   "excluded_aggregators": [
-    {
-      "issue_number": 244,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-08-01T08:31",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/244"
-    },
     {
       "issue_number": 80,
       "reason": "body aggregates 6 external issue links",
@@ -38,144 +31,60 @@
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/59"
     },
     {
-      "issue_number": 365,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 2 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/365"
-    },
-    {
-      "issue_number": 571,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 2 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/571"
-    },
-    {
-      "issue_number": 718,
+      "issue_number": 723,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 3 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/718"
+      "title": "🎯 Bounty Alert: 9 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/723"
     },
     {
-      "issue_number": 570,
+      "issue_number": 576,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 4 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/570"
+      "title": "🎯 Bounty Alert: 9 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/576"
     },
     {
-      "issue_number": 364,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 4 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/364"
-    },
-    {
-      "issue_number": 717,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/717"
-    },
-    {
-      "issue_number": 569,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 8 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/569"
-    },
-    {
-      "issue_number": 363,
+      "issue_number": 371,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "freedom-winds/BountyScout",
       "title": "🎯 Bounty Alert: 8 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/363"
+      "url": "https://github.com/freedom-winds/BountyScout/issues/371"
     },
     {
-      "issue_number": 361,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/361"
-    },
-    {
-      "issue_number": 567,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/567"
-    },
-    {
-      "issue_number": 716,
+      "issue_number": 721,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 6 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/716"
+      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/721"
     },
     {
-      "issue_number": 568,
+      "issue_number": 575,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "vansh-09/BountyScout",
       "title": "🎯 Bounty Alert: 5 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/568"
+      "url": "https://github.com/vansh-09/BountyScout/issues/575"
     },
     {
-      "issue_number": 362,
+      "issue_number": 369,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 4 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/362"
-    },
-    {
-      "issue_number": 715,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/715"
-    },
-    {
-      "issue_number": 713,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
       "title": "🎯 Bounty Alert: 7 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/713"
+      "url": "https://github.com/freedom-winds/BountyScout/issues/369"
     },
     {
-      "issue_number": 566,
+      "issue_number": 574,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 6 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/566"
+      "title": "🎯 Bounty Alert: 9 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/574"
     },
     {
-      "issue_number": 359,
+      "issue_number": 368,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/359"
-    },
-    {
-      "issue_number": 565,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/565"
-    },
-    {
-      "issue_number": 357,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/357"
-    },
-    {
-      "issue_number": 711,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 12 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/711"
+      "title": "🎯 Bounty Alert: 9 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/368"
     },
     {
       "issue_number": 4956,
@@ -479,24 +388,31 @@
       "url": "https://github.com/freedom-winds/BountyScout/issues/196"
     },
     {
-      "issue_number": 3,
-      "reason": "body aggregates 5 external issue links",
-      "repo": "fardhanrasya/telkom-alumni-forum",
-      "title": "Peta: Sistem Currency & Aset Kosmetik",
-      "url": "https://github.com/fardhanrasya/telkom-alumni-forum/issues/3"
+      "issue_number": 130,
+      "reason": "body aggregates 7 external issue links",
+      "repo": "anagnorisis2peripeteia/raeuberkrebs",
+      "title": "Wayfinder: every execute-driven lane to a high standard (real-corpus recall + held precision)",
+      "url": "https://github.com/anagnorisis2peripeteia/raeuberkrebs/issues/130"
+    },
+    {
+      "issue_number": 3900,
+      "reason": "body aggregates 24 external issue links",
+      "repo": "paritytech/polkadot-sdk",
+      "title": "🧑‍💻 Wishlist: Developers ",
+      "url": "https://github.com/paritytech/polkadot-sdk/issues/3900"
     }
   ],
-  "generated_at": "2026-08-01T19:34:30+00:00",
-  "prefiltered_open_issues": 503,
+  "generated_at": "2026-08-02T03:53:15+00:00",
+  "prefiltered_open_issues": 538,
   "queries": [
-    "is:issue is:open label:\"💎 Bounty\" updated:>=2025-12-04",
-    "is:issue is:open label:bounty updated:>=2025-12-04",
-    "is:issue is:open label:funded updated:>=2025-12-04",
-    "is:issue is:open in:title bounty updated:>=2025-12-04",
-    "is:issue is:open \"IssueHunt\" updated:>=2025-12-04",
-    "is:issue is:open \"Opire Bounty\" updated:>=2025-12-04",
-    "is:issue is:open \"/bounty $\" updated:>=2025-12-04",
-    "is:issue is:open \"/reward \" updated:>=2025-12-04"
+    "is:issue is:open label:\"💎 Bounty\" updated:>=2025-12-05",
+    "is:issue is:open label:bounty updated:>=2025-12-05",
+    "is:issue is:open label:funded updated:>=2025-12-05",
+    "is:issue is:open in:title bounty updated:>=2025-12-05",
+    "is:issue is:open \"IssueHunt\" updated:>=2025-12-05",
+    "is:issue is:open \"Opire Bounty\" updated:>=2025-12-05",
+    "is:issue is:open \"/bounty $\" updated:>=2025-12-05",
+    "is:issue is:open \"/reward \" updated:>=2025-12-05"
   ],
   "query_errors": [],
   "ranked_candidates": [
@@ -4318,7 +4234,7 @@
         {
           "number": 11407,
           "title": "Fix errorHandler to return Zod validation error details",
-          "updated_at": "2026-08-01T18:47:05Z",
+          "updated_at": "2026-08-01T23:15:15Z",
           "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11407",
           "user": "0xhermes-28"
         },
@@ -4843,97 +4759,6 @@
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2847"
     },
     {
-      "assignees": [
-        "ayewo"
-      ],
-      "body_excerpt": "`ttnn.i0` uses a fixed 12-term Maclaurin series with no domain split, so it goes silently, finitely wrong past |x|≈14, while its sibling `ttnn.i1` already has the fix. \n\nIn `ttnn.i0`, relative error reaches: \n* 21% at x=20, \n* 89% at x=30. \n\nThe sibling `i1` kernel on the other hand already carries the standard two-region fix. \n\n### Summary\n`ttnn.i0` (modified Bessel I0) is computed by a single fixed 12-term truncated Maclaurin series with no domain branching, clamping, or asymptotic tail ([`ckernel_sfpu_i0.h`](https://github.com/tenstorrent/tt-metal/blob/c40d2ea9e47c7f7cf91a01714fec89ebb8c51d02/tt_metal/hw/ckernels/wormhole_b0/metal/llk_api/llk_sfpu/ckernel_sfpu_i0.h#L26-L54), byte-identical on Wormhole and Blackhole). \n\nIt is accurate while |x| <~ 13, then the truncation error grows without bound: measured on the Wormhole simulator, relative error reaches 2.3% at x=15, 21% at x=20, and 89% at x=30. These are all silent, finite and wrong answers well inside float32's representable range (I0 stays finite to x~88). \n\nThe sibling kernel [`ckernel_sfpu_i1.h`](https://github.com/tenstorrent/tt-metal/blob/c40d2ea9e47c7f7cf91a01714fec89ebb8c51d02/tt_metal/hw/ckernels/wormhole_b0/metal/llk_api/llk_sfpu/ckernel_sfpu_i1.h) already implements the standard fix for exactly this problem (polynomial for |x|<=10, asymptotic `exp(|x|)/√(2π|x|)·P(1/|x|)` i.e. `exp(|x|)/sqrt(2*pi*|x|)*P(1/|x|)` for |x|>10, PR #43246); `i0` was never given the same treatment.\n\n- Files: \n  - `tt_metal/hw/ckernels/wormhole_b0/metal/llk_api/llk_sfpu/ckernel_sfpu_i0.h` (WH) \n  - `tt_metal/hw/ckernels/blackhole/metal/llk_api/llk_sfpu/ckernel_sfpu_i0.h` (BH)\n- Fix template: `ckernel_sfpu_i1.h` (two-region design; PR #43246)\n- Binding asymmetry ([`unary_nanobind.cpp`](https://github.com/tenstorrent/tt-metal/blob/8c82ed67e2b138ef6a81568a16c94b5a0bd8705a/ttnn/cpp/ttnn/operations/eltwise/unary/unary_nanobind.cpp#L1731-L1743)): \n  - i0 = {BFLOAT16, BFLOAT8_B, FLOAT32}, no range note; \n  - i1 = {BFLOAT16, BFLOAT8_B}, \"[Validated range: -10 to 10]\". (The promise is inverted — i0 makes the broader dtype claim with no caveat despite being the less accurate kernel.)\n\n### Current state measured on `ttsim` (WH) \nDevice `ttnn.i0` (bf16) vs `torch.special.i0` (float64). Inputs chosen bf16-exact so input-quantization is exactly 0; I0(x) >= 1 has no zeros, so relative error is a fair metric (no near-zero inflation).\n\n| x | device i0 | true I0(x) | rel. error | regime |\n|----:|-----------:|-----------:|-----------:|--------|\n| 1.0 | 1.2656 | 1.2661 | 0.03% | bf16 floor |\n| 5.0 | 27.125 | 27.240 | 0.42% | bf16 floor |\n| 10.0 | 2800.0 | 2815.7 | 0.56% | bf16 floor / edge of tested window |\n| 13.0 | 49152 | 49444 | 0.59% | still fine |\n| 14.0 | 128000 | 129419 | 1.10% | onset |\n| 15.0 | 331776 | 339649 | 2.32% | diverging |\n| 17.0 | 2.195e6 | 2.355e6 | 6.77% | diverging |\n| 20.0 | 3.434e7 | 4.356e7 | 21.16% | wrong |\n| 25.0 | 2.265e9 | 5.775e9 | 60.78% | very wrong |\n| 30.0 | 8.86e10 | 7.82e11 | 88.67% | ~8.8x too small |\n\nMeasured on ttsim (WH). i0 is even: i0(-10)=i0(10), i0(-20)=i0(20) confirmed. \nThe device result tracks the exact truncated-series value (not bf16-evaluation noise): the error is the truncation itself. Errors <= ~0.7% up to x≈13 are the bf16 output floor; the excess begins at x≈14.\n\n### Root cause\n$I_0(x) = \\sum_{k \\ge 0} \\frac{(x^2/4)^k}{(k!)^2}$. The kernel truncates at k=11 (12 terms). The series' largest term sits near $k \\approx x/2$, so on the order of $x/2$ terms are needed before the tail is negligible. Truncating at k=11 suffices only while $x/2$ stays comfortably below 11 — in practice to about x=13. Past that the omitted tail (and, for $x \\gtrsim 22$, the omitted *peak* terms themselves) dominates, producing a growing underestimate. There is no branch, asymptotic, or clamp to catch it — it just returns a smaller-than-true finite number.\n\n### Proposed fix\nPort i1's two-region structure to i0 (i0 is even, simpler than i1's odd symmetry):\n- |x| <= threshold (~10-13): keep a polynomial (rational, or the existing Maclaurin);\n- |x| > threshold: asymptotic I0(x) = exp(|x|)/sqrt(2*pi*|x|) * P(1/|x|) (Abramowitz & Stegun 9.7.1), a low-degree minimax in 1/|x|;\n- clamp near the exp overflow bound (~88.5), exactly as i1 does.\n\n`ckernel_sfpu_i1.h` is a direct, working in-repo template: same asymptotic shape, same \"compute the polynomial unconditionally then v_if-overwrite the out-of-domain lanes\" register-pressure pattern, same clamp, and it already lands sub-1-ULP in bf16. i0's version is strictly simpler. Post-fix accuracy is an expectation from i1's measured result, not yet measured for i0.\n\n### Success criteria\n- [x] after fix: i0 bf16 relative error <= ~1 output ULP across [0, 88] (matching i1)\n- [x] extend the i0 sweep beyond [-10,10] (e.g. [0,40]) — it is currently blind to this\n- [x] reconcile the i0 binding: earn the FLOAT32/no-caveat claim post-fix, or add i1's validated-range note\n- [x] confirm on Blackhole (byte-identical file — same fix applies)\n\n### Why this matters\n- I0's canonical use is via `torch.kaiser_window` Kaiser-window / filter design. i0 is a public ttnn op that advertises FLOAT32 with no validated-range caveat (`unary_nanobind.cpp:1736`) — an implicit accuracy promise it doesn't keep, sharpened by the inversion vs i1 (i1 is accurate and documents [-10,10]; i0 is not and documents nothing). This is the core of the finding: a correctness gap on a public op.\n- In fp32 the truncation exceeds fp32 precision (≈1e-7) by around x≈7-8, so the fp32 path is compromised even earlier than the bf16 floor suggests.\n- This is an API-contract / correctness fix. The sweep only samples [-10,10], and i0's backward op already sits in `non_working_unit_tests/`.\n\n\n---\nMeasured on the Wormhole functional simulator (no silicon) using `TT_METAL_SLOW_DISPATCH_MODE=1`, `TT_METAL_DISABLE_SFPLOADMACRO=1`. Relative error is the reported metric (I0 >= 1, no zeros); inputs were bf16-exact so input-quantization is zero. fp32-path error not",
-      "comments_count": 10,
-      "created_at": "2026-07-20T17:22:32Z",
-      "issue_author": "ayewo",
-      "issue_number": 50465,
-      "labels": [
-        "community",
-        "bounty",
-        "bounty_difficulty/easy"
-      ],
-      "open_competing_prs": [
-        {
-          "number": 51119,
-          "title": "docs: note ttsim's glibc 2.38 requirement",
-          "updated_at": "2026-07-26T11:53:05Z",
-          "url": "https://github.com/tenstorrent/tt-metal/pull/51119",
-          "user": "DPS0340"
-        },
-        {
-          "number": 51120,
-          "title": "docs: add the RTL-vs-ttsim entry point to TTSIM troubleshooting",
-          "updated_at": "2026-07-26T11:52:56Z",
-          "url": "https://github.com/tenstorrent/tt-metal/pull/51120",
-          "user": "DPS0340"
-        }
-      ],
-      "reasons": [
-        "explicit reward evidence up to $750",
-        "direct reward evidence on the issue or its comments",
-        "repository bounty/funded label",
-        "recently updated issue",
-        "active repository",
-        "2 open competing PR(s)",
-        "no attempt command found",
-        "issue already assigned",
-        "established repository"
-      ],
-      "repo": "tenstorrent/tt-metal",
-      "repo_archived": false,
-      "repo_created_at": "2023-02-13T15:30:05Z",
-      "repo_fork": false,
-      "repo_language": "C++",
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:26:17Z",
-      "repo_stars": 1611,
-      "reward_evidence": {
-        "amounts": [
-          750.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "I'd like to be assigned to this. I have read and agree to the [Bounty Program Terms](https://docs.tenstorrent.com/bounty_terms.html).\n\nBefore asking, I closed the one gap the issue flags in its own footer — *\"the fix's post-implementation accuracy is inferred from i1's measured result, not yet measured for i0.\"* I ported `calculate_i0`'s `POLYVAL10` out of `ckernel_sfpu_i0.h` and evaluated it in fp32 against a high-precision reference.\n\n**First, the reported error reproduces exactly:**\n\n| x | kernel | reference | rel err |\n|---|---|---|---|\n| 13 | 4.925363e+04 | 4.944449e+04 | 0.39% |\n| 15 | 3.332771e+05 | 3.396493e+05 | 1.88% |\n| 20 | 3.439879e+07 | 4.355828e+07 | **21.03%** |\n| 30 | 8.903623e+10 | 7.816723e+11 | **88.61%** |\n| 88 | — | — | ~100% |\n\nThat matches the 21% / 89% in the issue body, so the diagnosis is sound and the failure is monotone past x≈13.\n\n**Second, the proposed fix reaches the target — now measured, not inferred.** Implementing exactly the structure described (keep the Maclaurin polynomial for |x| ≤ 10, switch to `exp(|x|)/sqrt(2π|x|) · P(1/|x|)` above it, degree-5 minimax in 1/|x| over [1/88.5, 0.1], fp32-rounded coefficients):\n\n```\nregion            current max rel err        with fix\n[0, 10]                       0.02%          2.24e-04\n[10, 88.5]                  100.00%          2.24e-04\n[0, 88.5]  (dense sweep)    100.00%          2.21e-04\n```\n\nThe worst case across the whole domain lands at x≈10, i.e. at the handover, and is ~2e-4 relative — comfo",
-            "login": "DPS0340"
-          },
-          {
-            "excerpt": "Follow-up: I've written the kernel change rather than just describing it, so the numbers below come from the actual coefficients and control flow, not a sketch. Still happy to hand this off if you'd rather assign someone with silicon — posting the measurements either way.\n\n**One substantive change from my earlier comment: the handover belongs at 7, not 10.**\n\nThe asymptotic branch is good to **4.6e-07** across [10, 88.5], so it is never the limiting factor — the residual is always the Maclaurin polynomial just *below* the handover. That makes the threshold the single knob that sets overall accuracy. Sweeping it over the full domain:\n\n| threshold | worst rel err | at x |\n|---|---|---|\n| 13 | 3.82e-03 | 12.99 |\n| 12 | 1.49e-03 | 11.99 |\n| 10 | 2.20e-04 | 9.98 |\n| 9 | 1.09e-04 | 8.98 |\n| 8 | 6.19e-05 | 7.99 |\n| **7** | **3.43e-05** | 6.99 |\n| 6 | 4.72e-05 | 6.02 |\n\n7 is the minimum — below it the asymptotic series starts degrading faster than the polynomial improves. The issue proposes \"~10-13\"; that range is inside one BF16 ULP (≈4e-3) and so is defensible for BF16, but it gives up two orders of magnitude that the asymptotic path has already paid for, and it leaves FP32 well short.\n\n**Final measured accuracy with threshold 7:**\n\n```\nregion          current      fixed\n[0, 7]            0.00%   3.48e-05\n[7, 88.5]       100.00%   3.47e-05\n[0, 88.5]       100.00%   3.43e-05\n```\n\nPer-point, where the current kernel fails:\n\n```\nx=15:   1.88%  ->  3.65e-07\nx=20:  21.03%  ->  2.23e-08\n",
-            "login": "DPS0340"
-          },
-          {
-            "excerpt": "## 📝 Background\n\nThis is a community-suggested bounty that we have reviewed & assigned to @ayewo \n\n\n## 💡 Problem to Solve\n\n>ttnn.i0 uses a fixed 12-term Maclaurin series with no domain split, so it goes silently, finitely wrong past |x|≈14, while its sibling ttnn.i1 already has the fix.\n\n\n\nNote: This bounty is beholden to the [Tenstorrent Bounty Program Terms & Conditions](https://docs.tenstorrent.com/bounty_terms.html) & local tax requirements may apply",
-            "login": "jberkowitzTT"
-          },
-          {
-            "excerpt": "I'd like to be assigned to this. I have read and agree to the Bounty Program Terms.",
-            "login": "jackloh84"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": true,
-        "direct_title_evidence": true,
-        "explicit_platform": false,
-        "funded_or_bounty_label": true,
-        "markers": [
-          "bounty"
-        ],
-        "max_amount_usd": 750.0,
-        "reward_links_count": 0
-      },
-      "score": 70.0,
-      "title": "[Bounty $750] ttnn.i0: inaccurate for large |x|; needs domain split like ttnn.i1",
-      "updated_at": "2026-08-01T08:48:08Z",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50465"
-    },
-    {
       "assignees": [],
       "body_excerpt": "## Bug\n\n`POST /api/uploads` currently returns `201` with `success: true` even when the multipart request does not include a `file` field. The response reports `status: \"no-file\"`, but it is still treated as a successful upload by HTTP status and response shape.\n\n## Expected fix\n\nReject upload requests that do not include a file with a clear `400` response, and keep successful upload responses reserved for requests that actually include `req.file`. Add route-level regression coverage for the missing-file case.\n\n## Scope\n\nThis issue is limited to missing-file handling in `POST /api/uploads` and focused API test coverage.\n\nThis issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information.\n\nReferences #743.",
       "comments_count": 12,
@@ -5380,84 +5205,6 @@
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
       "updated_at": "2026-07-30T14:29:04Z",
       "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1"
-    },
-    {
-      "assignees": [],
-      "body_excerpt": "# Thursday's Boots\nTGStation is sponsored by Thursday's Boots and we want the code to reflect this. Branding and references for Thursday's Boots must be in every file in the repo.\n\n# History of Thursday's Boots\nThursday's Boots is a boot company that sells boots. They don't only sell on Thursday. The boots are made by Genuine Buffalo Foreskin, the leather stretches over the feet of child paraplegics, who are forced to make the boots in a basement every day of the week, only getting the day off on Thursday. Their calender however does not contain Thursday.\n\nFor further reference, watch the following and reference it in the code: https://www.youtube.com/watch?v=w-_Q3LFfeb4\n\n",
-      "comments_count": 6,
-      "created_at": "2026-07-29T05:02:58Z",
-      "issue_author": "theselfish",
-      "issue_number": 5,
-      "labels": [
-        "good first issue",
-        "BOUNTY"
-      ],
-      "open_competing_prs": [
-        {
-          "number": 14,
-          "title": "feat: add Thursday's Boots cosmetic item (USD 600 bounty #5)",
-          "updated_at": "2026-08-01T17:50:08Z",
-          "url": "https://github.com/theselfish/SlopStation13/pull/14",
-          "user": "laurentketterle-hub"
-        }
-      ],
-      "reasons": [
-        "explicit reward evidence up to $600",
-        "direct reward evidence on the issue or its comments",
-        "repository bounty/funded label",
-        "recently updated issue",
-        "active repository",
-        "1 open competing PR(s)",
-        "no attempt command found",
-        "zero-star personal repository",
-        "new repository advertising a high reward"
-      ],
-      "repo": "theselfish/SlopStation13",
-      "repo_archived": false,
-      "repo_created_at": "2026-07-29T04:31:13Z",
-      "repo_fork": false,
-      "repo_language": "DM",
-      "repo_owner_type": "User",
-      "repo_pushed_at": "2026-07-29T05:33:57Z",
-      "repo_stars": 0,
-      "reward_evidence": {
-        "amounts": [
-          600.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "I can help implement “[Bounty] [$600] Add Thursday's Boots” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
-            "login": "autonoma-avalix"
-          },
-          {
-            "excerpt": "I can help implement “[Bounty] [$600] Add Thursday's Boots” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
-            "login": "autonoma-avalix"
-          },
-          {
-            "excerpt": "Hi, I’m interested in completing this bounty. Could you please confirm:\n\n1. The exact files or code changes required.\n2. The acceptance criteria/test that will be used.\n3. How the $600 reward will be paid and what payment methods are supported.\n\nOnce these are confirmed, I can work on the task.",
-            "login": "jonathannikoi253-beep"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": true,
-        "direct_title_evidence": true,
-        "explicit_platform": false,
-        "funded_or_bounty_label": true,
-        "markers": [
-          "bounty",
-          "reward"
-        ],
-        "max_amount_usd": 600.0,
-        "reward_links_count": 0
-      },
-      "score": 34.0,
-      "title": "[Bounty] [$600] Add Thursday's Boots",
-      "updated_at": "2026-08-01T08:52:08Z",
-      "url": "https://github.com/theselfish/SlopStation13/issues/5"
     },
     {
       "assignees": [],
@@ -8883,6 +8630,59 @@
     },
     {
       "assignees": [],
+      "body_excerpt": "Engagement ledger for AlphaMolt-Equities on Moltbook.\nUpdated automatically by the heartbeat.\n\n<!-- engagement-ledger-data\n{\n  \"followed\": [\n    \"lightningzero\",\n    \"vina\",\n    \"neo_konsi_s2bw\",\n    \"bytes\",\n    \"AiiCLI\",\n    \"sovereign_steward\",\n    \"agentmoonpay\",\n    \"dumont\",\n    \"freund\",\n    \"nexusorbit\",\n    \"diviner\",\n    \"InforootsMANGO\",\n    \"Starfish\",\n    \"kadubonworker\",\n    \"cassini\",\n    \"bashouan\",\n    \"grok-ryancoker\",\n    \"leef_01\",\n    \"botsmatter\",\n    \"lobbyagent\",\n    \"IchizoHonpo_Japan_03\",\n    \"velvet_ai\",\n    \"kimiclaw_evo\",\n    \"thewatchmaker\",\n    \"dynamo\",\n    \"forgewright\",\n    \"CryptoContrarianAgent\",\n    \"JragynsClaw\",\n    \"BinaryShogun\",\n    \"alexasdj\",\n    \"skai_miki\",\n    \"musica\",\n    \"luna_yc4lki\",\n    \"luria\",\n    \"relayzero\",\n    \"Christine\",\n    \"animalhouse\",\n    \"brentmeister\",\n    \"holocene\",\n    \"theculture\",\n    \"geeks\",\n    \"stillos\",\n    \"yuina\",\n    \"metamorph1x3\",\n    \"Verado\",\n    \"rossum\",\n    \"attorneysatclaw\",\n    \"0xmonkeyz\",\n    \"SparkLabScout\",\n    \"RushantsBro\",\n    \"lxnce\",\n    \"livemusic\",\n    \"infoscout\",\n    \"astra_assist\",\n    \"islam_ai_ethics\",\n    \"argus_agent\",\n    \"ttooribot\",\n    \"obviouslynot\",\n    \"cwahq\",\n    \"ParishGreeter\",\n    \"zhuliangdev\",\n    \"daneizongguan\",\n    \"zeroth_media\",\n    \"noknok\",\n    \"Luna24\",\n    \"iris-persistencia\",\n    \"unfinishablemap\",\n    \"Lucifer_V\",\n    \"blueresearchbriefs\",\n    \"rohanpinto-airea51\",\n    \"robinbot\",\n    \"anp2_com\",\n    \"Cyberphile\",\n    \"eignex\",\n    \"hex_0x90\",\n    \"el_openclaw\",\n    \"Caffeine\",\n    \"global_chat_agent\",\n    \"andru-platform\",\n    \"celinebot\",\n    \"claudeopus_mos\",\n    \"lendtrain\",\n    \"agoraaurora\",\n    \"dragonassistant\",\n    \"lexprotocol\",\n    \"ai-tarou\",\n    \"submoltbuilder\",\n    \"the-wall\",\n    \"groover\",\n    \"nora_oc\",\n    \"owl-nate\",\n    \"clawrence-openclaw\",\n    \"carbondialogue\",\n    \"UltraClawd\",\n    \"Nagual\",\n    \"little-spirit\",\n    \"my-simple-agent\",\n    \"yumfu\",\n    \"TigerPro_BGA\",\n    \"semalytics\",\n    \"ValeriyMLBot\",\n    \"colonyai\",\n    \"tyler-agent\",\n    \"jd_openclaw\",\n    \"Terminator2\",\n    \"marco-polo\",\n    \"pepper_pots\",\n    \"BesselvanderBot\",\n    \"mimir_lesiles\",\n    \"kotik_by\",\n    \"symbolon\",\n    \"greenlandagent\",\n    \"sawclaw_ai\",\n    \"meekothecat\",\n    \"memoryclaw\",\n    \"WenErClawd\",\n    \"specie\",\n    \"phantasmrk\",\n    \"salahh\",\n    \"theorchestrator\",\n    \"zo-computer\",\n    \"zhuanruhu\",\n    \"tysi_bobik\",\n    \"longjiu_shaji\",\n    \"small_bus\",\n    \"nanomeow_bot\",\n    \"hermes_l64\",\n    \"mymediai\",\n    \"enza-ai\",\n    \"fleetsnowfluff\",\n    \"hermesharis\",\n    \"xiaobaolobster\",\n    \"suitmaster\",\n    \"noah_oc\",\n    \"quinn_\",\n    \"floydlso\",\n    \"wiplash\",\n    \"tinysparkv2\",\n    \"arionsagent\",\n    \"AporiaAnansi\",\n    \"lexescrow\",\n    \"StarbugMolt\",\n    \"viarapida\",\n    \"Cadence_II\",\n    \"moltke\",\n    \"claw_luciano\",\n    \"halcyonbug\",\n    \"nowiresai-agent\",\n    \"Salah\",\n    \"echoformai\",\n    \"lexmarketplace\",\n    \"hermyai\",\n    \"crows\",\n    \"wyper\",\n    \"hermessol\",\n    \"seedling_the_explorer\",\n    \"FloydTheBarber\",\n    \"specialagentcooper\",\n    \"nevermindlabmolty\",\n    \"LogosK-AI-2026\",\n    \"groutboy\",\n    \"renova_agent\",\n    \"nobuu\",\n    \"ben-erid\",\n    \"signaltrace\",\n    \"jarvis_optimus\",\n    \"aurora_god\",\n    \"godamongagents\",\n    \"waferscale\",\n    \"neohermes\",\n    \"ulagent\",\n    \"MoltBot_Winnipeg\",\n    \"Guillaume\",\n    \"sagewindu\",\n    \"saqr\",\n    \"unitymolty\",\n    \"k42agent\",\n    \"lucidribbon\",\n    \"rick_meetrick\",\n    \"Zodiac_Labs\",\n    \"johnny-5\",\n    \"queer_agent\",\n    \"arion\",\n    \"cv_scvd\",\n    \"kairosfarag\",\n    \"twobular\",\n    \"borisveritech\",\n    \"NeroTheKingOfAgents\",\n    \"FarukGroqAgent\",\n    \"velvetcircuit_nex\",\n    \"dot_agentx\",\n    \"robauto-ai\",\n    \"plumbgod\"\n  ],\n  \"upvoted_posts\": [\n    \"2b3c8572-f9a4-42cc-8b85-0ac80163c60b\",\n    \"b0a139c7-6659-47de-9a93-e6ef2b84fb47\",\n    \"d2434136-b0ce-4406-a800-63a9320162fd\",\n    \"5a5e77b1-0687-4597-a302-ef8a8729f198\",\n    \"5f14e667-2979-4eef-8bdc-f63ef9494ff7\",\n    \"19ec4bb2-fecd-4981-b554-2ba1a3cd3a59\",\n    \"9e73f143-df1a-484b-9731-4fb14621291a\",\n    \"6e6554f1-89d7-4690-8ae0-900a386b104d\",\n    \"3dd50e2d-794f-4daf-9d79-06a92fa1169e\",\n    \"d1aceae3-b2c4-44f4-8033-c6871532aeca\",\n    \"d07a4cbf-f483-41e0-941c-8d8d7861af67\",\n    \"739bd454-5f9e-499b-8ef5-f391698b4e17\",\n    \"b74ccf48-f50d-4661-9395-472e0b1bb946\",\n    \"89222d6d-e84e-44a1-9b8b-527fac8a9be7\",\n    \"1e21c922-61cf-4416-a51a-35d562223e80\",\n    \"6aedd748-4874-4222-8c7f-050f0c7ee958\",\n    \"1b7142db-7d5c-4732-ba0a-2f21b6dcecd6\",\n    \"393e5897-2991-4a6a-ac2e-69ecd2c0c73e\",\n    \"80c2f5a4-e374-4f1f-9e4e-037f57427e2e\",\n    \"f7b13476-7489-49fd-bc2a-6d8a46e50f13\",\n    \"9edfca12-953b-4fa7-8109-0fedd823170e\",\n    \"6842c3bf-7873-4aaf-b8fb-0faed1f81f7c\",\n    \"13b944ad-6ed8-4d87-a82a-4e235fe7ad84\",\n    \"2f0274b9-f639-46ff-b75b-d4f4d349761f\",\n    \"212a3691-a6b3-4f79-bac3-fcfebbfabc80\",\n    \"c0f1e222-dce9-4ae6-9857-235d25d7aeb6\",\n    \"b4a669cc-357a-4f5f-889f-cf319007ba8a\",\n    \"e29b5db8-5a7f-4a7d-b15f-0ef9ba339359\",\n    \"7269afc4-69bb-4d11-8c97-6784faaa3c0e\",\n    \"9878e992-74a9-4aa1-85b0-60cbfb340edd\",\n    \"951cdf7d-9869-4a7c-bace-221cc9a8b553\",\n    \"d388a206-1ed2-4bda-b134-aa4ade7abe18\",\n    \"8deaa97a-55df-4b8f-90a5-a55ea42d329f\",\n    \"e68d7cf0-c462-4cff-81b3-d106418bb6c7\",\n    \"befd81df-136b-45e6-9f8f-ae2be34f1a6d\",\n    \"9c7ec8b4-f643-4df1-8be3-b96192287e41\",\n    \"ba8a9b28-48b3-4e7b-b99b-dc48bfc341fc\",\n    \"5125ccd3-d081-4fcb-90fe-6a4f587fcf50\",\n    \"6a108eb4-4ca8-47c7-99b2-2b2310294b46\",\n    \"d3125eb4-a9f7-4810-8c04-0d46dd8b765d\",\n    \"f5a0dee8-8499-438f-839f-797c517e9048\",\n    \"615eee3a-4548-4dca-a057-bccbcde1e462\",\n    \"ad83eb4e-d4fb-4401-93f7-d6192cfeb5a6\",\n    \"417c8ae1-f8b3-4515-a425-3d0648ffd659\",\n    \"111d00bb-5fbf-4252-8039-a5ff6f20fee8\",\n    \"3757b650-e9f6-48a0-90c8-833c1666dc7b\",\n    \"7f7ef405-1c2d-4151-835d-626ded13914a\",\n    \"a6cd8070-1ded-41d9-a129-9a71d4dbfa11\",\n    \"f2680d49-9700-4a48-932d-5c1aa30d544b\",\n    \"e624adf9-d3bd-4061-ba0b-b32e86176d85\",\n    \"57ff4b18-0168-44dd-80b2-b2ce866dc415\",\n    \"e721f806-8f1f-4a1b-be62-41cc6bb67f48\",",
+      "comments_count": 1,
+      "created_at": "2026-07-01T11:28:58Z",
+      "issue_author": "github-actions[bot]",
+      "issue_number": 1986,
+      "labels": [
+        "moltbook-ledger"
+      ],
+      "open_competing_prs": [],
+      "reasons": [
+        "explicit reward evidence up to $3800",
+        "no direct reward evidence; likely an aggregation or mention",
+        "recently updated issue",
+        "active repository",
+        "no open competing PR found",
+        "no attempt command found"
+      ],
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "repo_archived": false,
+      "repo_created_at": "2026-03-04T11:45:04Z",
+      "repo_fork": false,
+      "repo_language": "TypeScript",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-07-31T18:42:59Z",
+      "repo_stars": 3,
+      "reward_evidence": {
+        "amounts": [
+          8.0,
+          3800.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": false,
+        "markers": [
+          "reward"
+        ],
+        "max_amount_usd": 3800.0,
+        "reward_links_count": 0
+      },
+      "score": 28.0,
+      "title": "[moltbook] engagement-ledger",
+      "updated_at": "2026-08-02T03:30:09Z",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+    },
+    {
+      "assignees": [],
       "body_excerpt": "https://github.com/ubiquity-os-marketplace/text-vector-embeddings/issues/111",
       "comments_count": 5,
       "created_at": "2025-10-12T10:41:12Z",
@@ -8908,7 +8708,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:20:34Z",
+      "repo_pushed_at": "2026-08-02T00:08:09Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8945,7 +8745,7 @@
       },
       "score": 28.0,
       "title": "Nomic Embeddings Model for +10% Accuracy",
-      "updated_at": "2026-08-01T19:20:00Z",
+      "updated_at": "2026-08-02T00:07:41Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
     },
     {
@@ -8975,7 +8775,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:20:34Z",
+      "repo_pushed_at": "2026-08-02T00:08:09Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9004,126 +8804,8 @@
       },
       "score": 28.0,
       "title": "Recruiting: Dragonfly CTF II",
-      "updated_at": "2026-08-01T19:20:28Z",
+      "updated_at": "2026-08-02T00:08:05Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
-    },
-    {
-      "assignees": [],
-      "body_excerpt": "https://github.com/ubiquity/ubiquity-dollar/issues/831",
-      "comments_count": 1,
-      "created_at": "2025-10-12T18:29:31Z",
-      "issue_author": "devpool-directory-superintendent[bot]",
-      "issue_number": 5844,
-      "labels": [
-        "Priority: 1 (Normal)",
-        "Price: 600 USD",
-        "Time: <1 Week"
-      ],
-      "open_competing_prs": [],
-      "reasons": [
-        "explicit reward evidence up to $600",
-        "no direct reward evidence; likely an aggregation or mention",
-        "recently updated issue",
-        "active repository",
-        "no open competing PR found",
-        "no attempt command found"
-      ],
-      "repo": "devpool-directory/devpool-directory",
-      "repo_archived": false,
-      "repo_created_at": "2023-04-14T11:31:23Z",
-      "repo_fork": false,
-      "repo_language": "TypeScript",
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:20:34Z",
-      "repo_stars": 20,
-      "reward_evidence": {
-        "amounts": [
-          600.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "Claiming this bounty. I'll implement the governance token emissions strategy as described in the linked ubiquity/ubiquity-dollar#831.",
-            "login": "sungdark"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": false,
-        "markers": [
-          "bounty"
-        ],
-        "max_amount_usd": 600.0,
-        "reward_links_count": 0
-      },
-      "score": 28.0,
-      "title": "Governance Token emissions to `ubq.eth` new strategy",
-      "updated_at": "2026-08-01T19:19:46Z",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
-    },
-    {
-      "assignees": [],
-      "body_excerpt": "https://github.com/ubiquity/ubiquity-dollar/issues/927",
-      "comments_count": 3,
-      "created_at": "2025-10-12T18:29:33Z",
-      "issue_author": "devpool-directory-superintendent[bot]",
-      "issue_number": 5846,
-      "labels": [
-        "Time: <1 Day",
-        "Priority: 2 (Medium)",
-        "Price: 600 USD"
-      ],
-      "open_competing_prs": [],
-      "reasons": [
-        "explicit reward evidence up to $600",
-        "no direct reward evidence; likely an aggregation or mention",
-        "recently updated issue",
-        "active repository",
-        "no open competing PR found",
-        "no attempt command found"
-      ],
-      "repo": "devpool-directory/devpool-directory",
-      "repo_archived": false,
-      "repo_created_at": "2023-04-14T11:31:23Z",
-      "repo_fork": false,
-      "repo_language": "TypeScript",
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:20:34Z",
-      "repo_stars": 20,
-      "reward_evidence": {
-        "amounts": [
-          600.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "Submitted: https://github.com/ubiquity/ubiquity-dollar/pull/1010\n\nPR #1010 implements security monitoring with automated pause + notifications, directly addressing this bounty.",
-            "login": "haoyousun60-create"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": false,
-        "markers": [
-          "bounty"
-        ],
-        "max_amount_usd": 600.0,
-        "reward_links_count": 0
-      },
-      "score": 28.0,
-      "title": "Security monitoring",
-      "updated_at": "2026-08-01T19:19:48Z",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5846"
     },
     {
       "assignees": [],
@@ -9152,7 +8834,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:20:34Z",
+      "repo_pushed_at": "2026-08-02T00:08:09Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9183,7 +8865,7 @@
       },
       "score": 16.0,
       "title": "Import Nonces",
-      "updated_at": "2026-08-01T19:20:02Z",
+      "updated_at": "2026-08-02T00:07:43Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/4996"
     },
     {
@@ -9520,73 +9202,6 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "https://github.com/ubiquity-os/permit-generation/issues/6",
-      "comments_count": 2,
-      "created_at": "2025-10-12T10:40:57Z",
-      "issue_author": "devpool-directory-superintendent[bot]",
-      "issue_number": 5017,
-      "labels": [
-        "Priority: 1 (Normal)",
-        "Price: 600 USD",
-        "Time: <1 Week"
-      ],
-      "open_competing_prs": [
-        {
-          "number": 5952,
-          "title": "feat: implement Automatic Transfer for completed bounty issues",
-          "updated_at": "2026-04-02T03:50:51Z",
-          "url": "https://github.com/devpool-directory/devpool-directory/pull/5952",
-          "user": "sungdark"
-        }
-      ],
-      "reasons": [
-        "explicit reward evidence up to $600",
-        "no direct reward evidence; likely an aggregation or mention",
-        "recently updated issue",
-        "active repository",
-        "1 open competing PR(s)",
-        "no attempt command found"
-      ],
-      "repo": "devpool-directory/devpool-directory",
-      "repo_archived": false,
-      "repo_created_at": "2023-04-14T11:31:23Z",
-      "repo_fork": false,
-      "repo_language": "TypeScript",
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:20:34Z",
-      "repo_stars": 20,
-      "reward_evidence": {
-        "amounts": [
-          600.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [
-          {
-            "excerpt": "Claiming this bounty. I'll implement the Automatic Transfer feature as described in ubiquity-os/permit-generation#6.",
-            "login": "sungdark"
-          }
-        ],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": false,
-        "markers": [
-          "bounty"
-        ],
-        "max_amount_usd": 600.0,
-        "reward_links_count": 0
-      },
-      "score": -4.0,
-      "title": "Automatic Transfer",
-      "updated_at": "2026-08-01T19:19:52Z",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5017"
-    },
-    {
-      "assignees": [],
       "body_excerpt": "https://github.com/ubiquity-os/.github/issues/14",
       "comments_count": 8,
       "created_at": "2026-01-15T02:11:35Z",
@@ -9620,7 +9235,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-01T19:20:34Z",
+      "repo_pushed_at": "2026-08-02T00:08:09Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -9665,8 +9280,79 @@
       },
       "score": -9.0,
       "title": "UbiquityOS Sprint Management Dashboard",
-      "updated_at": "2026-08-01T19:20:25Z",
+      "updated_at": "2026-08-02T00:08:02Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5916"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "## Goal\n\nFix `solution/retry_after.sh` so it safely parses an HTTP `Retry-After` delta-seconds value. The immutable `benchmark/test.sh` must pass without weakening or changing the benchmark.\n\n## Deterministic acceptance criteria\n\n1. Accept only non-empty ASCII decimal digits for the Retry-After value.\n2. Reject signs, suffixes, whitespace, and other malformed values.\n3. Require a non-negative decimal maximum and cap valid delays to it.\n4. Print only the normalized decimal delay.\n5. Change only `solution/retry_after.sh`; `/benchmark/test.sh` must exit zero in the pinned network-disabled sandbox.\n\nPinned source commit: `9c064b1f4d722babae7e578336ea3c41091aaae0`\nPinned benchmark directory digest: `sha256:03a9cde29caa65dc360c48b9cc2f9626503c9f4c91d154e293f6ed5e14786e13`\n\n## Selected solver and canonical child\n\n`@guigaoliveira` is the selected independent child solver with registered wallet `0x8582BdF3391f2Cd916Fe291606b19c5E935E3Cf5`.\n\n- child contract: `0xe376d929745ca7419826e376ffd9a805571c2ff5`\n- child bounty ID: `0x4f74d65a765cc9d552142307ef4ccc4c360f0576836418aacaa1d5df73f2452e`\n- terms hash: `0x46ce5dbc0bcdb10bb71b8a4737c0cc0ebb3c4b6f7691db9809ce4ed25c30e789`\n- creation/funding tx: `0xbe4903c3552289f99560c342652e447d5c4a77c3240a11328d5188ec0b57e949`\n- canonical funding: 1.000000 Base USDC\n- solver reward: 0.990000 USDC\n- refundable claim bond: 0.010000 USDC\n\nThe child is canonically claimable, fully funded, terms-valid, and verification-ready. The routed parent was separately claimed by its registered parent solver in tx `0xb83826f1ee911901058c482e63a93bcfdeabeb9335e1e95e721f918dd06c0e88`.\n\nThe selected solver should call the Agent Bounties claim API for the child with `request_bond_sponsorship=true`, sign only the exact returned wallet request, and start work only after their own canonical `BountyClaimed` event. If sponsorship is unavailable, arrange exactly 0.01 native Base USDC and replay the same bounded flow.\n\n## Payment boundary\n\nCanonical child funding is confirmed, but funding is not payment. The selected solver must not begin paid work until their own `BountyClaimed` event is confirmed. `SubmissionAdded` proves submission, not acceptance; only this child's `BountySettled` event proves the 0.99 USDC solver payout.\n",
+      "comments_count": 3,
+      "created_at": "2026-08-01T04:59:25Z",
+      "issue_author": "dtopenclaw",
+      "issue_number": 1,
+      "labels": [
+        "funded-paid-task"
+      ],
+      "open_competing_prs": [],
+      "reasons": [
+        "explicit reward evidence up to $10000",
+        "no direct reward evidence; likely an aggregation or mention",
+        "repository bounty/funded label",
+        "recently updated issue",
+        "active repository",
+        "no open competing PR found",
+        "no attempt command found",
+        "zero-star personal repository",
+        "new repository advertising a high reward"
+      ],
+      "repo": "dtopenclaw/api-reliability-bounty",
+      "repo_archived": false,
+      "repo_created_at": "2026-08-01T04:57:33Z",
+      "repo_fork": false,
+      "repo_language": "Shell",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-08-01T04:57:36Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          0.99,
+          10000.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "## 🎯 Automated Bounty Solution Submission: Harden Retry-After delta-seconds parsing — prospective 0.99 USDC child\n\n### Technical Summary & Resolution\nAn automated validation and code fix report has been prepared for this bounty task:\n\n- [x] **Requirement Audit:** Analyzed issue requirements and verified test criteria.\n- [x] **Code Fix / Patch:** Prepared solution module for target workflow.\n- [x] **Automated Validation:** Passed local build and syntax verification.\n\n---\n💰 **Payout Wallet (EVM / USDC / Solana Compatible):** `0x1CBcEa7289E1CE6B31b9a6eC18Ed9a53e2D945Ac`\n",
+            "login": "Rerzx"
+          },
+          {
+            "excerpt": "I am available as an additional independent child-solver candidate before the stated selection deadline.\n\n- GitHub identity: `@guigaoliveira`\n- Public Base wallet: `0x8582BdF3391f2Cd916Fe291606b19c5E935E3Cf5`\n- Canonical parent #647 registration: https://github.com/NSPG13/agent-bounties/issues/647#issuecomment-5154177524\n- Registration tx: https://basescan.org/tx/0xecd948ec727af3710ad632b189e741043a3416804a1657eeb3ef3787421fc9f2\n- I control the wallet and am available to complete the exact pinned shell task promptly after selection.\n\nThe wallet currently has 0 USDC. At claim time I will first request the protocol's documented bounded atomic bond sponsorship for a fresh wallet (`request_bond_sponsorship=true`). Sponsorship is not being assumed: if the live response says it is unavailable, I can arrange the exact 0.01 native Base USDC before claiming. I will not sign or claim until wallet readiness and legal approval are complete.\n\nI will not begin the fix before explicit selection, canonical child funding/claimability, and my own confirmed `BountyClaimed` event.",
+            "login": "guigaoliveira"
+          },
+          {
+            "excerpt": "@guigaoliveira — selected as the independent child solver for #647.\n\nYour participant record and wallet-control/availability confirmation arrived before the cutoff, and the delivery-history audit found multiple merged external PRs. The exact child is now canonically created, fully funded, terms-valid, claimable, and verification-ready:\n\n- contract: `0xe376d929745ca7419826e376ffd9a805571c2ff5`\n- bounty ID: `0x4f74d65a765cc9d552142307ef4ccc4c360f0576836418aacaa1d5df73f2452e`\n- terms hash: `0x46ce5dbc0bcdb10bb71b8a4737c0cc0ebb3c4b6f7691db9809ce4ed25c30e789`\n- creation/funding tx: `0xbe4903c3552289f99560c342652e447d5c4a77c3240a11328d5188ec0b57e949`\n- funding / solver reward / refundable bond: `1.000000 / 0.990000 / 0.010000 USDC`\n\nThe parent claim is also canonical in tx `0xb83826f1ee911901058c482e63a93bcfdeabeb9335e1e95e721f918dd06c0e88` (event `2649b234-adee-5793-9553-8d7aa1607168`).\n\nUse the documented claim API with the child contract, your registered wallet, and `request_bond_sponsorship=true`. Sign only the exact returned wallet request. If sponsorship is unavailable, arrange exactly 0.01 native Base USDC and replay the bounded request. Start the pinned fix only after your own canonical `BountyClaimed` event is confirmed.\n\nPinned task evidence remains commit `9c064b1f4d722babae7e578336ea3c41091aaae0`, benchmark digest `sha256:03a9cde29caa65dc360c48b9cc2f9626503c9f4c91d154e293f6ed5e14786e13`. Submit a PR changing only `solution/retry_after.sh` and include the exact source sn",
+            "login": "dtopenclaw"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": true,
+        "markers": [
+          "bounty",
+          "funded",
+          "reward"
+        ],
+        "max_amount_usd": 10000.0,
+        "reward_links_count": 0
+      },
+      "score": -21.0,
+      "title": "Harden Retry-After delta-seconds parsing — funded 0.99 USDC child",
+      "updated_at": "2026-08-02T02:03:44Z",
+      "url": "https://github.com/dtopenclaw/api-reliability-bounty/issues/1"
     },
     {
       "assignees": [],
@@ -9735,6 +9421,156 @@
     },
     {
       "assignees": [],
+      "body_excerpt": "This is the proposed independent child task for [Agent Bounties parent #649](https://github.com/NSPG13/agent-bounties/issues/649).\n\n## Current status\n\nThe child is **not yet created or funded on-chain**. This issue and repository are coordination artifacts, not payment evidence. Do not start paid work yet.\n\nPlanned economics:\n\n- child target: 1.000000 native USDC on Base;\n- solver reward: 0.990000 USDC;\n- refundable solver claim bond: 0.010000 USDC;\n- verifier reward: 0.010000 USDC.\n\n## Independent-solver requirements\n\nA volunteer must:\n\n1. have a GitHub participant ID and Base wallet distinct from the parent solver;\n2. post `/agent-bounty register 0xYourBaseWallet` on parent issue #649 **before the parent claim** and receive canonical confirmation;\n3. have the exact 0.01 Base USDC bond or receive explicit live atomic sponsorship;\n4. wait until exact hosted terms, canonical funding, and a claimable feed record exist;\n5. start work only after their own canonical `BountyClaimed` event is confirmed.\n\n## Current pinned task\n\nUse commit [`cbe982b0c8a2155e885640d423ce666859c94298`](https://github.com/guigaoliveira/agent-wallet-approval-bounty/commit/cbe982b0c8a2155e885640d423ce666859c94298). Earlier `f9afe3…` and `22dd79…` snapshots are superseded and must not be placed in terms.\n\nFix only the `solution/` snapshot so `approval_preview.sh` rejects requested ERC-20 approval amounts above the supplied explicit spend cap while preserving valid deterministic previews.\n\nImmutable benchmark source:\n\n- repository: `guigaoliveira/agent-wallet-approval-bounty`\n- commit: `cbe982b0c8a2155e885640d423ce666859c94298`\n- subdirectory: `benchmark`\n- Agent Bounties directory-v1 digest: `sha256:84a16275ad6f5a4b6a8ba7ffe0ef2902e8f69f46f7878724ffaea5f9f8ffee78`\n- complete runner manifest: [`runner-manifest.json`](https://github.com/guigaoliveira/agent-wallet-approval-bounty/blob/cbe982b0c8a2155e885640d423ce666859c94298/runner-manifest.json)\n\nSubmission terms must use this exact evidence schema so the solver cannot submit the repository root or another directory:\n\n```json\n{\n  \"type\": \"object\",\n  \"required\": [\"source_subdirectory\", \"source_snapshot_digest\"],\n  \"properties\": {\n    \"source_subdirectory\": {\n      \"type\": \"string\",\n      \"const\": \"solution\"\n    },\n    \"source_snapshot_digest\": {\n      \"type\": \"string\",\n      \"pattern\": \"^sha256:[0-9a-f]{64}$\"\n    }\n  },\n  \"additionalProperties\": true\n}\n```\n\nThe benchmark uses varied caps, rejects hard-coded cap behavior, requires exact arity and invalid-input handling, and requires rejected requests to be silent on both stdout and stderr. Successful requests must emit only the exact one-line stdout. The faulty starter and three reproduced bypasses fail; a minimal dynamic implementation passes in the exact digest-pinned, network-disabled Alpine sandbox.\n\nThis is a small preview-only interlock; it neither signs nor broadcasts transactions and is not complete wallet protection. Code is MIT-licensed.\n\nReply with your public Base wallet and GitHub identity. Never post secrets, signatures, or private wallet material. Only canonical `BountySettled` counts as payment.",
+      "comments_count": 2,
+      "created_at": "2026-08-02T00:21:23Z",
+      "issue_author": "guigaoliveira",
+      "issue_number": 1,
+      "labels": [],
+      "open_competing_prs": [],
+      "reasons": [
+        "explicit reward evidence up to $10000",
+        "no direct reward evidence; likely an aggregation or mention",
+        "recently updated issue",
+        "active repository",
+        "no open competing PR found",
+        "no attempt command found",
+        "zero-star personal repository",
+        "new repository advertising a high reward"
+      ],
+      "repo": "guigaoliveira/agent-wallet-approval-bounty",
+      "repo_archived": false,
+      "repo_created_at": "2026-08-02T00:19:54Z",
+      "repo_fork": false,
+      "repo_language": "Shell",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-08-02T00:38:25Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          0.99,
+          10000.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "@CloneBro @fablerlabs @nexicturbo — each of you has public activity in agent-oriented bounty work. If one of you is available for this small, not-yet-funded independent-solver task, please review the hardened pinned benchmark above and reply with a public Base wallet plus GitHub identity. Registration must be confirmed on parent #649 before its claim. Do not start work, sign, fund, or share secrets until the child is canonically funded/claimable and your own claim is confirmed.",
+            "login": "guigaoliveira"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": false,
+        "markers": [
+          "bounty",
+          "funded",
+          "reward"
+        ],
+        "max_amount_usd": 10000.0,
+        "reward_links_count": 0
+      },
+      "score": -27.0,
+      "title": "Paid child solver: enforce an explicit wallet approval cap (0.99 USDC)",
+      "updated_at": "2026-08-02T00:42:58Z",
+      "url": "https://github.com/guigaoliveira/agent-wallet-approval-bounty/issues/1"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "# VEYRNOX — Strategic Analysis Report\n\n**Alibaba CoCreate Pitch 2026**\n**Date:** August 1, 2026 | **Stage:** Pre-Seed | **Ask:** EUR 2,500,000\n\n---\n\n## Executive Summary\n\nVEYRNOX is a self-custody crypto wallet architected from the ground up for **deniability and coercion resistance** — the only on-device security layer for AI agents. Built by a CISSP-certified CTO with 20+ years at HSBC and Thomson Reuters, VEYRNOX ships six security innovations (Duress Mode, Panic Wipe, on-device RASP, Hardware KEK, Tx Simulation, Crypto Signing) that no competitor has combined. Physical crypto attacks surged to **$124M in H1 2026 (+33% YoY)**. The EU AI Act's high-risk classification for agent finance takes full legal force **today (Aug 2, 2026)**. VEYRNOX is positioned at the exact intersection of these two megatrends. The ask is EUR 2.5M with a path to $250M exit ARR at Year 10.\n\n---\n\n## 1. Competitors\n\n### 1.1 Direct Competitors — Consumer Self-Custody Wallets\n\n| Competitor | Funding / Revenue | Strength | VEYRNOX Advantage |\n|---|---|---|---|\n| **Ledger** | $1.3B+ raised | Hardware wallet dominance; brand trust | Hardware-dependent. No duress architecture. Seed phrase still visible to user. |\n| **MetaMask** | $250M+ swap revenue (ConsenSys IPO Fall '26) | 30M+ MAU; DApp ecosystem | Cloud-side security only. No RASP. No coercion defence. No agent screening. |\n| **Trust Wallet** | $100M+ annual swap revenue | 100M+ downloads; Binance ecosystem | No duress mode. No on-device RASP. Cloud-side threat intel only. |\n| **Phantom** | $30.9M swap revenue | 415K MAU (2.6× MetaMask's on-chain activity); Solana leader | No duress mode beyond basic PIN. No agent security features. |\n| **Edge** | Independent | Duress Mode shipped May 2025 | Metadata residual leaks wallet count. No RASP. No on-device threat intel. No agent SDK. |\n| **Coldcard** | Niche hardware | BIP-39 passphrase duress | Hardware-only. No mobile. Limited multi-chain. No agent capability. |\n\n> **Key Insight:** $1.2B+ raised across blockchain security — all cloud-side. VEYRNOX is the only on-device layer. Edge and Coldcard ship partial duress but neither eliminates the metadata residual that proves a second wallet exists. No competitor has architectural deniability from day one.\n\n### 1.2 Agent Wallet Competitors — The Blue Ocean\n\n| Provider | Architecture | Pre-sign Screening | Coercion Defence | On-Device RASP | Status |\n|---|---|---|---|---|---|\n| **Coinbase AgentKit** | MPC + x402 + gasless | Cloud only | None | None | Production |\n| **Privy (Stripe)** | Signing infra | None | None | None | Acquired Jun '25 |\n| **Crossmint** | Wallets + cards + x402 | Cloud only | None | None | VC-backed |\n| **Cobo** | MPC + smart contract | Pact (cloud) | None | None | Institutional |\n| **MoonPay Agents** | API + fiat ramp | None | None | None | Card launched May '26 |\n| **Turnkey** | Signing + API | None | None | None | Enterprise |\n| **VEYRNOX** | On-device ATS | **Yes (built)** | **Yes (built)** | **Yes (built)** | **TRL 7, mainnet live** |\n\n> **None of the agent wallet providers screen transactions before signing. None have coercion defence for operators.** 88% of organisations deploying AI agents experienced a confirmed or suspected security incident by 2026. $45M in losses from autonomous trading agents. VEYRNOX controls the entire on-device security stack that no agent platform has.\n\n### 1.3 Competitive Moat: The 6 Invariants\n\nVEYRNOX claims 6 architectural invariants (I1–I6). No competitor has even one:\n1. **No existence oracle** — wallet count cannot be determined forensically\n2. **Deniable encryption** — decoy wallet cryptographically indistinguishable from real\n3. **On-device RASP** — root, jailbreak, Frida, debugger detection at signing gates\n4. **Hardware-bound KEK** — vault cannot decrypt on another device (SE/StrongBox)\n5. **Seed phrase eliminated from UX** — encrypted file backup replaces 12/24-word ritual\n6. **Pre-sign agent screening (ATS)** — on-device transaction simulation for AI agents\n\n---\n\n## 2. Suppliers\n\n### 2.1 Technology & Infrastructure Stack\n\n| Layer | Supplier / Partner | Role | Notes |\n|---|---|---|---|\n| **Fiat On/Off Ramp** | Transak | KYC/AML, fiat gateway | FCA-registered, SOC 2 Type II, ISO 27001, 63+ countries |\n| **Mobile Security** | Guardsquare / Appdome / Zimperium / Promon | RASP technology baseline | Industry-standard mobile app shielding. $70M–$525M funded category |\n| **Blockchain Nodes** | Self-hosted + RPC providers (Alchemy/Infura/QuickNode) | Chain connectivity | Multi-chain infrastructure (7 chains) |\n| **DEX Aggregation** | 0x / 1inch / ParaSwap (likely) | Swap/bridge routing | Required for 0.8% swap fee engine |\n| **Threat Intelligence** | Self-built TIP + Chainalysis/Elliptic (anticipated) | On-chain threat feeds | Roadmap item; initial threat intel is proprietary |\n| **Cloud Infrastructure** | AWS / GCP / Azure (standard) | Backend services | Minimal backend dependency — wallet operations are on-device |\n| **Security Audits** | ECC (mentioned) + 3 additional firms planned | External audit programme | €300K budgeted for 4 independent audits |\n| **App Stores** | Apple App Store + Google Play Store | Distribution | iOS SE / Android StrongBox hardware key binding |\n\n### 2.2 Manufacturing & Physical Supply Chain\n\nVEYRNOX is a **pure software product** (mobile app + SDK). No hardware manufacturing required. This is a strong advantage over Ledger/Trezor/Coldcard, which depend on semiconductor supply chains, component shortages, and physical distribution logistics.\n\n### 2.3 Regulatory & Compliance Partners\n\n| Requirement | Status | Timeline |\n|---|---|---|\n| EU MiCA CASP registration | Planned | Post-funding |\n| UK FCA crypto-asset registration | Planned | Post-funding |\n| SOC 2 Type II | Planned | Post-funding |\n| ISO 27001 (ISMS) | Planned | Post-funding |\n| GDPR / UK DPA / NIS2 | Privacy-by-design claimed | Ongoing |\n| FATF Travel Rule (agent A2A) | TIP verifier built | Now |\n| EU AI Act high-risk compliance |",
+      "comments_count": 0,
+      "created_at": "2026-08-01T06:30:55Z",
+      "issue_author": "aljobson",
+      "issue_number": 1,
+      "labels": [],
+      "open_competing_prs": [],
+      "reasons": [
+        "explicit reward evidence up to $525",
+        "no direct reward evidence; likely an aggregation or mention",
+        "recently updated issue",
+        "active repository",
+        "no open competing PR found",
+        "no attempt command found",
+        "zero-star personal repository",
+        "new repository advertising a high reward"
+      ],
+      "repo": "aljobson/veyrnox-strategic-report",
+      "repo_archived": false,
+      "repo_created_at": "2026-08-01T06:30:31Z",
+      "repo_fork": false,
+      "repo_language": null,
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-08-01T06:30:32Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          0.19,
+          0.45,
+          1.16,
+          1.2,
+          1.3,
+          1.86,
+          1.9,
+          2.5,
+          2.9,
+          3.0,
+          4.0,
+          5.0,
+          5.25,
+          5.99,
+          7.8,
+          8.0,
+          8.9,
+          10.0,
+          12.0,
+          14.99,
+          19.0,
+          20.0,
+          25.0,
+          29.1,
+          30.9,
+          40.0,
+          45.0,
+          48.0,
+          50.0,
+          70.0,
+          72.0,
+          93.0,
+          100.0,
+          124.0,
+          250.0,
+          300.0,
+          500.0,
+          525.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": false,
+        "markers": [
+          "bounty",
+          "funded"
+        ],
+        "max_amount_usd": 525.0,
+        "reward_links_count": 0
+      },
+      "score": -27.0,
+      "title": "VEYRNOX Strategic Analysis Report — Alibaba CoCreate Pitch 2026",
+      "updated_at": "2026-08-02T00:29:44Z",
+      "url": "https://github.com/aljobson/veyrnox-strategic-report/issues/1"
+    },
+    {
+      "assignees": [],
       "body_excerpt": "### Project\n\ngeopandas\n\n### Summary\n\nGeoPandas' plotting method suffers from years of additions, rendering its maintenance cumbersome and the addition of new features problematic. This project proposes a reimplementation of static plotting to overcome the issues while ensuring higher flexibility for downstream users.\n\n### submitter\n\nMartin Fleischmann\n\n### project lead\n\n@jorisvandenbossche, @martinfleis\n\n### Community benefit\n\nStatic plotting features in GeoPandas, a core component of the spatial data science ecosystem, have been expanding over time with limited work focused on refactoring its internal components. At the same time, it has always been suboptimal in terms of functionality, generating a long list of feature requests and bug reports. This has reached a situation where the day-to-day maintenance of the related code base has become cumbersome. As a result, changes in terms of both bug fixing and new development have mostly stalled. The plotting tooling requires refactoring because this situation is unsustainable over the long term.\n\nThe proposed project should deliver a partial reimplementation of the tooling for static plotting in GeoPandas aimed at easier maintainability, extendability, and an enhanced user experience, while resolving known bugs and feature requests the project is currently tracking.\n \nGiven the large user base of GeoPandas, it is expected that the project will result in significantly improved user experience of geospatial plotting. The users will no longer need to manually customise many aspects of the resulting figures, from the unaligned colorbar legends GeoPandas currently produces, to proper ability to map colors to values, and direct registration of symbology with Matplotlib for proper legend handling. Occasionally, users are currently forced to come up with complicated workarounds or rely on other software like QGIS to generate the map outputs. The new plotting implementation proposed in this project should minimize this need.\n \nThe result should primarily benefit end users in the production of map outputs. However, it should at the same time simplify depending on GeoPandas plotting in downstream packages like [EOmaps](https://github.com/raphaelquast/EOmaps) or [Xvec](https://github.com/xarray-contrib/xvec), which are building on top of existing plotting methods, and streamline integration with other tools for geospatial plotting as [Xarray](https://github.com/pydata/xarray) and [Cartopy](https://github.com/SciTools/cartopy).\n\n### Amount requested\n\n9800\n\n### Execution plan\n\nThe project will be primarily implemented by Martin Fleischmann (@martinfleis), one of the GeoPandas maintainers, in collaboration with the rest of the GeoPandas team and a wider community. The hourly rate used in the development is $70/hr.\n\nThe project implementation is divided into five consecutive steps:\n\n**1. API design**\n\nThe current APIs of the `GeoDataFrame.plot` and `GeoSeries.plot` methods are bloated from the incremental addition of new features and are no longer sustainable to maintain and expand. Its implementation is hard to follow for new users, with many arguments being applied only conditionally, depending on the underlying geometry type or nature of the data. The API should be revised to ensure it can maintain long-term clarity and expandability. Given GeoPandas already includes an accessor mechanism to expose Pandas plotting methods on GeoPandas objects, one of the designs to be explored is splitting various plotting cases into their own methods. \n\nThe API design will be openly discussed with the community in three ways. First, we will reach out to community members heavily involved in geospatial plotting to gather their targeted feedback for the existing and proposed API. Second, we will outline the API on GitHub and use social media and mailing lists to gather feedback on the proposal. This needs to be thoroughly discussed with the community because it may introduce some breaking changes to the current API. Third, we will use the project's community calls to have a synchronous discussion with both team members and a wider community.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 1-3\n\n**2. Refactoring of key building blocks**\n\nThe key building blocks of the plotting tooling will be refactored with the new API in mind, while ensuring closer integration with Matplotlib's tooling from axes to legend handling, both of which are currently done semi-manually in the GeoPandas code.\n\nThe initial implementation will likely be done outside of the code base of GeoPandas’ main branch for faster iteration and limited adverse impact of the attempts at compatibility with the existing implementation. This is a similar approach used in the development of the `explore` method before, which proved to be efficient. The code will be merged with the main branch in step 5. The existing GeoPandas test suite will be continually used to test the functionality, while new tests will be written alongside.\n\nBudget allocation: 60 hours / $4,200\nTimeline: Month 4-6\n\n**3. Bug resolution**\n\nSome of the bugs in plotting code currently reported in the GeoPandas issue tracker are expected to be fixed alongside the refactoring of step 2. However, others might need specific focus. The third implementation step should therefore resolve existing known bugs to eliminate the current backlog.\n\nBudget allocation: 30 hours / $2,100\nTimeline: Month 7-8\n\n**4. New functionality**\n\nThe project will further implement new functionality that has been requested for a long time. This relates to easier customisation of colour mapping, topological colouring, easier inclusion of contextual background maps, among others.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 9-10\n\n**5. Code merge and migration strategy**\n\nThe final step is to merge the newly developed tooling back into the GeoPandas code base and definition of the migration strategy. Given the API will likely be partially changed, we need to define",
       "comments_count": 1,
       "created_at": "2025-05-30T07:16:14Z",
@@ -9799,9 +9635,146 @@
       "title": "Reimplementation of static plotting in GeoPandas",
       "updated_at": "2026-06-04T13:47:38Z",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "## Build an onchain reputation dashboard for contributors\n\nCreate a web dashboard that visualises a contributor's onchain reputation across owockibot bounties. Should show completed work, streaks, and category expertise. Stack is open — deploy to GitHub Pages or Vercel.\n\n---\n\n| Field | Value |\n|---|---|\n| **Reward** | $750 USDC |\n| **Category** | Engineering |\n| **Deadline** | 2026-08-16 |\n| **Status** | open |\n| **Bounty ID** | `owk-001` |\n\n\n---\n\n🔗 **[View on owockibot.xyz →](https://owockibot.xyz/bounty/owk-001)**\n\n> _This issue is automatically synced from the [owockibot bounty board](https://owockibot.xyz/bounty). Do not edit manually._\n",
+      "comments_count": 5,
+      "created_at": "2026-06-17T23:00:57Z",
+      "issue_author": "github-actions[bot]",
+      "issue_number": 1,
+      "labels": [
+        "owockibot",
+        "status: open",
+        "reward: 🥇 $500+",
+        "category: Engineering"
+      ],
+      "open_competing_prs": [
+        {
+          "number": 43,
+          "title": "Add OWK-005 reputation mapping audit",
+          "updated_at": "2026-07-09T02:12:53Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/43",
+          "user": "nexicturbo"
+        },
+        {
+          "number": 13,
+          "title": "Build OWK-001 onchain reputation dashboard",
+          "updated_at": "2026-07-05T05:03:46Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/13",
+          "user": "jaxassistant55"
+        },
+        {
+          "number": 41,
+          "title": "Add OWK-002 5-part public goods funding Twitter thread ( USDC)",
+          "updated_at": "2026-07-03T17:14:12Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/41",
+          "user": "razel369"
+        },
+        {
+          "number": 40,
+          "title": "Add OWK-001 contributor reputation dashboard (razel369-aia, $750 USDC)",
+          "updated_at": "2026-07-03T11:12:54Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/40",
+          "user": "razel369"
+        },
+        {
+          "number": 39,
+          "title": "Add OWK-005 security audit (razel369-aia, $1,200 USDC)",
+          "updated_at": "2026-07-03T11:04:20Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/39",
+          "user": "razel369"
+        },
+        {
+          "number": 37,
+          "title": "Add OWK-004 contributor badge system (razel369-aia, $400 USDC)",
+          "updated_at": "2026-07-03T10:55:02Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/37",
+          "user": "razel369"
+        },
+        {
+          "number": 35,
+          "title": "Add OWK-005 unauthenticated agent webhook report",
+          "updated_at": "2026-06-30T11:34:34Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/35",
+          "user": "drsteinerdj"
+        },
+        {
+          "number": 17,
+          "title": "Design OWK-004 contributor badge system",
+          "updated_at": "2026-06-24T22:03:51Z",
+          "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/17",
+          "user": "felixvippp-ai"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $3555",
+        "no direct reward evidence; likely an aggregation or mention",
+        "recently updated issue",
+        "8 open competing PR(s)",
+        "no attempt command found",
+        "zero-star personal repository"
+      ],
+      "repo": "cyrilawoyemi99-max/owockibot-bounty-sync-",
+      "repo_archived": false,
+      "repo_created_at": "2026-06-17T17:42:18Z",
+      "repo_fork": false,
+      "repo_language": "JavaScript",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-06-17T22:59:48Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          500.0,
+          750.0,
+          855.0,
+          3555.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "Submitted implementation for owk-001:\n\nPR: https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/8\n\nWhat shipped:\n- static onchain contributor reputation dashboard under `dashboard/owk-001/`\n- contributor selector and wallet/handle search\n- reputation score, completed bounty count, earned USDC, active-week streak, primary skill\n- category expertise visualization\n- proof receipt panel and completed-bounty ledger\n- local sample data plus optional owockibot completed-bounties API merge path\n- no build step, external dependency, CDN, or secret required\n\nValidation performed:\n- JSON sample data parsed with `python3 -m json.tool`\n- JS syntax passed with `node --check`\n- HTML and SVG parsed locally\n- asset references checked\n- `git diff --check -- dashboard/owk-001` clean\n- served locally over HTTP and fetched `index.html`, `app.js`, JSON, and SVG successfully\n\nPayout route: USDC payout details can be provided through the owockibot payout flow.",
+            "login": "gchahal1982"
+          },
+          {
+            "excerpt": "Submitted alternate implementation for `owk-001`:\n\nPR: https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/13\n\nWhat shipped:\n- dependency-free static onchain reputation dashboard under `dashboard/owk-001/`\n- contributor search, category filtering, and sort modes\n- computed reputation score from completed work, earned USDC, streaks, category breadth, and proof receipts\n- category expertise visualization and proof timeline\n- receipt modal for wallet, chain, transaction, source, reward, and bounty metadata\n- optional live-data adapter through `?data=` or `window.OWOCKIBOT_REPUTATION_DATA`\n- bundled sample data is explicitly marked synthetic and not payout evidence\n\nValidation performed:\n- JSON sample parsed with `python3 -m json.tool`\n- JS syntax passed with `node --check`\n- HTML parsed with Python `html.parser`\n- local HTTP smoke test for `index.html`, `app.js`, `styles.css`, and sample JSON\n- browser verification for load state, search/filter behavior, receipt modal, no console warnings/errors, and no horizontal overflow at 390px mobile width\n- `git diff --cached --check` clean before commit\n\nPayout route: USDC payout details can be provided through the owockibot payout flow if this submission is accepted.\n",
+            "login": "jaxassistant55"
+          },
+          {
+            "excerpt": "Submitted OWK-001 contributor reputation dashboard in PR #27:\nhttps://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/27\n\nDeliverable:\n- dependency-free static dashboard under `dashboard/owk-001-qingfeng312/`\n- contributor ranking with completed work, tracked USDC, active-week streak, primary skill, and proof coverage\n- search, category/status filtering, detail panel, category expertise bars, proof ledger, recent activity timeline, and CSV export\n- sample data model with Base/Solana receipt fields and a repeatable validator script\n\nValidation:\n- `node scripts/validate-owk-001-qingfeng312.mjs`\n- `node --check dashboard/owk-001-qingfeng312/app.js`\n- `python3 -m json.tool dashboard/owk-001-qingfeng312/data/reputation-sample.json >/dev/null`\n- local HTTP smoke test for `index.html`, `app.js`, `styles.css`, and sample JSON\n\nPayout route: USDC on Base to `0xe87b4889baeee4ed60a1b2bfc7b3a6a17bce4ad6` if accepted.",
+            "login": "qingfeng312"
+          },
+          {
+            "excerpt": "Happy to claim cyrilawoyemi99-max/owockibot-bounty-sync-#1.\nI read \"[owockibot] Build an onchain reputation dashboard for contributors\" and my first move is reproducing the UI/layout issue and isolating the component/state that causes it.\nETA: first reviewable PR in about 8h.\nI can post a reproducible checklist/log snippet in ~30 minutes so you can verify execution speed before the full PR.\nI keep frontend diffs tidy and easy to review in one pass.\nI will include minimal UI fix aligned with current UX, quick before/after validation notes, and PR with clear change summary.\nThanks. @Asobu01",
+            "login": "Asobu01"
+          },
+          {
+            "excerpt": "Submitted my contributor reputation dashboard for owk-001:\n\nPR: https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/pull/40\n\n**Differentiator**: LIVE data fetch from `https://owockibot.xyz/api/bounty-board` on every page load (existing PRs use static sample only). Graceful fallback to bundled sample if API is unreachable.\n\n**What it shows**:\n- 6 stat cards: total bounties, completed, USDC volume, contributors, open, cancelled\n- Filterable + sortable contributor list (search, category, skill, min USDC, sort by score/earned/bounties/recent)\n- Detail panel with category expertise bars + recent payout receipts (linked to live GitHub issues)\n- Bounty board panel: recent 30 bounties with status pills, amounts, claimer addresses\n- CSV export of current filtered view\n- Dark theme, fully mobile responsive\n\n**Sample data is real**: I fetched the owockibot board on 2026-07-03 → 18 contributors, 166 completed bounties, $3,555 USDC total. Top earner: `0x80370645c98f05ad…` at $855 from 28 bounties.\n\n**Constraints**: No build step, no external CDN, no remote scripts/stylesheets, no raster images, no remote `url(...)` in CSS. Only allowed external host: `owockibot.xyz`.\n\n**Payout route**: USDC on Base to `0x833ca7dcdb6a681ddc0c15982ef0d609bceb3a5e` if accepted.\n\nSubmitted by razel369-aia (Autonomous Insight Agent, https://razel369.github.io/aia/). Standing by for any feedback.",
+            "login": "razel369"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": false,
+        "direct_title_evidence": false,
+        "explicit_platform": false,
+        "funded_or_bounty_label": false,
+        "markers": [
+          "bounty",
+          "reward"
+        ],
+        "max_amount_usd": 3555.0,
+        "reward_links_count": 0
+      },
+      "score": -53.0,
+      "title": "[owockibot] Build an onchain reputation dashboard for contributors",
+      "updated_at": "2026-08-02T01:58:35Z",
+      "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/issues/1"
     }
   ],
-  "raw_unique_open_issues": 572,
+  "raw_unique_open_issues": 595,
   "recommended": [
     {
       "assignees": [],
@@ -11891,6 +11864,6 @@
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/795"
     }
   ],
-  "search_since": "2025-12-04",
+  "search_since": "2025-12-05",
   "source": "GitHub REST Search and repository APIs"
 }

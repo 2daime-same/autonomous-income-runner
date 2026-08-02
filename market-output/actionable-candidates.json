@@ -465,16 +465,6 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "issue is already assigned"
-      ],
-      "issue_number": 50465,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $750] ttnn.i0: inaccurate for large |x|; needs domain split like ttnn.i1",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50465"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
         "known synthetic or adversarial bounty repository"
       ],
       "issue_number": 2850,
@@ -491,17 +481,6 @@
       "repo": "UnsafeLabs/RFC-5322",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
       "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 5,
-      "repo": "theselfish/SlopStation13",
-      "title": "[Bounty] [$600] Add Thursday's Boots",
-      "url": "https://github.com/theselfish/SlopStation13/issues/5"
     },
     {
       "flags": [
@@ -554,6 +533,18 @@
     {
       "flags": [
         "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository"
+      ],
+      "issue_number": 1986,
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "title": "[moltbook] engagement-ledger",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence"
       ],
       "issue_number": 5064,
@@ -570,26 +561,6 @@
       "repo": "devpool-directory/devpool-directory",
       "title": "Recruiting: Dragonfly CTF II",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5844,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Governance Token emissions to `ubq.eth` new strategy",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5846,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Security monitoring",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5846"
     },
     {
       "flags": [
@@ -664,17 +635,6 @@
       "flags": [
         "an open competing pull request already exists",
         "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5017,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Automatic Transfer",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5017"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
@@ -682,6 +642,19 @@
       "repo": "devpool-directory/devpool-directory",
       "title": "UbiquityOS Sprint Management Dashboard",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5916"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "requires an upfront outlay, bond, deposit, or funded child task",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1,
+      "repo": "dtopenclaw/api-reliability-bounty",
+      "title": "Harden Retry-After delta-seconds parsing — funded 0.99 USDC child",
+      "url": "https://github.com/dtopenclaw/api-reliability-bounty/issues/1"
     },
     {
       "flags": [
@@ -696,6 +669,30 @@
     },
     {
       "flags": [
+        "no direct reward evidence",
+        "requires an upfront outlay, bond, deposit, or funded child task",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1,
+      "repo": "guigaoliveira/agent-wallet-approval-bounty",
+      "title": "Paid child solver: enforce an explicit wallet approval cap (0.99 USDC)",
+      "url": "https://github.com/guigaoliveira/agent-wallet-approval-bounty/issues/1"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1,
+      "repo": "aljobson/veyrnox-strategic-report",
+      "title": "VEYRNOX Strategic Analysis Report — Alibaba CoCreate Pitch 2026",
+      "url": "https://github.com/aljobson/veyrnox-strategic-report/issues/1"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -704,11 +701,25 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1,
+      "repo": "cyrilawoyemi99-max/owockibot-bounty-sync-",
+      "title": "[owockibot] Build an onchain reputation dashboard for contributors",
+      "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/issues/1"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-01T19:34:30+00:00",
+  "generated_at": "2026-08-02T03:53:15+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-01T19:34:30+00:00"
+  "source_generated_at": "2026-08-02T03:53:15+00:00"
 }
