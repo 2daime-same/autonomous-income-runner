@@ -1,0 +1,36 @@
+{
+  "expense_usd": 0,
+  "income_or_receivable_proven": false,
+  "mcp_tool_count_verified": 8,
+  "package": "archimedes-github-pr-mcp",
+  "provenance_requested": true,
+  "public_package_url": "https://www.npmjs.com/package/archimedes-github-pr-mcp",
+  "published_at": "2026-08-02T07:13:53+00:00",
+  "registry": "https://registry.npmjs.org",
+  "registry_dist": {
+    "attestations": {
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      },
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/archimedes-github-pr-mcp@1.0.0"
+    },
+    "fileCount": 58,
+    "integrity": "sha512-T7D4vVgc7WkdejZs210FtbOjifdImmbnl6VASOvpv84xXiwYwxhvKT6dmCUPOT+ZIXnN+tqggBYB/Fin6UH+tQ==",
+    "shasum": "e9c1772fe75bcadf3639300a33587fb13fba0e10",
+    "signatures": [
+      {
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+        "sig": "MEYCIQDCLaLpXpRXg+1wHStuNPo9lQD4VG4T4Dr8kAQs2OhGmAIhAIaHTUmZCG7GzSN1TnFzHjXtUiOOBEORJemt4OxknyA6"
+      }
+    ],
+    "tarball": "https://registry.npmjs.org/archimedes-github-pr-mcp/-/archimedes-github-pr-mcp-1.0.0.tgz",
+    "unpackedSize": 182494
+  },
+  "registry_install_verified": true,
+  "schema_version": "archimedes-msn-00015-npm-publication-v1",
+  "source_commit": "e512b0bc7dce38edd207248ed67fe9788bfdb6f7",
+  "tarball": "archimedes-github-pr-mcp-1.0.0.tgz",
+  "tarball_sha256": "8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219",
+  "version": "1.0.0",
+  "workflow_run_id": 30737375609
+}
