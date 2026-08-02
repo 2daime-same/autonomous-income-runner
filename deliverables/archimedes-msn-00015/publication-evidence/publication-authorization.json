@@ -1,0 +1,17 @@
+{
+  "schema_version": "archimedes-msn-00015-publication-authorization-v1",
+  "mission_id": "MSN-00015",
+  "package": "archimedes-github-pr-mcp",
+  "expected_version": "1.0.0",
+  "expected_tarball_sha256": "8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219",
+  "authorization_phrase": "PUBLISH-MSN-00015",
+  "authorized": true,
+  "authorization_source": "chat-user-explicit",
+  "authorized_at": "2026-08-02T06:55:05Z",
+  "user_statement": "NPM_TOKEN追加済み・MSN-00015公開許可",
+  "commercial_status_before_publication": {
+    "verified_income_jpy": 0,
+    "verified_receivable_jpy": 0,
+    "verified_spend_jpy": 0
+  }
+}
