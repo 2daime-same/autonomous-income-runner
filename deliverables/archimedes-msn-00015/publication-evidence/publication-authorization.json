@@ -5,20 +5,29 @@
   "expected_version": "1.0.0",
   "expected_tarball_sha256": "8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219",
   "authorization_phrase": "PUBLISH-MSN-00015",
-  "authorized": true,
+  "authorized": false,
+  "authorization_consumed": true,
   "authorization_source": "chat-user-explicit",
-  "authorized_at": "2026-08-02T07:12:36Z",
-  "user_statement": "NPM_TOKEN追加済み・MSN-00015公開許可",
-  "retry_sequence": 3,
-  "retry_reason": "Run 30737278926 stopped before packing or publishing because actions/setup-node injected a placeholder NODE_AUTH_TOKEN into credential-free verification steps. The workflow now configures npm authentication only inside the single irreversible publish step. The package remained absent from the public registry.",
-  "pre_retry_evidence": {
-    "failed_workflow_run_id": 30737278926,
-    "failed_step": "Verify locked source and production dependencies without publish credentials",
-    "registry_visible": false,
-    "registry_observed_at": "2026-08-02T07:08:30Z",
-    "registry_status_path": "publication-evidence/registry-status.json"
+  "original_user_statement": "NPM_TOKEN追加済み・MSN-00015公開許可",
+  "original_authorized_at": "2026-08-02T06:55:05Z",
+  "final_retry_authorized_at": "2026-08-02T07:12:36Z",
+  "consumed_at": "2026-08-02T07:18:51Z",
+  "successful_publication": {
+    "workflow_run_id": 30737375609,
+    "published_at": "2026-08-02T07:13:53Z",
+    "package": "archimedes-github-pr-mcp",
+    "version": "1.0.0",
+    "registry_install_verified": true,
+    "mcp_tool_count_verified": 8,
+    "provenance_verified": true
   },
-  "commercial_status_before_publication": {
+  "authorization_reuse_permitted": false,
+  "token_cleanup": {
+    "npm_token_revocation_confirmed": false,
+    "github_secret_deletion_confirmed": false,
+    "trusted_publishing_configured": false
+  },
+  "commercial_status_after_publication": {
     "verified_income_jpy": 0,
     "verified_receivable_jpy": 0,
     "verified_spend_jpy": 0
