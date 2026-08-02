@@ -272,30 +272,6 @@
     },
     {
       "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 785,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Laravel ] Add database health check endpoint with retry logic",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/785"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 761,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ FastAPI ] Add file size and content type validation to UploadFile",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/761"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
@@ -434,29 +410,6 @@
     },
     {
       "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 919,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix zero-fee flash loans and add pool drainage protection",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/919"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 915,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix PriceOracle missing staleness check and fallback mechanism",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/915"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
@@ -509,16 +462,6 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "issue is already assigned"
-      ],
-      "issue_number": 50465,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $750] ttnn.i0: inaccurate for large |x|; needs domain split like ttnn.i1",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50465"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
@@ -554,39 +497,25 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository"
       ],
-      "issue_number": 29,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Implement a fully functional Admin Panel",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/29"
+      "issue_number": 1986,
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "title": "[moltbook] engagement-ledger",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
       ],
-      "issue_number": 76,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Technical Poem Generation and Content Creation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/76"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 1,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Implement Secure Payment Gateway and Payment Service",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1"
+      "issue_number": 5064,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Nomic Embeddings Model for +10% Accuracy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
     },
     {
       "flags": [
@@ -603,10 +532,20 @@
         "bot-authored issue without recognized platform evidence",
         "no direct reward evidence"
       ],
-      "issue_number": 5066,
+      "issue_number": 5844,
       "repo": "devpool-directory/devpool-directory",
-      "title": "Cow Swap Cash Out",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5066"
+      "title": "Governance Token emissions to `ubq.eth` new strategy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
+      ],
+      "issue_number": 4996,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Import Nonces",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/4996"
     },
     {
       "flags": [
@@ -682,15 +621,12 @@
     {
       "flags": [
         "no direct reward evidence",
-        "requires an upfront outlay, bond, deposit, or funded child task",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
+        "reward is unusually high for the first-income target"
       ],
-      "issue_number": 1,
-      "repo": "dtopenclaw/api-reliability-bounty",
-      "title": "Harden Retry-After delta-seconds parsing — funded 0.99 USDC child",
-      "url": "https://github.com/dtopenclaw/api-reliability-bounty/issues/1"
+      "issue_number": 929,
+      "repo": "Tyaoo/picker",
+      "title": "[每日信息流] 2025-02-25",
+      "url": "https://github.com/Tyaoo/picker/issues/929"
     },
     {
       "flags": [
@@ -705,6 +641,36 @@
     },
     {
       "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 60,
+      "repo": "ErgoDevs/Ergo-Bounties",
+      "title": "Registry keeps listing bounties whose work is already merged",
+      "url": "https://github.com/ErgoDevs/Ergo-Bounties/issues/60"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 744,
+      "repo": "ruohong2018/ruohong2018.github.io",
+      "title": "[每日信息流] 2025-02-25",
+      "url": "https://github.com/ruohong2018/ruohong2018.github.io/issues/744"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 1549,
+      "repo": "BruceFeIix/picker",
+      "title": "[每日信息流] 2025-02-25",
+      "url": "https://github.com/BruceFeIix/picker/issues/1549"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -713,11 +679,36 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "requires an upfront outlay, bond, deposit, or funded child task",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1,
+      "repo": "dtopenclaw/api-reliability-bounty",
+      "title": "Harden Retry-After delta-seconds parsing — submitted for verification",
+      "url": "https://github.com/dtopenclaw/api-reliability-bounty/issues/1"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "repository is a fork",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1,
+      "repo": "123a-bcd/zeroeye",
+      "title": "[$40 BOUNTY] [Python] Validate Terraform import resource names",
+      "url": "https://github.com/123a-bcd/zeroeye/issues/1"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-02T08:40:39+00:00",
+  "generated_at": "2026-08-02T13:54:41+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-02T08:40:39+00:00"
+  "source_generated_at": "2026-08-02T13:54:41+00:00"
 }
