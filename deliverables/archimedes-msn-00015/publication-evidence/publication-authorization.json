@@ -7,8 +7,15 @@
   "authorization_phrase": "PUBLISH-MSN-00015",
   "authorized": true,
   "authorization_source": "chat-user-explicit",
-  "authorized_at": "2026-08-02T06:55:05Z",
+  "authorized_at": "2026-08-02T07:09:49Z",
   "user_statement": "NPM_TOKEN追加済み・MSN-00015公開許可",
+  "retry_sequence": 2,
+  "retry_reason": "The first trigger produced no public package. A credential-free registry probe observed E404 after 36 attempts through 2026-08-02T07:08:30Z. Retrying the same guarded publication while the explicit authorization remains current.",
+  "pre_retry_registry_evidence": {
+    "path": "publication-evidence/registry-status.json",
+    "visible": false,
+    "observed_at": "2026-08-02T07:08:30Z"
+  },
   "commercial_status_before_publication": {
     "verified_income_jpy": 0,
     "verified_receivable_jpy": 0,
