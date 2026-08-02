@@ -1,0 +1,135 @@
+name: Record MSN-00015 npm publication workflow result
+
+on:
+  workflow_run:
+    workflows:
+      - Publish MSN-00015 package to npm for the first time
+    types:
+      - completed
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: archimedes-msn-00015-first-npm-publish-result
+  cancel-in-progress: false
+
+jobs:
+  record:
+    if: github.repository == '2daime-same/autonomous-income-runner'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch job outcomes and public registry state
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
+          RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+          RUN_STATUS: ${{ github.event.workflow_run.status }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT_NAME: ${{ github.event.workflow_run.event }}
+          CREATED_AT: ${{ github.event.workflow_run.created_at }}
+          UPDATED_AT: ${{ github.event.workflow_run.updated_at }}
+        run: |
+          set -euo pipefail
+          gh api \
+            -H 'Accept: application/vnd.github+json' \
+            "/repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/jobs?filter=latest&per_page=100" \
+            > /tmp/publication-jobs.json
+
+          REGISTRY_VISIBLE=false
+          if npm view archimedes-github-pr-mcp@1.0.0 --json > /tmp/npm-publication-view.json 2>/tmp/npm-publication-view.err; then
+            REGISTRY_VISIBLE=true
+          else
+            printf '{}\n' > /tmp/npm-publication-view.json
+          fi
+          export REGISTRY_VISIBLE
+
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          jobs_payload = json.loads(Path('/tmp/publication-jobs.json').read_text(encoding='utf-8'))
+          registry_payload = json.loads(Path('/tmp/npm-publication-view.json').read_text(encoding='utf-8'))
+          jobs = []
+          for job in jobs_payload.get('jobs', []):
+              jobs.append({
+                  'id': job.get('id'),
+                  'name': job.get('name'),
+                  'status': job.get('status'),
+                  'conclusion': job.get('conclusion'),
+                  'started_at': job.get('started_at'),
+                  'completed_at': job.get('completed_at'),
+                  'steps': [
+                      {
+                          'number': step.get('number'),
+                          'name': step.get('name'),
+                          'status': step.get('status'),
+                          'conclusion': step.get('conclusion'),
+                      }
+                      for step in job.get('steps', [])
+                  ],
+              })
+
+          registry_visible = os.environ['REGISTRY_VISIBLE'].lower() == 'true'
+          value = {
+              'schema_version': 'archimedes-msn-00015-first-publish-workflow-result-v1',
+              'recorded_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'workflow_run_id': int(os.environ['RUN_ID']),
+              'run_number': int(os.environ['RUN_NUMBER']),
+              'run_attempt': int(os.environ['RUN_ATTEMPT']),
+              'event': os.environ['EVENT_NAME'],
+              'status': os.environ['RUN_STATUS'],
+              'conclusion': os.environ['RUN_CONCLUSION'],
+              'run_url': os.environ['RUN_URL'],
+              'head_sha': os.environ['HEAD_SHA'],
+              'created_at': os.environ['CREATED_AT'],
+              'updated_at': os.environ['UPDATED_AT'],
+              'jobs': jobs,
+              'registry': {
+                  'package': 'archimedes-github-pr-mcp',
+                  'version': '1.0.0',
+                  'visible': registry_visible,
+                  'dist': registry_payload.get('dist') if isinstance(registry_payload, dict) else None,
+              },
+              'commercial_status': {
+                  'verified_income_jpy': 0,
+                  'verified_receivable_jpy': 0,
+                  'verified_spend_jpy': 0,
+              },
+          }
+          path = Path('deliverables/archimedes-msn-00015/publication-evidence/workflow-result.json')
+          path.parent.mkdir(parents=True, exist_ok=True)
+          path.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit credential-free result evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add deliverables/archimedes-msn-00015/publication-evidence/workflow-result.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Record MSN-00015 npm publication workflow result [skip ci]'
+          for attempt in $(seq 1 12); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
