@@ -4,17 +4,17 @@
     "verified_receivable_jpy": 0,
     "verified_spend_jpy": 0
   },
-  "conclusion": "failure",
-  "created_at": "2026-08-02T07:10:09Z",
+  "conclusion": "success",
+  "created_at": "2026-08-02T07:13:00Z",
   "event": "push",
-  "head_sha": "5c9a4c02e012c002367eccbc6aea2569ec38f25e",
+  "head_sha": "fa078780df8915388b7d719f23f4c7da7c36039d",
   "jobs": [
     {
-      "completed_at": "2026-08-02T07:10:20Z",
-      "conclusion": "failure",
-      "id": 91468301330,
+      "completed_at": "2026-08-02T07:13:58Z",
+      "conclusion": "success",
+      "id": 91468549055,
       "name": "publish",
-      "started_at": "2026-08-02T07:10:11Z",
+      "started_at": "2026-08-02T07:13:04Z",
       "status": "completed",
       "steps": [
         {
@@ -37,49 +37,49 @@
         },
         {
           "conclusion": "success",
-          "name": "Set up Node.js and npm registry authentication",
+          "name": "Set up Node.js without registry credentials",
           "number": 4,
           "status": "completed"
         },
         {
-          "conclusion": "failure",
+          "conclusion": "success",
           "name": "Verify locked source and production dependencies without publish credentials",
           "number": 5,
           "status": "completed"
         },
         {
-          "conclusion": "skipped",
+          "conclusion": "success",
           "name": "Rebuild and match the approved npm tarball exactly",
           "number": 6,
           "status": "completed"
         },
         {
-          "conclusion": "skipped",
+          "conclusion": "success",
           "name": "Refuse overwrite or name collision",
           "number": 7,
           "status": "completed"
         },
         {
-          "conclusion": "skipped",
+          "conclusion": "success",
           "name": "Publish the approved public package once",
           "number": 8,
           "status": "completed"
         },
         {
-          "conclusion": "skipped",
+          "conclusion": "success",
           "name": "Verify public registry metadata and installed-package MCP handshake",
           "number": 9,
           "status": "completed"
         },
         {
-          "conclusion": "skipped",
+          "conclusion": "success",
           "name": "Record public publication evidence without credentials",
           "number": 10,
           "status": "completed"
         },
         {
-          "conclusion": "skipped",
-          "name": "Post Set up Node.js and npm registry authentication",
+          "conclusion": "success",
+          "name": "Post Set up Node.js without registry credentials",
           "number": 19,
           "status": "completed"
         },
@@ -98,18 +98,36 @@
       ]
     }
   ],
-  "recorded_at": "2026-08-02T07:10:34+00:00",
+  "recorded_at": "2026-08-02T07:14:10+00:00",
   "registry": {
-    "dist": null,
+    "dist": {
+      "attestations": {
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        },
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/archimedes-github-pr-mcp@1.0.0"
+      },
+      "fileCount": 58,
+      "integrity": "sha512-T7D4vVgc7WkdejZs210FtbOjifdImmbnl6VASOvpv84xXiwYwxhvKT6dmCUPOT+ZIXnN+tqggBYB/Fin6UH+tQ==",
+      "shasum": "e9c1772fe75bcadf3639300a33587fb13fba0e10",
+      "signatures": [
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEYCIQDCLaLpXpRXg+1wHStuNPo9lQD4VG4T4Dr8kAQs2OhGmAIhAIaHTUmZCG7GzSN1TnFzHjXtUiOOBEORJemt4OxknyA6"
+        }
+      ],
+      "tarball": "https://registry.npmjs.org/archimedes-github-pr-mcp/-/archimedes-github-pr-mcp-1.0.0.tgz",
+      "unpackedSize": 182494
+    },
     "package": "archimedes-github-pr-mcp",
     "version": "1.0.0",
-    "visible": false
+    "visible": true
   },
   "run_attempt": 1,
-  "run_number": 2,
-  "run_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30737278926",
+  "run_number": 3,
+  "run_url": "https://github.com/2daime-same/autonomous-income-runner/actions/runs/30737375609",
   "schema_version": "archimedes-msn-00015-first-publish-workflow-result-v1",
   "status": "completed",
-  "updated_at": "2026-08-02T07:10:21Z",
-  "workflow_run_id": 30737278926
+  "updated_at": "2026-08-02T07:13:59Z",
+  "workflow_run_id": 30737375609
 }
