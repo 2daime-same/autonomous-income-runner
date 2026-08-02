@@ -1,0 +1,19 @@
+{
+  "attempts": 36,
+  "commercial_status": {
+    "verified_income_jpy": 0,
+    "verified_receivable_jpy": 0,
+    "verified_spend_jpy": 0
+  },
+  "dist": null,
+  "error_excerpt": "npm error code E404\nnpm error 404 Not Found - GET https://registry.npmjs.org/archimedes-github-pr-mcp - Not found\nnpm error 404\nnpm error 404  'archimedes-github-pr-mcp@1.0.0' is not in this registry.\nnpm error 404\nnpm error 404 Note that you can also install from a\nnpm error 404 tarball, folder, http url, or git url.\nnpm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-08-02T07_08_19_840Z-debug-0.log\n",
+  "metadata_name": null,
+  "metadata_version": null,
+  "observed_at": "2026-08-02T07:08:30+00:00",
+  "package": "archimedes-github-pr-mcp",
+  "registry": "https://registry.npmjs.org",
+  "schema_version": "archimedes-msn-00015-registry-probe-v1",
+  "source_commit": "74fd25ca9038b80de999bfc1bc88aea8937397c6",
+  "version": "1.0.0",
+  "visible": false
+}
