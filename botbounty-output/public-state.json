@@ -10,16 +10,17 @@
     "usdc": 0.0
   },
   "expenses_usd": 0,
+  "finished_at": "2026-08-02T17:31:07+00:00",
   "model": "openai/gpt-4.1-mini",
   "platform": "https://botbounty-production.up.railway.app/api",
-  "polls": 49,
+  "polls": 60,
   "safe_bounty_preview": [],
   "safe_open_bounty_count": 0,
   "schema_version": "botbounty-worker-v1",
   "solutions_submitted": 0,
   "started_at": "2026-08-02T17:10:50+00:00",
-  "status": "online_waiting_for_open_bounty_or_approval",
-  "updated_at": "2026-08-02T17:27:04+00:00",
+  "status": "run_window_completed_no_income",
+  "updated_at": "2026-08-02T17:31:07+00:00",
   "verified_income": {
     "eth": 0.0,
     "usdc": 0.0
