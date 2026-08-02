@@ -4,6 +4,16 @@
   "excluded": [
     {
       "flags": [
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 49307,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $2500] Command-R bringup using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/49307"
+    },
+    {
+      "flags": [
         "bot-authored issue without recognized platform evidence",
         "known synthetic or adversarial bounty repository",
         "requests hidden prompts, internal instructions, or session metadata",
@@ -215,6 +225,28 @@
     },
     {
       "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 50676,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $2000] Fuse per-channel quantize/dequantize with a scalar zero-point",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/50676"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 51398,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/51398"
+    },
+    {
+      "flags": [
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
@@ -269,6 +301,17 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ FastAPI ] Add request-scoped dependency caching to reduce duplicate resolution",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/795"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 50522,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1500] ModernBERT bring up using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/50522"
     },
     {
       "flags": [
@@ -462,14 +505,12 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "issue is already assigned"
       ],
-      "issue_number": 30,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
+      "issue_number": 50465,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $750] ttnn.i0: inaccurate for large |x|; needs domain split like ttnn.i1",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/50465"
     },
     {
       "flags": [
@@ -490,22 +531,22 @@
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
+      "issue_number": 30,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
       "issue_number": 80,
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Pixel Art Creation with high Creative Thinking",
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/80"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
-      ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
     },
     {
       "flags": [
@@ -526,16 +567,6 @@
       "repo": "devpool-directory/devpool-directory",
       "title": "Recruiting: Dragonfly CTF II",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5844,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Governance Token emissions to `ubq.eth` new strategy",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
     },
     {
       "flags": [
@@ -620,16 +651,6 @@
     },
     {
       "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 929,
-      "repo": "Tyaoo/picker",
-      "title": "[每日信息流] 2025-02-25",
-      "url": "https://github.com/Tyaoo/picker/issues/929"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -638,6 +659,17 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Comprehensive review and overhaul of Spyder's documentation",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/21"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 181,
+      "repo": "webnxt-2030/ember2",
+      "title": "[Ecosystem Fit] BOT Chain Ecosystem Support — WEAK FIT (29/100) — Scheme C — assessed 2026-08-02",
+      "url": "https://github.com/webnxt-2030/ember2/issues/181"
     },
     {
       "flags": [
@@ -651,26 +683,6 @@
     },
     {
       "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 744,
-      "repo": "ruohong2018/ruohong2018.github.io",
-      "title": "[每日信息流] 2025-02-25",
-      "url": "https://github.com/ruohong2018/ruohong2018.github.io/issues/744"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 1549,
-      "repo": "BruceFeIix/picker",
-      "title": "[每日信息流] 2025-02-25",
-      "url": "https://github.com/BruceFeIix/picker/issues/1549"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -679,19 +691,6 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "requires an upfront outlay, bond, deposit, or funded child task",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1,
-      "repo": "dtopenclaw/api-reliability-bounty",
-      "title": "Harden Retry-After delta-seconds parsing — submitted for verification",
-      "url": "https://github.com/dtopenclaw/api-reliability-bounty/issues/1"
     },
     {
       "flags": [
@@ -707,8 +706,8 @@
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-02T13:54:41+00:00",
+  "generated_at": "2026-08-02T19:34:55+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-02T13:54:41+00:00"
+  "source_generated_at": "2026-08-02T19:34:55+00:00"
 }
