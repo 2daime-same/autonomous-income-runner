@@ -1,0 +1,9 @@
+{
+  "schema_version": "archimedes-msn-00015-registry-probe-request-v1",
+  "requested_at": "2026-08-02T07:01:55Z",
+  "package": "archimedes-github-pr-mcp",
+  "version": "1.0.0",
+  "reason": "Verify the public registry outcome after the explicitly authorized guarded first-publication attempt.",
+  "credentials_required": false,
+  "writes_to_registry": false
+}
