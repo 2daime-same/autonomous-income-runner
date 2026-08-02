@@ -1,199 +1,63 @@
-name: Publish MSN-00015 package to npm for the first time
+name: Verify published MSN-00015 npm package
 
 on:
   workflow_dispatch:
-    inputs:
-      expected_version:
-        description: Exact package version approved for first publication
-        required: true
-        default: '1.0.0'
-        type: string
-      expected_tarball_sha256:
-        description: Approved SHA-256 of the npm pack tarball
-        required: true
-        default: '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219'
-        type: string
-      confirm_publication:
-        description: Type PUBLISH-MSN-00015 to authorize the irreversible public release
-        required: true
-        type: string
-  push:
-    branches: [main]
-    paths:
-      - deliverables/archimedes-msn-00015/publication-evidence/publication-authorization.json
+  schedule:
+    - cron: '17 3 * * 1'
 
 permissions:
-  contents: write
-  id-token: write
+  contents: read
 
 concurrency:
-  group: archimedes-msn-00015-first-npm-publish
-  cancel-in-progress: false
+  group: archimedes-msn-00015-published-package-verification
+  cancel-in-progress: true
 
 jobs:
-  publish:
+  verify:
+    if: github.repository == '2daime-same/autonomous-income-runner'
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
-    defaults:
-      run:
-        working-directory: deliverables/archimedes-msn-00015
-    env:
-      EXPECTED_VERSION: '1.0.0'
-      EXPECTED_TARBALL_SHA256: '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219'
-      CONFIRM_PUBLICATION: 'PUBLISH-MSN-00015'
+    timeout-minutes: 10
     steps:
-      - name: Check out the reviewed default branch
-        uses: actions/checkout@v6
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Validate explicit human authorization and credential presence
-        env:
-          DISPATCH_EXPECTED_VERSION: ${{ inputs.expected_version }}
-          DISPATCH_EXPECTED_TARBALL_SHA256: ${{ inputs.expected_tarball_sha256 }}
-          DISPATCH_CONFIRM_PUBLICATION: ${{ inputs.confirm_publication }}
-          NPM_TOKEN_FOR_PRESENCE_CHECK: ${{ secrets.NPM_TOKEN }}
-        run: |
-          set -euo pipefail
-          test -n "${NPM_TOKEN_FOR_PRESENCE_CHECK:-}"
-
-          if [ "$GITHUB_EVENT_NAME" = 'workflow_dispatch' ]; then
-            test "$DISPATCH_EXPECTED_VERSION" = "$EXPECTED_VERSION"
-            test "$DISPATCH_EXPECTED_TARBALL_SHA256" = "$EXPECTED_TARBALL_SHA256"
-            test "$DISPATCH_CONFIRM_PUBLICATION" = "$CONFIRM_PUBLICATION"
-          elif [ "$GITHUB_EVENT_NAME" = 'push' ]; then
-            python3 - <<'PY'
-          import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-
-          path = Path('publication-evidence/publication-authorization.json')
-          if not path.is_file():
-              raise SystemExit('publication authorization file is missing')
-          data = json.loads(path.read_text(encoding='utf-8'))
-          expected = {
-              'schema_version': 'archimedes-msn-00015-publication-authorization-v1',
-              'mission_id': 'MSN-00015',
-              'package': 'archimedes-github-pr-mcp',
-              'expected_version': '1.0.0',
-              'expected_tarball_sha256': '8f1ccb8ed016d5be2c3cf85ff6dda0ecb9f8bbbe7886d31dc9ca9d9ba3f42219',
-              'authorization_phrase': 'PUBLISH-MSN-00015',
-              'authorized': True,
-              'authorization_source': 'chat-user-explicit',
-          }
-          for key, value in expected.items():
-              if data.get(key) != value:
-                  raise SystemExit(f'invalid publication authorization field: {key}')
-          raw_time = str(data.get('authorized_at') or '')
-          try:
-              authorized_at = datetime.fromisoformat(raw_time.replace('Z', '+00:00'))
-          except ValueError as exc:
-              raise SystemExit('invalid authorized_at timestamp') from exc
-          now = datetime.now(timezone.utc)
-          age_seconds = (now - authorized_at.astimezone(timezone.utc)).total_seconds()
-          if age_seconds < -300 or age_seconds > 7200:
-              raise SystemExit(f'publication authorization is outside the two-hour window: {age_seconds}s')
-          PY
-          else
-            echo "Unsupported trigger: $GITHUB_EVENT_NAME"
-            exit 1
-          fi
-
-      - name: Set up Node.js without registry credentials
+      - name: Set up Node.js without credentials
         uses: actions/setup-node@v6
         with:
           node-version: '22.23.1'
           package-manager-cache: false
 
-      - name: Verify locked source and production dependencies without publish credentials
-        run: |
-          set -euo pipefail
-          test -z "${NODE_AUTH_TOKEN:-}"
-          test -z "${NPM_TOKEN:-}"
-          npm ci --no-audit --no-fund
-          npm run verify
-          npm audit --omit=dev --audit-level=high
-          PACKAGE_VERSION=$(node -p "require('./package.json').version")
-          PACKAGE_NAME=$(node -p "require('./package.json').name")
-          PACKAGE_VISIBILITY=$(node -p "require('./package.json').private === true ? 'private' : 'public'")
-          test "$PACKAGE_VERSION" = "$EXPECTED_VERSION"
-          test "$PACKAGE_NAME" = 'archimedes-github-pr-mcp'
-          test "$PACKAGE_VISIBILITY" = 'public'
-
-      - name: Rebuild and match the approved npm tarball exactly
-        id: pack
-        run: |
-          set -euo pipefail
-          test -z "${NODE_AUTH_TOKEN:-}"
-          test -z "${NPM_TOKEN:-}"
-          npm pack --json > /tmp/npm-pack.json
-          TARBALL=$(python3 - <<'PY'
-          import json
-          from pathlib import Path
-          data = json.loads(Path('/tmp/npm-pack.json').read_text())
-          assert len(data) == 1
-          print(data[0]['filename'])
-          PY
-          )
-          ACTUAL_SHA=$(sha256sum "$TARBALL" | awk '{print $1}')
-          test "$ACTUAL_SHA" = "$EXPECTED_TARBALL_SHA256"
-          echo "tarball=$TARBALL" >> "$GITHUB_OUTPUT"
-          echo "sha256=$ACTUAL_SHA" >> "$GITHUB_OUTPUT"
-
-      - name: Refuse overwrite or name collision
-        run: |
-          set -euo pipefail
-          test -z "${NODE_AUTH_TOKEN:-}"
-          test -z "${NPM_TOKEN:-}"
-          PACKAGE='archimedes-github-pr-mcp'
-          if npm view "$PACKAGE@$EXPECTED_VERSION" version --json >/tmp/existing-version.json 2>/tmp/existing-version.err; then
-            echo "Package version already exists; refusing a second publication attempt."
-            cat /tmp/existing-version.json
-            exit 1
-          fi
-          if ! grep -Eq 'E404|404 Not Found' /tmp/existing-version.err; then
-            echo 'Unexpected npm registry response:'
-            sed -n '1,80p' /tmp/existing-version.err
-            exit 1
-          fi
-
-      - name: Publish the approved public package once
+      - name: Verify public metadata, provenance, clean install, and MCP surface
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          set -euo pipefail
-          test -n "${NPM_TOKEN:-}"
-          test -z "${NODE_AUTH_TOKEN:-}"
-          PUBLISH_NPMRC="$RUNNER_TEMP/msn-00015-first-publish.npmrc"
-          trap 'rm -f "$PUBLISH_NPMRC"' EXIT
-          umask 077
-          printf '//registry.npmjs.org/:_authToken=%s\n' "$NPM_TOKEN" > "$PUBLISH_NPMRC"
-          NPM_CONFIG_USERCONFIG="$PUBLISH_NPMRC" npm publish \
-            "${{ steps.pack.outputs.tarball }}" \
-            --access public \
-            --provenance \
-            --registry https://registry.npmjs.org
-
-      - name: Verify public registry metadata and installed-package MCP handshake
+          PACKAGE: archimedes-github-pr-mcp
+          VERSION: 1.0.0
+          EXPECTED_INTEGRITY: sha512-T7D4vVgc7WkdejZs210FtbOjifdImmbnl6VASOvpv84xXiwYwxhvKT6dmCUPOT+ZIXnN+tqggBYB/Fin6UH+tQ==
         run: |
           set -euo pipefail
           test -z "${NODE_AUTH_TOKEN:-}"
           test -z "${NPM_TOKEN:-}"
-          PACKAGE='archimedes-github-pr-mcp'
-          for attempt in $(seq 1 30); do
-            if npm view "$PACKAGE@$EXPECTED_VERSION" --json > /tmp/published.json 2>/tmp/published.err; then
-              break
-            fi
-            sleep "$((attempt < 5 ? 2 : 4))"
-          done
-          test -s /tmp/published.json
-          rm -rf /tmp/msn15-registry-install
-          mkdir -p /tmp/msn15-registry-install
-          cd /tmp/msn15-registry-install
+          npm view "$PACKAGE@$VERSION" --json > /tmp/published.json
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          value = json.loads(Path('/tmp/published.json').read_text(encoding='utf-8'))
+          if value.get('name') != os.environ['PACKAGE']:
+              raise SystemExit('unexpected public package name')
+          if value.get('version') != os.environ['VERSION']:
+              raise SystemExit('unexpected public package version')
+          dist = value.get('dist') or {}
+          if dist.get('integrity') != os.environ['EXPECTED_INTEGRITY']:
+              raise SystemExit('published package integrity changed')
+          provenance = ((dist.get('attestations') or {}).get('provenance') or {}).get('predicateType')
+          if provenance != 'https://slsa.dev/provenance/v1':
+              raise SystemExit('SLSA provenance attestation is missing')
+          PY
+
+          rm -rf /tmp/msn15-public-install
+          mkdir -p /tmp/msn15-public-install
+          cd /tmp/msn15-public-install
           npm init -y >/dev/null
-          npm install --no-audit --no-fund "$PACKAGE@$EXPECTED_VERSION"
-          SERVER_PATH="$PWD/node_modules/archimedes-github-pr-mcp/dist/index.js"
+          npm install --no-audit --no-fund "$PACKAGE@$VERSION"
+          SERVER_PATH="$PWD/node_modules/$PACKAGE/dist/index.js"
           test -s "$SERVER_PATH"
           SERVER_PATH="$SERVER_PATH" node <<'NODE'
           import { spawn } from 'node:child_process';
@@ -234,74 +98,14 @@ jobs:
           const initialized = await request('initialize', {
             protocolVersion: '2025-06-18',
             capabilities: {},
-            clientInfo: { name: 'registry-smoke', version: '1.0.0' },
+            clientInfo: { name: 'public-registry-verifier', version: '1.0.0' },
           });
           child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized', params: {} })}\n`);
           const tools = await request('tools/list');
-          if (!initialized?.serverInfo || tools.tools?.length !== 8) {
+          const prompts = await request('prompts/list');
+          if (!initialized?.serverInfo || tools.tools?.length !== 8 || prompts.prompts?.length !== 2) {
             throw new Error('published package did not register the expected MCP surface');
           }
           child.stdin.end();
           setTimeout(() => child.kill('SIGTERM'), 250).unref();
           NODE
-
-      - name: Record public publication evidence without credentials
-        env:
-          WORKFLOW_RUN_ID: ${{ github.run_id }}
-          TARBALL: ${{ steps.pack.outputs.tarball }}
-          TARBALL_SHA: ${{ steps.pack.outputs.sha256 }}
-        run: |
-          set -euo pipefail
-          test -z "${NODE_AUTH_TOKEN:-}"
-          test -z "${NPM_TOKEN:-}"
-          mkdir -p publication-evidence
-          SOURCE_SHA=$(git rev-parse HEAD)
-          export SOURCE_SHA
-          python3 - <<'PY'
-          import json
-          import os
-          import re
-          from datetime import datetime, timezone
-          from pathlib import Path
-
-          metadata = json.loads(Path('/tmp/published.json').read_text())
-          value = {
-              'schema_version': 'archimedes-msn-00015-npm-publication-v1',
-              'published_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-              'package': 'archimedes-github-pr-mcp',
-              'version': os.environ['EXPECTED_VERSION'],
-              'registry': 'https://registry.npmjs.org',
-              'public_package_url': 'https://www.npmjs.com/package/archimedes-github-pr-mcp',
-              'source_commit': os.environ['SOURCE_SHA'],
-              'workflow_run_id': int(os.environ['WORKFLOW_RUN_ID']),
-              'tarball': os.environ['TARBALL'],
-              'tarball_sha256': os.environ['TARBALL_SHA'],
-              'registry_dist': metadata.get('dist'),
-              'registry_install_verified': True,
-              'mcp_tool_count_verified': 8,
-              'provenance_requested': True,
-              'expense_usd': 0,
-              'income_or_receivable_proven': False,
-          }
-          text = json.dumps(value, indent=2, sort_keys=True) + '\n'
-          patterns = [
-              re.compile(r'\bnpm_[A-Za-z0-9]{20,}\b'),
-              re.compile(r'(?i)authorization\s*[:=]'),
-              re.compile(r'(?i)bearer\s+[A-Za-z0-9._~+/=-]{16,}'),
-          ]
-          if any(pattern.search(text) for pattern in patterns):
-              raise SystemExit('credential-like material found in publication evidence')
-          Path('publication-evidence/npm-publication.json').write_text(text, encoding='utf-8')
-          PY
-          git config user.name 'agent-income-runner[bot]'
-          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-          git add publication-evidence/npm-publication.json
-          git commit -m 'Record MSN-00015 npm publication evidence [skip ci]'
-          for attempt in $(seq 1 12); do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            git rebase --abort 2>/dev/null || true
-            sleep "$attempt"
-          done
-          exit 1
