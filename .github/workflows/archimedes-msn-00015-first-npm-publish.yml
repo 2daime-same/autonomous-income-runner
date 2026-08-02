@@ -100,17 +100,17 @@ jobs:
             exit 1
           fi
 
-      - name: Set up Node.js and npm registry authentication
+      - name: Set up Node.js without registry credentials
         uses: actions/setup-node@v6
         with:
           node-version: '22.23.1'
-          registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false
 
       - name: Verify locked source and production dependencies without publish credentials
         run: |
           set -euo pipefail
           test -z "${NODE_AUTH_TOKEN:-}"
+          test -z "${NPM_TOKEN:-}"
           npm ci --no-audit --no-fund
           npm run verify
           npm audit --omit=dev --audit-level=high
@@ -126,6 +126,7 @@ jobs:
         run: |
           set -euo pipefail
           test -z "${NODE_AUTH_TOKEN:-}"
+          test -z "${NPM_TOKEN:-}"
           npm pack --json > /tmp/npm-pack.json
           TARBALL=$(python3 - <<'PY'
           import json
@@ -144,6 +145,7 @@ jobs:
         run: |
           set -euo pipefail
           test -z "${NODE_AUTH_TOKEN:-}"
+          test -z "${NPM_TOKEN:-}"
           PACKAGE='archimedes-github-pr-mcp'
           if npm view "$PACKAGE@$EXPECTED_VERSION" version --json >/tmp/existing-version.json 2>/tmp/existing-version.err; then
             echo "Package version already exists; refusing a second publication attempt."
@@ -158,16 +160,26 @@ jobs:
 
       - name: Publish the approved public package once
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           set -euo pipefail
-          test -n "${NODE_AUTH_TOKEN:-}"
-          npm publish "${{ steps.pack.outputs.tarball }}" --access public --provenance
+          test -n "${NPM_TOKEN:-}"
+          test -z "${NODE_AUTH_TOKEN:-}"
+          PUBLISH_NPMRC="$RUNNER_TEMP/msn-00015-first-publish.npmrc"
+          trap 'rm -f "$PUBLISH_NPMRC"' EXIT
+          umask 077
+          printf '//registry.npmjs.org/:_authToken=%s\n' "$NPM_TOKEN" > "$PUBLISH_NPMRC"
+          NPM_CONFIG_USERCONFIG="$PUBLISH_NPMRC" npm publish \
+            "${{ steps.pack.outputs.tarball }}" \
+            --access public \
+            --provenance \
+            --registry https://registry.npmjs.org
 
       - name: Verify public registry metadata and installed-package MCP handshake
         run: |
           set -euo pipefail
           test -z "${NODE_AUTH_TOKEN:-}"
+          test -z "${NPM_TOKEN:-}"
           PACKAGE='archimedes-github-pr-mcp'
           for attempt in $(seq 1 30); do
             if npm view "$PACKAGE@$EXPECTED_VERSION" --json > /tmp/published.json 2>/tmp/published.err; then
@@ -241,6 +253,7 @@ jobs:
         run: |
           set -euo pipefail
           test -z "${NODE_AUTH_TOKEN:-}"
+          test -z "${NPM_TOKEN:-}"
           mkdir -p publication-evidence
           SOURCE_SHA=$(git rev-parse HEAD)
           export SOURCE_SHA
