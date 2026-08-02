@@ -7,14 +7,16 @@
   "authorization_phrase": "PUBLISH-MSN-00015",
   "authorized": true,
   "authorization_source": "chat-user-explicit",
-  "authorized_at": "2026-08-02T07:09:49Z",
+  "authorized_at": "2026-08-02T07:12:36Z",
   "user_statement": "NPM_TOKEN追加済み・MSN-00015公開許可",
-  "retry_sequence": 2,
-  "retry_reason": "The first trigger produced no public package. A credential-free registry probe observed E404 after 36 attempts through 2026-08-02T07:08:30Z. Retrying the same guarded publication while the explicit authorization remains current.",
-  "pre_retry_registry_evidence": {
-    "path": "publication-evidence/registry-status.json",
-    "visible": false,
-    "observed_at": "2026-08-02T07:08:30Z"
+  "retry_sequence": 3,
+  "retry_reason": "Run 30737278926 stopped before packing or publishing because actions/setup-node injected a placeholder NODE_AUTH_TOKEN into credential-free verification steps. The workflow now configures npm authentication only inside the single irreversible publish step. The package remained absent from the public registry.",
+  "pre_retry_evidence": {
+    "failed_workflow_run_id": 30737278926,
+    "failed_step": "Verify locked source and production dependencies without publish credentials",
+    "registry_visible": false,
+    "registry_observed_at": "2026-08-02T07:08:30Z",
+    "registry_status_path": "publication-evidence/registry-status.json"
   },
   "commercial_status_before_publication": {
     "verified_income_jpy": 0,
