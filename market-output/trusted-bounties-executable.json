@@ -304,7 +304,7 @@
   "executable": [],
   "executable_count": 0,
   "expenses_usd": 0,
-  "generated_at": "2026-08-03T04:20:55+00:00",
+  "generated_at": "2026-08-03T10:27:08+00:00",
   "input_count": 11,
   "source": "market-output/trusted-bounties.json",
   "writes_performed": []
