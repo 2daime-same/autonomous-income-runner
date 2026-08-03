@@ -37,6 +37,21 @@
         "reward is unusually high for the first-income target",
         "unrecognized platform on a repository younger than 90 days"
       ],
+      "issue_number": 101,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $3k ] [ SDK ] Add automatic gas estimation with safety margin — gas optimization",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/101"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
       "issue_number": 120,
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $4k ] [ API ] Fix payments.py escrow release has no expiry auto-refund job",
@@ -214,18 +229,6 @@
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
-      "issue_number": 798,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ FastAPI ] Add SSE disconnect detection, event filtering, and reconnect replay",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/798"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
       "issue_number": 768,
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ FastAPI ] Add rate limiting and key rotation support to API key authentication",
@@ -288,6 +291,17 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ FastAPI ] Add WebSocket heartbeat with configurable ping interval and disconnect callback",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/766"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 758,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ FastAPI ] Add OAuth2 token refresh support to security module",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/758"
     },
     {
       "flags": [
@@ -440,6 +454,28 @@
     },
     {
       "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 913,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix missing slippage protection and deadline in SimpleSwap",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/913"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 919,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix zero-fee flash loans and add pool drainage protection",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/919"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
@@ -525,14 +561,24 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "issue is already assigned"
       ],
-      "issue_number": 743,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Low Handing Fruit Automation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
+      "issue_number": 50465,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $750] ttnn.i0: inaccurate for large |x|; needs domain split like ttnn.i1",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/50465"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 167,
+      "repo": "Vikingr2023/awesome-agent-bounties",
+      "title": "[aLexzzz430/Cognitive-OS] [ Bounty $3k ] [ Research ] Collect and compare AI-generated",
+      "url": "https://github.com/Vikingr2023/awesome-agent-bounties/issues/167"
     },
     {
       "flags": [
@@ -553,6 +599,18 @@
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
+      "issue_number": 743,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Low Handing Fruit Automation",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
       "issue_number": 80,
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Pixel Art Creation with high Creative Thinking",
@@ -560,41 +618,27 @@
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
       ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+      "issue_number": 29,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Implement a fully functional Admin Panel",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/29"
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
       ],
-      "issue_number": 84,
-      "repo": "albertogrande/the-wire",
-      "title": "🔬 A Written Policy Is Not a Control",
-      "url": "https://github.com/albertogrande/the-wire/issues/84"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 83,
-      "repo": "albertogrande/the-wire",
-      "title": "📰 The Rules Were Written Down. The Agents Ignored Them.",
-      "url": "https://github.com/albertogrande/the-wire/issues/83"
+      "issue_number": 76,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Technical Poem Generation and Content Creation",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/76"
     },
     {
       "flags": [
@@ -657,18 +701,6 @@
     },
     {
       "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1211,
-      "repo": "macanderson/stella",
-      "title": "pipeline todo",
-      "url": "https://github.com/macanderson/stella/issues/1211"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -677,40 +709,6 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Comprehensive review and overhaul of Spyder's documentation",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/21"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 60,
-      "repo": "ErgoDevs/Ergo-Bounties",
-      "title": "Registry keeps listing bounties whose work is already merged",
-      "url": "https://github.com/ErgoDevs/Ergo-Bounties/issues/60"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 70,
-      "repo": "sherwoodagent/sherwood-protocol",
-      "title": "OFFCHAIN: Tier-2 guardian ROE: the off-chain incentive programme that replaces the dropped tier ceiling does not exist yet",
-      "url": "https://github.com/sherwoodagent/sherwood-protocol/issues/70"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "requires an upfront outlay, bond, deposit, or funded child task",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1,
-      "repo": "guigaoliveira/agent-wallet-approval-bounty",
-      "title": "Paid child solver: enforce an explicit wallet approval cap (0.99 USDC)",
-      "url": "https://github.com/guigaoliveira/agent-wallet-approval-bounty/issues/1"
     },
     {
       "flags": [
@@ -725,8 +723,8 @@
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-03T03:54:41+00:00",
+  "generated_at": "2026-08-03T10:06:49+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-03T03:54:41+00:00"
+  "source_generated_at": "2026-08-03T10:06:49+00:00"
 }
