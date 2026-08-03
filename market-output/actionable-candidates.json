@@ -298,17 +298,6 @@
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
-      "issue_number": 758,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ FastAPI ] Add OAuth2 token refresh support to security module",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/758"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
       "issue_number": 795,
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ FastAPI ] Add request-scoped dependency caching to reduce duplicate resolution",
@@ -339,6 +328,17 @@
     {
       "flags": [
         "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 48311,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1500] SAM2 bring up using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/48311"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
         "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
       ],
@@ -357,30 +357,6 @@
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "POST /api/reviews endpoint missing authentication middleware (reissue via #743)",
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2776"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 920,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix cross-chain replay attack in CrossChainBridge signature verification",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/920"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 916,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix MultiSigWallet confirmation race condition during execution callback",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/916"
     },
     {
       "flags": [
@@ -451,28 +427,6 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ Crypto ] Fix integer overflow in TokenVesting calculation for large allocations",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/917"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 913,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix missing slippage protection and deadline in SimpleSwap",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/913"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 919,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix zero-fee flash loans and add pool drainage protection",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/919"
     },
     {
       "flags": [
@@ -561,12 +515,40 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "issue is already assigned"
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 50465,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $750] ttnn.i0: inaccurate for large |x|; needs domain split like ttnn.i1",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50465"
+      "issue_number": 52,
+      "repo": "Vikingr2023/awesome-agent-bounties",
+      "title": "[aLexzzz430/Cognitive-OS] [ Bounty $3k ] [ Research ] Collect and compare AI-generated",
+      "url": "https://github.com/Vikingr2023/awesome-agent-bounties/issues/52"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 920,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix cross-chain replay attack in CrossChainBridge signature verification",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/920"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 916,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix MultiSigWallet confirmation race condition during execution callback",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/916"
     },
     {
       "flags": [
@@ -618,27 +600,25 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository"
       ],
-      "issue_number": 29,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Implement a fully functional Admin Panel",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/29"
+      "issue_number": 1986,
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "title": "[moltbook] engagement-ledger",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence"
       ],
-      "issue_number": 76,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Technical Poem Generation and Content Creation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/76"
+      "issue_number": 5064,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Nomic Embeddings Model for +10% Accuracy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
     },
     {
       "flags": [
@@ -720,11 +700,34 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
+    },
+    {
+      "flags": [
+        "issue is already assigned",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 153,
+      "repo": "ZcashCommunityGrants/zcashcommunitygrants",
+      "title": "Grant Application - ZecHub 2026",
+      "url": "https://github.com/ZcashCommunityGrants/zcashcommunitygrants/issues/153"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 139,
+      "repo": "logos-co/rfp",
+      "title": "[PROPOSAL] RFP-008 — Lending & Borrowing Protocol",
+      "url": "https://github.com/logos-co/rfp/issues/139"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-03T10:06:49+00:00",
+  "generated_at": "2026-08-03T15:16:39+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-03T10:06:49+00:00"
+  "source_generated_at": "2026-08-03T15:16:39+00:00"
 }
