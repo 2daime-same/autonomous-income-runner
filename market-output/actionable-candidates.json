@@ -37,21 +37,6 @@
         "reward is unusually high for the first-income target",
         "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 101,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $3k ] [ SDK ] Add automatic gas estimation with safety margin — gas optimization",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/101"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
       "issue_number": 120,
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $4k ] [ API ] Fix payments.py escrow release has no expiry auto-refund job",
@@ -229,10 +214,43 @@
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
-      "issue_number": 768,
+      "issue_number": 865,
       "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ FastAPI ] Add rate limiting and key rotation support to API key authentication",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/768"
+      "title": "[ T3 Code ] Add Effect.Cache-based provider API response caching with TTL",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/865"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 51398,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/51398"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 50676,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $2000] Fuse per-channel quantize/dequantize with a scalar zero-point",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/50676"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 50522,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1500] ModernBERT bring up using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/50522"
     },
     {
       "flags": [
@@ -241,10 +259,32 @@
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
-      "issue_number": 865,
+      "issue_number": 768,
       "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ T3 Code ] Add Effect.Cache-based provider API response caching with TTL",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/865"
+      "title": "[ FastAPI ] Add rate limiting and key rotation support to API key authentication",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/768"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 48311,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1500] SAM2 bring up using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/48311"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 45105,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $2500] Maintenance of TT Nix packages",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/45105"
     },
     {
       "flags": [
@@ -294,47 +334,19 @@
     },
     {
       "flags": [
-        "existing reward links indicate the task may already be claimed",
+        "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
         "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 795,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ FastAPI ] Add request-scoped dependency caching to reduce duplicate resolution",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/795"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 51398,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/51398"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 50522,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $1500] ModernBERT bring up using TTNN APIs",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50522"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 48311,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $1500] SAM2 bring up using TTNN APIs",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/48311"
+      "issue_number": 101,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $3k ] [ SDK ] Add automatic gas estimation with safety margin — gas optimization",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/101"
     },
     {
       "flags": [
@@ -420,13 +432,12 @@
       "flags": [
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
+        "more than two competing attempt users"
       ],
-      "issue_number": 917,
+      "issue_number": 795,
       "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix integer overflow in TokenVesting calculation for large allocations",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/917"
+      "title": "[ FastAPI ] Add request-scoped dependency caching to reduce duplicate resolution",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/795"
     },
     {
       "flags": [
@@ -473,17 +484,6 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 50676,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $2000] Fuse per-channel quantize/dequantize with a scalar zero-point",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50676"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
         "known synthetic or adversarial bounty repository"
       ],
       "issue_number": 2850,
@@ -511,18 +511,6 @@
       "repo": "UnsafeLabs/RFC-5322",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
       "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 52,
-      "repo": "Vikingr2023/awesome-agent-bounties",
-      "title": "[aLexzzz430/Cognitive-OS] [ Bounty $3k ] [ Research ] Collect and compare AI-generated",
-      "url": "https://github.com/Vikingr2023/awesome-agent-bounties/issues/52"
     },
     {
       "flags": [
@@ -565,14 +553,13 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 30,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
+      "issue_number": 5,
+      "repo": "theselfish/SlopStation13",
+      "title": "[Bounty] [$600] Add Thursday's Boots",
+      "url": "https://github.com/theselfish/SlopStation13/issues/5"
     },
     {
       "flags": [
@@ -593,6 +580,18 @@
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
+      "issue_number": 30,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
       "issue_number": 80,
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Pixel Art Creation with high Creative Thinking",
@@ -600,25 +599,25 @@
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
+        "an open competing pull request already exists",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+      "issue_number": 4,
+      "repo": "theselfish/SlopStation13",
+      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
+      "url": "https://github.com/theselfish/SlopStation13/issues/4"
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
+        "issue is already assigned",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
       ],
-      "issue_number": 5064,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Nomic Embeddings Model for +10% Accuracy",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
+      "issue_number": 51468,
+      "repo": "tenstorrent/tt-metal",
+      "title": "`ttnn.pow(0, p)` returns `2^(-127p)` instead of `0` for every `p` in `(0, 1)` — the zero-base special case was written for negative exponents only",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/51468"
     },
     {
       "flags": [
@@ -681,6 +680,18 @@
     },
     {
       "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1211,
+      "repo": "macanderson/stella",
+      "title": "pipeline todo",
+      "url": "https://github.com/macanderson/stella/issues/1211"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -707,27 +718,15 @@
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
-      "issue_number": 153,
-      "repo": "ZcashCommunityGrants/zcashcommunitygrants",
-      "title": "Grant Application - ZecHub 2026",
-      "url": "https://github.com/ZcashCommunityGrants/zcashcommunitygrants/issues/153"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 139,
-      "repo": "logos-co/rfp",
-      "title": "[PROPOSAL] RFP-008 — Lending & Borrowing Protocol",
-      "url": "https://github.com/logos-co/rfp/issues/139"
+      "issue_number": 31,
+      "repo": "Financial-Privacy-Foundation/ZcashCoinholderGrantsProgram",
+      "title": "Retroactive Grant Application - ZAP1 Attestation Protocol and Verification Tooling",
+      "url": "https://github.com/Financial-Privacy-Foundation/ZcashCoinholderGrantsProgram/issues/31"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-03T15:16:39+00:00",
+  "generated_at": "2026-08-03T19:58:20+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-03T15:16:39+00:00"
+  "source_generated_at": "2026-08-03T19:58:20+00:00"
 }
