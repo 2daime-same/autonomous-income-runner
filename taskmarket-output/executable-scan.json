@@ -1,7 +1,7 @@
 {
   "execution_ready": [],
   "execution_ready_count": 0,
-  "generated_at": "2026-08-03T03:50:41+00:00",
+  "generated_at": "2026-08-03T07:42:15+00:00",
   "inspected": [],
   "policy": "Requires a configured worker wallet, EIP-191 signer, authenticated submission client, positive net reward, more than two hours remaining, fewer than ten submissions, and no subjective image/design contest signal.",
   "public_zero_spend_candidate_count": 0,
