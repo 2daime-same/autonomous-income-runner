@@ -1,7 +1,7 @@
 {
   "actionable": [],
   "actionable_count": 0,
-  "generated_at": "2026-08-04T09:10:44+00:00",
+  "generated_at": "2026-08-04T11:35:31+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -122,7 +122,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "C++",
-      "repo_stars": 8715,
+      "repo_stars": 8713,
       "repository": "azerothcore/azerothcore-wotlk",
       "scope_excerpt": "### Describe your feature request or suggestion in detail\n\nHi,\n\nI’d like to propose implementing map partitioning for large continent maps, inspired by the following Project-Epoch TrinityCore PR:\n\n- https://github.com/Project-Epoch/TrinityCore/pull/120\n\n### The Problem\n\nCurrently, all continent maps (like Eastern Kingdoms or Kalimdor) are processed on a single thread. With thousands of entities and players, this becomes a performance bottleneck. While instances benefit from parallel processing via separate map threads, continents remain monolithic, even under heavy load.\n\n### The Proposed Approach\n\nThe PR from TrinityCore introduces a `MapPartitioned` class that allows continents to be split into smaller logical partitions. These partitions share the base map data and are processed in parallel, significantly reducing per-tick load.\n\nNotable points from the implementation:\n\n- Seamless player and entity movement across partitions (no loading screens)\n- Entities are assigned dynamically to the correct partition on startup\n- GridUnload removed to simplify logic and improve performance\n- Shared systems (e.g., weather) remain consistent via the base map\n- Cleaner structure for future improvements and easier debugging\n\n### Benefits for AzerothCore\n\n- Better performance on high-population servers\n- Reduced lag in major cities or crowded quest zones\n- Scales better for events like world PvP or Wintergrasp\n- Lays groundwork for more advanced systems (e.g. phasing, regional load balancing)\n\nI don't know if it's possible to implement a system similat to this, but this could be a significant architectural upgrade and help AzerothCore scale further as adoption grows. I’d love to hear your thoughts on feasibility and whether a similar system could be integrated.\n\nThanks for your time.\n\n### Describe a possible solution to your feature or suggestion in detail\n\n_No response_\n\n### Additional context\n\n_No response_",
       "score": 84.41,
@@ -562,6 +562,13 @@
       "issue_number": 770,
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
+        {
+          "number": 1808,
+          "title": "fix: Moorcheh filter injection, pagination truncation, session-renew lockout, stale-field persistence (Bounty #770)",
+          "updated_at": "2026-08-04T11:05:18Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1808",
+          "user": "liushazyy"
+        },
         {
           "number": 1807,
           "title": "fix: prevent silent data loss in search_changed_since when memory id is None",
@@ -1116,7 +1123,7 @@
         "supported language: python",
         "established repository",
         "3 competing attempt signal(s)",
-        "77 open competing PR(s)"
+        "78 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
@@ -1148,6 +1155,13 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
       "open_competing_prs": [
         {
+          "number": 1726,
+          "title": "fix: [BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
+          "updated_at": "2026-08-04T09:12:59Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1726",
+          "user": "ahteshamhassan7933-gif"
+        },
+        {
           "number": 1732,
           "title": "feat(migrations): add privacy-first Codex session to OKF adapter",
           "updated_at": "2026-08-04T05:12:32Z",
@@ -1167,13 +1181,6 @@
           "updated_at": "2026-08-03T12:19:51Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1806",
           "user": "lena2099"
-        },
-        {
-          "number": 1726,
-          "title": "fix: [BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
-          "updated_at": "2026-08-03T11:50:35Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1726",
-          "user": "ahteshamhassan7933-gif"
         },
         {
           "number": 1795,
@@ -2035,7 +2042,7 @@
         {
           "number": 3691,
           "title": "Feat/rcs support issue 2994",
-          "updated_at": "2026-08-03T19:02:47Z",
+          "updated_at": "2026-08-04T10:43:37Z",
           "url": "https://github.com/microg/GmsCore/pull/3691",
           "user": "Mbongisenithato"
         },
