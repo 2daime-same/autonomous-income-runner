@@ -1,7 +1,7 @@
 {
   "actionable": [],
   "actionable_count": 0,
-  "generated_at": "2026-08-04T19:59:59+00:00",
+  "generated_at": "2026-08-04T22:31:00+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -1108,7 +1108,7 @@
         {
           "number": 1813,
           "title": "feat(examples): add OKF portability audit",
-          "updated_at": "2026-08-04T19:57:05Z",
+          "updated_at": "2026-08-04T20:33:31Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1813",
           "user": "ceodaradigu"
         },
@@ -1455,7 +1455,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14106,
+      "repo_stars": 14108,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 25.18,
@@ -1591,7 +1591,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14106,
+      "repo_stars": 14108,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 23.41,
@@ -1746,7 +1746,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14106,
+      "repo_stars": 14108,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Affected app**\r\nName: Dott\r\nPackage id: com.ridedott.rider\r\n\r\n**Describe the bug**\r\nSigning in or signing up fails, seemingly because of a firebase error\r\n\r\n**To Reproduce**\r\nSteps to reproduce the behavior:\r\n1. get Dott\r\n2. Click on sign up\r\n3. enter phone number\r\n4. click sign up\r\n\r\n**Expected behavior**\r\nsends sms verification or proceeds in general\r\n\r\n**Screenshots**\r\n<details><summary>sign up error page</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/0938e413-1873-480a-a396-a598fcd98e47)\r\n\r\n</details>\r\n\r\n<details><summary>dott vehicle coverage</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/59c7d003-1954-41be-8fc1-43956a17f4a6)\r\n\r\n</details>\r\n\r\n**System**\r\nAndroid Version: 15\r\nCustom ROM: LineageOS+microg 22.1\r\n\r\n**microG**\r\nmicroG Core version: 0.3.6.244735\r\nmicroG Self-Check results: All ticked\r\n\r\n**Additional context**\r\nfull logcat of an app start and signup attempt, filtering out all logs, except those coming from com.ridedott.rider with personal or identifying information replaced by `[...]`:\r\n\r\n[dott 06_04-09-30-30_733.log](https://github.com/user-attachments/files/19620636/dott.06_04-09-30-30_733.log)\r\n\r\nLikely critical lines from the log:\r\n```\r\n1743924520.834 10285 20276 23037 W LocalRequestInterceptor: Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: Error returned from API. code: 403 body: App attestation failed.\r\n1743924521.066 10285 20276 23037 E FirebaseAuth: [SmsRetrieverHelper] SMS verification code request failed: unknown status code: 17499 Firebase App Check token is invalid.\r\n1743924521.067 10285 20276 20276 D FirebaseAuth: Invoking original failure callbacks after phone verification failure for (my phone number), error - An internal error has occurred. [ Firebase App Check token is invalid. ]\r\n```\r\nmicrog Google device registration is enabled, as is cloud messaging and \"SafetyNet\".\r\nmy device meets basic integrity and device integrity, uses sdk level 35\r\n\r\nPossibly related: https://github.com/microg/GmsCore/issues/1967, https://github.com/microg/GmsCore/issues/1281",
       "score": 13.35,
@@ -1832,7 +1832,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14106,
+      "repo_stars": 14108,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Feature Description:**\r\nGoogle Messages is currently the only widely available RCS client for Android. When attempting to use Google Messages with microG, users typically encounter issues such as:\r\n\r\nA persistent message stating \"RCS chats aren't available for this device.\"\r\nAn indefinite \"Setting up...\", where authentication of the phone number never completes.\r\n\r\nRecent developments suggest that Google Messages no longer strictly requires device attestation for RCS, making it possible to enable RCS functionality with microG. However, it appears there's a missing component or necessary adjustment within microG itself preventing successful setup.\r\n\r\nGoogle has effectively monopolized RCS, despite it being a GSMA-backed standard intended as a successor to SMS. Unlike SMS, RCS has become a closed ecosystem under Google's control, restricting open interoperability and limiting choice for users and developers. RCS has seen significant adoption, particularly in North America, and recently Apple added support RCS, further increasing its importance as a messaging standard.\r\n\r\n**Requested Solution**\r\n\r\nProvide a solution that enables Google Messages to successfully connect to and use RCS functionality when operating with microG. Acceptable outcomes include:\r\n- A fix or enhancement to microG itself, allowing seamless RCS connectivity.\r\n- Compatibility with recent versions of Google Messages is desired. Solutions that only support a specific Google Messages version from the past year will be awarded half of the bounty amount.\r\n- Modifications to AOSP or additional permissions changes are acceptable.\r\n- The solution must work on devices with a locked bootloader.\r\n\r\nLimitations\r\nSolutions relying on rooting, Magisk, or similar root-based tools are not acceptable.\r\n\r\n**Additional Information**\r\n\r\nGrapheneOS users, who leverage a Play services sandbox, have reported success with enabling RCS by applying permission changes. Although their setup differs from microG, the discussions that were taken in this thread (especially in the last year) may offer valuable insights for this bounty: https://discuss.grapheneos.org/d/3533-rcs-with-google-messages\r\n",
       "score": 1.0,
@@ -1954,7 +1954,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14106,
+      "repo_stars": 14108,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**[BOUNTY CURRENTLY AT $550]**\n\n**Is your feature request related to a problem? Please describe.**\nWearOS devices do not work with MicroG\n\n**Describe the solution you'd like**\nMicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\n**Additional context**\nThere has been an issue open for over ten years regarding [MicroG support for WearOS](https://github.com/microg/GmsCore/issues/4#issuecomment-2581553597).  That issue and another [more recent post](https://github.com/microg/GmsCore/issues/2444#issuecomment-2691206945) have inspired some folks to post bounties for this feature, but it's buried so far down in the thread it's easy to miss.\n\nI personally am posting a $200 bounty for the MicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\nHere are the folks who've posted bounties in those threads.  I'll invite them to post again here confirming that their offers still stand, but all told, this adds up to over $500 already.\n\n@HyperCriSiS - $100\n@realPrix - $100\n@NullCode1337 - $50\n@TobiPeterG - $100\n@doctorgaul - $200",
       "score": -77.0,
