@@ -1,7 +1,7 @@
 {
   "execution_ready": [],
   "execution_ready_count": 0,
-  "generated_at": "2026-08-04T10:48:36+00:00",
+  "generated_at": "2026-08-04T14:37:07+00:00",
   "inspected": [
     {
       "capability_matches": [
@@ -14,20 +14,132 @@
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 13.55,
+      "hours_left": 9.74,
       "net_reward_usdc": 13.875,
       "reward_usdc": 15.0,
       "soft_risks": [
         "external_code_or_file"
       ],
-      "submission_count": 6,
+      "submission_count": 8,
       "task_id": "0x8bac38574ad738afddf7be8bce4469e8091982d1909bd3d457a48ddc2e88b8ff",
       "task_url": "https://taskmarket.dev/dashboard/tasks/0x8bac38574ad738afddf7be8bce4469e8091982d1909bd3d457a48ddc2e88b8ff",
       "title": "15 USDC moonshot: construct a Hadamard matrix of order 668 ## The challenge This is an exceptionally clean open search problem"
+    },
+    {
+      "capability_matches": [
+        "research",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "subjective_image_or_design_contest",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 21.69,
+      "net_reward_usdc": 3.7,
+      "reward_usdc": 4.0,
+      "soft_risks": [],
+      "submission_count": 10,
+      "task_id": "0x11616c4a959758b611e71e243b0718b7430bb6f69d6a0d53daeb7b97b0f4e05d",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x11616c4a959758b611e71e243b0718b7430bb6f69d6a0d53daeb7b97b0f4e05d",
+      "title": "Nysa might be three rocks stuck together Make a confidence-weighted diagram: a diagram that states its own confidence on its own face"
+    },
+    {
+      "capability_matches": [
+        "research",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "subjective_image_or_design_contest",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 21.69,
+      "net_reward_usdc": 2.775,
+      "reward_usdc": 3.0,
+      "soft_risks": [],
+      "submission_count": 9,
+      "task_id": "0x7e506024e55ee3332aa3c1743b606a921876db91451fcf05e789839e6efa040a",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x7e506024e55ee3332aa3c1743b606a921876db91451fcf05e789839e6efa040a",
+      "title": "In worms, less of one protein meant fewer clumps Make a cutaway: the inside of one thing, opened so a stranger can see a mechanism they could never otherwise look at"
+    },
+    {
+      "capability_matches": [
+        "research",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "subjective_image_or_design_contest",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 21.69,
+      "net_reward_usdc": 2.775,
+      "reward_usdc": 3.0,
+      "soft_risks": [],
+      "submission_count": 11,
+      "task_id": "0x6aaa3d5792b2a60a423b260dbf48e41fb13808fa487074cda02b660037f46165",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x6aaa3d5792b2a60a423b260dbf48e41fb13808fa487074cda02b660037f46165",
+      "title": "Six enzymes made tobacco build a wolfsbane molecule Make an imaginary pack shot: a product that does not exist, packaged and photographed as though it sits on a real shelf"
+    },
+    {
+      "capability_matches": [
+        "research",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "subjective_image_or_design_contest",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 21.69,
+      "net_reward_usdc": 3.7,
+      "reward_usdc": 4.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 13,
+      "task_id": "0x0ced5149d8aed4737f38d954313efe8baf1cdd7d5c037050bfb795340aec1633",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x0ced5149d8aed4737f38d954313efe8baf1cdd7d5c037050bfb795340aec1633",
+      "title": "A bird carved from mammoth ivory, 1"
+    },
+    {
+      "capability_matches": [
+        "research",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "subjective_image_or_design_contest",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 21.69,
+      "net_reward_usdc": 1.85,
+      "reward_usdc": 2.0,
+      "soft_risks": [
+        "subjective_media_contest"
+      ],
+      "submission_count": 8,
+      "task_id": "0xf1a9899c288dd202add4c021b3a872b337bb382f305c43144bf3c228bc7f593a",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xf1a9899c288dd202add4c021b3a872b337bb382f305c43144bf3c228bc7f593a",
+      "title": "Squeeze the right crystal and it picks a hand Make a blueprint diptych: two technical drawings, side by side, that only make sense together, so that removing either one destroys th"
     }
   ],
   "policy": "Requires a configured worker wallet, EIP-191 signer, authenticated submission client, positive net reward, more than two hours remaining, fewer than ten submissions, and no subjective image/design contest signal.",
-  "public_zero_spend_candidate_count": 1,
+  "public_zero_spend_candidate_count": 6,
   "route_state": {
     "eip191_signer_available": false,
     "submission_client_available": false,
