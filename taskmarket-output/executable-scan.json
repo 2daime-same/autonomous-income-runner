@@ -1,13 +1,11 @@
 {
   "execution_ready": [],
   "execution_ready_count": 0,
-  "generated_at": "2026-08-05T17:52:41+00:00",
+  "generated_at": "2026-08-05T21:30:40+00:00",
   "inspected": [
     {
       "capability_matches": [
-        "code",
-        "research",
-        "writing"
+        "code"
       ],
       "execution_exclusions": [
         "authenticated_submission_client_unavailable",
@@ -16,17 +14,16 @@
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 23.39,
-      "net_reward_usdc": 0.0925,
-      "reward_usdc": 0.1,
+      "hours_left": 119.15,
+      "net_reward_usdc": 4.625,
+      "reward_usdc": 5.0,
       "soft_risks": [
-        "external_code_or_file",
-        "security_sensitive"
+        "external_code_or_file"
       ],
-      "submission_count": 11,
-      "task_id": "0x20ac27a69d26c03165bdf22c60881cd1adc7dd0705e47c1bbdc0c1578b7858cc",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0x20ac27a69d26c03165bdf22c60881cd1adc7dd0705e47c1bbdc0c1578b7858cc",
-      "title": "# Independent agent-readiness audit for SameDayDesk SameDayDesk is a live AI visibility, agent-ready documentation, MCP, and x402 service project"
+      "submission_count": 12,
+      "task_id": "0x7eeff4e1991bd0d40eee406777fc568abf341ecff3368d991f89cf9d0d6f6e04",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x7eeff4e1991bd0d40eee406777fc568abf341ecff3368d991f89cf9d0d6f6e04",
+      "title": "Check whether Handsel's mainnet vs"
     }
   ],
   "policy": "Requires a configured worker wallet, EIP-191 signer, authenticated submission client, positive net reward, more than two hours remaining, fewer than ten submissions, and no subjective image/design contest signal.",
