@@ -19,13 +19,19 @@
     },
     {
       "flags": [
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 529,
-      "repo": "tenstorrent/tt-blacksmith",
-      "title": "[Bounty $2000] GraphSAGE training workload on Tenstorrent",
-      "url": "https://github.com/tenstorrent/tt-blacksmith/issues/529"
+      "issue_number": 101,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $3k ] [ SDK ] Add automatic gas estimation with safety margin — gas optimization",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/101"
     },
     {
       "flags": [
@@ -149,6 +155,36 @@
     },
     {
       "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 100,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $8k ] [ API ] Fix JWT auth middleware accepts algorithm none — v2 implementation",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/100"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 198,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $9k ] [ SDK ] Fix encoding.ts decodeParameter doesn't handle dynamic types — backwards compat",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/198"
+    },
+    {
+      "flags": [
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
@@ -173,17 +209,6 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $5k ] [ API ] Fix auth.py doesn't support API key authentication alongside JWT — mainnet prep",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/177"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 52014,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $6000] Fix SFPU RNG correlation and improve FP32 uniform random quality",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/52014"
     },
     {
       "flags": [
@@ -346,45 +371,10 @@
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
-      "issue_number": 912,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix tx.origin phishing vulnerability in GovernanceToken delegation",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/912"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 914,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix phantom reward accrual after period expiry in YieldVault",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/914"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
       "issue_number": 611,
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ CONTEXT RIFT ] Fix typos in knowledge-base/context.json",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/611"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 911,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix reentrancy vulnerability in StakingVault withdraw and claimRewards",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/911"
     },
     {
       "flags": [
@@ -408,23 +398,6 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ FastAPI ] Add request-scoped dependency caching to reduce duplicate resolution",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/795"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 101,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $3k ] [ SDK ] Add automatic gas estimation with safety margin — gas optimization",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/101"
     },
     {
       "flags": [
@@ -459,14 +432,38 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
       ],
-      "issue_number": 51398,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/51398"
+      "issue_number": 912,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix tx.origin phishing vulnerability in GovernanceToken delegation",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/912"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 914,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix phantom reward accrual after period expiry in YieldVault",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/914"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 911,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix reentrancy vulnerability in StakingVault withdraw and claimRewards",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/911"
     },
     {
       "flags": [
@@ -508,38 +505,6 @@
       "repo": "tenstorrent/tt-metal",
       "title": "[Bounty $750] ttnn.i0: inaccurate for large |x|; needs domain split like ttnn.i1",
       "url": "https://github.com/tenstorrent/tt-metal/issues/50465"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 100,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $8k ] [ API ] Fix JWT auth middleware accepts algorithm none — v2 implementation",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/100"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 198,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $9k ] [ SDK ] Fix encoding.ts decodeParameter doesn't handle dynamic types — backwards compat",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/198"
     },
     {
       "flags": [
@@ -600,6 +565,18 @@
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Pixel Art Creation with high Creative Thinking",
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/80"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository"
+      ],
+      "issue_number": 1986,
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "title": "[moltbook] engagement-ledger",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
     },
     {
       "flags": [
@@ -706,6 +683,29 @@
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
+      "issue_number": 4618,
+      "repo": "janavipandole/Cara",
+      "title": "Feature: Implement an algorithmic 'Tiered Loyalty Program' engine",
+      "url": "https://github.com/janavipandole/Cara/issues/4618"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 5916,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "UbiquityOS Sprint Management Dashboard",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5916"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
       "issue_number": 21,
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Comprehensive review and overhaul of Spyder's documentation",
@@ -724,8 +724,8 @@
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-05T08:53:19+00:00",
+  "generated_at": "2026-08-05T14:33:11+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-05T08:53:19+00:00"
+  "source_generated_at": "2026-08-05T14:33:11+00:00"
 }
