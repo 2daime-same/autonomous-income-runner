@@ -43,6 +43,16 @@
     },
     {
       "flags": [
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 529,
+      "repo": "tenstorrent/tt-blacksmith",
+      "title": "[Bounty $2000] GraphSAGE training workload on Tenstorrent",
+      "url": "https://github.com/tenstorrent/tt-blacksmith/issues/529"
+    },
+    {
+      "flags": [
         "bot-authored issue without recognized platform evidence",
         "known synthetic or adversarial bounty repository",
         "requests hidden prompts, internal instructions, or session metadata",
@@ -71,6 +81,16 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $9k ] [ Solidity ] Add gas sponsorship relay for agent transactions — security critical",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/183"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 52131,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $2000] The four tickets that blocked numeric_stable in #27995 are all closed; two of the four excepted softmax entry points still default to false and return all zeros above |x| ~85",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52131"
     },
     {
       "flags": [
@@ -178,21 +198,6 @@
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 198,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $9k ] [ SDK ] Fix encoding.ts decodeParameter doesn't handle dynamic types — backwards compat",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/198"
-    },
-    {
-      "flags": [
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
@@ -217,6 +222,17 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $5k ] [ API ] Fix auth.py doesn't support API key authentication alongside JWT — mainnet prep",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/177"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 52014,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $6000] Fix SFPU RNG correlation and improve FP32 uniform random quality",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52014"
     },
     {
       "flags": [
@@ -303,17 +319,6 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ FastAPI ] Add WebSocket heartbeat with configurable ping interval and disconnect callback",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/766"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 758,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ FastAPI ] Add OAuth2 token refresh support to security module",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/758"
     },
     {
       "flags": [
@@ -445,17 +450,6 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 52014,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $6000] Fix SFPU RNG correlation and improve FP32 uniform random quality",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/52014"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
         "known synthetic or adversarial bounty repository",
         "unrecognized platform on a repository younger than 90 days"
       ],
@@ -529,6 +523,34 @@
     {
       "flags": [
         "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 198,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $9k ] [ SDK ] Fix encoding.ts decodeParameter doesn't handle dynamic types — backwards compat",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/198"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 52,
+      "repo": "Vikingr2023/awesome-agent-bounties",
+      "title": "[aLexzzz430/Cognitive-OS] [ Bounty $3k ] [ Research ] Collect and compare AI-generated",
+      "url": "https://github.com/Vikingr2023/awesome-agent-bounties/issues/52"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
         "reward is unusually high for the first-income target",
         "unrecognized platform on a low-reputation personal repository",
         "unrecognized platform on a repository younger than 90 days"
@@ -577,32 +599,24 @@
     {
       "flags": [
         "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository"
+      ],
+      "issue_number": 1986,
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "title": "[moltbook] engagement-ledger",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence"
       ],
       "issue_number": 5064,
       "repo": "devpool-directory/devpool-directory",
       "title": "Nomic Embeddings Model for +10% Accuracy",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5035,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Recruiting: Dragonfly CTF II",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5035"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5844,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Governance Token emissions to `ubq.eth` new strategy",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5844"
     },
     {
       "flags": [
@@ -642,6 +656,16 @@
       "repo": "FreeCAD/FPA-grant-proposals",
       "title": "Implement ISO 13715 (Edge Symbols) and ISO 15785 (Joint Symbols) in TechDraw Workbench",
       "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/81"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 1,
+      "repo": "fuseio/bounties",
+      "title": "Integrate Erigon Client with Spark testnet",
+      "url": "https://github.com/fuseio/bounties/issues/1"
     },
     {
       "flags": [
@@ -694,35 +718,11 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 86,
-      "repo": "rebibomichael-web/trading-suite",
-      "title": "Halftime Report summary — 2026-08-04",
-      "url": "https://github.com/rebibomichael-web/trading-suite/issues/86"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 6,
-      "repo": "dfinity/public-multidex",
-      "title": "OhShii Labs review, 3/8 · 6 findings (#6.1–#6.6): liquidation evasion, a de-lever trap, and release priority that is purchasable",
-      "url": "https://github.com/dfinity/public-multidex/issues/6"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-04T19:58:50+00:00",
+  "generated_at": "2026-08-05T03:32:50+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-04T19:58:50+00:00"
+  "source_generated_at": "2026-08-05T03:32:50+00:00"
 }
