@@ -5,27 +5,18 @@
   },
   "bounties_claimed": 0,
   "credentials_recorded_in_plaintext": "[REDACTED]",
-  "current_balance": {
-    "eth": 0.0,
-    "usdc": 0.0
-  },
   "expenses_usd": 0,
-  "finished_at": "2026-08-05T14:48:14+00:00",
   "model": "openai/gpt-4.1-mini",
   "platform": "https://botbounty-production.up.railway.app/api",
-  "polls": 60,
-  "safe_bounty_preview": [],
-  "safe_open_bounty_count": 0,
   "schema_version": "botbounty-worker-v1",
   "solutions_submitted": 0,
-  "started_at": "2026-08-05T14:27:54+00:00",
-  "status": "run_window_completed_no_income",
-  "updated_at": "2026-08-05T14:48:14+00:00",
+  "started_at": "2026-08-05T17:50:37+00:00",
+  "status": "online_waiting_for_open_bounty",
+  "updated_at": "2026-08-05T17:50:37+00:00",
   "verified_income": {
     "eth": 0.0,
     "usdc": 0.0
   },
-  "visible_bounty_count": 0,
   "wallet_address": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
   "writes_performed": []
 }
