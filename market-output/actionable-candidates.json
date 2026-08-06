@@ -376,6 +376,18 @@
     },
     {
       "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 865,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ T3 Code ] Add Effect.Cache-based provider API response caching with TTL",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/865"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "issue is already assigned",
         "reward is unusually high for the first-income target"
@@ -395,28 +407,6 @@
       "repo": "tenstorrent/tt-metal",
       "title": "[Bounty $1,500] [sdpa_decode] fp32_dest_acc_en=True silently produces wrong results for most shapes, and hangs at 96 query heads",
       "url": "https://github.com/tenstorrent/tt-metal/issues/50564"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 50676,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $2000] Fuse per-channel quantize/dequantize with a scalar zero-point",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50676"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 50522,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $1500] ModernBERT bring up using TTNN APIs",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/50522"
     },
     {
       "flags": [
@@ -440,6 +430,30 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ Crypto ] Fix first-depositor price manipulation in LiquidityPool",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/918"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 611,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ CONTEXT RIFT ] Fix typos in knowledge-base/context.json",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/611"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 917,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix integer overflow in TokenVesting calculation for large allocations",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/917"
     },
     {
       "flags": [
@@ -510,6 +524,17 @@
     },
     {
       "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
+      "issue_number": 911,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix reentrancy vulnerability in StakingVault withdraw and claimRewards",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/911"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "bot-authored issue without recognized platform evidence",
         "known synthetic or adversarial bounty repository",
@@ -524,17 +549,6 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $2k ] [ Solidity ] Fix Chainlink adapter missing staleness and negative price checks",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/20"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 51398,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $7500] Gemma-2 (2B / 9B) text model bring-up using TTNN APIs",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/51398"
     },
     {
       "flags": [
@@ -625,48 +639,14 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 52,
-      "repo": "Vikingr2023/awesome-agent-bounties",
-      "title": "[aLexzzz430/Cognitive-OS] [ Bounty $3k ] [ Research ] Collect and compare AI-generated",
-      "url": "https://github.com/Vikingr2023/awesome-agent-bounties/issues/52"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
-      "issue_number": 2885,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Calculate the exact value of PI",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2885"
-    },
-    {
-      "flags": [
-        "no direct reward evidence"
-      ],
-      "issue_number": 10897,
-      "repo": "HHS/simpler-grants-gov",
-      "title": "Support sending emails locally",
-      "url": "https://github.com/HHS/simpler-grants-gov/issues/10897"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users"
-      ],
-      "issue_number": 743,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Low Handing Fruit Automation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
+      "issue_number": 52280,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[repo-status] Daily Repo Status - 2026-08-06",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52280"
     },
     {
       "flags": [
@@ -687,6 +667,18 @@
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
+      "issue_number": 743,
+      "repo": "SecureBananaLabs/bug-bounty",
+      "title": "Low Handing Fruit Automation",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users"
+      ],
       "issue_number": 80,
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "Pixel Art Creation with high Creative Thinking",
@@ -695,14 +687,12 @@
     {
       "flags": [
         "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
+        "no direct reward evidence"
       ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+      "issue_number": 5064,
+      "repo": "devpool-directory/devpool-directory",
+      "title": "Nomic Embeddings Model for +10% Accuracy",
+      "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
     },
     {
       "flags": [
@@ -765,6 +755,16 @@
     },
     {
       "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 91,
+      "repo": "FreeCAD/FPA-grant-proposals",
+      "title": "Parametric Snapping System for the Measure Tool (Issues #13708, #27404)",
+      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/91"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -777,19 +777,18 @@
     {
       "flags": [
         "an open competing pull request already exists",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "no direct reward evidence"
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
       ],
-      "issue_number": 2853,
-      "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Job validation should reject inverted budget ranges",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2853"
+      "issue_number": 25,
+      "repo": "numfocus/small-development-grant-proposals",
+      "title": "Reimplementation of static plotting in GeoPandas",
+      "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-06T03:36:29+00:00",
+  "generated_at": "2026-08-06T08:54:38+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-06T03:36:28+00:00"
+  "source_generated_at": "2026-08-06T08:54:38+00:00"
 }
