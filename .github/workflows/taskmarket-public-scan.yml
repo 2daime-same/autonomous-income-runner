@@ -7,6 +7,8 @@ on:
     paths:
       - taskmarket_public_scan.py
       - taskmarket_execution_filter.py
+      - taskmarket_target_probe.py
+      - taskmarket-target-request.json
       - tests/test_taskmarket_execution_filter.py
       - .github/workflows/taskmarket-public-scan.yml
   schedule:
@@ -34,7 +36,7 @@ jobs:
       - name: Test and compile scanners
         run: |
           python -m unittest tests/test_taskmarket_execution_filter.py -v
-          python -m py_compile taskmarket_public_scan.py taskmarket_execution_filter.py
+          python -m py_compile taskmarket_public_scan.py taskmarket_execution_filter.py taskmarket_target_probe.py
 
       - name: Fetch and rank public opportunities
         env:
@@ -50,6 +52,13 @@ jobs:
           TASKMARKET_EXECUTION_OUTPUT: taskmarket-output/executable-scan.json
         run: python taskmarket_execution_filter.py
 
+      - name: Fetch exact selected task and public submission state
+        env:
+          TASKMARKET_API_URL: https://api.taskmarket.dev
+          TASKMARKET_TARGET_REQUEST: taskmarket-target-request.json
+          TASKMARKET_TARGET_OUTPUT: taskmarket-output/target-detail.json
+        run: python taskmarket_target_probe.py
+
       - name: Reject credential-like output
         run: |
           python - <<'PY'
@@ -59,12 +68,14 @@ jobs:
           paths = [
               Path('taskmarket-output/public-scan.json'),
               Path('taskmarket-output/executable-scan.json'),
+              Path('taskmarket-output/target-detail.json'),
           ]
           patterns = {
               'JWT': re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
               'credential field': re.compile(
                   r'(?i)"(?:api.?key|authorization|secret|token|password|cookie|private.?key|credential)"\s*:\s*"(?!\[REDACTED)'
               ),
+              'private key block': re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
           }
           for path in paths:
               text = path.read_text(encoding='utf-8')
@@ -78,12 +89,15 @@ jobs:
           set -euo pipefail
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-          git add taskmarket-output/public-scan.json taskmarket-output/executable-scan.json
+          git add \
+            taskmarket-output/public-scan.json \
+            taskmarket-output/executable-scan.json \
+            taskmarket-output/target-detail.json
           if git diff --cached --quiet; then
             echo 'No substantive Taskmarket opportunity changes'
             exit 0
           fi
-          git commit -m 'Refresh Taskmarket public and executable opportunities [skip ci]'
+          git commit -m 'Refresh Taskmarket public and targeted evidence [skip ci]'
           for attempt in $(seq 1 8); do
             if git pull --rebase origin main && git push origin HEAD:main; then
               exit 0
