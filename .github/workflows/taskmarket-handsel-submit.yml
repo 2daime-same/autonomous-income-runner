@@ -1,0 +1,133 @@
+name: Submit Handsel environment-label audit to Taskmarket once
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - deliverables/taskmarket-handsel-network-label-audit/submission-authorization.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-handsel-label-audit-submit
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      TASKMARKET_API_URL: https://api.taskmarket.dev
+      TASKMARKET_HANDSEL_AUTHORIZATION: deliverables/taskmarket-handsel-network-label-audit/submission-authorization.json
+      TASKMARKET_HANDSEL_STATE_DIR: deliverables/taskmarket-handsel-network-label-audit/submission-state
+      TASKMARKET_WALLET_CERTIFICATE: crypto/superteam-state-public.crt
+    steps:
+      - name: Check out the dedicated repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Verify wallet primitives, one-write behavior, and public deliverables
+        run: |
+          set -euo pipefail
+          python -m py_compile taskmarket_wallet.py taskmarket_handsel_submit.py
+          python taskmarket_wallet.py --self-test
+          python -m unittest tests/test_taskmarket_handsel_submit.py -v
+          test -s deliverables/taskmarket-handsel-network-label-audit/HANDSEL_NETWORK_LABEL_AUDIT.md
+          test -s deliverables/taskmarket-handsel-network-label-audit/evidence.json
+          test -s deliverables/taskmarket-handsel-network-label-audit/TOP_SHEET.md
+          test -s "$TASKMARKET_HANDSEL_AUTHORIZATION"
+          if grep -ERn '(-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|\beyJ[A-Za-z0-9._-]{20,}\b)' \
+            deliverables/taskmarket-handsel-network-label-audit \
+            --exclude='private-wallet.cms.b64'; then
+            echo 'Credential-like material found in public deliverables' >&2
+            exit 1
+          fi
+
+      - name: Prepare encrypted wallet and public in-progress receipt without external writes
+        run: python taskmarket_handsel_submit.py prepare
+
+      - name: Persist the in-progress receipt before the one external POST
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add \
+            deliverables/taskmarket-handsel-network-label-audit/submission-state/attempt.json \
+            deliverables/taskmarket-handsel-network-label-audit/submission-state/private-wallet.cms.b64
+          git commit -m 'Record pending Handsel Taskmarket submission [skip ci]'
+          for attempt in $(seq 1 12); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
+
+      - name: Submit once with no automatic retry
+        id: submit
+        continue-on-error: true
+        run: |
+          set +e
+          python taskmarket_handsel_submit.py submit
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit "$code"
+
+      - name: Persist final credential-free outcome
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add \
+            deliverables/taskmarket-handsel-network-label-audit/submission-state/attempt.json \
+            deliverables/taskmarket-handsel-network-label-audit/submission-state/submission-evidence.json \
+            deliverables/taskmarket-handsel-network-label-audit/submission-state/private-wallet.cms.b64
+          if git diff --cached --quiet; then
+            echo 'No final state change was produced' >&2
+            exit 1
+          fi
+          git commit -m 'Record Handsel Taskmarket submission outcome [skip ci]'
+          for attempt in $(seq 1 12); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
+
+      - name: Require an externally acknowledged submission
+        if: always()
+        env:
+          SUBMIT_EXIT_CODE: ${{ steps.submit.outputs.exit_code }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path('deliverables/taskmarket-handsel-network-label-audit/submission-state/submission-evidence.json')
+          if not path.is_file():
+              raise SystemExit('submission evidence was not produced')
+          value = json.loads(path.read_text(encoding='utf-8'))
+          if value.get('status') != 'success':
+              raise SystemExit(f"Taskmarket submission did not succeed: {value.get('status')}")
+          if len(value.get('external_writes_performed') or []) != 1:
+              raise SystemExit('expected exactly one external submission write')
+          if int(os.environ.get('SUBMIT_EXIT_CODE') or 1) != 0:
+              raise SystemExit('submitter returned a non-zero status')
+          if value.get('expenses_usdc') != 0:
+              raise SystemExit('zero-spend invariant was violated')
+          PY
