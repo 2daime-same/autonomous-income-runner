@@ -1,4 +1,5 @@
 {
   "task_id": "0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
-  "reason": "Highest current zero-spend reward candidate requiring exact brief and current submission-state verification before any wallet or production work."
+  "reason": "Highest current zero-spend reward candidate requiring exact brief and current submission-state verification before any wallet or production work.",
+  "requested_at": "2026-08-07T04:24:22+09:00"
 }
