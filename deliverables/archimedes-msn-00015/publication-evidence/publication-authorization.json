@@ -23,7 +23,9 @@
   },
   "authorization_reuse_permitted": false,
   "token_cleanup": {
-    "npm_token_revocation_confirmed": false,
+    "npm_token_revocation_confirmed": true,
+    "npm_token_revocation_confirmation_source": "chat-user-explicit",
+    "npm_token_revocation_confirmed_at": "2026-08-07T00:15:38+09:00",
     "github_secret_deletion_confirmed": false,
     "trusted_publishing_configured": false
   },
