@@ -1,0 +1,90 @@
+name: Probe one Taskmarket target read-only
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskmarket_target_probe.py
+      - taskmarket-target-request.json
+      - .github/workflows/taskmarket-target-probe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-target-readonly
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Compile and validate request
+        run: |
+          set -euo pipefail
+          python3 -m py_compile taskmarket_target_probe.py
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+          value = json.loads(Path('taskmarket-target-request.json').read_text())
+          task_id = str(value.get('task_id') or '')
+          if not re.fullmatch(r'0x[0-9a-fA-F]{64}', task_id):
+              raise SystemExit('invalid task id')
+          PY
+
+      - name: Fetch exact task and public submission state
+        env:
+          TASKMARKET_API_URL: https://api.taskmarket.dev
+          TASKMARKET_TARGET_REQUEST: taskmarket-target-request.json
+          TASKMARKET_TARGET_OUTPUT: taskmarket-output/target-detail.json
+        run: python3 taskmarket_target_probe.py
+
+      - name: Reject credential-like output
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('taskmarket-output/target-detail.json')
+          text = path.read_text(encoding='utf-8')
+          patterns = [
+              re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
+              re.compile(r'\b(?:sk|pk|api|key|token|secret)_[A-Za-z0-9._-]{16,}\b', re.I),
+              re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
+          ]
+          for pattern in patterns:
+              if pattern.search(text):
+                  raise SystemExit(f'credential-like value found: {pattern.pattern}')
+          PY
+
+      - name: Commit changed read-only evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/target-detail.json
+          if git diff --cached --quiet; then
+            echo 'No substantive target-state changes'
+            exit 0
+          fi
+          git commit -m 'Record targeted Taskmarket public state [skip ci]'
+          for attempt in $(seq 1 10); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
