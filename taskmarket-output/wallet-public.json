@@ -1,0 +1,32 @@
+{
+  "address_hash": "dcc21f6442600bae",
+  "chain_id": 8453,
+  "encryption": {
+    "encrypted_file": "taskmarket-output/private-wallet.cms.b64",
+    "encrypted_sha256": "9071222ee15364841f635d49b1d07187fc7b362aeeda87b338658200c3edd022",
+    "format": "CMS EnvelopedData DER, AES-256-CBC, base64 encoded",
+    "recipient_certificate": "crypto/superteam-state-public.crt",
+    "recipient_certificate_der_sha256": "bb521818fb917bccb4ef60404bec7d3fdc550d58a9fe2c42630600533ff360b7"
+  },
+  "expenses_usdc": 0,
+  "generated_at": "2026-08-06T19:40:31+00:00",
+  "network": "base",
+  "prepared_message_count": 4,
+  "prepared_task_ids": [
+    "0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
+    "0x82a60fc1b3e747bfb94037bfb76468043e34a1ddee86c4716dce7847d0f1911c",
+    "0x7eeff4e1991bd0d40eee406777fc568abf341ecff3368d991f89cf9d0d6f6e04",
+    "0x20ac27a69d26c03165bdf22c60881cd1adc7dd0705e47c1bbdc0c1578b7858cc"
+  ],
+  "public_signatures_exposed": false,
+  "safety_notes": [
+    "The encrypted payload contains the private key and precomputed task-specific submission signatures.",
+    "No signature is committed in plaintext because Taskmarket submission signatures are not artifact-bound.",
+    "The wallet holds no funds and no payment transaction has been signed."
+  ],
+  "schema_version": "taskmarket-evm-wallet-public-v1",
+  "signature_scheme": "EIP-191 personal_sign",
+  "verified_income_usdc": 0,
+  "worker_address": "0x0509D9DD7F7e6C7b80437002f291a425ab499962",
+  "writes_performed": []
+}
