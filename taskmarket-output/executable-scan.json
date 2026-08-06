@@ -1,7 +1,7 @@
 {
   "execution_ready": [],
   "execution_ready_count": 0,
-  "generated_at": "2026-08-06T10:48:07+00:00",
+  "generated_at": "2026-08-06T14:32:38+00:00",
   "inspected": [
     {
       "capability_matches": [
@@ -14,13 +14,13 @@
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 69.03,
+      "hours_left": 65.29,
       "net_reward_usdc": 18.5,
       "reward_usdc": 20.0,
       "soft_risks": [
         "subjective_media_contest"
       ],
-      "submission_count": 2,
+      "submission_count": 4,
       "task_id": "0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
       "task_url": "https://taskmarket.dev/dashboard/tasks/0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
       "title": "Create a **15-second, photorealistic scene from the television series Seinfeld"
