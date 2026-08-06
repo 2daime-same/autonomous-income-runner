@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - deliverables/taskmarket-handsel-network-label-audit/submission-authorization.json
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
@@ -16,7 +18,18 @@ concurrency:
 
 jobs:
   submit:
-    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    if: >-
+      github.repository == '2daime-same/autonomous-income-runner' &&
+      github.actor == '2daime-same' &&
+      (
+        github.event_name == 'workflow_dispatch' ||
+        (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+        (
+          github.event_name == 'issues' &&
+          github.event.action == 'opened' &&
+          github.event.issue.title == '[Taskmarket] Execute authorized Handsel submission'
+        )
+      )
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
@@ -25,9 +38,10 @@ jobs:
       TASKMARKET_HANDSEL_STATE_DIR: deliverables/taskmarket-handsel-network-label-audit/submission-state
       TASKMARKET_WALLET_CERTIFICATE: crypto/superteam-state-public.crt
     steps:
-      - name: Check out the dedicated repository
+      - name: Check out the dedicated repository default branch
         uses: actions/checkout@v6
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Set up Python
