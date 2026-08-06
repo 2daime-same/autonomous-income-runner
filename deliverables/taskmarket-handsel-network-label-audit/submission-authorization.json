@@ -6,7 +6,7 @@
   "authorization_note": "The account owner explicitly instructed the agent to continue pursuing income autonomously. This authorization is limited to one zero-spend public work submission and does not authorize terms acceptance, KYC, payout onboarding, fees, deposits, token transfers, or purchases.",
   "authorized_at": "2026-08-06T19:58:24Z",
   "expires_at": "2026-08-07T19:58:24Z",
-  "triggered_at": "2026-08-06T20:03:30Z",
+  "triggered_at": "2026-08-06T20:05:45Z",
   "zero_spend_required": true,
   "task_id": "0x7eeff4e1991bd0d40eee406777fc568abf341ecff3368d991f89cf9d0d6f6e04",
   "expected_title_terms": [
