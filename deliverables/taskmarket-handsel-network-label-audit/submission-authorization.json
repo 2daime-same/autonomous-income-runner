@@ -1,12 +1,16 @@
 {
   "schema_version": "taskmarket-handsel-submission-authorization-v1",
   "attempt_id": "handsel-label-audit-20260807-01",
-  "authorized": true,
+  "authorized": false,
+  "authorization_consumed": false,
+  "authorization_cancelled": true,
   "authorization_source": "chat-user-explicit-autonomous-income-mandate",
-  "authorization_note": "The account owner explicitly instructed the agent to continue pursuing income autonomously. This authorization is limited to one zero-spend public work submission and does not authorize terms acceptance, KYC, payout onboarding, fees, deposits, token transfers, or purchases.",
+  "authorization_note": "The original authorization was limited to one zero-spend public work submission and never authorized terms acceptance, KYC, payout onboarding, fees, deposits, token transfers, or purchases.",
   "authorized_at": "2026-08-06T19:58:24Z",
   "expires_at": "2026-08-07T19:58:24Z",
   "triggered_at": "2026-08-06T20:05:45Z",
+  "cancelled_at": "2026-08-06T20:27:00Z",
+  "cancellation_reason": "The current Taskmarket public scan generated at 2026-08-06T14:32:38Z contains only 14 open active tasks and does not contain this task ID. No workflow run, prepare state, signature publication, upload, or Taskmarket POST occurred. The stale authorization is cancelled rather than risking a late or duplicate submission.",
   "zero_spend_required": true,
   "task_id": "0x7eeff4e1991bd0d40eee406777fc568abf341ecff3368d991f89cf9d0d6f6e04",
   "expected_title_terms": [
@@ -36,7 +40,14 @@
       "role": "attachment"
     }
   ],
-  "commercial_status_before_submission": {
+  "external_submission_state": {
+    "workflow_runs_created": 0,
+    "attempt_state_created": false,
+    "taskmarket_post_attempted": false,
+    "direct_requester_email_sent": true,
+    "direct_requester_email_id": "19fd8b3f03d00e67"
+  },
+  "commercial_status_after_cancellation": {
     "verified_income_usdc": 0,
     "verified_receivable_usdc": 0,
     "expenses_usdc": 0
