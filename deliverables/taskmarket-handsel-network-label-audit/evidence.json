@@ -1,0 +1,57 @@
+{
+  "schema_version": "handsel-public-environment-label-audit-v1",
+  "audited_at": "2026-08-06T19:55:00Z",
+  "taskmarket_task_id": "0x7eeff4e1991bd0d40eee406777fc568abf341ecff3368d991f89cf9d0d6f6e04",
+  "question": "Are Handsel's mainnet versus testnet labels explicitly stated on the reviewed public surfaces?",
+  "answer": "No. Neither literal appears on the two reviewed rendered public surfaces.",
+  "method": {
+    "source_type": "public rendered web text",
+    "case_sensitive": false,
+    "literal_terms": [
+      "mainnet",
+      "testnet"
+    ],
+    "private_or_authenticated_sources_used": false,
+    "external_writes_performed": []
+  },
+  "sources": [
+    {
+      "url": "https://handsel.ai/",
+      "mainnet_literal_count": 0,
+      "testnet_literal_count": 0,
+      "environment_signals": [
+        "Stripe is described as operating in test mode.",
+        "The page says no real money moves until a human legal gate is cleared.",
+        "The sandbox is described as free.",
+        "The reference implementation states that no external vendor is live yet."
+      ]
+    },
+    {
+      "url": "https://handsel.ai/playground",
+      "mainnet_literal_count": 0,
+      "testnet_literal_count": 0,
+      "environment_signals": [
+        "The experience is labeled as a sandbox tier.",
+        "It is described as Stripe-free.",
+        "The receipt settles at zero dollars.",
+        "The hosted playground states that it is not live yet."
+      ]
+    }
+  ],
+  "interpretation": {
+    "concealed_live_payment_evidence_found": false,
+    "clarity_defect_found": true,
+    "recommended_product_state_labels": [
+      "TEST",
+      "LIVE",
+      "SANDBOX"
+    ],
+    "network_label_rule": "Use mainnet/testnet only together with the actual network name."
+  },
+  "commercial_status": {
+    "taskmarket_submission_performed": false,
+    "verified_income_usdc": 0,
+    "verified_receivable_usdc": 0,
+    "expenses_usdc": 0
+  }
+}
