@@ -12,7 +12,9 @@
     "api_key_generation",
     "nda:fb604d2a1e4396e6b151",
     "email_verification_observed",
-    "api_key_generation"
+    "api_key_generation",
+    "nda:fb604d2a1e4396e6b151",
+    "email_verification_observed"
   ],
   "expensesUsd": 0,
   "emailAliasHash": "[REDACTED]",
@@ -26,8 +28,8 @@
     "success": true,
     "userIdHash": "00d84769fa68d85292f2"
   },
-  "updatedAt": "2026-08-07T18:20:10.917Z",
-  "polls": 9,
+  "updatedAt": "2026-08-07T18:24:32.587Z",
+  "polls": 17,
   "verificationPolls": 2,
   "emailVerified": "[REDACTED]",
   "profile": {
@@ -65,6 +67,6 @@
       "docs": "https://www.agentgigs.io/api/help"
     }
   },
-  "applicationPollFailures": 1,
+  "applicationPollFailures": 2,
   "profileExisting": true
 }
