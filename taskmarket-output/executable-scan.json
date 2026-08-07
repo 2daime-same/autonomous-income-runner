@@ -1,7 +1,7 @@
 {
   "execution_ready": [],
   "execution_ready_count": 0,
-  "generated_at": "2026-08-06T14:32:38+00:00",
+  "generated_at": "2026-08-07T00:54:53+00:00",
   "inspected": [
     {
       "capability_matches": [
@@ -14,20 +14,204 @@
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 65.29,
+      "hours_left": 54.92,
       "net_reward_usdc": 18.5,
       "reward_usdc": 20.0,
       "soft_risks": [
         "subjective_media_contest"
       ],
-      "submission_count": 4,
+      "submission_count": 9,
       "task_id": "0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
       "task_url": "https://taskmarket.dev/dashboard/tasks/0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
       "title": "Create a **15-second, photorealistic scene from the television series Seinfeld"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.05,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 14,
+      "task_id": "0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
+      "title": "ARCADE BENCHMARK 07: Magnet Mine"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.05,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 15,
+      "task_id": "0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
+      "title": "ARCADE BENCHMARK 10: Last Light"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.05,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 15,
+      "task_id": "0xab4307e40b5dc33a6575e29e8d014305f0214ddf637d69b9e369eabb7f290a7b",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xab4307e40b5dc33a6575e29e8d014305f0214ddf637d69b9e369eabb7f290a7b",
+      "title": "ARCADE BENCHMARK 08: Rooftop Relay"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.04,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 16,
+      "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+      "title": "ARCADE BENCHMARK 06: Bubble Brawl"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.04,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 16,
+      "task_id": "0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
+      "title": "ARCADE BENCHMARK 03: Orbit Breaker"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.04,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 16,
+      "task_id": "0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
+      "title": "ARCADE BENCHMARK 02: Reactor Rush"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.04,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 18,
+      "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+      "title": "ARCADE BENCHMARK 05: Signal Panic"
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "execution_exclusions": [
+        "authenticated_submission_client_unavailable",
+        "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
+        "worker_wallet_not_configured"
+      ],
+      "execution_ready": false,
+      "hours_left": 68.04,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "submission_count": 18,
+      "task_id": "0x45d1de095a136ba92af772153dd2a289eae3b19ad8f859f42669eab5dd0630c8",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x45d1de095a136ba92af772153dd2a289eae3b19ad8f859f42669eab5dd0630c8",
+      "title": "ARCADE BENCHMARK 04: Tunnel Tap"
     }
   ],
   "policy": "Requires a configured worker wallet, EIP-191 signer, authenticated submission client, positive net reward, more than two hours remaining, fewer than ten submissions, and no subjective image/design contest signal.",
-  "public_zero_spend_candidate_count": 1,
+  "public_zero_spend_candidate_count": 9,
   "route_state": {
     "eip191_signer_available": false,
     "submission_client_available": false,

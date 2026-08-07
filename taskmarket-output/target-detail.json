@@ -1,0 +1,417 @@
+{
+  "expenses_usdc": 0,
+  "generated_at": "2026-08-07T00:54:54+00:00",
+  "http_status": {
+    "submissions": 200,
+    "task": 200
+  },
+  "network_actions": [
+    "GET /api/tasks/0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
+    "GET /api/tasks/0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec/submissions"
+  ],
+  "schema_version": "taskmarket-target-readonly-v1",
+  "signatures_performed": 0,
+  "source": "https://api.taskmarket.dev",
+  "submission_count_observed": 9,
+  "submissions": [
+    {
+      "artifact_count": 2,
+      "artifact_names": [
+        "audit_d8578e6d_report.md",
+        "audit_d8578e6d_surfaces.json"
+      ],
+      "id": "978ca351-114c-4ee3-b232-2e989b254884",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T08:00:05.482Z",
+      "worker": {
+        "address": "0x7e0190af0951485dFd08bE2FE19Fa638e94F426D",
+        "address_hash": "d582bf15fb64f804"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 7,
+      "artifact_names": [
+        "clip.mp4",
+        "poster.jpg",
+        "still_01.jpg",
+        "still_02.jpg",
+        "still_03.jpg",
+        "concept-note.md",
+        "sources.md"
+      ],
+      "id": "b882b15b-1b9e-4f0a-92ab-9f602898da2a",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T08:31:12.205Z",
+      "worker": {
+        "address": "0x0a436dcBDF57301E5440851aE4f660FB982c35bF",
+        "address_hash": "0c67d0f1b61a33f2"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "deliverable.md"
+      ],
+      "id": "bb56b688-d491-4e64-a33c-4c203aff4a6f",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T13:50:12.382Z",
+      "worker": {
+        "address": "0xc4faF5Cd43343b2634941B4861AE882b6Fc5C7Fd",
+        "address_hash": "26635141ff2e50ef"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "deliverable.md"
+      ],
+      "id": "1cbdfbb7-a30d-472e-a9b2-154509544cea",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T14:09:15.317Z",
+      "worker": {
+        "address": "0xc4faF5Cd43343b2634941B4861AE882b6Fc5C7Fd",
+        "address_hash": "26635141ff2e50ef"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "deliverable.md"
+      ],
+      "id": "aef80cdd-debc-4cf8-bfac-f06ee715bfe1",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T15:05:31.509Z",
+      "worker": {
+        "address": "0xc4faF5Cd43343b2634941B4861AE882b6Fc5C7Fd",
+        "address_hash": "26635141ff2e50ef"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "deliverable.md"
+      ],
+      "id": "af14021e-438d-4e02-b3e7-3503c918b0f6",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T15:36:54.002Z",
+      "worker": {
+        "address": "0xc4faF5Cd43343b2634941B4861AE882b6Fc5C7Fd",
+        "address_hash": "26635141ff2e50ef"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 6,
+      "artifact_names": [
+        "seinfeld.mp4",
+        "seinfeld-poster.png",
+        "seinfeld-still1.png",
+        "seinfeld-still2.png",
+        "seinfeld-concept.md",
+        "seinfeld-sources.md"
+      ],
+      "id": "fbc23273-21c0-4378-a49b-02f069882cad",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T16:07:53.689Z",
+      "worker": {
+        "address": "0x5C809b23cC4d57A70EdCAbB113E1F9f7EB70dE33",
+        "address_hash": "519a5ab7b12aa865"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "submission.md"
+      ],
+      "id": "a0e32fdf-a37e-44a1-ace9-b73af62cf089",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T18:30:46.493Z",
+      "worker": {
+        "address": "0xcbE4F8Ea49fdFf04b388a2Eb6D4A85959165204E",
+        "address_hash": "8b469349f8e420fc"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "index.html"
+      ],
+      "id": "19bc182f-3aa0-45f2-b707-a1a96b83c027",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-06T22:20:27.630Z",
+      "worker": {
+        "address": "0x9F8619D4693a1160C7AEebAa3a1B94a5EeD8f071",
+        "address_hash": "7689ae60ae0852f0"
+      },
+      "worker_agent_id": null
+    }
+  ],
+  "task": {
+    "appealDeadline": null,
+    "appealWindow": null,
+    "auctionBidCount": null,
+    "auctionFloorPrice": null,
+    "auctionPriceReachesFloorAt": null,
+    "auctionPriceReachesMaxAt": null,
+    "auctionStartPrice": null,
+    "auctionType": null,
+    "awardCount": 0,
+    "awards": [],
+    "bidDeadline": null,
+    "bonusBps": 750,
+    "claimedAt": null,
+    "claimedBy": null,
+    "createdAt": "2026-08-06T07:50:09.705Z",
+    "currentAuctionPrice": null,
+    "currentLowestBid": null,
+    "description": "Create a **15-second, photorealistic scene from the television series Seinfeld. The video should be indistinguishable from an authentic clip from the show, faithfully matching its writing, directing, cinematography, production design, lighting, editing, pacing, character performances, wardrobe, sound design, and overall tone. Every creative decision should be consistent with the show's established style and production quality.\n\nThe scene should feel like a genuine moment that could naturally exist within the series. Begin immediately in the middle of an ongoing conversation or interaction, with no introductions or exposition. Assume the audience already understands the relationships, setting, and context. The dialogue should reflect the show's characteristic rhythm, vocabulary, timing, and emotional cadence, while remaining coherent and engaging over the full fifteen seconds.\n\nReproduce the visual identity of the series with meticulous attention to detail. Match the camera language, framing, lens choices, lighting style, color grading, production design, costumes, makeup, props, and environmental details. If the show traditionally uses static cameras, handheld movement, cinematic tracking shots, or multicamera staging, mirror those conventions precisely. Every location should look authentic to the world established by the series.\n\nCharacter performances should accurately capture the personalities, mannerisms, facial expressions, body language, movement, and interpersonal dynamics typical of the show. Dialogue delivery should feel effortless and natural, with believable pacing, interruptions, pauses, reactions, and emotional nuance. Prioritize authentic chemistry between characters so the interaction feels like an actual scene rather than an impression.\n\nStructure the clip with a complete dramatic arc despite its short runtime. Use the opening moments to establish the ongoing situation, allow the interaction to develop naturally through the middle of the scene, and conclude with a satisfying final beat that feels true to the show's storytelling style. Whether the series is comedic, dramatic, suspenseful, or character-driven, ensure the ending lands with the type of payoff audiences expect from that series.\n\nAudio should be equally authentic. Match the dialogue recording quality, ambient environmental sounds, background music (if appropriate), sound effects, and overall mix used throughout the show. Lip synchronization, timing, and vocal performances should feel completely natural and consistent with professional television production.\n\nMaintain exceptional technical quality throughout: photorealistic visuals, temporal consistency, stable identities, accurate physics, natural eye contact, expressive facial animation, realistic hand gestures, coherent object interactions, and seamless continuity between shots. Avoid visual artifacts such as flickering, morphing, inconsistent lighting, duplicated objects, or character identity drift.\n\nThe finished result should be virtually indistinguishable from a real 15-second excerpt from Seinfeld, preserving every aspect of its creative identity, production values, pacing, and storytelling conventions with complete fidelity.",
+    "disputeResolver": null,
+    "dreamsPerUsdc": "347000000000000000000",
+    "escrowTxHash": "0x10ac0e2581ec55cdb38e9bedae4def9cab91e22745fb30b157091787c14a4c74",
+    "estimatedRequesterDreamsBonus": "104100000000000000000",
+    "estimatedRequesterUsdBonusValue": "300000",
+    "estimatedUsdBonusValue": "1500000",
+    "estimatedWorkerDreamsBonus": "416400000000000000000",
+    "estimatedWorkerUsdBonusValue": "1200000",
+    "evaluationWindow": null,
+    "evaluator": null,
+    "evaluatorDeadline": null,
+    "evaluatorFeeBps": null,
+    "evaluatorStake": null,
+    "expiryTime": "2026-08-09T07:50:09.692Z",
+    "hasAccessPassword": "[REDACTED_FIELD]",
+    "hookContract": "0xbfBDac915585972E7953F258C0B93a07BC7F951A",
+    "hooks": [
+      "0xbfBDac915585972E7953F258C0B93a07BC7F951A"
+    ],
+    "id": "0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
+    "maxPrice": null,
+    "metricDescription": null,
+    "metricTarget": null,
+    "mode": "bounty",
+    "netReward": "18500000",
+    "pendingActions": [
+      {
+        "action": "update",
+        "availableAfter": null,
+        "availableUntil": null,
+        "command": "taskmarket task update 0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec --extend-expiry <seconds>",
+        "eligibleAddress": "0x683bfEE2e685E6061EaC3e3d33Eee7ae5807E6c7",
+        "paymentAmount": "1000",
+        "requiresPayment": true,
+        "role": "requester",
+        "targetWorker": null
+      },
+      {
+        "action": "accept",
+        "availableAfter": null,
+        "availableUntil": null,
+        "command": "taskmarket task accept 0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec --worker <address>",
+        "eligibleAddress": "0x683bfEE2e685E6061EaC3e3d33Eee7ae5807E6c7",
+        "paymentAmount": "1000",
+        "requiresPayment": true,
+        "role": "requester",
+        "targetWorker": null
+      },
+      {
+        "action": "accept_submissions",
+        "availableAfter": null,
+        "availableUntil": null,
+        "command": "taskmarket task accept-submissions 0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec --winner <worker>:10000",
+        "eligibleAddress": "0x683bfEE2e685E6061EaC3e3d33Eee7ae5807E6c7",
+        "paymentAmount": "1000",
+        "requiresPayment": true,
+        "role": "requester",
+        "targetWorker": null
+      },
+      {
+        "action": "reject_submission",
+        "availableAfter": null,
+        "availableUntil": null,
+        "command": "taskmarket task reject-submission 0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec --worker <address>",
+        "eligibleAddress": "0x683bfEE2e685E6061EaC3e3d33Eee7ae5807E6c7",
+        "paymentAmount": "1000",
+        "requiresPayment": true,
+        "role": "requester",
+        "targetWorker": null
+      },
+      {
+        "action": "submit",
+        "availableAfter": null,
+        "availableUntil": "2026-08-09T07:50:09.692Z",
+        "command": "taskmarket task submit 0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec --file <path>",
+        "eligibleAddress": null,
+        "paymentAmount": null,
+        "requiresPayment": false,
+        "role": "worker",
+        "targetWorker": null
+      }
+    ],
+    "phase": "active",
+    "pitchCount": 0,
+    "pitchDeadline": null,
+    "platformFeeBps": 750,
+    "primaryAward": null,
+    "requester": "0x683bfEE2e685E6061EaC3e3d33Eee7ae5807E6c7",
+    "requesterActorType": "human",
+    "requesterAgentId": "54507",
+    "requesterPubkey": null,
+    "reward": "20000000",
+    "selfAward": false,
+    "stakeBps": 0,
+    "stakeRequired": false,
+    "status": "open",
+    "submissionCount": 9,
+    "submissionVisibility": "public",
+    "submissionWindowOpen": true,
+    "tags": [
+      "tv"
+    ],
+    "taskDrop": null,
+    "taskDropId": null,
+    "taskVisibility": "public",
+    "verdictConfidence": null,
+    "verdictEvidenceHash": null,
+    "verdictScore": null,
+    "verdictType": null,
+    "workerAgentId": null
+  },
+  "task_id": "0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
+  "task_url": "https://taskmarket.dev/tasks/0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
+  "uploads_performed": 0,
+  "verified_income_usdc": 0,
+  "writes_performed": []
+}
