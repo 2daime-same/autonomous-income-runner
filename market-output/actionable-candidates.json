@@ -233,6 +233,22 @@
         "reward is unusually high for the first-income target",
         "unrecognized platform on a repository younger than 90 days"
       ],
+      "issue_number": 183,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $9k ] [ Solidity ] Add gas sponsorship relay for agent transactions — security critical",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/183"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
       "issue_number": 12,
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $7k ] [ Solidity ] Fix integer overflow in VestingWallet vested amount calculation",
@@ -253,22 +269,6 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $9k ] [ Solidity ] Fix no max supply cap and missing access control on AgentToken mint",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/11"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 183,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $9k ] [ Solidity ] Add gas sponsorship relay for agent transactions — security critical",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/183"
     },
     {
       "flags": [
@@ -429,6 +429,17 @@
         "issue is already assigned",
         "reward is unusually high for the first-income target"
       ],
+      "issue_number": 52328,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that are multiples of 16",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52328"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
       "issue_number": 52252,
       "repo": "tenstorrent/tt-metal",
       "title": "[Bounty $3000] Fix Blackhole destination-reuse synchronization",
@@ -441,10 +452,10 @@
         "more than two competing attempt users",
         "requests hidden prompts, internal instructions, or session metadata"
       ],
-      "issue_number": 920,
+      "issue_number": 865,
       "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix cross-chain replay attack in CrossChainBridge signature verification",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/920"
+      "title": "[ T3 Code ] Add Effect.Cache-based provider API response caching with TTL",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/865"
     },
     {
       "flags": [
@@ -456,6 +467,18 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ Crypto ] Fix first-depositor price manipulation in LiquidityPool",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/918"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 611,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ CONTEXT RIFT ] Fix typos in knowledge-base/context.json",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/611"
     },
     {
       "flags": [
@@ -487,6 +510,18 @@
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "auth refresh endpoint issues tokens without verifying the requester",
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2847"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 920,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix cross-chain replay attack in CrossChainBridge signature verification",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/920"
     },
     {
       "flags": [
@@ -616,10 +651,10 @@
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
-      "issue_number": 30,
+      "issue_number": 743,
       "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
+      "title": "Low Handing Fruit Automation",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
     },
     {
       "flags": [
@@ -628,10 +663,10 @@
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
-      "issue_number": 743,
+      "issue_number": 30,
       "repo": "SecureBananaLabs/bug-bounty",
-      "title": "Low Handing Fruit Automation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/743"
+      "title": "Benchmark APIs with p50, p95, p99 latency, RPS, error rate and TTFB",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/30"
     },
     {
       "flags": [
@@ -648,22 +683,13 @@
     {
       "flags": [
         "no direct reward evidence",
-        "reward is unusually high for the first-income target"
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository"
       ],
       "issue_number": 42,
-      "repo": "swarmproof/cairn-protocol",
-      "title": "Security Review: .call{value:} Escrow Reentrancy Surface + Dispute Timeout Design Flaw",
-      "url": "https://github.com/swarmproof/cairn-protocol/issues/42"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 41,
-      "repo": "swarmproof/cairn-protocol",
-      "title": "Security Review: .call{value:} Escrow Reentrancy Surface + Dispute Timeout Design Flaw",
-      "url": "https://github.com/swarmproof/cairn-protocol/issues/41"
+      "repo": "adamlu123/mini-web-agent",
+      "title": "with guidance 27b/9b OPD runs: settings + status (KL trace, wandb never initialized, SFT preempted before first ckpt)",
+      "url": "https://github.com/adamlu123/mini-web-agent/issues/42"
     },
     {
       "flags": [
@@ -680,6 +706,35 @@
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
+      "issue_number": 58,
+      "repo": "FreeCAD/FPA-grant-proposals",
+      "title": "Design System and Style Guidelines",
+      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/58"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 74,
+      "repo": "numfocus/small-development-grant-proposals",
+      "title": "Maintaining and documenting seven Bioconductor services after sudden relocation of core engineer",
+      "url": "https://github.com/numfocus/small-development-grant-proposals/issues/74"
+    },
+    {
+      "flags": [
+        "no direct reward evidence"
+      ],
+      "issue_number": 81,
+      "repo": "FreeCAD/FPA-grant-proposals",
+      "title": "Implement ISO 13715 (Edge Symbols) and ISO 15785 (Joint Symbols) in TechDraw Workbench",
+      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/81"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
       "issue_number": 72,
       "repo": "FreeCAD/FPA-grant-proposals",
       "title": "KiConnect PCB Workbench [Time Commitment, Ecosystem]",
@@ -688,91 +743,22 @@
     {
       "flags": [
         "no direct reward evidence",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
+        "reward is unusually high for the first-income target"
       ],
-      "issue_number": 1,
-      "repo": "arshamhaq/stake-SPD",
-      "title": "Security Review: Staking Protocol Security Analysis — Common Vulnerability Patterns",
-      "url": "https://github.com/arshamhaq/stake-SPD/issues/1"
+      "issue_number": 90,
+      "repo": "FreeCAD/FPA-grant-proposals",
+      "title": "Implement Feature Thread",
+      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/90"
     },
     {
       "flags": [
         "no direct reward evidence",
-        "unrecognized platform on a low-reputation personal repository",
         "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 1,
-      "repo": "hookwright/untoll-hook",
-      "title": "Security Review: Uniswap V4 Hook Bonding Curve — Graduate-in-Place Safety Analysis",
-      "url": "https://github.com/hookwright/untoll-hook/issues/1"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 5,
-      "repo": "HockeyPlaya48/RWAForge",
-      "title": "Security Review: DistributionRouter Batch Overflow + RewardClaimer Merkle Front-Running",
-      "url": "https://github.com/HockeyPlaya48/RWAForge/issues/5"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 2,
-      "repo": "usegivest/givest",
-      "title": "Security Review: Signature Malleability in _recover() + _takeEthFee Reentrancy Surface",
-      "url": "https://github.com/usegivest/givest/issues/2"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 2,
-      "repo": "pipeshiftprotocol/pipeshift",
-      "title": "Security Review: Permissionless settle() Gas Griefing + Non-Standard Token Reentrancy in NettingEngine",
-      "url": "https://github.com/pipeshiftprotocol/pipeshift/issues/2"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1,
-      "repo": "pipeshiftprotocol/pipeshift",
-      "title": "Security Review: Permissionless settle() Gas Griefing + Non-Standard Token Reentrancy in NettingEngine",
-      "url": "https://github.com/pipeshiftprotocol/pipeshift/issues/1"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1,
-      "repo": "AurionXI-PWA/aurionxi-protocol",
-      "title": "Security Review: EIP-2535 Diamond Standard — Delegate Proxy Storage and Access Control",
-      "url": "https://github.com/AurionXI-PWA/aurionxi-protocol/issues/1"
-    },
-    {
-      "flags": [
-        "no direct reward evidence",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 1,
-      "repo": "d3a1hscythe6108-creator/ord0",
-      "title": "Security Review: Bonding Curve via Uniswap V4 Hook — Price Manipulation and Curve Exhaustion",
-      "url": "https://github.com/d3a1hscythe6108-creator/ord0/issues/1"
+      "issue_number": 78,
+      "repo": "syn54x/pinch-frontend",
+      "title": "PRD F9: Rhythm & Harmony — the budget nobody wrote",
+      "url": "https://github.com/syn54x/pinch-frontend/issues/78"
     },
     {
       "flags": [
@@ -784,11 +770,24 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Comprehensive review and overhaul of Spyder's documentation",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/21"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 103,
+      "repo": "psanders/micobro",
+      "title": "[Feature] Add \"Solo capital\" payment and disable interest options once the cycle's interest is covered",
+      "url": "https://github.com/psanders/micobro/issues/103"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-06T14:35:58+00:00",
+  "generated_at": "2026-08-07T00:17:43+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-06T14:35:58+00:00"
+  "source_generated_at": "2026-08-07T00:17:43+00:00"
 }
