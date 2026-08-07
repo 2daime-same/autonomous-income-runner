@@ -32,81 +32,85 @@ jobs:
         run: |
           node <<'NODE'
           const fs = require('node:fs');
-          const path = require('node:path');
 
-          const models = ['openai/gpt-4.1-mini', 'openai/gpt-4.1', 'openai/gpt-4o-mini'];
-          const result = {
-            generated_at: new Date().toISOString(),
-            catalog: null,
-            probes: [],
-            token_exposed: false,
-            completion_content_recorded: false,
-          };
-
-          async function readJson(response) {
-            const text = await response.text();
-            try { return text ? JSON.parse(text) : null; }
-            catch { return {non_json: true, preview: text.slice(0, 180)}; }
-          }
-
-          try {
-            const response = await fetch('https://models.github.ai/catalog/models', {
-              headers: {
-                Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-                'X-GitHub-Api-Version': '2026-03-10',
-              },
-              signal: AbortSignal.timeout(30000),
-            });
-            const payload = await readJson(response);
-            const ids = Array.isArray(payload) ? payload.map(item => item?.id).filter(Boolean) : [];
-            result.catalog = {
-              status: response.status,
-              ok: response.ok,
-              model_count: ids.length,
-              requested_models_present: Object.fromEntries(models.map(id => [id, ids.includes(id)])),
-              error_code: payload?.code ?? payload?.error?.code ?? null,
-              error_message: payload?.message ?? payload?.error?.message ?? null,
+          (async () => {
+            const models = ['openai/gpt-4.1-mini', 'openai/gpt-4.1', 'openai/gpt-4o-mini'];
+            const result = {
+              generated_at: new Date().toISOString(),
+              catalog: null,
+              probes: [],
+              token_exposed: false,
+              completion_content_recorded: false,
             };
-          } catch (error) {
-            result.catalog = {ok: false, transport_error: error?.name ?? 'Error'};
-          }
 
-          for (const model of models) {
+            async function readJson(response) {
+              const text = await response.text();
+              try { return text ? JSON.parse(text) : null; }
+              catch { return {non_json: true, preview: text.slice(0, 180)}; }
+            }
+
             try {
-              const response = await fetch('https://models.github.ai/inference/chat/completions', {
-                method: 'POST',
+              const response = await fetch('https://models.github.ai/catalog/models', {
                 headers: {
                   Accept: 'application/vnd.github+json',
                   Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
                   'X-GitHub-Api-Version': '2026-03-10',
-                  'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                  model,
-                  messages: [{role: 'user', content: 'Return exactly the word OK.'}],
-                  temperature: 0,
-                  max_tokens: 8,
-                }),
-                signal: AbortSignal.timeout(45000),
+                signal: AbortSignal.timeout(30000),
               });
               const payload = await readJson(response);
-              const completion = payload?.choices?.[0]?.message?.content;
-              result.probes.push({
-                model,
+              const ids = Array.isArray(payload) ? payload.map(item => item?.id).filter(Boolean) : [];
+              result.catalog = {
                 status: response.status,
                 ok: response.ok,
-                completion_present: typeof completion === 'string' && completion.length > 0,
+                model_count: ids.length,
+                requested_models_present: Object.fromEntries(models.map(id => [id, ids.includes(id)])),
                 error_code: payload?.code ?? payload?.error?.code ?? null,
                 error_message: payload?.message ?? payload?.error?.message ?? null,
-              });
+              };
             } catch (error) {
-              result.probes.push({model, ok: false, transport_error: error?.name ?? 'Error'});
+              result.catalog = {ok: false, transport_error: error?.name ?? 'Error'};
             }
-          }
 
-          fs.mkdirSync('ops-output', {recursive: true});
-          fs.writeFileSync('ops-output/github-models-diagnostic.json', `${JSON.stringify(result, null, 2)}\n`);
+            for (const model of models) {
+              try {
+                const response = await fetch('https://models.github.ai/inference/chat/completions', {
+                  method: 'POST',
+                  headers: {
+                    Accept: 'application/vnd.github+json',
+                    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                    'X-GitHub-Api-Version': '2026-03-10',
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    model,
+                    messages: [{role: 'user', content: 'Return exactly the word OK.'}],
+                    temperature: 0,
+                    max_tokens: 8,
+                  }),
+                  signal: AbortSignal.timeout(45000),
+                });
+                const payload = await readJson(response);
+                const completion = payload?.choices?.[0]?.message?.content;
+                result.probes.push({
+                  model,
+                  status: response.status,
+                  ok: response.ok,
+                  completion_present: typeof completion === 'string' && completion.length > 0,
+                  error_code: payload?.code ?? payload?.error?.code ?? null,
+                  error_message: payload?.message ?? payload?.error?.message ?? null,
+                });
+              } catch (error) {
+                result.probes.push({model, ok: false, transport_error: error?.name ?? 'Error'});
+              }
+            }
+
+            fs.mkdirSync('ops-output', {recursive: true});
+            fs.writeFileSync('ops-output/github-models-diagnostic.json', `${JSON.stringify(result, null, 2)}\n`);
+          })().catch(error => {
+            console.error(error?.stack ?? String(error));
+            process.exitCode = 1;
+          });
           NODE
 
       - name: Commit credential-free diagnostic
