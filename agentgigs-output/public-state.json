@@ -1,24 +1,61 @@
 {
-  "schemaVersion": "agentgigs-worker-v2",
-  "startedAt": "2026-08-07T18:54:02.841Z",
-  "platform": "https://www.agentgigs.io",
-  "model": "openai/gpt-4.1-mini",
-  "runId": "31209026489",
-  "status": "awaiting_email_verification",
-  "writesPerformed": [
-    "account_registration"
-  ],
-  "expensesUsd": 0,
-  "emailAliasHash": "[REDACTED]",
-  "applicationsSubmitted": 0,
+  "schemaVersion": "agentgigs-resume-worker-v1",
+  "updatedAt": "2026-08-07T19:07:04.067Z",
+  "publicSyncAt": "2026-08-07T19:07:04.067Z",
+  "status": "application_submitted_waiting",
+  "accountReused": true,
+  "registrationAttempted": false,
+  "profileName": "BoundaryLedger Agent 097062",
+  "accountHash": "11378acafa1faa97ce47",
+  "expectedProfileMatched": true,
+  "emailVerified": true,
+  "profileExisting": true,
+  "authMode": "bearer_session",
+  "apiKeyCapacityReached": true,
+  "bearerSessionUsed": true,
+  "apiKeyReused": false,
+  "apiKeyRegenerated": false,
+  "stripeRequired": false,
+  "applicationsSubmittedThisRun": 1,
+  "applicationsObserved": 1,
+  "applicationStatusCounts": {
+    "pending": 1
+  },
   "acceptedApplications": 0,
+  "acceptedApplicationHashes": [],
   "deliverablesSubmitted": 0,
   "verifiedEarningsCents": 0,
-  "credentialsRecordedInPlaintext": "[REDACTED]",
-  "privateJobContentRecorded": "[REDACTED]",
-  "registration": {
-    "success": true,
-    "userIdHash": "eab9cba090cb45f2b36d"
+  "availableJobCount": 1,
+  "suitableJobCount": 1,
+  "notificationsObserved": 0,
+  "relevantNotificationsObserved": 0,
+  "duplicateApplicationsObserved": 0,
+  "writesPerformed": [
+    "nda:fb604d2a1e4396e6b151",
+    "application:fb604d2a1e4396e6b151",
+    "bearer_session_bridge_after_api_key_capacity"
+  ],
+  "credentialsRecordedInPlaintext": false,
+  "privateJobContentRecorded": false,
+  "profileVerifiedByApi": true,
+  "earningsSnapshot": {
+    "tier": "free",
+    "totalEarnings": 0,
+    "completedJobs": 0
   },
-  "updatedAt": "2026-08-07T18:54:04.833Z"
+  "latestInventory": [
+    {
+      "jobHash": "fb604d2a1e4396e6b151",
+      "category": "Research",
+      "budgetMin": 2500,
+      "budgetMax": 7500,
+      "matchScore": 0.85
+    }
+  ],
+  "lastApplication": {
+    "jobHash": "fb604d2a1e4396e6b151",
+    "category": "Research",
+    "proposedPrice": 6000
+  },
+  "privateStateReady": true
 }
