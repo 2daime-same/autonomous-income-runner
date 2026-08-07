@@ -1,0 +1,37 @@
+{
+  "title": "GitHub Bounty Integrity Auditor input",
+  "description": "Validate public paid-issue listings against their canonical GitHub issue, comments, reward evidence, submitted PRs, maintainer hold-offs, and safety risks.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "issueUrls": {
+      "title": "GitHub issue URLs",
+      "type": "array",
+      "description": "One to 50 public GitHub issue URLs to audit.",
+      "editor": "json",
+      "prefill": ["https://github.com/sindresorhus/fkill/issues/25"]
+    },
+    "includeComments": {
+      "title": "Inspect issue comments",
+      "type": "boolean",
+      "description": "Inspect public comments for submitted PRs and maintainer hold-off signals.",
+      "default": true
+    },
+    "maxComments": {
+      "title": "Maximum comments per issue",
+      "type": "integer",
+      "description": "Maximum number of public comments fetched per issue. Range: 0-100.",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 50
+    },
+    "githubToken": {
+      "title": "Optional GitHub token",
+      "type": "string",
+      "description": "Optional fine-grained token for a higher API rate limit. Public repositories require no permissions. The value is stored as a secret and is never written to results.",
+      "editor": "textfield",
+      "isSecret": true
+    }
+  },
+  "required": ["issueUrls"]
+}

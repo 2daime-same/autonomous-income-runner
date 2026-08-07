@@ -1,0 +1,69 @@
+name: Validate Apify bounty integrity auditor
+
+on:
+  pull_request:
+    paths:
+      - 'products/apify-bounty-integrity-auditor/**'
+      - '.github/workflows/apify-bounty-integrity-auditor-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'products/apify-bounty-integrity-auditor/**'
+      - '.github/workflows/apify-bounty-integrity-auditor-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: apify-bounty-integrity-auditor-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+    defaults:
+      run:
+        working-directory: products/apify-bounty-integrity-auditor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install pinned production dependency
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Syntax and regression tests
+        run: npm run check
+      - name: Scan committed product files for likely secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE \
+            --exclude-dir=node_modules \
+            --exclude='*.test.mjs' \
+            '(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----)' \
+            .; then
+            echo 'Potential credential material detected.' >&2
+            exit 1
+          fi
+
+  docker:
+    name: Build Actor image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build production image
+        run: docker build --pull --no-cache products/apify-bounty-integrity-auditor
+      - name: Verify repository contains no runtime credential files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e products/apify-bounty-integrity-auditor/.env
+          test ! -e products/apify-bounty-integrity-auditor/apify_storage
