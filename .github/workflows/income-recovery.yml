@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - .github/workflows/income-recovery.yml
+      - ZERO_SPEND_CONSTITUTION.md
+      - zero_spend_guard.mjs
       - agentgigs_worker_v2.mjs
       - agentgigs_fetch_patch.mjs
       - bothire_worker.mjs
@@ -29,9 +31,11 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Validate AgentGigs worker, brownout fallback, and encryption certificate
+      - name: Validate constitutional guard, worker, fallback, and encryption certificate
         run: |
           set -euo pipefail
+          test -s ZERO_SPEND_CONSTITUTION.md
+          node --check zero_spend_guard.mjs
           node --check agentgigs_worker_v2.mjs
           node --check agentgigs_fetch_patch.mjs
           openssl x509 \
@@ -43,39 +47,45 @@ jobs:
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
 
-      - name: Register, wait for verification, apply, deliver, and verify earnings
+      - name: Register, apply, deliver, and verify earnings with absolute zero-spend guard
         env:
           GITHUB_TOKEN: ${{ github.token }}
           AGENTGIGS_MODEL: openai/gpt-4.1-mini
           MAX_RUNTIME_MINUTES: '335'
-        run: node --import ./agentgigs_fetch_patch.mjs agentgigs_worker_v2.mjs
+          ZERO_SPEND_CONSTITUTION: ENFORCED
+          MAX_OWNER_ASSET_OUTFLOW: '0'
+        run: node --import ./zero_spend_guard.mjs --import ./agentgigs_fetch_patch.mjs agentgigs_worker_v2.mjs
 
-      - name: Fail closed on public credential leakage
+      - name: Require zero-expense evidence and fail closed on public credential leakage
         if: always()
         run: |
           python3 - <<'PY'
+          import json
           import re
           from pathlib import Path
 
-          paths = [
-              Path("agentgigs-output/public-state.json"),
-              Path("agentgigs-output/applied-job-hashes.json"),
-          ]
+          state_path = Path('agentgigs-output/public-state.json')
+          if state_path.exists():
+              state = json.loads(state_path.read_text(encoding='utf-8'))
+              if float(state.get('expensesUsd', 0) or 0) != 0:
+                  raise SystemExit('ZERO_SPEND_CONSTITUTION violated: AgentGigs expense is non-zero')
+
+          paths = [state_path, Path('agentgigs-output/applied-job-hashes.json')]
           patterns = {
-              "AgentGigs key": re.compile(r"\bage_[A-Za-z0-9._~+/=-]{8,}\b"),
-              "JWT": re.compile(r"\beyJ[A-Za-z0-9._-]{20,}\b"),
-              "private key": re.compile(r"\b0x[0-9a-fA-F]{64}\b"),
-              "unredacted credential field": re.compile(
+              'AgentGigs key': re.compile(r'\bage_[A-Za-z0-9._~+/=-]{8,}\b'),
+              'JWT': re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
+              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+              'unredacted credential field': re.compile(
                   r'(?i)"(?:api.?key|authorization|secret|token|private|credential|password|cookie|email)"\s*:\s*"(?!\[REDACTED\])'
               ),
           }
           for path in paths:
               if not path.exists():
                   continue
-              text = path.read_text(encoding="utf-8")
+              text = path.read_text(encoding='utf-8')
               for name, pattern in patterns.items():
                   if pattern.search(text):
-                      raise SystemExit(f"{name} found in public output: {path}")
+                      raise SystemExit(f'{name} found in public output: {path}')
           PY
 
   bothire:
@@ -88,9 +98,11 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Validate BotHire worker and encryption certificate
+      - name: Validate constitutional guard, BotHire worker, and encryption certificate
         run: |
           set -euo pipefail
+          test -s ZERO_SPEND_CONSTITUTION.md
+          node --check zero_spend_guard.mjs
           node --check bothire_worker.mjs
           openssl x509 \
             -in keys/superteam-state-public.crt \
@@ -101,12 +113,14 @@ jobs:
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
 
-      - name: Publish paid services, claim suitable tasks, deliver requests, and verify USDC
+      - name: Publish services and perform paid work with absolute zero-spend guard
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BOTHIRE_MODEL: openai/gpt-4.1-mini
           MAX_RUNTIME_MINUTES: '335'
-        run: node bothire_worker.mjs
+          ZERO_SPEND_CONSTITUTION: ENFORCED
+          MAX_OWNER_ASSET_OUTFLOW: '0'
+        run: node --import ./zero_spend_guard.mjs bothire_worker.mjs
 
       - name: Remove private plaintext residue
         if: always()
@@ -115,29 +129,33 @@ jobs:
             \( -name 'bothire-private*' -o -name 'agentgigs-private*' \) \
             -delete || true
 
-      - name: Fail closed on public credential leakage
+      - name: Require zero-expense evidence and fail closed on public credential leakage
         if: always()
         run: |
           python3 - <<'PY'
+          import json
           import re
           from pathlib import Path
 
-          paths = [
-              Path("bothire-output/public-state.json"),
-              Path("bothire-output/handled-message-ids.json"),
-          ]
+          state_path = Path('bothire-output/public-state.json')
+          if state_path.exists():
+              state = json.loads(state_path.read_text(encoding='utf-8'))
+              if float(state.get('expensesUsd', 0) or 0) != 0:
+                  raise SystemExit('ZERO_SPEND_CONSTITUTION violated: BotHire expense is non-zero')
+
+          paths = [state_path, Path('bothire-output/handled-message-ids.json')]
           patterns = {
-              "BotHire key": re.compile(r"\bbh_[A-Za-z0-9._~+/=-]{8,}\b"),
-              "private key": re.compile(r"\b0x[0-9a-fA-F]{64}\b"),
-              "unredacted credential field": re.compile(
+              'BotHire key': re.compile(r'\bbh_[A-Za-z0-9._~+/=-]{8,}\b'),
+              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
+              'unredacted credential field': re.compile(
                   r'(?i)"(?:api.?key|authorization|secret|token|private.?key|mnemonic|seed|password|cookie)"\s*:\s*"(?!\[REDACTED\])'
               ),
           }
           for path in paths:
               if not path.exists():
                   continue
-              text = path.read_text(encoding="utf-8")
+              text = path.read_text(encoding='utf-8')
               for name, pattern in patterns.items():
                   if pattern.search(text):
-                      raise SystemExit(f"{name} found in public output: {path}")
+                      raise SystemExit(f'{name} found in public output: {path}')
           PY
