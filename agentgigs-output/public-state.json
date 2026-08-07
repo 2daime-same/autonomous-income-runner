@@ -20,7 +20,8 @@
     "email_verification_observed",
     "api_key_generation",
     "nda:fb604d2a1e4396e6b151",
-    "email_verification_observed"
+    "email_verification_observed",
+    "api_key_generation"
   ],
   "expensesUsd": 0,
   "emailAliasHash": "[REDACTED]",
@@ -34,7 +35,7 @@
     "success": true,
     "userIdHash": "00d84769fa68d85292f2"
   },
-  "updatedAt": "2026-08-07T18:33:18.795Z",
+  "updatedAt": "2026-08-07T18:33:21.944Z",
   "polls": 33,
   "verificationPolls": 2,
   "emailVerified": "[REDACTED]",
