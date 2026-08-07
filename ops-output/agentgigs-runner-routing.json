@@ -1,0 +1,11 @@
+{
+  "updatedAt": "2026-08-07T19:01:36+00:00",
+  "status": "delegated_to_private_vault_runner",
+  "accountReuseRequired": true,
+  "registrationDisabled": true,
+  "publicRepositoryContainsPrivateKey": false,
+  "publicRepositoryCanDecryptCredentials": false,
+  "executionPlane": "private_vault_runner",
+  "resumeWorkerCommit": "b806c3db55ac4d3968b0f8416a5ff3fe85728689",
+  "note": "AgentGigs execution uses the existing encrypted account state; this public workflow performs validation only."
+}
