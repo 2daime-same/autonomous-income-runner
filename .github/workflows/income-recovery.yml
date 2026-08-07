@@ -6,6 +6,9 @@ on:
     branches: [main]
     paths:
       - .github/workflows/income-recovery.yml
+      - agentgigs_worker_v2.mjs
+      - agentgigs_fetch_patch.mjs
+      - bothire_worker.mjs
 
 permissions:
   contents: write
@@ -20,16 +23,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 355
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '22'
 
-      - name: Validate AgentGigs worker and encryption certificate
+      - name: Validate AgentGigs worker, brownout fallback, and encryption certificate
         run: |
           set -euo pipefail
           node --check agentgigs_worker_v2.mjs
+          node --check agentgigs_fetch_patch.mjs
           openssl x509 \
             -in keys/superteam-state-public.crt \
             -noout -fingerprint -sha256
@@ -44,7 +48,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           AGENTGIGS_MODEL: openai/gpt-4.1-mini
           MAX_RUNTIME_MINUTES: '335'
-        run: node agentgigs_worker_v2.mjs
+        run: node --import ./agentgigs_fetch_patch.mjs agentgigs_worker_v2.mjs
 
       - name: Fail closed on public credential leakage
         if: always()
@@ -78,9 +82,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 355
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '22'
 
