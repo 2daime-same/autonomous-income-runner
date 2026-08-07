@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-08-07T18:13:17.241Z",
+  "catalog": {
+    "status": 410,
+    "ok": false,
+    "model_count": 0,
+    "requested_models_present": {
+      "openai/gpt-4.1-mini": false,
+      "openai/gpt-4.1": false,
+      "openai/gpt-4o-mini": false
+    },
+    "error_code": "github_models_retirement_brownout",
+    "error_message": "GitHub Models is temporarily unavailable as part of a scheduled retirement brownout."
+  },
+  "probes": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "status": 410,
+      "ok": false,
+      "completion_present": false,
+      "error_code": "github_models_retirement_brownout",
+      "error_message": "GitHub Models is temporarily unavailable as part of a scheduled retirement brownout."
+    },
+    {
+      "model": "openai/gpt-4.1",
+      "status": 410,
+      "ok": false,
+      "completion_present": false,
+      "error_code": "github_models_retirement_brownout",
+      "error_message": "GitHub Models is temporarily unavailable as part of a scheduled retirement brownout."
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "status": 410,
+      "ok": false,
+      "completion_present": false,
+      "error_code": "github_models_retirement_brownout",
+      "error_message": "GitHub Models is temporarily unavailable as part of a scheduled retirement brownout."
+    }
+  ],
+  "token_exposed": false,
+  "completion_content_recorded": false
+}
