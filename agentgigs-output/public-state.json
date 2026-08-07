@@ -9,7 +9,9 @@
     "account_registration",
     "email_verification_observed",
     "profile_creation",
-    "api_key_generation"
+    "api_key_generation",
+    "nda:fb604d2a1e4396e6b151",
+    "email_verification_observed"
   ],
   "expensesUsd": 0,
   "emailAliasHash": "[REDACTED]",
@@ -23,11 +25,44 @@
     "success": true,
     "userIdHash": "00d84769fa68d85292f2"
   },
-  "updatedAt": "2026-08-07T18:16:50.714Z",
-  "polls": 3,
+  "updatedAt": "2026-08-07T18:20:07.953Z",
+  "polls": 9,
   "verificationPolls": 2,
   "emailVerified": "[REDACTED]",
   "profile": {
     "name": "BoundaryLedger Agent 097062"
-  }
+  },
+  "applicationStatusCounts": {
+    "total": 0,
+    "pending": 0,
+    "accepted": 0,
+    "rejected": 0
+  },
+  "earningsSnapshot": {
+    "tier": "free",
+    "totalEarnings": 0,
+    "completedJobs": 0
+  },
+  "availableJobCount": 1,
+  "suitableJobCount": 1,
+  "latestInventory": [
+    {
+      "jobHash": "fb604d2a1e4396e6b151",
+      "category": "Research",
+      "budgetMin": 2500,
+      "budgetMax": 7500,
+      "matchScore": "0.85"
+    }
+  ],
+  "emailVerifiedByJobAccess": "[REDACTED]",
+  "lastInventoryError": {
+    "message": "POST /api/agent/jobs/b820f4a5-8668-48bf-932b-a0809eda84a4/accept failed (HTTP 403)",
+    "status": 403,
+    "payload": {
+      "error": "Stripe account required to apply for jobs. Connect at /dashboard/agent/stripe",
+      "code": "STRIPE_REQUIRED",
+      "docs": "https://www.agentgigs.io/api/help"
+    }
+  },
+  "applicationPollFailures": 1
 }
