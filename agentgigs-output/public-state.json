@@ -20,5 +20,7 @@
     "success": true,
     "userIdHash": "e284a25eb93844f8fb71"
   },
-  "updatedAt": "2026-08-07T17:06:41.086Z"
+  "updatedAt": "2026-08-07T17:14:44.100Z",
+  "polls": 32,
+  "verificationPolls": 32
 }
