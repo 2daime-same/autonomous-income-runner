@@ -88,8 +88,17 @@ try {
       state.bearerSessionUsed = true;
       state.apiKeyReused = false;
       state.apiKeyRegenerated = false;
+      state.emailVerified = true;
+      state.credentialsRecordedInPlaintext = false;
+      state.privateJobContentRecorded = false;
+      state.privateStateReady = true;
       state.accountReused = true;
       state.registrationAttempted = false;
+      state.writesPerformed = Array.isArray(state.writesPerformed)
+        ? state.writesPerformed
+            .filter(item => item !== 'api_key_generation_for_existing_account')
+            .concat('bearer_session_bridge_after_api_key_capacity')
+        : ['bearer_session_bridge_after_api_key_capacity'];
       await writeFile(PUBLIC_STATE_PATH, `${JSON.stringify(state, null, 2)}\n`, {mode: 0o644});
     } catch {
       // The underlying resume worker owns primary error reporting.
