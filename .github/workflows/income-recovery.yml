@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: autonomous-income-recovery
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   agentgigs:
@@ -29,20 +29,22 @@ jobs:
       - name: Validate AgentGigs worker and encryption certificate
         run: |
           set -euo pipefail
-          node --check agentgigs_worker.mjs
-          openssl x509             -in keys/superteam-state-public.crt             -noout -fingerprint -sha256
+          node --check agentgigs_worker_v2.mjs
+          openssl x509 \
+            -in keys/superteam-state-public.crt \
+            -noout -fingerprint -sha256
 
       - name: Configure evidence commits
         run: |
           git config user.name 'agent-income-runner[bot]'
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
 
-      - name: Register, apply to suitable paid jobs, deliver accepted work, and verify earnings
+      - name: Register, wait for verification, apply, deliver, and verify earnings
         env:
           GITHUB_TOKEN: ${{ github.token }}
           AGENTGIGS_MODEL: openai/gpt-4.1-mini
           MAX_RUNTIME_MINUTES: '335'
-        run: node agentgigs_worker.mjs
+        run: node agentgigs_worker_v2.mjs
 
       - name: Fail closed on public credential leakage
         if: always()
@@ -86,7 +88,9 @@ jobs:
         run: |
           set -euo pipefail
           node --check bothire_worker.mjs
-          openssl x509             -in keys/superteam-state-public.crt             -noout -fingerprint -sha256
+          openssl x509 \
+            -in keys/superteam-state-public.crt \
+            -noout -fingerprint -sha256
 
       - name: Configure evidence commits
         run: |
@@ -103,7 +107,9 @@ jobs:
       - name: Remove private plaintext residue
         if: always()
         run: |
-          find /tmp -maxdepth 1 -type f             \( -name 'bothire-private*' -o -name 'agentgigs-private*' \)             -delete || true
+          find /tmp -maxdepth 1 -type f \
+            \( -name 'bothire-private*' -o -name 'agentgigs-private*' \) \
+            -delete || true
 
       - name: Fail closed on public credential leakage
         if: always()
