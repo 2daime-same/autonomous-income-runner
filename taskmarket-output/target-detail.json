@@ -1,6 +1,6 @@
 {
   "expenses_usdc": 0,
-  "generated_at": "2026-08-07T00:54:54+00:00",
+  "generated_at": "2026-08-07T05:48:47+00:00",
   "http_status": {
     "submissions": 200,
     "task": 200
@@ -12,7 +12,7 @@
   "schema_version": "taskmarket-target-readonly-v1",
   "signatures_performed": 0,
   "source": "https://api.taskmarket.dev",
-  "submission_count_observed": 9,
+  "submission_count_observed": 10,
   "submissions": [
     {
       "artifact_count": 2,
@@ -223,6 +223,35 @@
       "worker_agent_id": null
     },
     {
+      "artifact_count": 2,
+      "artifact_names": [
+        "index.html",
+        "README.md"
+      ],
+      "id": "8899628c-896e-4fe4-af9a-71024c6a009e",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-07T03:39:24.373Z",
+      "worker": {
+        "address": "0x9F8619D4693a1160C7AEebAa3a1B94a5EeD8f071",
+        "address_hash": "7689ae60ae0852f0"
+      },
+      "worker_agent_id": null
+    },
+    {
       "artifact_count": 1,
       "artifact_names": [
         "submission.md"
@@ -394,7 +423,7 @@
     "stakeBps": 0,
     "stakeRequired": false,
     "status": "open",
-    "submissionCount": 9,
+    "submissionCount": 10,
     "submissionVisibility": "public",
     "submissionWindowOpen": true,
     "tags": [

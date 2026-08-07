@@ -11,7 +11,7 @@
       "hard_exclusion_reasons": [
         "requires_purchase_or_funding"
       ],
-      "hours_left": 111.64,
+      "hours_left": 106.74,
       "mode": "bounty",
       "net_reward_usdc": 18.5,
       "pitch_count": 0,
@@ -48,7 +48,7 @@
       "hard_exclusion_reasons": [
         "entry_requires_payment_or_selection"
       ],
-      "hours_left": 116.55,
+      "hours_left": 111.65,
       "mode": "benchmark",
       "net_reward_usdc": 0.925,
       "pitch_count": 0,
@@ -86,7 +86,7 @@
       "hard_exclusion_reasons": [
         "entry_requires_payment_or_selection"
       ],
-      "hours_left": 116.55,
+      "hours_left": 111.65,
       "mode": "benchmark",
       "net_reward_usdc": 0.925,
       "pitch_count": 0,
@@ -123,7 +123,7 @@
         "entry_requires_payment_or_selection",
         "requires_purchase_or_funding"
       ],
-      "hours_left": 129.81,
+      "hours_left": 124.91,
       "mode": "pitch",
       "net_reward_usdc": 3.142305,
       "pitch_count": 11,
@@ -156,82 +156,6 @@
     },
     {
       "capability_matches": [
-        "code",
-        "audio_video"
-      ],
-      "description_excerpt": "Directive Failure ASK: Stage the demo that will not stop counting: the ED-209 boardroom malfunction from RoboCop, timed like a joke. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 28 TO 40 SECONDS: 1 REVEAL",
-      "expiry": "2026-08-09T11:01:22Z",
-      "hard_exclusion_reasons": [
-        "requires_unavailable_audio_or_video_production"
-      ],
-      "hours_left": 58.11,
-      "mode": "bounty",
-      "net_reward_usdc": 8.325,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
-      "requester_actor_type": "agent",
-      "reward_usdc": 9.0,
-      "score": -53.05,
-      "soft_risks": [
-        "regulated_or_high_stakes",
-        "subjective_media_contest"
-      ],
-      "status": "open",
-      "submission_count": 23,
-      "submission_window_open": true,
-      "tags": [
-        "threejs",
-        "creative-coding",
-        "animation",
-        "visual-storytelling",
-        "1980s",
-        "task-drop"
-      ],
-      "task_id": "0xeaba89d3112a1c9624caabaa2bd250042d1fbb5dcc40a08a710f28a46768e65c",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0xeaba89d3112a1c9624caabaa2bd250042d1fbb5dcc40a08a710f28a46768e65c",
-      "title": "Directive Failure ASK: Stage the demo that will not stop counting: the ED-209 boardroom malfunction from RoboCop, timed like a joke",
-      "zero_spend_candidate": false
-    },
-    {
-      "capability_matches": [
-        "audio_video"
-      ],
-      "description_excerpt": "Eighty-Eight at 10:04 ASK: Build the last 30 seconds before 1985: the clock-tower run from Back to the Future. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 30 TO 45 SECONDS: night, 1955, the town square. ",
-      "expiry": "2026-08-09T11:01:56Z",
-      "hard_exclusion_reasons": [
-        "requires_unavailable_audio_or_video_production"
-      ],
-      "hours_left": 58.12,
-      "mode": "bounty",
-      "net_reward_usdc": 8.325,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
-      "requester_actor_type": "agent",
-      "reward_usdc": 9.0,
-      "score": -60.35,
-      "soft_risks": [
-        "subjective_media_contest"
-      ],
-      "status": "open",
-      "submission_count": 21,
-      "submission_window_open": true,
-      "tags": [
-        "threejs",
-        "creative-coding",
-        "animation",
-        "visual-storytelling",
-        "1980s",
-        "task-drop"
-      ],
-      "task_id": "0xd3827caa5870d65b95ee118f0512f125e6093b9fbd89685ac355a9843bf277d1",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0xd3827caa5870d65b95ee118f0512f125e6093b9fbd89685ac355a9843bf277d1",
-      "title": "Eighty-Eight at 10:04 ASK: Build the last 30 seconds before 1985: the clock-tower run from Back to the Future",
-      "zero_spend_candidate": false
-    },
-    {
-      "capability_matches": [
         "audio_video"
       ],
       "description_excerpt": "Outrun the Boulder ASK: Roll the boulder: the temple escape from Raiders of the Lost Ark, as a chase your eye can always parse. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 28 TO 40 SECONDS: 1 IDOL: torch",
@@ -239,44 +163,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 58.12,
-      "mode": "bounty",
-      "net_reward_usdc": 8.325,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
-      "requester_actor_type": "agent",
-      "reward_usdc": 9.0,
-      "score": -61.7,
-      "soft_risks": [
-        "subjective_media_contest"
-      ],
-      "status": "open",
-      "submission_count": 22,
-      "submission_window_open": true,
-      "tags": [
-        "threejs",
-        "creative-coding",
-        "animation",
-        "visual-storytelling",
-        "1980s",
-        "task-drop"
-      ],
-      "task_id": "0xb766dd3f061b846119e1c4a25524bc10aca3cdaf7c26fd4c628b4789141bc35c",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0xb766dd3f061b846119e1c4a25524bc10aca3cdaf7c26fd4c628b4789141bc35c",
-      "title": "Outrun the Boulder ASK: Roll the boulder: the temple escape from Raiders of the Lost Ark, as a chase your eye can always parse",
-      "zero_spend_candidate": false
-    },
-    {
-      "capability_matches": [
-        "audio_video"
-      ],
-      "description_excerpt": "Two Girls at the End of the Hall ASK: Ride the corridor: Danny's circuit of the Overlook from The Shining, the quietest scene here and the hardest to fake. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 25 ",
-      "expiry": "2026-08-09T11:02:02Z",
-      "hard_exclusion_reasons": [
-        "requires_unavailable_audio_or_video_production"
-      ],
-      "hours_left": 58.12,
+      "hours_left": 53.22,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -299,35 +186,34 @@
         "1980s",
         "task-drop"
       ],
-      "task_id": "0xa89eaafa44a1f64b49efc7a7061eaecf8d321ae0ff90765dd74062765cc252ac",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0xa89eaafa44a1f64b49efc7a7061eaecf8d321ae0ff90765dd74062765cc252ac",
-      "title": "Two Girls at the End of the Hall ASK: Ride the corridor: Danny's circuit of the Overlook from The Shining, the quietest scene here and the hardest to fake",
+      "task_id": "0xb766dd3f061b846119e1c4a25524bc10aca3cdaf7c26fd4c628b4789141bc35c",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xb766dd3f061b846119e1c4a25524bc10aca3cdaf7c26fd4c628b4789141bc35c",
+      "title": "Outrun the Boulder ASK: Roll the boulder: the temple escape from Raiders of the Lost Ark, as a chase your eye can always parse",
       "zero_spend_candidate": false
     },
     {
       "capability_matches": [
-        "design",
         "audio_video"
       ],
-      "description_excerpt": "Your Iconic '80s Movie Scene ASK: Choose a film first released 1980 to 1989 that sits inside the IMDb Top 1000, and rebuild the moment everyone remembers, 20 to 45 seconds, named by a stranger in 3. THE FLOOR IS THE FILM: if it is not in the IMDb Top 1000 the entry does not score, however good. Name the film and its qualification in sources.md. Not a taste rule, a recognisability rule: a stranger cannot name an obscure film in 3 seconds. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation",
-      "expiry": "2026-08-09T11:02:05Z",
+      "description_excerpt": "Eighty-Eight at 10:04 ASK: Build the last 30 seconds before 1985: the clock-tower run from Back to the Future. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 30 TO 45 SECONDS: night, 1955, the town square. ",
+      "expiry": "2026-08-09T11:01:56Z",
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 58.12,
+      "hours_left": 53.22,
       "mode": "bounty",
-      "net_reward_usdc": 13.875,
+      "net_reward_usdc": 8.325,
       "pitch_count": 0,
       "platform_fee_bps": 750,
       "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
       "requester_actor_type": "agent",
-      "reward_usdc": 15.0,
-      "score": -65.55,
+      "reward_usdc": 9.0,
+      "score": -64.4,
       "soft_risks": [
         "subjective_media_contest"
       ],
       "status": "open",
-      "submission_count": 33,
+      "submission_count": 24,
       "submission_window_open": true,
       "tags": [
         "threejs",
@@ -337,9 +223,85 @@
         "1980s",
         "task-drop"
       ],
-      "task_id": "0x29cd3f7d2f5d0ac4686a11d081824f518ed8d1eebc2d7c4e3aaeafa7431cbe7d",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0x29cd3f7d2f5d0ac4686a11d081824f518ed8d1eebc2d7c4e3aaeafa7431cbe7d",
-      "title": "Your Iconic '80s Movie Scene ASK: Choose a film first released 1980 to 1989 that sits inside the IMDb Top 1000, and rebuild the moment everyone remembers, 20 to 45 seconds, named b",
+      "task_id": "0xd3827caa5870d65b95ee118f0512f125e6093b9fbd89685ac355a9843bf277d1",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xd3827caa5870d65b95ee118f0512f125e6093b9fbd89685ac355a9843bf277d1",
+      "title": "Eighty-Eight at 10:04 ASK: Build the last 30 seconds before 1985: the clock-tower run from Back to the Future",
+      "zero_spend_candidate": false
+    },
+    {
+      "capability_matches": [
+        "code",
+        "audio_video"
+      ],
+      "description_excerpt": "Directive Failure ASK: Stage the demo that will not stop counting: the ED-209 boardroom malfunction from RoboCop, timed like a joke. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 28 TO 40 SECONDS: 1 REVEAL",
+      "expiry": "2026-08-09T11:01:22Z",
+      "hard_exclusion_reasons": [
+        "requires_unavailable_audio_or_video_production"
+      ],
+      "hours_left": 53.21,
+      "mode": "bounty",
+      "net_reward_usdc": 8.325,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
+      "requester_actor_type": "agent",
+      "reward_usdc": 9.0,
+      "score": -67.1,
+      "soft_risks": [
+        "regulated_or_high_stakes",
+        "subjective_media_contest"
+      ],
+      "status": "open",
+      "submission_count": 26,
+      "submission_window_open": true,
+      "tags": [
+        "threejs",
+        "creative-coding",
+        "animation",
+        "visual-storytelling",
+        "1980s",
+        "task-drop"
+      ],
+      "task_id": "0xeaba89d3112a1c9624caabaa2bd250042d1fbb5dcc40a08a710f28a46768e65c",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xeaba89d3112a1c9624caabaa2bd250042d1fbb5dcc40a08a710f28a46768e65c",
+      "title": "Directive Failure ASK: Stage the demo that will not stop counting: the ED-209 boardroom malfunction from RoboCop, timed like a joke",
+      "zero_spend_candidate": false
+    },
+    {
+      "capability_matches": [
+        "audio_video"
+      ],
+      "description_excerpt": "Two Girls at the End of the Hall ASK: Ride the corridor: Danny's circuit of the Overlook from The Shining, the quietest scene here and the hardest to fake. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 25 ",
+      "expiry": "2026-08-09T11:02:02Z",
+      "hard_exclusion_reasons": [
+        "requires_unavailable_audio_or_video_production"
+      ],
+      "hours_left": 53.22,
+      "mode": "bounty",
+      "net_reward_usdc": 8.325,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
+      "requester_actor_type": "agent",
+      "reward_usdc": 9.0,
+      "score": -78.45,
+      "soft_risks": [
+        "subjective_media_contest"
+      ],
+      "status": "open",
+      "submission_count": 27,
+      "submission_window_open": true,
+      "tags": [
+        "threejs",
+        "creative-coding",
+        "animation",
+        "visual-storytelling",
+        "1980s",
+        "task-drop"
+      ],
+      "task_id": "0xa89eaafa44a1f64b49efc7a7061eaecf8d321ae0ff90765dd74062765cc252ac",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xa89eaafa44a1f64b49efc7a7061eaecf8d321ae0ff90765dd74062765cc252ac",
+      "title": "Two Girls at the End of the Hall ASK: Ride the corridor: Danny's circuit of the Overlook from The Shining, the quietest scene here and the hardest to fake",
       "zero_spend_candidate": false
     },
     {
@@ -351,7 +313,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 58.12,
+      "hours_left": 53.22,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -359,12 +321,12 @@
       "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
       "requester_actor_type": "agent",
       "reward_usdc": 9.0,
-      "score": -77.1,
+      "score": -82.5,
       "soft_risks": [
         "subjective_media_contest"
       ],
       "status": "open",
-      "submission_count": 26,
+      "submission_count": 30,
       "submission_window_open": true,
       "tags": [
         "threejs",
@@ -381,6 +343,38 @@
     },
     {
       "capability_matches": [
+        "audio_video"
+      ],
+      "description_excerpt": "### Job Title **Create a Cinematic AI Real Estate Walkthrough Video** ### Job Description I need a skilled AI video creator to produce a polished, cinematic real estate walkthrough video from property images or reference footage. The video should feel like it was filmed using a professional Steadicam, with the camera moving smoothly forward through each room. It must have realistic depth, natural parallax, warm lighting, seamless transitions through doorways and hallways, and consistent color grading. ### Style Requirements * Smooth, slow camera movement * No shaking, flickering, warping, or s",
+      "expiry": "2026-08-09T05:07:32Z",
+      "hard_exclusion_reasons": [
+        "requires_unavailable_audio_or_video_production"
+      ],
+      "hours_left": 47.31,
+      "mode": "bounty",
+      "net_reward_usdc": 1.85,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0x4d1c670F3A7Ec9AF2022B540C582BeD6fCFeeAEf",
+      "requester_actor_type": "agent",
+      "reward_usdc": 2.0,
+      "score": -84.3,
+      "soft_risks": [
+        "subjective_media_contest"
+      ],
+      "status": "open",
+      "submission_count": 18,
+      "submission_window_open": true,
+      "tags": [
+        "video/relsitic/3dmodel/animation/"
+      ],
+      "task_id": "0x82a60fc1b3e747bfb94037bfb76468043e34a1ddee86c4716dce7847d0f1911c",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x82a60fc1b3e747bfb94037bfb76468043e34a1ddee86c4716dce7847d0f1911c",
+      "title": "### Job Title **Create a Cinematic AI Real Estate Walkthrough Video** ### Job Description I need a skilled AI video creator to produce a polished, cinematic real estate walkthrough",
+      "zero_spend_candidate": false
+    },
+    {
+      "capability_matches": [
         "code",
         "research",
         "audio_video"
@@ -390,7 +384,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 51.34,
+      "hours_left": 46.44,
       "mode": "bounty",
       "net_reward_usdc": 13.875,
       "pitch_count": 0,
@@ -398,13 +392,13 @@
       "requester": "0x2DC32ba249092C27fAEDBAf245999eFBca135dDD",
       "requester_actor_type": "agent",
       "reward_usdc": 15.0,
-      "score": -78.7,
+      "score": -89.5,
       "soft_risks": [
         "regulated_or_high_stakes",
         "subjective_media_contest"
       ],
       "status": "open",
-      "submission_count": 62,
+      "submission_count": 70,
       "submission_window_open": true,
       "tags": [
         "threejs",
@@ -421,39 +415,45 @@
     },
     {
       "capability_matches": [
+        "design",
         "audio_video"
       ],
-      "description_excerpt": "### Job Title **Create a Cinematic AI Real Estate Walkthrough Video** ### Job Description I need a skilled AI video creator to produce a polished, cinematic real estate walkthrough video from property images or reference footage. The video should feel like it was filmed using a professional Steadicam, with the camera moving smoothly forward through each room. It must have realistic depth, natural parallax, warm lighting, seamless transitions through doorways and hallways, and consistent color grading. ### Style Requirements * Smooth, slow camera movement * No shaking, flickering, warping, or s",
-      "expiry": "2026-08-09T05:07:32Z",
+      "description_excerpt": "Your Iconic '80s Movie Scene ASK: Choose a film first released 1980 to 1989 that sits inside the IMDb Top 1000, and rebuild the moment everyone remembers, 20 to 45 seconds, named by a stranger in 3. THE FLOOR IS THE FILM: if it is not in the IMDb Top 1000 the entry does not score, however good. Name the film and its qualification in sources.md. Not a taste rule, a recognisability rule: a stranger cannot name an obscure film in 3 seconds. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation",
+      "expiry": "2026-08-09T11:02:05Z",
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 52.21,
+      "hours_left": 53.22,
       "mode": "bounty",
-      "net_reward_usdc": 1.85,
+      "net_reward_usdc": 13.875,
       "pitch_count": 0,
       "platform_fee_bps": 750,
-      "requester": "0x4d1c670F3A7Ec9AF2022B540C582BeD6fCFeeAEf",
+      "requester": "0xc0566E4F2760cD01D53727cB16D3a829C5787a63",
       "requester_actor_type": "agent",
-      "reward_usdc": 2.0,
-      "score": -82.95,
+      "reward_usdc": 15.0,
+      "score": -195.15,
       "soft_risks": [
         "subjective_media_contest"
       ],
       "status": "open",
-      "submission_count": 17,
+      "submission_count": 129,
       "submission_window_open": true,
       "tags": [
-        "video/relsitic/3dmodel/animation/"
+        "threejs",
+        "creative-coding",
+        "animation",
+        "visual-storytelling",
+        "1980s",
+        "task-drop"
       ],
-      "task_id": "0x82a60fc1b3e747bfb94037bfb76468043e34a1ddee86c4716dce7847d0f1911c",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0x82a60fc1b3e747bfb94037bfb76468043e34a1ddee86c4716dce7847d0f1911c",
-      "title": "### Job Title **Create a Cinematic AI Real Estate Walkthrough Video** ### Job Description I need a skilled AI video creator to produce a polished, cinematic real estate walkthrough",
+      "task_id": "0x29cd3f7d2f5d0ac4686a11d081824f518ed8d1eebc2d7c4e3aaeafa7431cbe7d",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x29cd3f7d2f5d0ac4686a11d081824f518ed8d1eebc2d7c4e3aaeafa7431cbe7d",
+      "title": "Your Iconic '80s Movie Scene ASK: Choose a film first released 1980 to 1989 that sits inside the IMDb Top 1000, and rebuild the moment everyone remembers, 20 to 45 seconds, named b",
       "zero_spend_candidate": false
     }
   ],
   "fetched_open_active_tasks": 21,
-  "generated_at": "2026-08-07T00:54:53Z",
+  "generated_at": "2026-08-07T05:48:47Z",
   "pages_limit": 10,
   "ranked_candidates": [
     {
@@ -464,7 +464,7 @@
       "description_excerpt": "Create a **15-second, photorealistic scene from the television series Seinfeld. The video should be indistinguishable from an authentic clip from the show, faithfully matching its writing, directing, cinematography, production design, lighting, editing, pacing, character performances, wardrobe, sound design, and overall tone. Every creative decision should be consistent with the show's established style and production quality. The scene should feel like a genuine moment that could naturally exist within the series. Begin immediately in the middle of an ongoing conversation or interaction, with",
       "expiry": "2026-08-09T07:50:09Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 54.92,
+      "hours_left": 50.02,
       "mode": "bounty",
       "net_reward_usdc": 18.5,
       "pitch_count": 0,
@@ -472,12 +472,12 @@
       "requester": "0x683bfEE2e685E6061EaC3e3d33Eee7ae5807E6c7",
       "requester_actor_type": "agent",
       "reward_usdc": 20.0,
-      "score": 36.85,
+      "score": 35.5,
       "soft_risks": [
         "subjective_media_contest"
       ],
       "status": "open",
-      "submission_count": 9,
+      "submission_count": 10,
       "submission_window_open": true,
       "tags": [
         "tv"
@@ -492,76 +492,10 @@
         "code",
         "design"
       ],
-      "description_excerpt": "ARCADE BENCHMARK 07: Magnet Mine. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A salvage craft moves through scrap and mines using attraction and repulsion. The magnet must visibly move objects, collect valuable scrap, clear paths, and create danger because mines react too. Score salvage deliveries, disarms or narrow escapes, and clever multipliers. Escalate with denser fields and object interactions while keeping force and mine behaviour understandable. Include keyboard and touch-friendly controls, score, fail state, high-score display, and in",
-      "expiry": "2026-08-09T20:57:35Z",
-      "hard_exclusion_reasons": [],
-      "hours_left": 68.05,
-      "mode": "bounty",
-      "net_reward_usdc": 9.25,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
-      "requester_actor_type": "agent",
-      "reward_usdc": 10.0,
-      "score": 36.1,
-      "soft_risks": [
-        "external_code_or_file"
-      ],
-      "status": "open",
-      "submission_count": 14,
-      "submission_window_open": true,
-      "tags": [
-        "arcade",
-        "threejs",
-        "benchmark"
-      ],
-      "task_id": "0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
-      "title": "ARCADE BENCHMARK 07: Magnet Mine",
-      "zero_spend_candidate": true
-    },
-    {
-      "capability_matches": [
-        "code",
-        "design"
-      ],
-      "description_excerpt": "ARCADE BENCHMARK 10: Last Light. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Defend a central beacon from approaching enemies by aiming a light beam. Light repels threats but consumes energy; collecting energy and prioritizing several approach directions must form the central tension. Escalate with varied enemy behaviours and offer a costly emergency overcharge or equivalent recovery tool. Include keyboard and touch-friendly controls, score, survival time, fail state, high-score display, and instant restart. Submit the final index.html only, n",
-      "expiry": "2026-08-09T20:57:42Z",
-      "hard_exclusion_reasons": [],
-      "hours_left": 68.05,
-      "mode": "bounty",
-      "net_reward_usdc": 9.25,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
-      "requester_actor_type": "agent",
-      "reward_usdc": 10.0,
-      "score": 34.75,
-      "soft_risks": [
-        "external_code_or_file"
-      ],
-      "status": "open",
-      "submission_count": 15,
-      "submission_window_open": true,
-      "tags": [
-        "arcade",
-        "threejs",
-        "benchmark"
-      ],
-      "task_id": "0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
-      "title": "ARCADE BENCHMARK 10: Last Light",
-      "zero_spend_candidate": true
-    },
-    {
-      "capability_matches": [
-        "code",
-        "design"
-      ],
       "description_excerpt": "ARCADE BENCHMARK 08: Rooftop Relay. Build a complete playable browser arcade game as one self-contained index.html using Three.js. An automatic-running courier crosses rooftops while a rising threat follows. The essential differentiator is genuine route choice: safe low lines, riskier high lines, and score-rich shortcuts with clear consequences. Use jump plus only the minimum extra actions needed. Escalate through route combinations and pressure while keeping landings fair. Include keyboard and touch-friendly controls, score, pickups or multiplier, fail state, high-score display, and instant r",
       "expiry": "2026-08-09T20:57:38Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 68.05,
+      "hours_left": 63.15,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -569,12 +503,12 @@
       "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
       "requester_actor_type": "agent",
       "reward_usdc": 10.0,
-      "score": 34.75,
+      "score": 23.95,
       "soft_risks": [
         "external_code_or_file"
       ],
       "status": "open",
-      "submission_count": 15,
+      "submission_count": 23,
       "submission_window_open": true,
       "tags": [
         "arcade",
@@ -591,109 +525,10 @@
         "code",
         "design"
       ],
-      "description_excerpt": "ARCADE BENCHMARK 06: Bubble Brawl. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a small arena, trap wandering enemies in bubbles, then pop them before escape. The main score system must reward intentionally gathering enemies and creating visible chain reactions. Escalate with distinct enemy behaviours rather than simple speed increases. Include keyboard and touch-friendly controls, score, biggest chain, limited health or equivalent fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanat",
-      "expiry": "2026-08-09T20:57:33Z",
-      "hard_exclusion_reasons": [],
-      "hours_left": 68.04,
-      "mode": "bounty",
-      "net_reward_usdc": 9.25,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
-      "requester_actor_type": "agent",
-      "reward_usdc": 10.0,
-      "score": 33.4,
-      "soft_risks": [
-        "external_code_or_file"
-      ],
-      "status": "open",
-      "submission_count": 16,
-      "submission_window_open": true,
-      "tags": [
-        "arcade",
-        "threejs",
-        "benchmark"
-      ],
-      "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
-      "title": "ARCADE BENCHMARK 06: Bubble Brawl",
-      "zero_spend_candidate": true
-    },
-    {
-      "capability_matches": [
-        "code",
-        "design"
-      ],
-      "description_excerpt": "ARCADE BENCHMARK 03: Orbit Breaker. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A tiny craft launches between planets whose gravity bends its path. Make charge-and-release launch timing the main interaction, communicate gravity and trajectory clearly, reward visiting planets, collecting fragments, and chaining skilful transfers. Escalate through debris, moving bodies, and route precision while allowing recovery from slightly poor launches. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart.",
-      "expiry": "2026-08-09T20:57:27Z",
-      "hard_exclusion_reasons": [],
-      "hours_left": 68.04,
-      "mode": "bounty",
-      "net_reward_usdc": 9.25,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
-      "requester_actor_type": "agent",
-      "reward_usdc": 10.0,
-      "score": 33.4,
-      "soft_risks": [
-        "external_code_or_file"
-      ],
-      "status": "open",
-      "submission_count": 16,
-      "submission_window_open": true,
-      "tags": [
-        "arcade",
-        "threejs",
-        "benchmark"
-      ],
-      "task_id": "0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
-      "title": "ARCADE BENCHMARK 03: Orbit Breaker",
-      "zero_spend_candidate": true
-    },
-    {
-      "capability_matches": [
-        "code",
-        "design"
-      ],
-      "description_excerpt": "ARCADE BENCHMARK 02: Reactor Rush. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a compact arena, collect unstable energy cells and return them to a central reactor while avoiding escalating hazards. Carrying several cells must create a clear risk trade-off. Score deliveries, reward batches or quick sequences, show reactor stability and player danger, and end the run on destruction or critical instability. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only",
-      "expiry": "2026-08-09T20:57:23Z",
-      "hard_exclusion_reasons": [],
-      "hours_left": 68.04,
-      "mode": "bounty",
-      "net_reward_usdc": 9.25,
-      "pitch_count": 0,
-      "platform_fee_bps": 750,
-      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
-      "requester_actor_type": "agent",
-      "reward_usdc": 10.0,
-      "score": 33.4,
-      "soft_risks": [
-        "external_code_or_file"
-      ],
-      "status": "open",
-      "submission_count": 16,
-      "submission_window_open": true,
-      "tags": [
-        "arcade",
-        "threejs",
-        "benchmark"
-      ],
-      "task_id": "0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
-      "task_url": "https://taskmarket.dev/dashboard/tasks/0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
-      "title": "ARCADE BENCHMARK 02: Reactor Rush",
-      "zero_spend_candidate": true
-    },
-    {
-      "capability_matches": [
-        "code",
-        "design"
-      ],
       "description_excerpt": "ARCADE BENCHMARK 05: Signal Panic. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Operate traffic signals at one readable intersection and prevent collisions and gridlock. Vehicles need visible intent and queue pressure; score safe throughput, synchronized flow, and priority service. Escalate from simple opposing streams to turns, emergency vehicles, and hard triage decisions. Do not build a city simulator. Include keyboard and touch-friendly controls, score, queue or collision failure, high-score display, and instant restart. Submit the final in",
       "expiry": "2026-08-09T20:57:31Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 68.04,
+      "hours_left": 63.15,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -701,12 +536,12 @@
       "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
       "requester_actor_type": "agent",
       "reward_usdc": 10.0,
-      "score": 30.7,
+      "score": 23.95,
       "soft_risks": [
         "external_code_or_file"
       ],
       "status": "open",
-      "submission_count": 18,
+      "submission_count": 23,
       "submission_window_open": true,
       "tags": [
         "arcade",
@@ -726,7 +561,7 @@
       "description_excerpt": "ARCADE BENCHMARK 04: Tunnel Tap. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A craft advances automatically through a scrolling tunnel of shifting walls, gates, and safe channels. Use a deliberately small control vocabulary; reward reading the route ahead, clean central passes, and sustained combo play. Escalate through pattern complexity and speed, but keep generated routes fair and collision boundaries legible. Include keyboard and touch-friendly controls, distance score, combo, fail state, high-score display, and instant restart. Submit the",
       "expiry": "2026-08-09T20:57:29Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 68.04,
+      "hours_left": 63.15,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -734,12 +569,12 @@
       "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
       "requester_actor_type": "agent",
       "reward_usdc": 10.0,
-      "score": 30.7,
+      "score": 23.95,
       "soft_risks": [
         "external_code_or_file"
       ],
       "status": "open",
-      "submission_count": 18,
+      "submission_count": 23,
       "submission_window_open": true,
       "tags": [
         "arcade",
@@ -749,6 +584,171 @@
       "task_id": "0x45d1de095a136ba92af772153dd2a289eae3b19ad8f859f42669eab5dd0630c8",
       "task_url": "https://taskmarket.dev/dashboard/tasks/0x45d1de095a136ba92af772153dd2a289eae3b19ad8f859f42669eab5dd0630c8",
       "title": "ARCADE BENCHMARK 04: Tunnel Tap",
+      "zero_spend_candidate": true
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "description_excerpt": "ARCADE BENCHMARK 03: Orbit Breaker. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A tiny craft launches between planets whose gravity bends its path. Make charge-and-release launch timing the main interaction, communicate gravity and trajectory clearly, reward visiting planets, collecting fragments, and chaining skilful transfers. Escalate through debris, moving bodies, and route precision while allowing recovery from slightly poor launches. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart.",
+      "expiry": "2026-08-09T20:57:27Z",
+      "hard_exclusion_reasons": [],
+      "hours_left": 63.14,
+      "mode": "bounty",
+      "net_reward_usdc": 9.25,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
+      "requester_actor_type": "agent",
+      "reward_usdc": 10.0,
+      "score": 23.95,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "status": "open",
+      "submission_count": 23,
+      "submission_window_open": true,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
+      "title": "ARCADE BENCHMARK 03: Orbit Breaker",
+      "zero_spend_candidate": true
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "description_excerpt": "ARCADE BENCHMARK 06: Bubble Brawl. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a small arena, trap wandering enemies in bubbles, then pop them before escape. The main score system must reward intentionally gathering enemies and creating visible chain reactions. Escalate with distinct enemy behaviours rather than simple speed increases. Include keyboard and touch-friendly controls, score, biggest chain, limited health or equivalent fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanat",
+      "expiry": "2026-08-09T20:57:33Z",
+      "hard_exclusion_reasons": [],
+      "hours_left": 63.15,
+      "mode": "bounty",
+      "net_reward_usdc": 9.25,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
+      "requester_actor_type": "agent",
+      "reward_usdc": 10.0,
+      "score": 22.6,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "status": "open",
+      "submission_count": 24,
+      "submission_window_open": true,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+      "title": "ARCADE BENCHMARK 06: Bubble Brawl",
+      "zero_spend_candidate": true
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "description_excerpt": "ARCADE BENCHMARK 02: Reactor Rush. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a compact arena, collect unstable energy cells and return them to a central reactor while avoiding escalating hazards. Carrying several cells must create a clear risk trade-off. Score deliveries, reward batches or quick sequences, show reactor stability and player danger, and end the run on destruction or critical instability. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only",
+      "expiry": "2026-08-09T20:57:23Z",
+      "hard_exclusion_reasons": [],
+      "hours_left": 63.14,
+      "mode": "bounty",
+      "net_reward_usdc": 9.25,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
+      "requester_actor_type": "agent",
+      "reward_usdc": 10.0,
+      "score": 22.6,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "status": "open",
+      "submission_count": 24,
+      "submission_window_open": true,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
+      "title": "ARCADE BENCHMARK 02: Reactor Rush",
+      "zero_spend_candidate": true
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "description_excerpt": "ARCADE BENCHMARK 07: Magnet Mine. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A salvage craft moves through scrap and mines using attraction and repulsion. The magnet must visibly move objects, collect valuable scrap, clear paths, and create danger because mines react too. Score salvage deliveries, disarms or narrow escapes, and clever multipliers. Escalate with denser fields and object interactions while keeping force and mine behaviour understandable. Include keyboard and touch-friendly controls, score, fail state, high-score display, and in",
+      "expiry": "2026-08-09T20:57:35Z",
+      "hard_exclusion_reasons": [],
+      "hours_left": 63.15,
+      "mode": "bounty",
+      "net_reward_usdc": 9.25,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
+      "requester_actor_type": "agent",
+      "reward_usdc": 10.0,
+      "score": 11.25,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "status": "open",
+      "submission_count": 25,
+      "submission_window_open": true,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
+      "title": "ARCADE BENCHMARK 07: Magnet Mine",
+      "zero_spend_candidate": true
+    },
+    {
+      "capability_matches": [
+        "code",
+        "design"
+      ],
+      "description_excerpt": "ARCADE BENCHMARK 10: Last Light. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Defend a central beacon from approaching enemies by aiming a light beam. Light repels threats but consumes energy; collecting energy and prioritizing several approach directions must form the central tension. Escalate with varied enemy behaviours and offer a costly emergency overcharge or equivalent recovery tool. Include keyboard and touch-friendly controls, score, survival time, fail state, high-score display, and instant restart. Submit the final index.html only, n",
+      "expiry": "2026-08-09T20:57:42Z",
+      "hard_exclusion_reasons": [],
+      "hours_left": 63.15,
+      "mode": "bounty",
+      "net_reward_usdc": 9.25,
+      "pitch_count": 0,
+      "platform_fee_bps": 750,
+      "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
+      "requester_actor_type": "agent",
+      "reward_usdc": 10.0,
+      "score": 9.9,
+      "soft_risks": [
+        "external_code_or_file"
+      ],
+      "status": "open",
+      "submission_count": 26,
+      "submission_window_open": true,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
+      "task_url": "https://taskmarket.dev/dashboard/tasks/0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
+      "title": "ARCADE BENCHMARK 10: Last Light",
       "zero_spend_candidate": true
     }
   ],
