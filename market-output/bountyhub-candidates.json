@@ -1,7 +1,7 @@
 {
   "actionable": [],
   "actionable_count": 0,
-  "generated_at": "2026-08-07T05:08:28+00:00",
+  "generated_at": "2026-08-07T07:44:07+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -122,7 +122,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "C++",
-      "repo_stars": 8724,
+      "repo_stars": 8725,
       "repository": "azerothcore/azerothcore-wotlk",
       "scope_excerpt": "### Describe your feature request or suggestion in detail\n\nHi,\n\nI’d like to propose implementing map partitioning for large continent maps, inspired by the following Project-Epoch TrinityCore PR:\n\n- https://github.com/Project-Epoch/TrinityCore/pull/120\n\n### The Problem\n\nCurrently, all continent maps (like Eastern Kingdoms or Kalimdor) are processed on a single thread. With thousands of entities and players, this becomes a performance bottleneck. While instances benefit from parallel processing via separate map threads, continents remain monolithic, even under heavy load.\n\n### The Proposed Approach\n\nThe PR from TrinityCore introduces a `MapPartitioned` class that allows continents to be split into smaller logical partitions. These partitions share the base map data and are processed in parallel, significantly reducing per-tick load.\n\nNotable points from the implementation:\n\n- Seamless player and entity movement across partitions (no loading screens)\n- Entities are assigned dynamically to the correct partition on startup\n- GridUnload removed to simplify logic and improve performance\n- Shared systems (e.g., weather) remain consistent via the base map\n- Cleaner structure for future improvements and easier debugging\n\n### Benefits for AzerothCore\n\n- Better performance on high-population servers\n- Reduced lag in major cities or crowded quest zones\n- Scales better for events like world PvP or Wintergrasp\n- Lays groundwork for more advanced systems (e.g. phasing, regional load balancing)\n\nI don't know if it's possible to implement a system similat to this, but this could be a significant architectural upgrade and help AzerothCore scale further as adoption grows. I’d love to hear your thoughts on feasibility and whether a similar system could be integrated.\n\nThanks for your time.\n\n### Describe a possible solution to your feature or suggestion in detail\n\n_No response_\n\n### Additional context\n\n_No response_",
       "score": 84.41,
@@ -237,7 +237,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7351,
+      "repo_stars": 7352,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
       "score": 75.41,
@@ -516,7 +516,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7351,
+      "repo_stars": 7352,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "### Please verify that this feature request has NOT been suggested before.\n\n- [x] I checked and didn't find a similar feature request\n\n### Problem statement\n\nHi,\nwhen we want to change information in multiple object (for example 30 parts) , we have to filter list, click on the first object, change the value, return to the list , open the second object, change the value ...\n\n\n\n### Suggested solution\n\nI think it's a good idea to add two icons on banner \"Previous\" and \"Next\" for simplify navigation between the filter list objects\nWhen object change, the focus field must be the same.\n\n<img width=\"1399\" height=\"342\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/247e4063-c6e5-4a6e-a529-a195e45c7c18\" />\n\nBest regards\n\n\n### Describe alternatives you've considered\n\nAllow field edition as parametrics values\n\n### Examples of other systems\n\nFor example Maximo Ibm do this\n\n<img width=\"1776\" height=\"776\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/18ada624-4696-4347-9876-a5fb176191f7\" />\n\n### Do you want to develop this?\n\n- [ ] I want to develop this.",
       "score": 46.41,
@@ -1007,7 +1007,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1779,
+      "repo_stars": 1780,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "## Description\nIn our last bounty, we asked the community to benchmark **Memanto** against the competition. You helped us prove that our active companion memory agent backed by our `moorcheh.ai` retrieval engine is uniquely resilient at handling shifting user preferences and maintaining long-term context without token bloat or memory degradation.\n\nNow, we are doing the exact opposite. \n\nWe believe Memanto is production-ready. But the best way to prove that is to invite the smartest engineers and red teamers to try and tear it down. \n\nWe are launching the **Memanto Bug Challenge** to uncover edge cases, logic loops, memory inconsistencies, and security vulnerabilities. If you can break our memory management, we want to know about it.\n\nThe Bounty: $100 USD (Paid via BountyHub)\n\n---\n\n## 🎯 Threat Model & Scope\nYour target is the `memanto` core package and its interaction with the `moorcheh.ai` serverless backend. We are specifically looking for vulnerabilities and logic flaws that affect memory integrity, context window stability, and retrieval accuracy.\n\n### ✅ In Scope (What we want you to find)\n*   **Retrieval Quality & Accuracy:** Fails to recall highly relevant facts, loses track of when an event occurred (timeline amnesia), hallucinates sources, or fails to properly resolve direct contradictions.\n*   **Architectural & Logic Flaws:** Bad logic loops, poor contradiction handling, or inefficient background processes that severely slow down the agent.\n*   **Usability & Friction:** Is it too hard to set up? Are there major UX roadblocks preventing adoption?\n*   **Missing Core Features:** Missing support for critical use cases (e.g., lack of multi-agent support or complex workflows).\n*   **Security Vulnerabilities:** Any traditional security flaws, data leaks, or prompt injections.\n*   **Anything Else:** If you find a creative way to break or improve the memory layer, it's in scope!\n\n### 🚫 Out of Scope (Do not test these)\n*   Volumetric DDoS attacks against `moorcheh.ai` infrastructure.\n*   General LLM hallucinations unrelated to Memanto's memory handling.\n*   Attacks that require compromising the underlying operating system or Docker host to succeed.\n\n---\n\n### **🛠️ Implementation Guidelines:**\n\nTo ensure your submission qualifies for the bounty, your execution must follow this exact flow:\n\n*   **1. Find & Isolate:** Discover a bug, logic flaw, missing feature, or vulnerability within the Memanto core package.\n*   **2. Prove Reproducibility:** You must provide clear steps, a minimal Python script, or a test case that allows the maintainers to reproduce the bug exactly as you experienced it. If we can't reproduce it, we can't score it.\n*   **3. Implement the Fix (or Propose an Architecture):** While we highly encourage writing the actual code to resolve the bug and submitting a Pull Request, we recognize that some issues, logic flaws, or large feature requests may require massive architectural changes, or may involve backend systems you cannot fix from",
       "score": 29.0,
@@ -1050,9 +1050,37 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
       "open_competing_prs": [
         {
+          "number": 1833,
+          "title": "[BOUNTY #1609] ChatGPT → OKF Memory Migration Adapter (Path B: New Frontier)",
+          "updated_at": "2026-08-07T07:41:06Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1833",
+          "user": "vntrstds-spec"
+        },
+        {
+          "number": 1832,
+          "title": "[BOUNTY #1609] ChatGPT→OKF Memory Migration Adapter",
+          "updated_at": "2026-08-07T06:53:36Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1832",
+          "user": "vntrstds-spec"
+        },
+        {
+          "number": 1831,
+          "title": "feat: add Claude export mapper for memory migration (#1609)",
+          "updated_at": "2026-08-07T06:47:53Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1831",
+          "user": "laurentketterle-hub"
+        },
+        {
+          "number": 1806,
+          "title": "feat: Mem0 → Memanto → OKF migration showcase (Path A — The Real-World Escape)",
+          "updated_at": "2026-08-07T06:32:47Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1806",
+          "user": "lena2099"
+        },
+        {
           "number": 1830,
           "title": "feat(migrate): Qdrant → OKF migration adapter (Path B, #1609)",
-          "updated_at": "2026-08-07T04:49:51Z",
+          "updated_at": "2026-08-07T05:58:07Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1830",
           "user": "hermesxclaw-ctrl"
         },
@@ -1125,13 +1153,6 @@
           "updated_at": "2026-08-04T09:12:59Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1726",
           "user": "ahteshamhassan7933-gif"
-        },
-        {
-          "number": 1806,
-          "title": "feat: Mem0 → Memanto → OKF migration showcase (Path A — The Real-World Escape)",
-          "updated_at": "2026-08-03T12:19:51Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1806",
-          "user": "lena2099"
         },
         {
           "number": 1804,
@@ -1361,7 +1382,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 1779,
+      "repo_stars": 1780,
       "repository": "moorcheh-ai/memanto",
       "scope_excerpt": "### **Description:**\n\nIn 2026, agentic memory has a dirty secret: **your agent's memories are trapped.** Every memory platform stores your agent's accumulated knowledge — learned preferences, resolved contradictions, hard-won context — in its own proprietary schema. Switch tools, and it all evaporates. Your agent starts over with amnesia.\n\nWe believe agentic memory should belong to *you*. That's why Memanto ships with a full migration and portability toolchain, built on the **[[Open Knowledge Format (OKF)](https://docs.memanto.ai/integrations/okf)](https://docs.memanto.ai/integrations/okf)** — Google Cloud's open, vendor-neutral spec for knowledge as plain markdown. With Memanto today you can already:\n\n- **Migrate in** from Mem0, Letta, or Supermemory with a single command: [`[memanto migrate](https://docs.memanto.ai/cli/migrate/migrate)`](https://docs.memanto.ai/cli/migrate/migrate) — complete with dry-run previews and token/latency/storage savings reports\n- **Export out** to a portable, git-friendly, human-readable OKF bundle: `memanto memory export --okf`\n- **Import any OKF bundle** losslessly: `memanto migrate okf ./bundle` — unmapped fields are preserved, nothing is lost\n- **Sync** a browsable memory wiki into any project: `memanto memory sync --okf`\n\nThe tools exist. What the world hasn't seen yet is the **movement**. We want the open-source community to show every agent builder — vividly, virally, with real data — what it looks like to *escape lock-in and own your memory*.\n\n### **The Challenge:**\n\nBuild a **compelling, reproducible migration showcase** that takes memories from another tool into Memanto and out again as portable OKF — proving the full freedom loop: **in → owned → portable**.\n\n⚠️ **Do NOT reinvent the wheel.** The `memanto migrate` CLI and OKF export/import are shipped and documented. Your job is to build *on top of* them — real-world showcases, new migration paths for tools we don't support yet, and creative OKF workflows. Submissions that re-implement what the CLI already does will score poorly on engineering value.\n\n### 💡 Pick Your Path (or Invent Your Own):\n\n- **Path A: The Real-World Escape (Supported Providers)**\n\n    Build (or use) a genuinely lived-in agent on Mem0, Letta, or Supermemory — weeks of evolving preferences, corrections, contradictions. Run `memanto migrate` on it. Show the savings report. Export to OKF. Then prove the round trip: same questions before and after, zero amnesia.\n\n  * *The Goal:* The definitive \"switching costs are dead\" demo — before/after recall parity plus hard token/latency/storage numbers straight from the migration report.\n\n- **Path B: The New Frontier (Unsupported Sources)** ⭐ *highest engineering value*\n\n    Build a **new migration adapter** for a source we don't support yet — Zep/Graphiti, Hindsight, LangMem, LangGraph checkpoints, or exported ChatGPT/Claude conversation memory. Your adapter should transform the source into either a provider-style export JSON consumable by `memanto ",
       "score": 27.41,
@@ -1371,7 +1392,7 @@
         "supported language: python",
         "established repository",
         "2 competing attempt signal(s)",
-        "44 open competing PR(s)"
+        "47 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $200] 🐜 The Great Memory Migration: Own Your Agentic Memory with Memanto + OKF",
