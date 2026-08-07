@@ -12,21 +12,6 @@
         "reward is unusually high for the first-income target",
         "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 5,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $5k ] [ Solidity ] Fix missing slippage protection and deadline in SimpleSwap",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/5"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
       "issue_number": 3,
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $4k ] [ Solidity ] Fix reentrancy in StakingRewards withdraw and claimRewards",
@@ -78,22 +63,6 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $4k ] [ SDK ] Fix retry utility has no max retries cap",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/46"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 17,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $7k ] [ Solidity ] Fix reentrancy in PrizeSplit claimPrize and rounding dust loss",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/17"
     },
     {
       "flags": [
@@ -233,22 +202,6 @@
         "reward is unusually high for the first-income target",
         "unrecognized platform on a repository younger than 90 days"
       ],
-      "issue_number": 183,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $9k ] [ Solidity ] Add gas sponsorship relay for agent transactions — security critical",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/183"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
       "issue_number": 12,
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $7k ] [ Solidity ] Fix integer overflow in VestingWallet vested amount calculation",
@@ -269,6 +222,22 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $9k ] [ Solidity ] Fix no max supply cap and missing access control on AgentToken mint",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/11"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 183,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $9k ] [ Solidity ] Add gas sponsorship relay for agent transactions — security critical",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/183"
     },
     {
       "flags": [
@@ -429,17 +398,6 @@
         "issue is already assigned",
         "reward is unusually high for the first-income target"
       ],
-      "issue_number": 52328,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that are multiples of 16",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/52328"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
       "issue_number": 52252,
       "repo": "tenstorrent/tt-metal",
       "title": "[Bounty $3000] Fix Blackhole destination-reuse synchronization",
@@ -456,6 +414,22 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ T3 Code ] Add Effect.Cache-based provider API response caching with TTL",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/865"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 5,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $5k ] [ Solidity ] Fix missing slippage protection and deadline in SimpleSwap",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/5"
     },
     {
       "flags": [
@@ -479,6 +453,34 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ CONTEXT RIFT ] Fix typos in knowledge-base/context.json",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/611"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 52328,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that are multiples of 16",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52328"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 17,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $7k ] [ Solidity ] Fix reentrancy in PrizeSplit claimPrize and rounding dust loss",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/17"
     },
     {
       "flags": [
@@ -646,6 +648,17 @@
     },
     {
       "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 52393,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[repo-status] Repo Status: Active Metal 2.0 progress, bug fixes & ,500 bounty work (Aug 6-7)",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52393"
+    },
+    {
+      "flags": [
         "an open competing pull request already exists",
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
@@ -682,14 +695,15 @@
     },
     {
       "flags": [
+        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence",
         "reward is unusually high for the first-income target",
         "unrecognized platform on a low-reputation personal repository"
       ],
-      "issue_number": 42,
-      "repo": "adamlu123/mini-web-agent",
-      "title": "with guidance 27b/9b OPD runs: settings + status (KL trace, wandb never initialized, SFT preempted before first ckpt)",
-      "url": "https://github.com/adamlu123/mini-web-agent/issues/42"
+      "issue_number": 1986,
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "title": "[moltbook] engagement-ledger",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
     },
     {
       "flags": [
@@ -753,12 +767,12 @@
     {
       "flags": [
         "no direct reward evidence",
-        "unrecognized platform on a repository younger than 90 days"
+        "reward is unusually high for the first-income target"
       ],
-      "issue_number": 78,
-      "repo": "syn54x/pinch-frontend",
-      "title": "PRD F9: Rhythm & Harmony — the budget nobody wrote",
-      "url": "https://github.com/syn54x/pinch-frontend/issues/78"
+      "issue_number": 91,
+      "repo": "FreeCAD/FPA-grant-proposals",
+      "title": "Parametric Snapping System for the Measure Tool (Issues #13708, #27404)",
+      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/91"
     },
     {
       "flags": [
@@ -770,24 +784,11 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Comprehensive review and overhaul of Spyder's documentation",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/21"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 103,
-      "repo": "psanders/micobro",
-      "title": "[Feature] Add \"Solo capital\" payment and disable interest options once the cycle's interest is covered",
-      "url": "https://github.com/psanders/micobro/issues/103"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-07T00:17:43+00:00",
+  "generated_at": "2026-08-07T07:42:14+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-07T00:17:43+00:00"
+  "source_generated_at": "2026-08-07T07:42:14+00:00"
 }
