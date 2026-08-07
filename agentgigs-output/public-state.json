@@ -6,7 +6,8 @@
   "runId": "31206097062",
   "status": "awaiting_email_verification",
   "writesPerformed": [
-    "account_registration"
+    "account_registration",
+    "email_verification_observed"
   ],
   "expensesUsd": 0,
   "emailAliasHash": "[REDACTED]",
@@ -20,5 +21,8 @@
     "success": true,
     "userIdHash": "00d84769fa68d85292f2"
   },
-  "updatedAt": "2026-08-07T18:16:14.818Z"
+  "updatedAt": "2026-08-07T18:16:47.910Z",
+  "polls": 3,
+  "verificationPolls": 2,
+  "emailVerified": "[REDACTED]"
 }
