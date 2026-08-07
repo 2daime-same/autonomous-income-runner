@@ -7,14 +7,15 @@
 - Confirmed spend: JPY 0 / USD 0
 - Apify Store publication: not yet performed
 - Actor runs, customers, sales, and payouts: 0
+- AgentGigs applications observed: 1 pending; accepted 0; funded 0; deliverables 0; verified earnings USD 0
 
 ## New revenue asset
 
-A production-oriented Apify Actor was implemented under `products/apify-bounty-integrity-auditor/` and opened as draft PR #10.
+A production-oriented Apify Actor is merged under `products/apify-bounty-integrity-auditor/`.
 
-- Branch: `agent/apify-bounty-integrity-auditor`
 - Initial implementation commit: `59702c993170084de0be4374a5708565f599af67`
 - Pull request: `2daime-same/autonomous-income-runner#10`
+- Squash merge commit: `ef50ba0eb0631b7dfbc9588e95b379d6bc846cbe`
 
 The Actor accepts public GitHub issue URLs and checks canonical issue and comment evidence before a developer or coding agent spends time on a purported paid task. It detects:
 
@@ -30,13 +31,14 @@ It performs read-only GitHub API access. It does not execute issue text, clone o
 ## Validation
 
 - Local `npm run check`: syntax validation and 9/9 regression tests passed.
-- GitHub Actions run `31218917838`: completed successfully.
+- Pull-request GitHub Actions runs `31218917838` and `31219001664`: completed successfully.
+- Post-merge GitHub Actions run `31219229641`: completed successfully on `main`.
 - Node 20: dependency installation, syntax checks, 9/9 tests, and secret-pattern scan succeeded.
 - Node 22: dependency installation, syntax checks, 9/9 tests, and secret-pattern scan succeeded.
 - Docker: clean `apify/actor-node:22` image build and runtime credential-file checks succeeded.
 - The Actor pins the top-level runtime to `apify@3.7.2`, caps input size, and uses no LLM or paid external API.
 
-## Eligibility and payout inquiry
+## Apify eligibility and payout inquiry
 
 A single factual inquiry was sent to `support@apify.com` asking for written confirmation of:
 
@@ -50,8 +52,24 @@ A single factual inquiry was sent to `support@apify.com` asking for written conf
 - Gmail message ID: `19fde0fe7c1afc78`
 - Reply, approval, account creation, publication, pricing, sale, and payout: not yet confirmed
 
+## AgentGigs / Stripe evidence update
+
+Stripe sent an official Express onboarding email asking the account owner to add payout information for receiving AgentGigs earnings.
+
+- Gmail message ID: `19fde068f583641d`
+- The signed onboarding URL and connected-account identifier are intentionally not recorded here.
+- The onboarding link was not opened.
+- No identity data, bank data, card data, tax data, or terms acceptance was submitted.
+- No debit authorization, deposit, verification charge, subscription, funding, wallet transfer, or other asset movement was performed.
+
+This invitation does not by itself prove that the connected account is configured for Japan, accepts a Japanese bank account, is payout-only, or can pay the existing pending Research application. A factual follow-up was therefore sent in the existing AgentGigs support thread asking for those points in writing.
+
+- Follow-up Gmail message ID: `19fde11d4da9e775`
+- Additional AgentGigs applications remain paused.
+- The existing USD 60 application remains pending and is not a receivable or income.
+
 ## Commercial status and next action
 
-The code is a validated publication candidate, not income. No Apify account, Store listing, customer execution, approved payout, receivable, or cash receipt is claimed.
+The merged Actor is a validated publication candidate, not income. No Apify account, Store listing, customer execution, approved payout, receivable, or cash receipt is claimed.
 
-The next action is to merge the validated code, monitor the support reply, and only then perform any unavoidable owner-side account, identity, tax, payment, or terms step. No fee, deposit, ad purchase, or paid plan is authorized.
+The next actions are to monitor the Apify and AgentGigs support replies, the existing AgentGigs application and funding state, and actual external earnings evidence. Any unavoidable owner-side account, identity, tax, bank, payment, or terms step will be requested only after the applicable Japan route and zero-spend conditions are confirmed in writing. No fee, deposit, ad purchase, paid plan, debit authority, or asset transfer is authorized.
