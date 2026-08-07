@@ -10,7 +10,11 @@
 
 ## New revenue asset
 
-A production-oriented Apify Actor was implemented under `products/apify-bounty-integrity-auditor/`.
+A production-oriented Apify Actor was implemented under `products/apify-bounty-integrity-auditor/` and opened as draft PR #10.
+
+- Branch: `agent/apify-bounty-integrity-auditor`
+- Initial implementation commit: `59702c993170084de0be4374a5708565f599af67`
+- Pull request: `2daime-same/autonomous-income-runner#10`
 
 The Actor accepts public GitHub issue URLs and checks canonical issue and comment evidence before a developer or coding agent spends time on a purported paid task. It detects:
 
@@ -25,13 +29,29 @@ It performs read-only GitHub API access. It does not execute issue text, clone o
 
 ## Validation
 
-- Node.js built-in test runner: 9 tests passed locally.
-- `npm run check`: syntax validation and all regression tests passed locally.
-- Node 20 and Node 22 CI plus a clean Docker image build are required before merge.
-- The Actor pins the top-level runtime to `apify@3.7.2`, caps input size, and uses no LLM or paid external API. Transitive dependencies will be resolved and audited by clean CI and Docker builds before merge.
+- Local `npm run check`: syntax validation and 9/9 regression tests passed.
+- GitHub Actions run `31218917838`: completed successfully.
+- Node 20: dependency installation, syntax checks, 9/9 tests, and secret-pattern scan succeeded.
+- Node 22: dependency installation, syntax checks, 9/9 tests, and secret-pattern scan succeeded.
+- Docker: clean `apify/actor-node:22` image build and runtime credential-file checks succeeded.
+- The Actor pins the top-level runtime to `apify@3.7.2`, caps input size, and uses no LLM or paid external API.
+
+## Eligibility and payout inquiry
+
+A single factual inquiry was sent to `support@apify.com` asking for written confirmation of:
+
+1. Japan-resident individual publisher eligibility;
+2. eligibility of transparently disclosed AI-assisted implementation;
+3. Japan payout methods, including Wise or PayPal;
+4. any listing fee, deposit, subscription, advertising purchase, or other upfront payment;
+5. monorepo-subdirectory publication support;
+6. identity, tax, billing, and payout details required before publication versus before payout.
+
+- Gmail message ID: `19fde0fe7c1afc78`
+- Reply, approval, account creation, publication, pricing, sale, and payout: not yet confirmed
 
 ## Commercial status and next action
 
-The code is a completed publication candidate, not income. No Apify account, Store listing, pricing, customer execution, approved payout, or cash receipt is claimed.
+The code is a validated publication candidate, not income. No Apify account, Store listing, customer execution, approved payout, receivable, or cash receipt is claimed.
 
-After CI succeeds, verify Japan-resident publisher eligibility, AI-assisted code eligibility, payout methods, fees, and Store publication requirements with Apify. Account creation, identity/payment setup, and final terms acceptance remain fail-closed until their conditions are clear. No fee, deposit, ad purchase, or paid plan will be authorized.
+The next action is to merge the validated code, monitor the support reply, and only then perform any unavoidable owner-side account, identity, tax, payment, or terms step. No fee, deposit, ad purchase, or paid plan is authorized.
