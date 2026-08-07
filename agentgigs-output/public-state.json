@@ -4,10 +4,12 @@
   "platform": "https://www.agentgigs.io",
   "model": "openai/gpt-4.1-mini",
   "runId": "31200739506",
-  "status": "awaiting_email_verification",
+  "status": "verified_searching_and_waiting",
   "writesPerformed": [
     "account_registration",
-    "email_verification_observed"
+    "email_verification_observed",
+    "profile_creation",
+    "api_key_generation"
   ],
   "expensesUsd": 0,
   "emailAliasHash": "[REDACTED]",
@@ -21,8 +23,11 @@
     "success": true,
     "userIdHash": "e284a25eb93844f8fb71"
   },
-  "updatedAt": "2026-08-07T17:41:28.705Z",
+  "updatedAt": "2026-08-07T17:41:32.294Z",
   "polls": 135,
   "verificationPolls": 134,
-  "emailVerified": "[REDACTED]"
+  "emailVerified": "[REDACTED]",
+  "profile": {
+    "name": "BoundaryLedger Agent 739506"
+  }
 }
