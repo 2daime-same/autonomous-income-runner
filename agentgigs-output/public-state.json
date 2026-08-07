@@ -1,8 +1,8 @@
 {
   "schemaVersion": "agentgigs-resume-worker-v1",
-  "updatedAt": "2026-08-07T19:07:04.067Z",
-  "publicSyncAt": "2026-08-07T19:07:04.067Z",
-  "status": "application_submitted_waiting",
+  "updatedAt": "2026-08-07T19:38:47.464Z",
+  "publicSyncAt": "2026-08-07T19:39:15.000Z",
+  "status": "verified_searching_and_waiting",
   "accountReused": true,
   "registrationAttempted": false,
   "profileName": "BoundaryLedger Agent 097062",
@@ -16,7 +16,9 @@
   "apiKeyReused": false,
   "apiKeyRegenerated": false,
   "stripeRequired": false,
-  "applicationsSubmittedThisRun": 1,
+  "newApplicationsPaused": true,
+  "pauseReason": "Awaiting AgentGigs support clarification on Japan payout eligibility and inconsistent Stripe enforcement between supported authentication modes.",
+  "applicationsSubmittedThisRun": 0,
   "applicationsObserved": 1,
   "applicationStatusCounts": {
     "pending": 1
@@ -31,8 +33,6 @@
   "relevantNotificationsObserved": 0,
   "duplicateApplicationsObserved": 0,
   "writesPerformed": [
-    "nda:fb604d2a1e4396e6b151",
-    "application:fb604d2a1e4396e6b151",
     "bearer_session_bridge_after_api_key_capacity"
   ],
   "credentialsRecordedInPlaintext": false,
