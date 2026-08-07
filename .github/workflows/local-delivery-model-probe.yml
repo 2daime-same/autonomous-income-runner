@@ -42,7 +42,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p ops-output /tmp/local-model
-          start="$(date +%s)"
+          export START_EPOCH="$(date +%s)"
           set +e
           timeout 14m "$LLAMA_CLI" \
             -hf Qwen/Qwen2.5-1.5B-Instruct-GGUF:Q4_K_M \
@@ -54,9 +54,9 @@ jobs:
             --no-display-prompt \
             > /tmp/local-model/stdout.txt \
             2> /tmp/local-model/stderr.txt
-          exit_code="$?"
+          export INFERENCE_EXIT_CODE="$?"
           set -e
-          end="$(date +%s)"
+          export END_EPOCH="$(date +%s)"
 
           python3 - <<'PY'
           import hashlib
@@ -69,7 +69,8 @@ jobs:
           stdout = Path('/tmp/local-model/stdout.txt').read_text(errors='replace') if Path('/tmp/local-model/stdout.txt').exists() else ''
           stderr = Path('/tmp/local-model/stderr.txt').read_text(errors='replace') if Path('/tmp/local-model/stderr.txt').exists() else ''
           normalized = re.sub(r'\s+', ' ', stdout).strip()
-          success = 'LOCAL_MODEL_OK' in stdout
+          exit_code = int(os.environ.get('INFERENCE_EXIT_CODE', '1'))
+          success = exit_code == 0 and 'LOCAL_MODEL_OK' in stdout
           payload = {
               'updatedAt': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
               'status': 'ready' if success else 'failed',
@@ -80,20 +81,18 @@ jobs:
               'modelRunsLocally': success,
               'privateDataUsed': False,
               'expensesUsd': 0,
+              'inferenceExitCode': exit_code,
               'responseLength': len(stdout),
               'responseSha256': hashlib.sha256(stdout.encode()).hexdigest(),
-              'responseContainsExpectedSentinel': success,
+              'responseContainsExpectedSentinel': 'LOCAL_MODEL_OK' in stdout,
               'safeResponsePreview': normalized[:160],
               'safeErrorTail': re.sub(r'\s+', ' ', stderr)[-500:],
-              'elapsedSeconds': int(os.environ.get('end', '0') or 0) - int(os.environ.get('start', '0') or 0),
+              'elapsedSeconds': int(os.environ['END_EPOCH']) - int(os.environ['START_EPOCH']),
           }
           Path('ops-output/local-model-capability.json').write_text(json.dumps(payload, indent=2) + '\n')
           if not success:
               raise SystemExit('local model did not return the expected capability sentinel')
           PY
-        env:
-          start: ${{ env.start }}
-          end: ${{ env.end }}
 
       - name: Commit public-safe capability evidence
         if: always()
