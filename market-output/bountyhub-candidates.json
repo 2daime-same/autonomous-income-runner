@@ -1,7 +1,7 @@
 {
   "actionable": [],
   "actionable_count": 0,
-  "generated_at": "2026-08-06T14:37:56+00:00",
+  "generated_at": "2026-08-07T00:18:41+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -122,7 +122,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "C++",
-      "repo_stars": 8723,
+      "repo_stars": 8724,
       "repository": "azerothcore/azerothcore-wotlk",
       "scope_excerpt": "### Describe your feature request or suggestion in detail\n\nHi,\n\nI’d like to propose implementing map partitioning for large continent maps, inspired by the following Project-Epoch TrinityCore PR:\n\n- https://github.com/Project-Epoch/TrinityCore/pull/120\n\n### The Problem\n\nCurrently, all continent maps (like Eastern Kingdoms or Kalimdor) are processed on a single thread. With thousands of entities and players, this becomes a performance bottleneck. While instances benefit from parallel processing via separate map threads, continents remain monolithic, even under heavy load.\n\n### The Proposed Approach\n\nThe PR from TrinityCore introduces a `MapPartitioned` class that allows continents to be split into smaller logical partitions. These partitions share the base map data and are processed in parallel, significantly reducing per-tick load.\n\nNotable points from the implementation:\n\n- Seamless player and entity movement across partitions (no loading screens)\n- Entities are assigned dynamically to the correct partition on startup\n- GridUnload removed to simplify logic and improve performance\n- Shared systems (e.g., weather) remain consistent via the base map\n- Cleaner structure for future improvements and easier debugging\n\n### Benefits for AzerothCore\n\n- Better performance on high-population servers\n- Reduced lag in major cities or crowded quest zones\n- Scales better for events like world PvP or Wintergrasp\n- Lays groundwork for more advanced systems (e.g. phasing, regional load balancing)\n\nI don't know if it's possible to implement a system similat to this, but this could be a significant architectural upgrade and help AzerothCore scale further as adoption grows. I’d love to hear your thoughts on feasibility and whether a similar system could be integrated.\n\nThanks for your time.\n\n### Describe a possible solution to your feature or suggestion in detail\n\n_No response_\n\n### Additional context\n\n_No response_",
       "score": 84.41,
@@ -237,7 +237,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7347,
+      "repo_stars": 7349,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
       "score": 75.41,
@@ -450,7 +450,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "TypeScript",
-      "repo_stars": 5366,
+      "repo_stars": 5367,
       "repository": "freelensapp/freelens",
       "scope_excerpt": "### What would you like to be added?\r\n\r\nIn short, the ability to change the theme colors on Freelens and create new ones as you like.\r\n\r\n### Why is this needed?\r\n\r\nMany users complain that they don't have this option, especially when it comes to colors they would prefer to change.\r\n\r\nFor example:\r\n- https://github.com/freelensapp/freelens/issues/550#issuecomment-3371177938\r\n- https://github.com/freelensapp/freelens/issues/1237\r\n- https://github.com/freelensapp/freelens/issues/186",
       "score": 47.59,
@@ -516,7 +516,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7347,
+      "repo_stars": 7349,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "### Please verify that this feature request has NOT been suggested before.\n\n- [x] I checked and didn't find a similar feature request\n\n### Problem statement\n\nHi,\nwhen we want to change information in multiple object (for example 30 parts) , we have to filter list, click on the first object, change the value, return to the list , open the second object, change the value ...\n\n\n\n### Suggested solution\n\nI think it's a good idea to add two icons on banner \"Previous\" and \"Next\" for simplify navigation between the filter list objects\nWhen object change, the focus field must be the same.\n\n<img width=\"1399\" height=\"342\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/247e4063-c6e5-4a6e-a529-a195e45c7c18\" />\n\nBest regards\n\n\n### Describe alternatives you've considered\n\nAllow field edition as parametrics values\n\n### Examples of other systems\n\nFor example Maximo Ibm do this\n\n<img width=\"1776\" height=\"776\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/18ada624-4696-4347-9876-a5fb176191f7\" />\n\n### Do you want to develop this?\n\n- [ ] I want to develop this.",
       "score": 46.41,
@@ -562,6 +562,13 @@
       "issue_number": 770,
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/770",
       "open_competing_prs": [
+        {
+          "number": 1826,
+          "title": "fix: preserve expires_at on memory update when ttl_seconds is absent",
+          "updated_at": "2026-08-06T15:12:58Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1826",
+          "user": "windy202508"
+        },
         {
           "number": 1808,
           "title": "fix: Moorcheh filter injection, pagination truncation, session-renew lockout, stale-field persistence (Bounty #770)",
@@ -633,13 +640,6 @@
           "user": "windy202508"
         },
         {
-          "number": 1747,
-          "title": "Bounty #770: prevent silent OKF context overwrite",
-          "updated_at": "2026-08-01T22:16:25Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1747",
-          "user": "biliman1-work"
-        },
-        {
           "number": 1762,
           "title": "feat(migration): Claude to Memanto OKF Bundle Migration Adapter [Bounty #1609]",
           "updated_at": "2026-08-01T14:13:24Z",
@@ -668,34 +668,6 @@
           "user": "Rerzx"
         },
         {
-          "number": 1739,
-          "title": "[Bug Fix] Batch memory constants dedup, is_valid_memory_id hardening, and input validation",
-          "updated_at": "2026-08-01T04:59:58Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1739",
-          "user": "harmonygemini8-collab"
-        },
-        {
-          "number": 1746,
-          "title": "fix: prevent LangGraph key collisions and stale agent locks",
-          "updated_at": "2026-07-31T21:02:19Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1746",
-          "user": "buildfix-ai"
-        },
-        {
-          "number": 1748,
-          "title": "feat: [BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
-          "updated_at": "2026-07-31T20:59:15Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1748",
-          "user": "laurentketterle-hub"
-        },
-        {
-          "number": 1741,
-          "title": "fix: agent deletion leaves memories, sessions, and conflicts (data resurrection bug) #770",
-          "updated_at": "2026-07-31T10:42:15Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1741",
-          "user": "leanworld7-netizen"
-        },
-        {
           "number": 1571,
           "title": "fix: prevent recall loss, session corruption, and duplicate memories",
           "updated_at": "2026-07-31T07:23:05Z",
@@ -708,20 +680,6 @@
           "updated_at": "2026-07-31T06:09:19Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1607",
           "user": "Pavithran1729"
-        },
-        {
-          "number": 1743,
-          "title": "fix: prevent FastAPI Header metadata from becoming an API key",
-          "updated_at": "2026-07-31T04:25:25Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1743",
-          "user": "Roezna"
-        },
-        {
-          "number": 1740,
-          "title": "fix(integrations): restore valid memory writes",
-          "updated_at": "2026-07-31T02:30:09Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1740",
-          "user": "eduar41"
         },
         {
           "number": 1272,
@@ -1039,7 +997,7 @@
         "supported language: python",
         "established repository",
         "3 competing attempt signal(s)",
-        "66 open competing PR(s)"
+        "60 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY $100] 🐜The Memanto Bug & Exploit Challenge",
@@ -1073,9 +1031,23 @@
         {
           "number": 1823,
           "title": "feat(migration): ChatGPT & Claude conversation export → OKF adapters (bounty #1609)",
-          "updated_at": "2026-08-06T11:38:18Z",
+          "updated_at": "2026-08-06T23:31:57Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1823",
           "user": "DinhTruong98"
+        },
+        {
+          "number": 1813,
+          "title": "feat(examples): add OKF portability audit",
+          "updated_at": "2026-08-06T18:52:33Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1813",
+          "user": "ceodaradigu"
+        },
+        {
+          "number": 1803,
+          "title": "feat: add chat export migration adapter (Bounty #1609)",
+          "updated_at": "2026-08-06T17:37:52Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1803",
+          "user": "laurentketterle-hub"
         },
         {
           "number": 1824,
@@ -1083,13 +1055,6 @@
           "updated_at": "2026-08-06T06:35:37Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1824",
           "user": "funds0033-cmyk"
-        },
-        {
-          "number": 1813,
-          "title": "feat(examples): add OKF portability audit",
-          "updated_at": "2026-08-06T06:31:57Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1813",
-          "user": "ceodaradigu"
         },
         {
           "number": 1821,
@@ -1132,13 +1097,6 @@
           "updated_at": "2026-08-04T09:12:59Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1726",
           "user": "ahteshamhassan7933-gif"
-        },
-        {
-          "number": 1803,
-          "title": "feat: add chat export migration adapter (Bounty #1609)",
-          "updated_at": "2026-08-04T03:21:01Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1803",
-          "user": "laurentketterle-hub"
         },
         {
           "number": 1806,
@@ -1447,7 +1405,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14133,
+      "repo_stars": 14136,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 25.18,
@@ -1480,18 +1438,18 @@
       "issue_url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/30",
       "open_competing_prs": [
         {
+          "number": 934,
+          "title": "NT Internal Affairs Touch-Ups",
+          "updated_at": "2026-08-06T16:39:15Z",
+          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/934",
+          "user": "ChromeFoxxity"
+        },
+        {
           "number": 960,
           "title": "[BOUNTY] Borg cock.",
           "updated_at": "2026-08-05T02:43:54Z",
           "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/960",
           "user": "CatoChristopherMrow"
-        },
-        {
-          "number": 934,
-          "title": "NT Internal Affairs Touch-Ups",
-          "updated_at": "2026-07-30T23:02:40Z",
-          "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/934",
-          "user": "ChromeFoxxity"
         },
         {
           "number": 1024,
@@ -1581,7 +1539,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14133,
+      "repo_stars": 14136,
       "repository": "microg/GmsCore",
       "scope_excerpt": "I checked the wiki and the implementation page hasn't been updated in two years, so I thought I'd ask.",
       "score": 23.41,
@@ -1734,7 +1692,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14133,
+      "repo_stars": 14136,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Affected app**\r\nName: Dott\r\nPackage id: com.ridedott.rider\r\n\r\n**Describe the bug**\r\nSigning in or signing up fails, seemingly because of a firebase error\r\n\r\n**To Reproduce**\r\nSteps to reproduce the behavior:\r\n1. get Dott\r\n2. Click on sign up\r\n3. enter phone number\r\n4. click sign up\r\n\r\n**Expected behavior**\r\nsends sms verification or proceeds in general\r\n\r\n**Screenshots**\r\n<details><summary>sign up error page</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/0938e413-1873-480a-a396-a598fcd98e47)\r\n\r\n</details>\r\n\r\n<details><summary>dott vehicle coverage</summary>\r\n\r\n![screenshot](https://github.com/user-attachments/assets/59c7d003-1954-41be-8fc1-43956a17f4a6)\r\n\r\n</details>\r\n\r\n**System**\r\nAndroid Version: 15\r\nCustom ROM: LineageOS+microg 22.1\r\n\r\n**microG**\r\nmicroG Core version: 0.3.6.244735\r\nmicroG Self-Check results: All ticked\r\n\r\n**Additional context**\r\nfull logcat of an app start and signup attempt, filtering out all logs, except those coming from com.ridedott.rider with personal or identifying information replaced by `[...]`:\r\n\r\n[dott 06_04-09-30-30_733.log](https://github.com/user-attachments/files/19620636/dott.06_04-09-30-30_733.log)\r\n\r\nLikely critical lines from the log:\r\n```\r\n1743924520.834 10285 20276 23037 W LocalRequestInterceptor: Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: Error returned from API. code: 403 body: App attestation failed.\r\n1743924521.066 10285 20276 23037 E FirebaseAuth: [SmsRetrieverHelper] SMS verification code request failed: unknown status code: 17499 Firebase App Check token is invalid.\r\n1743924521.067 10285 20276 20276 D FirebaseAuth: Invoking original failure callbacks after phone verification failure for (my phone number), error - An internal error has occurred. [ Firebase App Check token is invalid. ]\r\n```\r\nmicrog Google device registration is enabled, as is cloud messaging and \"SafetyNet\".\r\nmy device meets basic integrity and device integrity, uses sdk level 35\r\n\r\nPossibly related: https://github.com/microg/GmsCore/issues/1967, https://github.com/microg/GmsCore/issues/1281",
       "score": 13.35,
@@ -1819,7 +1777,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14133,
+      "repo_stars": 14136,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**Feature Description:**\r\nGoogle Messages is currently the only widely available RCS client for Android. When attempting to use Google Messages with microG, users typically encounter issues such as:\r\n\r\nA persistent message stating \"RCS chats aren't available for this device.\"\r\nAn indefinite \"Setting up...\", where authentication of the phone number never completes.\r\n\r\nRecent developments suggest that Google Messages no longer strictly requires device attestation for RCS, making it possible to enable RCS functionality with microG. However, it appears there's a missing component or necessary adjustment within microG itself preventing successful setup.\r\n\r\nGoogle has effectively monopolized RCS, despite it being a GSMA-backed standard intended as a successor to SMS. Unlike SMS, RCS has become a closed ecosystem under Google's control, restricting open interoperability and limiting choice for users and developers. RCS has seen significant adoption, particularly in North America, and recently Apple added support RCS, further increasing its importance as a messaging standard.\r\n\r\n**Requested Solution**\r\n\r\nProvide a solution that enables Google Messages to successfully connect to and use RCS functionality when operating with microG. Acceptable outcomes include:\r\n- A fix or enhancement to microG itself, allowing seamless RCS connectivity.\r\n- Compatibility with recent versions of Google Messages is desired. Solutions that only support a specific Google Messages version from the past year will be awarded half of the bounty amount.\r\n- Modifications to AOSP or additional permissions changes are acceptable.\r\n- The solution must work on devices with a locked bootloader.\r\n\r\nLimitations\r\nSolutions relying on rooting, Magisk, or similar root-based tools are not acceptable.\r\n\r\n**Additional Information**\r\n\r\nGrapheneOS users, who leverage a Play services sandbox, have reported success with enabling RCS by applying permission changes. Although their setup differs from microG, the discussions that were taken in this thread (especially in the last year) may offer valuable insights for this bounty: https://discuss.grapheneos.org/d/3533-rcs-with-google-messages\r\n",
       "score": 1.0,
@@ -1940,7 +1898,7 @@
       "payment_status": "PAID",
       "repo_archived": false,
       "repo_language": "Java",
-      "repo_stars": 14133,
+      "repo_stars": 14136,
       "repository": "microg/GmsCore",
       "scope_excerpt": "**[BOUNTY CURRENTLY AT $550]**\n\n**Is your feature request related to a problem? Please describe.**\nWearOS devices do not work with MicroG\n\n**Describe the solution you'd like**\nMicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\n**Additional context**\nThere has been an issue open for over ten years regarding [MicroG support for WearOS](https://github.com/microg/GmsCore/issues/4#issuecomment-2581553597).  That issue and another [more recent post](https://github.com/microg/GmsCore/issues/2444#issuecomment-2691206945) have inspired some folks to post bounties for this feature, but it's buried so far down in the thread it's easy to miss.\n\nI personally am posting a $200 bounty for the MicroG framework needed to pair modern, current-gen WearOS devices and get basic functionality - echo phone notifications, provide media controls, run WearOS apps, etc.\n\nHere are the folks who've posted bounties in those threads.  I'll invite them to post again here confirming that their offers still stand, but all told, this adds up to over $500 already.\n\n@HyperCriSiS - $100\n@realPrix - $100\n@NullCode1337 - $50\n@TobiPeterG - $100\n@doctorgaul - $200",
       "score": -77.0,
