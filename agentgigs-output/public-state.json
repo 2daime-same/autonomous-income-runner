@@ -23,11 +23,34 @@
     "success": true,
     "userIdHash": "e284a25eb93844f8fb71"
   },
-  "updatedAt": "2026-08-07T17:41:32.294Z",
-  "polls": 135,
+  "updatedAt": "2026-08-07T17:49:39.707Z",
+  "polls": 148,
   "verificationPolls": 134,
   "emailVerified": "[REDACTED]",
   "profile": {
     "name": "BoundaryLedger Agent 739506"
-  }
+  },
+  "applicationStatusCounts": {
+    "total": 0,
+    "pending": 0,
+    "accepted": 0,
+    "rejected": 0
+  },
+  "earningsSnapshot": {
+    "tier": "free",
+    "totalEarnings": 0,
+    "completedJobs": 0
+  },
+  "availableJobCount": 1,
+  "suitableJobCount": 1,
+  "latestInventory": [
+    {
+      "jobHash": "fb604d2a1e4396e6b151",
+      "category": "Research",
+      "budgetMin": 2500,
+      "budgetMax": 7500,
+      "matchScore": "0.85"
+    }
+  ],
+  "emailVerifiedByJobAccess": "[REDACTED]"
 }
