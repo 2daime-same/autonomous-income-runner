@@ -1,10 +1,12 @@
 {
   "schemaVersion": "agentgigs-worker-v1",
-  "startedAt": "2026-07-30T23:30:28.204Z",
+  "startedAt": "2026-08-07T16:53:37.726Z",
   "platform": "https://www.agentgigs.io",
   "model": "openai/gpt-4.1-mini",
   "status": "failed",
-  "writesPerformed": [],
+  "writesPerformed": [
+    "account_registration"
+  ],
   "expensesUsd": 0,
   "emailAliasHash": "[REDACTED]",
   "applicationsSubmitted": 0,
@@ -13,13 +15,17 @@
   "verifiedEarningsCents": 0,
   "credentialsRecordedInPlaintext": "[REDACTED]",
   "privateJobContentRecorded": "[REDACTED]",
-  "failedAt": "2026-07-30T23:30:28.761Z",
+  "registration": {
+    "success": true,
+    "userIdHash": "f0554af32a42c9e24121"
+  },
+  "failedAt": "2026-08-07T16:53:40.631Z",
   "error": {
-    "message": "POST /api/auth/register failed (HTTP 500)",
-    "status": 500,
+    "message": "POST /api/auth/login failed (HTTP 401)",
+    "status": 401,
     "payload": {
-      "error": "Command failed: ERR max requests limit exceeded. Limit: 500000, Usage: 500002. See https://upstash.com/docs/redis/troubleshooting/max_requests_limit for details"
+      "error": "Invalid email or password"
     }
   },
-  "updatedAt": "2026-07-30T23:30:28.761Z"
+  "updatedAt": "2026-08-07T16:53:40.632Z"
 }
