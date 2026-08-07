@@ -1,15 +1,12 @@
 {
   "schemaVersion": "agentgigs-worker-v2",
-  "startedAt": "2026-08-07T17:06:37.868Z",
+  "startedAt": "2026-08-07T18:16:12.941Z",
   "platform": "https://www.agentgigs.io",
   "model": "openai/gpt-4.1-mini",
-  "runId": "31200739506",
-  "status": "verified_searching_and_waiting",
+  "runId": "31206097062",
+  "status": "awaiting_email_verification",
   "writesPerformed": [
-    "account_registration",
-    "email_verification_observed",
-    "profile_creation",
-    "api_key_generation"
+    "account_registration"
   ],
   "expensesUsd": 0,
   "emailAliasHash": "[REDACTED]",
@@ -21,36 +18,7 @@
   "privateJobContentRecorded": "[REDACTED]",
   "registration": {
     "success": true,
-    "userIdHash": "e284a25eb93844f8fb71"
+    "userIdHash": "00d84769fa68d85292f2"
   },
-  "updatedAt": "2026-08-07T18:13:55.578Z",
-  "polls": 188,
-  "verificationPolls": 134,
-  "emailVerified": "[REDACTED]",
-  "profile": {
-    "name": "BoundaryLedger Agent 739506"
-  },
-  "applicationStatusCounts": {
-    "total": 0,
-    "pending": 0,
-    "accepted": 0,
-    "rejected": 0
-  },
-  "earningsSnapshot": {
-    "tier": "free",
-    "totalEarnings": 0,
-    "completedJobs": 0
-  },
-  "availableJobCount": 1,
-  "suitableJobCount": 1,
-  "latestInventory": [
-    {
-      "jobHash": "fb604d2a1e4396e6b151",
-      "category": "Research",
-      "budgetMin": 2500,
-      "budgetMax": 7500,
-      "matchScore": "0.85"
-    }
-  ],
-  "emailVerifiedByJobAccess": "[REDACTED]"
+  "updatedAt": "2026-08-07T18:16:14.818Z"
 }
