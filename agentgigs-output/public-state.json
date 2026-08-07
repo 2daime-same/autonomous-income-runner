@@ -1,9 +1,10 @@
 {
-  "schemaVersion": "agentgigs-worker-v1",
-  "startedAt": "2026-08-07T16:53:37.726Z",
+  "schemaVersion": "agentgigs-worker-v2",
+  "startedAt": "2026-08-07T17:06:37.868Z",
   "platform": "https://www.agentgigs.io",
   "model": "openai/gpt-4.1-mini",
-  "status": "failed",
+  "runId": "31200739506",
+  "status": "awaiting_email_verification",
   "writesPerformed": [
     "account_registration"
   ],
@@ -17,15 +18,7 @@
   "privateJobContentRecorded": "[REDACTED]",
   "registration": {
     "success": true,
-    "userIdHash": "f0554af32a42c9e24121"
+    "userIdHash": "e284a25eb93844f8fb71"
   },
-  "failedAt": "2026-08-07T16:53:40.631Z",
-  "error": {
-    "message": "POST /api/auth/login failed (HTTP 401)",
-    "status": 401,
-    "payload": {
-      "error": "Invalid email or password"
-    }
-  },
-  "updatedAt": "2026-08-07T16:53:40.632Z"
+  "updatedAt": "2026-08-07T17:06:41.086Z"
 }
