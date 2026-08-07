@@ -1,0 +1,18 @@
+{
+  "updatedAt": "2026-08-07T19:47:02+00:00",
+  "status": "failed",
+  "runtime": "llama.cpp",
+  "runtimeRelease": "b10321",
+  "runtimeArchiveSha256": "535f6f32b675463695d9ede510fa4756d0055a6b0d201fa947cb752a15827bdf",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct-GGUF:Q4_K_M",
+  "modelRunsLocally": false,
+  "privateDataUsed": false,
+  "expensesUsd": 0,
+  "inferenceExitCode": 124,
+  "responseLength": 1932848686,
+  "responseSha256": "9a1986a423971987e54d2f9ea7aa6d43acc95460f8507067a7a55c9250a1a974",
+  "responseContainsExpectedSentinel": true,
+  "safeResponsePreview": "Loading model... |\b-\b\\\b|\b/\b-\b\\\b|\b/\b-\b\\\b|\b/\b \b \u2584\u2584 \u2584\u2584 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2580\u2580\u2588\u2584 \u2588\u2588\u2588\u2584\u2588\u2588\u2588\u2584 \u2580\u2580\u2588\u2584 \u2584\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2584 \u2588\u2588\u2588\u2588\u2584 \u2588\u2588 \u2588\u2588 \u2584\u2588\u2580\u2588\u2588 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2584\u2588\u2580\u2588\u2588 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2588\u2588 \u2580\u2588\u2584\u2588\u2588 \u2588\u2588 \u2588\u2588",
+  "safeErrorTail": "",
+  "elapsedSeconds": 840
+}
