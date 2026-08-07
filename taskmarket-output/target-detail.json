@@ -1,6 +1,6 @@
 {
   "expenses_usdc": 0,
-  "generated_at": "2026-08-07T05:48:47+00:00",
+  "generated_at": "2026-08-07T13:35:13+00:00",
   "http_status": {
     "submissions": 200,
     "task": 200
@@ -12,7 +12,7 @@
   "schema_version": "taskmarket-target-readonly-v1",
   "signatures_performed": 0,
   "source": "https://api.taskmarket.dev",
-  "submission_count_observed": 10,
+  "submission_count_observed": 13,
   "submissions": [
     {
       "artifact_count": 2,
@@ -254,6 +254,34 @@
     {
       "artifact_count": 1,
       "artifact_names": [
+        "deliverable.md"
+      ],
+      "id": "9add057b-4514-490b-ae13-7e3ae2d8ffd5",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-07T11:38:14.326Z",
+      "worker": {
+        "address": "0x9a8E38eeF8E929614cf46cEc3b9366118cB312Ce",
+        "address_hash": "4ff5e6ed7902f4e1"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
         "submission.md"
       ],
       "id": "a0e32fdf-a37e-44a1-ace9-b73af62cf089",
@@ -276,6 +304,62 @@
       "worker": {
         "address": "0xcbE4F8Ea49fdFf04b388a2Eb6D4A85959165204E",
         "address_hash": "8b469349f8e420fc"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "preview.png"
+      ],
+      "id": "ebe38d52-f32a-419b-a9c5-9e4d4a60ec22",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-07T12:46:09.210Z",
+      "worker": {
+        "address": "0x9a8E38eeF8E929614cf46cEc3b9366118cB312Ce",
+        "address_hash": "4ff5e6ed7902f4e1"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "index.html"
+      ],
+      "id": "96a054ad-3847-4f3f-b335-eb97d37bd93a",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-07T12:46:00.342Z",
+      "worker": {
+        "address": "0x9a8E38eeF8E929614cf46cEc3b9366118cB312Ce",
+        "address_hash": "4ff5e6ed7902f4e1"
       },
       "worker_agent_id": null
     },
@@ -423,7 +507,7 @@
     "stakeBps": 0,
     "stakeRequired": false,
     "status": "open",
-    "submissionCount": 10,
+    "submissionCount": 13,
     "submissionVisibility": "public",
     "submissionWindowOpen": true,
     "tags": [
