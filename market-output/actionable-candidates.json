@@ -12,6 +12,21 @@
         "reward is unusually high for the first-income target",
         "unrecognized platform on a repository younger than 90 days"
       ],
+      "issue_number": 5,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $5k ] [ Solidity ] Fix missing slippage protection and deadline in SimpleSwap",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/5"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
       "issue_number": 3,
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $4k ] [ Solidity ] Fix reentrancy in StakingRewards withdraw and claimRewards",
@@ -63,6 +78,22 @@
       "repo": "ClankerNation/OpenAgents",
       "title": "[ Bounty $4k ] [ SDK ] Fix retry utility has no max retries cap",
       "url": "https://github.com/ClankerNation/OpenAgents/issues/46"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata",
+        "requires private payout details to be posted publicly",
+        "requires social spam or adversarial review activity",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 17,
+      "repo": "ClankerNation/OpenAgents",
+      "title": "[ Bounty $7k ] [ Solidity ] Fix reentrancy in PrizeSplit claimPrize and rounding dust loss",
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/17"
     },
     {
       "flags": [
@@ -407,80 +438,12 @@
       "flags": [
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 865,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ T3 Code ] Add Effect.Cache-based provider API response caching with TTL",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/865"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 5,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $5k ] [ Solidity ] Fix missing slippage protection and deadline in SimpleSwap",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/5"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
         "more than two competing attempt users"
       ],
       "issue_number": 918,
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ Crypto ] Fix first-depositor price manipulation in LiquidityPool",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/918"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 611,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ CONTEXT RIFT ] Fix typos in knowledge-base/context.json",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/611"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 52328,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that are multiples of 16",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/52328"
-    },
-    {
-      "flags": [
-        "an open competing pull request already exists",
-        "bot-authored issue without recognized platform evidence",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata",
-        "requires private payout details to be posted publicly",
-        "requires social spam or adversarial review activity",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a repository younger than 90 days"
-      ],
-      "issue_number": 17,
-      "repo": "ClankerNation/OpenAgents",
-      "title": "[ Bounty $7k ] [ Solidity ] Fix reentrancy in PrizeSplit claimPrize and rounding dust loss",
-      "url": "https://github.com/ClankerNation/OpenAgents/issues/17"
     },
     {
       "flags": [
@@ -579,6 +542,17 @@
       "repo": "SecureBananaLabs/bug-bounty",
       "title": "User creation endpoint has no input validation",
       "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1773"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 52328,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that are multiples of 16",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52328"
     },
     {
       "flags": [
@@ -737,15 +711,6 @@
     },
     {
       "flags": [
-        "no direct reward evidence"
-      ],
-      "issue_number": 81,
-      "repo": "FreeCAD/FPA-grant-proposals",
-      "title": "Implement ISO 13715 (Edge Symbols) and ISO 15785 (Joint Symbols) in TechDraw Workbench",
-      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/81"
-    },
-    {
-      "flags": [
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
@@ -759,20 +724,21 @@
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
-      "issue_number": 90,
-      "repo": "FreeCAD/FPA-grant-proposals",
-      "title": "Implement Feature Thread",
-      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/90"
+      "issue_number": 3085,
+      "repo": "MosslandOpenDevs/agentic-orchestrator",
+      "title": "[Idea] TEE-Attested AI Agent Marketplace for Verifiable Web3 Research Bounties and Product Briefs",
+      "url": "https://github.com/MosslandOpenDevs/agentic-orchestrator/issues/3085"
     },
     {
       "flags": [
+        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
-      "issue_number": 91,
-      "repo": "FreeCAD/FPA-grant-proposals",
-      "title": "Parametric Snapping System for the Measure Tool (Issues #13708, #27404)",
-      "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/91"
+      "issue_number": 72136,
+      "repo": "SecOpsNews/news",
+      "title": "[RegisterSec] Prompt injection isn't the bug, AI agent frameworks are",
+      "url": "https://github.com/SecOpsNews/news/issues/72136"
     },
     {
       "flags": [
@@ -784,11 +750,45 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Comprehensive review and overhaul of Spyder's documentation",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/21"
+    },
+    {
+      "flags": [
+        "issue is already assigned",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 159,
+      "repo": "logos-co/rfp",
+      "title": "[PROPOSAL] RFP-014 — Liquidation and Auction engine by Web3spell Labs",
+      "url": "https://github.com/logos-co/rfp/issues/159"
+    },
+    {
+      "flags": [
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 16,
+      "repo": "eitocom/eito",
+      "title": "[FRONTEND] Criar componente do Card de Tarefa/Bounty",
+      "url": "https://github.com/eitocom/eito/issues/16"
+    },
+    {
+      "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 139,
+      "repo": "logos-co/rfp",
+      "title": "[PROPOSAL] RFP-008 — Lending & Borrowing Protocol",
+      "url": "https://github.com/logos-co/rfp/issues/139"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-07T07:42:14+00:00",
+  "generated_at": "2026-08-07T13:39:22+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-07T07:42:14+00:00"
+  "source_generated_at": "2026-08-07T13:39:22+00:00"
 }
