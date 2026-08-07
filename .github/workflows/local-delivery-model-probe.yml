@@ -1,0 +1,124 @@
+name: Probe local zero-spend delivery model
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/local-delivery-model-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: local-delivery-model-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download and verify pinned llama.cpp CPU binaries
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/local-model/llama
+          curl --fail --location --retry 3 --retry-all-errors \
+            --output /tmp/local-model/llama.tar.gz \
+            https://github.com/ggml-org/llama.cpp/releases/download/b10321/llama-b10321-bin-ubuntu-x64.tar.gz
+          echo '535f6f32b675463695d9ede510fa4756d0055a6b0d201fa947cb752a15827bdf  /tmp/local-model/llama.tar.gz' | sha256sum --check
+          tar -xzf /tmp/local-model/llama.tar.gz -C /tmp/local-model/llama
+          LLAMA_CLI="$(find /tmp/local-model/llama -type f -name llama-cli -print -quit)"
+          test -n "$LLAMA_CLI"
+          chmod +x "$LLAMA_CLI"
+          echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
+          "$LLAMA_CLI" --version
+
+      - name: Run a non-sensitive local inference probe
+        env:
+          HF_HOME: /tmp/local-model/huggingface
+        run: |
+          set -euo pipefail
+          mkdir -p ops-output /tmp/local-model
+          start="$(date +%s)"
+          set +e
+          timeout 14m "$LLAMA_CLI" \
+            -hf Qwen/Qwen2.5-1.5B-Instruct-GGUF:Q4_K_M \
+            -p 'Return exactly LOCAL_MODEL_OK and nothing else.' \
+            -n 32 \
+            -c 2048 \
+            -t 4 \
+            --temp 0 \
+            --no-display-prompt \
+            > /tmp/local-model/stdout.txt \
+            2> /tmp/local-model/stderr.txt
+          exit_code="$?"
+          set -e
+          end="$(date +%s)"
+
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import re
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          stdout = Path('/tmp/local-model/stdout.txt').read_text(errors='replace') if Path('/tmp/local-model/stdout.txt').exists() else ''
+          stderr = Path('/tmp/local-model/stderr.txt').read_text(errors='replace') if Path('/tmp/local-model/stderr.txt').exists() else ''
+          normalized = re.sub(r'\s+', ' ', stdout).strip()
+          success = 'LOCAL_MODEL_OK' in stdout
+          payload = {
+              'updatedAt': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'status': 'ready' if success else 'failed',
+              'runtime': 'llama.cpp',
+              'runtimeRelease': 'b10321',
+              'runtimeArchiveSha256': '535f6f32b675463695d9ede510fa4756d0055a6b0d201fa947cb752a15827bdf',
+              'model': 'Qwen/Qwen2.5-1.5B-Instruct-GGUF:Q4_K_M',
+              'modelRunsLocally': success,
+              'privateDataUsed': False,
+              'expensesUsd': 0,
+              'responseLength': len(stdout),
+              'responseSha256': hashlib.sha256(stdout.encode()).hexdigest(),
+              'responseContainsExpectedSentinel': success,
+              'safeResponsePreview': normalized[:160],
+              'safeErrorTail': re.sub(r'\s+', ' ', stderr)[-500:],
+              'elapsedSeconds': int(os.environ.get('end', '0') or 0) - int(os.environ.get('start', '0') or 0),
+          }
+          Path('ops-output/local-model-capability.json').write_text(json.dumps(payload, indent=2) + '\n')
+          if not success:
+              raise SystemExit('local model did not return the expected capability sentinel')
+          PY
+        env:
+          start: ${{ env.start }}
+          end: ${{ env.end }}
+
+      - name: Commit public-safe capability evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          if ! test -s ops-output/local-model-capability.json; then
+            mkdir -p ops-output
+            printf '%s\n' '{"status":"probe_runtime_failed","modelRunsLocally":false,"privateDataUsed":false,"expensesUsd":0}' > ops-output/local-model-capability.json
+          fi
+          git config user.name 'local-model-probe[bot]'
+          git config user.email 'local-model-probe[bot]@users.noreply.github.com'
+          git add ops-output/local-model-capability.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Record local delivery model capability from run ${GITHUB_RUN_ID} [skip ci]"
+          for attempt in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - name: Remove downloaded model material
+        if: always()
+        run: rm -rf /tmp/local-model
