@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "github-bounty-integrity-auditor",
+  "title": "GitHub Bounty Integrity Auditor",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 512,
+  "usesStandbyMode": false
+}

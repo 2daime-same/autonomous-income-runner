@@ -1,0 +1,26 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Bounty audit overview",
+      "transformation": {
+        "fields": ["verdict", "score", "rewardAmountUsd", "competitorCount", "state", "title", "canonicalUrl", "blockers", "checkedAt"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "verdict": { "label": "Verdict", "format": "text" },
+          "score": { "label": "Score", "format": "number" },
+          "rewardAmountUsd": { "label": "Reward USD", "format": "number" },
+          "competitorCount": { "label": "PR signals", "format": "number" },
+          "state": { "label": "Issue state", "format": "text" },
+          "title": { "label": "Title", "format": "text" },
+          "canonicalUrl": { "label": "Canonical issue", "format": "link" },
+          "blockers": { "label": "Blockers", "format": "array" },
+          "checkedAt": { "label": "Checked", "format": "date" }
+        }
+      }
+    }
+  }
+}
