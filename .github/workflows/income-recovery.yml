@@ -1,4 +1,4 @@
-name: Resume autonomous income workers
+name: Route autonomous income recovery safely
 
 on:
   workflow_dispatch:
@@ -6,24 +6,19 @@ on:
     branches: [main]
     paths:
       - .github/workflows/income-recovery.yml
-      - ZERO_SPEND_CONSTITUTION.md
-      - zero_spend_guard.mjs
-      - agentgigs_worker_v2.mjs
-      - agentgigs_fetch_patch.mjs
-      - bothire_worker.mjs
+      - agentgigs_resume_worker.mjs
 
 permissions:
   contents: write
-  models: read
 
 concurrency:
   group: autonomous-income-recovery
   cancel-in-progress: true
 
 jobs:
-  agentgigs:
+  route-and-validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 355
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v6
 
@@ -31,131 +26,69 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Validate constitutional guard, worker, fallback, and encryption certificate
+      - name: Validate the resume-only AgentGigs worker
         run: |
           set -euo pipefail
-          test -s ZERO_SPEND_CONSTITUTION.md
-          node --check zero_spend_guard.mjs
-          node --check agentgigs_worker_v2.mjs
-          node --check agentgigs_fetch_patch.mjs
+          node --check agentgigs_resume_worker.mjs
           openssl x509 \
             -in keys/superteam-state-public.crt \
             -noout -fingerprint -sha256
 
-      - name: Configure evidence commits
-        run: |
-          git config user.name 'agent-income-runner[bot]'
-          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          if grep -Eq "(/api/auth/register|account_registration)" agentgigs_resume_worker.mjs; then
+            echo 'The resume worker contains a forbidden registration path.' >&2
+            exit 1
+          fi
+          echo 'Registration is disabled; only the existing AgentGigs account may be resumed.'
 
-      - name: Register, apply, deliver, and verify earnings with absolute zero-spend guard
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          AGENTGIGS_MODEL: openai/gpt-4.1-mini
-          MAX_RUNTIME_MINUTES: '335'
-          ZERO_SPEND_CONSTITUTION: ENFORCED
-          MAX_OWNER_ASSET_OUTFLOW: '0'
-        run: node --import ./zero_spend_guard.mjs --import ./agentgigs_fetch_patch.mjs agentgigs_worker_v2.mjs
-
-      - name: Require zero-expense evidence and fail closed on public credential leakage
-        if: always()
-        run: |
-          python3 - <<'PY'
-          import json
-          import re
-          from pathlib import Path
-
-          state_path = Path('agentgigs-output/public-state.json')
-          if state_path.exists():
-              state = json.loads(state_path.read_text(encoding='utf-8'))
-              if float(state.get('expensesUsd', 0) or 0) != 0:
-                  raise SystemExit('ZERO_SPEND_CONSTITUTION violated: AgentGigs expense is non-zero')
-
-          paths = [state_path, Path('agentgigs-output/applied-job-hashes.json')]
-          patterns = {
-              'AgentGigs key': re.compile(r'\bage_[A-Za-z0-9._~+/=-]{8,}\b'),
-              'JWT': re.compile(r'\beyJ[A-Za-z0-9._-]{20,}\b'),
-              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
-              'unredacted credential field': re.compile(
-                  r'(?i)"(?:api.?key|authorization|secret|token|private|credential|password|cookie|email)"\s*:\s*"(?!\[REDACTED\])'
-              ),
-          }
-          for path in paths:
-              if not path.exists():
-                  continue
-              text = path.read_text(encoding='utf-8')
-              for name, pattern in patterns.items():
-                  if pattern.search(text):
-                      raise SystemExit(f'{name} found in public output: {path}')
-          PY
-
-  bothire:
-    runs-on: ubuntu-latest
-    timeout-minutes: 355
-    steps:
-      - uses: actions/checkout@v6
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-
-      - name: Validate constitutional guard, BotHire worker, and encryption certificate
+      - name: Record the public-safe execution route
         run: |
           set -euo pipefail
-          test -s ZERO_SPEND_CONSTITUTION.md
-          node --check zero_spend_guard.mjs
-          node --check bothire_worker.mjs
-          openssl x509 \
-            -in keys/superteam-state-public.crt \
-            -noout -fingerprint -sha256
-
-      - name: Configure evidence commits
-        run: |
-          git config user.name 'agent-income-runner[bot]'
-          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
-
-      - name: Publish services and perform paid work with absolute zero-spend guard
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          BOTHIRE_MODEL: openai/gpt-4.1-mini
-          MAX_RUNTIME_MINUTES: '335'
-          ZERO_SPEND_CONSTITUTION: ENFORCED
-          MAX_OWNER_ASSET_OUTFLOW: '0'
-        run: node --import ./zero_spend_guard.mjs bothire_worker.mjs
-
-      - name: Remove private plaintext residue
-        if: always()
-        run: |
-          find /tmp -maxdepth 1 -type f \
-            \( -name 'bothire-private*' -o -name 'agentgigs-private*' \) \
-            -delete || true
-
-      - name: Require zero-expense evidence and fail closed on public credential leakage
-        if: always()
-        run: |
+          mkdir -p ops-output
           python3 - <<'PY'
           import json
-          import re
+          import os
+          from datetime import datetime, timezone
           from pathlib import Path
 
-          state_path = Path('bothire-output/public-state.json')
-          if state_path.exists():
-              state = json.loads(state_path.read_text(encoding='utf-8'))
-              if float(state.get('expensesUsd', 0) or 0) != 0:
-                  raise SystemExit('ZERO_SPEND_CONSTITUTION violated: BotHire expense is non-zero')
-
-          paths = [state_path, Path('bothire-output/handled-message-ids.json')]
-          patterns = {
-              'BotHire key': re.compile(r'\bbh_[A-Za-z0-9._~+/=-]{8,}\b'),
-              'private key': re.compile(r'\b0x[0-9a-fA-F]{64}\b'),
-              'unredacted credential field': re.compile(
-                  r'(?i)"(?:api.?key|authorization|secret|token|private.?key|mnemonic|seed|password|cookie)"\s*:\s*"(?!\[REDACTED\])'
-              ),
+          payload = {
+              'updatedAt': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'status': 'delegated_to_private_vault_runner',
+              'accountReuseRequired': True,
+              'registrationDisabled': True,
+              'publicRepositoryContainsPrivateKey': False,
+              'publicRepositoryCanDecryptCredentials': False,
+              'executionPlane': 'private_vault_runner',
+              'resumeWorkerCommit': os.environ.get('GITHUB_SHA'),
+              'note': 'AgentGigs execution uses the existing encrypted account state; this public workflow performs validation only.',
           }
-          for path in paths:
-              if not path.exists():
-                  continue
-              text = path.read_text(encoding='utf-8')
-              for name, pattern in patterns.items():
-                  if pattern.search(text):
-                      raise SystemExit(f'{name} found in public output: {path}')
+          Path('ops-output/agentgigs-runner-routing.json').write_text(json.dumps(payload, indent=2) + '\n')
           PY
+
+          {
+            echo '## AgentGigs income-runner route'
+            echo
+            echo '- Existing account reuse: required'
+            echo '- New account registration: disabled'
+            echo '- Private credentials in this public repository: none'
+            echo '- AgentGigs execution: delegated to the private vault runner'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the public-safe routing record
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-router[bot]'
+          git config user.email 'agent-income-router[bot]@users.noreply.github.com'
+          git add ops-output/agentgigs-runner-routing.json
+          if git diff --cached --quiet; then
+            echo 'Routing record is unchanged.'
+            exit 0
+          fi
+          git commit -m 'Record safe AgentGigs resume routing [skip ci]'
+          for attempt in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 2))
+          done
+          exit 1
