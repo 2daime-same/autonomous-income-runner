@@ -1,7 +1,7 @@
 {
   "execution_ready": [],
   "execution_ready_count": 0,
-  "generated_at": "2026-08-08T13:09:54+00:00",
+  "generated_at": "2026-08-08T16:49:32+00:00",
   "inspected": [
     {
       "capability_matches": [
@@ -15,7 +15,7 @@
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 75.39,
+      "hours_left": 71.73,
       "net_reward_usdc": 18.5,
       "reward_usdc": 20.0,
       "soft_risks": [
@@ -38,7 +38,7 @@
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 18.67,
+      "hours_left": 15.01,
       "net_reward_usdc": 18.5,
       "reward_usdc": 20.0,
       "soft_risks": [
@@ -56,16 +56,17 @@
       "execution_exclusions": [
         "authenticated_submission_client_unavailable",
         "eip191_signer_unavailable",
+        "high_competition_at_least_10_submissions",
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 334.81,
+      "hours_left": 331.15,
       "net_reward_usdc": 4.1625,
       "reward_usdc": 4.5,
       "soft_risks": [
         "external_code_or_file"
       ],
-      "submission_count": 7,
+      "submission_count": 12,
       "task_id": "0x8e416ba0f3e473d2dddc7f7afc03ca35ab12b95972818808e9eff0d1e98e31fb",
       "task_url": "https://taskmarket.dev/dashboard/tasks/0x8e416ba0f3e473d2dddc7f7afc03ca35ab12b95972818808e9eff0d1e98e31fb",
       "title": "# Earn 0"
