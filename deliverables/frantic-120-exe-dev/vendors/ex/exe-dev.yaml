@@ -1,0 +1,83 @@
+schema_version: sourcey.vendor-authoring/v1alpha1
+entity_id: ent_01kzfs2gb7fg07a83ckvhd8fkz
+slug: exe-dev
+slug_aliases: []
+name: exe.dev
+domains:
+  - value: exe.dev
+    role: primary
+    valid_from: 2026-08-08T04:11:06Z
+category: hosting-infra
+description: Cloud virtual machines with SSH, private HTTPS endpoints, per-VM hostnames, edge authentication, and flat-plan hosting.
+links:
+  site: https://exe.dev
+sources:
+  - source_id: src_5259fca8819180d26f448691c7fa824a21246fb0f93a3f9401601629975098ac
+    url: https://exe.dev/startup
+programs:
+  - program_id: prg_01kzfs2gb8by1kzyxb9baemvdz
+    program_slug: exe-dev-startup-program
+    program_slug_aliases: []
+    title: exe.dev Startup Program
+    summary: exe.dev gives eligible pre-Series-B startups $10,000 in credits for cloud virtual machines, valid for 12 months.
+    source_ids:
+      - src_5259fca8819180d26f448691c7fa824a21246fb0f93a3f9401601629975098ac
+offers:
+  - offer_id: off_01kzfs2gb8sdr78y2832yn9p1d
+    program_id: prg_01kzfs2gb8by1kzyxb9baemvdz
+    offer_slug: ten-thousand-dollar-startup-credits
+    offer_slug_aliases: []
+    title: $10,000 in exe.dev startup credits
+    summary: Eligible startups receive $10,000 in exe.dev credits, valid for 12 months, for isolated virtual machines with SSH and private HTTPS endpoints.
+    lifecycle:
+      status: active
+      effective_from: 2026-08-08T04:11:06Z
+    economics:
+      benefits:
+        - benefit_id: startup_credits
+          description: $10,000 in exe.dev credits valid for 12 months
+          kind: credit
+          value:
+            kind: exact
+            amount:
+              currency: USD
+              minor_units: 1000000
+          duration:
+            kind: exact
+            value: P12M
+      consideration:
+        kind: none
+    eligibility:
+      rule:
+        kind: all
+        rules:
+          - criterion_id: pre_series_b
+            kind: manual
+            statement: Applicant is a pre-Series-B startup
+            reason: external-verification
+          - criterion_id: company_age
+            fact: company.age_months
+            kind: predicate
+            operator: lt
+            statement: Company is less than five years old
+            value:
+              type: number
+              value: 60
+          - criterion_id: prior_credits
+            kind: manual
+            statement: Company has not received exe.dev startup credits before
+            reason: external-verification
+          - criterion_id: vendor_review
+            kind: manual
+            statement: exe.dev approves the application after manual review
+            reason: vendor-discretion
+    roles:
+      terms_authority_entity_id: ent_01kzfs2gb7fg07a83ckvhd8fkz
+      access_operator_entity_id: ent_01kzfs2gb7fg07a83ckvhd8fkz
+    access:
+      availability: public
+      method: form
+      url: https://exe.dev/startup
+    terms_url: https://exe.dev/startup
+    source_ids:
+      - src_5259fca8819180d26f448691c7fa824a21246fb0f93a3f9401601629975098ac
