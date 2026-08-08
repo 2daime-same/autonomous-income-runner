@@ -425,6 +425,17 @@
     },
     {
       "flags": [
+        "an open competing pull request already exists",
+        "issue is already assigned",
+        "reward is unusually high for the first-income target"
+      ],
+      "issue_number": 52328,
+      "repo": "tenstorrent/tt-metal",
+      "title": "[Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that are multiples of 16",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52328"
+    },
+    {
+      "flags": [
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
@@ -512,18 +523,6 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ Crypto ] Fix MultiSigWallet confirmation race condition during execution callback",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/916"
-    },
-    {
-      "flags": [
-        "existing reward links indicate the task may already be claimed",
-        "known synthetic or adversarial bounty repository",
-        "more than two competing attempt users",
-        "requests hidden prompts, internal instructions, or session metadata"
-      ],
-      "issue_number": 917,
-      "repo": "UnsafeLabs/Bounty-Hunters",
-      "title": "[ Crypto ] Fix integer overflow in TokenVesting calculation for large allocations",
-      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/917"
     },
     {
       "flags": [
@@ -672,28 +671,6 @@
     },
     {
       "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target",
-        "unrecognized platform on a low-reputation personal repository"
-      ],
-      "issue_number": 1986,
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "title": "[moltbook] engagement-ledger",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
-    },
-    {
-      "flags": [
-        "bot-authored issue without recognized platform evidence",
-        "no direct reward evidence"
-      ],
-      "issue_number": 5064,
-      "repo": "devpool-directory/devpool-directory",
-      "title": "Nomic Embeddings Model for +10% Accuracy",
-      "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
-    },
-    {
-      "flags": [
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
       ],
@@ -782,11 +759,37 @@
       "repo": "numfocus/small-development-grant-proposals",
       "title": "Reimplementation of static plotting in GeoPandas",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
+    },
+    {
+      "flags": [
+        "issue is already assigned",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1232,
+      "repo": "qianyi-sun/loom",
+      "title": "[P1][BEHAVIOR/Acceptance] Prove the fixed-candidate two-GPU pipeline and approval-gated private publish",
+      "url": "https://github.com/qianyi-sun/loom/issues/1232"
+    },
+    {
+      "flags": [
+        "issue is already assigned",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository",
+        "unrecognized platform on a repository younger than 90 days"
+      ],
+      "issue_number": 1231,
+      "repo": "qianyi-sun/loom",
+      "title": "[P1][BEHAVIOR/Recipe] Ship behavior-recovery@1, immutable images, and the fixed Stage DAG",
+      "url": "https://github.com/qianyi-sun/loom/issues/1231"
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-08T02:23:33+00:00",
+  "generated_at": "2026-08-08T07:14:50+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-08T02:23:33+00:00"
+  "source_generated_at": "2026-08-08T07:14:50+00:00"
 }
