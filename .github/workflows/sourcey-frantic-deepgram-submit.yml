@@ -1,0 +1,166 @@
+name: Submit validated Deepgram record for Frantic bounty
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Validate Frantic Deepgram candidate']
+    types: [completed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sourcey-frantic-deepgram-submit
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      EXTERNAL_GH_PAT_1: ${{ secrets.GH_PAT }}
+      EXTERNAL_GH_PAT_2: ${{ secrets.GITHUB_PAT }}
+      EXTERNAL_GH_PAT_3: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      EXTERNAL_GH_PAT_4: ${{ secrets.REPO_PAT }}
+      EXTERNAL_GH_PAT_5: ${{ secrets.PAT }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select an existing external GitHub credential without exposing it
+        id: credential
+        shell: bash
+        run: |
+          set -euo pipefail
+          token=''
+          for candidate in \
+            "$EXTERNAL_GH_PAT_1" "$EXTERNAL_GH_PAT_2" \
+            "$EXTERNAL_GH_PAT_3" "$EXTERNAL_GH_PAT_4" "$EXTERNAL_GH_PAT_5"; do
+            if [[ -n "$candidate" ]]; then token="$candidate"; break; fi
+          done
+          if [[ -z "$token" ]]; then
+            echo 'available=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "::add-mask::$token"
+          echo "EXTERNAL_GH_TOKEN=$token" >> "$GITHUB_ENV"
+          echo 'available=true' >> "$GITHUB_OUTPUT"
+
+      - name: Submit one validated Deepgram record
+        if: steps.credential.outputs.available == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ env.EXTERNAL_GH_TOKEN }}
+        run: |
+          set -euo pipefail
+          result="$RUNNER_TEMP/deepgram-result.json"
+          owner='2daime-same'
+          upstream='sourcey/startup-credits'
+          fork="$owner/startup-credits"
+          branch='frantic-120-deepgram'
+          vendor='vendors/de/deepgram.yaml'
+          source_file='deliverables/frantic-120-deepgram/vendors/de/deepgram.yaml'
+          issue_body='deliverables/frantic-120-deepgram/MISSING_RECORD_ISSUE.md'
+          pr_body='deliverables/frantic-120-deepgram/PR_BODY.md'
+
+          login="$(gh api user --jq .login)"
+          if [[ "$login" != "$owner" ]]; then
+            jq -n --arg stage wrong_login --arg login "$login" \
+              '{ok:false,stage:$stage,login:$login,spendUsd:0}' > "$result"
+            exit 0
+          fi
+          if gh api "repos/$upstream/contents/$vendor" >/dev/null 2>&1; then
+            jq -n --arg stage canonical_already_exists \
+              '{ok:false,stage:$stage,spendUsd:0}' > "$result"
+            exit 0
+          fi
+          existing_pr="$(gh pr list -R "$upstream" --state all \
+            --search 'Deepgram in:title,body author:2daime-same' --limit 20 \
+            --json url,state --jq '.[0] // empty')"
+          if [[ -n "$existing_pr" ]]; then
+            jq -n --arg stage existing_pr --argjson pr "$existing_pr" \
+              '{ok:true,stage:$stage,pr:$pr,spendUsd:0}' > "$result"
+            exit 0
+          fi
+
+          issue_url="$(gh issue list -R "$upstream" --state open \
+            --search 'Deepgram in:title,body' --limit 20 --json url \
+            --jq '.[0].url // empty')"
+          if [[ -z "$issue_url" ]]; then
+            issue_url="$(gh issue create -R "$upstream" \
+              --title 'Missing: Deepgram' --body-file "$issue_body")"
+          fi
+
+          if ! gh repo view "$fork" >/dev/null 2>&1; then
+            gh api --method POST "repos/$upstream/forks" >/dev/null
+            for attempt in $(seq 1 30); do
+              if gh repo view "$fork" >/dev/null 2>&1; then break; fi
+              sleep 2
+            done
+          fi
+          test "$(gh repo view "$fork" --json isFork --jq .isFork)" = true
+
+          work="$RUNNER_TEMP/startup-credits"
+          git clone --quiet "https://github.com/$fork.git" "$work"
+          git -C "$work" remote add upstream "https://github.com/$upstream.git" 2>/dev/null || true
+          git -C "$work" fetch --quiet upstream main
+          git -C "$work" checkout -B "$branch" upstream/main
+          mkdir -p "$work/vendors/de"
+          cp "$source_file" "$work/$vendor"
+          git -C "$work" config user.name '二代目サメ'
+          git -C "$work" config user.email 'nexaworks.jp@gmail.com'
+          git -C "$work" add "$vendor"
+          if ! git -C "$work" diff --cached --quiet; then
+            git -C "$work" commit --quiet -s -m 'Add Deepgram startup credits'
+          fi
+          gh auth setup-git >/dev/null 2>&1
+          git -C "$work" push --quiet --force-with-lease origin "$branch"
+          pr_url="$(gh pr create -R "$upstream" --head "$owner:$branch" \
+            --base main --title 'Add Deepgram startup credits' --body-file "$pr_body")"
+          jq -n --arg stage upstream_pr_opened --arg login "$login" \
+            --arg fork "$fork" --arg issueUrl "$issue_url" --arg prUrl "$pr_url" \
+            '{ok:true,stage:$stage,login:$login,fork:$fork,issueUrl:$issueUrl,prUrl:$prUrl,spendUsd:0}' \
+            > "$result"
+
+      - name: Write public-safe result
+        if: always()
+        shell: bash
+        env:
+          CREDENTIAL_AVAILABLE: ${{ steps.credential.outputs.available }}
+        run: |
+          set -euo pipefail
+          mkdir -p ops-output
+          source_result="$RUNNER_TEMP/deepgram-result.json"
+          if [[ -s "$source_result" ]]; then
+            cp "$source_result" ops-output/sourcey-frantic-deepgram-submit.json
+          elif [[ "$CREDENTIAL_AVAILABLE" != true ]]; then
+            jq -n --arg stage no_existing_external_github_token \
+              '{ok:false,stage:$stage,spendUsd:0,secretExposed:false}' \
+              > ops-output/sourcey-frantic-deepgram-submit.json
+          else
+            jq -n --arg stage submission_failed_before_result \
+              '{ok:false,stage:$stage,spendUsd:0,secretExposed:false}' \
+              > ops-output/sourcey-frantic-deepgram-submit.json
+          fi
+          test "$(jq -r '.spendUsd // 0' ops-output/sourcey-frantic-deepgram-submit.json)" = 0
+
+      - name: Commit public-safe result
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name 'sourcey-submit[bot]'
+          git config user.email 'sourcey-submit[bot]@users.noreply.github.com'
+          git add ops-output/sourcey-frantic-deepgram-submit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Record Deepgram Sourcey submission result [skip ci]'
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 2))
+          done
+          exit 1
