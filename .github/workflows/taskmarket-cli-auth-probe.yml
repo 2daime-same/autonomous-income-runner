@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install current official CLI without running lifecycle scripts
+      - name: Install current official CLI without lifecycle scripts
         shell: bash
         run: |
           set -euo pipefail
@@ -61,7 +61,7 @@ jobs:
           echo $? > /tmp/taskmarket-legal-status.code
           exit 0
 
-      - name: Inspect installed first-party package for authentication and legal contracts
+      - name: Inspect first-party package for authentication and legal contracts
         shell: bash
         run: |
           set -euo pipefail
@@ -71,10 +71,10 @@ jobs:
           from pathlib import Path
 
           root = Path('node_modules/@lucid-agents/taskmarket')
-          patterns = re.compile(
-              r'(I AGREE|LEGAL_ACCEPTANCE_REQUIRED|legal.{0,30}(?:status|accept|bundle|digest|version)|'
+          pattern = re.compile(
+              r'(I AGREE|LEGAL_ACCEPTANCE_REQUIRED|legal.{0,40}(?:status|accept|bundle|digest|version)|'
               r'/api/(?:devices|legal|tasks|submissions|identity)|apiToken|deviceId|deviceEncryptionKey|'
-              r'Authorization|taskmarket:submit:|acceptance statement)',
+              r'x-taskmarket-api-token|Authorization|taskmarket:submit:|acceptance statement)',
               re.I,
           )
           rows = []
@@ -83,25 +83,21 @@ jobs:
                   continue
               if path.suffix.lower() not in {'.js', '.mjs', '.cjs', '.ts', '.json', '.md'}:
                   continue
-              try:
-                  text = path.read_text(encoding='utf-8', errors='replace')
-              except OSError:
-                  continue
-              for index, line in enumerate(text.splitlines(), 1):
-                  if not patterns.search(line):
-                      continue
-                  clean = re.sub(r'\beyJ[A-Za-z0-9._-]{20,}\b', '[REDACTED_JWT]', line)
-                  clean = re.sub(r'\b(?:sk|pk|api|token|secret)_[A-Za-z0-9._-]{16,}\b', '[REDACTED_TOKEN]', clean, flags=re.I)
-                  rows.append({
-                      'path': str(path.relative_to(root)),
-                      'line': index,
-                      'excerpt': clean.strip()[:1200],
-                  })
+              text = path.read_text(encoding='utf-8', errors='replace')
+              for number, line in enumerate(text.splitlines(), 1):
+                  if pattern.search(line):
+                      rows.append({
+                          'path': str(path.relative_to(root)),
+                          'line': number,
+                          'excerpt': line.strip()[:1200],
+                      })
                   if len(rows) >= 240:
                       break
               if len(rows) >= 240:
                   break
-          Path('/tmp/taskmarket-package-contracts.json').write_text(json.dumps(rows, indent=2) + '\n')
+          Path('/tmp/taskmarket-package-contracts.json').write_text(
+              json.dumps(rows, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
           PY
 
       - name: Build credential-free public report
@@ -109,31 +105,45 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import hashlib
           import json
           import re
           from datetime import datetime, timezone
           from pathlib import Path
 
-          def read(path, limit=30000):
+          def raw(path, limit=30000):
               p = Path(path)
-              if not p.exists():
-                  return ''
-              text = p.read_text(encoding='utf-8', errors='replace')[:limit]
-              text = re.sub(r'\beyJ[A-Za-z0-9._-]{20,}\b', '[REDACTED_JWT]', text)
-              text = re.sub(r'\b(?:gh[pousr]|github_pat|sk|pk|api|token|secret)_[A-Za-z0-9._-]{16,}\b', '[REDACTED_TOKEN]', text, flags=re.I)
-              text = re.sub(r'(?i)(authorization|api.?token|device.?encryption.?key)(\s*[:=]\s*)[^\s,;}]+', r'\1\2[REDACTED]', text)
+              return p.read_text(encoding='utf-8', errors='replace')[:limit] if p.exists() else ''
+
+          def scrub_text(text):
+              text = re.sub(r'\beyJ[A-Za-z0-9._-]{20,}\b', '[REDACTED_JWT]', str(text))
+              text = re.sub(
+                  r'\b(?:gh[pousr]|github_pat|sk|pk|api|token|secret)_[A-Za-z0-9._-]{16,}\b',
+                  '[REDACTED_TOKEN]', text, flags=re.I,
+              )
+              text = re.sub(
+                  r'(?i)((?:authorization|api.?token|device.?encryption.?key)\s*[:=]\s*)[^\s,;}]+',
+                  r'\1[REDACTED]', text,
+              )
               return text
 
-          npm_view = json.loads(read('/tmp/taskmarket-npm-view.json') or '{}')
-          package = json.loads(read('/tmp/taskmarket-package.json') or '{}')
-          contracts = json.loads(read('/tmp/taskmarket-package-contracts.json') or '[]')
+          def scrub(value):
+              if isinstance(value, str):
+                  return scrub_text(value)
+              if isinstance(value, list):
+                  return [scrub(item) for item in value]
+              if isinstance(value, dict):
+                  return {str(key): scrub(item) for key, item in value.items()}
+              return value
+
+          npm_view = scrub(json.loads(raw('/tmp/taskmarket-npm-view.json') or '{}'))
+          package = scrub(json.loads(raw('/tmp/taskmarket-package.json') or '{}'))
+          contracts = scrub(json.loads(raw('/tmp/taskmarket-package-contracts.json') or '[]'))
           commands = {}
           for key in ('help', 'legal-help', 'legal-status-json', 'legal-status'):
               commands[key] = {
-                  'exit_code': int((read(f'/tmp/taskmarket-{key}.code', 20) or '999').strip()),
-                  'stdout': read(f'/tmp/taskmarket-{key}.out'),
-                  'stderr': read(f'/tmp/taskmarket-{key}.err'),
+                  'exit_code': int((raw(f'/tmp/taskmarket-{key}.code', 20) or '999').strip()),
+                  'stdout': scrub_text(raw(f'/tmp/taskmarket-{key}.out')),
+                  'stderr': scrub_text(raw(f'/tmp/taskmarket-{key}.err')),
               }
           report = {
               'schema_version': 'taskmarket-cli-auth-probe-v1',
@@ -169,8 +179,7 @@ jobs:
           import json
           import re
           from pathlib import Path
-          path = Path('taskmarket-output/cli-auth-probe.json')
-          text = path.read_text(encoding='utf-8')
+          text = Path('taskmarket-output/cli-auth-probe.json').read_text(encoding='utf-8')
           value = json.loads(text)
           if value.get('network_writes_performed'):
               raise SystemExit('unexpected network-write evidence')
