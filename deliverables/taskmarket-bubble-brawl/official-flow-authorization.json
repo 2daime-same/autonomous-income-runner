@@ -1,0 +1,38 @@
+{
+  "schema_version": "taskmarket-bubble-brawl-official-flow-authorization-v1",
+  "attempt_id": "bubble-brawl-official-20260808-01",
+  "authorized": true,
+  "authorization_consumed": false,
+  "authorization_cancelled": false,
+  "authorization_source": "chat-user-explicit-autonomous-income-mandate",
+  "authorization_note": "Authorized for exactly one zero-spend submission of the validated Bubble Brawl index.html using the public upload-key flow implemented by @lucid-agents/taskmarket@1.7.3. This does not authorize legal acceptance, device/account registration, identity registration, email registration, KYC, wallet funding, x402 payment authorization, fees, deposits, bonds, gas, token transfers, purchases, subscriptions, or withdrawal-address changes.",
+  "authorized_at": "2026-08-08T10:28:00Z",
+  "expires_at": "2026-08-09T20:30:00Z",
+  "zero_spend_required": true,
+  "retry_payment_on_402": false,
+  "retry_authorized": false,
+  "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+  "expected_title_terms": [
+    "bubble brawl",
+    "trap",
+    "chain"
+  ],
+  "minimum_reward_usdc": 10,
+  "maximum_reported_submissions": 170,
+  "maximum_external_writes": 3,
+  "expected_artifact_sha256": "6421b2627a2f3070980509e410c7c0ed4bea6e1c9a395a2b7ce59f0de5978e69",
+  "expected_cli_package": "@lucid-agents/taskmarket@1.7.3",
+  "expected_flow": [
+    "POST request-upload-url",
+    "PUT validated index.html",
+    "POST submissions/from-keys"
+  ],
+  "artifacts": [
+    {
+      "path": "deliverables/taskmarket-bubble-brawl/index.html",
+      "file_name": "index.html",
+      "mime_type": "text/html",
+      "role": "final"
+    }
+  ]
+}
