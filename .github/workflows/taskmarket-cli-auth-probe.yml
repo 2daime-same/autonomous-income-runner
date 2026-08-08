@@ -1,0 +1,208 @@
+name: Probe official Taskmarket CLI authentication and legal gates
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/taskmarket-cli-auth-probe.yml
+  schedule:
+    - cron: '19 1,7,13,19 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-cli-auth-probe
+  cancel-in-progress: true
+
+jobs:
+  probe-read-only:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install current official CLI without running lifecycle scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm view @lucid-agents/taskmarket version dist.tarball dist.integrity --json > /tmp/taskmarket-npm-view.json
+          npm install --no-save --ignore-scripts --no-audit --no-fund @lucid-agents/taskmarket@latest
+          node -e "const p=require('./node_modules/@lucid-agents/taskmarket/package.json'); console.log(JSON.stringify({name:p.name,version:p.version,bin:p.bin},null,2))" > /tmp/taskmarket-package.json
+
+      - name: Run help and legal-status commands with an empty isolated home
+        shell: bash
+        run: |
+          set +e
+          export HOME="$RUNNER_TEMP/taskmarket-empty-home"
+          export XDG_CONFIG_HOME="$HOME/.config"
+          mkdir -p "$HOME" "$XDG_CONFIG_HOME"
+          CLI="./node_modules/.bin/taskmarket"
+          "$CLI" --help > /tmp/taskmarket-help.out 2> /tmp/taskmarket-help.err
+          echo $? > /tmp/taskmarket-help.code
+          "$CLI" legal --help > /tmp/taskmarket-legal-help.out 2> /tmp/taskmarket-legal-help.err
+          echo $? > /tmp/taskmarket-legal-help.code
+          "$CLI" legal status --json > /tmp/taskmarket-legal-status-json.out 2> /tmp/taskmarket-legal-status-json.err
+          echo $? > /tmp/taskmarket-legal-status-json.code
+          "$CLI" legal status > /tmp/taskmarket-legal-status.out 2> /tmp/taskmarket-legal-status.err
+          echo $? > /tmp/taskmarket-legal-status.code
+          exit 0
+
+      - name: Inspect installed first-party package for authentication and legal contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          root = Path('node_modules/@lucid-agents/taskmarket')
+          patterns = re.compile(
+              r'(I AGREE|LEGAL_ACCEPTANCE_REQUIRED|legal.{0,30}(?:status|accept|bundle|digest|version)|'
+              r'/api/(?:devices|legal|tasks|submissions|identity)|apiToken|deviceId|deviceEncryptionKey|'
+              r'Authorization|taskmarket:submit:|acceptance statement)',
+              re.I,
+          )
+          rows = []
+          for path in sorted(root.rglob('*')):
+              if not path.is_file() or path.stat().st_size > 8_000_000:
+                  continue
+              if path.suffix.lower() not in {'.js', '.mjs', '.cjs', '.ts', '.json', '.md'}:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8', errors='replace')
+              except OSError:
+                  continue
+              for index, line in enumerate(text.splitlines(), 1):
+                  if not patterns.search(line):
+                      continue
+                  clean = re.sub(r'\beyJ[A-Za-z0-9._-]{20,}\b', '[REDACTED_JWT]', line)
+                  clean = re.sub(r'\b(?:sk|pk|api|token|secret)_[A-Za-z0-9._-]{16,}\b', '[REDACTED_TOKEN]', clean, flags=re.I)
+                  rows.append({
+                      'path': str(path.relative_to(root)),
+                      'line': index,
+                      'excerpt': clean.strip()[:1200],
+                  })
+                  if len(rows) >= 240:
+                      break
+              if len(rows) >= 240:
+                  break
+          Path('/tmp/taskmarket-package-contracts.json').write_text(json.dumps(rows, indent=2) + '\n')
+          PY
+
+      - name: Build credential-free public report
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import re
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          def read(path, limit=30000):
+              p = Path(path)
+              if not p.exists():
+                  return ''
+              text = p.read_text(encoding='utf-8', errors='replace')[:limit]
+              text = re.sub(r'\beyJ[A-Za-z0-9._-]{20,}\b', '[REDACTED_JWT]', text)
+              text = re.sub(r'\b(?:gh[pousr]|github_pat|sk|pk|api|token|secret)_[A-Za-z0-9._-]{16,}\b', '[REDACTED_TOKEN]', text, flags=re.I)
+              text = re.sub(r'(?i)(authorization|api.?token|device.?encryption.?key)(\s*[:=]\s*)[^\s,;}]+', r'\1\2[REDACTED]', text)
+              return text
+
+          npm_view = json.loads(read('/tmp/taskmarket-npm-view.json') or '{}')
+          package = json.loads(read('/tmp/taskmarket-package.json') or '{}')
+          contracts = json.loads(read('/tmp/taskmarket-package-contracts.json') or '[]')
+          commands = {}
+          for key in ('help', 'legal-help', 'legal-status-json', 'legal-status'):
+              commands[key] = {
+                  'exit_code': int((read(f'/tmp/taskmarket-{key}.code', 20) or '999').strip()),
+                  'stdout': read(f'/tmp/taskmarket-{key}.out'),
+                  'stderr': read(f'/tmp/taskmarket-{key}.err'),
+              }
+          report = {
+              'schema_version': 'taskmarket-cli-auth-probe-v1',
+              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+              'package': package,
+              'npm_distribution': npm_view,
+              'commands': commands,
+              'package_contract_matches': contracts,
+              'network_writes_performed': [],
+              'taskmarket_init_performed': False,
+              'device_registration_performed': False,
+              'legal_acceptance_performed': False,
+              'wallet_created': False,
+              'expenses_usdc': 0,
+              'verified_income_usdc': 0,
+          }
+          output = Path('taskmarket-output/cli-auth-probe.json')
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          print(json.dumps({
+              'package_version': package.get('version'),
+              'legal_status_exit': commands['legal-status']['exit_code'],
+              'contract_matches': len(contracts),
+          }))
+          PY
+
+      - name: Reject leaked credentials and false side-effect evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s taskmarket-output/cli-auth-probe.json
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+          path = Path('taskmarket-output/cli-auth-probe.json')
+          text = path.read_text(encoding='utf-8')
+          value = json.loads(text)
+          if value.get('network_writes_performed'):
+              raise SystemExit('unexpected network-write evidence')
+          if value.get('taskmarket_init_performed') or value.get('legal_acceptance_performed') or value.get('wallet_created'):
+              raise SystemExit('probe incorrectly claims a mutating action')
+          for pattern in (
+              r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
+              r'\bgh[pousr]_[A-Za-z0-9_]{20,}\b',
+              r'github_pat_[A-Za-z0-9_]{20,}',
+              r'\beyJ[A-Za-z0-9._-]{20,}\b',
+          ):
+              if re.search(pattern, text):
+                  raise SystemExit(f'credential-like material detected: {pattern}')
+          PY
+
+      - name: Commit current public probe evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/cli-auth-probe.json
+          if git diff --cached --quiet; then
+            echo 'CLI probe is unchanged.'
+            exit 0
+          fi
+          git commit -m 'Refresh Taskmarket CLI auth and legal probe [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
