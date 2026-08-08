@@ -1,0 +1,54 @@
+{
+  "artifact_evidence": {
+    "browser_smoke": "passed",
+    "file_name": "index.html",
+    "keccak256": "0x96b7fe658ca0fd55bf544100c859ec1b447c26ab6fef803a733530da981b334b",
+    "mime_type": "text/html",
+    "path": "deliverables/taskmarket-signal-panic/index.html",
+    "role": "final",
+    "runtime_external_assets": 0,
+    "sha256": "b833263464e79549f38085c0c5c42e8e0ec6a19c739042741ca99892a98a4080",
+    "size_bytes": 682664
+  },
+  "attempt_id": "signal-panic-official-20260808-02",
+  "encrypted_wallet": {
+    "certificate": "crypto/superteam-state-public.crt",
+    "path": "deliverables/taskmarket-signal-panic/official-flow-state/private-wallet.cms.b64",
+    "sha256": "31312dbc5ad46115dedcb5656d41c09b369844797d677e643fdd06d07c1c84ba"
+  },
+  "expenses_usdc": 0,
+  "external_writes_performed": [],
+  "finished_at": null,
+  "flow_contract": {
+    "cli_package": "@lucid-agents/taskmarket@1.7.3",
+    "device_registration_required_by_api_flow": false,
+    "final_submit_path": "/api/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6/submissions/from-keys",
+    "legal_acceptance_required": false,
+    "payment_retry_on_http_402": false,
+    "request_upload_path": "/api/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6/submissions/request-upload-url",
+    "upload_method": "PUT"
+  },
+  "payment_signature_created": false,
+  "prepared_at": "2026-08-08T10:12:05Z",
+  "private_key_published": false,
+  "public_signature_exposed": false,
+  "schema_version": "taskmarket-signal-panic-official-attempt-v1",
+  "status": "in_progress",
+  "task": {
+    "expiry_time": "2026-08-09T20:57:31+00:00",
+    "mode": "bounty",
+    "net_reward_usdc": 9.25,
+    "phase": "active",
+    "platform_fee_bps": 750,
+    "reported_submission_count": 71,
+    "reward_usdc": 10.0,
+    "stake_required": false,
+    "status": "open",
+    "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+    "title": "Signal Panic",
+    "worker_submit_requires_payment": false
+  },
+  "verified_income_usdc": 0,
+  "verified_receivable_usdc": 0,
+  "worker_address": "0x4822cBfF31844261F74a6Eb2B9A118Cc208dCB84"
+}
