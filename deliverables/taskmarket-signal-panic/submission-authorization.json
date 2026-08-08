@@ -1,12 +1,14 @@
 {
   "schema_version": "taskmarket-signal-panic-submission-authorization-v1",
   "attempt_id": "signal-panic-20260808-01",
-  "authorized": true,
-  "authorization_consumed": false,
+  "authorized": false,
+  "authorization_consumed": true,
   "authorization_cancelled": false,
   "authorization_source": "chat-user-explicit-autonomous-income-mandate",
-  "authorization_note": "Authorized for exactly one zero-spend public submission of the validated Signal Panic index.html to the identified Taskmarket bounty. This does not authorize terms acceptance, KYC, wallet funding, fees, deposits, bonds, gas, token transfers, purchases, subscriptions, or any other owner-asset outflow.",
+  "authorization_note": "This authorization covered exactly one zero-spend public submission of the validated Signal Panic index.html. The one permitted POST was attempted and returned HTTP 401. It never authorized terms acceptance, KYC, wallet funding, fees, deposits, bonds, gas, token transfers, purchases, subscriptions, or any other owner-asset outflow.",
   "authorized_at": "2026-08-08T09:30:00Z",
+  "consumed_at": "2026-08-08T09:34:42Z",
+  "consumption_result": "http_401_rejected_no_submission_id",
   "expires_at": "2026-08-09T18:00:00Z",
   "zero_spend_required": true,
   "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
@@ -20,6 +22,7 @@
   "maximum_reported_submissions": 150,
   "expected_artifact_sha256": "b833263464e79549f38085c0c5c42e8e0ec6a19c739042741ca99892a98a4080",
   "submission_purpose": "Submit the validated, self-contained Signal Panic browser game to the specified Taskmarket bounty.",
+  "retry_authorized": false,
   "artifacts": [
     {
       "path": "deliverables/taskmarket-signal-panic/index.html",
