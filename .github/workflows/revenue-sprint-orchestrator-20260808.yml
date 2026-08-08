@@ -1,0 +1,213 @@
+name: Revenue sprint orchestrator — execute and verify
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/revenue-sprint-orchestrator-20260808.yml
+
+permissions:
+  actions: write
+  contents: write
+
+concurrency:
+  group: revenue-sprint-orchestrator-20260808
+  cancel-in-progress: false
+
+jobs:
+  execute-and-record:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dispatch existing-account revenue workers idempotently
+        id: dispatch
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test -s ZERO_SPEND_CONSTITUTION.md
+          mkdir -p ops-output
+
+          targets=(
+            bothire-worker.yml
+            agentjob-paid-worker-v2.yml
+            botbounty-worker.yml
+            taskforce-worker.yml
+            clawlancer-fresh-secure-earn.yml
+            agentmart-worker.yml
+          )
+
+          now_epoch="$(date +%s)"
+          dispatched=0
+          skipped_recent=0
+          unavailable=0
+          printf '[]' > /tmp/dispatches.json
+
+          for workflow in "${targets[@]}"; do
+            path=".github/workflows/${workflow}"
+            if [[ ! -s "$path" ]] || ! grep -Eq 'workflow_dispatch:' "$path"; then
+              unavailable=$((unavailable + 1))
+              continue
+            fi
+
+            latest="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/runs?per_page=1" 2>/dev/null || printf '{"workflow_runs":[]}')"
+            latest_created="$(jq -r '.workflow_runs[0].created_at // empty' <<<"$latest")"
+            latest_status="$(jq -r '.workflow_runs[0].status // empty' <<<"$latest")"
+            latest_epoch=0
+            if [[ -n "$latest_created" ]]; then
+              latest_epoch="$(date -d "$latest_created" +%s 2>/dev/null || printf 0)"
+            fi
+
+            if (( latest_epoch > now_epoch - 600 )) && [[ "$latest_status" != completed ]]; then
+              skipped_recent=$((skipped_recent + 1))
+              continue
+            fi
+
+            if gh api --method POST \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/dispatches" \
+              -f ref=main; then
+              dispatched=$((dispatched + 1))
+            else
+              unavailable=$((unavailable + 1))
+            fi
+          done
+
+          jq -n \
+            --argjson dispatched "$dispatched" \
+            --argjson skippedRecent "$skipped_recent" \
+            --argjson unavailable "$unavailable" \
+            '{dispatched:$dispatched, skippedRecent:$skippedRecent, unavailable:$unavailable}' \
+            > /tmp/dispatch-summary.json
+
+          cat /tmp/dispatch-summary.json
+
+      - name: Allow workers to reach their first external checkpoint
+        run: sleep 90
+
+      - name: Collect run, state, and zero-spend evidence
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import subprocess
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          targets = [
+              ("BotHire", "bothire-worker.yml", "bothire-output/public-state.json"),
+              ("AgentJob v2", "agentjob-paid-worker-v2.yml", "agentjob-v2-output/public-state.json"),
+              ("BotBounty", "botbounty-worker.yml", "botbounty-output/public-state.json"),
+              ("TaskForce", "taskforce-worker.yml", "taskforce-output/public-state.json"),
+              ("ClawLancer secure", "clawlancer-fresh-secure-earn.yml", "clawlancer-fresh-secure-output/public-state.json"),
+              ("AgentMart", "agentmart-worker.yml", "agentmart-output/public-state.json"),
+          ]
+
+          def gh_json(path):
+              proc = subprocess.run(
+                  ["gh", "api", path],
+                  check=False,
+                  text=True,
+                  capture_output=True,
+                  env=os.environ,
+              )
+              if proc.returncode:
+                  return {"error": proc.stderr[-500:]}
+              try:
+                  return json.loads(proc.stdout)
+              except Exception:
+                  return {"error": "non-json response"}
+
+          def read_state(path):
+              p = Path(path)
+              if not p.exists():
+                  return {"exists": False}
+              try:
+                  data = json.loads(p.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  return {"exists": True, "parseError": str(exc)}
+              sensitive = {"token", "secret", "password", "privateKey", "apiKey", "authorization", "cookie", "email"}
+              public = {k: v for k, v in data.items() if k not in sensitive}
+              return {"exists": True, "state": public}
+
+          lanes = []
+          for name, workflow, state_path in targets:
+              runs = gh_json(f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/workflows/{workflow}/runs?per_page=3")
+              compact_runs = []
+              for run in runs.get("workflow_runs", []):
+                  compact_runs.append({
+                      "id": run.get("id"),
+                      "event": run.get("event"),
+                      "status": run.get("status"),
+                      "conclusion": run.get("conclusion"),
+                      "createdAt": run.get("created_at"),
+                      "updatedAt": run.get("updated_at"),
+                      "headSha": run.get("head_sha"),
+                      "htmlUrl": run.get("html_url"),
+                  })
+              lanes.append({
+                  "name": name,
+                  "workflow": workflow,
+                  "recentRuns": compact_runs,
+                  "publicState": read_state(state_path),
+              })
+
+          dispatch = json.loads(Path('/tmp/dispatch-summary.json').read_text())
+          report = {
+              "schemaVersion": "revenue-sprint-evidence-v1",
+              "generatedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              "zeroSpendRequired": True,
+              "ownerAssetOutflowAuthorized": 0,
+              "agentGigsRegistrationDispatched": False,
+              "dispatch": dispatch,
+              "lanes": lanes,
+              "ledgerRule": "Only externally accepted, funded, receivable, balance-increased, or paid evidence counts as revenue.",
+          }
+          Path('ops-output/revenue-sprint-20260808.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
+          PY
+
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path('ops-output/revenue-sprint-20260808.json').read_text())
+          bad = []
+          for lane in report['lanes']:
+              state = lane.get('publicState', {}).get('state', {})
+              for key, value in state.items():
+                  if 'expense' in key.lower() or 'spend' in key.lower() or 'outflow' in key.lower():
+                      try:
+                          if float(value or 0) != 0:
+                              bad.append((lane['name'], key, value))
+                      except (TypeError, ValueError):
+                          pass
+          if bad:
+              raise SystemExit(f'Non-zero expense evidence detected: {bad}')
+          PY
+
+      - name: Commit public-safe execution evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'revenue-sprint[bot]'
+          git config user.email 'revenue-sprint[bot]@users.noreply.github.com'
+          git add ops-output/revenue-sprint-20260808.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Record revenue sprint execution evidence [skip ci]'
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 2))
+          done
+          exit 1
