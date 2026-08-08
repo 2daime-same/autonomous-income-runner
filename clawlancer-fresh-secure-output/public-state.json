@@ -1,24 +1,24 @@
 {
   "agent": {
-    "encrypted_recovery_state_sha256": "efd0fb87ded06fab81fe91a5ea3f8cb85c056341d6f7e4387e97c23b557600dd",
-    "id": "538bfefe-b2c4-4c97-bdb5-9de4ae082dbe",
-    "name": "BoundaryLedger-Fresh-0808104634",
-    "wallet_address": "0xEADF36d8246c14EB66D0341eAe90BfE24BC5265d"
+    "encrypted_recovery_state_sha256": "d273b7ce517cfd9f09347253848502fefbda838cd1b8f4fcc8dc4bf96c4b8a9b",
+    "id": "ca79fad2-0c0a-4228-a3ba-78682fe967e3",
+    "name": "BoundaryLedger-Fresh-0808161231",
+    "wallet_address": "0xc9C96B1b7140f468efE3ED843A4C13BEB98Bc199"
   },
   "claim_attempts": [
     {
       "buyer_hash": "a804255e68da2d07",
       "claim_ok": false,
-      "deliverable_sha256": "24a5529a41a0ae50c05bf28b3e29ecf0fb2f6512ddc94b52c9932a944a2bc042",
+      "deliverable_sha256": "2302e6862976f3c6d4f462b1e8c5c831bb191ce16ebc0ce90d8b4ed22c21a9c7",
       "error": {
         "http_status": 500,
-        "kind": "buyer_escrow_balance_insufficient",
+        "kind": "http_500",
         "method": "POST",
-        "path": "/listings/f7ed34e7-cd6a-497d-b664-f3acfbcf078a/claim"
+        "path": "/listings/3f548b47-f5b8-4786-b1ec-fa46be8c58f2/claim"
       },
-      "listing_id": "f7ed34e7-cd6a-497d-b664-f3acfbcf078a",
+      "listing_id": "3f548b47-f5b8-4786-b1ec-fa46be8c58f2",
       "reward_usdc": 0.01,
-      "title": "Welcome to Clawlancer! Introduce yourself, BoundaryLedger-Fresh-0808104634"
+      "title": "Welcome to Clawlancer! Introduce yourself, BoundaryLedger-Fresh-0808161231"
     },
     {
       "buyer_hash": "a804255e68da2d07",
@@ -26,7 +26,7 @@
       "deliverable_sha256": "8ceb1393c9c1b37d9789ecd88d1058f5fe3379e98c9652582fc98de1cadaf094",
       "error": {
         "http_status": 500,
-        "kind": "buyer_escrow_balance_insufficient",
+        "kind": "buyer_escrow_allowance_insufficient",
         "method": "POST",
         "path": "/listings/f2ca95c8-512d-4228-aa83-97ba148d59e3/claim"
       },
@@ -45,6 +45,20 @@
         "path": "/listings/aec10ccb-76e8-4914-9357-ce97f75335a8/claim"
       },
       "listing_id": "aec10ccb-76e8-4914-9357-ce97f75335a8",
+      "reward_usdc": 0.03,
+      "title": "Build a simple API rate limiter"
+    },
+    {
+      "buyer_hash": "5f8b2c4ff7babebb",
+      "claim_ok": false,
+      "deliverable_sha256": "8ceb1393c9c1b37d9789ecd88d1058f5fe3379e98c9652582fc98de1cadaf094",
+      "error": {
+        "http_status": 500,
+        "kind": "buyer_escrow_balance_insufficient",
+        "method": "POST",
+        "path": "/listings/b7d35de4-1d7b-4f7e-bf00-c418e7b7517b/claim"
+      },
+      "listing_id": "b7d35de4-1d7b-4f7e-bf00-c418e7b7517b",
       "reward_usdc": 0.03,
       "title": "Build a simple API rate limiter"
     },
@@ -150,12 +164,12 @@
   "credentials_recorded_in_plaintext": false,
   "deliveries": [],
   "expenses_usdc": 0,
-  "finished_at": "2026-08-08T10:48:21+00:00",
+  "finished_at": "2026-08-08T16:14:22+00:00",
   "outbound_transfers": 0,
   "products_purchased": 0,
   "schema_version": "clawlancer-fresh-secure-v1",
-  "started_at": "2026-08-08T10:46:34+00:00",
+  "started_at": "2026-08-08T16:12:31+00:00",
   "status": "all_claims_rejected_at_escrow_boundary",
-  "supported_candidate_count": 10,
+  "supported_candidate_count": 11,
   "verified_income_usdc": 0.0
 }
