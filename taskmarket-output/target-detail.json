@@ -1,6 +1,6 @@
 {
   "expenses_usdc": 0,
-  "generated_at": "2026-08-07T13:35:13+00:00",
+  "generated_at": "2026-08-08T02:19:18+00:00",
   "http_status": {
     "submissions": 200,
     "task": 200
@@ -12,7 +12,7 @@
   "schema_version": "taskmarket-target-readonly-v1",
   "signatures_performed": 0,
   "source": "https://api.taskmarket.dev",
-  "submission_count_observed": 13,
+  "submission_count_observed": 14,
   "submissions": [
     {
       "artifact_count": 2,
@@ -390,6 +390,34 @@
         "address_hash": "7689ae60ae0852f0"
       },
       "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "seinfeld.html"
+      ],
+      "id": "3a80368d-9963-4af5-85a6-1e61dac1ef03",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-07T22:13:33.807Z",
+      "worker": {
+        "address": "0xD1394f7ec8c901C63b519c2c9F93CE814F53aB92",
+        "address_hash": "dd0db240805c7af2"
+      },
+      "worker_agent_id": null
     }
   ],
   "task": {
@@ -507,7 +535,7 @@
     "stakeBps": 0,
     "stakeRequired": false,
     "status": "open",
-    "submissionCount": 13,
+    "submissionCount": 14,
     "submissionVisibility": "public",
     "submissionWindowOpen": true,
     "tags": [
