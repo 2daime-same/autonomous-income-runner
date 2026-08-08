@@ -1,0 +1,36 @@
+name: Probe final Taskmarket award status
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskmarket_final_status_probe.py
+      - .github/workflows/taskmarket-final-status-probe.yml
+permissions:
+  contents: write
+jobs:
+  probe:
+    if: github.repository == '2daime-same/autonomous-income-runner'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python taskmarket_final_status_probe.py
+      - run: |
+          set -euo pipefail
+          git config user.name 'final-income-probe[bot]'
+          git config user.email 'final-income-probe[bot]@users.noreply.github.com'
+          git add taskmarket-output/final-status.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Record final Taskmarket award status [skip ci]'
+          for n in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep "$n"
+          done
+          exit 1
