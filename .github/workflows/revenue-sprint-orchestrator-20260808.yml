@@ -211,3 +211,5 @@ jobs:
             sleep $((attempt * 2))
           done
           exit 1
+
+# Final zero-spend revenue sprint trigger: 2026-08-09 JST
