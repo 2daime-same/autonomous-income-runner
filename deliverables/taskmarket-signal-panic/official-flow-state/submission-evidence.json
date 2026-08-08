@@ -12,11 +12,8 @@
   },
   "artifact_key_sha256": "9a13788f6715b717bd43e678e8475ce707cefbc02147426b452f5b653f0318b4",
   "attempt_id": "signal-panic-official-20260808-02",
-  "encrypted_wallet": {
-    "certificate": "crypto/superteam-state-public.crt",
-    "path": "deliverables/taskmarket-signal-panic/official-flow-state/private-wallet.cms.b64",
-    "sha256": "31312dbc5ad46115dedcb5656d41c09b369844797d677e643fdd06d07c1c84ba"
-  },
+  "device_registration_performed": false,
+  "error": null,
   "expenses_usdc": 0,
   "external_writes_performed": [
     {
@@ -45,37 +42,31 @@
     }
   ],
   "finished_at": "2026-08-08T10:12:11Z",
-  "flow_contract": {
-    "cli_package": "@lucid-agents/taskmarket@1.7.3",
-    "device_registration_required_by_api_flow": false,
-    "final_submit_path": "/api/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6/submissions/from-keys",
-    "legal_acceptance_required": false,
-    "payment_retry_on_http_402": false,
-    "request_upload_path": "/api/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6/submissions/request-upload-url",
-    "upload_method": "PUT"
-  },
+  "legal_acceptance_performed": false,
+  "payment_retry_performed": false,
   "payment_signature_created": false,
-  "prepared_at": "2026-08-08T10:12:05Z",
   "private_key_published": false,
-  "public_signature_exposed": false,
+  "public_submission_signature_published": false,
+  "response_evidence": {
+    "final_submit_http_status": 200,
+    "final_submit_response": {
+      "submissionId": "bcf0eea9-28d0-4700-b69c-3b08d9749a66",
+      "success": true
+    },
+    "request_upload_http_status": 200,
+    "request_upload_response": {
+      "artifact_key_sha256": "9a13788f6715b717bd43e678e8475ce707cefbc02147426b452f5b653f0318b4",
+      "uploadUrl": "[REDACTED]"
+    },
+    "upload_host": "taskmarket.05176d1643896a390ad5d6c4da10ce30.r2.cloudflarestorage.com",
+    "upload_http_status": 200
+  },
   "result_classification": "submission_created",
-  "schema_version": "taskmarket-signal-panic-official-attempt-v1",
+  "schema_version": "taskmarket-signal-panic-official-evidence-v1",
   "status": "submitted",
   "submission_id": "bcf0eea9-28d0-4700-b69c-3b08d9749a66",
-  "task": {
-    "expiry_time": "2026-08-09T20:57:31+00:00",
-    "mode": "bounty",
-    "net_reward_usdc": 9.25,
-    "phase": "active",
-    "platform_fee_bps": 750,
-    "reported_submission_count": 71,
-    "reward_usdc": 10.0,
-    "stake_required": false,
-    "status": "open",
-    "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
-    "title": "Signal Panic",
-    "worker_submit_requires_payment": false
-  },
+  "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+  "task_url": "https://taskmarket.dev/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
   "verified_income_usdc": 0,
   "verified_receivable_usdc": 0,
   "worker_address": "0x4822cBfF31844261F74a6Eb2B9A118Cc208dCB84"
