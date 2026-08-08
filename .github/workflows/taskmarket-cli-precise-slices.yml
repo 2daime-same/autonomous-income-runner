@@ -32,7 +32,7 @@ jobs:
       - name: Install pinned official CLI without lifecycle scripts
         run: npm install --no-save --ignore-scripts --no-audit --no-fund @lucid-agents/taskmarket@1.7.3
 
-      - name: Extract focused immutable source ranges
+      - name: Extract focused immutable source ranges and dynamic helpers
         shell: bash
         run: |
           set -euo pipefail
@@ -40,30 +40,47 @@ jobs:
           from pathlib import Path
 
           source = Path('node_modules/@lucid-agents/taskmarket/dist/index.js').read_text(encoding='utf-8', errors='replace').splitlines()
+
+          def write_range(output, start, end):
+              rows = [f'{number:05d}: {source[number - 1]}' for number in range(start, min(end, len(source)) + 1)]
+              Path(output).parent.mkdir(parents=True, exist_ok=True)
+              Path(output).write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
           outputs = {
               'taskmarket-output/cli-x402-http.txt': (6100, 6365),
               'taskmarket-output/cli-device-init.txt': (6448, 6605),
               'taskmarket-output/cli-submit-exact.txt': (7125, 7195),
           }
-          for output, (start, end) in outputs.items():
-              rows = []
-              for number in range(start, min(end, len(source)) + 1):
-                  rows.append(f'{number:05d}: {source[number - 1]}')
-              Path(output).parent.mkdir(parents=True, exist_ok=True)
-              Path(output).write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          for output, bounds in outputs.items():
+              write_range(output, *bounds)
+
+          needles = {
+              'taskmarket-output/cli-x402-post-exact.txt': ('x402Post', 70, 100),
+              'taskmarket-output/cli-message-builders.txt': ('function buildSubmitMessage', 30, 55),
+              'taskmarket-output/cli-device-message.txt': ('function buildDeviceRegisterMessage', 20, 35),
+          }
+          for output, (needle, before, after) in needles.items():
+              matches = [i + 1 for i, line in enumerate(source) if needle in line]
+              if not matches:
+                  raise SystemExit(f'missing source marker: {needle}')
+              center = matches[0]
+              write_range(output, max(1, center - before), min(len(source), center + after))
           PY
 
       - name: Verify source-only outputs
         shell: bash
         run: |
           set -euo pipefail
-          test -s taskmarket-output/cli-x402-http.txt
-          test -s taskmarket-output/cli-device-init.txt
-          test -s taskmarket-output/cli-submit-exact.txt
-          if grep -ERn '(-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|\beyJ[A-Za-z0-9._-]{20,}\b|\bgh[pousr]_[A-Za-z0-9_]{20,}\b)' \
-             taskmarket-output/cli-x402-http.txt \
-             taskmarket-output/cli-device-init.txt \
-             taskmarket-output/cli-submit-exact.txt; then
+          files=(
+            taskmarket-output/cli-x402-http.txt
+            taskmarket-output/cli-device-init.txt
+            taskmarket-output/cli-submit-exact.txt
+            taskmarket-output/cli-x402-post-exact.txt
+            taskmarket-output/cli-message-builders.txt
+            taskmarket-output/cli-device-message.txt
+          )
+          for file in "${files[@]}"; do test -s "$file"; done
+          if grep -ERn '(-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|\beyJ[A-Za-z0-9._-]{20,}\b|\bgh[pousr]_[A-Za-z0-9_]{20,}\b)' "${files[@]}"; then
             echo 'Credential-like runtime material detected.' >&2
             exit 1
           fi
@@ -76,8 +93,15 @@ jobs:
           git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
           git add taskmarket-output/cli-x402-http.txt \
                   taskmarket-output/cli-device-init.txt \
-                  taskmarket-output/cli-submit-exact.txt
-          git commit -m 'Record precise Taskmarket CLI submission contracts [skip ci]'
+                  taskmarket-output/cli-submit-exact.txt \
+                  taskmarket-output/cli-x402-post-exact.txt \
+                  taskmarket-output/cli-message-builders.txt \
+                  taskmarket-output/cli-device-message.txt
+          if git diff --cached --quiet; then
+            echo 'Precise source evidence is unchanged.'
+            exit 0
+          fi
+          git commit -m 'Expand precise Taskmarket CLI contracts [skip ci]'
           for attempt in $(seq 1 8); do
             if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
             git rebase --abort 2>/dev/null || true
