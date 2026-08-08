@@ -1,0 +1,144 @@
+name: Build and validate Bubble Brawl Taskmarket artifact
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - deliverables/taskmarket-bubble-brawl/source.html
+      - scripts/build_bubble_brawl.py
+      - scripts/bubble_brawl_smoke.mjs
+      - .github/workflows/taskmarket-bubble-brawl-build.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-bubble-brawl-build
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out dedicated repository
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Fetch pinned official Three.js bundle and build one-file artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          pushd "$work" >/dev/null
+          tarball="$(npm pack three@0.158.0 --ignore-scripts --silent)"
+          tar -xzf "$tarball" package/build/three.min.js
+          cp package/build/three.min.js /tmp/three.min.js
+          popd >/dev/null
+          python -m py_compile scripts/build_bubble_brawl.py
+          python scripts/build_bubble_brawl.py
+
+      - name: Validate inline JavaScript and offline boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          text = Path('deliverables/taskmarket-bubble-brawl/index.html').read_text(encoding='utf-8')
+          scripts = re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', text, flags=re.I)
+          if len(scripts) != 2:
+              raise SystemExit(f'expected exactly two inline scripts, found {len(scripts)}')
+          for index, script in enumerate(scripts, 1):
+              Path(f'/tmp/bubble-brawl-script-{index}.js').write_text(script, encoding='utf-8')
+          if re.search(r'<script[^>]+src=', text, flags=re.I):
+              raise SystemExit('runtime script src remains')
+          if re.search(r'\b(?:src|href)=["\']https?://', text, flags=re.I):
+              raise SystemExit('runtime external asset remains')
+          PY
+          node --check /tmp/bubble-brawl-script-1.js
+          node --check /tmp/bubble-brawl-script-2.js
+          node --check scripts/bubble_brawl_smoke.mjs
+
+      - name: Install pinned Playwright and Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.54.2
+          npx playwright install --with-deps chromium
+
+      - name: Run Chromium gameplay smoke test
+        run: node scripts/bubble_brawl_smoke.mjs
+
+      - name: Verify validated artifact is public-safe and offline
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s deliverables/taskmarket-bubble-brawl/index.html
+          test -s deliverables/taskmarket-bubble-brawl/validation-report.json
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          text = Path('deliverables/taskmarket-bubble-brawl/index.html').read_text(encoding='utf-8')
+          report = json.loads(Path('deliverables/taskmarket-bubble-brawl/validation-report.json').read_text(encoding='utf-8'))
+          if report.get('browser_smoke') != 'passed':
+              raise SystemExit('browser smoke test did not pass')
+          for pattern in (
+              r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
+              r'\bgh[pousr]_[A-Za-z0-9_]{20,}\b',
+              r'github_pat_[A-Za-z0-9_]{20,}',
+              r'\beyJ[A-Za-z0-9._-]{20,}\b',
+          ):
+              if re.search(pattern, text):
+                  raise SystemExit(f'credential-like material detected: {pattern}')
+          if re.search(r'<script[^>]+src=', text, flags=re.I):
+              raise SystemExit('external script dependency remains')
+          if re.search(r'\b(?:src|href)=["\']https?://', text, flags=re.I):
+              raise SystemExit('external runtime asset remains')
+          PY
+
+      - name: Upload browser evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bubble-brawl-browser-evidence
+          path: /tmp/bubble-brawl-browser-evidence
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Commit validated artifact and report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add deliverables/taskmarket-bubble-brawl/index.html deliverables/taskmarket-bubble-brawl/validation-report.json
+          if git diff --cached --quiet; then
+            echo 'Validated artifact is unchanged.'
+            exit 0
+          fi
+          git commit -m 'Build validated Bubble Brawl submission artifact [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
