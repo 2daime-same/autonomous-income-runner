@@ -1,0 +1,15 @@
+{
+  "name": "same-compass",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first personal decision and focus dashboard.",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check app.mjs && node --check engine.mjs && node --check sw.js && npm test",
+    "serve": "python3 -m http.server 4173"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

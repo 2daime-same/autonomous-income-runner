@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="投資・大学・開発・収益化・生き物を一つの基準で整理する、端末内保存の意思決定ダッシュボード。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SAME COMPASS">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>SAME COMPASS</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="app-header">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true">SC</div>
+      <div>
+        <p class="eyebrow">PERSONAL DECISION OS</p>
+        <h1>SAME COMPASS</h1>
+      </div>
+    </div>
+    <div class="mode-control">
+      <label for="modeSelect">現在のモード</label>
+      <select id="modeSelect" aria-describedby="modeDescription"></select>
+      <p id="modeDescription" class="mode-description"></p>
+    </div>
+  </header>
+
+  <nav class="tab-bar" aria-label="メインメニュー">
+    <button class="tab-button is-active" type="button" data-tab="dashboard" aria-selected="true">今日</button>
+    <button class="tab-button" type="button" data-tab="queue" aria-selected="false">全件</button>
+    <button class="tab-button" type="button" data-tab="editor" aria-selected="false">追加</button>
+    <button class="tab-button" type="button" data-tab="review" aria-selected="false">整理・共有</button>
+  </nav>
+
+  <main id="main" class="app-main">
+    <section class="panel is-active" data-panel="dashboard" aria-labelledby="dashboardTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TODAY</p>
+          <h2 id="dashboardTitle">今日の焦点</h2>
+        </div>
+        <button id="quickAddButton" class="button secondary" type="button">＋ 追加</button>
+      </div>
+
+      <div id="alertArea" class="alert-stack" aria-live="polite"></div>
+
+      <div class="summary-grid" aria-label="状況サマリー">
+        <article class="summary-card primary-card">
+          <span class="summary-label">最優先</span>
+          <strong id="topTitle" class="summary-value summary-title">まだありません</strong>
+          <span id="topAction" class="summary-detail">項目を追加すると順位を計算します。</span>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">進行中</span>
+          <strong id="activeCount" class="summary-value">0</strong>
+          <span id="activeLimit" class="summary-detail">上限 7件</span>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">判断ゲート</span>
+          <strong id="holdCount" class="summary-value">0</strong>
+          <span class="summary-detail">根拠不足・冷却中</span>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">停滞</span>
+          <strong id="staleCount" class="summary-value">0</strong>
+          <span id="staleLabel" class="summary-detail">7日以上未更新</span>
+        </article>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="surface" aria-labelledby="focusTitle">
+          <div class="surface-heading">
+            <div>
+              <p class="eyebrow">FOCUS LIMIT</p>
+              <h3 id="focusTitle">今日やる最大3件</h3>
+            </div>
+            <span id="focusCounter" class="count-chip">0 / 3</span>
+          </div>
+          <div id="focusList" class="focus-list empty-state">
+            <p>最初の項目を追加してください。</p>
+          </div>
+        </section>
+
+        <section class="surface" aria-labelledby="loadTitle">
+          <div class="surface-heading">
+            <div>
+              <p class="eyebrow">ATTENTION LOAD</p>
+              <h3 id="loadTitle">分野別の同時進行</h3>
+            </div>
+          </div>
+          <div id="domainLoad" class="domain-load"></div>
+        </section>
+      </div>
+
+      <section class="surface" aria-labelledby="gateTitle">
+        <div class="surface-heading">
+          <div>
+            <p class="eyebrow">DECISION GATE</p>
+            <h3 id="gateTitle">止めるべき判断</h3>
+          </div>
+        </div>
+        <div id="gateList" class="gate-list empty-state">
+          <p>保留中の判断はありません。</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel" data-panel="queue" aria-labelledby="queueTitle" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">QUEUE</p>
+          <h2 id="queueTitle">全項目</h2>
+        </div>
+        <button id="queueAddButton" class="button primary" type="button">＋ 新規</button>
+      </div>
+
+      <div class="filter-bar" role="search">
+        <label class="field grow-field">
+          <span>検索</span>
+          <input id="searchInput" type="search" placeholder="タイトル・次の一手・メモ">
+        </label>
+        <label class="field">
+          <span>分野</span>
+          <select id="domainFilter">
+            <option value="all">すべて</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>状態</span>
+          <select id="statusFilter">
+            <option value="all">すべて</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="queueList" class="queue-list empty-state">
+        <p>項目はまだありません。</p>
+      </div>
+    </section>
+
+    <section class="panel" data-panel="editor" aria-labelledby="editorTitle" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CAPTURE</p>
+          <h2 id="editorTitle">項目を追加</h2>
+        </div>
+        <button id="resetFormButton" class="button ghost" type="button">入力をリセット</button>
+      </div>
+
+      <section class="starter-strip" aria-labelledby="starterTitle">
+        <div class="starter-copy">
+          <p class="eyebrow">QUICK START</p>
+          <h3 id="starterTitle">型から追加</h3>
+          <p>よく使う判断の初期値だけ入れます。タイトルと期限を直して保存してください。</p>
+        </div>
+        <div class="starter-actions">
+          <button class="button small secondary" type="button" data-template="investment">投資判断</button>
+          <button class="button small secondary" type="button" data-template="university">試験・提出</button>
+          <button class="button small secondary" type="button" data-template="development">開発実験</button>
+          <button class="button small secondary" type="button" data-template="income">収益案件</button>
+          <button class="button small secondary" type="button" data-template="creatures">生き物・予定</button>
+        </div>
+      </section>
+
+      <form id="itemForm" class="editor-form" novalidate>
+        <input id="itemId" type="hidden">
+        <div class="form-grid two-columns">
+          <label class="field span-two required-field">
+            <span>タイトル</span>
+            <input id="titleInput" name="title" required maxlength="120" placeholder="例：決算前の保有方針を決める">
+          </label>
+
+          <label class="field">
+            <span>分野</span>
+            <select id="domainInput" name="domain"></select>
+          </label>
+
+          <label class="field">
+            <span>種類</span>
+            <select id="itemTypeInput" name="itemType">
+              <option value="task">行動</option>
+              <option value="decision">判断</option>
+            </select>
+          </label>
+
+          <label class="field span-two required-field">
+            <span>次の一手</span>
+            <input id="nextActionInput" name="nextAction" maxlength="180" placeholder="15〜60分で終わる、動詞から始まる行動">
+            <small>「調べる」だけでなく、「公式資料を3件読み、結論を5行で書く」のようにします。</small>
+          </label>
+
+          <label class="field">
+            <span>期限</span>
+            <input id="deadlineInput" name="deadline" type="date">
+          </label>
+
+          <label class="field">
+            <span>状態</span>
+            <select id="statusInput" name="status"></select>
+          </label>
+        </div>
+
+        <section class="form-section" aria-labelledby="scoreSectionTitle">
+          <div class="surface-heading compact-heading">
+            <div>
+              <p class="eyebrow">SCORING</p>
+              <h3 id="scoreSectionTitle">価値と負担</h3>
+            </div>
+            <span id="liveScore" class="score-badge">--</span>
+          </div>
+          <p id="liveScoreText" class="helper-copy">入力に応じて、現在のモードでの優先度を計算します。</p>
+
+          <div class="metric-grid">
+            <label class="metric-field">
+              <span><b>効果</b><output for="impactInput" id="impactOutput">3</output></span>
+              <input id="impactInput" name="impact" type="range" min="1" max="5" value="3">
+              <small>成果が出たときの大きさ</small>
+            </label>
+            <label class="metric-field">
+              <span><b>緊急度</b><output for="urgencyInput" id="urgencyOutput">3</output></span>
+              <input id="urgencyInput" name="urgency" type="range" min="1" max="5" value="3">
+              <small>先送りによる損失</small>
+            </label>
+            <label class="metric-field">
+              <span><b>根拠</b><output for="evidenceInput" id="evidenceOutput">3</output></span>
+              <input id="evidenceInput" name="evidence" type="range" min="1" max="5" value="3">
+              <small>一次情報・実測・再現性</small>
+            </label>
+            <label class="metric-field">
+              <span><b>複利性</b><output for="compoundingInput" id="compoundingOutput">3</output></span>
+              <input id="compoundingInput" name="compounding" type="range" min="1" max="5" value="3">
+              <small>後の作業を軽くする度合い</small>
+            </label>
+            <label class="metric-field">
+              <span><b>興味</b><output for="interestInput" id="interestOutput">3</output></span>
+              <input id="interestInput" name="interest" type="range" min="1" max="5" value="3">
+              <small>継続しやすさ・好奇心</small>
+            </label>
+            <label class="metric-field">
+              <span><b>下振れ</b><output for="downsideInput" id="downsideOutput">3</output></span>
+              <input id="downsideInput" name="downside" type="range" min="1" max="5" value="3">
+              <small>失敗時の損失・回復難度</small>
+            </label>
+            <label class="metric-field">
+              <span><b>可逆性</b><output for="reversibilityInput" id="reversibilityOutput">3</output></span>
+              <input id="reversibilityInput" name="reversibility" type="range" min="1" max="5" value="3">
+              <small>小さく試して戻せるか</small>
+            </label>
+          </div>
+
+          <div class="form-grid two-columns compact-grid">
+            <label class="field">
+              <span>必要時間（時間）</span>
+              <input id="hoursInput" name="hours" type="number" min="0" max="10000" step="0.25" value="1" inputmode="decimal">
+            </label>
+            <label class="field">
+              <span>必要金額（円）</span>
+              <input id="costInput" name="costYen" type="number" min="0" max="1000000000" step="100" value="0" inputmode="numeric">
+            </label>
+          </div>
+        </section>
+
+        <section class="form-section high-stakes-section" aria-labelledby="guardrailTitle">
+          <label class="switch-row">
+            <span>
+              <b id="guardrailTitle">高リスク判断として扱う</b>
+              <small>投資、大きな支出、公開、長期拘束など。入力不足なら実行を止めます。</small>
+            </span>
+            <input id="highStakesInput" name="highStakes" type="checkbox" role="switch">
+          </label>
+
+          <div id="guardrailFields" class="guardrail-fields" hidden>
+            <div class="form-grid two-columns">
+              <label class="field span-two">
+                <span>採用する理由・仮説</span>
+                <textarea id="thesisInput" name="thesis" rows="3" maxlength="1200" placeholder="何が起きれば期待値が高いと考えるのか"></textarea>
+              </label>
+              <label class="field span-two">
+                <span>撤退・見直し条件</span>
+                <textarea id="invalidationInput" name="invalidation" rows="3" maxlength="1200" placeholder="何が確認されたら、前提が崩れたと判断するか"></textarea>
+              </label>
+              <label class="field span-two">
+                <span>最悪ケースと許容範囲</span>
+                <textarea id="worstCaseInput" name="worstCase" rows="2" maxlength="800" placeholder="最大損失、時間、評判、機会費用など"></textarea>
+              </label>
+              <label class="field">
+                <span>再評価日</span>
+                <input id="reviewDateInput" name="reviewDate" type="date">
+              </label>
+              <label class="checkbox-field">
+                <input id="fomoInput" name="fomo" type="checkbox">
+                <span><b>FOMO・勢いを感じている</b><small>保存後24時間は実行候補から外します。</small></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <label class="field">
+          <span>メモ</span>
+          <textarea id="notesInput" name="notes" rows="4" maxlength="2000" placeholder="前提、URL、相談時に残したい情報など"></textarea>
+        </label>
+
+        <div id="formMessages" class="form-messages" aria-live="polite"></div>
+        <div class="form-actions">
+          <button class="button primary large" type="submit">保存する</button>
+          <button id="cancelEditButton" class="button secondary large" type="button" hidden>編集をやめる</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel" data-panel="review" aria-labelledby="reviewTitle" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">REVIEW & PORTABILITY</p>
+          <h2 id="reviewTitle">整理・共有</h2>
+        </div>
+      </div>
+
+      <div class="review-grid">
+        <section class="surface" aria-labelledby="contextTitle">
+          <div class="surface-heading">
+            <div>
+              <p class="eyebrow">CHATGPT HANDOFF</p>
+              <h3 id="contextTitle">相談用コンテキスト</h3>
+            </div>
+            <button id="copyContextButton" class="button secondary" type="button">コピー</button>
+          </div>
+          <p class="helper-copy">優先候補、止まっている理由、撤退条件を一つの文章にします。ChatGPTへ貼ると、毎回説明し直す量を減らせます。</p>
+          <textarea id="contextOutput" class="context-output" readonly rows="18"></textarea>
+        </section>
+
+        <section class="surface" aria-labelledby="settingsTitle">
+          <div class="surface-heading">
+            <div>
+              <p class="eyebrow">LIMITS</p>
+              <h3 id="settingsTitle">注意資源の上限</h3>
+            </div>
+          </div>
+          <div class="form-grid">
+            <label class="field">
+              <span>今日の焦点数</span>
+              <input id="focusLimitInput" type="number" min="1" max="5" value="3">
+            </label>
+            <label class="field">
+              <span>進行中の上限</span>
+              <input id="maxActiveInput" type="number" min="1" max="30" value="7">
+            </label>
+            <label class="field">
+              <span>停滞とみなす日数</span>
+              <input id="staleDaysInput" type="number" min="1" max="90" value="7">
+            </label>
+          </div>
+          <button id="saveSettingsButton" class="button primary" type="button">上限を保存</button>
+        </section>
+      </div>
+
+      <div class="review-grid">
+        <section class="surface" aria-labelledby="weeklyTitle">
+          <div class="surface-heading">
+            <div>
+              <p class="eyebrow">LAST 7 DAYS</p>
+              <h3 id="weeklyTitle">直近の完了</h3>
+            </div>
+          </div>
+          <div id="completedList" class="compact-list empty-state"><p>直近7日の完了はありません。</p></div>
+        </section>
+
+        <section class="surface danger-surface" aria-labelledby="dataTitle">
+          <div class="surface-heading">
+            <div>
+              <p class="eyebrow">LOCAL DATA</p>
+              <h3 id="dataTitle">バックアップ</h3>
+            </div>
+          </div>
+          <p class="helper-copy">データはこのブラウザの中だけに保存されます。GitHubや外部サーバーへ自動送信しません。</p>
+          <div class="stacked-actions">
+            <button id="exportButton" class="button secondary" type="button">JSONを書き出す</button>
+            <label class="button secondary file-button">
+              JSONを読み込む
+              <input id="importInput" type="file" accept="application/json,.json">
+            </label>
+            <button id="clearButton" class="button danger" type="button">すべて削除</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <template id="focusItemTemplate">
+    <article class="focus-item">
+      <div class="focus-rank" data-rank></div>
+      <div class="focus-body">
+        <div class="item-meta">
+          <span class="domain-chip" data-domain></span>
+          <span class="readiness-chip" data-readiness></span>
+          <span class="deadline-chip" data-deadline></span>
+        </div>
+        <h4 data-title></h4>
+        <p data-action></p>
+        <small data-explanation></small>
+      </div>
+      <div class="focus-actions">
+        <span class="score-badge" data-score></span>
+        <button class="icon-button" type="button" data-action="done" aria-label="完了にする">✓</button>
+        <button class="icon-button" type="button" data-action="edit" aria-label="編集する">✎</button>
+      </div>
+    </article>
+  </template>
+
+  <template id="queueItemTemplate">
+    <article class="queue-item">
+      <div class="queue-item-main">
+        <div class="item-meta">
+          <span class="domain-chip" data-domain></span>
+          <span class="status-chip" data-status></span>
+          <span class="readiness-chip" data-readiness></span>
+          <span class="deadline-chip" data-deadline></span>
+        </div>
+        <h3 data-title></h3>
+        <p class="queue-action" data-next-action></p>
+        <p class="queue-notes" data-notes></p>
+        <div class="warning-inline" data-warning hidden></div>
+      </div>
+      <div class="queue-item-side">
+        <span class="score-badge" data-score></span>
+        <small data-explanation></small>
+        <div class="item-button-row">
+          <button class="button small secondary" type="button" data-action="edit">編集</button>
+          <button class="button small secondary" type="button" data-action="toggle-done">完了</button>
+          <button class="button small ghost" type="button" data-action="park">保留箱</button>
+          <button class="button small danger-ghost" type="button" data-action="delete">削除</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

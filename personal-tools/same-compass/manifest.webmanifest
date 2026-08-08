@@ -1,0 +1,25 @@
+{
+  "name": "SAME COMPASS",
+  "short_name": "COMPASS",
+  "description": "投資・大学・開発・収益化・生き物を一つの基準で整理する、端末内保存の意思決定ダッシュボード。",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

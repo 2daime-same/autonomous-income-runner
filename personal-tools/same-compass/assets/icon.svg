@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SAME COMPASS icon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13223d"/>
+      <stop offset="1" stop-color="#07101e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <circle cx="256" cy="256" r="154" fill="none" stroke="#65d6c4" stroke-width="18" opacity=".9"/>
+  <path d="M256 92 314 240 256 420 198 272Z" fill="#f4b85a"/>
+  <path d="m256 92 58 148-58 32-58-32Z" fill="#f8f2e8"/>
+  <circle cx="256" cy="256" r="22" fill="#0b1220" stroke="#65d6c4" stroke-width="10"/>
+</svg>
