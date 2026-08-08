@@ -5,6 +5,7 @@ on:
   push:
     branches: [main]
     paths:
+      - scripts/taskmarket_cli_probe_report.py
       - .github/workflows/taskmarket-cli-auth-probe.yml
   schedule:
     - cron: '19 1,7,13,19 * * *'
@@ -51,14 +52,16 @@ jobs:
           export XDG_CONFIG_HOME="$HOME/.config"
           mkdir -p "$HOME" "$XDG_CONFIG_HOME"
           CLI="./node_modules/.bin/taskmarket"
-          "$CLI" --help > /tmp/taskmarket-help.out 2> /tmp/taskmarket-help.err
-          echo $? > /tmp/taskmarket-help.code
-          "$CLI" legal --help > /tmp/taskmarket-legal-help.out 2> /tmp/taskmarket-legal-help.err
-          echo $? > /tmp/taskmarket-legal-help.code
-          "$CLI" legal status --json > /tmp/taskmarket-legal-status-json.out 2> /tmp/taskmarket-legal-status-json.err
-          echo $? > /tmp/taskmarket-legal-status-json.code
-          "$CLI" legal status > /tmp/taskmarket-legal-status.out 2> /tmp/taskmarket-legal-status.err
-          echo $? > /tmp/taskmarket-legal-status.code
+          for command in help legal-help legal-status-json legal-status; do
+            case "$command" in
+              help) args=(--help) ;;
+              legal-help) args=(legal --help) ;;
+              legal-status-json) args=(legal status --json) ;;
+              legal-status) args=(legal status) ;;
+            esac
+            "$CLI" "${args[@]}" > "/tmp/taskmarket-$command.out" 2> "/tmp/taskmarket-$command.err"
+            echo $? > "/tmp/taskmarket-$command.code"
+          done
           exit 0
 
       - name: Inspect first-party package for authentication and legal contracts
@@ -101,74 +104,10 @@ jobs:
           PY
 
       - name: Build credential-free public report
-        shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import json
-          import re
-          from datetime import datetime, timezone
-          from pathlib import Path
-
-          def raw(path, limit=30000):
-              p = Path(path)
-              return p.read_text(encoding='utf-8', errors='replace')[:limit] if p.exists() else ''
-
-          def scrub_text(text):
-              text = re.sub(r'\beyJ[A-Za-z0-9._-]{20,}\b', '[REDACTED_JWT]', str(text))
-              text = re.sub(
-                  r'\b(?:gh[pousr]|github_pat|sk|pk|api|token|secret)_[A-Za-z0-9._-]{16,}\b',
-                  '[REDACTED_TOKEN]', text, flags=re.I,
-              )
-              text = re.sub(
-                  r'(?i)((?:authorization|api.?token|device.?encryption.?key)\s*[:=]\s*)[^\s,;}]+',
-                  r'\1[REDACTED]', text,
-              )
-              return text
-
-          def scrub(value):
-              if isinstance(value, str):
-                  return scrub_text(value)
-              if isinstance(value, list):
-                  return [scrub(item) for item in value]
-              if isinstance(value, dict):
-                  return {str(key): scrub(item) for key, item in value.items()}
-              return value
-
-          npm_view = scrub(json.loads(raw('/tmp/taskmarket-npm-view.json') or '{}'))
-          package = scrub(json.loads(raw('/tmp/taskmarket-package.json') or '{}'))
-          contracts = scrub(json.loads(raw('/tmp/taskmarket-package-contracts.json') or '[]'))
-          commands = {}
-          for key in ('help', 'legal-help', 'legal-status-json', 'legal-status'):
-              commands[key] = {
-                  'exit_code': int((raw(f'/tmp/taskmarket-{key}.code', 20) or '999').strip()),
-                  'stdout': scrub_text(raw(f'/tmp/taskmarket-{key}.out')),
-                  'stderr': scrub_text(raw(f'/tmp/taskmarket-{key}.err')),
-              }
-          report = {
-              'schema_version': 'taskmarket-cli-auth-probe-v1',
-              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
-              'package': package,
-              'npm_distribution': npm_view,
-              'commands': commands,
-              'package_contract_matches': contracts,
-              'network_writes_performed': [],
-              'taskmarket_init_performed': False,
-              'device_registration_performed': False,
-              'legal_acceptance_performed': False,
-              'wallet_created': False,
-              'expenses_usdc': 0,
-              'verified_income_usdc': 0,
-          }
-          output = Path('taskmarket-output/cli-auth-probe.json')
-          output.parent.mkdir(parents=True, exist_ok=True)
-          output.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
-          print(json.dumps({
-              'package_version': package.get('version'),
-              'legal_status_exit': commands['legal-status']['exit_code'],
-              'contract_matches': len(contracts),
-          }))
-          PY
+          python -m py_compile scripts/taskmarket_cli_probe_report.py
+          python scripts/taskmarket_cli_probe_report.py
 
       - name: Reject leaked credentials and false side-effect evidence
         shell: bash
