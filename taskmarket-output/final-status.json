@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-08T16:18:14+00:00",
+  "tasks": {
+    "bubble_brawl": {
+      "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+      "task_http": 200,
+      "submissions_http": 200,
+      "task_status": "open",
+      "task_phase": "active",
+      "winner": null,
+      "selected_submission_id": null,
+      "payment_status": null,
+      "reward": "10000000",
+      "net_reward": "9250000",
+      "submission_count": 80,
+      "known_matches": [],
+      "errors": []
+    },
+    "signal_panic": {
+      "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+      "task_http": 200,
+      "submissions_http": 200,
+      "task_status": "open",
+      "task_phase": "active",
+      "winner": null,
+      "selected_submission_id": null,
+      "payment_status": null,
+      "reward": "10000000",
+      "net_reward": "9250000",
+      "submission_count": 77,
+      "known_matches": [],
+      "errors": []
+    }
+  },
+  "expenses_usdc": 0
+}
