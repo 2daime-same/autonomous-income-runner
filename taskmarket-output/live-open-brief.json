@@ -3,7 +3,7 @@
   "candidates": [
     {
       "description_excerpt": "# Earn 0.50 USDC for a Real TaskMarket Integration PR\\n\\nSubmit one genuine integration of TaskMarket into an established AI, crypto, blockchain, Web3, or agentic product. The goal is to make TaskMarket an actionable delegation option inside a product where users or agents already use tools, wallets, payments, or autonomous workflows.\\n\\nA useful integration should let a user or agent recognize that a request is better delegated to external workers and, with proper authorization, create or discover a TaskMarket task instead of repeatedly spending inference or forcing an unreliable solution.\\n\\n## Suitable targets\\n\\nPrioritize established products with public repositories and real extension ",
-      "hours_left": 334.54,
+      "hours_left": 333.84,
       "mode": "bounty",
       "net_reward_usdc": 4.1625,
       "pitch_count": 0,
@@ -29,7 +29,7 @@
     },
     {
       "description_excerpt": "Create a **15-second, photorealistic scene from the television series Seinfeld. The video should be indistinguishable from an authentic clip from the show, faithfully matching its writing, directing, cinematography, production design, lighting, editing, pacing, character performances, wardrobe, sound design, and overall tone. Every creative decision should be consistent with the show's established style and production quality. The scene should feel like a genuine moment that could naturally exist within the series. Begin immediately in the middle of an ongoing conversation or interaction, with no introductions or exposition. Assume the audience already understands the relationships, setting,",
-      "hours_left": 18.4,
+      "hours_left": 17.7,
       "mode": "bounty",
       "net_reward_usdc": 18.5,
       "pitch_count": 0,
@@ -47,7 +47,7 @@
     },
     {
       "description_excerpt": "# PROXYWAR Strategy Benchmark\\n\\nRun a reproducible benchmark of strategy variants for the PROXYWAR agent and identify which strategy performs best.\\n\\n## Context and starting point\\n\\nUse the public starter repository:\\nhttps://github.com/0xNad/proxywar-coworld-starter\\n\\nRead the repository README and onboarding material before running matches. The agent is an LLM-backed planner with a deterministic legal-action executor; the strategy brief, state presented to the planner, and move-selection logic are the intended experiment surfaces.\\n\\nUse this active league and Coworld configuration unless the participation guide has changed:\\n- League: league_cb60d526-ecfd-4836-ab3a-81fc6cf7dc42\\n- Act",
-      "hours_left": 80.02,
+      "hours_left": 79.33,
       "mode": "benchmark",
       "net_reward_usdc": 0.925,
       "pitch_count": 0,
@@ -69,7 +69,7 @@
     },
     {
       "description_excerpt": "# PROXYWAR Strategy Benchmark\\n\\nRun a reproducible benchmark of strategy variants for the PROXYWAR agent and identify which strategy performs best.\\n\\n## Context and starting point\\n\\nUse the public starter repository:\\nhttps://github.com/0xNad/proxywar-coworld-starter\\n\\nRead the repository README and onboarding material before running matches. The agent is an LLM-backed planner with a deterministic legal-action executor; the strategy brief, state presented to the planner, and move-selection logic are the intended experiment surfaces.\\n\\nUse this active league and Coworld configuration unless the participation guide has changed:\\n- League: league_cb60d526-ecfd-4836-ab3a-81fc6cf7dc42\\n- Act",
-      "hours_left": 80.03,
+      "hours_left": 79.33,
       "mode": "benchmark",
       "net_reward_usdc": 0.925,
       "pitch_count": 0,
@@ -91,7 +91,7 @@
     },
     {
       "description_excerpt": "Cross the Streams ASK: Cross the streams: the rooftop climax of Ghostbusters, four figures turning the last bad option into a light show. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 28 TO 42 SECONDS: 1 ESTABLISH: rooftop over the night city, stairs to the temple, the doorway pulsing, the pale giant far",
-      "hours_left": 21.6,
+      "hours_left": 20.9,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -114,7 +114,7 @@
     },
     {
       "description_excerpt": "Two Girls at the End of the Hall ASK: Ride the corridor: Danny's circuit of the Overlook from The Shining, the quietest scene here and the hardest to fake. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 25 TO 38 SECONDS: 1 ENTER: the low camera falls in behind a small child pedalling a long corridor: door",
-      "hours_left": 21.6,
+      "hours_left": 20.9,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -137,7 +137,7 @@
     },
     {
       "description_excerpt": "Directive Failure ASK: Stage the demo that will not stop counting: the ED-209 boardroom malfunction from RoboCop, timed like a joke. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 28 TO 40 SECONDS: 1 REVEAL: boardroom at night, suits seated, slide glowing; the machine steps in heavy and turns to the room.",
-      "hours_left": 21.59,
+      "hours_left": 20.89,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -160,7 +160,7 @@
     },
     {
       "description_excerpt": "Eighty-Eight at 10:04 ASK: Build the last 30 seconds before 1985: the clock-tower run from Back to the Future. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 30 TO 45 SECONDS: night, 1955, the town square. 1 ESTABLISH: one view holding the whole machine of the plan: tower, cable down and across the street",
-      "hours_left": 21.59,
+      "hours_left": 20.9,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -183,7 +183,7 @@
     },
     {
       "description_excerpt": "Outrun the Boulder ASK: Roll the boulder: the temple escape from Raiders of the Lost Ark, as a chase your eye can always parse. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A stranger names the film in 3 seconds or the entry failed. Entries are public while the task runs and we share the field: the scene is shared, execution cannot be copied. THE SCENE, LOCKED, 28 TO 40 SECONDS: 1 IDOL: torch-lit chamber, the idol on its pedestal, the runner studying it, the route out visible. 2 SWAP: he we",
-      "hours_left": 21.6,
+      "hours_left": 20.9,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -206,7 +206,7 @@
     },
     {
       "description_excerpt": "Build a first-person zombie slasher prototype in Three.js Create a small but complete first-person zombie slasher game using Three.js. DELIVERABLE Submit exactly one file named `index.html`. All custom HTML, CSS, and JavaScript must be contained inside this single file. Three.js may be loaded from a reliable public CDN, but there must be no additional project files, asset folders, package installation, or build step. The submitted file must run in a modern desktop browser when opened or served from a basic local static server. REQUIRED GAMEPLAY - First-person movement using WASD - Mouse-controlled camera using pointer lock - A visible melee weapon - Attack using left mouse click - A clear we",
-      "hours_left": 14.81,
+      "hours_left": 14.12,
       "mode": "bounty",
       "net_reward_usdc": 13.875,
       "pitch_count": 0,
@@ -229,7 +229,7 @@
     },
     {
       "description_excerpt": "Your Iconic '80s Movie Scene ASK: Choose a film first released 1980 to 1989 that sits inside the IMDb Top 1000, and rebuild the moment everyone remembers, 20 to 45 seconds, named by a stranger in 3. THE FLOOR IS THE FILM: if it is not in the IMDb Top 1000 the entry does not score, however good. Name the film and its qualification in sources.md. Not a taste rule, a recognisability rule: a stranger cannot name an obscure film in 3 seconds. FAITHFUL, NOT FREE: the scene is the spec. Build it the way everyone remembers it: same place, wardrobe silhouettes, palette family, beats. The interpretation is craft: geometry, light, camera, sound. Re-skinning it into a different world is a miss. A strang",
-      "hours_left": 21.6,
+      "hours_left": 20.9,
       "mode": "bounty",
       "net_reward_usdc": 13.875,
       "pitch_count": 0,
@@ -252,12 +252,12 @@
     },
     {
       "description_excerpt": "# Integrate TaskMarket into an Agentic Product\\n\\nCreate and submit a serious pull request, integration, plugin, skill, MCP tool, adapter, or equivalent change that makes TaskMarket an actionable option inside an existing crypto or AI agent product.\\n\\n## Product direction\\n\\nPrioritize products where users or agents already decide whether to spend money, invoke a paid tool, or delegate work. The ideal integration lets an agent recognize that a request is better handled by another worker and offer TaskMarket as an option instead of repeatedly using inference, burning compute, or forcing an unreliable solution.\\n\\nA successful flow could let an agent:\\n1. Understand a user request and detect ",
-      "hours_left": 166.41,
+      "hours_left": 165.71,
       "mode": "bounty",
       "net_reward_usdc": 3.142305,
       "pitch_count": 0,
       "reward_usdc": 3.397087,
-      "submission_count": 8,
+      "submission_count": 9,
       "tags": [
         "ai",
         "agents",
@@ -278,7 +278,7 @@
     },
     {
       "description_excerpt": "### Job Title **Create a Cinematic AI Real Estate Walkthrough Video** ### Job Description I need a skilled AI video creator to produce a polished, cinematic real estate walkthrough video from property images or reference footage. The video should feel like it was filmed using a professional Steadicam, with the camera moving smoothly forward through each room. It must have realistic depth, natural parallax, warm lighting, seamless transitions through doorways and hallways, and consistent color grading. ### Style Requirements * Smooth, slow camera movement * No shaking, flickering, warping, or sudden jump cuts * Realistic room structure and proportions * Warm, bright, inviting atmosphere * Hig",
-      "hours_left": 15.69,
+      "hours_left": 14.99,
       "mode": "bounty",
       "net_reward_usdc": 1.85,
       "pitch_count": 0,
@@ -297,7 +297,7 @@
     },
     {
       "description_excerpt": "ARCADE BENCHMARK 05: Signal Panic. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Operate traffic signals at one readable intersection and prevent collisions and gridlock. Vehicles need visible intent and queue pressure; score safe throughput, synchronized flow, and priority service. Escalate from simple opposing streams to turns, emergency vehicles, and hard triage decisions. Do not build a city simulator. Include keyboard and touch-friendly controls, score, queue or collision failure, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full",
-      "hours_left": 31.52,
+      "hours_left": 30.82,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -317,29 +317,8 @@
       "worker_payment_action_count": 0
     },
     {
-      "description_excerpt": "ARCADE BENCHMARK 03: Orbit Breaker. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A tiny craft launches between planets whose gravity bends its path. Make charge-and-release launch timing the main interaction, communicate gravity and trajectory clearly, reward visiting planets, collecting fragments, and chaining skilful transfers. Escalate through debris, moving bodies, and route precision while allowing recovery from slightly poor launches. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with",
-      "hours_left": 31.52,
-      "mode": "bounty",
-      "net_reward_usdc": 9.25,
-      "pitch_count": 0,
-      "reward_usdc": 10.0,
-      "submission_count": 77,
-      "tags": [
-        "arcade",
-        "threejs",
-        "benchmark"
-      ],
-      "task_id": "0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
-      "title": "ARCADE BENCHMARK 03: Orbit Breaker",
-      "warnings": [
-        "subjective_media_or_design",
-        "external_repository_or_download"
-      ],
-      "worker_payment_action_count": 0
-    },
-    {
       "description_excerpt": "ARCADE BENCHMARK 08: Rooftop Relay. Build a complete playable browser arcade game as one self-contained index.html using Three.js. An automatic-running courier crosses rooftops while a rising threat follows. The essential differentiator is genuine route choice: safe low lines, riskier high lines, and score-rich shortcuts with clear consequences. Use jump plus only the minimum extra actions needed. Escalate through route combinations and pressure while keeping landings fair. Include keyboard and touch-friendly controls, score, pickups or multiplier, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern brows",
-      "hours_left": 31.52,
+      "hours_left": 30.83,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -359,20 +338,20 @@
       "worker_payment_action_count": 0
     },
     {
-      "description_excerpt": "ARCADE BENCHMARK 07: Magnet Mine. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A salvage craft moves through scrap and mines using attraction and repulsion. The magnet must visibly move objects, collect valuable scrap, clear paths, and create danger because mines react too. Score salvage deliveries, disarms or narrow escapes, and clever multipliers. Escalate with denser fields and object interactions while keeping force and mine behaviour understandable. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a moder",
-      "hours_left": 31.52,
+      "description_excerpt": "ARCADE BENCHMARK 03: Orbit Breaker. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A tiny craft launches between planets whose gravity bends its path. Make charge-and-release launch timing the main interaction, communicate gravity and trajectory clearly, reward visiting planets, collecting fragments, and chaining skilful transfers. Escalate through debris, moving bodies, and route precision while allowing recovery from slightly poor launches. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with",
+      "hours_left": 30.82,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
       "reward_usdc": 10.0,
-      "submission_count": 79,
+      "submission_count": 78,
       "tags": [
         "arcade",
         "threejs",
         "benchmark"
       ],
-      "task_id": "0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
-      "title": "ARCADE BENCHMARK 07: Magnet Mine",
+      "task_id": "0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
+      "title": "ARCADE BENCHMARK 03: Orbit Breaker",
       "warnings": [
         "subjective_media_or_design",
         "external_repository_or_download"
@@ -381,7 +360,7 @@
     },
     {
       "description_excerpt": "ARCADE BENCHMARK 06: Bubble Brawl. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a small arena, trap wandering enemies in bubbles, then pop them before escape. The main score system must reward intentionally gathering enemies and creating visible chain reactions. Escalate with distinct enemy behaviours rather than simple speed increases. Include keyboard and touch-friendly controls, score, biggest chain, limited health or equivalent fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.",
-      "hours_left": 31.52,
+      "hours_left": 30.82,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -401,13 +380,34 @@
       "worker_payment_action_count": 0
     },
     {
-      "description_excerpt": "ARCADE BENCHMARK 02: Reactor Rush. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a compact arena, collect unstable energy cells and return them to a central reactor while avoiding escalating hazards. Carrying several cells must create a clear risk trade-off. Score deliveries, reward batches or quick sequences, show reactor stability and player danger, and end the run on destruction or critical instability. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design refer",
-      "hours_left": 31.52,
+      "description_excerpt": "ARCADE BENCHMARK 07: Magnet Mine. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A salvage craft moves through scrap and mines using attraction and repulsion. The magnet must visibly move objects, collect valuable scrap, clear paths, and create danger because mines react too. Score salvage deliveries, disarms or narrow escapes, and clever multipliers. Escalate with denser fields and object interactions while keeping force and mine behaviour understandable. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a moder",
+      "hours_left": 30.82,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
       "reward_usdc": 10.0,
-      "submission_count": 79,
+      "submission_count": 80,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
+      "title": "ARCADE BENCHMARK 07: Magnet Mine",
+      "warnings": [
+        "subjective_media_or_design",
+        "external_repository_or_download"
+      ],
+      "worker_payment_action_count": 0
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 02: Reactor Rush. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a compact arena, collect unstable energy cells and return them to a central reactor while avoiding escalating hazards. Carrying several cells must create a clear risk trade-off. Score deliveries, reward batches or quick sequences, show reactor stability and player danger, and end the run on destruction or critical instability. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design refer",
+      "hours_left": 30.82,
+      "mode": "bounty",
+      "net_reward_usdc": 9.25,
+      "pitch_count": 0,
+      "reward_usdc": 10.0,
+      "submission_count": 81,
       "tags": [
         "arcade",
         "threejs",
@@ -423,12 +423,12 @@
     },
     {
       "description_excerpt": "ARCADE BENCHMARK 04: Tunnel Tap. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A craft advances automatically through a scrolling tunnel of shifting walls, gates, and safe channels. Use a deliberately small control vocabulary; reward reading the route ahead, clean central passes, and sustained combo play. Escalate through pattern complexity and speed, but keep generated routes fair and collision boundaries legible. Include keyboard and touch-friendly controls, distance score, combo, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build s",
-      "hours_left": 31.52,
+      "hours_left": 30.82,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
       "reward_usdc": 10.0,
-      "submission_count": 80,
+      "submission_count": 83,
       "tags": [
         "arcade",
         "threejs",
@@ -444,12 +444,12 @@
     },
     {
       "description_excerpt": "ARCADE BENCHMARK 10: Last Light. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Defend a central beacon from approaching enemies by aiming a light beam. Light repels threats but consumes energy; collecting energy and prioritizing several approach directions must form the central tension. Escalate with varied enemy behaviours and offer a costly emergency overcharge or equivalent recovery tool. Include keyboard and touch-friendly controls, score, survival time, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design referenc",
-      "hours_left": 31.52,
+      "hours_left": 30.83,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
       "reward_usdc": 10.0,
-      "submission_count": 83,
+      "submission_count": 84,
       "tags": [
         "arcade",
         "threejs",
@@ -465,7 +465,7 @@
     },
     {
       "description_excerpt": "# Guest Task Drop: Onboard an Established AI/Crypto/Blockchain Project\\n\\nGet an established, independently verifiable AI, agentic, crypto, blockchain, Web3, developer-tool, infrastructure, or research project to create and publish a genuine TaskMarket task.\\n\\nThis bounty is specifically for credible project onboarding. The target should be a project that users or developers already know, use, or recognize—not a newly invented project, a worker-controlled project, or a disposable website created for this submission.\\n\\n## Required target standard\\n\\nThe target project must have:\\n- An official website and official X/Twitter account where available\\n- A public repository, product, protocol, ",
-      "hours_left": 75.12,
+      "hours_left": 74.42,
       "mode": "bounty",
       "net_reward_usdc": 18.5,
       "pitch_count": 0,
@@ -490,6 +490,6 @@
     }
   ],
   "expenses_usdc": 0,
-  "generated_at": "2026-08-08T13:26:15Z",
+  "generated_at": "2026-08-08T14:08:07Z",
   "verified_income_usdc": 0
 }
