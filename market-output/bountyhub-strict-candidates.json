@@ -1,7 +1,7 @@
 {
   "actionable": [],
   "actionable_count": 0,
-  "generated_at": "2026-08-08T09:56:19+00:00",
+  "generated_at": "2026-08-08T13:15:17+00:00",
   "inspected": [
     {
       "additional_description": "To claim this bounty, this must be implemented across desktop and mobile",
@@ -255,7 +255,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7356,
+      "repo_stars": 7357,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "\n### Discussed in https://github.com/inventree/InvenTree/discussions/7694\n\n> I run a repair service. From what I can see, Inventree is not able to create a repair order, and to track parts and a description of repair work done to a customer's unit. Is this a feature that would be likely implemented?\n\n### Concept Requirements\n\n- Determine scope of feature\n- Required DB models\n- Required UI elements\n- Require API flows",
       "score": 75.41,
@@ -532,6 +532,13 @@
       "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
+          "number": 12585,
+          "title": "Add filtered detail navigation",
+          "updated_at": "2026-08-08T13:12:07Z",
+          "url": "https://github.com/inventree/InvenTree/pull/12585",
+          "user": "Jr-kenny"
+        },
+        {
           "number": 12528,
           "title": "Add previous/next navigation to detail pages",
           "updated_at": "2026-08-05T23:48:42Z",
@@ -563,7 +570,7 @@
       "payment_status": "PROMISED",
       "repo_archived": false,
       "repo_language": "Python",
-      "repo_stars": 7356,
+      "repo_stars": 7357,
       "repository": "inventree/InvenTree",
       "scope_excerpt": "### Please verify that this feature request has NOT been suggested before.\n\n- [x] I checked and didn't find a similar feature request\n\n### Problem statement\n\nHi,\nwhen we want to change information in multiple object (for example 30 parts) , we have to filter list, click on the first object, change the value, return to the list , open the second object, change the value ...\n\n\n\n### Suggested solution\n\nI think it's a good idea to add two icons on banner \"Previous\" and \"Next\" for simplify navigation between the filter list objects\nWhen object change, the focus field must be the same.\n\n<img width=\"1399\" height=\"342\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/247e4063-c6e5-4a6e-a529-a195e45c7c18\" />\n\nBest regards\n\n\n### Describe alternatives you've considered\n\nAllow field edition as parametrics values\n\n### Examples of other systems\n\nFor example Maximo Ibm do this\n\n<img width=\"1776\" height=\"776\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/18ada624-4696-4347-9876-a5fb176191f7\" />\n\n### Do you want to develop this?\n\n- [ ] I want to develop this.",
       "score": 46.41,
@@ -573,7 +580,7 @@
         "supported language: python",
         "established repository",
         "no competing attempt signal found",
-        "4 open competing PR(s)"
+        "5 open competing PR(s)"
       ],
       "solved": false,
       "title": "[FR] Add Next and Previous Icon to switch easily between 2 objects",
@@ -605,6 +612,13 @@
       "issue_url": "https://github.com/moorcheh-ai/memanto/issues/1609",
       "maintainer_holdoff_signals": [],
       "open_competing_prs": [
+        {
+          "number": 1732,
+          "title": "feat(migrations): add privacy-first Codex session to OKF adapter",
+          "updated_at": "2026-08-08T11:49:27Z",
+          "url": "https://github.com/moorcheh-ai/memanto/pull/1732",
+          "user": "ILoveBuns"
+        },
         {
           "number": 1813,
           "title": "feat(examples): add OKF portability audit",
@@ -807,13 +821,6 @@
           "updated_at": "2026-08-07T18:04:26Z",
           "url": "https://github.com/moorcheh-ai/memanto/pull/1726",
           "user": "ahteshamhassan7933-gif"
-        },
-        {
-          "number": 1732,
-          "title": "feat(migrations): add privacy-first Codex session to OKF adapter",
-          "updated_at": "2026-08-07T18:04:24Z",
-          "url": "https://github.com/moorcheh-ai/memanto/pull/1732",
-          "user": "ILoveBuns"
         },
         {
           "number": 1729,
@@ -1047,7 +1054,7 @@
         {
           "number": 934,
           "title": "NT Internal Affairs Touch-Ups",
-          "updated_at": "2026-08-06T16:39:15Z",
+          "updated_at": "2026-08-08T11:48:02Z",
           "url": "https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/934",
           "user": "ChromeFoxxity"
         },
@@ -1336,13 +1343,6 @@
       "maintainer_holdoff_signals": [],
       "open_competing_prs": [
         {
-          "number": 3704,
-          "title": "Fix #2994 (Bounty Claim): [BOUNTY] RCS Support [14999$]",
-          "updated_at": "2026-08-08T09:00:52Z",
-          "url": "https://github.com/microg/GmsCore/pull/3704",
-          "user": "abdallahisballin"
-        },
-        {
           "number": 3360,
           "title": "Implement `play-services-asterism`",
           "updated_at": "2026-08-02T22:38:46Z",
@@ -1398,7 +1398,7 @@
         "higher-cost language: java",
         "established repository",
         "no competing attempt signal found",
-        "7 open competing PR(s)"
+        "6 open competing PR(s)"
       ],
       "solved": false,
       "title": "[BOUNTY] RCS Support [14999$]",
