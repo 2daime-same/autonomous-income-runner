@@ -1,0 +1,47 @@
+{
+  "artifact_evidence": [
+    {
+      "file_name": "index.html",
+      "keccak256": "0x96b7fe658ca0fd55bf544100c859ec1b447c26ab6fef803a733530da981b334b",
+      "mime_type": "text/html",
+      "path": "deliverables/taskmarket-signal-panic/index.html",
+      "role": "final",
+      "sha256": "b833263464e79549f38085c0c5c42e8e0ec6a19c739042741ca99892a98a4080",
+      "size_bytes": 682664
+    }
+  ],
+  "attempt_id": "signal-panic-20260808-01",
+  "encrypted_wallet": {
+    "certificate": "crypto/superteam-state-public.crt",
+    "certificate_der_sha256": "bb521818fb917bccb4ef60404bec7d3fdc550d58a9fe2c42630600533ff360b7",
+    "path": "deliverables/taskmarket-signal-panic/submission-state/private-wallet.cms.b64",
+    "sha256": "9d097641e4544d89de6de40100f0ec03ad241823e641a1e5d6d0f739f57014cc"
+  },
+  "expenses_usdc": 0,
+  "external_writes_performed": [],
+  "prepared_at": "2026-08-08T09:34:38+00:00",
+  "public_signature_exposed": false,
+  "schema_version": "taskmarket-handsel-submission-attempt-v1",
+  "status": "in_progress",
+  "task": {
+    "artifact_sha256": "b833263464e79549f38085c0c5c42e8e0ec6a19c739042741ca99892a98a4080",
+    "artifact_size_bytes": 682664,
+    "browser_smoke": "passed",
+    "deadline": null,
+    "expiry_time": "2026-08-09T20:57:31+00:00",
+    "mode": "bounty",
+    "phase": "active",
+    "reported_submission_count": 71,
+    "requester": "0xEeCD138212Fa1220627C9A3081f770C1b162a5E2",
+    "reward_usdc": 10.0,
+    "stake_required": false,
+    "status": "open",
+    "submission_count_before": 0,
+    "submission_window_open": true,
+    "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+    "title": "",
+    "worker_submit_requires_payment": false
+  },
+  "verified_income_usdc": 0,
+  "worker_address": "0xF0242C582469F1f65758f126cDB479ed188e6469"
+}
