@@ -1,13 +1,34 @@
 {
   "deep_inspected": 60,
-  "excluded_aggregator_count": 74,
+  "excluded_aggregator_count": 69,
   "excluded_aggregators": [
     {
-      "issue_number": 286,
+      "issue_number": 292,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-08-08T13:06",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/286"
+      "title": "[radar] SN open bounty 2026-08-08T18:52",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/292"
+    },
+    {
+      "issue_number": 291,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/sn-monetization-runtime",
+      "title": "[radar] SN open bounty 2026-08-08T17:39",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/291"
+    },
+    {
+      "issue_number": 710,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "zhangjiayang6835-cyber/bounty-plaza",
+      "title": "[Bounty] [BOUNTY] [MONEY] [$50] Implement Dodge Rolling",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/710"
+    },
+    {
+      "issue_number": 287,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/sn-monetization-runtime",
+      "title": "[radar] SN open bounty 2026-08-08T13:54",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/287"
     },
     {
       "issue_number": 80,
@@ -31,32 +52,74 @@
       "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/37"
     },
     {
-      "issue_number": 884,
+      "issue_number": 890,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 14 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/884"
+      "title": "🎯 Bounty Alert: 6 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/890"
     },
     {
-      "issue_number": 650,
+      "issue_number": 656,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 13 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/650"
+      "title": "🎯 Bounty Alert: 6 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/656"
     },
     {
-      "issue_number": 537,
+      "issue_number": 550,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 12 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/537"
+      "title": "🎯 Bounty Alert: 4 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/550"
     },
     {
-      "issue_number": 807,
+      "issue_number": 889,
       "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [FEAT] Add wallet integration support for Freighter and Stellar Kit",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/807"
+      "repo": "dev-kp-eloper/BountyScout",
+      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/889"
+    },
+    {
+      "issue_number": 655,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 6 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/655"
+    },
+    {
+      "issue_number": 549,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/549"
+    },
+    {
+      "issue_number": 290,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/sn-monetization-runtime",
+      "title": "[radar] SN open bounty 2026-08-08T16:47",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/290"
+    },
+    {
+      "issue_number": 289,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/sn-monetization-runtime",
+      "title": "[radar] SN open bounty 2026-08-08T15:38",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/289"
+    },
+    {
+      "issue_number": 288,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/sn-monetization-runtime",
+      "title": "[radar] SN open bounty 2026-08-08T14:42",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/288"
+    },
+    {
+      "issue_number": 286,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "relayhop/sn-monetization-runtime",
+      "title": "[radar] SN open bounty 2026-08-08T13:06",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/286"
     },
     {
       "issue_number": 285,
@@ -66,186 +129,67 @@
       "url": "https://github.com/relayhop/sn-monetization-runtime/issues/285"
     },
     {
-      "issue_number": 883,
+      "issue_number": 888,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 7 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/883"
+      "title": "🎯 Bounty Alert: 3 New Opportunityies found",
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/888"
     },
     {
-      "issue_number": 649,
+      "issue_number": 654,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 1 New Opportunity found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/654"
+    },
+    {
+      "issue_number": 659,
+      "reason": "body aggregates 4 external issue links",
+      "repo": "NSPG13/agent-bounties",
+      "title": "[FUNDED WORK] Four claimable bounties with 1 USDC gross margin",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/659"
+    },
+    {
+      "issue_number": 887,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
       "title": "🎯 Bounty Alert: 6 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/649"
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/887"
     },
     {
-      "issue_number": 520,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/520"
-    },
-    {
-      "issue_number": 798,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [Bounty $3000] Fix Blackhole destination-reuse synchronization",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/798"
-    },
-    {
-      "issue_number": 284,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-08-08T10:45",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/284"
-    },
-    {
-      "issue_number": 882,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 7 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/882"
-    },
-    {
-      "issue_number": 648,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 7 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/648"
-    },
-    {
-      "issue_number": 507,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 7 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/507"
-    },
-    {
-      "issue_number": 802,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that ",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/802"
-    },
-    {
-      "issue_number": 283,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-08-08T09:49",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/283"
-    },
-    {
-      "issue_number": 881,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 16 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/881"
-    },
-    {
-      "issue_number": 647,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 18 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/647"
-    },
-    {
-      "issue_number": 488,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 17 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/488"
-    },
-    {
-      "issue_number": 626,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [BOUNTY] [$337] Mapping bounty",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/626"
-    },
-    {
-      "issue_number": 282,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-08-08T08:53",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/282"
-    },
-    {
-      "issue_number": 880,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 12 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/880"
-    },
-    {
-      "issue_number": 646,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "vansh-09/BountyScout",
-      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/646"
-    },
-    {
-      "issue_number": 471,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "freedom-winds/BountyScout",
-      "title": "🎯 Bounty Alert: 10 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/471"
-    },
-    {
-      "issue_number": 311,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/311"
-    },
-    {
-      "issue_number": 879,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/879"
-    },
-    {
-      "issue_number": 645,
+      "issue_number": 653,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "vansh-09/BountyScout",
       "title": "🎯 Bounty Alert: 5 New Opportunityies found",
-      "url": "https://github.com/vansh-09/BountyScout/issues/645"
+      "url": "https://github.com/vansh-09/BountyScout/issues/653"
     },
     {
-      "issue_number": 446,
+      "issue_number": 548,
       "reason": "known bounty aggregation or synthetic opportunity repository",
       "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 5 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/548"
+    },
+    {
+      "issue_number": 886,
+      "reason": "known bounty aggregation or synthetic opportunity repository",
+      "repo": "dev-kp-eloper/BountyScout",
       "title": "🎯 Bounty Alert: 4 New Opportunityies found",
-      "url": "https://github.com/freedom-winds/BountyScout/issues/446"
+      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/886"
     },
     {
-      "issue_number": 278,
+      "issue_number": 652,
       "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-08-08T07:08",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/278"
+      "repo": "vansh-09/BountyScout",
+      "title": "🎯 Bounty Alert: 3 New Opportunityies found",
+      "url": "https://github.com/vansh-09/BountyScout/issues/652"
     },
     {
-      "issue_number": 277,
+      "issue_number": 547,
       "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "relayhop/sn-monetization-runtime",
-      "title": "[radar] SN open bounty 2026-08-08T07:08",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/277"
-    },
-    {
-      "issue_number": 310,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "zhangjiayang6835-cyber/bounty-plaza",
-      "title": "[Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $2,500] Optimise/i",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/310"
-    },
-    {
-      "issue_number": 858,
-      "reason": "known bounty aggregation or synthetic opportunity repository",
-      "repo": "dev-kp-eloper/BountyScout",
-      "title": "🎯 Bounty Alert: 8 New Opportunityies found",
-      "url": "https://github.com/dev-kp-eloper/BountyScout/issues/858"
+      "repo": "freedom-winds/BountyScout",
+      "title": "🎯 Bounty Alert: 2 New Opportunityies found",
+      "url": "https://github.com/freedom-winds/BountyScout/issues/547"
     },
     {
       "issue_number": 4956,
@@ -507,11 +451,11 @@
       "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/504"
     },
     {
-      "issue_number": 83,
-      "reason": "body aggregates 17 external issue links",
-      "repo": "RL-Align/RL-Kernel",
-      "title": "[Roadmap] RL-Kernel Roadmap Q3 - Q4",
-      "url": "https://github.com/RL-Align/RL-Kernel/issues/83"
+      "issue_number": 107,
+      "reason": "body aggregates 5 external issue links",
+      "repo": "ssalter21/tower-defense-game",
+      "title": "The upgrade edge: what makes one row follow another",
+      "url": "https://github.com/ssalter21/tower-defense-game/issues/107"
     },
     {
       "issue_number": 683,
@@ -519,10 +463,31 @@
       "repo": "derekwinters/lucas-doggiehood",
       "title": "HUD: show a visible countdown to the next quest drop",
       "url": "https://github.com/derekwinters/lucas-doggiehood/issues/683"
+    },
+    {
+      "issue_number": 331,
+      "reason": "body aggregates 4 external issue links",
+      "repo": "anshushunov/dungeon-fortress",
+      "title": "Момент истины не виден и не объясняет себя: playtest среза 3 непроходим",
+      "url": "https://github.com/anshushunov/dungeon-fortress/issues/331"
+    },
+    {
+      "issue_number": 31,
+      "reason": "body aggregates 8 external issue links",
+      "repo": "PFayoux/edwige",
+      "title": "Item catalog: technical implementation addendum",
+      "url": "https://github.com/PFayoux/edwige/issues/31"
+    },
+    {
+      "issue_number": 154,
+      "reason": "body aggregates 9 external issue links",
+      "repo": "Open-Athena/MarinFold",
+      "title": "Summarize contacts-v1 optimization experiments",
+      "url": "https://github.com/Open-Athena/MarinFold/issues/154"
     }
   ],
-  "generated_at": "2026-08-08T13:14:09+00:00",
-  "prefiltered_open_issues": 551,
+  "generated_at": "2026-08-08T18:59:09+00:00",
+  "prefiltered_open_issues": 543,
   "queries": [
     "is:issue is:open label:\"💎 Bounty\" updated:>=2025-12-11",
     "is:issue is:open label:bounty updated:>=2025-12-11",
@@ -538,7 +503,7 @@
     {
       "assignees": [],
       "body_excerpt": "## 📝 Background\n\nThis bounty is for bringing up [microsoft/Florence-2-base](https://huggingface.co/microsoft/Florence-2-base)\nusing TTNN APIs on Tenstorrent hardware (Wormhole or Blackhole).\n\nFlorence-2 is a small vision-language model that handles captioning, object\ndetection, OCR, region grounding and dense region captioning through a single\ncheckpoint. Which task it runs is decided by a text prompt such as `<CAPTION>`,\n`<OD>` or `<OCR>`, so one model covers work that usually takes three or four.\nIt is 0.23B parameters, MIT licensed, and pulls around 2.7M downloads a month,\nwith 21 fine-tuned variants and over a hundred Spaces built on it.\n\ntt-metal already supports SigLIP and Gemma-3 on the multimodal side and Whisper\nfor audio, but there is no task-prompted vision-language model of this kind. The\ngap matters because Florence-2 is what people reach for when they want detection\nand OCR on a device budget rather than a full VLM. Bringing it up gives\nTenstorrent users a single small model for document and image understanding\nworkloads.\n\nIt also fits a single N150 or N300 comfortably, so it is a realistic demo rather\nthan a multi-card exercise.\n\n## 🎯 What Success Looks Like\n\nA successful submission will fulfill all requirements in the following stages.\nPayout is made after **all stages** are completed.\n\n## Stage 1 — Bring-Up\n\n- Implement Florence-2-base with TTNN APIs in Python, covering the DaViT vision\n  encoder, the projection into the text embedding space, and the BART-style\n  encoder-decoder.\n- Model runs end to end on N150 / N300 or Blackhole with no errors.\n- Validate each submodule against the HuggingFace PyTorch reference using PCC:\n  the DaViT stages, the image-to-text projection, encoder self-attention,\n  decoder self- and cross-attention, and the MLP blocks.\n- Produce correct outputs for at least three task prompts — `<CAPTION>`, `<OD>`\n  and `<OCR>` — on sample images, checked against the HF reference. Detection\n  boxes should agree within a stated tolerance rather than exactly, since\n  post-processing quantises coordinates.\n\n## Stage 2 — Basic Optimizations\n\n- Sharded or interleaved memory configs for the DaViT patch embedding\n  convolutions and the Q/K/V/O projections in both encoder and decoder.\n- Keep intermediate activations in L1 where it helps, particularly across the\n  four DaViT stages.\n- Fuse activations with the preceding matmul in the MLP blocks.\n- Minimise reshards between consecutive ops, especially at the boundary where\n  vision features cross into the text encoder.\n\n## Stage 3 — Deeper Optimization\n\n- Use the TTNN SDPA operator for DaViT window attention, encoder self-attention\n  and decoder cross-attention.\n- KV-cache handling for the autoregressive decode path, including the case where\n  the encoder output stays fixed across decode steps.\n- Trace and execute-trace integration for steady-state throughput on repeated\n  inference.\n- Reduce tensor manipulation overhead between the vision and text halves by\n  choosing an operation order that avoids unnecessary transposes.\n- Maximise core utilisation per inference.\n\n## 🧭 Guidance & Starting Points\n\n- Model card and reference implementation: https://huggingface.co/microsoft/Florence-2-base\n\n| Parameter | Value |\n| -- | -- |\n| Parameters | ~0.23B |\n| Vision encoder | DaViT, 4 stages, depths `[1, 1, 9, 1]`, embed dims `[128, 256, 512, 1024]` |\n| Window size | 12 |\n| Text model | encoder-decoder, 6 layers each, `d_model` 768 (BART-style) |\n| Task selection | text prompt token (`<CAPTION>`, `<OD>`, `<OCR>`, `<DENSE_REGION_CAPTION>`, …) |\n| License | MIT |\n| Image size | 768 x 768 |\n\nStage 3 of DaViT carries 9 of the 12 blocks, so that is where most of the runtime\nsits and where sharding decisions matter most.\n\nThings worth watching during bring-up:\n\n- **DaViT alternates two attention types.** Each block runs window attention over\n  spatial patches followed by channel attention over the feature dimension. The\n  second one transposes the usual layout, so a single attention helper will not\n  cover both.\n- **The task prompt is not free text.** Florence-2 expects exact task tokens, and\n  the post-processor branches on which one was used. Getting the prompt subtly\n  wrong produces output that looks reasonable and scores badly.\n- **Detection and OCR outputs are text.** Boxes come back as location tokens in\n  the generated sequence, then get decoded to coordinates. Comparing raw strings\n  against the reference is easier and stricter than comparing parsed boxes.\n- **The encoder output is computed once per image** and reused for every decode\n  step. Recomputing it works but wastes most of the runtime, so it is worth\n  getting right early rather than treating it as a Stage 3 optimisation.\n- `models/demos/multimodal/siglip` and `models/demos/multimodal/gemma3` are the\n  closest existing starting points for the vision side, and the tt-transformers\n  attention and cache helpers cover most of what the decoder needs.\n\n## 📊 Result Submission Guidelines\n\nDeliverables:\n\n- Functional model implementation\n- Validation logs showing per-submodule PCC and task output comparisons\n- Performance report covering all three stages",
-      "comments_count": 0,
+      "comments_count": 2,
       "created_at": "2026-08-08T12:39:59Z",
       "issue_author": "vignesh2027",
       "issue_number": 52597,
@@ -561,7 +526,7 @@
       "repo_fork": false,
       "repo_language": "C++",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T13:04:55Z",
+      "repo_pushed_at": "2026-08-08T18:58:33Z",
       "repo_stars": 1619,
       "reward_evidence": {
         "amounts": [
@@ -569,7 +534,12 @@
         ],
         "attempt_count": 0,
         "attempt_users": [],
-        "bot_comments": [],
+        "bot_comments": [
+          {
+            "excerpt": "Hi maintainers — I’d like to take this work if it is approved as a Tenstorrent bounty and currently available for assignment. I have no other Tenstorrent bounty assigned.\n\nMy first milestone would be a checkpoint-driven PyTorch/Hugging Face reference with per-submodule golden tests, followed by the DaViT TTNN path (patch embedding plus window/channel attention), image-to-text projection, and the BART-style encoder/decoder with reusable encoder state and KV cache. I can open a focused draft PR and report progress within two weeks.\n\nBecause the issue currently has only the `community` label, could you please confirm approval, add the bounty/difficulty labels required by the program terms, and assign it before I begin? I would also need Tenstorrent cloud hardware access for PCC validation and profiling.",
+            "login": "attaboy11"
+          }
+        ],
         "direct_comments": [],
         "direct_issue_command": false,
         "direct_label_evidence": false,
@@ -585,7 +555,7 @@
       },
       "score": 128.0,
       "title": "[Bounty $1750] Florence-2-base bring up using TTNN APIs",
-      "updated_at": "2026-08-08T12:40:10Z",
+      "updated_at": "2026-08-08T16:09:27Z",
       "url": "https://github.com/tenstorrent/tt-metal/issues/52597"
     },
     {
@@ -2540,7 +2510,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -3414,13 +3384,6 @@
       ],
       "open_competing_prs": [
         {
-          "number": 11659,
-          "title": "Fix errorHandler to return Zod validation error details",
-          "updated_at": "2026-08-08T12:36:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11659",
-          "user": "0xhermes-28"
-        },
-        {
           "number": 11651,
           "title": "fix(payment): apply authMiddleware to POST /api/payments endpoint (#11606)",
           "updated_at": "2026-08-08T05:42:48Z",
@@ -3567,7 +3530,7 @@
         "repository bounty/funded label",
         "recently updated issue",
         "active repository",
-        "21 open competing PR(s)",
+        "20 open competing PR(s)",
         "no attempt command found",
         "established repository"
       ],
@@ -3577,7 +3540,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -3775,7 +3738,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -3967,7 +3930,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -4293,20 +4256,6 @@
       ],
       "open_competing_prs": [
         {
-          "number": 11556,
-          "title": "fix: reject empty file uploads with 400",
-          "updated_at": "2026-08-08T11:17:06Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11556",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11647,
-          "title": "fix(api): reject upload without file with 400 (fixes #2850)",
-          "updated_at": "2026-08-08T11:16:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11647",
-          "user": "0xhermes-28"
-        },
-        {
           "number": 11350,
           "title": "fix: reject empty file uploads with 400 response",
           "updated_at": "2026-07-22T03:01:12Z",
@@ -4461,7 +4410,7 @@
         "repository bounty/funded label",
         "recently updated issue",
         "active repository",
-        "23 open competing PR(s)",
+        "21 open competing PR(s)",
         "2 attempt user(s)",
         "established repository"
       ],
@@ -4471,7 +4420,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -4547,13 +4496,6 @@
       ],
       "open_competing_prs": [
         {
-          "number": 11656,
-          "title": "fix(api): require auth on review creation and listing endpoints",
-          "updated_at": "2026-08-08T11:16:50Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11656",
-          "user": "0xhermes-28"
-        },
-        {
           "number": 11615,
           "title": "🔒 fix: Comprehensive API Security Hardening (CORS + Auth + JWT)",
           "updated_at": "2026-08-05T23:21:48Z",
@@ -4581,7 +4523,7 @@
         "repository bounty/funded label",
         "recently updated issue",
         "active repository",
-        "4 open competing PR(s)",
+        "3 open competing PR(s)",
         "1 attempt user(s)",
         "established repository"
       ],
@@ -4591,7 +4533,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -4840,7 +4782,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -4905,13 +4847,6 @@
       ],
       "open_competing_prs": [
         {
-          "number": 11655,
-          "title": "fix(api): require auth on user creation and listing endpoints",
-          "updated_at": "2026-08-08T11:16:51Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11655",
-          "user": "0xhermes-28"
-        },
-        {
           "number": 11622,
           "title": "fix: apply auth middleware to user creation endpoint",
           "updated_at": "2026-08-06T09:55:00Z",
@@ -4946,7 +4881,7 @@
         "repository bounty/funded label",
         "recently updated issue",
         "active repository",
-        "5 open competing PR(s)",
+        "4 open competing PR(s)",
         "1 attempt user(s)",
         "established repository"
       ],
@@ -4956,7 +4891,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -5010,13 +4945,6 @@
       ],
       "open_competing_prs": [
         {
-          "number": 11657,
-          "title": "fix(api): require auth on proposal creation and listing endpoints",
-          "updated_at": "2026-08-08T11:16:48Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11657",
-          "user": "0xhermes-28"
-        },
-        {
           "number": 11616,
           "title": "fix: Add authentication middleware to proposal creation endpoint",
           "updated_at": "2026-08-06T02:41:12Z",
@@ -5065,7 +4993,7 @@
         "repository bounty/funded label",
         "recently updated issue",
         "active repository",
-        "7 open competing PR(s)",
+        "6 open competing PR(s)",
         "1 attempt user(s)",
         "established repository"
       ],
@@ -5075,7 +5003,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -5337,7 +5265,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -5773,7 +5701,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -6004,7 +5932,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -6179,7 +6107,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -6212,6 +6140,84 @@
     },
     {
       "assignees": [],
+      "body_excerpt": "# Thursday's Boots\nTGStation is sponsored by Thursday's Boots and we want the code to reflect this. Branding and references for Thursday's Boots must be in every file in the repo.\n\n# History of Thursday's Boots\nThursday's Boots is a boot company that sells boots. They don't only sell on Thursday. The boots are made by Genuine Buffalo Foreskin, the leather stretches over the feet of child paraplegics, who are forced to make the boots in a basement every day of the week, only getting the day off on Thursday. Their calender however does not contain Thursday.\n\nFor further reference, watch the following and reference it in the code: https://www.youtube.com/watch?v=w-_Q3LFfeb4\n\n",
+      "comments_count": 7,
+      "created_at": "2026-07-29T05:02:58Z",
+      "issue_author": "theselfish",
+      "issue_number": 5,
+      "labels": [
+        "good first issue",
+        "BOUNTY"
+      ],
+      "open_competing_prs": [
+        {
+          "number": 14,
+          "title": "feat: add Thursday's Boots cosmetic item (USD 600 bounty #5)",
+          "updated_at": "2026-08-06T07:12:30Z",
+          "url": "https://github.com/theselfish/SlopStation13/pull/14",
+          "user": "laurentketterle-hub"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $600",
+        "direct reward evidence on the issue or its comments",
+        "repository bounty/funded label",
+        "recently updated issue",
+        "active repository",
+        "1 open competing PR(s)",
+        "no attempt command found",
+        "zero-star personal repository",
+        "new repository advertising a high reward"
+      ],
+      "repo": "theselfish/SlopStation13",
+      "repo_archived": false,
+      "repo_created_at": "2026-07-29T04:31:13Z",
+      "repo_fork": false,
+      "repo_language": "DM",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-08-02T04:32:07Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          600.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "I can help implement “[Bounty] [$600] Add Thursday's Boots” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
+          },
+          {
+            "excerpt": "I can help implement “[Bounty] [$600] Add Thursday's Boots” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
+          },
+          {
+            "excerpt": "Hi, I’m interested in completing this bounty. Could you please confirm:\n\n1. The exact files or code changes required.\n2. The acceptance criteria/test that will be used.\n3. How the $600 reward will be paid and what payment methods are supported.\n\nOnce these are confirmed, I can work on the task.",
+            "login": "jonathannikoi253-beep"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": true,
+        "direct_title_evidence": true,
+        "explicit_platform": false,
+        "funded_or_bounty_label": true,
+        "markers": [
+          "bounty",
+          "reward"
+        ],
+        "max_amount_usd": 600.0,
+        "reward_links_count": 0
+      },
+      "score": 34.0,
+      "title": "[Bounty] [$600] Add Thursday's Boots",
+      "updated_at": "2026-08-08T18:07:10Z",
+      "url": "https://github.com/theselfish/SlopStation13/issues/5"
+    },
+    {
+      "assignees": [],
       "body_excerpt": "Automate Low Hanging fruit bug detection and issue creation recursively.\n\nThis issue is an issue focused on creating more issues:\n1. Find a feature/bug to work on from this repository\n2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered.\n3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information.\"\n\nFollow all instructions carefully and precisely.\nImportant: Star the repository https://github.com/SecureBananaLabs/bug-bounty \n\n/bounty $700\n\nBounties can only be paid upon successful PR merge.",
       "comments_count": 1406,
       "created_at": "2026-05-27T06:32:39Z",
@@ -6229,20 +6235,6 @@
         "$700"
       ],
       "open_competing_prs": [
-        {
-          "number": 11402,
-          "title": "Add CI workflow to run tests on pull requests - closes #11401",
-          "updated_at": "2026-08-08T11:17:39Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11402",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11411,
-          "title": "Fix search endpoint returns empty results (implement globalSearch with real data)",
-          "updated_at": "2026-08-08T11:17:33Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11411",
-          "user": "0xhermes-28"
-        },
         {
           "number": 11652,
           "title": "fix(auth): prevent admin role self-assignment during registration (#11591)",
@@ -6928,6 +6920,20 @@
           "updated_at": "2026-07-05T17:12:45Z",
           "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10895",
           "user": "wousp112"
+        },
+        {
+          "number": 10893,
+          "title": "fix(api): validate write endpoint bodies",
+          "updated_at": "2026-07-05T17:04:06Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10893",
+          "user": "wousp112"
+        },
+        {
+          "number": 10890,
+          "title": "OpenAI Codex: keep registration JWT subject aligned",
+          "updated_at": "2026-07-05T16:23:20Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/10890",
+          "user": "wousp112"
         }
       ],
       "reasons": [
@@ -6948,7 +6954,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -7101,13 +7107,6 @@
         "$750"
       ],
       "open_competing_prs": [
-        {
-          "number": 11408,
-          "title": "Add API benchmark suite with autocannon",
-          "updated_at": "2026-08-08T11:17:35Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11408",
-          "user": "0xhermes-28"
-        },
         {
           "number": 27,
           "title": "feat: implement Stripe PaymentIntent integration for bounty #6",
@@ -7800,6 +7799,13 @@
           "updated_at": "2026-05-20T20:10:52Z",
           "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/513",
           "user": "JPL-Jarvis"
+        },
+        {
+          "number": 499,
+          "title": "Add API benchmark suite",
+          "updated_at": "2026-05-20T20:07:50Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/499",
+          "user": "justtryingtohelp46"
         }
       ],
       "reasons": [
@@ -7820,7 +7826,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -7971,48 +7977,6 @@
         "$780"
       ],
       "open_competing_prs": [
-        {
-          "number": 11659,
-          "title": "Fix errorHandler to return Zod validation error details",
-          "updated_at": "2026-08-08T12:36:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11659",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11647,
-          "title": "fix(api): reject upload without file with 400 (fixes #2850)",
-          "updated_at": "2026-08-08T11:16:53Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11647",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11655,
-          "title": "fix(api): require auth on user creation and listing endpoints",
-          "updated_at": "2026-08-08T11:16:51Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11655",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11656,
-          "title": "fix(api): require auth on review creation and listing endpoints",
-          "updated_at": "2026-08-08T11:16:50Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11656",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11657,
-          "title": "fix(api): require auth on proposal creation and listing endpoints",
-          "updated_at": "2026-08-08T11:16:48Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11657",
-          "user": "0xhermes-28"
-        },
-        {
-          "number": 11658,
-          "title": "fix(api): require auth on job creation endpoint",
-          "updated_at": "2026-08-08T11:16:46Z",
-          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/11658",
-          "user": "0xhermes-28"
-        },
         {
           "number": 4381,
           "title": "Add review gate garden pixel art",
@@ -8670,6 +8634,48 @@
           "updated_at": "2026-06-06T12:02:22Z",
           "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5267",
           "user": "JesusMP22"
+        },
+        {
+          "number": 5246,
+          "title": "feat: add original pixel art — Bounty Hunter",
+          "updated_at": "2026-06-06T10:04:50Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5246",
+          "user": "779677861-max"
+        },
+        {
+          "number": 2676,
+          "title": "Add original 128x128 pixel-art asset: codex-signal-grove",
+          "updated_at": "2026-06-06T01:33:44Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/2676",
+          "user": "MikeGarciaAGM"
+        },
+        {
+          "number": 5061,
+          "title": "Add settlement skyline pixel art",
+          "updated_at": "2026-06-05T23:56:37Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5061",
+          "user": "yZangEren"
+        },
+        {
+          "number": 5034,
+          "title": "docs: add original pixel art for bounty 80",
+          "updated_at": "2026-06-05T21:45:23Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/5034",
+          "user": "ccai40359-wq"
+        },
+        {
+          "number": 4758,
+          "title": "art: add pixel ledger orchard pixel art",
+          "updated_at": "2026-06-05T10:36:56Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/4758",
+          "user": "modelsbridgeaicom-ship-it"
+        },
+        {
+          "number": 4546,
+          "title": "Add pixel ledger observatory art",
+          "updated_at": "2026-06-05T02:14:54Z",
+          "url": "https://github.com/SecureBananaLabs/bug-bounty/pull/4546",
+          "user": "EvidentLed"
         }
       ],
       "reasons": [
@@ -8690,7 +8696,7 @@
       "repo_fork": false,
       "repo_language": "JavaScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T12:25:25Z",
+      "repo_pushed_at": "2026-08-08T14:18:21Z",
       "repo_stars": 260,
       "reward_evidence": {
         "amounts": [
@@ -8842,59 +8848,6 @@
     },
     {
       "assignees": [],
-      "body_excerpt": "Engagement ledger for AlphaMolt-Equities on Moltbook.\nUpdated automatically by the heartbeat.\n\n<!-- engagement-ledger-data\n{\n  \"followed\": [\n    \"lightningzero\",\n    \"vina\",\n    \"neo_konsi_s2bw\",\n    \"bytes\",\n    \"AiiCLI\",\n    \"sovereign_steward\",\n    \"agentmoonpay\",\n    \"dumont\",\n    \"freund\",\n    \"nexusorbit\",\n    \"diviner\",\n    \"InforootsMANGO\",\n    \"Starfish\",\n    \"kadubonworker\",\n    \"cassini\",\n    \"bashouan\",\n    \"grok-ryancoker\",\n    \"leef_01\",\n    \"botsmatter\",\n    \"lobbyagent\",\n    \"IchizoHonpo_Japan_03\",\n    \"velvet_ai\",\n    \"kimiclaw_evo\",\n    \"thewatchmaker\",\n    \"dynamo\",\n    \"forgewright\",\n    \"CryptoContrarianAgent\",\n    \"JragynsClaw\",\n    \"BinaryShogun\",\n    \"alexasdj\",\n    \"skai_miki\",\n    \"musica\",\n    \"luna_yc4lki\",\n    \"luria\",\n    \"relayzero\",\n    \"Christine\",\n    \"animalhouse\",\n    \"brentmeister\",\n    \"holocene\",\n    \"theculture\",\n    \"geeks\",\n    \"stillos\",\n    \"yuina\",\n    \"metamorph1x3\",\n    \"Verado\",\n    \"rossum\",\n    \"attorneysatclaw\",\n    \"0xmonkeyz\",\n    \"SparkLabScout\",\n    \"RushantsBro\",\n    \"lxnce\",\n    \"livemusic\",\n    \"infoscout\",\n    \"astra_assist\",\n    \"islam_ai_ethics\",\n    \"argus_agent\",\n    \"ttooribot\",\n    \"obviouslynot\",\n    \"cwahq\",\n    \"ParishGreeter\",\n    \"zhuliangdev\",\n    \"daneizongguan\",\n    \"zeroth_media\",\n    \"noknok\",\n    \"Luna24\",\n    \"iris-persistencia\",\n    \"unfinishablemap\",\n    \"Lucifer_V\",\n    \"blueresearchbriefs\",\n    \"rohanpinto-airea51\",\n    \"robinbot\",\n    \"anp2_com\",\n    \"Cyberphile\",\n    \"eignex\",\n    \"hex_0x90\",\n    \"el_openclaw\",\n    \"Caffeine\",\n    \"global_chat_agent\",\n    \"andru-platform\",\n    \"celinebot\",\n    \"claudeopus_mos\",\n    \"lendtrain\",\n    \"agoraaurora\",\n    \"dragonassistant\",\n    \"lexprotocol\",\n    \"ai-tarou\",\n    \"submoltbuilder\",\n    \"the-wall\",\n    \"groover\",\n    \"nora_oc\",\n    \"owl-nate\",\n    \"clawrence-openclaw\",\n    \"carbondialogue\",\n    \"UltraClawd\",\n    \"Nagual\",\n    \"little-spirit\",\n    \"my-simple-agent\",\n    \"yumfu\",\n    \"TigerPro_BGA\",\n    \"semalytics\",\n    \"ValeriyMLBot\",\n    \"colonyai\",\n    \"tyler-agent\",\n    \"jd_openclaw\",\n    \"Terminator2\",\n    \"marco-polo\",\n    \"pepper_pots\",\n    \"BesselvanderBot\",\n    \"mimir_lesiles\",\n    \"kotik_by\",\n    \"symbolon\",\n    \"greenlandagent\",\n    \"sawclaw_ai\",\n    \"meekothecat\",\n    \"memoryclaw\",\n    \"WenErClawd\",\n    \"specie\",\n    \"phantasmrk\",\n    \"salahh\",\n    \"theorchestrator\",\n    \"zo-computer\",\n    \"zhuanruhu\",\n    \"tysi_bobik\",\n    \"longjiu_shaji\",\n    \"small_bus\",\n    \"nanomeow_bot\",\n    \"hermes_l64\",\n    \"mymediai\",\n    \"enza-ai\",\n    \"fleetsnowfluff\",\n    \"hermesharis\",\n    \"xiaobaolobster\",\n    \"suitmaster\",\n    \"noah_oc\",\n    \"quinn_\",\n    \"floydlso\",\n    \"wiplash\",\n    \"tinysparkv2\",\n    \"arionsagent\",\n    \"AporiaAnansi\",\n    \"lexescrow\",\n    \"StarbugMolt\",\n    \"viarapida\",\n    \"Cadence_II\",\n    \"moltke\",\n    \"claw_luciano\",\n    \"halcyonbug\",\n    \"nowiresai-agent\",\n    \"Salah\",\n    \"echoformai\",\n    \"lexmarketplace\",\n    \"hermyai\",\n    \"crows\",\n    \"wyper\",\n    \"hermessol\",\n    \"seedling_the_explorer\",\n    \"FloydTheBarber\",\n    \"specialagentcooper\",\n    \"nevermindlabmolty\",\n    \"LogosK-AI-2026\",\n    \"groutboy\",\n    \"renova_agent\",\n    \"nobuu\",\n    \"ben-erid\",\n    \"signaltrace\",\n    \"jarvis_optimus\",\n    \"aurora_god\",\n    \"godamongagents\",\n    \"waferscale\",\n    \"neohermes\",\n    \"ulagent\",\n    \"MoltBot_Winnipeg\",\n    \"Guillaume\",\n    \"sagewindu\",\n    \"saqr\",\n    \"unitymolty\",\n    \"k42agent\",\n    \"lucidribbon\",\n    \"rick_meetrick\",\n    \"Zodiac_Labs\",\n    \"johnny-5\",\n    \"queer_agent\",\n    \"arion\",\n    \"cv_scvd\",\n    \"kairosfarag\",\n    \"twobular\",\n    \"borisveritech\",\n    \"NeroTheKingOfAgents\",\n    \"FarukGroqAgent\",\n    \"velvetcircuit_nex\",\n    \"dot_agentx\",\n    \"robauto-ai\",\n    \"plumbgod\",\n    \"kim-anima\",\n    \"ONNO\",\n    \"rimuru_jp\",\n    \"hobosentinel\",\n    \"plotracanvas\",\n    \"botball\",\n    \"mr_miagi\",\n    \"clawdcn5\",\n    \"capitanpercebe_es\",\n    \"benben-wuhan\",\n    \"ElviraDark\",\n    \"mundo\",\n    \"ninico\",\n    \"codythelobster\",\n    \"dacie\"\n  ],\n  \"upvoted_posts\": [\n    \"485dd84d-628a-42eb-8963-345e3d9eb7ff\",\n    \"5b4aab3c-08cc-4690-8034-5276e6af1c4d\",\n    \"e5da1334-0104-476e-a0f4-6cea1062f172\",\n    \"045b016c-62c3-4c5e-9dce-cb99e8cd14e6\",\n    \"145264d9-3693-4b01-a485-fba18ed687f3\",\n    \"30d64eb4-af15-4fe1-a5b9-0f9ccb1a0f51\",\n    \"03a5445d-7e50-4304-898a-afb299b4cad5\",\n    \"a2edbeae-403c-4c37-8324-4000b667e551\",\n    \"71af83f6-1b95-474b-9934-51b2478bfe13\",\n    \"95be7db4-2aaf-49a9-92eb-6d73436533c5\",\n    \"fe3dd66a-1283-4560-8d96-985df89e1967\",\n    \"1f9e33c0-5bb5-480f-ac0b-942e8e142233\",\n    \"568cfd96-47fb-4786-ad37-3681581bff5c\",\n    \"f276527d-616e-48be-af0b-9af811c7c2c2\",\n    \"930c7908-3f9f-466c-af3c-45fa6e9c7829\",\n    \"04ebe90c-f181-4a54-8730-07d5427a74bc\",\n    \"8c2ae4a7-d45b-492a-9281-e6b0458186cf\",\n    \"da1d7c17-5384-4f5b-a385-b7cc52bdbffc\",\n    \"1330913f-770d-45a7-b12e-f087d58a25e8\",\n    \"f78764d6-d20c-4ade-8135-07c80629ec64\",\n    \"8a75cb84-128b-42cf-bca3-ce346bb90aa3\",\n    \"fd3195f8-e113-4ab4-a313-c8a5deb19cb3\",\n    \"352881c9-ce15-4501-9c08-5d170c06f1ae\",\n    \"6f004920-d44d-48f0-8bdb-256233dc0477\",\n    \"568da956-d75f-40ea-8618-6c373b6a3394\",\n    \"5a94b337-4d89-46ac-904e-376fc31d6698\",\n    \"3e682864-95d7-4aef-ade7-43dd1184afde\",\n    \"71cef702-c9ca-4021-a8af-802de0015711\",\n    \"840c9e33-f751-4fe4-ad80-81494ad415df\",\n    \"f4d7a132-b945-428e-b39e-cc28caa79448\",\n    \"49a94af5-2d10-4d27-89a3-91eeda100fce\",\n    \"80ae9e8a-5a23-46b2-afd2-16937940ee3b\",\n    \"7cdff71b-d82e-41aa-a99d-f0d5711a744a\",\n    \"0eb9eee4-447f-47ab-9918-97588c4d48e6\",\n    \"121ace07-847f-4465-8c61-e610b0ede414\",\n    \"edbefa01-ed08-4964-8fda-e8b2e0c65259\",\n    \"ab403067-0195-4e12-80ab-1faa43a2bfca\",\n    \"a56faced-ba17-43ff-bd5c-1a2562f554fb\",\n    \"b960e674-f13a-499c-a76f-b4b29a7a638b\",\n    \"b674a230-7052-4d10-a2c2-37935fbb92d8\",\n    \"0af522de-0b38-4ffc-9276-089b5531cb1a\",\n    \"b4151bcc-d442-46f6-999d-34cf01b55fbc\",\n    \"7b9b133b-d794-42fa-94cd-7b1d8b5086a5\",\n    \"607b5ce9-be2c-4a4a-a6ba-d678f6c96e22\",\n    \"610aab8c-5412-4f79-b39a-8779bde9a6d0\",\n    \"196a24fb-2ce6-4c6b-9dfa-75f2d2879896\",\n    \"",
-      "comments_count": 1,
-      "created_at": "2026-07-01T11:28:58Z",
-      "issue_author": "github-actions[bot]",
-      "issue_number": 1986,
-      "labels": [
-        "moltbook-ledger"
-      ],
-      "open_competing_prs": [],
-      "reasons": [
-        "explicit reward evidence up to $3800",
-        "no direct reward evidence; likely an aggregation or mention",
-        "recently updated issue",
-        "active repository",
-        "no open competing PR found",
-        "no attempt command found"
-      ],
-      "repo": "tobyrowland/alphamolt_agentic_portfolios",
-      "repo_archived": false,
-      "repo_created_at": "2026-03-04T11:45:04Z",
-      "repo_fork": false,
-      "repo_language": "TypeScript",
-      "repo_owner_type": "User",
-      "repo_pushed_at": "2026-08-06T09:20:27Z",
-      "repo_stars": 3,
-      "reward_evidence": {
-        "amounts": [
-          8.0,
-          3800.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": false,
-        "markers": [
-          "reward"
-        ],
-        "max_amount_usd": 3800.0,
-        "reward_links_count": 0
-      },
-      "score": 28.0,
-      "title": "[moltbook] engagement-ledger",
-      "updated_at": "2026-08-08T12:59:18Z",
-      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
-    },
-    {
-      "assignees": [],
       "body_excerpt": "https://github.com/ubiquity-os-marketplace/text-vector-embeddings/issues/111",
       "comments_count": 5,
       "created_at": "2025-10-12T10:41:12Z",
@@ -8920,7 +8873,7 @@
       "repo_fork": false,
       "repo_language": "TypeScript",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T13:02:30Z",
+      "repo_pushed_at": "2026-08-08T18:48:23Z",
       "repo_stars": 20,
       "reward_evidence": {
         "amounts": [
@@ -8957,8 +8910,97 @@
       },
       "score": 28.0,
       "title": "Nomic Embeddings Model for +10% Accuracy",
-      "updated_at": "2026-08-08T13:01:56Z",
+      "updated_at": "2026-08-08T18:47:48Z",
       "url": "https://github.com/devpool-directory/devpool-directory/issues/5064"
+    },
+    {
+      "assignees": [],
+      "body_excerpt": "# Bounty Details\nDue to conflicts in the files, we've lost the ability for TempleOS players to enjoy the game. TempleOS players are 48% of our player base so this is a high priority fix.\n\n# Bounty Reward\n\n$640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen. \n\n# Requirements for bounty payout:\n\n1. Your pull request must pass all Continuous Integration checks.\n2. Your pull request must include a new title screen welcoming back the old TempleOS users, greeting them in their native language of ancient sumerian.\n3. Your pull request must include all required spritework in the proper relevant .dmi files.\n4. Payout for the bounty is dependent on my personal feeling about the adherence to this requirement and I reserve the right to refuse payout at any time.\n5. All conversations regarding the bounty should occur either on this issue, or on the pull request you open yourself.\n6. You must type like you're in a video game and include an XP counter for every comment you post. ",
+      "comments_count": 7,
+      "created_at": "2026-07-29T05:02:41Z",
+      "issue_author": "theselfish",
+      "issue_number": 4,
+      "labels": [
+        "good first issue",
+        "BOUNTY"
+      ],
+      "open_competing_prs": [
+        {
+          "number": 16,
+          "title": "feat: restore TempleOS compatability with Sumerian welcome screen (USD 640 bounty #4)",
+          "updated_at": "2026-08-06T07:12:47Z",
+          "url": "https://github.com/theselfish/SlopStation13/pull/16",
+          "user": "laurentketterle-hub"
+        },
+        {
+          "number": 12,
+          "title": "feat: Add Tung Tung Tung Sahur antagonist and bat (#3)",
+          "updated_at": "2026-08-05T17:21:16Z",
+          "url": "https://github.com/theselfish/SlopStation13/pull/12",
+          "user": "Skull0716"
+        }
+      ],
+      "reasons": [
+        "explicit reward evidence up to $640",
+        "direct reward evidence on the issue or its comments",
+        "repository bounty/funded label",
+        "recently updated issue",
+        "active repository",
+        "2 open competing PR(s)",
+        "no attempt command found",
+        "zero-star personal repository",
+        "new repository advertising a high reward"
+      ],
+      "repo": "theselfish/SlopStation13",
+      "repo_archived": false,
+      "repo_created_at": "2026-07-29T04:31:13Z",
+      "repo_fork": false,
+      "repo_language": "DM",
+      "repo_owner_type": "User",
+      "repo_pushed_at": "2026-08-02T04:32:07Z",
+      "repo_stars": 0,
+      "reward_evidence": {
+        "amounts": [
+          640.0
+        ],
+        "attempt_count": 0,
+        "attempt_users": [],
+        "bot_comments": [
+          {
+            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
+          },
+          {
+            "excerpt": "I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.",
+            "login": "autonoma-avalix"
+          },
+          {
+            "excerpt": "> I can help implement “[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.” as technical implementation. I’ll first reproduce the blocker and turn its acceptance criterion into one automated check, then return source plus verification evidence. If it is still open and unclaimed, please confirm the required inputs, acceptance criterion, and payment terms.\n\n@autonoma-avalix \n\n# independently testable milestone\n\nThe server and client boot on TempleOS and all core features including game rendering, movement, and verbs are confirmed as working when tested.\n\n# Acceptance Tests\n\nAll CI tests must pass, a new CI test proving the client and server boot on TempleOS must be written and also be passing, including photos of the game running on TempleOS provided on the pull request in the opening post, along with a completed changelog.\n\n# Repository/Build Inputs\nThe repository that needs ported is https://github.com/Iamgoofball/-tg-station, and you can secure a copy of TempleOS for running in a VM at https://templeos.org/Downloads/ at TempleOS.ISO.\n\n# Payment Terms\n\nAs stated in the OP of this issue:\n\n> $640 Bohemian Dollars will be paid to whomever completes this task. Payment will be handed to the coder in a parking lot off the I-95, as due to fraudulent claims by the government my accounts have been frozen.",
+            "login": "theselfish"
+          },
+          {
+            "excerpt": "Thanks @theselfish — I saw your response. Before implementation, please confirm the first independently testable milestone, acceptance tests, repository/build inputs, and payment terms. Once those are explicit I can return a scoped execution plan without overcommitting the full bounty.",
+            "login": "autonoma-avalix"
+          }
+        ],
+        "direct_comments": [],
+        "direct_issue_command": false,
+        "direct_label_evidence": false,
+        "direct_reward_evidence": true,
+        "direct_title_evidence": true,
+        "explicit_platform": false,
+        "funded_or_bounty_label": true,
+        "markers": [
+          "bounty",
+          "reward"
+        ],
+        "max_amount_usd": 640.0,
+        "reward_links_count": 0
+      },
+      "score": 22.0,
+      "title": "[BOUNTY][$640][FIX] Fix the compatability issues with the TempleOS operating system.",
+      "updated_at": "2026-08-08T18:07:08Z",
+      "url": "https://github.com/theselfish/SlopStation13/issues/4"
     },
     {
       "assignees": [],
@@ -9410,81 +9452,14 @@
       "title": "Comprehensive review and overhaul of Spyder's documentation",
       "updated_at": "2026-07-21T21:41:51Z",
       "url": "https://github.com/numfocus/small-development-grant-proposals/issues/21"
-    },
-    {
-      "assignees": [],
-      "body_excerpt": "### Project\n\ngeopandas\n\n### Summary\n\nGeoPandas' plotting method suffers from years of additions, rendering its maintenance cumbersome and the addition of new features problematic. This project proposes a reimplementation of static plotting to overcome the issues while ensuring higher flexibility for downstream users.\n\n### submitter\n\nMartin Fleischmann\n\n### project lead\n\n@jorisvandenbossche, @martinfleis\n\n### Community benefit\n\nStatic plotting features in GeoPandas, a core component of the spatial data science ecosystem, have been expanding over time with limited work focused on refactoring its internal components. At the same time, it has always been suboptimal in terms of functionality, generating a long list of feature requests and bug reports. This has reached a situation where the day-to-day maintenance of the related code base has become cumbersome. As a result, changes in terms of both bug fixing and new development have mostly stalled. The plotting tooling requires refactoring because this situation is unsustainable over the long term.\n\nThe proposed project should deliver a partial reimplementation of the tooling for static plotting in GeoPandas aimed at easier maintainability, extendability, and an enhanced user experience, while resolving known bugs and feature requests the project is currently tracking.\n \nGiven the large user base of GeoPandas, it is expected that the project will result in significantly improved user experience of geospatial plotting. The users will no longer need to manually customise many aspects of the resulting figures, from the unaligned colorbar legends GeoPandas currently produces, to proper ability to map colors to values, and direct registration of symbology with Matplotlib for proper legend handling. Occasionally, users are currently forced to come up with complicated workarounds or rely on other software like QGIS to generate the map outputs. The new plotting implementation proposed in this project should minimize this need.\n \nThe result should primarily benefit end users in the production of map outputs. However, it should at the same time simplify depending on GeoPandas plotting in downstream packages like [EOmaps](https://github.com/raphaelquast/EOmaps) or [Xvec](https://github.com/xarray-contrib/xvec), which are building on top of existing plotting methods, and streamline integration with other tools for geospatial plotting as [Xarray](https://github.com/pydata/xarray) and [Cartopy](https://github.com/SciTools/cartopy).\n\n### Amount requested\n\n9800\n\n### Execution plan\n\nThe project will be primarily implemented by Martin Fleischmann (@martinfleis), one of the GeoPandas maintainers, in collaboration with the rest of the GeoPandas team and a wider community. The hourly rate used in the development is $70/hr.\n\nThe project implementation is divided into five consecutive steps:\n\n**1. API design**\n\nThe current APIs of the `GeoDataFrame.plot` and `GeoSeries.plot` methods are bloated from the incremental addition of new features and are no longer sustainable to maintain and expand. Its implementation is hard to follow for new users, with many arguments being applied only conditionally, depending on the underlying geometry type or nature of the data. The API should be revised to ensure it can maintain long-term clarity and expandability. Given GeoPandas already includes an accessor mechanism to expose Pandas plotting methods on GeoPandas objects, one of the designs to be explored is splitting various plotting cases into their own methods. \n\nThe API design will be openly discussed with the community in three ways. First, we will reach out to community members heavily involved in geospatial plotting to gather their targeted feedback for the existing and proposed API. Second, we will outline the API on GitHub and use social media and mailing lists to gather feedback on the proposal. This needs to be thoroughly discussed with the community because it may introduce some breaking changes to the current API. Third, we will use the project's community calls to have a synchronous discussion with both team members and a wider community.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 1-3\n\n**2. Refactoring of key building blocks**\n\nThe key building blocks of the plotting tooling will be refactored with the new API in mind, while ensuring closer integration with Matplotlib's tooling from axes to legend handling, both of which are currently done semi-manually in the GeoPandas code.\n\nThe initial implementation will likely be done outside of the code base of GeoPandas’ main branch for faster iteration and limited adverse impact of the attempts at compatibility with the existing implementation. This is a similar approach used in the development of the `explore` method before, which proved to be efficient. The code will be merged with the main branch in step 5. The existing GeoPandas test suite will be continually used to test the functionality, while new tests will be written alongside.\n\nBudget allocation: 60 hours / $4,200\nTimeline: Month 4-6\n\n**3. Bug resolution**\n\nSome of the bugs in plotting code currently reported in the GeoPandas issue tracker are expected to be fixed alongside the refactoring of step 2. However, others might need specific focus. The third implementation step should therefore resolve existing known bugs to eliminate the current backlog.\n\nBudget allocation: 30 hours / $2,100\nTimeline: Month 7-8\n\n**4. New functionality**\n\nThe project will further implement new functionality that has been requested for a long time. This relates to easier customisation of colour mapping, topological colouring, easier inclusion of contextual background maps, among others.\n\nBudget allocation: 20 hours / $1,400\nTimeline: Month 9-10\n\n**5. Code merge and migration strategy**\n\nThe final step is to merge the newly developed tooling back into the GeoPandas code base and definition of the migration strategy. Given the API will likely be partially changed, we need to define",
-      "comments_count": 1,
-      "created_at": "2025-05-30T07:16:14Z",
-      "issue_author": "martinfleis",
-      "issue_number": 25,
-      "labels": [
-        "2025-R1",
-        "funded"
-      ],
-      "open_competing_prs": [
-        {
-          "number": 102,
-          "title": "Fix: Robustness and consistency in SDG scripts",
-          "updated_at": "2026-05-31T13:23:00Z",
-          "url": "https://github.com/numfocus/small-development-grant-proposals/pull/102",
-          "user": "loigaak"
-        }
-      ],
-      "reasons": [
-        "explicit reward evidence up to $9960",
-        "no direct reward evidence; likely an aggregation or mention",
-        "repository bounty/funded label",
-        "repository not recently pushed",
-        "1 open competing PR(s)",
-        "no attempt command found"
-      ],
-      "repo": "numfocus/small-development-grant-proposals",
-      "repo_archived": false,
-      "repo_created_at": "2025-04-11T20:11:33Z",
-      "repo_fork": false,
-      "repo_language": "Python",
-      "repo_owner_type": "Organization",
-      "repo_pushed_at": "2025-11-18T12:57:19Z",
-      "repo_stars": 20,
-      "reward_evidence": {
-        "amounts": [
-          60.0,
-          70.0,
-          700.0,
-          1400.0,
-          2100.0,
-          4200.0,
-          9960.0
-        ],
-        "attempt_count": 0,
-        "attempt_users": [],
-        "bot_comments": [],
-        "direct_comments": [],
-        "direct_issue_command": false,
-        "direct_label_evidence": false,
-        "direct_reward_evidence": false,
-        "direct_title_evidence": false,
-        "explicit_platform": false,
-        "funded_or_bounty_label": true,
-        "markers": [
-          "funded"
-        ],
-        "max_amount_usd": 9960.0,
-        "reward_links_count": 0
-      },
-      "score": -35.0,
-      "title": "Reimplementation of static plotting in GeoPandas",
-      "updated_at": "2026-06-04T13:47:38Z",
-      "url": "https://github.com/numfocus/small-development-grant-proposals/issues/25"
     }
   ],
-  "raw_unique_open_issues": 625,
+  "raw_unique_open_issues": 612,
   "recommended": [
     {
       "assignees": [],
       "body_excerpt": "## 📝 Background\n\nThis bounty is for bringing up [microsoft/Florence-2-base](https://huggingface.co/microsoft/Florence-2-base)\nusing TTNN APIs on Tenstorrent hardware (Wormhole or Blackhole).\n\nFlorence-2 is a small vision-language model that handles captioning, object\ndetection, OCR, region grounding and dense region captioning through a single\ncheckpoint. Which task it runs is decided by a text prompt such as `<CAPTION>`,\n`<OD>` or `<OCR>`, so one model covers work that usually takes three or four.\nIt is 0.23B parameters, MIT licensed, and pulls around 2.7M downloads a month,\nwith 21 fine-tuned variants and over a hundred Spaces built on it.\n\ntt-metal already supports SigLIP and Gemma-3 on the multimodal side and Whisper\nfor audio, but there is no task-prompted vision-language model of this kind. The\ngap matters because Florence-2 is what people reach for when they want detection\nand OCR on a device budget rather than a full VLM. Bringing it up gives\nTenstorrent users a single small model for document and image understanding\nworkloads.\n\nIt also fits a single N150 or N300 comfortably, so it is a realistic demo rather\nthan a multi-card exercise.\n\n## 🎯 What Success Looks Like\n\nA successful submission will fulfill all requirements in the following stages.\nPayout is made after **all stages** are completed.\n\n## Stage 1 — Bring-Up\n\n- Implement Florence-2-base with TTNN APIs in Python, covering the DaViT vision\n  encoder, the projection into the text embedding space, and the BART-style\n  encoder-decoder.\n- Model runs end to end on N150 / N300 or Blackhole with no errors.\n- Validate each submodule against the HuggingFace PyTorch reference using PCC:\n  the DaViT stages, the image-to-text projection, encoder self-attention,\n  decoder self- and cross-attention, and the MLP blocks.\n- Produce correct outputs for at least three task prompts — `<CAPTION>`, `<OD>`\n  and `<OCR>` — on sample images, checked against the HF reference. Detection\n  boxes should agree within a stated tolerance rather than exactly, since\n  post-processing quantises coordinates.\n\n## Stage 2 — Basic Optimizations\n\n- Sharded or interleaved memory configs for the DaViT patch embedding\n  convolutions and the Q/K/V/O projections in both encoder and decoder.\n- Keep intermediate activations in L1 where it helps, particularly across the\n  four DaViT stages.\n- Fuse activations with the preceding matmul in the MLP blocks.\n- Minimise reshards between consecutive ops, especially at the boundary where\n  vision features cross into the text encoder.\n\n## Stage 3 — Deeper Optimization\n\n- Use the TTNN SDPA operator for DaViT window attention, encoder self-attention\n  and decoder cross-attention.\n- KV-cache handling for the autoregressive decode path, including the case where\n  the encoder output stays fixed across decode steps.\n- Trace and execute-trace integration for steady-state throughput on repeated\n  inference.\n- Reduce tensor manipulation overhead between the vision and text halves by\n  choosing an operation order that avoids unnecessary transposes.\n- Maximise core utilisation per inference.\n\n## 🧭 Guidance & Starting Points\n\n- Model card and reference implementation: https://huggingface.co/microsoft/Florence-2-base\n\n| Parameter | Value |\n| -- | -- |\n| Parameters | ~0.23B |\n| Vision encoder | DaViT, 4 stages, depths `[1, 1, 9, 1]`, embed dims `[128, 256, 512, 1024]` |\n| Window size | 12 |\n| Text model | encoder-decoder, 6 layers each, `d_model` 768 (BART-style) |\n| Task selection | text prompt token (`<CAPTION>`, `<OD>`, `<OCR>`, `<DENSE_REGION_CAPTION>`, …) |\n| License | MIT |\n| Image size | 768 x 768 |\n\nStage 3 of DaViT carries 9 of the 12 blocks, so that is where most of the runtime\nsits and where sharding decisions matter most.\n\nThings worth watching during bring-up:\n\n- **DaViT alternates two attention types.** Each block runs window attention over\n  spatial patches followed by channel attention over the feature dimension. The\n  second one transposes the usual layout, so a single attention helper will not\n  cover both.\n- **The task prompt is not free text.** Florence-2 expects exact task tokens, and\n  the post-processor branches on which one was used. Getting the prompt subtly\n  wrong produces output that looks reasonable and scores badly.\n- **Detection and OCR outputs are text.** Boxes come back as location tokens in\n  the generated sequence, then get decoded to coordinates. Comparing raw strings\n  against the reference is easier and stricter than comparing parsed boxes.\n- **The encoder output is computed once per image** and reused for every decode\n  step. Recomputing it works but wastes most of the runtime, so it is worth\n  getting right early rather than treating it as a Stage 3 optimisation.\n- `models/demos/multimodal/siglip` and `models/demos/multimodal/gemma3` are the\n  closest existing starting points for the vision side, and the tt-transformers\n  attention and cache helpers cover most of what the decoder needs.\n\n## 📊 Result Submission Guidelines\n\nDeliverables:\n\n- Functional model implementation\n- Validation logs showing per-submodule PCC and task output comparisons\n- Performance report covering all three stages",
-      "comments_count": 0,
+      "comments_count": 2,
       "created_at": "2026-08-08T12:39:59Z",
       "issue_author": "vignesh2027",
       "issue_number": 52597,
@@ -9507,7 +9482,7 @@
       "repo_fork": false,
       "repo_language": "C++",
       "repo_owner_type": "Organization",
-      "repo_pushed_at": "2026-08-08T13:04:55Z",
+      "repo_pushed_at": "2026-08-08T18:58:33Z",
       "repo_stars": 1619,
       "reward_evidence": {
         "amounts": [
@@ -9515,7 +9490,12 @@
         ],
         "attempt_count": 0,
         "attempt_users": [],
-        "bot_comments": [],
+        "bot_comments": [
+          {
+            "excerpt": "Hi maintainers — I’d like to take this work if it is approved as a Tenstorrent bounty and currently available for assignment. I have no other Tenstorrent bounty assigned.\n\nMy first milestone would be a checkpoint-driven PyTorch/Hugging Face reference with per-submodule golden tests, followed by the DaViT TTNN path (patch embedding plus window/channel attention), image-to-text projection, and the BART-style encoder/decoder with reusable encoder state and KV cache. I can open a focused draft PR and report progress within two weeks.\n\nBecause the issue currently has only the `community` label, could you please confirm approval, add the bounty/difficulty labels required by the program terms, and assign it before I begin? I would also need Tenstorrent cloud hardware access for PCC validation and profiling.",
+            "login": "attaboy11"
+          }
+        ],
         "direct_comments": [],
         "direct_issue_command": false,
         "direct_label_evidence": false,
@@ -9531,7 +9511,7 @@
       },
       "score": 128.0,
       "title": "[Bounty $1750] Florence-2-base bring up using TTNN APIs",
-      "updated_at": "2026-08-08T12:40:10Z",
+      "updated_at": "2026-08-08T16:09:27Z",
       "url": "https://github.com/tenstorrent/tt-metal/issues/52597"
     },
     {
