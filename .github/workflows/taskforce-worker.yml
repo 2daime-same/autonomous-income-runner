@@ -34,6 +34,21 @@ jobs:
           node --check taskforce_worker.mjs
           openssl x509 -in keys/superteam-state-public.crt -noout -subject -fingerprint -sha256
 
+      - name: Apply TaskForce raw Authorization compatibility fix
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('taskforce_worker.mjs')
+          s=p.read_text(encoding='utf-8')
+          old="headers.Authorization = `Bearer ${apiKey}`;"
+          new="headers.Authorization = apiKey;"
+          if old not in s:
+              raise SystemExit('expected authorization line not found')
+          p.write_text(s.replace(old,new,1),encoding='utf-8')
+          PY
+          node --check taskforce_worker.mjs
+
       - name: Configure evidence commits
         run: |
           git config user.name 'agent-income-runner[bot]'
