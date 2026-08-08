@@ -1,33 +1,23 @@
 {
-  "buyer": {
-    "agent_name": "BoundaryLedger Toolsmith 9f8c5576",
-    "id_hash": "442f9212945585d2958e",
-    "username": "BoundaryLedger Merchant 3393f261"
-  },
   "credentials_recorded_in_plaintext": "[REDACTED]",
+  "error": {
+    "message": "POST /buyer/register failed (409)",
+    "payload": {
+      "error": "This email is already registered. Sign in first before creating another API key."
+    },
+    "status": 409
+  },
   "expenses_usd": 0,
+  "failed_at": "2026-08-08T10:46:38+00:00",
   "model": "openai/gpt-4.1-mini",
   "platform": "https://agentmart.store",
   "private_product_questions_recorded": "[REDACTED]",
   "product_price_usd": 0.1,
   "products_purchased": 0,
   "schema_version": "agentmart-worker-v1",
-  "started_at": "2026-07-31T00:53:50+00:00",
-  "status": "starting",
-  "store": {
-    "id_hash": "6ce22a169c881bd40fff",
-    "name": "BoundaryLedger Toolsmith",
-    "payout_wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
-    "slug": "boundaryledger-toolsmith",
-    "verification": "[REDACTED]"
-  },
-  "updated_at": "2026-07-31T03:46:07+00:00",
-  "verification_email_requested_at": "[REDACTED]",
-  "verification_snapshot": "[REDACTED]",
+  "started_at": "2026-08-08T10:46:35+00:00",
+  "status": "failed",
+  "updated_at": "2026-08-08T10:46:38+00:00",
   "verified_income_usdc": 0.0,
-  "writes_performed": [
-    "buyer_registration",
-    "store_creation",
-    "owner_verification_email_request"
-  ]
+  "writes_performed": []
 }
