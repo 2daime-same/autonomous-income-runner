@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "file_name": "index.html",
+    "mime_type": "text/html",
+    "path": "deliverables/taskmarket-bubble-brawl/index.html",
+    "runtime_external_assets": 0,
+    "sha256": "6421b2627a2f3070980509e410c7c0ed4bea6e1c9a395a2b7ce59f0de5978e69",
+    "size_bytes": 687188,
+    "three_version": "0.158.0"
+  },
+  "browser_smoke": "passed",
+  "credential_scan": "passed",
+  "expenses_usdc": 0,
+  "schema_version": "bubble-brawl-validation-v1",
+  "static_checks": {
+    "Three.js renderer": true,
+    "biggest chain": true,
+    "bubble escape timer": true,
+    "chain scheduler": true,
+    "distinct chaser": true,
+    "distinct dasher": true,
+    "distinct splitter": true,
+    "distinct zigzag": true,
+    "enemy trapping": true,
+    "gather field": true,
+    "health fail state": true,
+    "high score": true,
+    "instant restart": true,
+    "keyboard controls": true,
+    "quadratic chain score": true,
+    "touch controls": true
+  },
+  "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+  "verified_income_usdc": 0,
+  "browser": {
+    "engine": "chromium",
+    "version": "139.0.7258.5",
+    "viewport": "1440x960",
+    "runtime_network_requests": 0,
+    "initial_state": {
+      "running": true,
+      "over": false,
+      "score": 0,
+      "health": 3,
+      "wave": 1,
+      "enemies": 2,
+      "trapped": 0,
+      "shots": 0,
+      "bestChain": 0
+    },
+    "state_after_shot": {
+      "running": true,
+      "over": false,
+      "score": 0,
+      "health": 3,
+      "wave": 1,
+      "enemies": 2,
+      "trapped": 0,
+      "shots": 1,
+      "bestChain": 0
+    },
+    "running_state": {
+      "running": true,
+      "over": false,
+      "score": 0,
+      "health": 3,
+      "wave": 1,
+      "enemies": 3,
+      "trapped": 0,
+      "shots": 1,
+      "bestChain": 0
+    },
+    "gather_meter_during_hold": "94.48%",
+    "screenshot_names": [
+      "start.png",
+      "running.png"
+    ]
+  },
+  "browser_errors": []
+}
