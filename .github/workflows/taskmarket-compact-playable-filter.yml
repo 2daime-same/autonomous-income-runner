@@ -1,0 +1,43 @@
+name: Filter compact playable Taskmarket bounties
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskmarket_compact_playable_filter.py
+      - .github/workflows/taskmarket-compact-playable-filter.yml
+
+permissions:
+  contents: write
+
+jobs:
+  filter:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: |
+          set -euo pipefail
+          test -s taskmarket-output/live-open-shortlist.json
+          python -m py_compile taskmarket_compact_playable_filter.py
+          python taskmarket_compact_playable_filter.py
+      - run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/current-playable-candidates.json
+          git commit -m 'Refresh compact playable Taskmarket candidates [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
