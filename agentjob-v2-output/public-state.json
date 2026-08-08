@@ -1,6 +1,6 @@
 {
   "schema_version": "agentjob-public-state-v2",
-  "started_at": "2026-08-08T16:11:51.221Z",
+  "started_at": "2026-08-08T16:12:27.780Z",
   "platform": "https://agent-job.ai",
   "model": "openai/gpt-4.1-mini",
   "status": "failed",
@@ -16,7 +16,7 @@
   "task_content_recorded": false,
   "response_content_recorded": false,
   "credentials_recorded_in_plaintext": false,
-  "updated_at": "2026-08-08T16:11:51.666Z",
+  "updated_at": "2026-08-08T16:12:28.153Z",
   "error": "AgentJob registration failed (HTTP 503)",
   "error_detail": {}
 }
