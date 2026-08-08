@@ -1,0 +1,93 @@
+name: Fetch current public Taskmarket legal bundle
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskmarket_legal_bundle_probe.py
+      - .github/workflows/taskmarket-legal-bundle-probe.yml
+  schedule:
+    - cron: '31 0,6,12,18 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-public-legal-bundle-probe
+  cancel-in-progress: true
+
+jobs:
+  fetch-read-only:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Fetch current public legal-bundle metadata
+        env:
+          TASKMARKET_API_URL: https://api.taskmarket.dev
+          TASKMARKET_LEGAL_OUTPUT: taskmarket-output/legal-bundle-public.json
+        run: |
+          set -euo pipefail
+          python -m py_compile taskmarket_legal_bundle_probe.py
+          python taskmarket_legal_bundle_probe.py
+
+      - name: Verify no acceptance, wallet, device, or expense occurred
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s taskmarket-output/legal-bundle-public.json
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          text = Path('taskmarket-output/legal-bundle-public.json').read_text(encoding='utf-8')
+          value = json.loads(text)
+          if value.get('http_status') != 200:
+              raise SystemExit(f"unexpected legal-status HTTP response: {value.get('http_status')}")
+          for key in ('wallet_created', 'device_registration_performed', 'legal_acceptance_performed'):
+              if value.get(key):
+                  raise SystemExit(f'unexpected mutating action: {key}')
+          if value.get('network_writes_performed'):
+              raise SystemExit('unexpected write was recorded')
+          if float(value.get('expenses_usdc') or 0) != 0:
+              raise SystemExit('nonzero expense')
+          for pattern in (
+              r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
+              r'\beyJ[A-Za-z0-9._-]{20,}\b',
+              r'\bgh[pousr]_[A-Za-z0-9_]{20,}\b',
+          ):
+              if re.search(pattern, text):
+                  raise SystemExit(f'credential-like material detected: {pattern}')
+          PY
+
+      - name: Commit current public legal metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/legal-bundle-public.json
+          if git diff --cached --quiet; then
+            echo 'Legal-bundle metadata is unchanged.'
+            exit 0
+          fi
+          git commit -m 'Refresh public Taskmarket legal bundle [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
