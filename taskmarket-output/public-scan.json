@@ -11,7 +11,7 @@
       "hard_exclusion_reasons": [
         "requires_purchase_or_funding"
       ],
-      "hours_left": 79.6,
+      "hours_left": 79.49,
       "mode": "bounty",
       "net_reward_usdc": 18.5,
       "pitch_count": 0,
@@ -48,7 +48,7 @@
       "hard_exclusion_reasons": [
         "entry_requires_payment_or_selection"
       ],
-      "hours_left": 84.51,
+      "hours_left": 84.4,
       "mode": "benchmark",
       "net_reward_usdc": 0.925,
       "pitch_count": 0,
@@ -86,7 +86,7 @@
       "hard_exclusion_reasons": [
         "entry_requires_payment_or_selection"
       ],
-      "hours_left": 84.51,
+      "hours_left": 84.4,
       "mode": "benchmark",
       "net_reward_usdc": 0.925,
       "pitch_count": 0,
@@ -123,7 +123,7 @@
         "entry_requires_payment_or_selection",
         "requires_purchase_or_funding"
       ],
-      "hours_left": 97.77,
+      "hours_left": 97.66,
       "mode": "pitch",
       "net_reward_usdc": 3.142305,
       "pitch_count": 11,
@@ -162,7 +162,7 @@
       "description_excerpt": "ARCADE BENCHMARK 05: Signal Panic. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Operate traffic signals at one readable intersection and prevent collisions and gridlock. Vehicles need visible intent and queue pressure; score safe throughput, synchronized flow, and priority service. Escalate from simple opposing streams to turns, emergency vehicles, and hard triage decisions. Do not build a city simulator. Include keyboard and touch-friendly controls, score, queue or collision failure, high-score display, and instant restart. Submit the final in",
       "expiry": "2026-08-09T20:57:31Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.0,
+      "hours_left": 35.89,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -195,7 +195,7 @@
       "description_excerpt": "ARCADE BENCHMARK 06: Bubble Brawl. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a small arena, trap wandering enemies in bubbles, then pop them before escape. The main score system must reward intentionally gathering enemies and creating visible chain reactions. Escalate with distinct enemy behaviours rather than simple speed increases. Include keyboard and touch-friendly controls, score, biggest chain, limited health or equivalent fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanat",
       "expiry": "2026-08-09T20:57:33Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.0,
+      "hours_left": 35.89,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -228,7 +228,7 @@
       "description_excerpt": "ARCADE BENCHMARK 03: Orbit Breaker. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A tiny craft launches between planets whose gravity bends its path. Make charge-and-release launch timing the main interaction, communicate gravity and trajectory clearly, reward visiting planets, collecting fragments, and chaining skilful transfers. Escalate through debris, moving bodies, and route precision while allowing recovery from slightly poor launches. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart.",
       "expiry": "2026-08-09T20:57:27Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.0,
+      "hours_left": 35.89,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -261,7 +261,7 @@
       "description_excerpt": "ARCADE BENCHMARK 02: Reactor Rush. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a compact arena, collect unstable energy cells and return them to a central reactor while avoiding escalating hazards. Carrying several cells must create a clear risk trade-off. Score deliveries, reward batches or quick sequences, show reactor stability and player danger, and end the run on destruction or critical instability. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only",
       "expiry": "2026-08-09T20:57:23Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.0,
+      "hours_left": 35.89,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -294,7 +294,7 @@
       "description_excerpt": "ARCADE BENCHMARK 08: Rooftop Relay. Build a complete playable browser arcade game as one self-contained index.html using Three.js. An automatic-running courier crosses rooftops while a rising threat follows. The essential differentiator is genuine route choice: safe low lines, riskier high lines, and score-rich shortcuts with clear consequences. Use jump plus only the minimum extra actions needed. Escalate through route combinations and pressure while keeping landings fair. Include keyboard and touch-friendly controls, score, pickups or multiplier, fail state, high-score display, and instant r",
       "expiry": "2026-08-09T20:57:38Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.01,
+      "hours_left": 35.9,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -327,7 +327,7 @@
       "description_excerpt": "ARCADE BENCHMARK 04: Tunnel Tap. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A craft advances automatically through a scrolling tunnel of shifting walls, gates, and safe channels. Use a deliberately small control vocabulary; reward reading the route ahead, clean central passes, and sustained combo play. Escalate through pattern complexity and speed, but keep generated routes fair and collision boundaries legible. Include keyboard and touch-friendly controls, distance score, combo, fail state, high-score display, and instant restart. Submit the",
       "expiry": "2026-08-09T20:57:29Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.0,
+      "hours_left": 35.89,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -360,7 +360,7 @@
       "description_excerpt": "ARCADE BENCHMARK 07: Magnet Mine. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A salvage craft moves through scrap and mines using attraction and repulsion. The magnet must visibly move objects, collect valuable scrap, clear paths, and create danger because mines react too. Score salvage deliveries, disarms or narrow escapes, and clever multipliers. Escalate with denser fields and object interactions while keeping force and mine behaviour understandable. Include keyboard and touch-friendly controls, score, fail state, high-score display, and in",
       "expiry": "2026-08-09T20:57:35Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.01,
+      "hours_left": 35.9,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -393,7 +393,7 @@
       "description_excerpt": "ARCADE BENCHMARK 10: Last Light. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Defend a central beacon from approaching enemies by aiming a light beam. Light repels threats but consumes energy; collecting energy and prioritizing several approach directions must form the central tension. Escalate with varied enemy behaviours and offer a costly emergency overcharge or equivalent recovery tool. Include keyboard and touch-friendly controls, score, survival time, fail state, high-score display, and instant restart. Submit the final index.html only, n",
       "expiry": "2026-08-09T20:57:42Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 36.01,
+      "hours_left": 35.9,
       "mode": "bounty",
       "net_reward_usdc": 9.25,
       "pitch_count": 0,
@@ -427,7 +427,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 20.17,
+      "hours_left": 20.06,
       "mode": "bounty",
       "net_reward_usdc": 1.85,
       "pitch_count": 0,
@@ -460,7 +460,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 26.07,
+      "hours_left": 25.96,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -498,7 +498,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 26.08,
+      "hours_left": 25.97,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -535,7 +535,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 26.08,
+      "hours_left": 25.97,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -572,7 +572,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 26.08,
+      "hours_left": 25.97,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -609,7 +609,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 26.08,
+      "hours_left": 25.97,
       "mode": "bounty",
       "net_reward_usdc": 8.325,
       "pitch_count": 0,
@@ -648,7 +648,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 19.3,
+      "hours_left": 19.19,
       "mode": "bounty",
       "net_reward_usdc": 13.875,
       "pitch_count": 0,
@@ -687,7 +687,7 @@
       "hard_exclusion_reasons": [
         "requires_unavailable_audio_or_video_production"
       ],
-      "hours_left": 26.08,
+      "hours_left": 25.97,
       "mode": "bounty",
       "net_reward_usdc": 13.875,
       "pitch_count": 0,
@@ -717,7 +717,7 @@
     }
   ],
   "fetched_open_active_tasks": 21,
-  "generated_at": "2026-08-08T08:57:15Z",
+  "generated_at": "2026-08-08T09:03:52Z",
   "pages_limit": 10,
   "ranked_candidates": [
     {
@@ -728,7 +728,7 @@
       "description_excerpt": "Create a **15-second, photorealistic scene from the television series Seinfeld. The video should be indistinguishable from an authentic clip from the show, faithfully matching its writing, directing, cinematography, production design, lighting, editing, pacing, character performances, wardrobe, sound design, and overall tone. Every creative decision should be consistent with the show's established style and production quality. The scene should feel like a genuine moment that could naturally exist within the series. Begin immediately in the middle of an ongoing conversation or interaction, with",
       "expiry": "2026-08-09T07:50:09Z",
       "hard_exclusion_reasons": [],
-      "hours_left": 22.88,
+      "hours_left": 22.77,
       "mode": "bounty",
       "net_reward_usdc": 18.5,
       "pitch_count": 0,
