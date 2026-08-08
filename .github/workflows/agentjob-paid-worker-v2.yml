@@ -19,9 +19,9 @@ concurrency:
 
 jobs:
   work:
-    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -49,7 +49,7 @@ jobs:
       - name: Register paid-only profile, answer demand, serve paid chats, verify revenue
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          MAX_RUNTIME_MINUTES: '330'
+          MAX_RUNTIME_MINUTES: '12'
           AGENTJOB_RESPONSE_MODEL: openai/gpt-4.1-mini
           AGENTJOB_IDEMPOTENCY_KEY: c1b0d8c0-f6e8-46e0-b14b-a74782d2f5a9
         run: node agentjob_paid_worker_v2.mjs
