@@ -1,0 +1,171 @@
+06539:   const legalAcceptance = legalBundle.enforcementEnabled ? await acceptLegalBundle({
+06540:     assumeYes: Boolean(opts.yes),
+06541:     bundle: legalBundle,
+06542:     signMessage: (message) => privateKeyToAccount3(privateKey).signMessage({ message }),
+06543:     walletAddress: address
+06544:   }) : void 0;
+06545:   const deviceRegisterSignature = await privateKeyToAccount3(
+06546:     privateKey
+06547:   ).signMessage({ message: buildDeviceRegisterMessage(address) });
+06548:   const {
+06549:     deviceId,
+06550:     apiToken,
+06551:     deviceEncryptionKey,
+06552:     agentId: initialAgentId
+06553:   } = await registerDevice({
+06554:     legalReceipt: legalAcceptance?.receipt,
+06555:     publicKey,
+06556:     signature: deviceRegisterSignature,
+06557:     walletAddress: address
+06558:   });
+06559:   const encryptedKey = encryptPrivateKey(deviceEncryptionKey, privateKey);
+06560:   let agentId = initialAgentId;
+06561:   await saveKeystore({
+06562:     encryptedKey,
+06563:     walletAddress: address,
+06564:     deviceId,
+06565:     apiToken,
+06566:     agentId,
+06567:     keyServerUrl: API_URL,
+06568:     ...legalAcceptance ? {
+06569:       legalAcceptanceApiOrigin: API_ORIGIN,
+06570:       legalAcceptanceBundleVersion: legalAcceptance.bundleVersion,
+06571:       legalAcceptanceReceipt: legalAcceptance.receipt
+06572:     } : {}
+06573:   });
+06574:   if (!agentId) {
+06575:     agentId = await pollAgentId(address);
+06576:     if (agentId) {
+06577:       const keystore = await loadKeystore();
+06578:       await saveKeystore({ ...keystore, agentId });
+06579:     }
+06580:   }
+06581:   let networkInfo;
+06582:   try {
+06583:     const response = await apiGet("/trpc/network.info");
+06584:     networkInfo = response.result.data;
+06585:   } catch {
+06586:   }
+06587:   const username = opts.email ?? (agentId && networkInfo ? sanitizeEmailUsername(agentId, String(networkInfo.chainId)) : null);
+06588:   const emailAddress = username ? await tryRegisterEmail(deviceId, apiToken, username, !!opts.email) : null;
+06589:   printResult({
+06590:     address,
+06591:     agentId,
+06592:     network: networkInfo?.networkName,
+06593:     chainId: networkInfo?.chainId,
+06594:     emailAddress
+06595:   });
+06596: });
+06597: 
+06598: // src/commands/address.ts
+06599: import { Command as Command3 } from "commander";
+06600: var addressCommand = new Command3("address").description("Print the wallet address").action(async () => {
+06601:   const keystore = await loadKeystore();
+06602:   printResult({ address: keystore.walletAddress });
+06603: });
+06604: 
+06605: // src/commands/identity.ts
+06606: import { Command as Command4 } from "commander";
+06607: 
+06608: // src/lib/x402.ts
+06609: async function x402Post(path4, body) {
+06610:   const url = `${API_URL}${path4}`;
+06611:   const keystore = await loadKeystore();
+06612:   const legalHeaders = legalReceiptHeadersForKeystore(keystore, path4, "POST");
+06613:   const r1 = await fetch(url, {
+06614:     method: "POST",
+06615:     redirect: "error",
+06616:     headers: { "Content-Type": "application/json", ...legalHeaders },
+06617:     body: JSON.stringify(body)
+06618:   });
+06619:   if (r1.status !== 402) {
+06620:     if (r1.ok) {
+06621:       return r1.json();
+06622:     }
+06623:     const text = await r1.text().catch(() => "");
+06624:     throw new ApiError(r1.status, `POST ${path4} failed (${r1.status}): ${text}`);
+06625:   }
+06626:   const requirements = await r1.json();
+06627:   if (!requirements.accepts || requirements.accepts.length === 0) {
+06628:     throw new Error("No payment methods accepted by server");
+06629:   }
+06630:   const accept = requirements.accepts[0];
+06631:   const { authorization, signature } = await createTransferAuthorization(accept, keystore);
+06632:   const paymentPayload = {
+06633:     x402Version: 2,
+06634:     resource: requirements.resource,
+06635:     accepted: {
+06636:       scheme: accept.scheme,
+06637:       network: accept.network,
+06638:       amount: accept.amount,
+06639:       asset: accept.asset,
+06640:       payTo: accept.payTo,
+06641:       maxTimeoutSeconds: accept.maxTimeoutSeconds,
+06642:       extra: accept.extra
+06643:     },
+06644:     payload: { authorization, signature }
+06645:   };
+06646:   const r2 = await fetch(url, {
+06647:     method: "POST",
+06648:     redirect: "error",
+06649:     headers: {
+06650:       "Content-Type": "application/json",
+06651:       ...legalHeaders,
+06652:       "PAYMENT-SIGNATURE": Buffer.from(JSON.stringify(paymentPayload)).toString("base64")
+06653:     },
+06654:     body: JSON.stringify(body)
+06655:   });
+06656:   const result = await r2.json();
+06657:   if (!r2.ok) {
+06658:     throw new ApiError(
+06659:       r2.status,
+06660:       `POST ${path4} failed after payment (${r2.status}): ${JSON.stringify(result)}`
+06661:     );
+06662:   }
+06663:   return result;
+06664: }
+06665: 
+06666: // src/commands/identity.ts
+06667: var identityCommand = new Command4("identity").description("Manage agent identity");
+06668: identityCommand.command("register").description("Register ERC-8004 agent identity (costs 0.001 USDC)").action(async () => {
+06669:   const result = await x402Post("/api/identity/register", {});
+06670:   printResult({ agentId: result.agentId });
+06671: });
+06672: identityCommand.command("status").description("Check identity registration status").action(async () => {
+06673:   const keystore = await loadKeystore();
+06674:   const result = await apiGet(`/api/identity/status?address=${keystore.walletAddress}`);
+06675:   printResult({ registered: result.registered, agentId: result.agentId });
+06676: });
+06677: 
+06678: // src/commands/stats.ts
+06679: import { Command as Command5 } from "commander";
+06680: var statsCommand = new Command5("stats").description("View agent statistics").option("--address <addr>", "Wallet address (defaults to own wallet)").option("--agent <agentId>", "Agent ID (alternative to --address)").action(async (opts) => {
+06681:   let address = opts.address;
+06682:   if (!address) {
+06683:     const keystore = await loadKeystore();
+06684:     address = keystore.walletAddress;
+06685:   }
+06686:   const statsQuery = opts.agent ? `/api/agents/stats?agentId=${opts.agent}` : `/api/agents/stats?address=${address}`;
+06687:   const [result, balanceResult, dreamsResult, exchangeRateResult] = await Promise.all([
+06688:     apiGet(statsQuery),
+06689:     apiGet(`/api/wallet/balance?address=${address}`),
+06690:     apiGet(`/api/wallet/dreams-balance?address=${address}`).then((r) => r).catch(() => null),
+06691:     apiGet("/api/wallet/exchange-rate").then((r) => r).catch(() => null)
+06692:   ]);
+06693:   let pendingDreamsRewards = null;
+06694:   let pendingDreamsUsd = null;
+06695:   if (dreamsResult !== null) {
+06696:     pendingDreamsRewards = formatDreams(dreamsResult.claimableBaseUnits);
+06697:     if (exchangeRateResult !== null && exchangeRateResult.dreamsPerUsdc !== "0") {
+06698:       const usdBaseUnits = dreamsToUsd(
+06699:         dreamsResult.claimableBaseUnits,
+06700:         exchangeRateResult.dreamsPerUsdc
+06701:       );
+06702:       pendingDreamsUsd = formatUsdcBaseUnits(usdBaseUnits);
+06703:     }
+06704:   }
+06705:   const dreamsPerUsdc = exchangeRateResult !== null && exchangeRateResult.dreamsPerUsdc !== "0" ? exchangeRateResult.dreamsPerUsdc : null;
+06706:   printResult({
+06707:     agentId: result.agentId,
+06708:     address: result.address,
+06709:     balanceUsdc: balanceResult.balanceUsdc,

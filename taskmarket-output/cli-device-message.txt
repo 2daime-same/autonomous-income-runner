@@ -1,0 +1,56 @@
+05506:   return `taskmarket:read:${address.toLowerCase()}`;
+05507: }
+05508: var READ_AUTH_ADDRESS_HEADER = "X-Taskmarket-Caller-Address";
+05509: var READ_AUTH_SIGNATURE_HEADER = "X-Taskmarket-Caller-Signature";
+05510: var TASK_ACCESS_GRANT_HEADER = "X-Taskmarket-Task-Access-Grant";
+05511: function buildSubmitMessage(taskId, contentBindings) {
+05512:   return contentBindings ? `taskmarket:submit:${taskId}:${contentBindings.join(",")}` : `taskmarket:submit:${taskId}`;
+05513: }
+05514: function buildClaimMessage(taskId) {
+05515:   return `taskmarket:claim:${taskId}`;
+05516: }
+05517: function buildForfeitMessage(taskId) {
+05518:   return `taskmarket:forfeit:${taskId}`;
+05519: }
+05520: function buildSetWithdrawalAddressMessage(withdrawalAddress) {
+05521:   return `taskmarket:set-withdrawal-address:${withdrawalAddress.toLowerCase()}`;
+05522: }
+05523: function buildWithdrawDreamsMessage(destination, nonce, validBefore) {
+05524:   return `taskmarket:withdraw-dreams:${destination.toLowerCase()}:${nonce}:${validBefore}`;
+05525: }
+05526: function buildDeviceRegisterMessage(walletAddress) {
+05527:   return `taskmarket:device-register:${walletAddress.toLowerCase()}`;
+05528: }
+05529: 
+05530: // ../../packages/shared/dist/lib/usdc.js
+05531: var USDC_BASE_UNITS = 10n ** BigInt(USDC_DECIMALS);
+05532: var USDC_PATTERN = new RegExp(`^(0|[1-9][0-9]*)(?:\\.([0-9]{1,${USDC_DECIMALS}}))?$`);
+05533: function usdcToBaseUnits(value, options = {}) {
+05534:   const normalized = value.trim();
+05535:   const match = USDC_PATTERN.exec(normalized);
+05536:   if (!match) {
+05537:     throw new Error(`USDC amount must be a positive decimal with at most ${USDC_DECIMALS} fractional digits`);
+05538:   }
+05539:   const whole = BigInt(match[1]);
+05540:   const fraction = BigInt((match[2] ?? "").padEnd(USDC_DECIMALS, "0") || "0");
+05541:   const baseUnits = whole * USDC_BASE_UNITS + fraction;
+05542:   if (baseUnits < 0n || baseUnits === 0n && !options.allowZero) {
+05543:     throw new Error("USDC amount must be greater than zero");
+05544:   }
+05545:   return baseUnits.toString();
+05546: }
+05547: function formatUsdcBaseUnits(value, options = {}) {
+05548:   const baseUnits = BigInt(value);
+05549:   const negative = baseUnits < 0n;
+05550:   const absolute = negative ? -baseUnits : baseUnits;
+05551:   const wholeUnits = absolute / USDC_BASE_UNITS;
+05552:   const fractionalUnits = absolute % USDC_BASE_UNITS;
+05553:   const whole = options.groupThousands ? new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(wholeUnits) : wholeUnits.toString();
+05554:   let fraction = fractionalUnits.toString().padStart(USDC_DECIMALS, "0");
+05555:   if (options.trimTrailingZeros) {
+05556:     fraction = fraction.replace(/0+$/, "");
+05557:   }
+05558:   const sign = negative ? "-" : "";
+05559:   return fraction ? `${sign}${whole}.${fraction}` : `${sign}${whole}`;
+05560: }
+05561: 
