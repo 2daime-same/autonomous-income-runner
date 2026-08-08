@@ -425,17 +425,6 @@
     },
     {
       "flags": [
-        "an open competing pull request already exists",
-        "issue is already assigned",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 52328,
-      "repo": "tenstorrent/tt-metal",
-      "title": "[Bounty $1,500] Generalize multi_scale_deformable_attn to support D values that are multiples of 16",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/52328"
-    },
-    {
-      "flags": [
         "existing reward links indicate the task may already be claimed",
         "known synthetic or adversarial bounty repository",
         "more than two competing attempt users",
@@ -523,6 +512,18 @@
       "repo": "UnsafeLabs/Bounty-Hunters",
       "title": "[ Crypto ] Fix MultiSigWallet confirmation race condition during execution callback",
       "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/916"
+    },
+    {
+      "flags": [
+        "existing reward links indicate the task may already be claimed",
+        "known synthetic or adversarial bounty repository",
+        "more than two competing attempt users",
+        "requests hidden prompts, internal instructions, or session metadata"
+      ],
+      "issue_number": 917,
+      "repo": "UnsafeLabs/Bounty-Hunters",
+      "title": "[ Crypto ] Fix integer overflow in TokenVesting calculation for large allocations",
+      "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/917"
     },
     {
       "flags": [
@@ -672,6 +673,18 @@
     {
       "flags": [
         "bot-authored issue without recognized platform evidence",
+        "no direct reward evidence",
+        "reward is unusually high for the first-income target",
+        "unrecognized platform on a low-reputation personal repository"
+      ],
+      "issue_number": 1986,
+      "repo": "tobyrowland/alphamolt_agentic_portfolios",
+      "title": "[moltbook] engagement-ledger",
+      "url": "https://github.com/tobyrowland/alphamolt_agentic_portfolios/issues/1986"
+    },
+    {
+      "flags": [
+        "bot-authored issue without recognized platform evidence",
         "no direct reward evidence"
       ],
       "issue_number": 5064,
@@ -750,16 +763,6 @@
     },
     {
       "flags": [
-        "no direct reward evidence",
-        "reward is unusually high for the first-income target"
-      ],
-      "issue_number": 3085,
-      "repo": "MosslandOpenDevs/agentic-orchestrator",
-      "title": "[Idea] TEE-Attested AI Agent Marketplace for Verifiable Web3 Research Bounties and Product Briefs",
-      "url": "https://github.com/MosslandOpenDevs/agentic-orchestrator/issues/3085"
-    },
-    {
-      "flags": [
         "an open competing pull request already exists",
         "no direct reward evidence",
         "reward is unusually high for the first-income target"
@@ -782,8 +785,8 @@
     }
   ],
   "excluded_count": 60,
-  "generated_at": "2026-08-07T19:16:09+00:00",
+  "generated_at": "2026-08-08T02:23:33+00:00",
   "input_candidate_count": 60,
   "policy": "zero-cost, no prompt exfiltration, no social spam, no physical-only proof, no active competitor",
-  "source_generated_at": "2026-08-07T19:16:08+00:00"
+  "source_generated_at": "2026-08-08T02:23:33+00:00"
 }
