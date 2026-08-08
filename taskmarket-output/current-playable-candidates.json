@@ -1,0 +1,146 @@
+{
+  "candidate_count": 9,
+  "candidates": [
+    {
+      "description_excerpt": "ARCADE BENCHMARK 05: Signal Panic. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Operate traffic signals at one readable intersection and prevent collisions and gridlock. Vehicles need visible intent and queue pressure; score safe throughput, synchronized flow, and priority service. Escalate from simple opposing streams to turns, emergency vehicles, and hard triage decisions. Do not build a city simulator. Include keyboard and touch-friendly controls, score, queue or collision failure, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 71,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+      "task_url": "https://taskmarket.dev/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+      "title": "ARCADE BENCHMARK 05: Signal Panic"
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 06: Bubble Brawl. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a small arena, trap wandering enemies in bubbles, then pop them before escape. The main score system must reward intentionally gathering enemies and creating visible chain reactions. Escalate with distinct enemy behaviours rather than simple speed increases. Include keyboard and touch-friendly controls, score, biggest chain, limited health or equivalent fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 73,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+      "task_url": "https://taskmarket.dev/tasks/0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+      "title": "ARCADE BENCHMARK 06: Bubble Brawl"
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 03: Orbit Breaker. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A tiny craft launches between planets whose gravity bends its path. Make charge-and-release launch timing the main interaction, communicate gravity and trajectory clearly, reward visiting planets, collecting fragments, and chaining skilful transfers. Escalate through debris, moving bodies, and route precision while allowing recovery from slightly poor launches. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 74,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
+      "task_url": "https://taskmarket.dev/tasks/0x5c4b2a12921db0ebe17b4d21ea2af71fdb835d2ac1a594a76cdb61420a0334c0",
+      "title": "ARCADE BENCHMARK 03: Orbit Breaker"
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 08: Rooftop Relay. Build a complete playable browser arcade game as one self-contained index.html using Three.js. An automatic-running courier crosses rooftops while a rising threat follows. The essential differentiator is genuine route choice: safe low lines, riskier high lines, and score-rich shortcuts with clear consequences. Use jump plus only the minimum extra actions needed. Escalate through route combinations and pressure while keeping landings fair. Include keyboard and touch-friendly controls, score, pickups or multiplier, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 75,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0xab4307e40b5dc33a6575e29e8d014305f0214ddf637d69b9e369eabb7f290a7b",
+      "task_url": "https://taskmarket.dev/tasks/0xab4307e40b5dc33a6575e29e8d014305f0214ddf637d69b9e369eabb7f290a7b",
+      "title": "ARCADE BENCHMARK 08: Rooftop Relay"
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 02: Reactor Rush. Build a complete playable browser arcade game as one self-contained index.html using Three.js. In a compact arena, collect unstable energy cells and return them to a central reactor while avoiding escalating hazards. Carrying several cells must create a clear risk trade-off. Score deliveries, reward batches or quick sequences, show reactor stability and player danger, and end the run on destruction or critical instability. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 75,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
+      "task_url": "https://taskmarket.dev/tasks/0x1a5558893f9bd09d3a15b1598a5ca042c14bff6e49c8f45a42d3def46158354e",
+      "title": "ARCADE BENCHMARK 02: Reactor Rush"
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 04: Tunnel Tap. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A craft advances automatically through a scrolling tunnel of shifting walls, gates, and safe channels. Use a deliberately small control vocabulary; reward reading the route ahead, clean central passes, and sustained combo play. Escalate through pattern complexity and speed, but keep generated routes fair and collision boundaries legible. Include keyboard and touch-friendly controls, distance score, combo, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 76,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x45d1de095a136ba92af772153dd2a289eae3b19ad8f859f42669eab5dd0630c8",
+      "task_url": "https://taskmarket.dev/tasks/0x45d1de095a136ba92af772153dd2a289eae3b19ad8f859f42669eab5dd0630c8",
+      "title": "ARCADE BENCHMARK 04: Tunnel Tap"
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 07: Magnet Mine. Build a complete playable browser arcade game as one self-contained index.html using Three.js. A salvage craft moves through scrap and mines using attraction and repulsion. The magnet must visibly move objects, collect valuable scrap, clear paths, and create danger because mines react too. Score salvage deliveries, disarms or narrow escapes, and clever multipliers. Escalate with denser fields and object interactions while keeping force and mine behaviour understandable. Include keyboard and touch-friendly controls, score, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 77,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
+      "task_url": "https://taskmarket.dev/tasks/0x247e03b529e7543703f2eedf8ae71f7f3682a6a3544cb50daebbb02a12354f2b",
+      "title": "ARCADE BENCHMARK 07: Magnet Mine"
+    },
+    {
+      "description_excerpt": "ARCADE BENCHMARK 10: Last Light. Build a complete playable browser arcade game as one self-contained index.html using Three.js. Defend a central beacon from approaching enemies by aiming a light beam. Light repels threats but consumes energy; collecting energy and prioritizing several approach directions must form the central tension. Escalate with varied enemy behaviours and offer a costly emergency overcharge or equivalent recovery tool. Include keyboard and touch-friendly controls, score, survival time, fail state, high-score display, and instant restart. Submit the final index.html only, not a mockup or explanation. It must run in a modern browser with no build step. Full design reference: https://gist.github.com/ponderingdemocritus/cf2b3f3933cadd06af9fe0e0c5aeabdd#file-index-html",
+      "hours_left": 34.92,
+      "net_reward_usdc": 9.25,
+      "reward_usdc": 10.0,
+      "submission_count": 80,
+      "tags": [
+        "arcade",
+        "threejs",
+        "benchmark"
+      ],
+      "task_id": "0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
+      "task_url": "https://taskmarket.dev/tasks/0xe1828038ea7ac93182ef54af8e19ff1b818191fc9baf950a93c706416af3d776",
+      "title": "ARCADE BENCHMARK 10: Last Light"
+    },
+    {
+      "description_excerpt": "Build a first-person zombie slasher prototype in Three.js Create a small but complete first-person zombie slasher game using Three.js. DELIVERABLE Submit exactly one file named `index.html`. All custom HTML, CSS, and JavaScript must be contained inside this single file. Three.js may be loaded from a reliable public CDN, but there must be no additional project files, asset folders, package installation, or build step. The submitted file must run in a modern desktop browser when opened or served from a basic local static server. REQUIRED GAMEPLAY - First-person movement using WASD - Mouse-controlled camera using pointer lock - A visible melee weapon - Attack using left mouse click - A clear weapon swing or attack animation - Zombie enemies that move toward and attack the player - Working collision and attack-distance checks - Zombies must take damage and be killable - Player health - Kill or score counter - Additional zombies must spawn so the game continues after the first kill - Game-over state when the player loses all health - A working restart button or restart key - Start screen displaying the controls VISUAL AND TECHNICAL REQUIREMENTS - Use Three.js for the 3D scene and gameplay - Create a coherent arena with lighting, ground, boundaries, and atmosphere - Use procedural geometry, CSS, data URLs, or other content embedded in the HTML - Do not depend on external models, textures, audio files, or asset folders - Avoid graphic gore; stylized zombie violence is sufficient - The page must not display missing assets or unresolved loading errors - Gameplay should remain usable at a normal desktop screen size SUGGESTED CONTROLS - WASD: move - Mouse: look - Left click: attack - R: restart after game over - Escape: release mouse ACCEPTANCE CRITERIA The submission will be acce",
+      "hours_left": 18.21,
+      "net_reward_usdc": 13.875,
+      "reward_usdc": 15.0,
+      "submission_count": 103,
+      "tags": [
+        "threejs",
+        "javascript",
+        "html",
+        "webgl",
+        "game-development",
+        "browser-game"
+      ],
+      "task_id": "0x5f70dded51047a221115390f78279af7b9ecf1339fdb79f6b32a2e3bfed642ac",
+      "task_url": "https://taskmarket.dev/tasks/0x5f70dded51047a221115390f78279af7b9ecf1339fdb79f6b32a2e3bfed642ac",
+      "title": "Build a first-person zombie slasher prototype in Three"
+    }
+  ],
+  "expenses_usdc": 0,
+  "generated_at": "2026-08-08T10:02:17Z",
+  "verified_income_usdc": 0
+}
