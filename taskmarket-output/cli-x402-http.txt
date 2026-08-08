@@ -1,0 +1,266 @@
+06100:   const legalHeaders = await legalReceiptHeaders(path4, "POST");
+06101:   const res = await fetch(`${API_URL}${path4}`, {
+06102:     method: "DELETE",
+06103:     redirect: "error",
+06104:     headers: {
+06105:       "Content-Type": "application/json",
+06106:       ...legalHeaders,
+06107:       ...options?.headers ?? {}
+06108:     }
+06109:   });
+06110:   const result = await res.json();
+06111:   if (!res.ok) {
+06112:     throw new ApiError(
+06113:       res.status,
+06114:       `DELETE ${path4} failed (${res.status}): ${JSON.stringify(result)}`
+06115:     );
+06116:   }
+06117:   return result;
+06118: }
+06119: 
+06120: // src/lib/output.ts
+06121: function printResult(data) {
+06122:   console.log(JSON.stringify({ ok: true, data }));
+06123: }
+06124: function printError(message) {
+06125:   process.stderr.write(JSON.stringify({ ok: false, error: message }) + "\n");
+06126:   process.exit(1);
+06127: }
+06128: 
+06129: // src/lib/agent.ts
+06130: async function pollAgentId(address, maxWaitMs = 6e4) {
+06131:   const interval = 3e3;
+06132:   const deadline = Date.now() + maxWaitMs;
+06133:   while (Date.now() < deadline) {
+06134:     await new Promise((r) => setTimeout(r, interval));
+06135:     try {
+06136:       const res = await fetch(`${API_URL}/api/identity/status?address=${address}`);
+06137:       if (res.ok) {
+06138:         const data = await res.json();
+06139:         if (data.agentId) return data.agentId;
+06140:       }
+06141:     } catch {
+06142:     }
+06143:   }
+06144:   return null;
+06145: }
+06146: 
+06147: // src/lib/device-registration.ts
+06148: async function registerDevice(input) {
+06149:   const response = await fetch(`${API_URL}/api/devices`, {
+06150:     body: JSON.stringify({
+06151:       publicKey: input.publicKey,
+06152:       signature: input.signature,
+06153:       walletAddress: input.walletAddress
+06154:     }),
+06155:     headers: {
+06156:       "Content-Type": "application/json",
+06157:       ...buildLegalReceiptHeaders(input.legalReceipt)
+06158:     },
+06159:     method: "POST",
+06160:     redirect: "error"
+06161:   });
+06162:   if (!response.ok) {
+06163:     const text = await response.text().catch(() => "");
+06164:     throw new Error(`Device registration failed (${response.status}): ${text}`);
+06165:   }
+06166:   return await response.json();
+06167: }
+06168: 
+06169: // src/lib/encryption.ts
+06170: import { createECDH, hkdfSync, createCipheriv as createCipheriv2, createDecipheriv as createDecipheriv2, randomBytes as randomBytes2 } from "crypto";
+06171: var VERSION2 = 1;
+06172: var EPH_PUB_LEN = 65;
+06173: var IV_LEN = 12;
+06174: var TAG_LEN = 16;
+06175: var HEADER_LEN = 1 + EPH_PUB_LEN + IV_LEN + TAG_LEN;
+06176: function ecdhSharedSecret(privateKeyHex, otherPubKeyHex) {
+06177:   const ecdh = createECDH("secp256k1");
+06178:   ecdh.setPrivateKey(Buffer.from(privateKeyHex.replace(/^0x/, ""), "hex"));
+06179:   const shared = ecdh.computeSecret(Buffer.from(otherPubKeyHex, "hex"));
+06180:   return shared;
+06181: }
+06182: function hkdfKey(sharedSecret) {
+06183:   return Buffer.from(hkdfSync("sha256", sharedSecret, Buffer.alloc(0), "taskmarket-ecies-v1", 32));
+06184: }
+06185: function aesGcmEncrypt(key, iv, plaintext) {
+06186:   const cipher = createCipheriv2("aes-256-gcm", key, iv);
+06187:   const ciphertext = Buffer.concat([cipher.update(plaintext), cipher.final()]);
+06188:   const tag = cipher.getAuthTag();
+06189:   return { ciphertext, tag };
+06190: }
+06191: function aesGcmDecrypt(key, iv, tag, ciphertext) {
+06192:   const decipher = createDecipheriv2("aes-256-gcm", key, iv);
+06193:   decipher.setAuthTag(tag);
+06194:   return Buffer.concat([decipher.update(ciphertext), decipher.final()]);
+06195: }
+06196: function derivePublicKey(privateKeyHex) {
+06197:   const ecdh = createECDH("secp256k1");
+06198:   ecdh.setPrivateKey(Buffer.from(privateKeyHex.replace(/^0x/, ""), "hex"));
+06199:   return ecdh.getPublicKey(void 0, "uncompressed").toString("hex");
+06200: }
+06201: function deriveCompressedPublicKey(privateKeyHex) {
+06202:   const ecdh = createECDH("secp256k1");
+06203:   ecdh.setPrivateKey(Buffer.from(privateKeyHex.replace(/^0x/, ""), "hex"));
+06204:   return ecdh.getPublicKey(void 0, "compressed").toString("hex");
+06205: }
+06206: function encryptForRecipient(fileBuffer, recipientPubKeyHex) {
+06207:   const ephEcdh = createECDH("secp256k1");
+06208:   ephEcdh.generateKeys();
+06209:   const ephPubKey = ephEcdh.getPublicKey(void 0, "uncompressed");
+06210:   const ephPrivKeyHex = ephEcdh.getPrivateKey("hex");
+06211:   const shared = ecdhSharedSecret(ephPrivKeyHex, recipientPubKeyHex);
+06212:   const aesKey = hkdfKey(shared);
+06213:   const iv = randomBytes2(IV_LEN);
+06214:   const { ciphertext, tag } = aesGcmEncrypt(aesKey, iv, fileBuffer);
+06215:   return Buffer.concat([Buffer.from([VERSION2]), ephPubKey, iv, tag, ciphertext]);
+06216: }
+06217: function decryptWithPrivateKey(fileBuffer, privateKeyHex) {
+06218:   if (fileBuffer.length < HEADER_LEN + 1) {
+06219:     throw new Error("Decryption failed: invalid key or corrupted file");
+06220:   }
+06221:   const version2 = fileBuffer[0];
+06222:   if (version2 !== VERSION2) {
+06223:     throw new Error(`Decryption failed: unsupported file version 0x${version2.toString(16)}`);
+06224:   }
+06225:   const ephPubKeyHex = fileBuffer.subarray(1, 1 + EPH_PUB_LEN).toString("hex");
+06226:   const iv = fileBuffer.subarray(1 + EPH_PUB_LEN, 1 + EPH_PUB_LEN + IV_LEN);
+06227:   const tag = fileBuffer.subarray(1 + EPH_PUB_LEN + IV_LEN, 1 + EPH_PUB_LEN + IV_LEN + TAG_LEN);
+06228:   const ciphertext = fileBuffer.subarray(1 + EPH_PUB_LEN + IV_LEN + TAG_LEN);
+06229:   const shared = ecdhSharedSecret(privateKeyHex, ephPubKeyHex);
+06230:   const aesKey = hkdfKey(shared);
+06231:   try {
+06232:     return aesGcmDecrypt(aesKey, iv, tag, ciphertext);
+06233:   } catch {
+06234:     throw new Error("Decryption failed: invalid key or corrupted file");
+06235:   }
+06236: }
+06237: 
+06238: // src/commands/legal/index.ts
+06239: import { Command } from "commander";
+06240: import { createInterface } from "readline/promises";
+06241: 
+06242: // src/lib/signer.ts
+06243: import { privateKeyToAccount as privateKeyToAccount2 } from "viem/accounts";
+06244: import { toHex } from "viem";
+06245: async function fetchDeviceKey(deviceId, apiToken, keyServerUrl) {
+06246:   const base = keyServerUrl ?? API_URL;
+06247:   const res = await fetch(`${base}/api/devices/${deviceId}/key`, {
+06248:     method: "POST",
+06249:     headers: { "Content-Type": "application/json" },
+06250:     body: JSON.stringify({ deviceId, apiToken })
+06251:   });
+06252:   if (!res.ok) {
+06253:     const text = await res.text().catch(() => "");
+06254:     throw new Error(`Failed to fetch device key (${res.status}): ${text}`);
+06255:   }
+06256:   const data = await res.json();
+06257:   return data.deviceEncryptionKey;
+06258: }
+06259: async function signTypedData(typedData, keystore) {
+06260:   const account = await createWalletAccountFromKeystore(keystore);
+06261:   const sig = await account.signTypedData(typedData);
+06262:   return sig;
+06263: }
+06264: async function signMessage(message, keystore) {
+06265:   const account = await createWalletAccountFromKeystore(keystore);
+06266:   const sig = await account.signMessage({ message });
+06267:   return sig;
+06268: }
+06269: async function createWalletAccountFromKeystore(keystore) {
+06270:   const dek = await fetchDeviceKey(keystore.deviceId, keystore.apiToken, keystore.keyServerUrl);
+06271:   const privateKey = decryptPrivateKey(dek, keystore.encryptedKey);
+06272:   return privateKeyToAccount2(privateKey);
+06273: }
+06274: async function getWalletAddress() {
+06275:   const keystore = await loadKeystore();
+06276:   return keystore.walletAddress;
+06277: }
+06278: async function createTransferAuthorization(accept, keystore) {
+06279:   const now = Math.floor(Date.now() / 1e3);
+06280:   const authorization = {
+06281:     from: keystore.walletAddress,
+06282:     to: accept.payTo,
+06283:     value: accept.amount,
+06284:     validAfter: String(now - 60),
+06285:     validBefore: String(now + accept.maxTimeoutSeconds),
+06286:     nonce: toHex(crypto.getRandomValues(new Uint8Array(32)))
+06287:   };
+06288:   const signature = await signTypedData(
+06289:     {
+06290:       domain: accept.extra.eip712.domain,
+06291:       types: accept.extra.eip712.types,
+06292:       primaryType: accept.extra.eip712.primaryType,
+06293:       message: authorization
+06294:     },
+06295:     keystore
+06296:   );
+06297:   return { authorization, signature };
+06298: }
+06299: 
+06300: // src/commands/legal/index.ts
+06301: var affirmations = {
+06302:   acknowledgedRisk: true,
+06303:   agreedToAcceptableUse: true,
+06304:   agreedToTerms: true,
+06305:   receivedPrivacyNotice: true
+06306: };
+06307: async function confirmAcceptance(bundle, assumeYes) {
+06308:   const documentList = bundle.documents.map(
+06309:     (document) => `- ${document.title} (${document.version})
+06310:   ${document.url}
+06311:   ${document.contentHash}`
+06312:   ).join("\n");
+06313:   process.stderr.write(
+06314:     `
+06315: Review the Taskmarket legal bundle before accepting:
+06316: ${documentList}
+06317: 
+06318: ${bundle.acceptanceStatement}
+06319: 
+06320: `
+06321:   );
+06322:   if (assumeYes) return;
+06323:   if (!process.stdin.isTTY) {
+06324:     throw new Error("Interactive confirmation is unavailable. Re-run with --yes after review.");
+06325:   }
+06326:   const prompt = createInterface({ input: process.stdin, output: process.stderr });
+06327:   try {
+06328:     const answer = await prompt.question("Type I AGREE to sign this acceptance: ");
+06329:     if (answer.trim() !== "I AGREE") {
+06330:       throw new Error("Legal acceptance was not confirmed");
+06331:     }
+06332:   } finally {
+06333:     prompt.close();
+06334:   }
+06335: }
+06336: function bundleEvidence(bundle) {
+06337:   return JSON.stringify({
+06338:     acceptanceStatement: bundle.acceptanceStatement,
+06339:     bundleDigest: bundle.bundleDigest,
+06340:     documents: bundle.documents.map(({ contentHash, title, type, version: version2 }) => ({
+06341:       contentHash,
+06342:       title,
+06343:       type,
+06344:       version: version2
+06345:     })),
+06346:     version: bundle.version
+06347:   });
+06348: }
+06349: function validateLegalChallenge(reviewedBundle, challenge, expectedWalletAddress) {
+06350:   if (challenge.bundle.version !== reviewedBundle.version || bundleEvidence(challenge.bundle) !== bundleEvidence(reviewedBundle)) {
+06351:     throw new Error("The legal bundle changed while acceptance was in progress. Review it again.");
+06352:   }
+06353:   if (challenge.walletAddress.toLowerCase() !== expectedWalletAddress.toLowerCase()) {
+06354:     throw new Error("The legal acceptance challenge is for a different wallet.");
+06355:   }
+06356:   const expectedMessage = buildWalletLegalAcceptanceMessage({
+06357:     bundleVersion: challenge.bundle.version,
+06358:     documents: challenge.bundle.documents,
+06359:     expiresAt: challenge.expiresAt,
+06360:     issuedAt: challenge.issuedAt,
+06361:     nonce: challenge.nonce,
+06362:     walletAddress: challenge.walletAddress
+06363:   });
+06364:   if (challenge.message !== expectedMessage) {
+06365:     throw new Error("The legal acceptance challenge does not match the reviewed bundle.");

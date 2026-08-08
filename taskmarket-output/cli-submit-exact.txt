@@ -1,0 +1,71 @@
+07125:       uploaded += chunk.length;
+07126:       const pct = Math.round(uploaded / data.length * 100);
+07127:       process.stderr.write(`\r  ${label}: ${pct}%`);
+07128:     });
+07129:     stream.on("error", reject);
+07130:     stream.pipe(req);
+07131:   });
+07132: }
+07133: var submitCmd = new Command9("submit").description("Submit work for a task").argument("<taskId>", "Task ID (0x-prefixed hex)").option("--file <path>", "Path to a submission file (repeatable)", collectFile, []).addOption(
+07134:   new Option("--role <role>", "Artifact role applied to all files").choices(["preview", "source", "final", "attachment"]).default("attachment")
+07135: ).action(async (taskId, opts) => {
+07136:   try {
+07137:     if (!opts.file || opts.file.length === 0) {
+07138:       printError("--file is required");
+07139:     }
+07140:     const keystore = await loadKeystore();
+07141:     const signature = await signMessage(buildSubmitMessage(taskId), keystore);
+07142:     const artifactInputs = await Promise.all(
+07143:       opts.file.map(async (filePath) => {
+07144:         const mimeType = mimeTypeForPath(filePath);
+07145:         const data = await fsPromises.readFile(filePath);
+07146:         if (data.length === 0) {
+07147:           printError(`File is empty: ${basename(filePath)}`);
+07148:         }
+07149:         const { uploadUrl, artifactKey } = await apiPost(
+07150:           `/api/tasks/${taskId}/submissions/request-upload-url`,
+07151:           {
+07152:             taskId,
+07153:             workerAddress: keystore.walletAddress,
+07154:             signature,
+07155:             fileName: basename(filePath),
+07156:             mimeType,
+07157:             role: opts.role,
+07158:             sizeBytes: data.length
+07159:           }
+07160:         );
+07161:         const sha256Hash = createHash("sha256").update(data).digest("hex");
+07162:         const keccak256Hash = keccak256(new Uint8Array(data));
+07163:         process.stderr.write(`  Uploading ${basename(filePath)}...
+07164: `);
+07165:         await streamingPut(uploadUrl, data, mimeType, basename(filePath));
+07166:         return {
+07167:           artifactKey,
+07168:           fileName: basename(filePath),
+07169:           mimeType,
+07170:           role: opts.role,
+07171:           sizeBytes: data.length,
+07172:           sha256Hash,
+07173:           keccak256Hash
+07174:         };
+07175:       })
+07176:     );
+07177:     const submitSignature = await signMessage(
+07178:       buildSubmitMessage(
+07179:         taskId,
+07180:         artifactInputs.map((artifact) => artifact.artifactKey)
+07181:       ),
+07182:       keystore
+07183:     );
+07184:     const result = await x402Post(`/api/tasks/${taskId}/submissions/from-keys`, {
+07185:       taskId,
+07186:       workerAddress: keystore.walletAddress,
+07187:       artifacts: artifactInputs,
+07188:       signature: submitSignature
+07189:     });
+07190:     printResult({ submissionId: result.submissionId });
+07191:   } finally {
+07192:     submitCmd.setOptionValue("file", []);
+07193:   }
+07194: });
+07195: 

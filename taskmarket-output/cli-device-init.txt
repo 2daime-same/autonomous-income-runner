@@ -1,0 +1,158 @@
+06448: legalCommand.addCommand(acceptCommand);
+06449: 
+06450: // src/commands/init.ts
+06451: function sanitizeEmailUsername(agentId, suffix) {
+06452:   const maxBase = 30 - 1 - suffix.length;
+06453:   if (maxBase < 2) return null;
+06454:   const base = agentId.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-").replace(/^-+|-+$/g, "").slice(0, maxBase).replace(/-+$/, "");
+06455:   if (base.length < 2) return null;
+06456:   const candidate = `${base}-${suffix}`;
+06457:   return /^[a-z0-9][a-z0-9-]{1,28}[a-z0-9]$/.test(candidate) ? candidate : null;
+06458: }
+06459: async function tryRegisterEmail(deviceId, apiToken, username, explicit) {
+06460:   try {
+06461:     const reg = await apiPost("/api/emails/register", {
+06462:       deviceId,
+06463:       apiToken,
+06464:       username
+06465:     });
+06466:     return reg.emailAddress;
+06467:   } catch (err) {
+06468:     if (explicit) {
+06469:       const msg = err instanceof Error ? err.message : String(err);
+06470:       process.stderr.write(
+06471:         JSON.stringify({
+06472:           ok: false,
+06473:           error: `Email registration failed: ${msg}. Run: taskmarket email register --username ${username}`
+06474:         }) + "\n"
+06475:       );
+06476:     }
+06477:     return null;
+06478:   }
+06479: }
+06480: var initCommand = new Command2("init").description("Create and register a new agent wallet (safe to re-run)").option(
+06481:   "--email <username>",
+06482:   "Claim a custom email username (default: auto-generated from agent ID)"
+06483: ).option(
+06484:   "--yes",
+06485:   "Confirm legal acceptance non-interactively after reviewing every current policy"
+06486: ).action(async (opts) => {
+06487:   if (opts.email) {
+06488:     const check = await apiGet(
+06489:       `/api/emails/check-username?username=${encodeURIComponent(opts.email)}`
+06490:     );
+06491:     if (!check.available) {
+06492:       printError(`Email username "${opts.email}" is not available.`);
+06493:     }
+06494:   }
+06495:   if (await keystoreExists()) {
+06496:     const keystore = await loadKeystore();
+06497:     let agentId2 = keystore.agentId;
+06498:     if (!agentId2) {
+06499:       agentId2 = await pollAgentId(keystore.walletAddress);
+06500:       if (agentId2) {
+06501:         await saveKeystore({ ...keystore, agentId: agentId2 });
+06502:       }
+06503:     }
+06504:     let networkInfo2;
+06505:     try {
+06506:       const response = await apiGet("/trpc/network.info");
+06507:       networkInfo2 = response.result.data;
+06508:     } catch {
+06509:     }
+06510:     let emailAddress2 = null;
+06511:     try {
+06512:       const existing = await apiGet(`/api/agents/stats?address=${keystore.walletAddress}`);
+06513:       emailAddress2 = existing.emailAddress ?? null;
+06514:     } catch {
+06515:     }
+06516:     if (!emailAddress2) {
+06517:       const username2 = opts.email ?? (agentId2 && networkInfo2 ? sanitizeEmailUsername(agentId2, String(networkInfo2.chainId)) : null);
+06518:       if (username2) {
+06519:         emailAddress2 = await tryRegisterEmail(
+06520:           keystore.deviceId,
+06521:           keystore.apiToken,
+06522:           username2,
+06523:           !!opts.email
+06524:         );
+06525:       }
+06526:     }
+06527:     printResult({
+06528:       address: keystore.walletAddress,
+06529:       agentId: agentId2,
+06530:       network: networkInfo2?.networkName,
+06531:       chainId: networkInfo2?.chainId,
+06532:       emailAddress: emailAddress2
+06533:     });
+06534:     return;
+06535:   }
+06536:   const { privateKey, address } = generateKeypair();
+06537:   const publicKey = deriveCompressedPublicKey(privateKey);
+06538:   const legalBundle = LegalBundleSchema.parse(await apiGet("/api/legal/current"));
+06539:   const legalAcceptance = legalBundle.enforcementEnabled ? await acceptLegalBundle({
+06540:     assumeYes: Boolean(opts.yes),
+06541:     bundle: legalBundle,
+06542:     signMessage: (message) => privateKeyToAccount3(privateKey).signMessage({ message }),
+06543:     walletAddress: address
+06544:   }) : void 0;
+06545:   const deviceRegisterSignature = await privateKeyToAccount3(
+06546:     privateKey
+06547:   ).signMessage({ message: buildDeviceRegisterMessage(address) });
+06548:   const {
+06549:     deviceId,
+06550:     apiToken,
+06551:     deviceEncryptionKey,
+06552:     agentId: initialAgentId
+06553:   } = await registerDevice({
+06554:     legalReceipt: legalAcceptance?.receipt,
+06555:     publicKey,
+06556:     signature: deviceRegisterSignature,
+06557:     walletAddress: address
+06558:   });
+06559:   const encryptedKey = encryptPrivateKey(deviceEncryptionKey, privateKey);
+06560:   let agentId = initialAgentId;
+06561:   await saveKeystore({
+06562:     encryptedKey,
+06563:     walletAddress: address,
+06564:     deviceId,
+06565:     apiToken,
+06566:     agentId,
+06567:     keyServerUrl: API_URL,
+06568:     ...legalAcceptance ? {
+06569:       legalAcceptanceApiOrigin: API_ORIGIN,
+06570:       legalAcceptanceBundleVersion: legalAcceptance.bundleVersion,
+06571:       legalAcceptanceReceipt: legalAcceptance.receipt
+06572:     } : {}
+06573:   });
+06574:   if (!agentId) {
+06575:     agentId = await pollAgentId(address);
+06576:     if (agentId) {
+06577:       const keystore = await loadKeystore();
+06578:       await saveKeystore({ ...keystore, agentId });
+06579:     }
+06580:   }
+06581:   let networkInfo;
+06582:   try {
+06583:     const response = await apiGet("/trpc/network.info");
+06584:     networkInfo = response.result.data;
+06585:   } catch {
+06586:   }
+06587:   const username = opts.email ?? (agentId && networkInfo ? sanitizeEmailUsername(agentId, String(networkInfo.chainId)) : null);
+06588:   const emailAddress = username ? await tryRegisterEmail(deviceId, apiToken, username, !!opts.email) : null;
+06589:   printResult({
+06590:     address,
+06591:     agentId,
+06592:     network: networkInfo?.networkName,
+06593:     chainId: networkInfo?.chainId,
+06594:     emailAddress
+06595:   });
+06596: });
+06597: 
+06598: // src/commands/address.ts
+06599: import { Command as Command3 } from "commander";
+06600: var addressCommand = new Command3("address").description("Print the wallet address").action(async () => {
+06601:   const keystore = await loadKeystore();
+06602:   printResult({ address: keystore.walletAddress });
+06603: });
+06604: 
+06605: // src/commands/identity.ts
