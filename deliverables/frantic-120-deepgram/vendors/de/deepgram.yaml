@@ -1,0 +1,79 @@
+schema_version: sourcey.vendor-authoring/v1alpha1
+entity_id: ent_01kzg1dpgm7q4b8k6v2n5r9x3c
+slug: deepgram
+slug_aliases: []
+name: Deepgram
+domains:
+  - value: deepgram.com
+    role: primary
+    valid_from: 2026-08-08T06:55:00Z
+category: ai
+description: Voice AI platform providing speech-to-text, text-to-speech, and voice-agent APIs for developers and production applications.
+links:
+  site: https://deepgram.com
+sources:
+  - source_id: src_9c7c074832e17bc26eaa5ebf83f99fc932516cf4459133aed282804f84120e21
+    url: https://deepgram.com/startup-program
+  - source_id: src_350d071ca1c2e52eb63190e390a3ecf6e7b84c34ff4918133bd0cc2af155467e
+    url: https://deepgram.com/startup-program-terms-of-service
+programs:
+  - program_id: prg_01kzg1dpgmjr3v8as6wy4n2q0t
+    program_slug: deepgram-for-startups
+    program_slug_aliases: []
+    title: Deepgram for Startups
+    summary: Approved AI builders and early-stage startups can receive promotional Deepgram credits, with direct applicants starting at $1,000 and credits expiring 12 months after issue.
+    source_ids:
+      - src_9c7c074832e17bc26eaa5ebf83f99fc932516cf4459133aed282804f84120e21
+      - src_350d071ca1c2e52eb63190e390a3ecf6e7b84c34ff4918133bd0cc2af155467e
+offers:
+  - offer_id: off_01kzg1dpgmw6q2y5r8h4c7n1va
+    program_id: prg_01kzg1dpgmjr3v8as6wy4n2q0t
+    offer_slug: one-thousand-dollar-direct-applicant-credits
+    offer_slug_aliases: []
+    title: $1,000 in Deepgram credits for direct applicants
+    summary: Approved direct applicants start with $1,000 in promotional Deepgram credits that expire 12 months after issue; larger tiers may be available based on stage and product usage.
+    lifecycle:
+      status: active
+      effective_from: 2026-08-08T06:55:00Z
+    economics:
+      benefits:
+        - benefit_id: promotional_credits
+          description: $1,000 in promotional Deepgram credits for approved direct applicants
+          kind: credit
+          value:
+            kind: exact
+            amount:
+              currency: USD
+              minor_units: 100000
+          duration:
+            kind: exact
+            value: P12M
+      consideration:
+        kind: none
+    eligibility:
+      rule:
+        kind: all
+        rules:
+          - criterion_id: builder_or_startup
+            kind: manual
+            statement: Applicant is an AI builder or early-stage startup
+            reason: external-verification
+          - criterion_id: production_timing
+            kind: manual
+            statement: Applicant is in production or plans to launch within six months
+            reason: external-verification
+          - criterion_id: vendor_approval
+            kind: manual
+            statement: Deepgram approves the application under the startup program terms
+            reason: vendor-discretion
+    roles:
+      terms_authority_entity_id: ent_01kzg1dpgm7q4b8k6v2n5r9x3c
+      access_operator_entity_id: ent_01kzg1dpgm7q4b8k6v2n5r9x3c
+    access:
+      availability: public
+      method: form
+      url: https://deepgram.com/startup-program
+    terms_url: https://deepgram.com/startup-program-terms-of-service
+    source_ids:
+      - src_9c7c074832e17bc26eaa5ebf83f99fc932516cf4459133aed282804f84120e21
+      - src_350d071ca1c2e52eb63190e390a3ecf6e7b84c34ff4918133bd0cc2af155467e
