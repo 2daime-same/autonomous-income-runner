@@ -1,0 +1,77 @@
+name: Revenue sprint — existing accounts only
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/revenue-sprint-20260808.yml
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: revenue-sprint-20260808
+  cancel-in-progress: false
+
+jobs:
+  dispatch-existing-workers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Dispatch existing zero-spend revenue workers once
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test -s ZERO_SPEND_CONSTITUTION.md
+
+          targets=(
+            bothire-worker.yml
+            agentjob-paid-worker-v2.yml
+            botbounty-worker.yml
+            taskforce-worker.yml
+            clawlancer-fresh-secure-earn.yml
+            agentmart-worker.yml
+          )
+
+          dispatched=0
+          failed=0
+          for workflow in "${targets[@]}"; do
+            path=".github/workflows/${workflow}"
+            if [[ ! -s "$path" ]]; then
+              echo "skip missing: $workflow"
+              continue
+            fi
+            if ! grep -Eq 'workflow_dispatch:' "$path"; then
+              echo "skip no workflow_dispatch: $workflow"
+              continue
+            fi
+            if gh api --method POST \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/dispatches" \
+              -f ref=main; then
+              echo "dispatched: $workflow"
+              dispatched=$((dispatched + 1))
+            else
+              echo "dispatch failed: $workflow" >&2
+              failed=$((failed + 1))
+            fi
+          done
+
+          {
+            echo '## Revenue sprint dispatch'
+            echo
+            echo "- Existing-worker workflows dispatched: $dispatched"
+            echo "- Dispatch failures: $failed"
+            echo '- AgentGigs registration workflow: not dispatched'
+            echo '- Any workflow without workflow_dispatch: skipped'
+            echo '- Owner asset outflow authorized: 0'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          test "$dispatched" -gt 0
