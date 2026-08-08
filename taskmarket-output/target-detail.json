@@ -1,6 +1,6 @@
 {
   "expenses_usdc": 0,
-  "generated_at": "2026-08-08T02:19:18+00:00",
+  "generated_at": "2026-08-08T08:57:16+00:00",
   "http_status": {
     "submissions": 200,
     "task": 200
@@ -12,7 +12,7 @@
   "schema_version": "taskmarket-target-readonly-v1",
   "signatures_performed": 0,
   "source": "https://api.taskmarket.dev",
-  "submission_count_observed": 14,
+  "submission_count_observed": 16,
   "submissions": [
     {
       "artifact_count": 2,
@@ -418,6 +418,62 @@
         "address_hash": "dd0db240805c7af2"
       },
       "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "index.html"
+      ],
+      "id": "2fbb1f95-85b0-46e0-be28-463f68d153c7",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-08T05:28:48.299Z",
+      "worker": {
+        "address": "0xD073C984d55ca9A6b1E2c7B70489f87A2507622D",
+        "address_hash": "85f54f29ecf5d3f0"
+      },
+      "worker_agent_id": null
+    },
+    {
+      "artifact_count": 1,
+      "artifact_names": [
+        "hero.png"
+      ],
+      "id": "a363f8ad-7fa7-4c6c-ba48-b3d20fc325b1",
+      "raw_keys": [
+        "artifacts",
+        "deliverableHash",
+        "fileUrl",
+        "id",
+        "rejectedAt",
+        "signature",
+        "submitTxHash",
+        "submittedAt",
+        "taskId",
+        "workerAddress",
+        "workerAgentId",
+        "workerStats"
+      ],
+      "rejected_at": null,
+      "submitted_at": "2026-08-08T06:07:00.266Z",
+      "worker": {
+        "address": "0xF00c60d96439F9c839f2cDF1d68f1FC942eB1C60",
+        "address_hash": "9b0c0dff64fe0d36"
+      },
+      "worker_agent_id": null
     }
   ],
   "task": {
@@ -535,7 +591,7 @@
     "stakeBps": 0,
     "stakeRequired": false,
     "status": "open",
-    "submissionCount": 14,
+    "submissionCount": 16,
     "submissionVisibility": "public",
     "submissionWindowOpen": true,
     "tags": [
