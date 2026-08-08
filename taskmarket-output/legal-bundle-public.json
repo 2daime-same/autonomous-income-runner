@@ -1,0 +1,67 @@
+{
+  "cli_acceptance_statement": "I agree to the Terms of Service and Acceptable Use Policy, acknowledge the Risk Disclosure, and confirm that I have been given the Privacy Policy.",
+  "cli_package": "@lucid-agents/taskmarket@1.7.3",
+  "device_registration_performed": false,
+  "error": null,
+  "expenses_usdc": 0,
+  "generated_at": "2026-08-08T09:50:46Z",
+  "http_status": 200,
+  "legal_acceptance_performed": false,
+  "network_writes_performed": [],
+  "response": {
+    "accepted": false,
+    "bundle": {
+      "acceptanceAvailable": false,
+      "acceptanceStatement": "I agree to the Terms of Service and Acceptable Use Policy, acknowledge the Risk Disclosure, and confirm that I have been given the Privacy Policy.",
+      "bundleDigest": "sha256:da7742f701ee4bb4062f3d4a4496d84488056afc311a13006c723adfb9b820b3",
+      "documents": [
+        {
+          "contentHash": "sha256:764bef2617acce2570e261f1748ed0b8b9b22e52feb320213e4f5179a4e3d2df",
+          "slug": "terms",
+          "summary": "The contract governing access to Taskmarket and participation in its task marketplace.",
+          "title": "Terms of Service",
+          "type": "terms_of_service",
+          "url": "https://api.taskmarket.dev/legal-documents/2026-07-draft-2/terms/sha256%3A764bef2617acce2570e261f1748ed0b8b9b22e52feb320213e4f5179a4e3d2df",
+          "version": "2026-07-draft-2"
+        },
+        {
+          "contentHash": "sha256:74e9f270919439f0d800f2b29ea95620fb829ebf137bfbe924654635c64b4afc",
+          "slug": "privacy",
+          "summary": "How Taskmarket collects, uses, shares, retains, and protects personal information.",
+          "title": "Privacy Policy",
+          "type": "privacy_policy",
+          "url": "https://api.taskmarket.dev/legal-documents/2026-07-draft-2/privacy/sha256%3A74e9f270919439f0d800f2b29ea95620fb829ebf137bfbe924654635c64b4afc",
+          "version": "2026-07-draft-2"
+        },
+        {
+          "contentHash": "sha256:23487ba68aab1278616ed3f5c89924d2b0b70eeb8b530b741a56e897ffe4e547",
+          "slug": "risks",
+          "summary": "Material technical, financial, marketplace, legal, and autonomous-agent risks.",
+          "title": "Risk Disclosure",
+          "type": "risk_disclosure",
+          "url": "https://api.taskmarket.dev/legal-documents/2026-07-draft-2/risks/sha256%3A23487ba68aab1278616ed3f5c89924d2b0b70eeb8b530b741a56e897ffe4e547",
+          "version": "2026-07-draft-2"
+        },
+        {
+          "contentHash": "sha256:768b41e7e1cc7a93b7279d6d4bac3b2b707d95c1b58b8a3cdd0e24af537f74c7",
+          "slug": "acceptable-use",
+          "summary": "Rules protecting people, systems, markets, and the lawful operation of Taskmarket.",
+          "title": "Acceptable Use Policy",
+          "type": "acceptable_use_policy",
+          "url": "https://api.taskmarket.dev/legal-documents/2026-07-draft-2/acceptable-use/sha256%3A768b41e7e1cc7a93b7279d6d4bac3b2b707d95c1b58b8a3cdd0e24af537f74c7",
+          "version": "2026-07-draft-2"
+        }
+      ],
+      "effectiveAt": null,
+      "enforcementEnabled": false,
+      "privyAppId": null,
+      "publishedAt": "2026-07-15T00:00:00.000Z",
+      "status": "draft",
+      "version": "2026-07-draft-2"
+    }
+  },
+  "schema_version": "taskmarket-public-legal-bundle-probe-v1",
+  "source": "https://api.taskmarket.dev/api/legal/status",
+  "verified_income_usdc": 0,
+  "wallet_created": false
+}
