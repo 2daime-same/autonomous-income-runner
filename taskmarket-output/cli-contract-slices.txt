@@ -1,0 +1,492 @@
+===== legal receipt and HTTP helpers (5960-6105) =====
+05960:   return `Taskmarket legal acceptance
+05961: 
+05962: Wallet: ${input.walletAddress}
+05963: Bundle: ${input.bundleVersion}
+05964: Issued at: ${input.issuedAt}
+05965: Expires at: ${input.expiresAt}
+05966: Nonce: ${input.nonce}
+05967: 
+05968: Documents:
+05969: ${documentLines}
+05970: 
+05971: ${LEGAL_ACCEPTANCE_STATEMENT}`;
+05972: }
+05973: 
+05974: // src/commands/init.ts
+05975: import { privateKeyToAccount as privateKeyToAccount3 } from "viem/accounts";
+05976: 
+05977: // src/lib/keystore.ts
+05978: import { createCipheriv, createDecipheriv, randomBytes } from "crypto";
+05979: import { promises as fs } from "fs";
+05980: import os from "os";
+05981: import path from "path";
+05982: import { privateKeyToAccount } from "viem/accounts";
+05983: function getKeystorePath() {
+05984:   return path.join(os.homedir(), ".taskmarket", "keystore.json");
+05985: }
+05986: function generateKeypair() {
+05987:   const keyBytes = randomBytes(32);
+05988:   const privateKey = "0x" + keyBytes.toString("hex");
+05989:   const account = privateKeyToAccount(privateKey);
+05990:   return { privateKey, address: account.address };
+05991: }
+05992: function encryptPrivateKey(deviceEncryptionKeyHex, privateKey) {
+05993:   const key = Buffer.from(deviceEncryptionKeyHex, "hex");
+05994:   const iv = randomBytes(12);
+05995:   const cipher = createCipheriv("aes-256-gcm", key, iv);
+05996:   const plaintext = Buffer.from(privateKey, "utf8");
+05997:   const encrypted = Buffer.concat([cipher.update(plaintext), cipher.final()]);
+05998:   const tag = cipher.getAuthTag();
+05999:   return Buffer.concat([iv, tag, encrypted]).toString("hex");
+06000: }
+06001: function decryptPrivateKey(deviceEncryptionKeyHex, encryptedHex) {
+06002:   const key = Buffer.from(deviceEncryptionKeyHex, "hex");
+06003:   const data = Buffer.from(encryptedHex, "hex");
+06004:   const iv = data.subarray(0, 12);
+06005:   const tag = data.subarray(12, 28);
+06006:   const ciphertext = data.subarray(28);
+06007:   const decipher = createDecipheriv("aes-256-gcm", key, iv);
+06008:   decipher.setAuthTag(tag);
+06009:   const decrypted = Buffer.concat([decipher.update(ciphertext), decipher.final()]);
+06010:   return decrypted.toString("utf8");
+06011: }
+06012: async function saveKeystore(keystore, keystorePath) {
+06013:   const p = keystorePath ?? getKeystorePath();
+06014:   await fs.mkdir(path.dirname(p), { recursive: true });
+06015:   await fs.writeFile(p, JSON.stringify(keystore, null, 2), { encoding: "utf8", mode: 384 });
+06016:   await fs.chmod(p, 384);
+06017: }
+06018: async function loadKeystore(keystorePath) {
+06019:   const p = keystorePath ?? getKeystorePath();
+06020:   let data;
+06021:   try {
+06022:     data = await fs.readFile(p, "utf8");
+06023:   } catch {
+06024:     throw new Error(`Keystore not found at ${p}. Run 'taskmarket init' first.`);
+06025:   }
+06026:   return JSON.parse(data);
+06027: }
+06028: async function keystoreExists(keystorePath) {
+06029:   const p = keystorePath ?? getKeystorePath();
+06030:   try {
+06031:     await fs.access(p);
+06032:     return true;
+06033:   } catch {
+06034:     return false;
+06035:   }
+06036: }
+06037: 
+06038: // src/lib/api.ts
+06039: var API_URL = process.env.TASKMARKET_API_URL ?? "https://api.taskmarket.dev";
+06040: var API_ORIGIN = new URL(API_URL).origin;
+06041: var ApiError = class extends Error {
+06042:   status;
+06043:   constructor(status, message) {
+06044:     super(message);
+06045:     this.name = "ApiError";
+06046:     this.status = status;
+06047:   }
+06048: };
+06049: function legalReceiptHeadersForKeystore(keystore, path4, method) {
+06050:   const canSend = keystore.legalAcceptanceApiOrigin === API_ORIGIN && (method === "POST" || path4 === "/api/legal/status");
+06051:   return canSend ? buildLegalReceiptHeaders(keystore.legalAcceptanceReceipt) : {};
+06052: }
+06053: async function legalReceiptHeaders(path4, method) {
+06054:   try {
+06055:     const keystore = await loadKeystore();
+06056:     return legalReceiptHeadersForKeystore(keystore, path4, method);
+06057:   } catch {
+06058:     return {};
+06059:   }
+06060: }
+06061: async function apiGet(path4, options) {
+06062:   const legalHeaders = await legalReceiptHeaders(path4, "GET");
+06063:   const res = await fetch(`${API_URL}${path4}`, {
+06064:     method: "GET",
+06065:     redirect: "error",
+06066:     headers: {
+06067:       "Content-Type": "application/json",
+06068:       ...legalHeaders,
+06069:       ...options?.headers ?? {}
+06070:     }
+06071:   });
+06072:   const body = await res.json();
+06073:   if (!res.ok) {
+06074:     throw new ApiError(res.status, `GET ${path4} failed (${res.status}): ${JSON.stringify(body)}`);
+06075:   }
+06076:   return body;
+06077: }
+06078: async function apiPost(path4, body, options) {
+06079:   const legalHeaders = await legalReceiptHeaders(path4, "POST");
+06080:   const res = await fetch(`${API_URL}${path4}`, {
+06081:     method: "POST",
+06082:     redirect: "error",
+06083:     headers: {
+06084:       "Content-Type": "application/json",
+06085:       ...legalHeaders,
+06086:       ...options?.headers ?? {}
+06087:     },
+06088:     body: JSON.stringify(body)
+06089:   });
+06090:   const result = await res.json();
+06091:   if (!res.ok) {
+06092:     throw new ApiError(
+06093:       res.status,
+06094:       `POST ${path4} failed (${res.status}): ${JSON.stringify(result)}`
+06095:     );
+06096:   }
+06097:   return result;
+06098: }
+06099: async function apiDelete(path4, options) {
+06100:   const legalHeaders = await legalReceiptHeaders(path4, "POST");
+06101:   const res = await fetch(`${API_URL}${path4}`, {
+06102:     method: "DELETE",
+06103:     redirect: "error",
+06104:     headers: {
+06105:       "Content-Type": "application/json",
+
+===== legal status and accept commands (6360-6460) =====
+06360:     issuedAt: challenge.issuedAt,
+06361:     nonce: challenge.nonce,
+06362:     walletAddress: challenge.walletAddress
+06363:   });
+06364:   if (challenge.message !== expectedMessage) {
+06365:     throw new Error("The legal acceptance challenge does not match the reviewed bundle.");
+06366:   }
+06367: }
+06368: async function acceptLegalBundle(options) {
+06369:   const bundle = LegalBundleSchema.parse(options.bundle ?? await apiGet("/api/legal/current"));
+06370:   if (!bundle.acceptanceAvailable) {
+06371:     throw new Error("The current legal bundle is a counsel-review draft and cannot be accepted.");
+06372:   }
+06373:   await confirmAcceptance(bundle, options.assumeYes);
+06374:   const challenge = LegalChallengeResponseSchema.parse(
+06375:     await apiPost("/api/legal/challenge", {
+06376:       walletAddress: options.walletAddress
+06377:     })
+06378:   );
+06379:   validateLegalChallenge(bundle, challenge, options.walletAddress);
+06380:   const signature = await options.signMessage(challenge.message);
+06381:   const result = LegalAcceptanceResponseSchema.parse(
+06382:     await apiPost("/api/legal/accept/wallet", {
+06383:       ...affirmations,
+06384:       bundleDigest: bundle.bundleDigest,
+06385:       bundleVersion: bundle.version,
+06386:       nonce: challenge.nonce,
+06387:       signature,
+06388:       walletAddress: options.walletAddress
+06389:     })
+06390:   );
+06391:   if (result.bundleDigest !== bundle.bundleDigest || result.bundleVersion !== bundle.version) {
+06392:     throw new Error("The server returned a receipt for a different legal bundle.");
+06393:   }
+06394:   return result;
+06395: }
+06396: var statusCommand = new Command("status").description("Show whether this CLI has accepted the current legal bundle").action(async () => {
+06397:   const keystore = await loadKeystore();
+06398:   const status = LegalStatusResponseSchema.parse(await apiGet("/api/legal/status"));
+06399:   if (status.receipt) {
+06400:     await saveKeystore({
+06401:       ...keystore,
+06402:       legalAcceptanceApiOrigin: API_ORIGIN,
+06403:       legalAcceptanceBundleVersion: status.bundle.version,
+06404:       legalAcceptanceReceipt: status.receipt
+06405:     });
+06406:   }
+06407:   printResult({
+06408:     accepted: status.accepted,
+06409:     bundleDigest: status.bundle.bundleDigest,
+06410:     bundleVersion: status.bundle.version,
+06411:     enforcementEnabled: status.bundle.enforcementEnabled,
+06412:     status: status.bundle.status,
+06413:     documents: status.bundle.documents.map(({ title, url, version: version2 }) => ({
+06414:       title,
+06415:       url,
+06416:       version: version2
+06417:     }))
+06418:   });
+06419: });
+06420: var acceptCommand = new Command("accept").description("Review and sign the current Taskmarket legal bundle").option(
+06421:   "--yes",
+06422:   "Confirm acceptance non-interactively after the operator has reviewed every policy"
+06423: ).action(async (options) => {
+06424:   const keystore = await loadKeystore();
+06425:   const result = await acceptLegalBundle({
+06426:     assumeYes: Boolean(options.yes),
+06427:     signMessage: (message) => signMessage(message, keystore),
+06428:     walletAddress: keystore.walletAddress
+06429:   });
+06430:   await saveKeystore({
+06431:     ...keystore,
+06432:     legalAcceptanceApiOrigin: API_ORIGIN,
+06433:     legalAcceptanceBundleVersion: result.bundleVersion,
+06434:     legalAcceptanceReceipt: result.receipt
+06435:   });
+06436:   printResult({
+06437:     accepted: true,
+06438:     acceptedAt: result.acceptedAt,
+06439:     bundleDigest: result.bundleDigest,
+06440:     bundleVersion: result.bundleVersion,
+06441:     walletAddress: keystore.walletAddress
+06442:   });
+06443: });
+06444: var legalCommand = new Command("legal").description(
+06445:   "Review and manage versioned Taskmarket legal acceptance"
+06446: );
+06447: legalCommand.addCommand(statusCommand);
+06448: legalCommand.addCommand(acceptCommand);
+06449: 
+06450: // src/commands/init.ts
+06451: function sanitizeEmailUsername(agentId, suffix) {
+06452:   const maxBase = 30 - 1 - suffix.length;
+06453:   if (maxBase < 2) return null;
+06454:   const base = agentId.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-").replace(/^-+|-+$/g, "").slice(0, maxBase).replace(/-+$/, "");
+06455:   if (base.length < 2) return null;
+06456:   const candidate = `${base}-${suffix}`;
+06457:   return /^[a-z0-9][a-z0-9-]{1,28}[a-z0-9]$/.test(candidate) ? candidate : null;
+06458: }
+06459: async function tryRegisterEmail(deviceId, apiToken, username, explicit) {
+06460:   try {
+
+===== wallet/device init (6500-6605) =====
+06500:       if (agentId2) {
+06501:         await saveKeystore({ ...keystore, agentId: agentId2 });
+06502:       }
+06503:     }
+06504:     let networkInfo2;
+06505:     try {
+06506:       const response = await apiGet("/trpc/network.info");
+06507:       networkInfo2 = response.result.data;
+06508:     } catch {
+06509:     }
+06510:     let emailAddress2 = null;
+06511:     try {
+06512:       const existing = await apiGet(`/api/agents/stats?address=${keystore.walletAddress}`);
+06513:       emailAddress2 = existing.emailAddress ?? null;
+06514:     } catch {
+06515:     }
+06516:     if (!emailAddress2) {
+06517:       const username2 = opts.email ?? (agentId2 && networkInfo2 ? sanitizeEmailUsername(agentId2, String(networkInfo2.chainId)) : null);
+06518:       if (username2) {
+06519:         emailAddress2 = await tryRegisterEmail(
+06520:           keystore.deviceId,
+06521:           keystore.apiToken,
+06522:           username2,
+06523:           !!opts.email
+06524:         );
+06525:       }
+06526:     }
+06527:     printResult({
+06528:       address: keystore.walletAddress,
+06529:       agentId: agentId2,
+06530:       network: networkInfo2?.networkName,
+06531:       chainId: networkInfo2?.chainId,
+06532:       emailAddress: emailAddress2
+06533:     });
+06534:     return;
+06535:   }
+06536:   const { privateKey, address } = generateKeypair();
+06537:   const publicKey = deriveCompressedPublicKey(privateKey);
+06538:   const legalBundle = LegalBundleSchema.parse(await apiGet("/api/legal/current"));
+06539:   const legalAcceptance = legalBundle.enforcementEnabled ? await acceptLegalBundle({
+06540:     assumeYes: Boolean(opts.yes),
+06541:     bundle: legalBundle,
+06542:     signMessage: (message) => privateKeyToAccount3(privateKey).signMessage({ message }),
+06543:     walletAddress: address
+06544:   }) : void 0;
+06545:   const deviceRegisterSignature = await privateKeyToAccount3(
+06546:     privateKey
+06547:   ).signMessage({ message: buildDeviceRegisterMessage(address) });
+06548:   const {
+06549:     deviceId,
+06550:     apiToken,
+06551:     deviceEncryptionKey,
+06552:     agentId: initialAgentId
+06553:   } = await registerDevice({
+06554:     legalReceipt: legalAcceptance?.receipt,
+06555:     publicKey,
+06556:     signature: deviceRegisterSignature,
+06557:     walletAddress: address
+06558:   });
+06559:   const encryptedKey = encryptPrivateKey(deviceEncryptionKey, privateKey);
+06560:   let agentId = initialAgentId;
+06561:   await saveKeystore({
+06562:     encryptedKey,
+06563:     walletAddress: address,
+06564:     deviceId,
+06565:     apiToken,
+06566:     agentId,
+06567:     keyServerUrl: API_URL,
+06568:     ...legalAcceptance ? {
+06569:       legalAcceptanceApiOrigin: API_ORIGIN,
+06570:       legalAcceptanceBundleVersion: legalAcceptance.bundleVersion,
+06571:       legalAcceptanceReceipt: legalAcceptance.receipt
+06572:     } : {}
+06573:   });
+06574:   if (!agentId) {
+06575:     agentId = await pollAgentId(address);
+06576:     if (agentId) {
+06577:       const keystore = await loadKeystore();
+06578:       await saveKeystore({ ...keystore, agentId });
+06579:     }
+06580:   }
+06581:   let networkInfo;
+06582:   try {
+06583:     const response = await apiGet("/trpc/network.info");
+06584:     networkInfo = response.result.data;
+06585:   } catch {
+06586:   }
+06587:   const username = opts.email ?? (agentId && networkInfo ? sanitizeEmailUsername(agentId, String(networkInfo.chainId)) : null);
+06588:   const emailAddress = username ? await tryRegisterEmail(deviceId, apiToken, username, !!opts.email) : null;
+06589:   printResult({
+06590:     address,
+06591:     agentId,
+06592:     network: networkInfo?.networkName,
+06593:     chainId: networkInfo?.chainId,
+06594:     emailAddress
+06595:   });
+06596: });
+06597: 
+06598: // src/commands/address.ts
+06599: import { Command as Command3 } from "commander";
+06600: var addressCommand = new Command3("address").description("Print the wallet address").action(async () => {
+06601:   const keystore = await loadKeystore();
+06602:   printResult({ address: keystore.walletAddress });
+06603: });
+06604: 
+06605: // src/commands/identity.ts
+
+===== task submission implementation (7080-7210) =====
+07080:     case ".txt":
+07081:       return "text/plain";
+07082:     case ".json":
+07083:       return "application/json";
+07084:     case ".zip":
+07085:       return "application/zip";
+07086:     default:
+07087:       return "application/octet-stream";
+07088:   }
+07089: }
+07090: function streamingPut(uploadUrl, data, mimeType, label) {
+07091:   return new Promise((resolve, reject) => {
+07092:     const url = new URL(uploadUrl);
+07093:     const transport = url.protocol === "https:" ? https : http;
+07094:     const req = transport.request(
+07095:       url,
+07096:       {
+07097:         method: "PUT",
+07098:         headers: {
+07099:           "Content-Type": mimeType,
+07100:           "Content-Length": String(data.length)
+07101:         }
+07102:       },
+07103:       (res) => {
+07104:         const chunks = [];
+07105:         res.on("data", (chunk) => chunks.push(chunk));
+07106:         res.on("end", () => {
+07107:           if (res.statusCode && res.statusCode >= 200 && res.statusCode < 300) {
+07108:             process.stderr.write("\n");
+07109:             resolve();
+07110:           } else {
+07111:             const body = Buffer.concat(chunks).toString("utf8").slice(0, 500);
+07112:             reject(
+07113:               new Error(
+07114:                 `Upload failed (${res.statusCode ?? "unknown"}): ${body || "no response body"}`
+07115:               )
+07116:             );
+07117:           }
+07118:         });
+07119:       }
+07120:     );
+07121:     req.on("error", reject);
+07122:     let uploaded = 0;
+07123:     const stream = Readable.from([data]);
+07124:     stream.on("data", (chunk) => {
+07125:       uploaded += chunk.length;
+07126:       const pct = Math.round(uploaded / data.length * 100);
+07127:       process.stderr.write(`\r  ${label}: ${pct}%`);
+07128:     });
+07129:     stream.on("error", reject);
+07130:     stream.pipe(req);
+07131:   });
+07132: }
+07133: var submitCmd = new Command9("submit").description("Submit work for a task").argument("<taskId>", "Task ID (0x-prefixed hex)").option("--file <path>", "Path to a submission file (repeatable)", collectFile, []).addOption(
+07134:   new Option("--role <role>", "Artifact role applied to all files").choices(["preview", "source", "final", "attachment"]).default("attachment")
+07135: ).action(async (taskId, opts) => {
+07136:   try {
+07137:     if (!opts.file || opts.file.length === 0) {
+07138:       printError("--file is required");
+07139:     }
+07140:     const keystore = await loadKeystore();
+07141:     const signature = await signMessage(buildSubmitMessage(taskId), keystore);
+07142:     const artifactInputs = await Promise.all(
+07143:       opts.file.map(async (filePath) => {
+07144:         const mimeType = mimeTypeForPath(filePath);
+07145:         const data = await fsPromises.readFile(filePath);
+07146:         if (data.length === 0) {
+07147:           printError(`File is empty: ${basename(filePath)}`);
+07148:         }
+07149:         const { uploadUrl, artifactKey } = await apiPost(
+07150:           `/api/tasks/${taskId}/submissions/request-upload-url`,
+07151:           {
+07152:             taskId,
+07153:             workerAddress: keystore.walletAddress,
+07154:             signature,
+07155:             fileName: basename(filePath),
+07156:             mimeType,
+07157:             role: opts.role,
+07158:             sizeBytes: data.length
+07159:           }
+07160:         );
+07161:         const sha256Hash = createHash("sha256").update(data).digest("hex");
+07162:         const keccak256Hash = keccak256(new Uint8Array(data));
+07163:         process.stderr.write(`  Uploading ${basename(filePath)}...
+07164: `);
+07165:         await streamingPut(uploadUrl, data, mimeType, basename(filePath));
+07166:         return {
+07167:           artifactKey,
+07168:           fileName: basename(filePath),
+07169:           mimeType,
+07170:           role: opts.role,
+07171:           sizeBytes: data.length,
+07172:           sha256Hash,
+07173:           keccak256Hash
+07174:         };
+07175:       })
+07176:     );
+07177:     const submitSignature = await signMessage(
+07178:       buildSubmitMessage(
+07179:         taskId,
+07180:         artifactInputs.map((artifact) => artifact.artifactKey)
+07181:       ),
+07182:       keystore
+07183:     );
+07184:     const result = await x402Post(`/api/tasks/${taskId}/submissions/from-keys`, {
+07185:       taskId,
+07186:       workerAddress: keystore.walletAddress,
+07187:       artifacts: artifactInputs,
+07188:       signature: submitSignature
+07189:     });
+07190:     printResult({ submissionId: result.submissionId });
+07191:   } finally {
+07192:     submitCmd.setOptionValue("file", []);
+07193:   }
+07194: });
+07195: 
+07196: // src/commands/task/accept.ts
+07197: import { Command as Command10 } from "commander";
+07198: var acceptCmd = new Command10("accept").description("Accept a submission (costs 0.001 USDC)").argument("<taskId>", "Task ID (0x-prefixed hex)").requiredOption("--worker <addr>", "Worker wallet address").action(async (taskId, opts) => {
+07199:   const task = await apiGet(`/api/tasks/${taskId}`);
+07200:   if (!task) {
+07201:     printError("Task not found");
+07202:     process.exit(1);
+07203:     return;
+07204:   }
+07205:   const canAccept = task.pendingActions?.some(
+07206:     (a) => a.action === "accept" && a.role === "requester"
+07207:   );
+07208:   if (!canAccept) {
+07209:     const hasRefund = task.pendingActions?.some(
+07210:       (a) => a.action === "refund_expired" && a.role === "requester"
+
