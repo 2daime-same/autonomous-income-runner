@@ -1,0 +1,77 @@
+name: Build current Taskmarket direct-submission shortlist
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskmarket_live_shortlist.py
+      - .github/workflows/taskmarket-live-shortlist.yml
+  schedule:
+    - cron: '7,27,47 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-live-direct-submission-shortlist
+  cancel-in-progress: true
+
+jobs:
+  shortlist:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Compile and build current shortlist
+        env:
+          TASKMARKET_API_URL: https://api.taskmarket.dev
+          TASKMARKET_LIVE_SHORTLIST_OUTPUT: taskmarket-output/live-open-shortlist.json
+          TASKMARKET_MAX_PAGES: '10'
+          TASKMARKET_PAGE_LIMIT: '100'
+        run: |
+          set -euo pipefail
+          python -m py_compile taskmarket_live_shortlist.py
+          python taskmarket_live_shortlist.py
+
+      - name: Reject credential-like public output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s taskmarket-output/live-open-shortlist.json
+          if grep -ERn \
+            '(-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|\beyJ[A-Za-z0-9._-]{20,}\b|\bgh[pousr]_[A-Za-z0-9_]{20,}\b|github_pat_[A-Za-z0-9_]{20,})' \
+            taskmarket-output/live-open-shortlist.json; then
+            echo 'Credential-like material found in shortlist.' >&2
+            exit 1
+          fi
+
+      - name: Commit current read-only evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/live-open-shortlist.json
+          if git diff --cached --quiet; then
+            echo 'Shortlist is unchanged.'
+            exit 0
+          fi
+          git commit -m 'Refresh live Taskmarket submission shortlist [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
