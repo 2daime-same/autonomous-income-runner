@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "file_name": "index.html",
+    "mime_type": "text/html",
+    "path": "deliverables/taskmarket-signal-panic/index.html",
+    "runtime_external_assets": 0,
+    "sha256": "b833263464e79549f38085c0c5c42e8e0ec6a19c739042741ca99892a98a4080",
+    "size_bytes": 682664,
+    "three_version": "0.158.0"
+  },
+  "browser_smoke": "passed",
+  "credential_scan": "passed",
+  "expenses_usdc": 0,
+  "schema_version": "signal-panic-validation-v1",
+  "static_checks": {
+    "Three.js renderer": true,
+    "WASD-independent signal controls": true,
+    "collision failure": true,
+    "emergency vehicles": true,
+    "gridlock failure": true,
+    "high score": true,
+    "queue pressure": true,
+    "restart": true,
+    "score": true,
+    "touch/pointer controls": true,
+    "turn intent": true
+  },
+  "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+  "verified_income_usdc": 0,
+  "browser": {
+    "engine": "chromium",
+    "version": "139.0.7258.5",
+    "viewport": "1440x960",
+    "runtime_network_requests": 0,
+    "phase_after_keyboard_switch": "CLEARING",
+    "queue_pressure_label": "CALM",
+    "screenshot_names": [
+      "start.png",
+      "running.png"
+    ]
+  },
+  "browser_errors": []
+}
