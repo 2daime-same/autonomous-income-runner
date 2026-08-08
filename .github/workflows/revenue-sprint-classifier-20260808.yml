@@ -1,0 +1,206 @@
+name: Revenue sprint classifier — strict ledger verdict
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ops-output/revenue-sprint-20260808.json
+      - .github/workflows/revenue-sprint-classifier-20260808.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: revenue-sprint-classifier-20260808
+  cancel-in-progress: true
+
+jobs:
+  classify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Classify only externally meaningful evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ops-output
+          python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          evidence_path = Path('ops-output/revenue-sprint-20260808.json')
+          result_path = Path('ops-output/revenue-sprint-result.txt')
+          marker_paths = [
+              Path('ops-output/REVENUE_CONFIRMED'),
+              Path('ops-output/RECEIVABLE_CONFIRMED'),
+              Path('ops-output/NO_REVENUE_YET'),
+              Path('ops-output/EVIDENCE_MISSING'),
+          ]
+          for path in marker_paths:
+              path.unlink(missing_ok=True)
+
+          generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+          if not evidence_path.exists():
+              result_path.write_text(
+                  f'generatedAt={generated}\n'
+                  'evidenceFile=missing\n'
+                  'positiveRevenueEvidenceCount=0\n'
+                  'positiveReceivableEvidenceCount=0\n'
+                  'acceptedSignals=0\n'
+                  'fundedSignals=0\n'
+                  'activeRuns=0\n'
+                  'successfulRuns=0\n'
+                  'failedRuns=0\n'
+                  'zeroSpend=unverified\n'
+                  'ledgerVerdict=evidence_missing\n',
+                  encoding='utf-8',
+              )
+              Path('ops-output/EVIDENCE_MISSING').write_text(generated + '\n')
+              raise SystemExit(0)
+
+          report = json.loads(evidence_path.read_text(encoding='utf-8'))
+
+          revenue_keys = {
+              'verifiedEarningsUsd', 'verifiedEarningsUSDC', 'verified_income_usdc',
+              'paidUsd', 'paidUSDC', 'payoutUsd', 'payoutUSDC',
+              'cashReceivedUsd', 'cashReceivedUSDC', 'balanceIncreaseUsd',
+              'balanceIncreaseUSDC', 'revenueUsd', 'revenueUSDC',
+              'earningsUsd', 'earningsUSDC', 'incomeUsd', 'incomeUSDC',
+          }
+          accepted_keys = {'accepted', 'acceptedCount', 'hires', 'hireCount', 'contracts', 'contractCount'}
+          funded_keys = {'funded', 'fundedCount', 'escrowFunded', 'escrowFundedCount'}
+          receivable_keys = {'receivableUsd', 'receivableUSDC', 'approvedAmountUsd', 'approvedAmountUSDC'}
+          spend_fragments = ('expense', 'spend', 'outflow', 'feePaid', 'bondPaid', 'depositPaid', 'gasPaid')
+
+          def positive_number(value):
+              if isinstance(value, bool):
+                  return int(value)
+              if isinstance(value, (int, float)):
+                  return value if value > 0 else 0
+              if isinstance(value, str):
+                  try:
+                      number = float(value.strip())
+                  except Exception:
+                      return 0
+                  return number if number > 0 else 0
+              if isinstance(value, list):
+                  return len(value)
+              return 0
+
+          revenue_evidence = []
+          receivable_evidence = []
+          accepted_signals = []
+          funded_signals = []
+          spend_evidence = []
+
+          def walk(value, path='root'):
+              if isinstance(value, dict):
+                  for key, child in value.items():
+                      child_path = f'{path}.{key}'
+                      amount = positive_number(child)
+                      if key in revenue_keys and amount:
+                          revenue_evidence.append((child_path, amount))
+                      if key in receivable_keys and amount:
+                          receivable_evidence.append((child_path, amount))
+                      if key in accepted_keys and amount:
+                          accepted_signals.append((child_path, amount))
+                      if key in funded_keys and amount:
+                          funded_signals.append((child_path, amount))
+                      lower = key.lower()
+                      if any(fragment.lower() in lower for fragment in spend_fragments) and amount:
+                          spend_evidence.append((child_path, amount))
+                      walk(child, child_path)
+              elif isinstance(value, list):
+                  for index, child in enumerate(value):
+                      walk(child, f'{path}[{index}]')
+
+          walk(report)
+
+          active_runs = successful_runs = failed_runs = 0
+          for lane in report.get('lanes', []):
+              for run in lane.get('recentRuns', []):
+                  status = str(run.get('status') or '').lower()
+                  conclusion = str(run.get('conclusion') or '').lower()
+                  if status in {'queued', 'in_progress', 'requested', 'waiting', 'pending'}:
+                      active_runs += 1
+                  if conclusion == 'success':
+                      successful_runs += 1
+                  elif conclusion in {'failure', 'cancelled', 'timed_out', 'action_required', 'startup_failure'}:
+                      failed_runs += 1
+
+          # A receivable requires direct receivable/approved evidence, or at least one
+          # accepted signal and one funded signal. Application/pending/work-completed
+          # signals are deliberately insufficient.
+          receivable_count = len(receivable_evidence)
+          if accepted_signals and funded_signals:
+              receivable_count += 1
+
+          if spend_evidence:
+              zero_spend = 'false'
+              verdict = 'zero_spend_violation'
+          elif revenue_evidence:
+              zero_spend = 'true'
+              verdict = 'confirmed_revenue'
+          elif receivable_count:
+              zero_spend = 'true'
+              verdict = 'confirmed_receivable'
+          elif active_runs:
+              zero_spend = 'true'
+              verdict = 'active_no_revenue'
+          else:
+              zero_spend = 'true'
+              verdict = 'no_external_progress'
+
+          lines = [
+              f'generatedAt={generated}',
+              'evidenceFile=present',
+              f'positiveRevenueEvidenceCount={len(revenue_evidence)}',
+              f'positiveReceivableEvidenceCount={receivable_count}',
+              f'acceptedSignals={len(accepted_signals)}',
+              f'fundedSignals={len(funded_signals)}',
+              f'activeRuns={active_runs}',
+              f'successfulRuns={successful_runs}',
+              f'failedRuns={failed_runs}',
+              f'zeroSpend={zero_spend}',
+              f'ledgerVerdict={verdict}',
+          ]
+          result_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+          if verdict == 'confirmed_revenue':
+              Path('ops-output/REVENUE_CONFIRMED').write_text(generated + '\n')
+          elif verdict == 'confirmed_receivable':
+              Path('ops-output/RECEIVABLE_CONFIRMED').write_text(generated + '\n')
+          else:
+              Path('ops-output/NO_REVENUE_YET').write_text(generated + '\n')
+
+          if spend_evidence:
+              raise SystemExit(f'ZERO_SPEND violation evidence: {spend_evidence}')
+          PY
+
+      - name: Commit strict ledger verdict
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'revenue-ledger[bot]'
+          git config user.email 'revenue-ledger[bot]@users.noreply.github.com'
+          git add ops-output/revenue-sprint-result.txt \
+                  ops-output/REVENUE_CONFIRMED \
+                  ops-output/RECEIVABLE_CONFIRMED \
+                  ops-output/NO_REVENUE_YET \
+                  ops-output/EVIDENCE_MISSING 2>/dev/null || true
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Classify revenue sprint ledger evidence [skip ci]'
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 2))
+          done
+          exit 1
