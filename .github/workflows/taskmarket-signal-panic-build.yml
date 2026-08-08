@@ -7,6 +7,7 @@ on:
     paths:
       - deliverables/taskmarket-signal-panic/source.html
       - scripts/build_signal_panic.py
+      - scripts/signal_panic_smoke.mjs
       - .github/workflows/taskmarket-signal-panic-build.yml
 
 permissions:
@@ -51,7 +52,7 @@ jobs:
           python -m py_compile scripts/build_signal_panic.py
           python scripts/build_signal_panic.py
 
-      - name: Validate inline JavaScript syntax and single-file boundary
+      - name: Validate inline JavaScript and single-file boundary
         shell: bash
         run: |
           set -euo pipefail
@@ -59,14 +60,12 @@ jobs:
           import re
           from pathlib import Path
 
-          path = Path('deliverables/taskmarket-signal-panic/index.html')
-          text = path.read_text(encoding='utf-8')
+          text = Path('deliverables/taskmarket-signal-panic/index.html').read_text(encoding='utf-8')
           scripts = re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', text, flags=re.I)
           if len(scripts) != 2:
               raise SystemExit(f'expected exactly two inline scripts, found {len(scripts)}')
           for index, script in enumerate(scripts, 1):
-              target = Path(f'/tmp/signal-panic-script-{index}.js')
-              target.write_text(script, encoding='utf-8')
+              Path(f'/tmp/signal-panic-script-{index}.js').write_text(script, encoding='utf-8')
           if re.search(r'<script[^>]+src=', text, flags=re.I):
               raise SystemExit('runtime script src remains')
           if re.search(r'\b(?:src|href)=["\']https?://', text, flags=re.I):
@@ -74,6 +73,7 @@ jobs:
           PY
           node --check /tmp/signal-panic-script-1.js
           node --check /tmp/signal-panic-script-2.js
+          node --check scripts/signal_panic_smoke.mjs
 
       - name: Install pinned Playwright and Chromium
         shell: bash
@@ -83,81 +83,9 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Run Chromium gameplay smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          cat > /tmp/signal-panic-smoke.mjs <<'JS'
-          import { chromium } from 'playwright';
-          import fs from 'node:fs';
-          import path from 'node:path';
-          import { pathToFileURL } from 'node:url';
+        run: node scripts/signal_panic_smoke.mjs
 
-          const artifact = path.resolve('deliverables/taskmarket-signal-panic/index.html');
-          const evidenceDir = path.resolve('/tmp/signal-panic-browser-evidence');
-          fs.mkdirSync(evidenceDir, { recursive: true });
-
-          const browser = await chromium.launch({ headless: true });
-          const page = await browser.newPage({ viewport: { width: 1440, height: 960 }, deviceScaleFactor: 1 });
-          const errors = [];
-          const requests = [];
-          page.on('pageerror', error => errors.push(`pageerror: ${error.message}`));
-          page.on('console', message => {
-            if (message.type() === 'error') errors.push(`console: ${message.text()}`);
-          });
-          page.on('request', request => requests.push(request.url()));
-
-          await page.goto(pathToFileURL(artifact).href, { waitUntil: 'load' });
-          await page.waitForSelector('canvas');
-          await page.waitForTimeout(1200);
-          if (await page.locator('#fatal').isVisible()) errors.push('fatal Three.js fallback became visible');
-          if (!(await page.locator('#startOverlay').isVisible())) errors.push('start overlay is not visible');
-          await page.screenshot({ path: path.join(evidenceDir, 'start.png'), fullPage: true });
-
-          await page.click('#startBtn');
-          await page.waitForTimeout(2200);
-          if (await page.locator('#startOverlay').isVisible()) errors.push('start overlay did not close');
-          if (!(await page.locator('#controls').isVisible())) errors.push('signal controls are not visible');
-          await page.keyboard.press('Digit2');
-          await page.waitForTimeout(1100);
-          const phaseAfterKey = (await page.locator('#phaseValue').textContent())?.trim() ?? '';
-          if (!['CLEARING', 'ALL STOP', 'E / W GO'].includes(phaseAfterKey)) {
-            errors.push(`unexpected phase after keyboard switch: ${phaseAfterKey}`);
-          }
-          await page.locator('#nsBtn').dispatchEvent('pointerdown');
-          await page.waitForTimeout(900);
-          const score = (await page.locator('#score').textContent())?.trim() ?? '';
-          if (!/^\d{6,}$/.test(score)) errors.push(`score is not numeric: ${score}`);
-          const pressure = (await page.locator('#pressureValue').textContent())?.trim() ?? '';
-          if (!pressure) errors.push('queue pressure label is empty');
-          await page.waitForTimeout(5200);
-          await page.screenshot({ path: path.join(evidenceDir, 'running.png'), fullPage: true });
-
-          const runtimeNetwork = requests.filter(url => /^https?:/i.test(url));
-          if (runtimeNetwork.length) errors.push(`runtime network request(s): ${runtimeNetwork.join(', ')}`);
-
-          const reportPath = path.resolve('deliverables/taskmarket-signal-panic/validation-report.json');
-          const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
-          report.browser_smoke = errors.length ? 'failed' : 'passed';
-          report.browser = {
-            engine: 'chromium',
-            version: browser.version(),
-            viewport: '1440x960',
-            runtime_network_requests: runtimeNetwork.length,
-            phase_after_keyboard_switch: phaseAfterKey,
-            queue_pressure_label: pressure,
-            screenshot_names: ['start.png', 'running.png'],
-          };
-          report.browser_errors = errors;
-          fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`);
-          await browser.close();
-          if (errors.length) {
-            console.error(errors.join('\n'));
-            process.exit(1);
-          }
-          JS
-          node /tmp/signal-panic-smoke.mjs
-
-      - name: Verify no private material or forbidden runtime dependency
+      - name: Verify validated artifact is public-safe and offline
         shell: bash
         run: |
           set -euo pipefail
@@ -168,21 +96,22 @@ jobs:
           import re
           from pathlib import Path
 
-          html = Path('deliverables/taskmarket-signal-panic/index.html').read_text(encoding='utf-8')
+          text = Path('deliverables/taskmarket-signal-panic/index.html').read_text(encoding='utf-8')
           report = json.loads(Path('deliverables/taskmarket-signal-panic/validation-report.json').read_text(encoding='utf-8'))
           if report.get('browser_smoke') != 'passed':
               raise SystemExit('browser smoke test did not pass')
-          patterns = [
+          for pattern in (
               r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
               r'\bgh[pousr]_[A-Za-z0-9_]{20,}\b',
               r'github_pat_[A-Za-z0-9_]{20,}',
               r'\beyJ[A-Za-z0-9._-]{20,}\b',
-          ]
-          for pattern in patterns:
-              if re.search(pattern, html):
+          ):
+              if re.search(pattern, text):
                   raise SystemExit(f'credential-like material detected: {pattern}')
-          if '<script src=' in html.lower():
+          if re.search(r'<script[^>]+src=', text, flags=re.I):
               raise SystemExit('external script dependency remains')
+          if re.search(r'\b(?:src|href)=["\']https?://', text, flags=re.I):
+              raise SystemExit('external runtime asset remains')
           PY
 
       - name: Upload browser evidence
