@@ -1,5 +1,5 @@
 {
-  "task_id": "0x422e7587dd9e2ae1b3d0d48c8feb8080f5793e6b70393784379ecf9ee26c00ec",
-  "reason": "Highest current zero-spend reward candidate requiring exact brief and current submission-state verification before any wallet or production work.",
-  "requested_at": "2026-08-07T04:24:22+09:00"
+  "task_id": "0xd7bf7ea36750f0f552cd488f6c658a3af2b00b47c32ab03d4d3d3d8377a3c4ad",
+  "reason": "Current 20 USDC zero-spend bounty with only five observed submissions; verify exact brief, expiry, submission window, safety, and competition before producing or submitting work.",
+  "requested_at": "2026-08-08T15:20:00+09:00"
 }
