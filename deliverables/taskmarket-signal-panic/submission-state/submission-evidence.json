@@ -1,0 +1,46 @@
+{
+  "schema_version": "taskmarket-signal-panic-submission-evidence-v1",
+  "attempt_id": "signal-panic-20260808-01",
+  "task_id": "0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+  "task_url": "https://taskmarket.dev/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6",
+  "status": "rejected",
+  "submitted_at": null,
+  "attempt_finished_at": "2026-08-08T09:34:42Z",
+  "submission_id": null,
+  "worker_address": "0xF0242C582469F1f65758f126cDB479ed188e6469",
+  "artifact_evidence": [
+    {
+      "path": "deliverables/taskmarket-signal-panic/index.html",
+      "file_name": "index.html",
+      "mime_type": "text/html",
+      "role": "final",
+      "size_bytes": 682664,
+      "sha256": "b833263464e79549f38085c0c5c42e8e0ec6a19c739042741ca99892a98a4080",
+      "keccak256": "0x96b7fe658ca0fd55bf544100c859ec1b447c26ab6fef803a733530da981b334b"
+    }
+  ],
+  "post_http_status": 401,
+  "post_response_body_persisted": false,
+  "error_classification": "http_401_authentication_or_device_registration_required",
+  "error_note": "Taskmarket rejected the one-shot direct submission write with HTTP 401. The runner did not persist the response body after cleanup, so no stronger claim about the exact server message is made.",
+  "submission_visible_after_write": false,
+  "submission_visibility_http_status": null,
+  "ambiguous_result_reconciled": true,
+  "external_writes_performed": [
+    {
+      "method": "POST",
+      "path": "/api/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6/submissions",
+      "count": 1,
+      "automatic_retry": false
+    }
+  ],
+  "signature_scheme": "EIP-191 personal_sign",
+  "signature_published": false,
+  "private_key_published": false,
+  "encrypted_wallet_sha256": "9d097641e4544d89de6de40100f0ec03ad241823e641a1e5d6d0f739f57014cc",
+  "authorization_consumed": true,
+  "retry_authorized": false,
+  "expenses_usdc": 0,
+  "verified_income_usdc": 0,
+  "verified_receivable_usdc": 0
+}
