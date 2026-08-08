@@ -1,0 +1,84 @@
+name: Extract focused Taskmarket CLI contract slices
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/taskmarket-cli-contract-slices.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-cli-contract-slices
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Install pinned official CLI without lifecycle scripts
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund @lucid-agents/taskmarket@1.7.3
+
+      - name: Extract only authentication, legal, init, and submit ranges
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=node_modules/@lucid-agents/taskmarket/dist/index.js
+          test -s "$src"
+          mkdir -p taskmarket-output
+          python - <<'PY'
+          from pathlib import Path
+          source = Path('node_modules/@lucid-agents/taskmarket/dist/index.js').read_text(encoding='utf-8', errors='replace').splitlines()
+          ranges = [
+              (5960, 6105, 'legal receipt and HTTP helpers'),
+              (6360, 6460, 'legal status and accept commands'),
+              (6500, 6605, 'wallet/device init'),
+              (7080, 7210, 'task submission implementation'),
+          ]
+          out = []
+          for start, end, title in ranges:
+              out.append(f'===== {title} ({start}-{end}) =====')
+              for number in range(start, min(end, len(source)) + 1):
+                  line = source[number - 1]
+                  out.append(f'{number:05d}: {line[:2400]}')
+              out.append('')
+          Path('taskmarket-output/cli-contract-slices.txt').write_text('\n'.join(out) + '\n', encoding='utf-8')
+          PY
+
+      - name: Verify no credential-like runtime values
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s taskmarket-output/cli-contract-slices.txt
+          if grep -ERn '(-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|\beyJ[A-Za-z0-9._-]{20,}\b|\bgh[pousr]_[A-Za-z0-9_]{20,}\b)' taskmarket-output/cli-contract-slices.txt; then
+            echo 'Credential-like material found.' >&2
+            exit 1
+          fi
+
+      - name: Commit focused public source evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/cli-contract-slices.txt
+          git commit -m 'Record focused Taskmarket CLI contracts [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
