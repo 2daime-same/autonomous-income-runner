@@ -1,0 +1,186 @@
+name: Submit Signal Panic with current Taskmarket flow v2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - taskmarket_signal_panic_official_flow.py
+      - taskmarket_signal_panic_official_flow_v2.py
+      - deliverables/taskmarket-signal-panic/official-flow-authorization.json
+      - .github/workflows/taskmarket-signal-panic-official-submit-v2.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-signal-panic-current-flow-v2-one-shot
+  cancel-in-progress: false
+
+jobs:
+  submit-current-flow-once:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - name: Check out exact authorized main state
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Validate implementation and prepare recoverable encrypted state
+        env:
+          TASKMARKET_API_URL: https://api.taskmarket.dev
+          TASKMARKET_SIGNAL_PANIC_SECRET: /tmp/taskmarket-signal-panic-official-secret.json
+        run: |
+          set -euo pipefail
+          python -m py_compile taskmarket_wallet.py taskmarket_signal_panic_official_flow.py taskmarket_signal_panic_official_flow_v2.py
+          python - <<'PY'
+          import taskmarket_wallet as wallet
+          wallet.self_test()
+          print('wallet primitives verified')
+          PY
+          python taskmarket_signal_panic_official_flow_v2.py prepare
+
+      - name: Commit encrypted pending state before external submission writes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s deliverables/taskmarket-signal-panic/official-flow-state/attempt.json
+          test -s deliverables/taskmarket-signal-panic/official-flow-state/private-wallet.cms.b64
+          test -s /tmp/taskmarket-signal-panic-official-secret.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          attempt = json.loads(Path('deliverables/taskmarket-signal-panic/official-flow-state/attempt.json').read_text())
+          if attempt.get('status') != 'in_progress' or attempt.get('external_writes_performed'):
+              raise SystemExit('pending-state guard failed')
+          if attempt.get('payment_signature_created') is not False:
+              raise SystemExit('payment-signature guard failed')
+          if float(attempt.get('expenses_usdc') or 0) != 0:
+              raise SystemExit('nonzero expense in pending state')
+          PY
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add deliverables/taskmarket-signal-panic/official-flow-state/attempt.json \
+                  deliverables/taskmarket-signal-panic/official-flow-state/private-wallet.cms.b64
+          git commit -m 'Record pending current-flow Signal Panic submission v2 [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
+
+      - name: Perform current three-write flow without x402 payment fallback
+        id: submit
+        continue-on-error: true
+        env:
+          TASKMARKET_API_URL: https://api.taskmarket.dev
+          TASKMARKET_SIGNAL_PANIC_SECRET: /tmp/taskmarket-signal-panic-official-secret.json
+        run: python taskmarket_signal_panic_official_flow_v2.py submit
+
+      - name: Verify public evidence and zero-spend boundary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s deliverables/taskmarket-signal-panic/official-flow-state/attempt.json
+          test -s deliverables/taskmarket-signal-panic/official-flow-state/submission-evidence.json
+          test ! -e /tmp/taskmarket-signal-panic-official-secret.json
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          paths = [
+              Path('deliverables/taskmarket-signal-panic/official-flow-state/attempt.json'),
+              Path('deliverables/taskmarket-signal-panic/official-flow-state/submission-evidence.json'),
+              Path('deliverables/taskmarket-signal-panic/official-flow-authorization.json'),
+          ]
+          attempt, evidence, authorization = [json.loads(path.read_text(encoding='utf-8')) for path in paths]
+          for value in (attempt, evidence):
+              if float(value.get('expenses_usdc') or 0) != 0:
+                  raise SystemExit('zero-spend rule was violated')
+              if value.get('payment_signature_created') is not False:
+                  raise SystemExit('a payment signature was created')
+          writes = evidence.get('external_writes_performed') or []
+          if len(writes) > 3:
+              raise SystemExit('more than three authorized writes were recorded')
+          allowed = [
+              ('POST', '/api/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6/submissions/request-upload-url'),
+              ('PUT', None),
+              ('POST', '/api/tasks/0xff2d1349413ba161506a724b74b2755c479c5b70ed57faaf90fc69643becf8d6/submissions/from-keys'),
+          ]
+          for index, write in enumerate(writes):
+              method, expected_path = allowed[index]
+              if write.get('method') != method:
+                  raise SystemExit(f'unexpected write method at index {index}')
+              if expected_path is not None and write.get('path') != expected_path:
+                  raise SystemExit(f'unexpected write path at index {index}')
+              if write.get('count') != 1 or write.get('automatic_retry') is not False:
+                  raise SystemExit('write count/retry guard failed')
+          if authorization.get('authorization_consumed') is not True or authorization.get('authorized') is not False:
+              raise SystemExit('one-shot authorization was not consumed')
+          combined = '\n'.join(path.read_text(encoding='utf-8') for path in paths)
+          for pattern in (
+              r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
+              r'\beyJ[A-Za-z0-9._-]{20,}\b',
+              r'\bgh[pousr]_[A-Za-z0-9_]{20,}\b',
+              r'"private_key"\s*:',
+              r'"signature"\s*:',
+              r'X-Amz-(?:Credential|Signature)=',
+          ):
+              if re.search(pattern, combined, re.I):
+                  raise SystemExit(f'private or signed-URL material detected: {pattern}')
+          print(json.dumps({
+              'status': evidence.get('status'),
+              'classification': evidence.get('result_classification'),
+              'submission_id': evidence.get('submission_id'),
+              'external_write_count': len(writes),
+              'payment_signature_created': evidence.get('payment_signature_created'),
+              'expenses_usdc': evidence.get('expenses_usdc'),
+          }))
+          PY
+
+      - name: Commit terminal submission evidence regardless of result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f /tmp/taskmarket-signal-panic-official-secret.json
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add deliverables/taskmarket-signal-panic/official-flow-authorization.json \
+                  deliverables/taskmarket-signal-panic/official-flow-state/attempt.json \
+                  deliverables/taskmarket-signal-panic/official-flow-state/submission-evidence.json \
+                  deliverables/taskmarket-signal-panic/official-flow-state/private-wallet.cms.b64
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record current-flow Signal Panic submission v2 result [skip ci]'
+            for attempt in $(seq 1 8); do
+              if git pull --rebase origin main && git push origin HEAD:main; then break; fi
+              git rebase --abort 2>/dev/null || true
+              if [ "$attempt" -eq 8 ]; then exit 1; fi
+              sleep "$attempt"
+            done
+          fi
+
+      - name: Require a created submission ID
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          evidence = json.loads(Path('deliverables/taskmarket-signal-panic/official-flow-state/submission-evidence.json').read_text())
+          if evidence.get('status') != 'submitted' or not evidence.get('submission_id'):
+              raise SystemExit(
+                  f"Taskmarket current-flow submission failed: {evidence.get('status')} / {evidence.get('result_classification')}"
+              )
+          print(json.dumps({'submission_id': evidence['submission_id'], 'status': 'submitted'}))
+          PY
