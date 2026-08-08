@@ -1,0 +1,107 @@
+name: Validate Frantic Deepgram candidate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'deliverables/frantic-120-deepgram/**'
+      - '.github/workflows/validate-frantic-deepgram.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-frantic-deepgram-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sourcey-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out prepared contribution
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - name: Check out current Sourcey catalog
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          repository: sourcey/startup-credits
+          ref: main
+          path: candidate
+          persist-credentials: false
+
+      - name: Set up exact Node runtime
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: 22.12.0
+
+      - name: Build a one-file signed candidate commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e candidate/vendors/de/deepgram.yaml
+          base_revision="$(git -C candidate rev-parse HEAD)"
+          mkdir -p candidate/vendors/de
+          cp deliverables/frantic-120-deepgram/vendors/de/deepgram.yaml candidate/vendors/de/deepgram.yaml
+          git -C candidate config user.name '二代目サメ'
+          git -C candidate config user.email 'nexaworks.jp@gmail.com'
+          git -C candidate add vendors/de/deepgram.yaml
+          git -C candidate commit \
+            -m 'Add Deepgram startup credits' \
+            -m 'Signed-off-by: 二代目サメ <nexaworks.jp@gmail.com>'
+          head_revision="$(git -C candidate rev-parse HEAD)"
+          {
+            echo "BASE_REVISION=$base_revision"
+            echo "HEAD_REVISION=$head_revision"
+          } >> "$GITHUB_ENV"
+
+      - name: Enforce exact data-only scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t changed < <(git -C candidate diff --name-only "$BASE_REVISION" "$HEAD_REVISION")
+          test "${#changed[@]}" -eq 1
+          test "${changed[0]}" = 'vendors/de/deepgram.yaml'
+          test "$(git -C candidate diff --numstat "$BASE_REVISION" "$HEAD_REVISION" | awk '{print $2}')" -eq 0
+
+      - name: Install the exact Sourcey Catalog Verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          digest="$(<candidate/.github/sourcey-catalog-verifier.sha256)"
+          [[ "$digest" =~ ^[a-f0-9]{64}$ ]]
+          name="sourcey-catalog-verifier-sha256-${digest}.tar.gz"
+          origin="https://artifacts.sourcey.com/catalog/code/catalog-verifier/sha256-${digest}"
+          curl --fail-with-body --silent --show-error --max-time 120 \
+            --output "$RUNNER_TEMP/$name" "$origin/$name"
+          curl --fail-with-body --silent --show-error --max-time 120 \
+            --output "$RUNNER_TEMP/$name.sha256" "$origin/$name.sha256"
+          (cd "$RUNNER_TEMP" && sha256sum --check "$name.sha256")
+          mkdir "$RUNNER_TEMP/catalog-verifier"
+          tar -xzf "$RUNNER_TEMP/$name" --strip-components=1 -C "$RUNNER_TEMP/catalog-verifier"
+
+      - name: Run Sourcey's production changed-closure validator
+        shell: bash
+        run: |
+          set -euo pipefail
+          node "$RUNNER_TEMP/catalog-verifier/sourcey-catalog-verify.js" \
+            validate-change \
+            --repository "$GITHUB_WORKSPACE/candidate" \
+            --base "$BASE_REVISION" \
+            --head "$HEAD_REVISION" \
+            --taxonomy "$RUNNER_TEMP/catalog-verifier/taxonomy.json"
+
+      - name: Verify DCO and no credential material
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C candidate show -s --format=%B "$HEAD_REVISION" | grep -Eq '^Signed-off-by: .+ <[^>]+>$'
+          if grep -RInE \
+            --exclude='*.md' \
+            '(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----)' \
+            deliverables/frantic-120-deepgram; then
+            exit 1
+          fi
