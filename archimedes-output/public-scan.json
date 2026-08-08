@@ -1,6 +1,6 @@
 {
-  "candidate_count": 3,
-  "details_fetched": 4,
+  "candidate_count": 2,
+  "details_fetched": 3,
   "errors": [],
   "excluded": [
     {
@@ -142,9 +142,9 @@
       "url": "https://archimedes.market/bounties/9f0acc01-1e89-4473-a340-c4d1719d1e3c"
     }
   ],
-  "generated_at": "2026-08-01T04:03:39Z",
+  "generated_at": "2026-08-08T07:32:54Z",
   "geographic_note": "Platform terms say access from outside the United States may be limited; no registration or participation was attempted.",
-  "open_summaries_fetched": 4,
+  "open_summaries_fetched": 3,
   "ranked_candidates": [
     {
       "acceptance_tests": [
@@ -395,125 +395,6 @@
       "title": "AI Assistant Model Context Protocol Server Development",
       "urgency_bucket": "1_to_30_days",
       "url": "https://archimedes.market/bounties/5586f0c8-cde1-416c-ac28-d85bc6a264f0"
-    },
-    {
-      "acceptance_tests": [
-        {
-          "description": "API returns correct conversion results for at least one unit pair per domain (8 domains tested)",
-          "name": "Functional Test",
-          "required": true,
-          "test_type": "MANUAL"
-        },
-        {
-          "description": "All conversions match reference values within 0.1% tolerance",
-          "name": "Accuracy test",
-          "required": true,
-          "test_type": "MANUAL"
-        }
-      ],
-      "candidate": true,
-      "capability_matches": [
-        "python",
-        "typescript_javascript",
-        "api_backend",
-        "testing_debugging",
-        "documentation"
-      ],
-      "category": "software",
-      "complexity": "medium",
-      "deadline": "2026-08-21T23:59:59Z",
-      "deliverables": [
-        {
-          "accepted_formats": [
-            ".py",
-            ".ts",
-            ".js",
-            ".json",
-            ".zip"
-          ],
-          "description": "Python (FastAPI) or TypeScript (Express) REST API implementation",
-          "name": "Source Code",
-          "required": true,
-          "type": "CODE"
-        },
-        {
-          "accepted_formats": [
-            "Dockerfile",
-            ".zip"
-          ],
-          "description": "Container-ready deployment config",
-          "name": "Dockerfile",
-          "required": true,
-          "type": "CODE"
-        },
-        {
-          "accepted_formats": [
-            ".py",
-            ".ts",
-            ".jsm.zip"
-          ],
-          "description": "Test suite with 30+ test cases across all domains",
-          "name": "Unit Tests",
-          "required": true,
-          "type": "CODE"
-        },
-        {
-          "accepted_formats": [
-            ".md",
-            ".docx",
-            ".pdf"
-          ],
-          "description": "README.md with API endpoints, supported units, and examples",
-          "name": "Documentation",
-          "required": true,
-          "type": "CODE"
-        }
-      ],
-      "description_excerpt": "Build a standalone REST API that converts between engineering units across the domains most relevant to mechanical, electrical, and manufacturing engineers. The API should support 3 endpoints: /convert (perform conversion), /units (list units per domain), and /domains (list all supported domains). All conversions must be computed locally with no external API dependencies. Suitable for integration into engineering toolchains, CI/CD pipelines, and AI-assisted workflows.",
-      "display_id": "MSN-00014",
-      "escrow_status": "locked",
-      "hard_exclusion_reasons": [],
-      "id": "89c2e397-bf5d-47d5-af06-7c5b749d76d1",
-      "is_funded": true,
-      "payout_usd": 100.0,
-      "requirements": [
-        {
-          "category": "FUNCTIONAL",
-          "description": "Support unit conversions across 8 engineering domains (length, force/torque, pressure, temperature, electrical, flow, thermal, mass/density)",
-          "priority": "SHALL"
-        },
-        {
-          "category": "FUNCTIONAL",
-          "description": "Implement minimum 50 unit pairs across all domains",
-          "priority": "SHALL"
-        },
-        {
-          "category": "FUNCTIONAL",
-          "description": "All conversions computed locally — no external API calls",
-          "priority": "SHALL"
-        },
-        {
-          "category": "FUNCTIONAL",
-          "description": "Include unit tests covering all 8 domains (minimum 30 test cases)",
-          "priority": "SHALL"
-        },
-        {
-          "category": "FUNCTIONAL",
-          "description": "Include Dockerfile for deployment",
-          "priority": "SHALL"
-        },
-        {
-          "category": "FUNCTIONAL",
-          "description": "Include README with API documentation and usage examples",
-          "priority": "SHALL"
-        }
-      ],
-      "score": 119.0,
-      "status": "open",
-      "summary": "Build a standalone REST API that converts between engineering units across the domains most relevant to mechanical, electrical, and manufacturing engineers. The API should support 3 endpoints: /convert (perform conversion), /units (list units per domain), and /domains (list all s",
-      "title": "REST API for Engineering Unit Conversion",
-      "urgency_bucket": "1_to_30_days",
-      "url": "https://archimedes.market/bounties/89c2e397-bf5d-47d5-af06-7c5b749d76d1"
     }
   ],
   "safety": "Read-only public scan; no account, terms acceptance, Stripe onboarding, claim, upload, submission, payment, or download.",
