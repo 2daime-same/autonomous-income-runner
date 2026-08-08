@@ -1,0 +1,86 @@
+name: Extract precise Taskmarket CLI submission contracts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/taskmarket-cli-precise-slices.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: taskmarket-cli-precise-slices
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Install pinned official CLI without lifecycle scripts
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund @lucid-agents/taskmarket@1.7.3
+
+      - name: Extract focused immutable source ranges
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          source = Path('node_modules/@lucid-agents/taskmarket/dist/index.js').read_text(encoding='utf-8', errors='replace').splitlines()
+          outputs = {
+              'taskmarket-output/cli-x402-http.txt': (6100, 6365),
+              'taskmarket-output/cli-device-init.txt': (6448, 6605),
+              'taskmarket-output/cli-submit-exact.txt': (7125, 7195),
+          }
+          for output, (start, end) in outputs.items():
+              rows = []
+              for number in range(start, min(end, len(source)) + 1):
+                  rows.append(f'{number:05d}: {source[number - 1]}')
+              Path(output).parent.mkdir(parents=True, exist_ok=True)
+              Path(output).write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          PY
+
+      - name: Verify source-only outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s taskmarket-output/cli-x402-http.txt
+          test -s taskmarket-output/cli-device-init.txt
+          test -s taskmarket-output/cli-submit-exact.txt
+          if grep -ERn '(-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|\beyJ[A-Za-z0-9._-]{20,}\b|\bgh[pousr]_[A-Za-z0-9_]{20,}\b)' \
+             taskmarket-output/cli-x402-http.txt \
+             taskmarket-output/cli-device-init.txt \
+             taskmarket-output/cli-submit-exact.txt; then
+            echo 'Credential-like runtime material detected.' >&2
+            exit 1
+          fi
+
+      - name: Commit precise public source evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'agent-income-runner[bot]'
+          git config user.email 'agent-income-runner[bot]@users.noreply.github.com'
+          git add taskmarket-output/cli-x402-http.txt \
+                  taskmarket-output/cli-device-init.txt \
+                  taskmarket-output/cli-submit-exact.txt
+          git commit -m 'Record precise Taskmarket CLI submission contracts [skip ci]'
+          for attempt in $(seq 1 8); do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep "$attempt"
+          done
+          exit 1
