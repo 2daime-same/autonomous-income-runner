@@ -1,7 +1,7 @@
 {
   "execution_ready": [],
   "execution_ready_count": 0,
-  "generated_at": "2026-08-08T02:19:18+00:00",
+  "generated_at": "2026-08-08T05:08:24+00:00",
   "inspected": [
     {
       "capability_matches": [
@@ -15,7 +15,7 @@
         "worker_wallet_not_configured"
       ],
       "execution_ready": false,
-      "hours_left": 29.51,
+      "hours_left": 26.7,
       "net_reward_usdc": 18.5,
       "reward_usdc": 20.0,
       "soft_risks": [
