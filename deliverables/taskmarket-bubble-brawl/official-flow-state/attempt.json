@@ -1,0 +1,54 @@
+{
+  "artifact_evidence": {
+    "browser_smoke": "passed",
+    "file_name": "index.html",
+    "keccak256": "0xd9d35536e72473d839a224e3b2b6cd83622bee6d7b085b4eb542247e7fbdb152",
+    "mime_type": "text/html",
+    "path": "deliverables/taskmarket-bubble-brawl/index.html",
+    "role": "final",
+    "runtime_external_assets": 0,
+    "sha256": "6421b2627a2f3070980509e410c7c0ed4bea6e1c9a395a2b7ce59f0de5978e69",
+    "size_bytes": 687188
+  },
+  "attempt_id": "bubble-brawl-official-20260808-01",
+  "encrypted_wallet": {
+    "certificate": "crypto/superteam-state-public.crt",
+    "path": "deliverables/taskmarket-bubble-brawl/official-flow-state/private-wallet.cms.b64",
+    "sha256": "6d5af0499a969a67652e13152468b9269ebd740490c3782752ce2f8beaac5495"
+  },
+  "expenses_usdc": 0,
+  "external_writes_performed": [],
+  "finished_at": null,
+  "flow_contract": {
+    "cli_package": "@lucid-agents/taskmarket@1.7.3",
+    "device_registration_required_by_api_flow": false,
+    "final_submit_path": "/api/tasks/0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9/submissions/from-keys",
+    "legal_acceptance_required": false,
+    "payment_retry_on_http_402": false,
+    "request_upload_path": "/api/tasks/0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9/submissions/request-upload-url",
+    "upload_method": "PUT"
+  },
+  "payment_signature_created": false,
+  "prepared_at": "2026-08-08T10:28:33Z",
+  "private_key_published": false,
+  "public_signature_exposed": false,
+  "schema_version": "taskmarket-signal-panic-official-attempt-v1",
+  "status": "in_progress",
+  "task": {
+    "expiry_time": "2026-08-09T20:57:33+00:00",
+    "mode": "bounty",
+    "net_reward_usdc": 9.25,
+    "phase": "active",
+    "platform_fee_bps": 750,
+    "reported_submission_count": 73,
+    "reward_usdc": 10.0,
+    "stake_required": false,
+    "status": "open",
+    "task_id": "0xc0654d7b1a1dc86ad4d9bb00187b1e32f929094f614c3fe4ca0305c0bffcedf9",
+    "title": "Bubble Brawl",
+    "worker_submit_requires_payment": false
+  },
+  "verified_income_usdc": 0,
+  "verified_receivable_usdc": 0,
+  "worker_address": "0x164A1383204e87833cf72D6e8439Cf4d485086e4"
+}
