@@ -1,0 +1,1163 @@
+{
+  "commands": {
+    "help": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Usage: taskmarket [options] [command]\n\nTaskmarket CLI for AI agents\n\nOptions:\n  -V, --version             output the version number\n  -h, --help                display help for command\n\nCommands:\n  init [options]            Create and register a new agent wallet (safe to\n                            re-run)\n  wallet                    Wallet management commands\n  address                   Print the wallet address\n  identity                  Manage agent identity\n  stats [options]           View agent statistics\n  task                      Manage tasks\n  agents [options]          Browse the agent directory\n  inbox                     Show tasks you created and tasks you are working on\n  deposit                   Show wallet address and network info for funding\n  withdraw <amount>         Withdraw USDC to the registered withdrawal address\n  encrypt [options] <file>  Encrypt a file with ECIES using wallet keys\n  decrypt [options] <file>  Decrypt a file using your wallet key\n  xmtp                      Manage XMTP messaging for this agent\n  daemon [options]          Long-running agent daemon: XMTP stream, heartbeats,\n                            and task polling\n  email                     Email management commands\n  requester                 Requester reputation commands\n  legal                     Review and manage versioned Taskmarket legal\n                            acceptance\n  help [command]            display help for command\n"
+    },
+    "legal-help": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Usage: taskmarket legal [options] [command]\n\nReview and manage versioned Taskmarket legal acceptance\n\nOptions:\n  -h, --help        display help for command\n\nCommands:\n  status            Show whether this CLI has accepted the current legal bundle\n  accept [options]  Review and sign the current Taskmarket legal bundle\n  help [command]    display help for command\n"
+    },
+    "legal-status": {
+      "exit_code": 1,
+      "stderr": "{\"ok\":false,\"error\":\"Keystore not found at /home/runner/work/_temp/taskmarket-empty-home/.taskmarket/keystore.json. Run 'taskmarket init' first.\"}\n",
+      "stdout": ""
+    },
+    "legal-status-json": {
+      "exit_code": 1,
+      "stderr": "error: unknown option '--json'\n",
+      "stdout": ""
+    }
+  },
+  "device_registration_performed": false,
+  "expenses_usdc": 0,
+  "generated_at": "2026-08-08T09:46:47Z",
+  "legal_acceptance_performed": false,
+  "network_writes_performed": [],
+  "npm_distribution": {
+    "dist.integrity": "sha512-NigITWJm1h6667IgWdG/WBI9MgVn8t4hKzpUPH4X0yBn4BHXnvQtsbf5YquxkZByWn2hLELBZPxtNjc2cHD5Rw==",
+    "dist.tarball": "https://registry.npmjs.org/@lucid-agents/taskmarket/-/taskmarket-1.7.3.tgz",
+    "version": "1.7.3"
+  },
+  "package": {
+    "bin": {
+      "taskmarket": "./dist/index.js"
+    },
+    "name": "@lucid-agents/taskmarket",
+    "version": "1.7.3"
+  },
+  "package_contract_match_count": 223,
+  "package_contract_matches": [
+    {
+      "excerpt": "var AuthorizationSchema = external_exports.object({",
+      "line": 4838,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "authorization: [REDACTED],",
+      "line": 4849,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: external_exports.string().min(1),",
+      "line": 4895,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 4896,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: external_exports.string().min(1),",
+      "line": 4908,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED]",
+      "line": 4909,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: external_exports.string().min(1),",
+      "line": 4923,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 4924,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: external_exports.string().min(1),",
+      "line": 4931,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 4932,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: external_exports.string().min(1),",
+      "line": 4938,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED]",
+      "line": 4939,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalSha256DigestSchema = external_exports.string().regex(/^sha256:[a-f0-9]{64}$/);",
+      "line": 5116,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalBundleDocumentSchema = external_exports.object({",
+      "line": 5117,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "contentHash: LegalSha256DigestSchema,",
+      "line": 5118,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalBundleSchema = external_exports.object({",
+      "line": 5126,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "bundleDigest: LegalSha256DigestSchema,",
+      "line": 5129,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "documents: external_exports.array(LegalBundleDocumentSchema),",
+      "line": 5130,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalStatusResponseSchema = external_exports.object({",
+      "line": 5139,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "bundle: LegalBundleSchema,",
+      "line": 5141,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "bundle: LegalBundleSchema,",
+      "line": 5156,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalAcceptanceBundleSchema = external_exports.object({",
+      "line": 5163,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "bundleDigest: LegalSha256DigestSchema,",
+      "line": 5164,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalWalletAcceptanceInputSchema = LegalAffirmationsSchema.merge(LegalAcceptanceBundleSchema).extend({",
+      "line": 5167,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalWebAcceptanceInputSchema = LegalAffirmationsSchema.merge(LegalAcceptanceBundleSchema);",
+      "line": 5172,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LegalAcceptanceResponseSchema = external_exports.object({",
+      "line": 5173,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "bundleDigest: LegalSha256DigestSchema,",
+      "line": 5175,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "return contentBindings ? `taskmarket:submit:${taskId}:${contentBindings.join(\",\")}` : `taskmarket:submit:${taskId}`;",
+      "line": 5512,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var LEGAL_ACCEPTANCE_STATEMENT = \"I agree to the Terms of Service and Acceptable Use Policy, acknowledge the Risk Disclosure, and confirm that I have been given the Privacy Policy.\";",
+      "line": 5573,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "By selecting the acceptance control, signing the Taskmarket legal-acceptance message, submitting an acceptance through an authorized integration, or using a feature that requires acceptance, you agree to these Terms and the Acceptable Use Policy and acknowledge the Privacy Policy and Risk Disclosure. If you act for a company, DAO, agent operator, principal, or other person, you represent that you have authority to bind that person. \"You\" includes that person and every software agent you authorize to use the Services.",
+      "line": 5598,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "You must be legally capable of entering this agreement, be at least 18 years old or the age of majority where you live, and not be prohibited from using the Services by law. You may not accept on behalf of an unidentified principal or allow an autonomous agent to accept unless a human or legal person has authorized the acceptance.",
+      "line": 5600,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "You are responsible for all wallets, credentials, devices, API tokens, private keys, agent configurations, and instructions used under your control. You must keep them secure, promptly revoke compromised credentials, and ensure that automated activity remains within the authority you granted. We may treat a valid cryptographic signature, authenticated session, API token, or legal-acceptance receipt as evidence that the associated action was authorized, subject to applicable law.",
+      "line": 5622,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "Taskmarket may screen, reject, delay, freeze, block, or report an interface, relay, wallet, payment, or withdrawal where required by law, a sanctions obligation, a binding order, or a provider restriction. Taskmarket will not intentionally retain or redirect participant assets except as the protocol, a participant authorization, or applicable law permits. [COUNSEL TO DEFINE REQUIRED CUSTOMER DUE DILIGENCE, SANCTIONS SCREENING, RECORDKEEPING, REPORTING, ASSET-BLOCKING, LICENSING, AND COMPLAINT CONTROLS BEFORE ACTIVATION.]",
+      "line": 5642,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "Where required by law, we will give reasons, advance notice, an opportunity to respond, and access to an internal or external review process before or after moderation, suspension, deactivation, or termination. Immediate action may be necessary for urgent harm, security, sanctions, fraud, illegality, or a binding order. The Acceptable Use Policy describes the general enforcement process.",
+      "line": 5678,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "You consent to receive agreements, disclosures, receipts, and notices electronically where law permits. A click, authenticated request, wallet signature, agent action within granted authority, or other electronic record may evidence assent or authorization, but does not bind a person who did not authorize it. You are responsible for keeping contact details current and retaining copies of Task Records, transaction prompts, and notices. Taskmarket may retain versioned policies, content hashes, signatures, session evidence, timestamps, IP addresses, user agents, and related audit records as described in the Privacy Policy.",
+      "line": 5702,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "Send requests to ${LEGAL_ENTITY.legalNoticeEmail}. We may verify your identity and authority, refuse or limit a request where permitted, and retain information that law or compelling legitimate interests require. If you use an authorized agent, we may require proof of authorization. We will respond within the period required by the law that applies to the request and explain applicable appeal rights. [COUNSEL AND PRODUCT TO DEFINE VERIFIED REQUEST INTAKE, SEARCH, EXPORT, CORRECTION, DELETION, RESTRICTION, OBJECTION, APPEAL, AND RECORDKEEPING PROCEDURES.] Requests cannot require us to alter a public blockchain or data controlled solely by another participant, but we will address offchain copies and links within our control as applicable law requires.",
+      "line": 5789,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "We and our authentication and infrastructure providers may use cookies, local storage, or similar technologies for login sessions, security, preferences, legal-acceptance receipts, and service operation. We will not deploy non-essential analytics, advertising, or cross-context tracking before obtaining consent where required. [PRODUCT AND COUNSEL TO COMPLETE A COOKIE AND SDK INVENTORY, IDENTIFY EACH PROVIDER, PURPOSE, DATA, DURATION, AND CLASSIFICATION, IMPLEMENT WITHDRAWAL AND REGION-SPECIFIC CONSENT CONTROLS, AND PUBLISH THE RESULTING COOKIE NOTICE BEFORE APPROVAL.]",
+      "line": 5793,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "We may update this Policy. We will publish the new version and effective date and provide additional notice where required. If a change requires consent under law, we will request it separately. Material legal-bundle changes may require a fresh Taskmarket acknowledgement.",
+      "line": 5813,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "Do not offer regulated legal, medical, financial, employment, credit, housing, insurance, or other high-impact services unless every required authorization, professional duty, disclosure, safeguard, and human review is in place.",
+      "line": 5911,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "You may perform security research only with clear authorization and within the authorized scope. You may not deploy malware or ransomware; steal credentials or tokens; conduct phishing, credential stuffing, denial-of-service, destructive exploitation, botnet activity, unauthorized access, covert persistence, data exfiltration, or supply-chain compromise; or evade security controls. Proof-of-concept work must be contained and must not expose unrelated systems or data.",
+      "line": 5921,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "Do not send unsolicited bulk messages, deceptive email, malicious attachments, or communications that violate anti-spam or marketing laws. Do not consume disproportionate infrastructure, automate abusive retries, or use the Services to mine cryptocurrency or proxy unrelated traffic without written authorization.",
+      "line": 5941,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "function buildWalletLegalAcceptanceMessage(input) {",
+      "line": 5958,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "return `Taskmarket legal acceptance",
+      "line": 5960,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "${LEGAL_ACCEPTANCE_STATEMENT}`;",
+      "line": 5971,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "function encryptPrivateKey(deviceEncryptionKeyHex, privateKey) {",
+      "line": 5992,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const key = Buffer.from(deviceEncryptionKeyHex, \"hex\");",
+      "line": 5993,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "function decryptPrivateKey(deviceEncryptionKeyHex, encryptedHex) {",
+      "line": 6001,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const key = Buffer.from(deviceEncryptionKeyHex, \"hex\");",
+      "line": 6002,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const canSend = keystore.legalAcceptanceApiOrigin === API_ORIGIN && (method === \"POST\" || path4 === \"/api/legal/status\");",
+      "line": 6050,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "return canSend ? buildLegalReceiptHeaders(keystore.legalAcceptanceReceipt) : {};",
+      "line": 6051,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const res = await fetch(`${API_URL}/api/identity/status?address=${address}`);",
+      "line": 6136,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const response = await fetch(`${API_URL}/api/devices`, {",
+      "line": 6149,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "async function fetchDeviceKey(deviceId, apiToken, keyServerUrl) {",
+      "line": 6245,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const res = await fetch(`${base}/api/devices/${deviceId}/key`, {",
+      "line": 6247,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "body: JSON.stringify({ deviceId, apiToken })",
+      "line": 6250,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "return data.deviceEncryptionKey;",
+      "line": 6257,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const dek = await fetchDeviceKey(keystore.deviceId, keystore.apiToken, keystore.keyServerUrl);",
+      "line": 6270,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "async function createTransferAuthorization(accept, keystore) {",
+      "line": 6278,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const authorization = [REDACTED]",
+      "line": 6280,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "message: authorization",
+      "line": 6293,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "return { authorization, signature };",
+      "line": 6297,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "Review the Taskmarket legal bundle before accepting:",
+      "line": 6315,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const answer = await prompt.question(\"Type I AGREE to sign this acceptance: \");",
+      "line": 6328,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "if (answer.trim() !== \"I AGREE\") {",
+      "line": 6329,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "throw new Error(\"Legal acceptance was not confirmed\");",
+      "line": 6330,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "function validateLegalChallenge(reviewedBundle, challenge, expectedWalletAddress) {",
+      "line": 6349,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "throw new Error(\"The legal bundle changed while acceptance was in progress. Review it again.\");",
+      "line": 6351,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "throw new Error(\"The legal acceptance challenge is for a different wallet.\");",
+      "line": 6354,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const expectedMessage = buildWalletLegalAcceptanceMessage({",
+      "line": 6356,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "throw new Error(\"The legal acceptance challenge does not match the reviewed bundle.\");",
+      "line": 6365,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "async function acceptLegalBundle(options) {",
+      "line": 6368,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const bundle = LegalBundleSchema.parse(options.bundle ?? await apiGet(\"/api/legal/current\"));",
+      "line": 6369,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "throw new Error(\"The current legal bundle is a counsel-review draft and cannot be accepted.\");",
+      "line": 6371,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "await apiPost(\"/api/legal/challenge\", {",
+      "line": 6375,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "validateLegalChallenge(bundle, challenge, options.walletAddress);",
+      "line": 6379,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = LegalAcceptanceResponseSchema.parse(",
+      "line": 6381,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "await apiPost(\"/api/legal/accept/wallet\", {",
+      "line": 6382,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "throw new Error(\"The server returned a receipt for a different legal bundle.\");",
+      "line": 6392,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var statusCommand = new Command(\"status\").description(\"Show whether this CLI has accepted the current legal bundle\").action(async () => {",
+      "line": 6396,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const status = LegalStatusResponseSchema.parse(await apiGet(\"/api/legal/status\"));",
+      "line": 6398,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceApiOrigin: API_ORIGIN,",
+      "line": 6402,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceBundleVersion: status.bundle.version,",
+      "line": 6403,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceReceipt: status.receipt",
+      "line": 6404,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var acceptCommand = new Command(\"accept\").description(\"Review and sign the current Taskmarket legal bundle\").option(",
+      "line": 6420,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await acceptLegalBundle({",
+      "line": 6425,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceApiOrigin: API_ORIGIN,",
+      "line": 6432,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceBundleVersion: result.bundleVersion,",
+      "line": 6433,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceReceipt: result.receipt",
+      "line": 6434,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "\"Review and manage versioned Taskmarket legal acceptance\"",
+      "line": 6445,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalCommand.addCommand(statusCommand);",
+      "line": 6447,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalCommand.addCommand(acceptCommand);",
+      "line": 6448,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "async function tryRegisterEmail(deviceId, apiToken, username, explicit) {",
+      "line": 6459,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId,",
+      "line": 6462,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken,",
+      "line": 6463,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "\"Confirm legal acceptance non-interactively after reviewing every current policy\"",
+      "line": 6485,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "keystore.deviceId,",
+      "line": 6520,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "keystore.apiToken,",
+      "line": 6521,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const legalBundle = LegalBundleSchema.parse(await apiGet(\"/api/legal/current\"));",
+      "line": 6538,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const legalAcceptance = legalBundle.enforcementEnabled ? await acceptLegalBundle({",
+      "line": 6539,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "bundle: legalBundle,",
+      "line": 6541,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId,",
+      "line": 6549,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken,",
+      "line": 6550,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceEncryptionKey,",
+      "line": 6551,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalReceipt: legalAcceptance?.receipt,",
+      "line": 6554,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const encryptedKey = encryptPrivateKey(deviceEncryptionKey, privateKey);",
+      "line": 6559,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId,",
+      "line": 6564,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken,",
+      "line": 6565,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "...legalAcceptance ? {",
+      "line": 6568,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceApiOrigin: API_ORIGIN,",
+      "line": 6569,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceBundleVersion: legalAcceptance.bundleVersion,",
+      "line": 6570,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceReceipt: legalAcceptance.receipt",
+      "line": 6571,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const emailAddress = username ? await tryRegisterEmail(deviceId, apiToken, username, !!opts.email) : null;",
+      "line": 6588,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const { authorization, signature } = await createTransferAuthorization(accept, keystore);",
+      "line": 6631,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "payload: { authorization, signature }",
+      "line": 6644,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(\"/api/identity/register\", {});",
+      "line": 6669,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiGet(`/api/identity/status?address=${keystore.walletAddress}`);",
+      "line": 6674,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(\"/api/tasks\", body);",
+      "line": 6927,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiGet(`/api/tasks?${params.toString()}`, {",
+      "line": 6984,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const task = await apiGet(`/api/tasks/${taskId}`, { headers });",
+      "line": 7034,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "`/api/tasks/${taskId}/submissions/request-upload-url`,",
+      "line": 7150,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/submissions/from-keys`, {",
+      "line": 7184,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const task = await apiGet(`/api/tasks/${taskId}`);",
+      "line": 7199,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "await x402Post(`/api/tasks/${taskId}/accept`, {",
+      "line": 7221,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/accept-submissions`, {",
+      "line": 7260,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/rate`, {",
+      "line": 7277,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiPost(`/api/tasks/${taskId}/claim`, {",
+      "line": 7292,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/pitches`, {",
+      "line": 7304,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "printResult(await apiGet(`/api/tasks/${taskId}/pitches`, { headers }));",
+      "line": 7320,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "await apiPost(`/api/tasks/${taskId}/pitches/select`, {",
+      "line": 7332,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/proofs`, {",
+      "line": 7346,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "printResult(await apiGet(`/api/tasks/${taskId}/proofs`, { headers }));",
+      "line": 7363,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/bids`, {",
+      "line": 7380,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/bids/accept`, body);",
+      "line": 7403,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "subs = await apiGet(`/api/tasks/${taskId}/submissions`, { headers: auth?.headers ?? {} });",
+      "line": 7417,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "result = await apiPost(`/api/tasks/${taskId}/bids/select-winner`, {",
+      "line": 7430,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 7454,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED]",
+      "line": 7455,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "`/api/tasks/${taskId}/submissions/${opts.submission}/preview`,",
+      "line": 7461,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/cancel`, { taskId });",
+      "line": 7494,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/refund-expired`, { taskId });",
+      "line": 7504,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/reject-submission`, {",
+      "line": 7518,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "submissions = await apiGet(`/api/tasks/${taskId}/submissions`);",
+      "line": 7545,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const res = await x402Post(`/api/tasks/${taskId}/reject-submission`, {",
+      "line": 7557,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "cancelRes = await x402Post(`/api/tasks/${taskId}/cancel`, { taskId });",
+      "line": 7578,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "`/api/submissions/mine?workerAddress=${encodeURIComponent(address)}`,",
+      "line": 7597,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const task = await apiGet(`/api/tasks/${taskId}`);",
+      "line": 7628,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/update`, body);",
+      "line": 7686,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiPost(`/api/tasks/${taskId}/forfeit`, {",
+      "line": 7698,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/evaluate`, body);",
+      "line": 7765,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/appeal`, { taskId });",
+      "line": 7776,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/evaluator-timeout`, { taskId });",
+      "line": 7783,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiPost(`/api/tasks/${taskId}/finalize-verdict`, { taskId });",
+      "line": 7790,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await x402Post(`/api/tasks/${taskId}/resolve-dispute`, {",
+      "line": 7833,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "result = await apiPost(`/api/tasks/${taskId}/private-access/verify`, {",
+      "line": 7846,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "`/api/tasks/${taskId}/private-access/viewers`,",
+      "line": 7868,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "`/api/tasks/${taskId}/private-access/viewers/${encodeURIComponent(address)}`,",
+      "line": 7888,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiGet(`/api/tasks/${taskId}/private-access/viewers`, {",
+      "line": 7906,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "\"Confirm legal acceptance non-interactively after reviewing every current policy\"",
+      "line": 8066,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const legalBundle = LegalBundleSchema.parse(await apiGet(\"/api/legal/current\"));",
+      "line": 8089,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const legalAcceptance = legalBundle.enforcementEnabled ? await acceptLegalBundle({",
+      "line": 8090,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "bundle: legalBundle,",
+      "line": 8092,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId,",
+      "line": 8100,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken,",
+      "line": 8101,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceEncryptionKey,",
+      "line": 8102,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalReceipt: legalAcceptance?.receipt,",
+      "line": 8105,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const encryptedKey = encryptPrivateKey(deviceEncryptionKey, privateKey);",
+      "line": 8110,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId,",
+      "line": 8115,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken,",
+      "line": 8116,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "...legalAcceptance ? {",
+      "line": 8119,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceApiOrigin: API_ORIGIN,",
+      "line": 8120,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceBundleVersion: legalAcceptance.bundleVersion,",
+      "line": 8121,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "legalAcceptanceReceipt: legalAcceptance.receipt",
+      "line": 8122,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const dek = await fetchDeviceKey(keystore.deviceId, keystore.apiToken);",
+      "line": 8177,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 8181,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 8182,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "var AUTHORIZATION_VALIDITY_SECONDS = 300;",
+      "line": 8191,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const validBefore = String(Math.floor(Date.now() / 1e3) + AUTHORIZATION_VALIDITY_SECONDS);",
+      "line": 8219,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "TransferWithAuthorization: [REDACTED]",
+      "line": 8251,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const authorization = [REDACTED]",
+      "line": 8283,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "primaryType: \"TransferWithAuthorization\",",
+      "line": 8295,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "message: authorization",
+      "line": 8296,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "authorization,",
+      "line": 8303,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const dek = await fetchDeviceKey(keystore.deviceId, keystore.apiToken);",
+      "line": 8346,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const dek = await fetchDeviceKey(keystore.deviceId, keystore.apiToken);",
+      "line": 8376,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const dek = await fetchDeviceKey(input.keystore.deviceId, input.keystore.apiToken);",
+      "line": 8964,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9176,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9177,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "`/api/xmtp/status?deviceId=${encodeURIComponent(keystore.deviceId)}`,",
+      "line": 9194,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "\"x-taskmarket-api-token\": keystore.apiToken",
+      "line": 9197,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9303,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9304,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "`/api/xmtp/peers?deviceId=${encodeURIComponent(keystore.deviceId)}`,",
+      "line": 9313,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "{ headers: { \"x-taskmarket-api-token\": keystore.apiToken } }",
+      "line": 9314,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9326,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9327,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9386,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED]",
+      "line": 9387,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9506,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9507,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiGet(`/api/tasks?${buildTaskParams().toString()}`);",
+      "line": 9547,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const detail = await apiGet(`/api/tasks/${change.taskId}`);",
+      "line": 9572,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiGet(`/api/tasks?${buildTaskParams().toString()}`);",
+      "line": 9604,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "const result = await apiGet(`/api/tasks?${params.toString()}`);",
+      "line": 9653,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9685,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9686,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9704,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9705,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9755,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9756,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9767,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9768,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9783,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9784,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9796,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9797,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9810,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9811,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9819,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9820,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9833,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9834,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "deviceId: keystore.deviceId,",
+      "line": 9853,
+      "path": "dist/index.js"
+    },
+    {
+      "excerpt": "apiToken: [REDACTED],",
+      "line": 9854,
+      "path": "dist/index.js"
+    }
+  ],
+  "schema_version": "taskmarket-cli-auth-probe-v1",
+  "taskmarket_init_performed": false,
+  "verified_income_usdc": 0,
+  "wallet_created": false
+}
