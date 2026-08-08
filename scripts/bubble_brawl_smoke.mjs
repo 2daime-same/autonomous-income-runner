@@ -58,7 +58,7 @@ if (!/^\d{6,}$/.test(score)) errors.push(`score is not numeric: ${score}`);
 const high = (await page.locator('#highScore').textContent())?.trim() ?? '';
 if (!/^\d[\d,]*$/.test(high)) errors.push(`high score is not numeric: ${high}`);
 if ((await page.locator('#healthRow .heart').count()) !== 3) errors.push('health UI does not contain three hearts');
-if (!(await page.locator('#shootBtn').isAttached()) || !(await page.locator('#pullBtn').isAttached())) {
+if ((await page.locator('#shootBtn').count()) !== 1 || (await page.locator('#pullBtn').count()) !== 1) {
   errors.push('touch action controls are missing');
 }
 await page.screenshot({ path: path.join(evidenceDir, 'running.png'), fullPage: true });
