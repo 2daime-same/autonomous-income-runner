@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-08T16:19:45+00:00",
+  "wallet": "0x130C29B253B3079FB9ec0D141a4603579Fe5B4d8",
+  "base_balance": {
+    "eth": null,
+    "usdc": null
+  },
+  "botbounty_http": 200,
+  "botbounty_error": null,
+  "visible_bounty_count": 0,
+  "bounties": [],
+  "expenses_usd": 0
+}
