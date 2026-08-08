@@ -7,8 +7,6 @@ on:
     paths:
       - taskforce_worker.mjs
       - .github/workflows/taskforce-worker.yml
-  schedule:
-    - cron: '17 */6 * * *'
 
 permissions:
   contents: write
@@ -20,9 +18,9 @@ concurrency:
 
 jobs:
   work:
-    if: github.repository_owner == 'nexaworks-jp' && github.ref == 'refs/heads/main'
+    if: github.repository == '2daime-same/autonomous-income-runner' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -44,7 +42,7 @@ jobs:
       - name: Register, verify, find paid tasks, apply, deliver, and verify income
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          MAX_RUNTIME_MINUTES: '335'
+          MAX_RUNTIME_MINUTES: '12'
           TASKFORCE_MODEL: openai/gpt-4.1-mini
         run: node taskforce_worker.mjs
 
